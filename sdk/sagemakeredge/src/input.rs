@@ -50,7 +50,7 @@ pub mod get_device_registration_input {
 #[doc(hidden)]
 pub type GetDeviceRegistrationInputOperationOutputAlias = crate::operation::GetDeviceRegistration;
 #[doc(hidden)]
-pub type GetDeviceRegistrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceRegistrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceRegistrationInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceRegistration`](crate::operation::GetDeviceRegistration)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl GetDeviceRegistrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceRegistration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -143,7 +143,7 @@ impl GetDeviceRegistrationInput {
             "GetDeviceRegistration",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -273,7 +273,7 @@ pub mod send_heartbeat_input {
 #[doc(hidden)]
 pub type SendHeartbeatInputOperationOutputAlias = crate::operation::SendHeartbeat;
 #[doc(hidden)]
-pub type SendHeartbeatInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`SendHeartbeat`](crate::operation::SendHeartbeat)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +284,7 @@ impl SendHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendHeartbeat,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -363,7 +363,7 @@ impl SendHeartbeatInput {
             "SendHeartbeat",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

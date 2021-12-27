@@ -85,7 +85,7 @@ pub mod create_cell_input {
 #[doc(hidden)]
 pub type CreateCellInputOperationOutputAlias = crate::operation::CreateCell;
 #[doc(hidden)]
-pub type CreateCellInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCellInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCellInput {
     /// Consumes the builder and constructs an Operation<[`CreateCell`](crate::operation::CreateCell)>
     #[allow(clippy::let_and_return)]
@@ -96,7 +96,7 @@ impl CreateCellInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCell,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -175,7 +175,7 @@ impl CreateCellInput {
             "CreateCell",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -240,7 +240,8 @@ pub mod create_cross_account_authorization_input {
 pub type CreateCrossAccountAuthorizationInputOperationOutputAlias =
     crate::operation::CreateCrossAccountAuthorization;
 #[doc(hidden)]
-pub type CreateCrossAccountAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCrossAccountAuthorizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCrossAccountAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateCrossAccountAuthorization`](crate::operation::CreateCrossAccountAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -251,7 +252,7 @@ impl CreateCrossAccountAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCrossAccountAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -332,7 +333,7 @@ impl CreateCrossAccountAuthorizationInput {
             "CreateCrossAccountAuthorization",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -437,7 +438,7 @@ pub mod create_readiness_check_input {
 #[doc(hidden)]
 pub type CreateReadinessCheckInputOperationOutputAlias = crate::operation::CreateReadinessCheck;
 #[doc(hidden)]
-pub type CreateReadinessCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReadinessCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReadinessCheckInput {
     /// Consumes the builder and constructs an Operation<[`CreateReadinessCheck`](crate::operation::CreateReadinessCheck)>
     #[allow(clippy::let_and_return)]
@@ -448,7 +449,7 @@ impl CreateReadinessCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReadinessCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -530,7 +531,7 @@ impl CreateReadinessCheckInput {
             "CreateReadinessCheck",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -641,7 +642,7 @@ pub mod create_recovery_group_input {
 #[doc(hidden)]
 pub type CreateRecoveryGroupInputOperationOutputAlias = crate::operation::CreateRecoveryGroup;
 #[doc(hidden)]
-pub type CreateRecoveryGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecoveryGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecoveryGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecoveryGroup`](crate::operation::CreateRecoveryGroup)>
     #[allow(clippy::let_and_return)]
@@ -652,7 +653,7 @@ impl CreateRecoveryGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecoveryGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -732,7 +733,7 @@ impl CreateRecoveryGroupInput {
             "CreateRecoveryGroup",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -858,7 +859,7 @@ pub mod create_resource_set_input {
 #[doc(hidden)]
 pub type CreateResourceSetInputOperationOutputAlias = crate::operation::CreateResourceSet;
 #[doc(hidden)]
-pub type CreateResourceSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceSet`](crate::operation::CreateResourceSet)>
     #[allow(clippy::let_and_return)]
@@ -869,7 +870,7 @@ impl CreateResourceSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -949,7 +950,7 @@ impl CreateResourceSetInput {
             "CreateResourceSet",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1007,7 +1008,7 @@ pub mod delete_cell_input {
 #[doc(hidden)]
 pub type DeleteCellInputOperationOutputAlias = crate::operation::DeleteCell;
 #[doc(hidden)]
-pub type DeleteCellInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCellInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCellInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCell`](crate::operation::DeleteCell)>
     #[allow(clippy::let_and_return)]
@@ -1018,7 +1019,7 @@ impl DeleteCellInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCell,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1108,7 +1109,7 @@ impl DeleteCellInput {
             "DeleteCell",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1165,7 +1166,8 @@ pub mod delete_cross_account_authorization_input {
 pub type DeleteCrossAccountAuthorizationInputOperationOutputAlias =
     crate::operation::DeleteCrossAccountAuthorization;
 #[doc(hidden)]
-pub type DeleteCrossAccountAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCrossAccountAuthorizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCrossAccountAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCrossAccountAuthorization`](crate::operation::DeleteCrossAccountAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -1176,7 +1178,7 @@ impl DeleteCrossAccountAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCrossAccountAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1270,7 +1272,7 @@ impl DeleteCrossAccountAuthorizationInput {
             "DeleteCrossAccountAuthorization",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1323,7 +1325,7 @@ pub mod delete_readiness_check_input {
 #[doc(hidden)]
 pub type DeleteReadinessCheckInputOperationOutputAlias = crate::operation::DeleteReadinessCheck;
 #[doc(hidden)]
-pub type DeleteReadinessCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReadinessCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReadinessCheckInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReadinessCheck`](crate::operation::DeleteReadinessCheck)>
     #[allow(clippy::let_and_return)]
@@ -1334,7 +1336,7 @@ impl DeleteReadinessCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReadinessCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1428,7 +1430,7 @@ impl DeleteReadinessCheckInput {
             "DeleteReadinessCheck",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1481,7 +1483,7 @@ pub mod delete_recovery_group_input {
 #[doc(hidden)]
 pub type DeleteRecoveryGroupInputOperationOutputAlias = crate::operation::DeleteRecoveryGroup;
 #[doc(hidden)]
-pub type DeleteRecoveryGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecoveryGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecoveryGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecoveryGroup`](crate::operation::DeleteRecoveryGroup)>
     #[allow(clippy::let_and_return)]
@@ -1492,7 +1494,7 @@ impl DeleteRecoveryGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecoveryGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1586,7 +1588,7 @@ impl DeleteRecoveryGroupInput {
             "DeleteRecoveryGroup",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1639,7 +1641,7 @@ pub mod delete_resource_set_input {
 #[doc(hidden)]
 pub type DeleteResourceSetInputOperationOutputAlias = crate::operation::DeleteResourceSet;
 #[doc(hidden)]
-pub type DeleteResourceSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceSet`](crate::operation::DeleteResourceSet)>
     #[allow(clippy::let_and_return)]
@@ -1650,7 +1652,7 @@ impl DeleteResourceSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1744,7 +1746,7 @@ impl DeleteResourceSetInput {
             "DeleteResourceSet",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1822,7 +1824,8 @@ pub mod get_architecture_recommendations_input {
 pub type GetArchitectureRecommendationsInputOperationOutputAlias =
     crate::operation::GetArchitectureRecommendations;
 #[doc(hidden)]
-pub type GetArchitectureRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetArchitectureRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetArchitectureRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetArchitectureRecommendations`](crate::operation::GetArchitectureRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -1833,7 +1836,7 @@ impl GetArchitectureRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetArchitectureRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1944,7 +1947,7 @@ impl GetArchitectureRecommendationsInput {
             "GetArchitectureRecommendations",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1992,7 +1995,7 @@ pub mod get_cell_input {
 #[doc(hidden)]
 pub type GetCellInputOperationOutputAlias = crate::operation::GetCell;
 #[doc(hidden)]
-pub type GetCellInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCellInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCellInput {
     /// Consumes the builder and constructs an Operation<[`GetCell`](crate::operation::GetCell)>
     #[allow(clippy::let_and_return)]
@@ -2003,7 +2006,7 @@ impl GetCellInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCell,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2091,7 +2094,7 @@ impl GetCellInput {
                     "GetCell",
                     "route53recoveryreadiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2166,7 +2169,7 @@ pub mod get_cell_readiness_summary_input {
 pub type GetCellReadinessSummaryInputOperationOutputAlias =
     crate::operation::GetCellReadinessSummary;
 #[doc(hidden)]
-pub type GetCellReadinessSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCellReadinessSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCellReadinessSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetCellReadinessSummary`](crate::operation::GetCellReadinessSummary)>
     #[allow(clippy::let_and_return)]
@@ -2177,7 +2180,7 @@ impl GetCellReadinessSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCellReadinessSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2284,7 +2287,7 @@ impl GetCellReadinessSummaryInput {
             "GetCellReadinessSummary",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2337,7 +2340,7 @@ pub mod get_readiness_check_input {
 #[doc(hidden)]
 pub type GetReadinessCheckInputOperationOutputAlias = crate::operation::GetReadinessCheck;
 #[doc(hidden)]
-pub type GetReadinessCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReadinessCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReadinessCheckInput {
     /// Consumes the builder and constructs an Operation<[`GetReadinessCheck`](crate::operation::GetReadinessCheck)>
     #[allow(clippy::let_and_return)]
@@ -2348,7 +2351,7 @@ impl GetReadinessCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReadinessCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2442,7 +2445,7 @@ impl GetReadinessCheckInput {
             "GetReadinessCheck",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2535,7 +2538,8 @@ pub mod get_readiness_check_resource_status_input {
 pub type GetReadinessCheckResourceStatusInputOperationOutputAlias =
     crate::operation::GetReadinessCheckResourceStatus;
 #[doc(hidden)]
-pub type GetReadinessCheckResourceStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReadinessCheckResourceStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetReadinessCheckResourceStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetReadinessCheckResourceStatus`](crate::operation::GetReadinessCheckResourceStatus)>
     #[allow(clippy::let_and_return)]
@@ -2546,7 +2550,7 @@ impl GetReadinessCheckResourceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReadinessCheckResourceStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2673,7 +2677,7 @@ impl GetReadinessCheckResourceStatusInput {
             "GetReadinessCheckResourceStatus",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2751,7 +2755,7 @@ pub mod get_readiness_check_status_input {
 pub type GetReadinessCheckStatusInputOperationOutputAlias =
     crate::operation::GetReadinessCheckStatus;
 #[doc(hidden)]
-pub type GetReadinessCheckStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReadinessCheckStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReadinessCheckStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetReadinessCheckStatus`](crate::operation::GetReadinessCheckStatus)>
     #[allow(clippy::let_and_return)]
@@ -2762,7 +2766,7 @@ impl GetReadinessCheckStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReadinessCheckStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2873,7 +2877,7 @@ impl GetReadinessCheckStatusInput {
             "GetReadinessCheckStatus",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2926,7 +2930,7 @@ pub mod get_recovery_group_input {
 #[doc(hidden)]
 pub type GetRecoveryGroupInputOperationOutputAlias = crate::operation::GetRecoveryGroup;
 #[doc(hidden)]
-pub type GetRecoveryGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecoveryGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecoveryGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetRecoveryGroup`](crate::operation::GetRecoveryGroup)>
     #[allow(clippy::let_and_return)]
@@ -2937,7 +2941,7 @@ impl GetRecoveryGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecoveryGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3031,7 +3035,7 @@ impl GetRecoveryGroupInput {
             "GetRecoveryGroup",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3109,7 +3113,8 @@ pub mod get_recovery_group_readiness_summary_input {
 pub type GetRecoveryGroupReadinessSummaryInputOperationOutputAlias =
     crate::operation::GetRecoveryGroupReadinessSummary;
 #[doc(hidden)]
-pub type GetRecoveryGroupReadinessSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecoveryGroupReadinessSummaryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecoveryGroupReadinessSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetRecoveryGroupReadinessSummary`](crate::operation::GetRecoveryGroupReadinessSummary)>
     #[allow(clippy::let_and_return)]
@@ -3120,7 +3125,7 @@ impl GetRecoveryGroupReadinessSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecoveryGroupReadinessSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3231,7 +3236,7 @@ impl GetRecoveryGroupReadinessSummaryInput {
             "GetRecoveryGroupReadinessSummary",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3284,7 +3289,7 @@ pub mod get_resource_set_input {
 #[doc(hidden)]
 pub type GetResourceSetInputOperationOutputAlias = crate::operation::GetResourceSet;
 #[doc(hidden)]
-pub type GetResourceSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceSetInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceSet`](crate::operation::GetResourceSet)>
     #[allow(clippy::let_and_return)]
@@ -3295,7 +3300,7 @@ impl GetResourceSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3389,7 +3394,7 @@ impl GetResourceSetInput {
             "GetResourceSet",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3449,7 +3454,7 @@ pub mod list_cells_input {
 #[doc(hidden)]
 pub type ListCellsInputOperationOutputAlias = crate::operation::ListCells;
 #[doc(hidden)]
-pub type ListCellsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCellsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCellsInput {
     /// Consumes the builder and constructs an Operation<[`ListCells`](crate::operation::ListCells)>
     #[allow(clippy::let_and_return)]
@@ -3460,7 +3465,7 @@ impl ListCellsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCells,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3549,7 +3554,7 @@ impl ListCellsInput {
                     "ListCells",
                     "route53recoveryreadiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3612,7 +3617,8 @@ pub mod list_cross_account_authorizations_input {
 pub type ListCrossAccountAuthorizationsInputOperationOutputAlias =
     crate::operation::ListCrossAccountAuthorizations;
 #[doc(hidden)]
-pub type ListCrossAccountAuthorizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCrossAccountAuthorizationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCrossAccountAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`ListCrossAccountAuthorizations`](crate::operation::ListCrossAccountAuthorizations)>
     #[allow(clippy::let_and_return)]
@@ -3623,7 +3629,7 @@ impl ListCrossAccountAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCrossAccountAuthorizations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3714,7 +3720,7 @@ impl ListCrossAccountAuthorizationsInput {
             "ListCrossAccountAuthorizations",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3776,7 +3782,7 @@ pub mod list_readiness_checks_input {
 #[doc(hidden)]
 pub type ListReadinessChecksInputOperationOutputAlias = crate::operation::ListReadinessChecks;
 #[doc(hidden)]
-pub type ListReadinessChecksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReadinessChecksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReadinessChecksInput {
     /// Consumes the builder and constructs an Operation<[`ListReadinessChecks`](crate::operation::ListReadinessChecks)>
     #[allow(clippy::let_and_return)]
@@ -3787,7 +3793,7 @@ impl ListReadinessChecksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReadinessChecks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3878,7 +3884,7 @@ impl ListReadinessChecksInput {
             "ListReadinessChecks",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3940,7 +3946,7 @@ pub mod list_recovery_groups_input {
 #[doc(hidden)]
 pub type ListRecoveryGroupsInputOperationOutputAlias = crate::operation::ListRecoveryGroups;
 #[doc(hidden)]
-pub type ListRecoveryGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecoveryGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecoveryGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecoveryGroups`](crate::operation::ListRecoveryGroups)>
     #[allow(clippy::let_and_return)]
@@ -3951,7 +3957,7 @@ impl ListRecoveryGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecoveryGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4042,7 +4048,7 @@ impl ListRecoveryGroupsInput {
             "ListRecoveryGroups",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4104,7 +4110,7 @@ pub mod list_resource_sets_input {
 #[doc(hidden)]
 pub type ListResourceSetsInputOperationOutputAlias = crate::operation::ListResourceSets;
 #[doc(hidden)]
-pub type ListResourceSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceSets`](crate::operation::ListResourceSets)>
     #[allow(clippy::let_and_return)]
@@ -4115,7 +4121,7 @@ impl ListResourceSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4206,7 +4212,7 @@ impl ListResourceSetsInput {
             "ListResourceSets",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4281,7 +4287,7 @@ pub mod list_rules_input {
 #[doc(hidden)]
 pub type ListRulesInputOperationOutputAlias = crate::operation::ListRules;
 #[doc(hidden)]
-pub type ListRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListRules`](crate::operation::ListRules)>
     #[allow(clippy::let_and_return)]
@@ -4292,7 +4298,7 @@ impl ListRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4387,7 +4393,7 @@ impl ListRulesInput {
                     "ListRules",
                     "route53recoveryreadiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4437,7 +4443,7 @@ pub mod list_tags_for_resources_input {
 #[doc(hidden)]
 pub type ListTagsForResourcesInputOperationOutputAlias = crate::operation::ListTagsForResources;
 #[doc(hidden)]
-pub type ListTagsForResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResources`](crate::operation::ListTagsForResources)>
     #[allow(clippy::let_and_return)]
@@ -4448,7 +4454,7 @@ impl ListTagsForResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4538,7 +4544,7 @@ impl ListTagsForResourcesInput {
             "ListTagsForResources",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4617,7 +4623,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4628,7 +4634,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4723,7 +4729,7 @@ impl TagResourceInput {
             "TagResource",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4802,7 +4808,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4813,7 +4819,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4916,7 +4922,7 @@ impl UntagResourceInput {
             "UntagResource",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4987,7 +4993,7 @@ pub mod update_cell_input {
 #[doc(hidden)]
 pub type UpdateCellInputOperationOutputAlias = crate::operation::UpdateCell;
 #[doc(hidden)]
-pub type UpdateCellInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCellInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCellInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCell`](crate::operation::UpdateCell)>
     #[allow(clippy::let_and_return)]
@@ -4998,7 +5004,7 @@ impl UpdateCellInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCell,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5093,7 +5099,7 @@ impl UpdateCellInput {
             "UpdateCell",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5169,7 +5175,7 @@ pub mod update_readiness_check_input {
 #[doc(hidden)]
 pub type UpdateReadinessCheckInputOperationOutputAlias = crate::operation::UpdateReadinessCheck;
 #[doc(hidden)]
-pub type UpdateReadinessCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateReadinessCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReadinessCheckInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReadinessCheck`](crate::operation::UpdateReadinessCheck)>
     #[allow(clippy::let_and_return)]
@@ -5180,7 +5186,7 @@ impl UpdateReadinessCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReadinessCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5282,7 +5288,7 @@ impl UpdateReadinessCheckInput {
             "UpdateReadinessCheck",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5364,7 +5370,7 @@ pub mod update_recovery_group_input {
 #[doc(hidden)]
 pub type UpdateRecoveryGroupInputOperationOutputAlias = crate::operation::UpdateRecoveryGroup;
 #[doc(hidden)]
-pub type UpdateRecoveryGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecoveryGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecoveryGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecoveryGroup`](crate::operation::UpdateRecoveryGroup)>
     #[allow(clippy::let_and_return)]
@@ -5375,7 +5381,7 @@ impl UpdateRecoveryGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecoveryGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5475,7 +5481,7 @@ impl UpdateRecoveryGroupInput {
             "UpdateRecoveryGroup",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5572,7 +5578,7 @@ pub mod update_resource_set_input {
 #[doc(hidden)]
 pub type UpdateResourceSetInputOperationOutputAlias = crate::operation::UpdateResourceSet;
 #[doc(hidden)]
-pub type UpdateResourceSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceSet`](crate::operation::UpdateResourceSet)>
     #[allow(clippy::let_and_return)]
@@ -5583,7 +5589,7 @@ impl UpdateResourceSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5683,7 +5689,7 @@ impl UpdateResourceSetInput {
             "UpdateResourceSet",
             "route53recoveryreadiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

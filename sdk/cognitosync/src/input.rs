@@ -42,7 +42,7 @@ pub mod bulk_publish_input {
 #[doc(hidden)]
 pub type BulkPublishInputOperationOutputAlias = crate::operation::BulkPublish;
 #[doc(hidden)]
-pub type BulkPublishInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BulkPublishInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BulkPublishInput {
     /// Consumes the builder and constructs an Operation<[`BulkPublish`](crate::operation::BulkPublish)>
     #[allow(clippy::let_and_return)]
@@ -53,7 +53,7 @@ impl BulkPublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BulkPublish,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -147,7 +147,7 @@ impl BulkPublishInput {
             "BulkPublish",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -236,7 +236,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -247,7 +247,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -373,7 +373,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -462,7 +462,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -473,7 +473,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -599,7 +599,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -657,7 +657,7 @@ pub mod describe_identity_pool_usage_input {
 pub type DescribeIdentityPoolUsageInputOperationOutputAlias =
     crate::operation::DescribeIdentityPoolUsage;
 #[doc(hidden)]
-pub type DescribeIdentityPoolUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPoolUsage`](crate::operation::DescribeIdentityPoolUsage)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +668,7 @@ impl DescribeIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityPoolUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -762,7 +762,7 @@ impl DescribeIdentityPoolUsageInput {
             "DescribeIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -835,7 +835,7 @@ pub mod describe_identity_usage_input {
 #[doc(hidden)]
 pub type DescribeIdentityUsageInputOperationOutputAlias = crate::operation::DescribeIdentityUsage;
 #[doc(hidden)]
-pub type DescribeIdentityUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIdentityUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityUsage`](crate::operation::DescribeIdentityUsage)>
     #[allow(clippy::let_and_return)]
@@ -846,7 +846,7 @@ impl DescribeIdentityUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -956,7 +956,7 @@ impl DescribeIdentityUsageInput {
             "DescribeIdentityUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1013,7 +1013,7 @@ pub mod get_bulk_publish_details_input {
 #[doc(hidden)]
 pub type GetBulkPublishDetailsInputOperationOutputAlias = crate::operation::GetBulkPublishDetails;
 #[doc(hidden)]
-pub type GetBulkPublishDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBulkPublishDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBulkPublishDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetBulkPublishDetails`](crate::operation::GetBulkPublishDetails)>
     #[allow(clippy::let_and_return)]
@@ -1024,7 +1024,7 @@ impl GetBulkPublishDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBulkPublishDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1118,7 +1118,7 @@ impl GetBulkPublishDetailsInput {
             "GetBulkPublishDetails",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1171,7 +1171,7 @@ pub mod get_cognito_events_input {
 #[doc(hidden)]
 pub type GetCognitoEventsInputOperationOutputAlias = crate::operation::GetCognitoEvents;
 #[doc(hidden)]
-pub type GetCognitoEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetCognitoEvents`](crate::operation::GetCognitoEvents)>
     #[allow(clippy::let_and_return)]
@@ -1182,7 +1182,7 @@ impl GetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCognitoEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1276,7 +1276,7 @@ impl GetCognitoEventsInput {
             "GetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1332,7 +1332,8 @@ pub mod get_identity_pool_configuration_input {
 pub type GetIdentityPoolConfigurationInputOperationOutputAlias =
     crate::operation::GetIdentityPoolConfiguration;
 #[doc(hidden)]
-pub type GetIdentityPoolConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityPoolConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolConfiguration`](crate::operation::GetIdentityPoolConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1343,7 +1344,7 @@ impl GetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPoolConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1437,7 +1438,7 @@ impl GetIdentityPoolConfigurationInput {
             "GetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1538,7 +1539,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -1549,7 +1550,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1676,7 +1677,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1742,7 +1743,7 @@ pub mod list_identity_pool_usage_input {
 #[doc(hidden)]
 pub type ListIdentityPoolUsageInputOperationOutputAlias = crate::operation::ListIdentityPoolUsage;
 #[doc(hidden)]
-pub type ListIdentityPoolUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPoolUsage`](crate::operation::ListIdentityPoolUsage)>
     #[allow(clippy::let_and_return)]
@@ -1753,7 +1754,7 @@ impl ListIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPoolUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1844,7 +1845,7 @@ impl ListIdentityPoolUsageInput {
             "ListIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1990,7 +1991,7 @@ pub mod list_records_input {
 #[doc(hidden)]
 pub type ListRecordsInputOperationOutputAlias = crate::operation::ListRecords;
 #[doc(hidden)]
-pub type ListRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecords`](crate::operation::ListRecords)>
     #[allow(clippy::let_and_return)]
@@ -2001,7 +2002,7 @@ impl ListRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2149,7 +2150,7 @@ impl ListRecordsInput {
             "ListRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2240,7 +2241,7 @@ pub mod register_device_input {
 #[doc(hidden)]
 pub type RegisterDeviceInputOperationOutputAlias = crate::operation::RegisterDevice;
 #[doc(hidden)]
-pub type RegisterDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDevice`](crate::operation::RegisterDevice)>
     #[allow(clippy::let_and_return)]
@@ -2251,7 +2252,7 @@ impl RegisterDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2367,7 +2368,7 @@ impl RegisterDeviceInput {
             "RegisterDevice",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2457,7 +2458,7 @@ pub mod set_cognito_events_input {
 #[doc(hidden)]
 pub type SetCognitoEventsInputOperationOutputAlias = crate::operation::SetCognitoEvents;
 #[doc(hidden)]
-pub type SetCognitoEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`SetCognitoEvents`](crate::operation::SetCognitoEvents)>
     #[allow(clippy::let_and_return)]
@@ -2468,7 +2469,7 @@ impl SetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetCognitoEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2568,7 +2569,7 @@ impl SetCognitoEventsInput {
             "SetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2659,7 +2660,8 @@ pub mod set_identity_pool_configuration_input {
 pub type SetIdentityPoolConfigurationInputOperationOutputAlias =
     crate::operation::SetIdentityPoolConfiguration;
 #[doc(hidden)]
-pub type SetIdentityPoolConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIdentityPoolConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolConfiguration`](crate::operation::SetIdentityPoolConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2670,7 +2672,7 @@ impl SetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityPoolConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2771,7 +2773,7 @@ impl SetIdentityPoolConfigurationInput {
             "SetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2870,7 +2872,7 @@ pub mod subscribe_to_dataset_input {
 #[doc(hidden)]
 pub type SubscribeToDatasetInputOperationOutputAlias = crate::operation::SubscribeToDataset;
 #[doc(hidden)]
-pub type SubscribeToDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubscribeToDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeToDatasetInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToDataset`](crate::operation::SubscribeToDataset)>
     #[allow(clippy::let_and_return)]
@@ -2881,7 +2883,7 @@ impl SubscribeToDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubscribeToDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3015,7 +3017,7 @@ impl SubscribeToDatasetInput {
             "SubscribeToDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3106,7 +3108,7 @@ pub mod unsubscribe_from_dataset_input {
 #[doc(hidden)]
 pub type UnsubscribeFromDatasetInputOperationOutputAlias = crate::operation::UnsubscribeFromDataset;
 #[doc(hidden)]
-pub type UnsubscribeFromDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnsubscribeFromDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeFromDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromDataset`](crate::operation::UnsubscribeFromDataset)>
     #[allow(clippy::let_and_return)]
@@ -3117,7 +3119,7 @@ impl UnsubscribeFromDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnsubscribeFromDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3251,7 +3253,7 @@ impl UnsubscribeFromDatasetInput {
             "UnsubscribeFromDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3411,7 +3413,7 @@ pub mod update_records_input {
 #[doc(hidden)]
 pub type UpdateRecordsInputOperationOutputAlias = crate::operation::UpdateRecords;
 #[doc(hidden)]
-pub type UpdateRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecordsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecords`](crate::operation::UpdateRecords)>
     #[allow(clippy::let_and_return)]
@@ -3422,7 +3424,7 @@ impl UpdateRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3577,7 +3579,7 @@ impl UpdateRecordsInput {
             "UpdateRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

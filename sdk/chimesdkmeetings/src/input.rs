@@ -60,7 +60,7 @@ pub mod batch_create_attendee_input {
 #[doc(hidden)]
 pub type BatchCreateAttendeeInputOperationOutputAlias = crate::operation::BatchCreateAttendee;
 #[doc(hidden)]
-pub type BatchCreateAttendeeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateAttendee`](crate::operation::BatchCreateAttendee)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +71,7 @@ impl BatchCreateAttendeeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreateAttendee,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -180,7 +180,7 @@ impl BatchCreateAttendeeInput {
             "BatchCreateAttendee",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -253,7 +253,7 @@ pub mod create_attendee_input {
 #[doc(hidden)]
 pub type CreateAttendeeInputOperationOutputAlias = crate::operation::CreateAttendee;
 #[doc(hidden)]
-pub type CreateAttendeeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttendee`](crate::operation::CreateAttendee)>
     #[allow(clippy::let_and_return)]
@@ -264,7 +264,7 @@ impl CreateAttendeeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAttendee,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -364,7 +364,7 @@ impl CreateAttendeeInput {
             "CreateAttendee",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -585,7 +585,7 @@ pub mod create_meeting_input {
 #[doc(hidden)]
 pub type CreateMeetingInputOperationOutputAlias = crate::operation::CreateMeeting;
 #[doc(hidden)]
-pub type CreateMeetingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeeting`](crate::operation::CreateMeeting)>
     #[allow(clippy::let_and_return)]
@@ -596,7 +596,7 @@ impl CreateMeetingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMeeting,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -678,7 +678,7 @@ impl CreateMeetingInput {
             "CreateMeeting",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -845,7 +845,7 @@ pub mod create_meeting_with_attendees_input {
 pub type CreateMeetingWithAttendeesInputOperationOutputAlias =
     crate::operation::CreateMeetingWithAttendees;
 #[doc(hidden)]
-pub type CreateMeetingWithAttendeesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMeetingWithAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingWithAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeetingWithAttendees`](crate::operation::CreateMeetingWithAttendees)>
     #[allow(clippy::let_and_return)]
@@ -856,7 +856,7 @@ impl CreateMeetingWithAttendeesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMeetingWithAttendees,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -949,7 +949,7 @@ impl CreateMeetingWithAttendeesInput {
             "CreateMeetingWithAttendees",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1019,7 +1019,7 @@ pub mod delete_attendee_input {
 #[doc(hidden)]
 pub type DeleteAttendeeInputOperationOutputAlias = crate::operation::DeleteAttendee;
 #[doc(hidden)]
-pub type DeleteAttendeeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttendee`](crate::operation::DeleteAttendee)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +1030,7 @@ impl DeleteAttendeeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAttendee,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1140,7 +1140,7 @@ impl DeleteAttendeeInput {
             "DeleteAttendee",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1190,7 +1190,7 @@ pub mod delete_meeting_input {
 #[doc(hidden)]
 pub type DeleteMeetingInputOperationOutputAlias = crate::operation::DeleteMeeting;
 #[doc(hidden)]
-pub type DeleteMeetingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMeetingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMeeting`](crate::operation::DeleteMeeting)>
     #[allow(clippy::let_and_return)]
@@ -1201,7 +1201,7 @@ impl DeleteMeetingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMeeting,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1291,7 +1291,7 @@ impl DeleteMeetingInput {
             "DeleteMeeting",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1353,7 +1353,7 @@ pub mod get_attendee_input {
 #[doc(hidden)]
 pub type GetAttendeeInputOperationOutputAlias = crate::operation::GetAttendee;
 #[doc(hidden)]
-pub type GetAttendeeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`GetAttendee`](crate::operation::GetAttendee)>
     #[allow(clippy::let_and_return)]
@@ -1364,7 +1364,7 @@ impl GetAttendeeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAttendee,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1474,7 +1474,7 @@ impl GetAttendeeInput {
             "GetAttendee",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1524,7 +1524,7 @@ pub mod get_meeting_input {
 #[doc(hidden)]
 pub type GetMeetingInputOperationOutputAlias = crate::operation::GetMeeting;
 #[doc(hidden)]
-pub type GetMeetingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMeetingInput {
     /// Consumes the builder and constructs an Operation<[`GetMeeting`](crate::operation::GetMeeting)>
     #[allow(clippy::let_and_return)]
@@ -1535,7 +1535,7 @@ impl GetMeetingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMeeting,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1625,7 +1625,7 @@ impl GetMeetingInput {
             "GetMeeting",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1699,7 +1699,7 @@ pub mod list_attendees_input {
 #[doc(hidden)]
 pub type ListAttendeesInputOperationOutputAlias = crate::operation::ListAttendees;
 #[doc(hidden)]
-pub type ListAttendeesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttendees`](crate::operation::ListAttendees)>
     #[allow(clippy::let_and_return)]
@@ -1710,7 +1710,7 @@ impl ListAttendeesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAttendees,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1821,7 +1821,7 @@ impl ListAttendeesInput {
             "ListAttendees",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1893,7 +1893,7 @@ pub mod start_meeting_transcription_input {
 pub type StartMeetingTranscriptionInputOperationOutputAlias =
     crate::operation::StartMeetingTranscription;
 #[doc(hidden)]
-pub type StartMeetingTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMeetingTranscription`](crate::operation::StartMeetingTranscription)>
     #[allow(clippy::let_and_return)]
@@ -1904,7 +1904,7 @@ impl StartMeetingTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMeetingTranscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2015,7 +2015,7 @@ impl StartMeetingTranscriptionInput {
             "StartMeetingTranscription",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2074,7 +2074,7 @@ pub mod stop_meeting_transcription_input {
 pub type StopMeetingTranscriptionInputOperationOutputAlias =
     crate::operation::StopMeetingTranscription;
 #[doc(hidden)]
-pub type StopMeetingTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StopMeetingTranscription`](crate::operation::StopMeetingTranscription)>
     #[allow(clippy::let_and_return)]
@@ -2085,7 +2085,7 @@ impl StopMeetingTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMeetingTranscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2188,7 +2188,7 @@ impl StopMeetingTranscriptionInput {
             "StopMeetingTranscription",
             "chimesdkmeetings",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -100,7 +100,7 @@ pub mod create_endpoint_input {
 #[doc(hidden)]
 pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
 #[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -111,7 +111,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -191,7 +191,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -261,7 +261,7 @@ pub mod delete_endpoint_input {
 #[doc(hidden)]
 pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
 #[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -272,7 +272,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -360,7 +360,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -422,7 +422,7 @@ pub mod list_endpoints_input {
 #[doc(hidden)]
 pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
 #[doc(hidden)]
-pub type ListEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -433,7 +433,7 @@ impl ListEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -524,7 +524,7 @@ impl ListEndpointsInput {
             "ListEndpoints",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

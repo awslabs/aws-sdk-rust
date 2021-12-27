@@ -56,7 +56,7 @@ pub mod add_tags_to_resource_input {
 #[doc(hidden)]
 pub type AddTagsToResourceInputOperationOutputAlias = crate::operation::AddTagsToResource;
 #[doc(hidden)]
-pub type AddTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(clippy::let_and_return)]
@@ -67,7 +67,7 @@ impl AddTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -152,7 +152,7 @@ impl AddTagsToResourceInput {
             "AddTagsToResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -208,7 +208,7 @@ pub mod create_hapg_input {
 #[doc(hidden)]
 pub type CreateHapgInputOperationOutputAlias = crate::operation::CreateHapg;
 #[doc(hidden)]
-pub type CreateHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHapgInput {
     /// Consumes the builder and constructs an Operation<[`CreateHapg`](crate::operation::CreateHapg)>
     #[allow(clippy::let_and_return)]
@@ -219,7 +219,7 @@ impl CreateHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl CreateHapgInput {
             "CreateHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -480,7 +480,7 @@ pub mod create_hsm_input {
 #[doc(hidden)]
 pub type CreateHsmInputOperationOutputAlias = crate::operation::CreateHsm;
 #[doc(hidden)]
-pub type CreateHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsm`](crate::operation::CreateHsm)>
     #[allow(clippy::let_and_return)]
@@ -491,7 +491,7 @@ impl CreateHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -573,7 +573,7 @@ impl CreateHsmInput {
                     "CreateHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -645,7 +645,7 @@ pub mod create_luna_client_input {
 #[doc(hidden)]
 pub type CreateLunaClientInputOperationOutputAlias = crate::operation::CreateLunaClient;
 #[doc(hidden)]
-pub type CreateLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`CreateLunaClient`](crate::operation::CreateLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -656,7 +656,7 @@ impl CreateLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -741,7 +741,7 @@ impl CreateLunaClientInput {
             "CreateLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -799,7 +799,7 @@ pub mod delete_hapg_input {
 #[doc(hidden)]
 pub type DeleteHapgInputOperationOutputAlias = crate::operation::DeleteHapg;
 #[doc(hidden)]
-pub type DeleteHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHapgInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHapg`](crate::operation::DeleteHapg)>
     #[allow(clippy::let_and_return)]
@@ -810,7 +810,7 @@ impl DeleteHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -894,7 +894,7 @@ impl DeleteHapgInput {
             "DeleteHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -950,7 +950,7 @@ pub mod delete_hsm_input {
 #[doc(hidden)]
 pub type DeleteHsmInputOperationOutputAlias = crate::operation::DeleteHsm;
 #[doc(hidden)]
-pub type DeleteHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsm`](crate::operation::DeleteHsm)>
     #[allow(clippy::let_and_return)]
@@ -961,7 +961,7 @@ impl DeleteHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1043,7 +1043,7 @@ impl DeleteHsmInput {
                     "DeleteHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1101,7 +1101,7 @@ pub mod delete_luna_client_input {
 #[doc(hidden)]
 pub type DeleteLunaClientInputOperationOutputAlias = crate::operation::DeleteLunaClient;
 #[doc(hidden)]
-pub type DeleteLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLunaClient`](crate::operation::DeleteLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -1112,7 +1112,7 @@ impl DeleteLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1197,7 +1197,7 @@ impl DeleteLunaClientInput {
             "DeleteLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1255,7 +1255,7 @@ pub mod describe_hapg_input {
 #[doc(hidden)]
 pub type DescribeHapgInputOperationOutputAlias = crate::operation::DescribeHapg;
 #[doc(hidden)]
-pub type DescribeHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHapgInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHapg`](crate::operation::DescribeHapg)>
     #[allow(clippy::let_and_return)]
@@ -1266,7 +1266,7 @@ impl DescribeHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1350,7 +1350,7 @@ impl DescribeHapgInput {
             "DescribeHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1427,7 +1427,7 @@ pub mod describe_hsm_input {
 #[doc(hidden)]
 pub type DescribeHsmInputOperationOutputAlias = crate::operation::DescribeHsm;
 #[doc(hidden)]
-pub type DescribeHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHsmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHsm`](crate::operation::DescribeHsm)>
     #[allow(clippy::let_and_return)]
@@ -1438,7 +1438,7 @@ impl DescribeHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1522,7 +1522,7 @@ impl DescribeHsmInput {
             "DescribeHsm",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1595,7 +1595,7 @@ pub mod describe_luna_client_input {
 #[doc(hidden)]
 pub type DescribeLunaClientInputOperationOutputAlias = crate::operation::DescribeLunaClient;
 #[doc(hidden)]
-pub type DescribeLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLunaClient`](crate::operation::DescribeLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -1606,7 +1606,7 @@ impl DescribeLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1691,7 +1691,7 @@ impl DescribeLunaClientInput {
             "DescribeLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1785,7 +1785,7 @@ pub mod get_config_input {
 #[doc(hidden)]
 pub type GetConfigInputOperationOutputAlias = crate::operation::GetConfig;
 #[doc(hidden)]
-pub type GetConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetConfig`](crate::operation::GetConfig)>
     #[allow(clippy::let_and_return)]
@@ -1796,7 +1796,7 @@ impl GetConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1878,7 +1878,7 @@ impl GetConfigInput {
                     "GetConfig",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1922,7 +1922,7 @@ pub mod list_available_zones_input {
 #[doc(hidden)]
 pub type ListAvailableZonesInputOperationOutputAlias = crate::operation::ListAvailableZones;
 #[doc(hidden)]
-pub type ListAvailableZonesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAvailableZonesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableZonesInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableZones`](crate::operation::ListAvailableZones)>
     #[allow(clippy::let_and_return)]
@@ -1933,7 +1933,7 @@ impl ListAvailableZonesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableZones,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2018,7 +2018,7 @@ impl ListAvailableZonesInput {
             "ListAvailableZones",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2068,7 +2068,7 @@ pub mod list_hapgs_input {
 #[doc(hidden)]
 pub type ListHapgsInputOperationOutputAlias = crate::operation::ListHapgs;
 #[doc(hidden)]
-pub type ListHapgsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHapgsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHapgsInput {
     /// Consumes the builder and constructs an Operation<[`ListHapgs`](crate::operation::ListHapgs)>
     #[allow(clippy::let_and_return)]
@@ -2079,7 +2079,7 @@ impl ListHapgsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHapgs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2161,7 +2161,7 @@ impl ListHapgsInput {
                     "ListHapgs",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2219,7 +2219,7 @@ pub mod list_hsms_input {
 #[doc(hidden)]
 pub type ListHsmsInputOperationOutputAlias = crate::operation::ListHsms;
 #[doc(hidden)]
-pub type ListHsmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHsmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHsmsInput {
     /// Consumes the builder and constructs an Operation<[`ListHsms`](crate::operation::ListHsms)>
     #[allow(clippy::let_and_return)]
@@ -2230,7 +2230,7 @@ impl ListHsmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHsms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2311,7 +2311,7 @@ impl ListHsmsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListHsms", "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2371,7 +2371,7 @@ pub mod list_luna_clients_input {
 #[doc(hidden)]
 pub type ListLunaClientsInputOperationOutputAlias = crate::operation::ListLunaClients;
 #[doc(hidden)]
-pub type ListLunaClientsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLunaClientsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLunaClientsInput {
     /// Consumes the builder and constructs an Operation<[`ListLunaClients`](crate::operation::ListLunaClients)>
     #[allow(clippy::let_and_return)]
@@ -2382,7 +2382,7 @@ impl ListLunaClientsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLunaClients,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2467,7 +2467,7 @@ impl ListLunaClientsInput {
             "ListLunaClients",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2525,7 +2525,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2536,7 +2536,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2623,7 +2623,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2716,7 +2716,7 @@ pub mod modify_hapg_input {
 #[doc(hidden)]
 pub type ModifyHapgInputOperationOutputAlias = crate::operation::ModifyHapg;
 #[doc(hidden)]
-pub type ModifyHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyHapgInput {
     /// Consumes the builder and constructs an Operation<[`ModifyHapg`](crate::operation::ModifyHapg)>
     #[allow(clippy::let_and_return)]
@@ -2727,7 +2727,7 @@ impl ModifyHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2811,7 +2811,7 @@ impl ModifyHapgInput {
             "ModifyHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2937,7 +2937,7 @@ pub mod modify_hsm_input {
 #[doc(hidden)]
 pub type ModifyHsmInputOperationOutputAlias = crate::operation::ModifyHsm;
 #[doc(hidden)]
-pub type ModifyHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyHsmInput {
     /// Consumes the builder and constructs an Operation<[`ModifyHsm`](crate::operation::ModifyHsm)>
     #[allow(clippy::let_and_return)]
@@ -2948,7 +2948,7 @@ impl ModifyHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3030,7 +3030,7 @@ impl ModifyHsmInput {
                     "ModifyHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3100,7 +3100,7 @@ pub mod modify_luna_client_input {
 #[doc(hidden)]
 pub type ModifyLunaClientInputOperationOutputAlias = crate::operation::ModifyLunaClient;
 #[doc(hidden)]
-pub type ModifyLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLunaClient`](crate::operation::ModifyLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -3111,7 +3111,7 @@ impl ModifyLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3196,7 +3196,7 @@ impl ModifyLunaClientInput {
             "ModifyLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3279,7 +3279,7 @@ pub mod remove_tags_from_resource_input {
 #[doc(hidden)]
 pub type RemoveTagsFromResourceInputOperationOutputAlias = crate::operation::RemoveTagsFromResource;
 #[doc(hidden)]
-pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(clippy::let_and_return)]
@@ -3290,7 +3290,7 @@ impl RemoveTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3377,7 +3377,7 @@ impl RemoveTagsFromResourceInput {
             "RemoveTagsFromResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

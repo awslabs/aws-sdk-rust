@@ -82,7 +82,8 @@ pub mod associate_device_with_placement_input {
 pub type AssociateDeviceWithPlacementInputOperationOutputAlias =
     crate::operation::AssociateDeviceWithPlacement;
 #[doc(hidden)]
-pub type AssociateDeviceWithPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDeviceWithPlacementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDeviceWithPlacementInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDeviceWithPlacement`](crate::operation::AssociateDeviceWithPlacement)>
     #[allow(clippy::let_and_return)]
@@ -93,7 +94,7 @@ impl AssociateDeviceWithPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDeviceWithPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -226,7 +227,7 @@ impl AssociateDeviceWithPlacementInput {
             "AssociateDeviceWithPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -330,7 +331,7 @@ pub mod create_placement_input {
 #[doc(hidden)]
 pub type CreatePlacementInputOperationOutputAlias = crate::operation::CreatePlacement;
 #[doc(hidden)]
-pub type CreatePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlacement`](crate::operation::CreatePlacement)>
     #[allow(clippy::let_and_return)]
@@ -341,7 +342,7 @@ impl CreatePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -441,7 +442,7 @@ impl CreatePlacementInput {
             "CreatePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -565,7 +566,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -576,7 +577,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -655,7 +656,7 @@ impl CreateProjectInput {
             "CreateProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -728,7 +729,7 @@ pub mod delete_placement_input {
 #[doc(hidden)]
 pub type DeletePlacementInputOperationOutputAlias = crate::operation::DeletePlacement;
 #[doc(hidden)]
-pub type DeletePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlacement`](crate::operation::DeletePlacement)>
     #[allow(clippy::let_and_return)]
@@ -739,7 +740,7 @@ impl DeletePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -849,7 +850,7 @@ impl DeletePlacementInput {
             "DeletePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -899,7 +900,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -910,7 +911,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1004,7 +1005,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1069,7 +1070,7 @@ pub mod describe_placement_input {
 #[doc(hidden)]
 pub type DescribePlacementInputOperationOutputAlias = crate::operation::DescribePlacement;
 #[doc(hidden)]
-pub type DescribePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlacement`](crate::operation::DescribePlacement)>
     #[allow(clippy::let_and_return)]
@@ -1080,7 +1081,7 @@ impl DescribePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1190,7 +1191,7 @@ impl DescribePlacementInput {
             "DescribePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1240,7 +1241,7 @@ pub mod describe_project_input {
 #[doc(hidden)]
 pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
 #[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
@@ -1251,7 +1252,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1345,7 +1346,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1426,7 +1427,8 @@ pub mod disassociate_device_from_placement_input {
 pub type DisassociateDeviceFromPlacementInputOperationOutputAlias =
     crate::operation::DisassociateDeviceFromPlacement;
 #[doc(hidden)]
-pub type DisassociateDeviceFromPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDeviceFromPlacementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDeviceFromPlacementInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDeviceFromPlacement`](crate::operation::DisassociateDeviceFromPlacement)>
     #[allow(clippy::let_and_return)]
@@ -1437,7 +1439,7 @@ impl DisassociateDeviceFromPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDeviceFromPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1563,7 +1565,7 @@ impl DisassociateDeviceFromPlacementInput {
             "DisassociateDeviceFromPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1628,7 +1630,7 @@ pub mod get_devices_in_placement_input {
 #[doc(hidden)]
 pub type GetDevicesInPlacementInputOperationOutputAlias = crate::operation::GetDevicesInPlacement;
 #[doc(hidden)]
-pub type GetDevicesInPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevicesInPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicesInPlacementInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicesInPlacement`](crate::operation::GetDevicesInPlacement)>
     #[allow(clippy::let_and_return)]
@@ -1639,7 +1641,7 @@ impl GetDevicesInPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevicesInPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1749,7 +1751,7 @@ impl GetDevicesInPlacementInput {
             "GetDevicesInPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1825,7 +1827,7 @@ pub mod list_placements_input {
 #[doc(hidden)]
 pub type ListPlacementsInputOperationOutputAlias = crate::operation::ListPlacements;
 #[doc(hidden)]
-pub type ListPlacementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlacementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlacementsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlacements`](crate::operation::ListPlacements)>
     #[allow(clippy::let_and_return)]
@@ -1836,7 +1838,7 @@ impl ListPlacementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlacements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1947,7 +1949,7 @@ impl ListPlacementsInput {
             "ListPlacements",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2011,7 +2013,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -2022,7 +2024,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2113,7 +2115,7 @@ impl ListProjectsInput {
             "ListProjects",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2163,7 +2165,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2174,7 +2176,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2264,7 +2266,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2345,7 +2347,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2356,7 +2358,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2451,7 +2453,7 @@ impl TagResourceInput {
             "TagResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2530,7 +2532,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2541,7 +2543,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2644,7 +2646,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2740,7 +2742,7 @@ pub mod update_placement_input {
 #[doc(hidden)]
 pub type UpdatePlacementInputOperationOutputAlias = crate::operation::UpdatePlacement;
 #[doc(hidden)]
-pub type UpdatePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlacement`](crate::operation::UpdatePlacement)>
     #[allow(clippy::let_and_return)]
@@ -2751,7 +2753,7 @@ impl UpdatePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2867,7 +2869,7 @@ impl UpdatePlacementInput {
             "UpdatePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2958,7 +2960,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -2969,7 +2971,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3068,7 +3070,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

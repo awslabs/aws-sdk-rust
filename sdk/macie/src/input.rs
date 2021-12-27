@@ -40,7 +40,7 @@ pub mod associate_member_account_input {
 #[doc(hidden)]
 pub type AssociateMemberAccountInputOperationOutputAlias = crate::operation::AssociateMemberAccount;
 #[doc(hidden)]
-pub type AssociateMemberAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateMemberAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMemberAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMemberAccount`](crate::operation::AssociateMemberAccount)>
     #[allow(clippy::let_and_return)]
@@ -51,7 +51,7 @@ impl AssociateMemberAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMemberAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +138,7 @@ impl AssociateMemberAccountInput {
             "AssociateMemberAccount",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -228,7 +228,7 @@ pub mod associate_s3_resources_input {
 #[doc(hidden)]
 pub type AssociateS3ResourcesInputOperationOutputAlias = crate::operation::AssociateS3Resources;
 #[doc(hidden)]
-pub type AssociateS3ResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateS3Resources`](crate::operation::AssociateS3Resources)>
     #[allow(clippy::let_and_return)]
@@ -239,7 +239,7 @@ impl AssociateS3ResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateS3Resources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -326,7 +326,7 @@ impl AssociateS3ResourcesInput {
             "AssociateS3Resources",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -390,7 +390,7 @@ pub mod disassociate_member_account_input {
 pub type DisassociateMemberAccountInputOperationOutputAlias =
     crate::operation::DisassociateMemberAccount;
 #[doc(hidden)]
-pub type DisassociateMemberAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMemberAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMemberAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMemberAccount`](crate::operation::DisassociateMemberAccount)>
     #[allow(clippy::let_and_return)]
@@ -401,7 +401,7 @@ impl DisassociateMemberAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMemberAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -488,7 +488,7 @@ impl DisassociateMemberAccountInput {
             "DisassociateMemberAccount",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -579,7 +579,7 @@ pub mod disassociate_s3_resources_input {
 pub type DisassociateS3ResourcesInputOperationOutputAlias =
     crate::operation::DisassociateS3Resources;
 #[doc(hidden)]
-pub type DisassociateS3ResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateS3Resources`](crate::operation::DisassociateS3Resources)>
     #[allow(clippy::let_and_return)]
@@ -590,7 +590,7 @@ impl DisassociateS3ResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateS3Resources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -677,7 +677,7 @@ impl DisassociateS3ResourcesInput {
             "DisassociateS3Resources",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -755,7 +755,7 @@ pub mod list_member_accounts_input {
 #[doc(hidden)]
 pub type ListMemberAccountsInputOperationOutputAlias = crate::operation::ListMemberAccounts;
 #[doc(hidden)]
-pub type ListMemberAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMemberAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMemberAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListMemberAccounts`](crate::operation::ListMemberAccounts)>
     #[allow(clippy::let_and_return)]
@@ -766,7 +766,7 @@ impl ListMemberAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMemberAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -851,7 +851,7 @@ impl ListMemberAccountsInput {
             "ListMemberAccounts",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -944,7 +944,7 @@ pub mod list_s3_resources_input {
 #[doc(hidden)]
 pub type ListS3ResourcesInputOperationOutputAlias = crate::operation::ListS3Resources;
 #[doc(hidden)]
-pub type ListS3ResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListS3Resources`](crate::operation::ListS3Resources)>
     #[allow(clippy::let_and_return)]
@@ -955,7 +955,7 @@ impl ListS3ResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListS3Resources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1040,7 +1040,7 @@ impl ListS3ResourcesInput {
             "ListS3Resources",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1128,7 +1128,7 @@ pub mod update_s3_resources_input {
 #[doc(hidden)]
 pub type UpdateS3ResourcesInputOperationOutputAlias = crate::operation::UpdateS3Resources;
 #[doc(hidden)]
-pub type UpdateS3ResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateS3Resources`](crate::operation::UpdateS3Resources)>
     #[allow(clippy::let_and_return)]
@@ -1139,7 +1139,7 @@ impl UpdateS3ResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateS3Resources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1224,7 +1224,7 @@ impl UpdateS3ResourcesInput {
             "UpdateS3Resources",
             "macie",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

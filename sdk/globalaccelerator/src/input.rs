@@ -66,7 +66,7 @@ pub mod add_custom_routing_endpoints_input {
 pub type AddCustomRoutingEndpointsInputOperationOutputAlias =
     crate::operation::AddCustomRoutingEndpoints;
 #[doc(hidden)]
-pub type AddCustomRoutingEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddCustomRoutingEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCustomRoutingEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`AddCustomRoutingEndpoints`](crate::operation::AddCustomRoutingEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +77,7 @@ impl AddCustomRoutingEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddCustomRoutingEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -164,7 +164,7 @@ impl AddCustomRoutingEndpointsInput {
             "AddCustomRoutingEndpoints",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -222,7 +222,7 @@ pub mod advertise_byoip_cidr_input {
 #[doc(hidden)]
 pub type AdvertiseByoipCidrInputOperationOutputAlias = crate::operation::AdvertiseByoipCidr;
 #[doc(hidden)]
-pub type AdvertiseByoipCidrInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdvertiseByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdvertiseByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`AdvertiseByoipCidr`](crate::operation::AdvertiseByoipCidr)>
     #[allow(clippy::let_and_return)]
@@ -233,7 +233,7 @@ impl AdvertiseByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdvertiseByoipCidr,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -318,7 +318,7 @@ impl AdvertiseByoipCidrInput {
             "AdvertiseByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -471,7 +471,7 @@ pub mod allow_custom_routing_traffic_input {
 pub type AllowCustomRoutingTrafficInputOperationOutputAlias =
     crate::operation::AllowCustomRoutingTraffic;
 #[doc(hidden)]
-pub type AllowCustomRoutingTrafficInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllowCustomRoutingTrafficInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AllowCustomRoutingTrafficInput {
     /// Consumes the builder and constructs an Operation<[`AllowCustomRoutingTraffic`](crate::operation::AllowCustomRoutingTraffic)>
     #[allow(clippy::let_and_return)]
@@ -482,7 +482,7 @@ impl AllowCustomRoutingTrafficInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllowCustomRoutingTraffic,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -569,7 +569,7 @@ impl AllowCustomRoutingTrafficInput {
             "AllowCustomRoutingTraffic",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -739,7 +739,7 @@ pub mod create_accelerator_input {
 #[doc(hidden)]
 pub type CreateAcceleratorInputOperationOutputAlias = crate::operation::CreateAccelerator;
 #[doc(hidden)]
-pub type CreateAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccelerator`](crate::operation::CreateAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -750,7 +750,7 @@ impl CreateAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -838,7 +838,7 @@ impl CreateAcceleratorInput {
             "CreateAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1009,7 +1009,8 @@ pub mod create_custom_routing_accelerator_input {
 pub type CreateCustomRoutingAcceleratorInputOperationOutputAlias =
     crate::operation::CreateCustomRoutingAccelerator;
 #[doc(hidden)]
-pub type CreateCustomRoutingAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomRoutingAcceleratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingAccelerator`](crate::operation::CreateCustomRoutingAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -1020,7 +1021,7 @@ impl CreateCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1109,7 +1110,7 @@ impl CreateCustomRoutingAcceleratorInput {
             "CreateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1231,7 +1232,8 @@ pub mod create_custom_routing_endpoint_group_input {
 pub type CreateCustomRoutingEndpointGroupInputOperationOutputAlias =
     crate::operation::CreateCustomRoutingEndpointGroup;
 #[doc(hidden)]
-pub type CreateCustomRoutingEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomRoutingEndpointGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingEndpointGroup`](crate::operation::CreateCustomRoutingEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -1242,7 +1244,7 @@ impl CreateCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1331,7 +1333,7 @@ impl CreateCustomRoutingEndpointGroupInput {
             "CreateCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1435,7 +1437,7 @@ pub mod create_custom_routing_listener_input {
 pub type CreateCustomRoutingListenerInputOperationOutputAlias =
     crate::operation::CreateCustomRoutingListener;
 #[doc(hidden)]
-pub type CreateCustomRoutingListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingListener`](crate::operation::CreateCustomRoutingListener)>
     #[allow(clippy::let_and_return)]
@@ -1446,7 +1448,7 @@ impl CreateCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1535,7 +1537,7 @@ impl CreateCustomRoutingListenerInput {
             "CreateCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1782,7 +1784,7 @@ pub mod create_endpoint_group_input {
 #[doc(hidden)]
 pub type CreateEndpointGroupInputOperationOutputAlias = crate::operation::CreateEndpointGroup;
 #[doc(hidden)]
-pub type CreateEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpointGroup`](crate::operation::CreateEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -1793,7 +1795,7 @@ impl CreateEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1881,7 +1883,7 @@ impl CreateEndpointGroupInput {
             "CreateEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2029,7 +2031,7 @@ pub mod create_listener_input {
 #[doc(hidden)]
 pub type CreateListenerInputOperationOutputAlias = crate::operation::CreateListener;
 #[doc(hidden)]
-pub type CreateListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateListener`](crate::operation::CreateListener)>
     #[allow(clippy::let_and_return)]
@@ -2040,7 +2042,7 @@ impl CreateListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2128,7 +2130,7 @@ impl CreateListenerInput {
             "CreateListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2189,7 +2191,7 @@ pub mod delete_accelerator_input {
 #[doc(hidden)]
 pub type DeleteAcceleratorInputOperationOutputAlias = crate::operation::DeleteAccelerator;
 #[doc(hidden)]
-pub type DeleteAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccelerator`](crate::operation::DeleteAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -2200,7 +2202,7 @@ impl DeleteAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2285,7 +2287,7 @@ impl DeleteAcceleratorInput {
             "DeleteAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2347,7 +2349,8 @@ pub mod delete_custom_routing_accelerator_input {
 pub type DeleteCustomRoutingAcceleratorInputOperationOutputAlias =
     crate::operation::DeleteCustomRoutingAccelerator;
 #[doc(hidden)]
-pub type DeleteCustomRoutingAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomRoutingAcceleratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingAccelerator`](crate::operation::DeleteCustomRoutingAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -2358,7 +2361,7 @@ impl DeleteCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2444,7 +2447,7 @@ impl DeleteCustomRoutingAcceleratorInput {
             "DeleteCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2506,7 +2509,8 @@ pub mod delete_custom_routing_endpoint_group_input {
 pub type DeleteCustomRoutingEndpointGroupInputOperationOutputAlias =
     crate::operation::DeleteCustomRoutingEndpointGroup;
 #[doc(hidden)]
-pub type DeleteCustomRoutingEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomRoutingEndpointGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingEndpointGroup`](crate::operation::DeleteCustomRoutingEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -2517,7 +2521,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2603,7 +2607,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
             "DeleteCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2662,7 +2666,7 @@ pub mod delete_custom_routing_listener_input {
 pub type DeleteCustomRoutingListenerInputOperationOutputAlias =
     crate::operation::DeleteCustomRoutingListener;
 #[doc(hidden)]
-pub type DeleteCustomRoutingListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingListener`](crate::operation::DeleteCustomRoutingListener)>
     #[allow(clippy::let_and_return)]
@@ -2673,7 +2677,7 @@ impl DeleteCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2759,7 +2763,7 @@ impl DeleteCustomRoutingListenerInput {
             "DeleteCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2820,7 +2824,7 @@ pub mod delete_endpoint_group_input {
 #[doc(hidden)]
 pub type DeleteEndpointGroupInputOperationOutputAlias = crate::operation::DeleteEndpointGroup;
 #[doc(hidden)]
-pub type DeleteEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpointGroup`](crate::operation::DeleteEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -2831,7 +2835,7 @@ impl DeleteEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2916,7 +2920,7 @@ impl DeleteEndpointGroupInput {
             "DeleteEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2974,7 +2978,7 @@ pub mod delete_listener_input {
 #[doc(hidden)]
 pub type DeleteListenerInputOperationOutputAlias = crate::operation::DeleteListener;
 #[doc(hidden)]
-pub type DeleteListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteListener`](crate::operation::DeleteListener)>
     #[allow(clippy::let_and_return)]
@@ -2985,7 +2989,7 @@ impl DeleteListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3070,7 +3074,7 @@ impl DeleteListenerInput {
             "DeleteListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3221,7 +3225,7 @@ pub mod deny_custom_routing_traffic_input {
 pub type DenyCustomRoutingTrafficInputOperationOutputAlias =
     crate::operation::DenyCustomRoutingTraffic;
 #[doc(hidden)]
-pub type DenyCustomRoutingTrafficInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DenyCustomRoutingTrafficInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DenyCustomRoutingTrafficInput {
     /// Consumes the builder and constructs an Operation<[`DenyCustomRoutingTraffic`](crate::operation::DenyCustomRoutingTraffic)>
     #[allow(clippy::let_and_return)]
@@ -3232,7 +3236,7 @@ impl DenyCustomRoutingTrafficInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DenyCustomRoutingTraffic,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3319,7 +3323,7 @@ impl DenyCustomRoutingTrafficInput {
             "DenyCustomRoutingTraffic",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3377,7 +3381,7 @@ pub mod deprovision_byoip_cidr_input {
 #[doc(hidden)]
 pub type DeprovisionByoipCidrInputOperationOutputAlias = crate::operation::DeprovisionByoipCidr;
 #[doc(hidden)]
-pub type DeprovisionByoipCidrInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprovisionByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprovisionByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`DeprovisionByoipCidr`](crate::operation::DeprovisionByoipCidr)>
     #[allow(clippy::let_and_return)]
@@ -3388,7 +3392,7 @@ impl DeprovisionByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprovisionByoipCidr,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3475,7 +3479,7 @@ impl DeprovisionByoipCidrInput {
             "DeprovisionByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3536,7 +3540,7 @@ pub mod describe_accelerator_input {
 #[doc(hidden)]
 pub type DescribeAcceleratorInputOperationOutputAlias = crate::operation::DescribeAccelerator;
 #[doc(hidden)]
-pub type DescribeAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccelerator`](crate::operation::DescribeAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -3547,7 +3551,7 @@ impl DescribeAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3632,7 +3636,7 @@ impl DescribeAcceleratorInput {
             "DescribeAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3694,7 +3698,8 @@ pub mod describe_accelerator_attributes_input {
 pub type DescribeAcceleratorAttributesInputOperationOutputAlias =
     crate::operation::DescribeAcceleratorAttributes;
 #[doc(hidden)]
-pub type DescribeAcceleratorAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAcceleratorAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAcceleratorAttributes`](crate::operation::DescribeAcceleratorAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3705,7 +3710,7 @@ impl DescribeAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAcceleratorAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3791,7 +3796,7 @@ impl DescribeAcceleratorAttributesInput {
             "DescribeAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3853,7 +3858,8 @@ pub mod describe_custom_routing_accelerator_input {
 pub type DescribeCustomRoutingAcceleratorInputOperationOutputAlias =
     crate::operation::DescribeCustomRoutingAccelerator;
 #[doc(hidden)]
-pub type DescribeCustomRoutingAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomRoutingAcceleratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingAccelerator`](crate::operation::DescribeCustomRoutingAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -3864,7 +3870,7 @@ impl DescribeCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3950,7 +3956,7 @@ impl DescribeCustomRoutingAcceleratorInput {
             "DescribeCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4015,7 +4021,7 @@ pub type DescribeCustomRoutingAcceleratorAttributesInputOperationOutputAlias =
     crate::operation::DescribeCustomRoutingAcceleratorAttributes;
 #[doc(hidden)]
 pub type DescribeCustomRoutingAcceleratorAttributesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingAcceleratorAttributes`](crate::operation::DescribeCustomRoutingAcceleratorAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4026,7 +4032,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAcceleratorAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4112,7 +4118,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
             "DescribeCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4175,7 +4181,8 @@ pub mod describe_custom_routing_endpoint_group_input {
 pub type DescribeCustomRoutingEndpointGroupInputOperationOutputAlias =
     crate::operation::DescribeCustomRoutingEndpointGroup;
 #[doc(hidden)]
-pub type DescribeCustomRoutingEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomRoutingEndpointGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingEndpointGroup`](crate::operation::DescribeCustomRoutingEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -4186,7 +4193,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4272,7 +4279,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
             "DescribeCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4331,7 +4338,8 @@ pub mod describe_custom_routing_listener_input {
 pub type DescribeCustomRoutingListenerInputOperationOutputAlias =
     crate::operation::DescribeCustomRoutingListener;
 #[doc(hidden)]
-pub type DescribeCustomRoutingListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomRoutingListenerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingListener`](crate::operation::DescribeCustomRoutingListener)>
     #[allow(clippy::let_and_return)]
@@ -4342,7 +4350,7 @@ impl DescribeCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4428,7 +4436,7 @@ impl DescribeCustomRoutingListenerInput {
             "DescribeCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4489,7 +4497,7 @@ pub mod describe_endpoint_group_input {
 #[doc(hidden)]
 pub type DescribeEndpointGroupInputOperationOutputAlias = crate::operation::DescribeEndpointGroup;
 #[doc(hidden)]
-pub type DescribeEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointGroup`](crate::operation::DescribeEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -4500,7 +4508,7 @@ impl DescribeEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4587,7 +4595,7 @@ impl DescribeEndpointGroupInput {
             "DescribeEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4645,7 +4653,7 @@ pub mod describe_listener_input {
 #[doc(hidden)]
 pub type DescribeListenerInputOperationOutputAlias = crate::operation::DescribeListener;
 #[doc(hidden)]
-pub type DescribeListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListener`](crate::operation::DescribeListener)>
     #[allow(clippy::let_and_return)]
@@ -4656,7 +4664,7 @@ impl DescribeListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4741,7 +4749,7 @@ impl DescribeListenerInput {
             "DescribeListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4811,7 +4819,7 @@ pub mod list_accelerators_input {
 #[doc(hidden)]
 pub type ListAcceleratorsInputOperationOutputAlias = crate::operation::ListAccelerators;
 #[doc(hidden)]
-pub type ListAcceleratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAcceleratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAcceleratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccelerators`](crate::operation::ListAccelerators)>
     #[allow(clippy::let_and_return)]
@@ -4822,7 +4830,7 @@ impl ListAcceleratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccelerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4907,7 +4915,7 @@ impl ListAcceleratorsInput {
             "ListAccelerators",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4979,7 +4987,7 @@ pub mod list_byoip_cidrs_input {
 #[doc(hidden)]
 pub type ListByoipCidrsInputOperationOutputAlias = crate::operation::ListByoipCidrs;
 #[doc(hidden)]
-pub type ListByoipCidrsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListByoipCidrsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListByoipCidrsInput {
     /// Consumes the builder and constructs an Operation<[`ListByoipCidrs`](crate::operation::ListByoipCidrs)>
     #[allow(clippy::let_and_return)]
@@ -4990,7 +4998,7 @@ impl ListByoipCidrsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListByoipCidrs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5075,7 +5083,7 @@ impl ListByoipCidrsInput {
             "ListByoipCidrs",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5146,7 +5154,8 @@ pub mod list_custom_routing_accelerators_input {
 pub type ListCustomRoutingAcceleratorsInputOperationOutputAlias =
     crate::operation::ListCustomRoutingAccelerators;
 #[doc(hidden)]
-pub type ListCustomRoutingAcceleratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomRoutingAcceleratorsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingAcceleratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingAccelerators`](crate::operation::ListCustomRoutingAccelerators)>
     #[allow(clippy::let_and_return)]
@@ -5157,7 +5166,7 @@ impl ListCustomRoutingAcceleratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingAccelerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5243,7 +5252,7 @@ impl ListCustomRoutingAcceleratorsInput {
             "ListCustomRoutingAccelerators",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5326,7 +5335,8 @@ pub mod list_custom_routing_endpoint_groups_input {
 pub type ListCustomRoutingEndpointGroupsInputOperationOutputAlias =
     crate::operation::ListCustomRoutingEndpointGroups;
 #[doc(hidden)]
-pub type ListCustomRoutingEndpointGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomRoutingEndpointGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingEndpointGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingEndpointGroups`](crate::operation::ListCustomRoutingEndpointGroups)>
     #[allow(clippy::let_and_return)]
@@ -5337,7 +5347,7 @@ impl ListCustomRoutingEndpointGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingEndpointGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5423,7 +5433,7 @@ impl ListCustomRoutingEndpointGroupsInput {
             "ListCustomRoutingEndpointGroups",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5509,7 +5519,7 @@ pub mod list_custom_routing_listeners_input {
 pub type ListCustomRoutingListenersInputOperationOutputAlias =
     crate::operation::ListCustomRoutingListeners;
 #[doc(hidden)]
-pub type ListCustomRoutingListenersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomRoutingListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingListenersInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingListeners`](crate::operation::ListCustomRoutingListeners)>
     #[allow(clippy::let_and_return)]
@@ -5520,7 +5530,7 @@ impl ListCustomRoutingListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingListeners,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5606,7 +5616,7 @@ impl ListCustomRoutingListenersInput {
             "ListCustomRoutingListeners",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5707,7 +5717,8 @@ pub mod list_custom_routing_port_mappings_input {
 pub type ListCustomRoutingPortMappingsInputOperationOutputAlias =
     crate::operation::ListCustomRoutingPortMappings;
 #[doc(hidden)]
-pub type ListCustomRoutingPortMappingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomRoutingPortMappingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingPortMappingsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingPortMappings`](crate::operation::ListCustomRoutingPortMappings)>
     #[allow(clippy::let_and_return)]
@@ -5718,7 +5729,7 @@ impl ListCustomRoutingPortMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5804,7 +5815,7 @@ impl ListCustomRoutingPortMappingsInput {
             "ListCustomRoutingPortMappings",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5907,7 +5918,7 @@ pub type ListCustomRoutingPortMappingsByDestinationInputOperationOutputAlias =
     crate::operation::ListCustomRoutingPortMappingsByDestination;
 #[doc(hidden)]
 pub type ListCustomRoutingPortMappingsByDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingPortMappingsByDestinationInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingPortMappingsByDestination`](crate::operation::ListCustomRoutingPortMappingsByDestination)>
     #[allow(clippy::let_and_return)]
@@ -5918,7 +5929,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappingsByDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6004,7 +6015,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
             "ListCustomRoutingPortMappingsByDestination",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6087,7 +6098,7 @@ pub mod list_endpoint_groups_input {
 #[doc(hidden)]
 pub type ListEndpointGroupsInputOperationOutputAlias = crate::operation::ListEndpointGroups;
 #[doc(hidden)]
-pub type ListEndpointGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEndpointGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpointGroups`](crate::operation::ListEndpointGroups)>
     #[allow(clippy::let_and_return)]
@@ -6098,7 +6109,7 @@ impl ListEndpointGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6194,7 @@ impl ListEndpointGroupsInput {
             "ListEndpointGroups",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6268,7 +6279,7 @@ pub mod list_listeners_input {
 #[doc(hidden)]
 pub type ListListenersInputOperationOutputAlias = crate::operation::ListListeners;
 #[doc(hidden)]
-pub type ListListenersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListListenersInput {
     /// Consumes the builder and constructs an Operation<[`ListListeners`](crate::operation::ListListeners)>
     #[allow(clippy::let_and_return)]
@@ -6279,7 +6290,7 @@ impl ListListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListListeners,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6363,7 +6374,7 @@ impl ListListenersInput {
             "ListListeners",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6421,7 +6432,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6432,7 +6443,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6519,7 +6530,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6604,7 +6615,7 @@ pub mod provision_byoip_cidr_input {
 #[doc(hidden)]
 pub type ProvisionByoipCidrInputOperationOutputAlias = crate::operation::ProvisionByoipCidr;
 #[doc(hidden)]
-pub type ProvisionByoipCidrInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ProvisionByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvisionByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionByoipCidr`](crate::operation::ProvisionByoipCidr)>
     #[allow(clippy::let_and_return)]
@@ -6615,7 +6626,7 @@ impl ProvisionByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ProvisionByoipCidr,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6700,7 +6711,7 @@ impl ProvisionByoipCidrInput {
             "ProvisionByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6785,7 +6796,8 @@ pub mod remove_custom_routing_endpoints_input {
 pub type RemoveCustomRoutingEndpointsInputOperationOutputAlias =
     crate::operation::RemoveCustomRoutingEndpoints;
 #[doc(hidden)]
-pub type RemoveCustomRoutingEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveCustomRoutingEndpointsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveCustomRoutingEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveCustomRoutingEndpoints`](crate::operation::RemoveCustomRoutingEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -6796,7 +6808,7 @@ impl RemoveCustomRoutingEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveCustomRoutingEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6882,7 +6894,7 @@ impl RemoveCustomRoutingEndpointsInput {
             "RemoveCustomRoutingEndpoints",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6961,7 +6973,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6972,7 +6984,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7056,7 +7068,7 @@ impl TagResourceInput {
             "TagResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7135,7 +7147,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -7146,7 +7158,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7230,7 +7242,7 @@ impl UntagResourceInput {
             "UntagResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7334,7 +7346,7 @@ pub mod update_accelerator_input {
 #[doc(hidden)]
 pub type UpdateAcceleratorInputOperationOutputAlias = crate::operation::UpdateAccelerator;
 #[doc(hidden)]
-pub type UpdateAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccelerator`](crate::operation::UpdateAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -7345,7 +7357,7 @@ impl UpdateAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7430,7 +7442,7 @@ impl UpdateAcceleratorInput {
             "UpdateAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7552,7 +7564,7 @@ pub mod update_accelerator_attributes_input {
 pub type UpdateAcceleratorAttributesInputOperationOutputAlias =
     crate::operation::UpdateAcceleratorAttributes;
 #[doc(hidden)]
-pub type UpdateAcceleratorAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAcceleratorAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAcceleratorAttributes`](crate::operation::UpdateAcceleratorAttributes)>
     #[allow(clippy::let_and_return)]
@@ -7563,7 +7575,7 @@ impl UpdateAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAcceleratorAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7649,7 +7661,7 @@ impl UpdateAcceleratorAttributesInput {
             "UpdateAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7754,7 +7766,8 @@ pub mod update_custom_routing_accelerator_input {
 pub type UpdateCustomRoutingAcceleratorInputOperationOutputAlias =
     crate::operation::UpdateCustomRoutingAccelerator;
 #[doc(hidden)]
-pub type UpdateCustomRoutingAcceleratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCustomRoutingAcceleratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingAccelerator`](crate::operation::UpdateCustomRoutingAccelerator)>
     #[allow(clippy::let_and_return)]
@@ -7765,7 +7778,7 @@ impl UpdateCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAccelerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7851,7 +7864,7 @@ impl UpdateCustomRoutingAcceleratorInput {
             "UpdateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7976,7 +7989,7 @@ pub type UpdateCustomRoutingAcceleratorAttributesInputOperationOutputAlias =
     crate::operation::UpdateCustomRoutingAcceleratorAttributes;
 #[doc(hidden)]
 pub type UpdateCustomRoutingAcceleratorAttributesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingAcceleratorAttributes`](crate::operation::UpdateCustomRoutingAcceleratorAttributes)>
     #[allow(clippy::let_and_return)]
@@ -7987,7 +8000,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAcceleratorAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8073,7 +8086,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
             "UpdateCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8159,7 +8172,7 @@ pub mod update_custom_routing_listener_input {
 pub type UpdateCustomRoutingListenerInputOperationOutputAlias =
     crate::operation::UpdateCustomRoutingListener;
 #[doc(hidden)]
-pub type UpdateCustomRoutingListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingListener`](crate::operation::UpdateCustomRoutingListener)>
     #[allow(clippy::let_and_return)]
@@ -8170,7 +8183,7 @@ impl UpdateCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8256,7 +8269,7 @@ impl UpdateCustomRoutingListenerInput {
             "UpdateCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8472,7 +8485,7 @@ pub mod update_endpoint_group_input {
 #[doc(hidden)]
 pub type UpdateEndpointGroupInputOperationOutputAlias = crate::operation::UpdateEndpointGroup;
 #[doc(hidden)]
-pub type UpdateEndpointGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpointGroup`](crate::operation::UpdateEndpointGroup)>
     #[allow(clippy::let_and_return)]
@@ -8483,7 +8496,7 @@ impl UpdateEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpointGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8568,7 +8581,7 @@ impl UpdateEndpointGroupInput {
             "UpdateEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8696,7 +8709,7 @@ pub mod update_listener_input {
 #[doc(hidden)]
 pub type UpdateListenerInputOperationOutputAlias = crate::operation::UpdateListener;
 #[doc(hidden)]
-pub type UpdateListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateListenerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateListener`](crate::operation::UpdateListener)>
     #[allow(clippy::let_and_return)]
@@ -8707,7 +8720,7 @@ impl UpdateListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8792,7 +8805,7 @@ impl UpdateListenerInput {
             "UpdateListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8848,7 +8861,7 @@ pub mod withdraw_byoip_cidr_input {
 #[doc(hidden)]
 pub type WithdrawByoipCidrInputOperationOutputAlias = crate::operation::WithdrawByoipCidr;
 #[doc(hidden)]
-pub type WithdrawByoipCidrInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type WithdrawByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl WithdrawByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`WithdrawByoipCidr`](crate::operation::WithdrawByoipCidr)>
     #[allow(clippy::let_and_return)]
@@ -8859,7 +8872,7 @@ impl WithdrawByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::WithdrawByoipCidr,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8944,7 +8957,7 @@ impl WithdrawByoipCidrInput {
             "WithdrawByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -35,7 +35,7 @@ pub mod delete_object_input {
 #[doc(hidden)]
 pub type DeleteObjectInputOperationOutputAlias = crate::operation::DeleteObject;
 #[doc(hidden)]
-pub type DeleteObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObject`](crate::operation::DeleteObject)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl DeleteObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +135,7 @@ impl DeleteObjectInput {
             "DeleteObject",
             "mediastoredata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -185,7 +185,7 @@ pub mod describe_object_input {
 #[doc(hidden)]
 pub type DescribeObjectInputOperationOutputAlias = crate::operation::DescribeObject;
 #[doc(hidden)]
-pub type DescribeObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeObjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeObject`](crate::operation::DescribeObject)>
     #[allow(clippy::let_and_return)]
@@ -196,7 +196,7 @@ impl DescribeObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -285,7 +285,7 @@ impl DescribeObjectInput {
             "DescribeObject",
             "mediastoredata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -381,7 +381,7 @@ pub mod get_object_input {
 #[doc(hidden)]
 pub type GetObjectInputOperationOutputAlias = crate::operation::GetObject;
 #[doc(hidden)]
-pub type GetObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetObjectInput {
     /// Consumes the builder and constructs an Operation<[`GetObject`](crate::operation::GetObject)>
     #[allow(clippy::let_and_return)]
@@ -392,7 +392,7 @@ impl GetObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -503,7 +503,7 @@ impl GetObjectInput {
                     "GetObject",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -601,7 +601,7 @@ pub mod list_items_input {
 #[doc(hidden)]
 pub type ListItemsInputOperationOutputAlias = crate::operation::ListItems;
 #[doc(hidden)]
-pub type ListItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListItems`](crate::operation::ListItems)>
     #[allow(clippy::let_and_return)]
@@ -612,7 +612,7 @@ impl ListItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -704,7 +704,7 @@ impl ListItemsInput {
                     "ListItems",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -872,7 +872,7 @@ pub mod put_object_input {
 #[doc(hidden)]
 pub type PutObjectInputOperationOutputAlias = crate::operation::PutObject;
 #[doc(hidden)]
-pub type PutObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutObject`](crate::operation::PutObject)>
     #[allow(clippy::let_and_return)]
@@ -883,7 +883,7 @@ impl PutObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1051,7 +1051,7 @@ impl PutObjectInput {
                     "PutObject",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

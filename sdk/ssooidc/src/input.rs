@@ -142,7 +142,7 @@ pub mod create_token_input {
 #[doc(hidden)]
 pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
 #[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(clippy::let_and_return)]
@@ -153,7 +153,7 @@ impl CreateTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -233,7 +233,7 @@ impl CreateTokenInput {
             "CreateToken",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -326,7 +326,7 @@ pub mod register_client_input {
 #[doc(hidden)]
 pub type RegisterClientInputOperationOutputAlias = crate::operation::RegisterClient;
 #[doc(hidden)]
-pub type RegisterClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterClientInput {
     /// Consumes the builder and constructs an Operation<[`RegisterClient`](crate::operation::RegisterClient)>
     #[allow(clippy::let_and_return)]
@@ -337,7 +337,7 @@ impl RegisterClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -418,7 +418,7 @@ impl RegisterClientInput {
             "RegisterClient",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -512,7 +512,7 @@ pub mod start_device_authorization_input {
 pub type StartDeviceAuthorizationInputOperationOutputAlias =
     crate::operation::StartDeviceAuthorization;
 #[doc(hidden)]
-pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeviceAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`StartDeviceAuthorization`](crate::operation::StartDeviceAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -523,7 +523,7 @@ impl StartDeviceAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDeviceAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -606,7 +606,7 @@ impl StartDeviceAuthorizationInput {
             "StartDeviceAuthorization",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -109,7 +109,7 @@ pub mod create_access_point_input {
 #[doc(hidden)]
 pub type CreateAccessPointInputOperationOutputAlias = crate::operation::CreateAccessPoint;
 #[doc(hidden)]
-pub type CreateAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPoint`](crate::operation::CreateAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -120,7 +120,7 @@ impl CreateAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -252,7 +252,7 @@ impl CreateAccessPointInput {
             "CreateAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -338,7 +338,8 @@ pub mod create_access_point_for_object_lambda_input {
 pub type CreateAccessPointForObjectLambdaInputOperationOutputAlias =
     crate::operation::CreateAccessPointForObjectLambda;
 #[doc(hidden)]
-pub type CreateAccessPointForObjectLambdaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessPointForObjectLambdaInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPointForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPointForObjectLambda`](crate::operation::CreateAccessPointForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -349,7 +350,7 @@ impl CreateAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPointForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -486,7 +487,7 @@ impl CreateAccessPointForObjectLambdaInput {
             "CreateAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -730,7 +731,7 @@ pub mod create_bucket_input {
 #[doc(hidden)]
 pub type CreateBucketInputOperationOutputAlias = crate::operation::CreateBucket;
 #[doc(hidden)]
-pub type CreateBucketInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBucketInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBucketInput {
     /// Consumes the builder and constructs an Operation<[`CreateBucket`](crate::operation::CreateBucket)>
     #[allow(clippy::let_and_return)]
@@ -741,7 +742,7 @@ impl CreateBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBucket,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -992,7 +993,7 @@ impl CreateBucketInput {
             "CreateBucket",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1182,7 +1183,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -1193,7 +1194,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1309,7 +1310,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1399,7 +1400,8 @@ pub mod create_multi_region_access_point_input {
 pub type CreateMultiRegionAccessPointInputOperationOutputAlias =
     crate::operation::CreateMultiRegionAccessPoint;
 #[doc(hidden)]
-pub type CreateMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMultiRegionAccessPointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMultiRegionAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultiRegionAccessPoint`](crate::operation::CreateMultiRegionAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -1410,7 +1412,7 @@ impl CreateMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMultiRegionAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1545,7 +1547,7 @@ impl CreateMultiRegionAccessPointInput {
             "CreateMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1619,7 +1621,7 @@ pub mod delete_access_point_input {
 #[doc(hidden)]
 pub type DeleteAccessPointInputOperationOutputAlias = crate::operation::DeleteAccessPoint;
 #[doc(hidden)]
-pub type DeleteAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPoint`](crate::operation::DeleteAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -1630,7 +1632,7 @@ impl DeleteAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1756,7 +1758,7 @@ impl DeleteAccessPointInput {
             "DeleteAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1819,7 +1821,8 @@ pub mod delete_access_point_for_object_lambda_input {
 pub type DeleteAccessPointForObjectLambdaInputOperationOutputAlias =
     crate::operation::DeleteAccessPointForObjectLambda;
 #[doc(hidden)]
-pub type DeleteAccessPointForObjectLambdaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessPointForObjectLambdaInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPointForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPointForObjectLambda`](crate::operation::DeleteAccessPointForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -1830,7 +1833,7 @@ impl DeleteAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1960,7 +1963,7 @@ impl DeleteAccessPointForObjectLambdaInput {
             "DeleteAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2027,7 +2030,7 @@ pub mod delete_access_point_policy_input {
 pub type DeleteAccessPointPolicyInputOperationOutputAlias =
     crate::operation::DeleteAccessPointPolicy;
 #[doc(hidden)]
-pub type DeleteAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessPointPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPointPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPointPolicy`](crate::operation::DeleteAccessPointPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2038,7 +2041,7 @@ impl DeleteAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2164,7 +2167,7 @@ impl DeleteAccessPointPolicyInput {
             "DeleteAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2228,7 +2231,7 @@ pub type DeleteAccessPointPolicyForObjectLambdaInputOperationOutputAlias =
     crate::operation::DeleteAccessPointPolicyForObjectLambda;
 #[doc(hidden)]
 pub type DeleteAccessPointPolicyForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPointPolicyForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPointPolicyForObjectLambda`](crate::operation::DeleteAccessPointPolicyForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -2239,7 +2242,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicyForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2369,7 +2372,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
             "DeleteAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2435,7 +2438,7 @@ pub mod delete_bucket_input {
 #[doc(hidden)]
 pub type DeleteBucketInputOperationOutputAlias = crate::operation::DeleteBucket;
 #[doc(hidden)]
-pub type DeleteBucketInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBucketInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBucketInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBucket`](crate::operation::DeleteBucket)>
     #[allow(clippy::let_and_return)]
@@ -2446,7 +2449,7 @@ impl DeleteBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucket,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2572,7 +2575,7 @@ impl DeleteBucketInput {
             "DeleteBucket",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2639,7 +2642,8 @@ pub mod delete_bucket_lifecycle_configuration_input {
 pub type DeleteBucketLifecycleConfigurationInputOperationOutputAlias =
     crate::operation::DeleteBucketLifecycleConfiguration;
 #[doc(hidden)]
-pub type DeleteBucketLifecycleConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBucketLifecycleConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBucketLifecycleConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBucketLifecycleConfiguration`](crate::operation::DeleteBucketLifecycleConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2650,7 +2654,7 @@ impl DeleteBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketLifecycleConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2780,7 +2784,7 @@ impl DeleteBucketLifecycleConfigurationInput {
             "DeleteBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2846,7 +2850,7 @@ pub mod delete_bucket_policy_input {
 #[doc(hidden)]
 pub type DeleteBucketPolicyInputOperationOutputAlias = crate::operation::DeleteBucketPolicy;
 #[doc(hidden)]
-pub type DeleteBucketPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBucketPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBucketPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBucketPolicy`](crate::operation::DeleteBucketPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2857,7 +2861,7 @@ impl DeleteBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2983,7 +2987,7 @@ impl DeleteBucketPolicyInput {
             "DeleteBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3049,7 +3053,7 @@ pub mod delete_bucket_tagging_input {
 #[doc(hidden)]
 pub type DeleteBucketTaggingInputOperationOutputAlias = crate::operation::DeleteBucketTagging;
 #[doc(hidden)]
-pub type DeleteBucketTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBucketTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBucketTaggingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBucketTagging`](crate::operation::DeleteBucketTagging)>
     #[allow(clippy::let_and_return)]
@@ -3060,7 +3064,7 @@ impl DeleteBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3190,7 +3194,7 @@ impl DeleteBucketTaggingInput {
             "DeleteBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3252,7 +3256,7 @@ pub mod delete_job_tagging_input {
 #[doc(hidden)]
 pub type DeleteJobTaggingInputOperationOutputAlias = crate::operation::DeleteJobTagging;
 #[doc(hidden)]
-pub type DeleteJobTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobTaggingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobTagging`](crate::operation::DeleteJobTagging)>
     #[allow(clippy::let_and_return)]
@@ -3263,7 +3267,7 @@ impl DeleteJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3389,7 +3393,7 @@ impl DeleteJobTaggingInput {
             "DeleteJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3469,7 +3473,8 @@ pub mod delete_multi_region_access_point_input {
 pub type DeleteMultiRegionAccessPointInputOperationOutputAlias =
     crate::operation::DeleteMultiRegionAccessPoint;
 #[doc(hidden)]
-pub type DeleteMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMultiRegionAccessPointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMultiRegionAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMultiRegionAccessPoint`](crate::operation::DeleteMultiRegionAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -3480,7 +3485,7 @@ impl DeleteMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMultiRegionAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3615,7 +3620,7 @@ impl DeleteMultiRegionAccessPointInput {
             "DeleteMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3676,7 +3681,7 @@ pub mod delete_public_access_block_input {
 pub type DeletePublicAccessBlockInputOperationOutputAlias =
     crate::operation::DeletePublicAccessBlock;
 #[doc(hidden)]
-pub type DeletePublicAccessBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePublicAccessBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePublicAccessBlockInput {
     /// Consumes the builder and constructs an Operation<[`DeletePublicAccessBlock`](crate::operation::DeletePublicAccessBlock)>
     #[allow(clippy::let_and_return)]
@@ -3687,7 +3692,7 @@ impl DeletePublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicAccessBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3798,7 +3803,7 @@ impl DeletePublicAccessBlockInput {
             "DeletePublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3861,7 +3866,8 @@ pub mod delete_storage_lens_configuration_input {
 pub type DeleteStorageLensConfigurationInputOperationOutputAlias =
     crate::operation::DeleteStorageLensConfiguration;
 #[doc(hidden)]
-pub type DeleteStorageLensConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStorageLensConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStorageLensConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStorageLensConfiguration`](crate::operation::DeleteStorageLensConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3872,7 +3878,7 @@ impl DeleteStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4002,7 +4008,7 @@ impl DeleteStorageLensConfigurationInput {
             "DeleteStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4066,7 +4072,7 @@ pub type DeleteStorageLensConfigurationTaggingInputOperationOutputAlias =
     crate::operation::DeleteStorageLensConfigurationTagging;
 #[doc(hidden)]
 pub type DeleteStorageLensConfigurationTaggingInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStorageLensConfigurationTaggingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStorageLensConfigurationTagging`](crate::operation::DeleteStorageLensConfigurationTagging)>
     #[allow(clippy::let_and_return)]
@@ -4077,7 +4083,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfigurationTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4207,7 +4213,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
             "DeleteStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4269,7 +4275,7 @@ pub mod describe_job_input {
 #[doc(hidden)]
 pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
 #[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
@@ -4280,7 +4286,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4406,7 +4412,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4477,7 +4483,7 @@ pub type DescribeMultiRegionAccessPointOperationInputOperationOutputAlias =
     crate::operation::DescribeMultiRegionAccessPointOperation;
 #[doc(hidden)]
 pub type DescribeMultiRegionAccessPointOperationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMultiRegionAccessPointOperationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMultiRegionAccessPointOperation`](crate::operation::DescribeMultiRegionAccessPointOperation)>
     #[allow(clippy::let_and_return)]
@@ -4488,7 +4494,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMultiRegionAccessPointOperation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4632,7 +4638,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
             "DescribeMultiRegionAccessPointOperation",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4698,7 +4704,7 @@ pub mod get_access_point_input {
 #[doc(hidden)]
 pub type GetAccessPointInputOperationOutputAlias = crate::operation::GetAccessPoint;
 #[doc(hidden)]
-pub type GetAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPoint`](crate::operation::GetAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -4709,7 +4715,7 @@ impl GetAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4835,7 +4841,7 @@ impl GetAccessPointInput {
             "GetAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4901,7 +4907,7 @@ pub type GetAccessPointConfigurationForObjectLambdaInputOperationOutputAlias =
     crate::operation::GetAccessPointConfigurationForObjectLambda;
 #[doc(hidden)]
 pub type GetAccessPointConfigurationForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointConfigurationForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointConfigurationForObjectLambda`](crate::operation::GetAccessPointConfigurationForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -4912,7 +4918,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointConfigurationForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5042,7 +5048,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
             "GetAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5106,7 +5112,8 @@ pub mod get_access_point_for_object_lambda_input {
 pub type GetAccessPointForObjectLambdaInputOperationOutputAlias =
     crate::operation::GetAccessPointForObjectLambda;
 #[doc(hidden)]
-pub type GetAccessPointForObjectLambdaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessPointForObjectLambdaInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointForObjectLambda`](crate::operation::GetAccessPointForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -5117,7 +5124,7 @@ impl GetAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5247,7 +5254,7 @@ impl GetAccessPointForObjectLambdaInput {
             "GetAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5313,7 +5320,7 @@ pub mod get_access_point_policy_input {
 #[doc(hidden)]
 pub type GetAccessPointPolicyInputOperationOutputAlias = crate::operation::GetAccessPointPolicy;
 #[doc(hidden)]
-pub type GetAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessPointPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointPolicy`](crate::operation::GetAccessPointPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5324,7 +5331,7 @@ impl GetAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5450,7 +5457,7 @@ impl GetAccessPointPolicyInput {
             "GetAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5514,7 +5521,7 @@ pub type GetAccessPointPolicyForObjectLambdaInputOperationOutputAlias =
     crate::operation::GetAccessPointPolicyForObjectLambda;
 #[doc(hidden)]
 pub type GetAccessPointPolicyForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointPolicyForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointPolicyForObjectLambda`](crate::operation::GetAccessPointPolicyForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -5525,7 +5532,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5655,7 +5662,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
             "GetAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5718,7 +5725,7 @@ pub mod get_access_point_policy_status_input {
 pub type GetAccessPointPolicyStatusInputOperationOutputAlias =
     crate::operation::GetAccessPointPolicyStatus;
 #[doc(hidden)]
-pub type GetAccessPointPolicyStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessPointPolicyStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointPolicyStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointPolicyStatus`](crate::operation::GetAccessPointPolicyStatus)>
     #[allow(clippy::let_and_return)]
@@ -5729,7 +5736,7 @@ impl GetAccessPointPolicyStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5859,7 +5866,7 @@ impl GetAccessPointPolicyStatusInput {
             "GetAccessPointPolicyStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5925,7 +5932,7 @@ pub type GetAccessPointPolicyStatusForObjectLambdaInputOperationOutputAlias =
     crate::operation::GetAccessPointPolicyStatusForObjectLambda;
 #[doc(hidden)]
 pub type GetAccessPointPolicyStatusForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPointPolicyStatusForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPointPolicyStatusForObjectLambda`](crate::operation::GetAccessPointPolicyStatusForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -5936,7 +5943,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatusForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6066,7 +6073,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
             "GetAccessPointPolicyStatusForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6131,7 +6138,7 @@ pub mod get_bucket_input {
 #[doc(hidden)]
 pub type GetBucketInputOperationOutputAlias = crate::operation::GetBucket;
 #[doc(hidden)]
-pub type GetBucketInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketInput {
     /// Consumes the builder and constructs an Operation<[`GetBucket`](crate::operation::GetBucket)>
     #[allow(clippy::let_and_return)]
@@ -6142,7 +6149,7 @@ impl GetBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucket,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6266,7 +6273,7 @@ impl GetBucketInput {
                     "GetBucket",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6333,7 +6340,8 @@ pub mod get_bucket_lifecycle_configuration_input {
 pub type GetBucketLifecycleConfigurationInputOperationOutputAlias =
     crate::operation::GetBucketLifecycleConfiguration;
 #[doc(hidden)]
-pub type GetBucketLifecycleConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketLifecycleConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketLifecycleConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetBucketLifecycleConfiguration`](crate::operation::GetBucketLifecycleConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -6344,7 +6352,7 @@ impl GetBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketLifecycleConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6474,7 +6482,7 @@ impl GetBucketLifecycleConfigurationInput {
             "GetBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6540,7 +6548,7 @@ pub mod get_bucket_policy_input {
 #[doc(hidden)]
 pub type GetBucketPolicyInputOperationOutputAlias = crate::operation::GetBucketPolicy;
 #[doc(hidden)]
-pub type GetBucketPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetBucketPolicy`](crate::operation::GetBucketPolicy)>
     #[allow(clippy::let_and_return)]
@@ -6551,7 +6559,7 @@ impl GetBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6677,7 +6685,7 @@ impl GetBucketPolicyInput {
             "GetBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6743,7 +6751,7 @@ pub mod get_bucket_tagging_input {
 #[doc(hidden)]
 pub type GetBucketTaggingInputOperationOutputAlias = crate::operation::GetBucketTagging;
 #[doc(hidden)]
-pub type GetBucketTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketTaggingInput {
     /// Consumes the builder and constructs an Operation<[`GetBucketTagging`](crate::operation::GetBucketTagging)>
     #[allow(clippy::let_and_return)]
@@ -6754,7 +6762,7 @@ impl GetBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6884,7 +6892,7 @@ impl GetBucketTaggingInput {
             "GetBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6946,7 +6954,7 @@ pub mod get_job_tagging_input {
 #[doc(hidden)]
 pub type GetJobTaggingInputOperationOutputAlias = crate::operation::GetJobTagging;
 #[doc(hidden)]
-pub type GetJobTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobTaggingInput {
     /// Consumes the builder and constructs an Operation<[`GetJobTagging`](crate::operation::GetJobTagging)>
     #[allow(clippy::let_and_return)]
@@ -6957,7 +6965,7 @@ impl GetJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7083,7 +7091,7 @@ impl GetJobTaggingInput {
             "GetJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7152,7 +7160,7 @@ pub mod get_multi_region_access_point_input {
 pub type GetMultiRegionAccessPointInputOperationOutputAlias =
     crate::operation::GetMultiRegionAccessPoint;
 #[doc(hidden)]
-pub type GetMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMultiRegionAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMultiRegionAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPoint`](crate::operation::GetMultiRegionAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -7163,7 +7171,7 @@ impl GetMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7303,7 +7311,7 @@ impl GetMultiRegionAccessPointInput {
             "GetMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7372,7 +7380,8 @@ pub mod get_multi_region_access_point_policy_input {
 pub type GetMultiRegionAccessPointPolicyInputOperationOutputAlias =
     crate::operation::GetMultiRegionAccessPointPolicy;
 #[doc(hidden)]
-pub type GetMultiRegionAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMultiRegionAccessPointPolicyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetMultiRegionAccessPointPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPointPolicy`](crate::operation::GetMultiRegionAccessPointPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7383,7 +7392,7 @@ impl GetMultiRegionAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7527,7 +7536,7 @@ impl GetMultiRegionAccessPointPolicyInput {
             "GetMultiRegionAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7597,7 +7606,7 @@ pub type GetMultiRegionAccessPointPolicyStatusInputOperationOutputAlias =
     crate::operation::GetMultiRegionAccessPointPolicyStatus;
 #[doc(hidden)]
 pub type GetMultiRegionAccessPointPolicyStatusInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetMultiRegionAccessPointPolicyStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPointPolicyStatus`](crate::operation::GetMultiRegionAccessPointPolicyStatus)>
     #[allow(clippy::let_and_return)]
@@ -7608,7 +7617,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicyStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7752,7 +7761,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
             "GetMultiRegionAccessPointPolicyStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7804,7 +7813,7 @@ pub mod get_public_access_block_input {
 #[doc(hidden)]
 pub type GetPublicAccessBlockInputOperationOutputAlias = crate::operation::GetPublicAccessBlock;
 #[doc(hidden)]
-pub type GetPublicAccessBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPublicAccessBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPublicAccessBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicAccessBlock`](crate::operation::GetPublicAccessBlock)>
     #[allow(clippy::let_and_return)]
@@ -7815,7 +7824,7 @@ impl GetPublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicAccessBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7926,7 +7935,7 @@ impl GetPublicAccessBlockInput {
             "GetPublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7989,7 +7998,7 @@ pub mod get_storage_lens_configuration_input {
 pub type GetStorageLensConfigurationInputOperationOutputAlias =
     crate::operation::GetStorageLensConfiguration;
 #[doc(hidden)]
-pub type GetStorageLensConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStorageLensConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStorageLensConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetStorageLensConfiguration`](crate::operation::GetStorageLensConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -8000,7 +8009,7 @@ impl GetStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8130,7 +8139,7 @@ impl GetStorageLensConfigurationInput {
             "GetStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8193,7 +8202,8 @@ pub mod get_storage_lens_configuration_tagging_input {
 pub type GetStorageLensConfigurationTaggingInputOperationOutputAlias =
     crate::operation::GetStorageLensConfigurationTagging;
 #[doc(hidden)]
-pub type GetStorageLensConfigurationTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStorageLensConfigurationTaggingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetStorageLensConfigurationTaggingInput {
     /// Consumes the builder and constructs an Operation<[`GetStorageLensConfigurationTagging`](crate::operation::GetStorageLensConfigurationTagging)>
     #[allow(clippy::let_and_return)]
@@ -8204,7 +8214,7 @@ impl GetStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfigurationTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8334,7 +8344,7 @@ impl GetStorageLensConfigurationTaggingInput {
             "GetStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8430,7 +8440,7 @@ pub mod list_access_points_input {
 #[doc(hidden)]
 pub type ListAccessPointsInputOperationOutputAlias = crate::operation::ListAccessPoints;
 #[doc(hidden)]
-pub type ListAccessPointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPointsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPoints`](crate::operation::ListAccessPoints)>
     #[allow(clippy::let_and_return)]
@@ -8441,7 +8451,7 @@ impl ListAccessPointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8571,7 +8581,7 @@ impl ListAccessPointsInput {
             "ListAccessPoints",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8650,7 +8660,8 @@ pub mod list_access_points_for_object_lambda_input {
 pub type ListAccessPointsForObjectLambdaInputOperationOutputAlias =
     crate::operation::ListAccessPointsForObjectLambda;
 #[doc(hidden)]
-pub type ListAccessPointsForObjectLambdaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessPointsForObjectLambdaInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPointsForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPointsForObjectLambda`](crate::operation::ListAccessPointsForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -8661,7 +8672,7 @@ impl ListAccessPointsForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPointsForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8789,7 +8800,7 @@ impl ListAccessPointsForObjectLambdaInput {
             "ListAccessPointsForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8882,7 +8893,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -8893,7 +8904,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9026,7 +9037,7 @@ impl ListJobsInput {
                     "ListJobs",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9101,7 +9112,7 @@ pub mod list_multi_region_access_points_input {
 pub type ListMultiRegionAccessPointsInputOperationOutputAlias =
     crate::operation::ListMultiRegionAccessPoints;
 #[doc(hidden)]
-pub type ListMultiRegionAccessPointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMultiRegionAccessPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultiRegionAccessPointsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultiRegionAccessPoints`](crate::operation::ListMultiRegionAccessPoints)>
     #[allow(clippy::let_and_return)]
@@ -9112,7 +9123,7 @@ impl ListMultiRegionAccessPointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMultiRegionAccessPoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9253,7 +9264,7 @@ impl ListMultiRegionAccessPointsInput {
             "ListMultiRegionAccessPoints",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9345,7 +9356,7 @@ pub mod list_regional_buckets_input {
 #[doc(hidden)]
 pub type ListRegionalBucketsInputOperationOutputAlias = crate::operation::ListRegionalBuckets;
 #[doc(hidden)]
-pub type ListRegionalBucketsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRegionalBucketsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRegionalBucketsInput {
     /// Consumes the builder and constructs an Operation<[`ListRegionalBuckets`](crate::operation::ListRegionalBuckets)>
     #[allow(clippy::let_and_return)]
@@ -9356,7 +9367,7 @@ impl ListRegionalBucketsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegionalBuckets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9499,7 +9510,7 @@ impl ListRegionalBucketsInput {
             "ListRegionalBuckets",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9562,7 +9573,8 @@ pub mod list_storage_lens_configurations_input {
 pub type ListStorageLensConfigurationsInputOperationOutputAlias =
     crate::operation::ListStorageLensConfigurations;
 #[doc(hidden)]
-pub type ListStorageLensConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStorageLensConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListStorageLensConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListStorageLensConfigurations`](crate::operation::ListStorageLensConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -9573,7 +9585,7 @@ impl ListStorageLensConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStorageLensConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9694,7 +9706,7 @@ impl ListStorageLensConfigurationsInput {
             "ListStorageLensConfigurations",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9775,7 +9787,7 @@ pub type PutAccessPointConfigurationForObjectLambdaInputOperationOutputAlias =
     crate::operation::PutAccessPointConfigurationForObjectLambda;
 #[doc(hidden)]
 pub type PutAccessPointConfigurationForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccessPointConfigurationForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`PutAccessPointConfigurationForObjectLambda`](crate::operation::PutAccessPointConfigurationForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -9786,7 +9798,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointConfigurationForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9923,7 +9935,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             "PutAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10010,7 +10022,7 @@ pub mod put_access_point_policy_input {
 #[doc(hidden)]
 pub type PutAccessPointPolicyInputOperationOutputAlias = crate::operation::PutAccessPointPolicy;
 #[doc(hidden)]
-pub type PutAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAccessPointPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccessPointPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutAccessPointPolicy`](crate::operation::PutAccessPointPolicy)>
     #[allow(clippy::let_and_return)]
@@ -10021,7 +10033,7 @@ impl PutAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10155,7 +10167,7 @@ impl PutAccessPointPolicyInput {
             "PutAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10239,7 +10251,7 @@ pub type PutAccessPointPolicyForObjectLambdaInputOperationOutputAlias =
     crate::operation::PutAccessPointPolicyForObjectLambda;
 #[doc(hidden)]
 pub type PutAccessPointPolicyForObjectLambdaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccessPointPolicyForObjectLambdaInput {
     /// Consumes the builder and constructs an Operation<[`PutAccessPointPolicyForObjectLambda`](crate::operation::PutAccessPointPolicyForObjectLambda)>
     #[allow(clippy::let_and_return)]
@@ -10250,7 +10262,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicyForObjectLambda,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10387,7 +10399,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             "PutAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10477,7 +10489,8 @@ pub mod put_bucket_lifecycle_configuration_input {
 pub type PutBucketLifecycleConfigurationInputOperationOutputAlias =
     crate::operation::PutBucketLifecycleConfiguration;
 #[doc(hidden)]
-pub type PutBucketLifecycleConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutBucketLifecycleConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutBucketLifecycleConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutBucketLifecycleConfiguration`](crate::operation::PutBucketLifecycleConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10488,7 +10501,7 @@ impl PutBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketLifecycleConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10639,7 +10652,7 @@ impl PutBucketLifecycleConfigurationInput {
             "PutBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10748,7 +10761,7 @@ pub mod put_bucket_policy_input {
 #[doc(hidden)]
 pub type PutBucketPolicyInputOperationOutputAlias = crate::operation::PutBucketPolicy;
 #[doc(hidden)]
-pub type PutBucketPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutBucketPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutBucketPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutBucketPolicy`](crate::operation::PutBucketPolicy)>
     #[allow(clippy::let_and_return)]
@@ -10759,7 +10772,7 @@ impl PutBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10925,7 +10938,7 @@ impl PutBucketPolicyInput {
             "PutBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11011,7 +11024,7 @@ pub mod put_bucket_tagging_input {
 #[doc(hidden)]
 pub type PutBucketTaggingInputOperationOutputAlias = crate::operation::PutBucketTagging;
 #[doc(hidden)]
-pub type PutBucketTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutBucketTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutBucketTaggingInput {
     /// Consumes the builder and constructs an Operation<[`PutBucketTagging`](crate::operation::PutBucketTagging)>
     #[allow(clippy::let_and_return)]
@@ -11022,7 +11035,7 @@ impl PutBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11171,7 +11184,7 @@ impl PutBucketTaggingInput {
             "PutBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11262,7 +11275,7 @@ pub mod put_job_tagging_input {
 #[doc(hidden)]
 pub type PutJobTaggingInputOperationOutputAlias = crate::operation::PutJobTagging;
 #[doc(hidden)]
-pub type PutJobTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutJobTaggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutJobTaggingInput {
     /// Consumes the builder and constructs an Operation<[`PutJobTagging`](crate::operation::PutJobTagging)>
     #[allow(clippy::let_and_return)]
@@ -11273,7 +11286,7 @@ impl PutJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutJobTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11405,7 +11418,7 @@ impl PutJobTaggingInput {
             "PutJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11496,7 +11509,8 @@ pub mod put_multi_region_access_point_policy_input {
 pub type PutMultiRegionAccessPointPolicyInputOperationOutputAlias =
     crate::operation::PutMultiRegionAccessPointPolicy;
 #[doc(hidden)]
-pub type PutMultiRegionAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMultiRegionAccessPointPolicyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutMultiRegionAccessPointPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutMultiRegionAccessPointPolicy`](crate::operation::PutMultiRegionAccessPointPolicy)>
     #[allow(clippy::let_and_return)]
@@ -11507,7 +11521,7 @@ impl PutMultiRegionAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMultiRegionAccessPointPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11642,7 +11656,7 @@ impl PutMultiRegionAccessPointPolicyInput {
             "PutMultiRegionAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11721,7 +11735,7 @@ pub mod put_public_access_block_input {
 #[doc(hidden)]
 pub type PutPublicAccessBlockInputOperationOutputAlias = crate::operation::PutPublicAccessBlock;
 #[doc(hidden)]
-pub type PutPublicAccessBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPublicAccessBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPublicAccessBlockInput {
     /// Consumes the builder and constructs an Operation<[`PutPublicAccessBlock`](crate::operation::PutPublicAccessBlock)>
     #[allow(clippy::let_and_return)]
@@ -11732,7 +11746,7 @@ impl PutPublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPublicAccessBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11850,7 +11864,7 @@ impl PutPublicAccessBlockInput {
             "PutPublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11967,7 +11981,7 @@ pub mod put_storage_lens_configuration_input {
 pub type PutStorageLensConfigurationInputOperationOutputAlias =
     crate::operation::PutStorageLensConfiguration;
 #[doc(hidden)]
-pub type PutStorageLensConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutStorageLensConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStorageLensConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutStorageLensConfiguration`](crate::operation::PutStorageLensConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11978,7 +11992,7 @@ impl PutStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12115,7 +12129,7 @@ impl PutStorageLensConfigurationInput {
             "PutStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12213,7 +12227,8 @@ pub mod put_storage_lens_configuration_tagging_input {
 pub type PutStorageLensConfigurationTaggingInputOperationOutputAlias =
     crate::operation::PutStorageLensConfigurationTagging;
 #[doc(hidden)]
-pub type PutStorageLensConfigurationTaggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutStorageLensConfigurationTaggingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutStorageLensConfigurationTaggingInput {
     /// Consumes the builder and constructs an Operation<[`PutStorageLensConfigurationTagging`](crate::operation::PutStorageLensConfigurationTagging)>
     #[allow(clippy::let_and_return)]
@@ -12224,7 +12239,7 @@ impl PutStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfigurationTagging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12361,7 +12376,7 @@ impl PutStorageLensConfigurationTaggingInput {
             "PutStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12443,7 +12458,7 @@ pub mod update_job_priority_input {
 #[doc(hidden)]
 pub type UpdateJobPriorityInputOperationOutputAlias = crate::operation::UpdateJobPriority;
 #[doc(hidden)]
-pub type UpdateJobPriorityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobPriorityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobPriorityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobPriority`](crate::operation::UpdateJobPriority)>
     #[allow(clippy::let_and_return)]
@@ -12454,7 +12469,7 @@ impl UpdateJobPriorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobPriority,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12594,7 +12609,7 @@ impl UpdateJobPriorityInput {
             "UpdateJobPriority",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12686,7 +12701,7 @@ pub mod update_job_status_input {
 #[doc(hidden)]
 pub type UpdateJobStatusInputOperationOutputAlias = crate::operation::UpdateJobStatus;
 #[doc(hidden)]
-pub type UpdateJobStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobStatus`](crate::operation::UpdateJobStatus)>
     #[allow(clippy::let_and_return)]
@@ -12697,7 +12712,7 @@ impl UpdateJobStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12843,7 +12858,7 @@ impl UpdateJobStatusInput {
             "UpdateJobStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

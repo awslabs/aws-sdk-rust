@@ -100,7 +100,7 @@ pub mod add_profile_permission_input {
 #[doc(hidden)]
 pub type AddProfilePermissionInputOperationOutputAlias = crate::operation::AddProfilePermission;
 #[doc(hidden)]
-pub type AddProfilePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddProfilePermission`](crate::operation::AddProfilePermission)>
     #[allow(clippy::let_and_return)]
@@ -111,7 +111,7 @@ impl AddProfilePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddProfilePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -213,7 +213,7 @@ impl AddProfilePermissionInput {
             "AddProfilePermission",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -271,7 +271,7 @@ pub mod cancel_signing_profile_input {
 #[doc(hidden)]
 pub type CancelSigningProfileInputOperationOutputAlias = crate::operation::CancelSigningProfile;
 #[doc(hidden)]
-pub type CancelSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`CancelSigningProfile`](crate::operation::CancelSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -282,7 +282,7 @@ impl CancelSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -376,7 +376,7 @@ impl CancelSigningProfileInput {
             "CancelSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -426,7 +426,7 @@ pub mod describe_signing_job_input {
 #[doc(hidden)]
 pub type DescribeSigningJobInputOperationOutputAlias = crate::operation::DescribeSigningJob;
 #[doc(hidden)]
-pub type DescribeSigningJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSigningJob`](crate::operation::DescribeSigningJob)>
     #[allow(clippy::let_and_return)]
@@ -437,7 +437,7 @@ impl DescribeSigningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSigningJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -527,7 +527,7 @@ impl DescribeSigningJobInput {
             "DescribeSigningJob",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -577,7 +577,7 @@ pub mod get_signing_platform_input {
 #[doc(hidden)]
 pub type GetSigningPlatformInputOperationOutputAlias = crate::operation::GetSigningPlatform;
 #[doc(hidden)]
-pub type GetSigningPlatformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSigningPlatformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningPlatformInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningPlatform`](crate::operation::GetSigningPlatform)>
     #[allow(clippy::let_and_return)]
@@ -588,7 +588,7 @@ impl GetSigningPlatformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningPlatform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -682,7 +682,7 @@ impl GetSigningPlatformInput {
             "GetSigningPlatform",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -747,7 +747,7 @@ pub mod get_signing_profile_input {
 #[doc(hidden)]
 pub type GetSigningProfileInputOperationOutputAlias = crate::operation::GetSigningProfile;
 #[doc(hidden)]
-pub type GetSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningProfile`](crate::operation::GetSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -758,7 +758,7 @@ impl GetSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -866,7 +866,7 @@ impl GetSigningProfileInput {
             "GetSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -928,7 +928,7 @@ pub mod list_profile_permissions_input {
 #[doc(hidden)]
 pub type ListProfilePermissionsInputOperationOutputAlias = crate::operation::ListProfilePermissions;
 #[doc(hidden)]
-pub type ListProfilePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfilePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilePermissions`](crate::operation::ListProfilePermissions)>
     #[allow(clippy::let_and_return)]
@@ -939,7 +939,7 @@ impl ListProfilePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfilePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1044,7 +1044,7 @@ impl ListProfilePermissionsInput {
             "ListProfilePermissions",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1219,7 +1219,7 @@ pub mod list_signing_jobs_input {
 #[doc(hidden)]
 pub type ListSigningJobsInputOperationOutputAlias = crate::operation::ListSigningJobs;
 #[doc(hidden)]
-pub type ListSigningJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningJobs`](crate::operation::ListSigningJobs)>
     #[allow(clippy::let_and_return)]
@@ -1230,7 +1230,7 @@ impl ListSigningJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1360,7 +1360,7 @@ impl ListSigningJobsInput {
             "ListSigningJobs",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1462,7 +1462,7 @@ pub mod list_signing_platforms_input {
 #[doc(hidden)]
 pub type ListSigningPlatformsInputOperationOutputAlias = crate::operation::ListSigningPlatforms;
 #[doc(hidden)]
-pub type ListSigningPlatformsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningPlatformsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningPlatformsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningPlatforms`](crate::operation::ListSigningPlatforms)>
     #[allow(clippy::let_and_return)]
@@ -1473,7 +1473,7 @@ impl ListSigningPlatformsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningPlatforms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1573,7 +1573,7 @@ impl ListSigningPlatformsInput {
             "ListSigningPlatforms",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1690,7 +1690,7 @@ pub mod list_signing_profiles_input {
 #[doc(hidden)]
 pub type ListSigningProfilesInputOperationOutputAlias = crate::operation::ListSigningProfiles;
 #[doc(hidden)]
-pub type ListSigningProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningProfiles`](crate::operation::ListSigningProfiles)>
     #[allow(clippy::let_and_return)]
@@ -1701,7 +1701,7 @@ impl ListSigningProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1806,7 +1806,7 @@ impl ListSigningProfilesInput {
             "ListSigningProfiles",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1856,7 +1856,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1867,7 +1867,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1957,7 +1957,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2136,7 +2136,7 @@ pub mod put_signing_profile_input {
 #[doc(hidden)]
 pub type PutSigningProfileInputOperationOutputAlias = crate::operation::PutSigningProfile;
 #[doc(hidden)]
-pub type PutSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`PutSigningProfile`](crate::operation::PutSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -2147,7 +2147,7 @@ impl PutSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2247,7 +2247,7 @@ impl PutSigningProfileInput {
             "PutSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2330,7 +2330,7 @@ pub mod remove_profile_permission_input {
 pub type RemoveProfilePermissionInputOperationOutputAlias =
     crate::operation::RemoveProfilePermission;
 #[doc(hidden)]
-pub type RemoveProfilePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveProfilePermission`](crate::operation::RemoveProfilePermission)>
     #[allow(clippy::let_and_return)]
@@ -2341,7 +2341,7 @@ impl RemoveProfilePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveProfilePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2462,7 +2462,7 @@ impl RemoveProfilePermissionInput {
             "RemoveProfilePermission",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2536,7 +2536,7 @@ pub mod revoke_signature_input {
 #[doc(hidden)]
 pub type RevokeSignatureInputOperationOutputAlias = crate::operation::RevokeSignature;
 #[doc(hidden)]
-pub type RevokeSignatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeSignatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSignatureInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSignature`](crate::operation::RevokeSignature)>
     #[allow(clippy::let_and_return)]
@@ -2547,7 +2547,7 @@ impl RevokeSignatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeSignature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2643,7 +2643,7 @@ impl RevokeSignatureInput {
             "RevokeSignature",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2747,7 +2747,7 @@ pub mod revoke_signing_profile_input {
 #[doc(hidden)]
 pub type RevokeSigningProfileInputOperationOutputAlias = crate::operation::RevokeSigningProfile;
 #[doc(hidden)]
-pub type RevokeSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSigningProfile`](crate::operation::RevokeSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -2758,7 +2758,7 @@ impl RevokeSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2860,7 +2860,7 @@ impl RevokeSigningProfileInput {
             "RevokeSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2981,7 +2981,7 @@ pub mod start_signing_job_input {
 #[doc(hidden)]
 pub type StartSigningJobInputOperationOutputAlias = crate::operation::StartSigningJob;
 #[doc(hidden)]
-pub type StartSigningJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSigningJob`](crate::operation::StartSigningJob)>
     #[allow(clippy::let_and_return)]
@@ -2992,7 +2992,7 @@ impl StartSigningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSigningJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3075,7 +3075,7 @@ impl StartSigningJobInput {
             "StartSigningJob",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3162,7 +3162,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3173,7 +3173,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3268,7 +3268,7 @@ impl TagResourceInput {
             "TagResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3347,7 +3347,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3358,7 +3358,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3461,7 +3461,7 @@ impl UntagResourceInput {
             "UntagResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

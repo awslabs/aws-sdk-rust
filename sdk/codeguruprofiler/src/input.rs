@@ -60,7 +60,7 @@ pub mod add_notification_channels_input {
 pub type AddNotificationChannelsInputOperationOutputAlias =
     crate::operation::AddNotificationChannels;
 #[doc(hidden)]
-pub type AddNotificationChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddNotificationChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannels`](crate::operation::AddNotificationChannels)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +71,7 @@ impl AddNotificationChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddNotificationChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -173,7 +173,7 @@ impl AddNotificationChannelsInput {
             "AddNotificationChannels",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -395,7 +395,7 @@ pub mod batch_get_frame_metric_data_input {
 pub type BatchGetFrameMetricDataInputOperationOutputAlias =
     crate::operation::BatchGetFrameMetricData;
 #[doc(hidden)]
-pub type BatchGetFrameMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetFrameMetricDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetFrameMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetFrameMetricData`](crate::operation::BatchGetFrameMetricData)>
     #[allow(clippy::let_and_return)]
@@ -406,7 +406,7 @@ impl BatchGetFrameMetricDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetFrameMetricData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -543,7 +543,7 @@ impl BatchGetFrameMetricDataInput {
             "BatchGetFrameMetricData",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -752,7 +752,7 @@ pub mod configure_agent_input {
 #[doc(hidden)]
 pub type ConfigureAgentInputOperationOutputAlias = crate::operation::ConfigureAgent;
 #[doc(hidden)]
-pub type ConfigureAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfigureAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureAgentInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureAgent`](crate::operation::ConfigureAgent)>
     #[allow(clippy::let_and_return)]
@@ -763,7 +763,7 @@ impl ConfigureAgentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureAgent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -863,7 +863,7 @@ impl ConfigureAgentInput {
             "ConfigureAgent",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1019,7 +1019,7 @@ pub mod create_profiling_group_input {
 #[doc(hidden)]
 pub type CreateProfilingGroupInputOperationOutputAlias = crate::operation::CreateProfilingGroup;
 #[doc(hidden)]
-pub type CreateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfilingGroup`](crate::operation::CreateProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +1030,7 @@ impl CreateProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1126,7 +1126,7 @@ impl CreateProfilingGroupInput {
             "CreateProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1187,7 +1187,7 @@ pub mod delete_profiling_group_input {
 #[doc(hidden)]
 pub type DeleteProfilingGroupInputOperationOutputAlias = crate::operation::DeleteProfilingGroup;
 #[doc(hidden)]
-pub type DeleteProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfilingGroup`](crate::operation::DeleteProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1198,7 +1198,7 @@ impl DeleteProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1292,7 +1292,7 @@ impl DeleteProfilingGroupInput {
             "DeleteProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1349,7 +1349,7 @@ pub mod describe_profiling_group_input {
 #[doc(hidden)]
 pub type DescribeProfilingGroupInputOperationOutputAlias = crate::operation::DescribeProfilingGroup;
 #[doc(hidden)]
-pub type DescribeProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProfilingGroup`](crate::operation::DescribeProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1360,7 +1360,7 @@ impl DescribeProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1454,7 +1454,7 @@ impl DescribeProfilingGroupInput {
             "DescribeProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1555,7 +1555,8 @@ pub mod get_findings_report_account_summary_input {
 pub type GetFindingsReportAccountSummaryInputOperationOutputAlias =
     crate::operation::GetFindingsReportAccountSummary;
 #[doc(hidden)]
-pub type GetFindingsReportAccountSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsReportAccountSummaryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsReportAccountSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsReportAccountSummary`](crate::operation::GetFindingsReportAccountSummary)>
     #[allow(clippy::let_and_return)]
@@ -1566,7 +1567,7 @@ impl GetFindingsReportAccountSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsReportAccountSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1663,7 +1664,7 @@ impl GetFindingsReportAccountSummaryInput {
             "GetFindingsReportAccountSummary",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1717,7 +1718,8 @@ pub mod get_notification_configuration_input {
 pub type GetNotificationConfigurationInputOperationOutputAlias =
     crate::operation::GetNotificationConfiguration;
 #[doc(hidden)]
-pub type GetNotificationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNotificationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNotificationConfiguration`](crate::operation::GetNotificationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1728,7 +1730,7 @@ impl GetNotificationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNotificationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1822,7 +1824,7 @@ impl GetNotificationConfigurationInput {
             "GetNotificationConfiguration",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1873,7 +1875,7 @@ pub mod get_policy_input {
 #[doc(hidden)]
 pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
 #[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1884,7 +1886,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1976,7 +1978,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "codeguruprofiler",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2193,7 +2195,7 @@ pub mod get_profile_input {
 #[doc(hidden)]
 pub type GetProfileInputOperationOutputAlias = crate::operation::GetProfile;
 #[doc(hidden)]
-pub type GetProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(clippy::let_and_return)]
@@ -2204,7 +2206,7 @@ impl GetProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2359,7 @@ impl GetProfileInput {
             "GetProfile",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2596,7 +2598,7 @@ pub mod get_recommendations_input {
 #[doc(hidden)]
 pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
 #[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -2607,7 +2609,7 @@ impl GetRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2730,7 +2732,7 @@ impl GetRecommendationsInput {
             "GetRecommendations",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2897,7 +2899,7 @@ pub mod list_findings_reports_input {
 #[doc(hidden)]
 pub type ListFindingsReportsInputOperationOutputAlias = crate::operation::ListFindingsReports;
 #[doc(hidden)]
-pub type ListFindingsReportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsReportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingsReports`](crate::operation::ListFindingsReports)>
     #[allow(clippy::let_and_return)]
@@ -2908,7 +2910,7 @@ impl ListFindingsReportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindingsReports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3043,7 +3045,7 @@ impl ListFindingsReportsInput {
             "ListFindingsReports",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3249,7 +3251,7 @@ pub mod list_profile_times_input {
 #[doc(hidden)]
 pub type ListProfileTimesInputOperationOutputAlias = crate::operation::ListProfileTimes;
 #[doc(hidden)]
-pub type ListProfileTimesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfileTimesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfileTimesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileTimes`](crate::operation::ListProfileTimes)>
     #[allow(clippy::let_and_return)]
@@ -3260,7 +3262,7 @@ impl ListProfileTimesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfileTimes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3395,7 +3397,7 @@ impl ListProfileTimesInput {
             "ListProfileTimes",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3509,7 +3511,7 @@ pub mod list_profiling_groups_input {
 #[doc(hidden)]
 pub type ListProfilingGroupsInputOperationOutputAlias = crate::operation::ListProfilingGroups;
 #[doc(hidden)]
-pub type ListProfilingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfilingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilingGroups`](crate::operation::ListProfilingGroups)>
     #[allow(clippy::let_and_return)]
@@ -3520,7 +3522,7 @@ impl ListProfilingGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfilingGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3617,7 +3619,7 @@ impl ListProfilingGroupsInput {
             "ListProfilingGroups",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3671,7 +3673,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3682,7 +3684,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3772,7 +3774,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3917,7 +3919,7 @@ pub mod post_agent_profile_input {
 #[doc(hidden)]
 pub type PostAgentProfileInputOperationOutputAlias = crate::operation::PostAgentProfile;
 #[doc(hidden)]
-pub type PostAgentProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PostAgentProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostAgentProfileInput {
     /// Consumes the builder and constructs an Operation<[`PostAgentProfile`](crate::operation::PostAgentProfile)>
     #[allow(clippy::let_and_return)]
@@ -3928,7 +3930,7 @@ impl PostAgentProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostAgentProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4068,7 +4070,7 @@ impl PostAgentProfileInput {
             "PostAgentProfile",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4203,7 +4205,7 @@ pub mod put_permission_input {
 #[doc(hidden)]
 pub type PutPermissionInputOperationOutputAlias = crate::operation::PutPermission;
 #[doc(hidden)]
-pub type PutPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionInput {
     /// Consumes the builder and constructs an Operation<[`PutPermission`](crate::operation::PutPermission)>
     #[allow(clippy::let_and_return)]
@@ -4214,7 +4216,7 @@ impl PutPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4329,7 +4331,7 @@ impl PutPermissionInput {
             "PutPermission",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4403,7 +4405,7 @@ pub mod remove_notification_channel_input {
 pub type RemoveNotificationChannelInputOperationOutputAlias =
     crate::operation::RemoveNotificationChannel;
 #[doc(hidden)]
-pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -4414,7 +4416,7 @@ impl RemoveNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4524,7 +4526,7 @@ impl RemoveNotificationChannelInput {
             "RemoveNotificationChannel",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4618,7 +4620,7 @@ pub mod remove_permission_input {
 #[doc(hidden)]
 pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
 #[doc(hidden)]
-pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemovePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
@@ -4629,7 +4631,7 @@ impl RemovePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4750,7 +4752,7 @@ impl RemovePermissionInput {
             "RemovePermission",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4854,7 +4856,7 @@ pub mod submit_feedback_input {
 #[doc(hidden)]
 pub type SubmitFeedbackInputOperationOutputAlias = crate::operation::SubmitFeedback;
 #[doc(hidden)]
-pub type SubmitFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubmitFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubmitFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`SubmitFeedback`](crate::operation::SubmitFeedback)>
     #[allow(clippy::let_and_return)]
@@ -4865,7 +4867,7 @@ impl SubmitFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubmitFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4975,7 +4977,7 @@ impl SubmitFeedbackInput {
             "SubmitFeedback",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5070,7 +5072,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5081,7 +5083,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5176,7 +5178,7 @@ impl TagResourceInput {
             "TagResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5265,7 +5267,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5276,7 +5278,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5379,7 +5381,7 @@ impl UntagResourceInput {
             "UntagResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5455,7 +5457,7 @@ pub mod update_profiling_group_input {
 #[doc(hidden)]
 pub type UpdateProfilingGroupInputOperationOutputAlias = crate::operation::UpdateProfilingGroup;
 #[doc(hidden)]
-pub type UpdateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfilingGroup`](crate::operation::UpdateProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -5466,7 +5468,7 @@ impl UpdateProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5568,7 +5570,7 @@ impl UpdateProfilingGroupInput {
             "UpdateProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

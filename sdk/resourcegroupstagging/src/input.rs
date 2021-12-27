@@ -21,7 +21,7 @@ pub mod describe_report_creation_input {
 #[doc(hidden)]
 pub type DescribeReportCreationInputOperationOutputAlias = crate::operation::DescribeReportCreation;
 #[doc(hidden)]
-pub type DescribeReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReportCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportCreation`](crate::operation::DescribeReportCreation)>
     #[allow(clippy::let_and_return)]
@@ -32,7 +32,7 @@ impl DescribeReportCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -119,7 +119,7 @@ impl DescribeReportCreationInput {
             "DescribeReportCreation",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -365,7 +365,7 @@ pub mod get_compliance_summary_input {
 #[doc(hidden)]
 pub type GetComplianceSummaryInputOperationOutputAlias = crate::operation::GetComplianceSummary;
 #[doc(hidden)]
-pub type GetComplianceSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummary`](crate::operation::GetComplianceSummary)>
     #[allow(clippy::let_and_return)]
@@ -376,7 +376,7 @@ impl GetComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -463,7 +463,7 @@ impl GetComplianceSummaryInput {
             "GetComplianceSummary",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -845,7 +845,7 @@ pub mod get_resources_input {
 #[doc(hidden)]
 pub type GetResourcesInputOperationOutputAlias = crate::operation::GetResources;
 #[doc(hidden)]
-pub type GetResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
     #[allow(clippy::let_and_return)]
@@ -856,7 +856,7 @@ impl GetResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -940,7 +940,7 @@ impl GetResourcesInput {
             "GetResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1005,7 +1005,7 @@ pub mod get_tag_keys_input {
 #[doc(hidden)]
 pub type GetTagKeysInputOperationOutputAlias = crate::operation::GetTagKeys;
 #[doc(hidden)]
-pub type GetTagKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagKeysInput {
     /// Consumes the builder and constructs an Operation<[`GetTagKeys`](crate::operation::GetTagKeys)>
     #[allow(clippy::let_and_return)]
@@ -1016,7 +1016,7 @@ impl GetTagKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTagKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1100,7 +1100,7 @@ impl GetTagKeysInput {
             "GetTagKeys",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1179,7 +1179,7 @@ pub mod get_tag_values_input {
 #[doc(hidden)]
 pub type GetTagValuesInputOperationOutputAlias = crate::operation::GetTagValues;
 #[doc(hidden)]
-pub type GetTagValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetTagValues`](crate::operation::GetTagValues)>
     #[allow(clippy::let_and_return)]
@@ -1190,7 +1190,7 @@ impl GetTagValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTagValues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1274,7 +1274,7 @@ impl GetTagValuesInput {
             "GetTagValues",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1342,7 +1342,7 @@ pub mod start_report_creation_input {
 #[doc(hidden)]
 pub type StartReportCreationInputOperationOutputAlias = crate::operation::StartReportCreation;
 #[doc(hidden)]
-pub type StartReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReportCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`StartReportCreation`](crate::operation::StartReportCreation)>
     #[allow(clippy::let_and_return)]
@@ -1353,7 +1353,7 @@ impl StartReportCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReportCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1438,7 +1438,7 @@ impl StartReportCreationInput {
             "StartReportCreation",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1544,7 +1544,7 @@ pub mod tag_resources_input {
 #[doc(hidden)]
 pub type TagResourcesInputOperationOutputAlias = crate::operation::TagResources;
 #[doc(hidden)]
-pub type TagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`TagResources`](crate::operation::TagResources)>
     #[allow(clippy::let_and_return)]
@@ -1555,7 +1555,7 @@ impl TagResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1639,7 +1639,7 @@ impl TagResourcesInput {
             "TagResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1737,7 +1737,7 @@ pub mod untag_resources_input {
 #[doc(hidden)]
 pub type UntagResourcesInputOperationOutputAlias = crate::operation::UntagResources;
 #[doc(hidden)]
-pub type UntagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UntagResources`](crate::operation::UntagResources)>
     #[allow(clippy::let_and_return)]
@@ -1748,7 +1748,7 @@ impl UntagResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1833,7 +1833,7 @@ impl UntagResourcesInput {
             "UntagResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

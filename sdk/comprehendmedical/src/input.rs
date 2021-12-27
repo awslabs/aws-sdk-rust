@@ -40,7 +40,8 @@ pub mod describe_entities_detection_v2_job_input {
 pub type DescribeEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::DescribeEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionV2Job`](crate::operation::DescribeEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -51,7 +52,7 @@ impl DescribeEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -137,7 +138,7 @@ impl DescribeEntitiesDetectionV2JobInput {
             "DescribeEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -198,7 +199,7 @@ pub mod describe_icd10_cm_inference_job_input {
 pub type DescribeIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeICD10CMInferenceJob;
 #[doc(hidden)]
-pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeICD10CMInferenceJob`](crate::operation::DescribeICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -209,7 +210,7 @@ impl DescribeIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -295,7 +296,7 @@ impl DescribeIcd10CmInferenceJobInput {
             "DescribeICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -356,7 +357,7 @@ pub mod describe_phi_detection_job_input {
 pub type DescribePhiDetectionJobInputOperationOutputAlias =
     crate::operation::DescribePHIDetectionJob;
 #[doc(hidden)]
-pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePHIDetectionJob`](crate::operation::DescribePHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -367,7 +368,7 @@ impl DescribePhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -454,7 +455,7 @@ impl DescribePhiDetectionJobInput {
             "DescribePHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -515,7 +516,7 @@ pub mod describe_rx_norm_inference_job_input {
 pub type DescribeRxNormInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeRxNormInferenceJob;
 #[doc(hidden)]
-pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRxNormInferenceJob`](crate::operation::DescribeRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -526,7 +527,7 @@ impl DescribeRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -612,7 +613,7 @@ impl DescribeRxNormInferenceJobInput {
             "DescribeRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -670,7 +671,7 @@ pub mod detect_entities_input {
 #[doc(hidden)]
 pub type DetectEntitiesInputOperationOutputAlias = crate::operation::DetectEntities;
 #[doc(hidden)]
-pub type DetectEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(clippy::let_and_return)]
@@ -681,7 +682,7 @@ impl DetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -766,7 +767,7 @@ impl DetectEntitiesInput {
             "DetectEntities",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -824,7 +825,7 @@ pub mod detect_entities_v2_input {
 #[doc(hidden)]
 pub type DetectEntitiesV2InputOperationOutputAlias = crate::operation::DetectEntitiesV2;
 #[doc(hidden)]
-pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesV2Input {
     /// Consumes the builder and constructs an Operation<[`DetectEntitiesV2`](crate::operation::DetectEntitiesV2)>
     #[allow(clippy::let_and_return)]
@@ -835,7 +836,7 @@ impl DetectEntitiesV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntitiesV2,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -920,7 +921,7 @@ impl DetectEntitiesV2Input {
             "DetectEntitiesV2",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -976,7 +977,7 @@ pub mod detect_phi_input {
 #[doc(hidden)]
 pub type DetectPhiInputOperationOutputAlias = crate::operation::DetectPHI;
 #[doc(hidden)]
-pub type DetectPhiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectPhiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectPhiInput {
     /// Consumes the builder and constructs an Operation<[`DetectPHI`](crate::operation::DetectPHI)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +988,7 @@ impl DetectPhiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectPHI,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1069,7 +1070,7 @@ impl DetectPhiInput {
                     "DetectPHI",
                     "comprehendmedical",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1127,7 +1128,7 @@ pub mod infer_icd10_cm_input {
 #[doc(hidden)]
 pub type InferIcd10CmInputOperationOutputAlias = crate::operation::InferICD10CM;
 #[doc(hidden)]
-pub type InferIcd10CmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InferIcd10CmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferIcd10CmInput {
     /// Consumes the builder and constructs an Operation<[`InferICD10CM`](crate::operation::InferICD10CM)>
     #[allow(clippy::let_and_return)]
@@ -1138,7 +1139,7 @@ impl InferIcd10CmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferICD10CM,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1222,7 +1223,7 @@ impl InferIcd10CmInput {
             "InferICD10CM",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1280,7 +1281,7 @@ pub mod infer_rx_norm_input {
 #[doc(hidden)]
 pub type InferRxNormInputOperationOutputAlias = crate::operation::InferRxNorm;
 #[doc(hidden)]
-pub type InferRxNormInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InferRxNormInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferRxNormInput {
     /// Consumes the builder and constructs an Operation<[`InferRxNorm`](crate::operation::InferRxNorm)>
     #[allow(clippy::let_and_return)]
@@ -1291,7 +1292,7 @@ impl InferRxNormInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferRxNorm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1375,7 +1376,7 @@ impl InferRxNormInput {
             "InferRxNorm",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1463,7 +1464,7 @@ pub mod list_entities_detection_v2_jobs_input {
 pub type ListEntitiesDetectionV2JobsInputOperationOutputAlias =
     crate::operation::ListEntitiesDetectionV2Jobs;
 #[doc(hidden)]
-pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesDetectionV2JobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionV2Jobs`](crate::operation::ListEntitiesDetectionV2Jobs)>
     #[allow(clippy::let_and_return)]
@@ -1474,7 +1475,7 @@ impl ListEntitiesDetectionV2JobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitiesDetectionV2Jobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1560,7 +1561,7 @@ impl ListEntitiesDetectionV2JobsInput {
             "ListEntitiesDetectionV2Jobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1648,7 +1649,7 @@ pub mod list_icd10_cm_inference_jobs_input {
 pub type ListIcd10CmInferenceJobsInputOperationOutputAlias =
     crate::operation::ListICD10CMInferenceJobs;
 #[doc(hidden)]
-pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIcd10CmInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListICD10CMInferenceJobs`](crate::operation::ListICD10CMInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -1659,7 +1660,7 @@ impl ListIcd10CmInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListICD10CMInferenceJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1746,7 +1747,7 @@ impl ListIcd10CmInferenceJobsInput {
             "ListICD10CMInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1833,7 +1834,7 @@ pub mod list_phi_detection_jobs_input {
 #[doc(hidden)]
 pub type ListPhiDetectionJobsInputOperationOutputAlias = crate::operation::ListPHIDetectionJobs;
 #[doc(hidden)]
-pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPhiDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPHIDetectionJobs`](crate::operation::ListPHIDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -1844,7 +1845,7 @@ impl ListPhiDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPHIDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1931,7 +1932,7 @@ impl ListPhiDetectionJobsInput {
             "ListPHIDetectionJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2019,7 +2020,7 @@ pub mod list_rx_norm_inference_jobs_input {
 pub type ListRxNormInferenceJobsInputOperationOutputAlias =
     crate::operation::ListRxNormInferenceJobs;
 #[doc(hidden)]
-pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRxNormInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListRxNormInferenceJobs`](crate::operation::ListRxNormInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -2030,7 +2031,7 @@ impl ListRxNormInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRxNormInferenceJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2117,7 +2118,7 @@ impl ListRxNormInferenceJobsInput {
             "ListRxNormInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2269,7 +2270,7 @@ pub mod start_entities_detection_v2_job_input {
 pub type StartEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::StartEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionV2Job`](crate::operation::StartEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -2280,7 +2281,7 @@ impl StartEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2369,7 +2370,7 @@ impl StartEntitiesDetectionV2JobInput {
             "StartEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2521,7 +2522,7 @@ pub mod start_icd10_cm_inference_job_input {
 pub type StartIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StartICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartICD10CMInferenceJob`](crate::operation::StartICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -2532,7 +2533,7 @@ impl StartIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2622,7 +2623,7 @@ impl StartIcd10CmInferenceJobInput {
             "StartICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2773,7 +2774,7 @@ pub mod start_phi_detection_job_input {
 #[doc(hidden)]
 pub type StartPhiDetectionJobInputOperationOutputAlias = crate::operation::StartPHIDetectionJob;
 #[doc(hidden)]
-pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPHIDetectionJob`](crate::operation::StartPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -2784,7 +2785,7 @@ impl StartPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2874,7 +2875,7 @@ impl StartPhiDetectionJobInput {
             "StartPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3026,7 +3027,7 @@ pub mod start_rx_norm_inference_job_input {
 pub type StartRxNormInferenceJobInputOperationOutputAlias =
     crate::operation::StartRxNormInferenceJob;
 #[doc(hidden)]
-pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartRxNormInferenceJob`](crate::operation::StartRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3037,7 +3038,7 @@ impl StartRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3127,7 +3128,7 @@ impl StartRxNormInferenceJobInput {
             "StartRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3186,7 +3187,7 @@ pub mod stop_entities_detection_v2_job_input {
 pub type StopEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::StopEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionV2Job`](crate::operation::StopEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -3197,7 +3198,7 @@ impl StopEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3283,7 +3284,7 @@ impl StopEntitiesDetectionV2JobInput {
             "StopEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3342,7 +3343,7 @@ pub mod stop_icd10_cm_inference_job_input {
 pub type StopIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StopICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopICD10CMInferenceJob`](crate::operation::StopICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3353,7 +3354,7 @@ impl StopIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3440,7 +3441,7 @@ impl StopIcd10CmInferenceJobInput {
             "StopICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3498,7 +3499,7 @@ pub mod stop_phi_detection_job_input {
 #[doc(hidden)]
 pub type StopPhiDetectionJobInputOperationOutputAlias = crate::operation::StopPHIDetectionJob;
 #[doc(hidden)]
-pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPHIDetectionJob`](crate::operation::StopPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3509,7 +3510,7 @@ impl StopPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3596,7 +3597,7 @@ impl StopPhiDetectionJobInput {
             "StopPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3654,7 +3655,7 @@ pub mod stop_rx_norm_inference_job_input {
 #[doc(hidden)]
 pub type StopRxNormInferenceJobInputOperationOutputAlias = crate::operation::StopRxNormInferenceJob;
 #[doc(hidden)]
-pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopRxNormInferenceJob`](crate::operation::StopRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3665,7 +3666,7 @@ impl StopRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3752,7 +3753,7 @@ impl StopRxNormInferenceJobInput {
             "StopRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

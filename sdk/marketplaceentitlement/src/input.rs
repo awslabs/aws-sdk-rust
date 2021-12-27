@@ -106,7 +106,7 @@ pub mod get_entitlements_input {
 #[doc(hidden)]
 pub type GetEntitlementsInputOperationOutputAlias = crate::operation::GetEntitlements;
 #[doc(hidden)]
-pub type GetEntitlementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GetEntitlements`](crate::operation::GetEntitlements)>
     #[allow(clippy::let_and_return)]
@@ -117,7 +117,7 @@ impl GetEntitlementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEntitlements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -202,7 +202,7 @@ impl GetEntitlementsInput {
             "GetEntitlements",
             "marketplaceentitlementservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

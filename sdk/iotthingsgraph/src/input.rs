@@ -67,7 +67,7 @@ pub mod associate_entity_to_thing_input {
 #[doc(hidden)]
 pub type AssociateEntityToThingInputOperationOutputAlias = crate::operation::AssociateEntityToThing;
 #[doc(hidden)]
-pub type AssociateEntityToThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateEntityToThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateEntityToThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateEntityToThing`](crate::operation::AssociateEntityToThing)>
     #[allow(clippy::let_and_return)]
@@ -78,7 +78,7 @@ impl AssociateEntityToThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateEntityToThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl AssociateEntityToThingInput {
             "AssociateEntityToThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -240,7 +240,7 @@ pub mod create_flow_template_input {
 #[doc(hidden)]
 pub type CreateFlowTemplateInputOperationOutputAlias = crate::operation::CreateFlowTemplate;
 #[doc(hidden)]
-pub type CreateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlowTemplate`](crate::operation::CreateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -251,7 +251,7 @@ impl CreateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -336,7 +336,7 @@ impl CreateFlowTemplateInput {
             "CreateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -501,7 +501,7 @@ pub mod create_system_instance_input {
 #[doc(hidden)]
 pub type CreateSystemInstanceInputOperationOutputAlias = crate::operation::CreateSystemInstance;
 #[doc(hidden)]
-pub type CreateSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateSystemInstance`](crate::operation::CreateSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -512,7 +512,7 @@ impl CreateSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -599,7 +599,7 @@ impl CreateSystemInstanceInput {
             "CreateSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -674,7 +674,7 @@ pub mod create_system_template_input {
 #[doc(hidden)]
 pub type CreateSystemTemplateInputOperationOutputAlias = crate::operation::CreateSystemTemplate;
 #[doc(hidden)]
-pub type CreateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateSystemTemplate`](crate::operation::CreateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -685,7 +685,7 @@ impl CreateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -772,7 +772,7 @@ impl CreateSystemTemplateInput {
             "CreateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -836,7 +836,7 @@ pub mod delete_flow_template_input {
 #[doc(hidden)]
 pub type DeleteFlowTemplateInputOperationOutputAlias = crate::operation::DeleteFlowTemplate;
 #[doc(hidden)]
-pub type DeleteFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlowTemplate`](crate::operation::DeleteFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -847,7 +847,7 @@ impl DeleteFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -932,7 +932,7 @@ impl DeleteFlowTemplateInput {
             "DeleteFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -976,7 +976,7 @@ pub mod delete_namespace_input {
 #[doc(hidden)]
 pub type DeleteNamespaceInputOperationOutputAlias = crate::operation::DeleteNamespace;
 #[doc(hidden)]
-pub type DeleteNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamespace`](crate::operation::DeleteNamespace)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +987,7 @@ impl DeleteNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1072,7 +1072,7 @@ impl DeleteNamespaceInput {
             "DeleteNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1120,7 +1120,7 @@ pub mod delete_system_instance_input {
 #[doc(hidden)]
 pub type DeleteSystemInstanceInputOperationOutputAlias = crate::operation::DeleteSystemInstance;
 #[doc(hidden)]
-pub type DeleteSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSystemInstance`](crate::operation::DeleteSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -1131,7 +1131,7 @@ impl DeleteSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1218,7 +1218,7 @@ impl DeleteSystemInstanceInput {
             "DeleteSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1282,7 +1282,7 @@ pub mod delete_system_template_input {
 #[doc(hidden)]
 pub type DeleteSystemTemplateInputOperationOutputAlias = crate::operation::DeleteSystemTemplate;
 #[doc(hidden)]
-pub type DeleteSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSystemTemplate`](crate::operation::DeleteSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1293,7 +1293,7 @@ impl DeleteSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1380,7 +1380,7 @@ impl DeleteSystemTemplateInput {
             "DeleteSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1444,7 +1444,7 @@ pub mod deploy_system_instance_input {
 #[doc(hidden)]
 pub type DeploySystemInstanceInputOperationOutputAlias = crate::operation::DeploySystemInstance;
 #[doc(hidden)]
-pub type DeploySystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeploySystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeploySystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeploySystemInstance`](crate::operation::DeploySystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -1455,7 +1455,7 @@ impl DeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeploySystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1542,7 +1542,7 @@ impl DeploySystemInstanceInput {
             "DeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1606,7 +1606,7 @@ pub mod deprecate_flow_template_input {
 #[doc(hidden)]
 pub type DeprecateFlowTemplateInputOperationOutputAlias = crate::operation::DeprecateFlowTemplate;
 #[doc(hidden)]
-pub type DeprecateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateFlowTemplate`](crate::operation::DeprecateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1617,7 +1617,7 @@ impl DeprecateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1704,7 +1704,7 @@ impl DeprecateFlowTemplateInput {
             "DeprecateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1769,7 +1769,7 @@ pub mod deprecate_system_template_input {
 pub type DeprecateSystemTemplateInputOperationOutputAlias =
     crate::operation::DeprecateSystemTemplate;
 #[doc(hidden)]
-pub type DeprecateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateSystemTemplate`](crate::operation::DeprecateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1780,7 +1780,7 @@ impl DeprecateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1867,7 +1867,7 @@ impl DeprecateSystemTemplateInput {
             "DeprecateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1928,7 +1928,7 @@ pub mod describe_namespace_input {
 #[doc(hidden)]
 pub type DescribeNamespaceInputOperationOutputAlias = crate::operation::DescribeNamespace;
 #[doc(hidden)]
-pub type DescribeNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNamespace`](crate::operation::DescribeNamespace)>
     #[allow(clippy::let_and_return)]
@@ -1939,7 +1939,7 @@ impl DescribeNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2024,7 +2024,7 @@ impl DescribeNamespaceInput {
             "DescribeNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2098,7 +2098,7 @@ pub mod dissociate_entity_from_thing_input {
 pub type DissociateEntityFromThingInputOperationOutputAlias =
     crate::operation::DissociateEntityFromThing;
 #[doc(hidden)]
-pub type DissociateEntityFromThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DissociateEntityFromThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DissociateEntityFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DissociateEntityFromThing`](crate::operation::DissociateEntityFromThing)>
     #[allow(clippy::let_and_return)]
@@ -2109,7 +2109,7 @@ impl DissociateEntityFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DissociateEntityFromThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2196,7 +2196,7 @@ impl DissociateEntityFromThingInput {
             "DissociateEntityFromThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2283,7 +2283,7 @@ pub mod get_entities_input {
 #[doc(hidden)]
 pub type GetEntitiesInputOperationOutputAlias = crate::operation::GetEntities;
 #[doc(hidden)]
-pub type GetEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`GetEntities`](crate::operation::GetEntities)>
     #[allow(clippy::let_and_return)]
@@ -2294,7 +2294,7 @@ impl GetEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2378,7 +2378,7 @@ impl GetEntitiesInput {
             "GetEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2456,7 +2456,7 @@ pub mod get_flow_template_input {
 #[doc(hidden)]
 pub type GetFlowTemplateInputOperationOutputAlias = crate::operation::GetFlowTemplate;
 #[doc(hidden)]
-pub type GetFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetFlowTemplate`](crate::operation::GetFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2467,7 +2467,7 @@ impl GetFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2552,7 +2552,7 @@ impl GetFlowTemplateInput {
             "GetFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2643,7 +2643,7 @@ pub mod get_flow_template_revisions_input {
 pub type GetFlowTemplateRevisionsInputOperationOutputAlias =
     crate::operation::GetFlowTemplateRevisions;
 #[doc(hidden)]
-pub type GetFlowTemplateRevisionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFlowTemplateRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFlowTemplateRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`GetFlowTemplateRevisions`](crate::operation::GetFlowTemplateRevisions)>
     #[allow(clippy::let_and_return)]
@@ -2654,7 +2654,7 @@ impl GetFlowTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplateRevisions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2741,7 +2741,7 @@ impl GetFlowTemplateRevisionsInput {
             "GetFlowTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2786,7 +2786,7 @@ pub mod get_namespace_deletion_status_input {
 pub type GetNamespaceDeletionStatusInputOperationOutputAlias =
     crate::operation::GetNamespaceDeletionStatus;
 #[doc(hidden)]
-pub type GetNamespaceDeletionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNamespaceDeletionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamespaceDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetNamespaceDeletionStatus`](crate::operation::GetNamespaceDeletionStatus)>
     #[allow(clippy::let_and_return)]
@@ -2797,7 +2797,7 @@ impl GetNamespaceDeletionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNamespaceDeletionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2883,7 +2883,7 @@ impl GetNamespaceDeletionStatusInput {
             "GetNamespaceDeletionStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2939,7 +2939,7 @@ pub mod get_system_instance_input {
 #[doc(hidden)]
 pub type GetSystemInstanceInputOperationOutputAlias = crate::operation::GetSystemInstance;
 #[doc(hidden)]
-pub type GetSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemInstance`](crate::operation::GetSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -2950,7 +2950,7 @@ impl GetSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3035,7 +3035,7 @@ impl GetSystemInstanceInput {
             "GetSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3113,7 +3113,7 @@ pub mod get_system_template_input {
 #[doc(hidden)]
 pub type GetSystemTemplateInputOperationOutputAlias = crate::operation::GetSystemTemplate;
 #[doc(hidden)]
-pub type GetSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemTemplate`](crate::operation::GetSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3124,7 +3124,7 @@ impl GetSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3209,7 +3209,7 @@ impl GetSystemTemplateInput {
             "GetSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3300,7 +3300,7 @@ pub mod get_system_template_revisions_input {
 pub type GetSystemTemplateRevisionsInputOperationOutputAlias =
     crate::operation::GetSystemTemplateRevisions;
 #[doc(hidden)]
-pub type GetSystemTemplateRevisionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemTemplateRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemTemplateRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemTemplateRevisions`](crate::operation::GetSystemTemplateRevisions)>
     #[allow(clippy::let_and_return)]
@@ -3311,7 +3311,7 @@ impl GetSystemTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplateRevisions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3397,7 +3397,7 @@ impl GetSystemTemplateRevisionsInput {
             "GetSystemTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3455,7 +3455,7 @@ pub mod get_upload_status_input {
 #[doc(hidden)]
 pub type GetUploadStatusInputOperationOutputAlias = crate::operation::GetUploadStatus;
 #[doc(hidden)]
-pub type GetUploadStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUploadStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUploadStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetUploadStatus`](crate::operation::GetUploadStatus)>
     #[allow(clippy::let_and_return)]
@@ -3466,7 +3466,7 @@ impl GetUploadStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUploadStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3551,7 +3551,7 @@ impl GetUploadStatusInput {
             "GetUploadStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3637,7 +3637,7 @@ pub mod list_flow_execution_messages_input {
 pub type ListFlowExecutionMessagesInputOperationOutputAlias =
     crate::operation::ListFlowExecutionMessages;
 #[doc(hidden)]
-pub type ListFlowExecutionMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFlowExecutionMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFlowExecutionMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListFlowExecutionMessages`](crate::operation::ListFlowExecutionMessages)>
     #[allow(clippy::let_and_return)]
@@ -3648,7 +3648,7 @@ impl ListFlowExecutionMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFlowExecutionMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3735,7 +3735,7 @@ impl ListFlowExecutionMessagesInput {
             "ListFlowExecutionMessages",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3817,7 +3817,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3828,7 +3828,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3915,7 +3915,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4047,7 +4047,7 @@ pub mod search_entities_input {
 #[doc(hidden)]
 pub type SearchEntitiesInputOperationOutputAlias = crate::operation::SearchEntities;
 #[doc(hidden)]
-pub type SearchEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`SearchEntities`](crate::operation::SearchEntities)>
     #[allow(clippy::let_and_return)]
@@ -4058,7 +4058,7 @@ impl SearchEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4143,7 +4143,7 @@ impl SearchEntitiesInput {
             "SearchEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4273,7 +4273,7 @@ pub mod search_flow_executions_input {
 #[doc(hidden)]
 pub type SearchFlowExecutionsInputOperationOutputAlias = crate::operation::SearchFlowExecutions;
 #[doc(hidden)]
-pub type SearchFlowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFlowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFlowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchFlowExecutions`](crate::operation::SearchFlowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -4284,7 +4284,7 @@ impl SearchFlowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4371,7 +4371,7 @@ impl SearchFlowExecutionsInput {
             "SearchFlowExecutions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4462,7 +4462,7 @@ pub mod search_flow_templates_input {
 #[doc(hidden)]
 pub type SearchFlowTemplatesInputOperationOutputAlias = crate::operation::SearchFlowTemplates;
 #[doc(hidden)]
-pub type SearchFlowTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFlowTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFlowTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`SearchFlowTemplates`](crate::operation::SearchFlowTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4473,7 +4473,7 @@ impl SearchFlowTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4558,7 +4558,7 @@ impl SearchFlowTemplatesInput {
             "SearchFlowTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4653,7 +4653,7 @@ pub mod search_system_instances_input {
 #[doc(hidden)]
 pub type SearchSystemInstancesInputOperationOutputAlias = crate::operation::SearchSystemInstances;
 #[doc(hidden)]
-pub type SearchSystemInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSystemInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSystemInstancesInput {
     /// Consumes the builder and constructs an Operation<[`SearchSystemInstances`](crate::operation::SearchSystemInstances)>
     #[allow(clippy::let_and_return)]
@@ -4664,7 +4664,7 @@ impl SearchSystemInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4751,7 +4751,7 @@ impl SearchSystemInstancesInput {
             "SearchSystemInstances",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4842,7 +4842,7 @@ pub mod search_system_templates_input {
 #[doc(hidden)]
 pub type SearchSystemTemplatesInputOperationOutputAlias = crate::operation::SearchSystemTemplates;
 #[doc(hidden)]
-pub type SearchSystemTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSystemTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSystemTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`SearchSystemTemplates`](crate::operation::SearchSystemTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4853,7 +4853,7 @@ impl SearchSystemTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4940,7 +4940,7 @@ impl SearchSystemTemplatesInput {
             "SearchSystemTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5042,7 +5042,7 @@ pub mod search_things_input {
 #[doc(hidden)]
 pub type SearchThingsInputOperationOutputAlias = crate::operation::SearchThings;
 #[doc(hidden)]
-pub type SearchThingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchThingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchThingsInput {
     /// Consumes the builder and constructs an Operation<[`SearchThings`](crate::operation::SearchThings)>
     #[allow(clippy::let_and_return)]
@@ -5053,7 +5053,7 @@ impl SearchThingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchThings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5137,7 +5137,7 @@ impl SearchThingsInput {
             "SearchThings",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5216,7 +5216,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5227,7 +5227,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5311,7 +5311,7 @@ impl TagResourceInput {
             "TagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5367,7 +5367,7 @@ pub mod undeploy_system_instance_input {
 #[doc(hidden)]
 pub type UndeploySystemInstanceInputOperationOutputAlias = crate::operation::UndeploySystemInstance;
 #[doc(hidden)]
-pub type UndeploySystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeploySystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeploySystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UndeploySystemInstance`](crate::operation::UndeploySystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -5378,7 +5378,7 @@ impl UndeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeploySystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5465,7 +5465,7 @@ impl UndeploySystemInstanceInput {
             "UndeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5546,7 +5546,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5557,7 +5557,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5641,7 +5641,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5738,7 +5738,7 @@ pub mod update_flow_template_input {
 #[doc(hidden)]
 pub type UpdateFlowTemplateInputOperationOutputAlias = crate::operation::UpdateFlowTemplate;
 #[doc(hidden)]
-pub type UpdateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowTemplate`](crate::operation::UpdateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5749,7 +5749,7 @@ impl UpdateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5834,7 +5834,7 @@ impl UpdateFlowTemplateInput {
             "UpdateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5929,7 +5929,7 @@ pub mod update_system_template_input {
 #[doc(hidden)]
 pub type UpdateSystemTemplateInputOperationOutputAlias = crate::operation::UpdateSystemTemplate;
 #[doc(hidden)]
-pub type UpdateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSystemTemplate`](crate::operation::UpdateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5940,7 +5940,7 @@ impl UpdateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6027,7 +6027,7 @@ impl UpdateSystemTemplateInput {
             "UpdateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6115,7 +6115,7 @@ pub mod upload_entity_definitions_input {
 pub type UploadEntityDefinitionsInputOperationOutputAlias =
     crate::operation::UploadEntityDefinitions;
 #[doc(hidden)]
-pub type UploadEntityDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UploadEntityDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadEntityDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`UploadEntityDefinitions`](crate::operation::UploadEntityDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -6126,7 +6126,7 @@ impl UploadEntityDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadEntityDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6213,7 +6213,7 @@ impl UploadEntityDefinitionsInput {
             "UploadEntityDefinitions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

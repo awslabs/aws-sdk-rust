@@ -102,7 +102,7 @@ pub type AcceptDirectConnectGatewayAssociationProposalInputOperationOutputAlias 
     crate::operation::AcceptDirectConnectGatewayAssociationProposal;
 #[doc(hidden)]
 pub type AcceptDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`AcceptDirectConnectGatewayAssociationProposal`](crate::operation::AcceptDirectConnectGatewayAssociationProposal)>
     #[allow(clippy::let_and_return)]
@@ -113,7 +113,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptDirectConnectGatewayAssociationProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -199,7 +199,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
             "AcceptDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -322,7 +322,8 @@ pub mod allocate_connection_on_interconnect_input {
 pub type AllocateConnectionOnInterconnectInputOperationOutputAlias =
     crate::operation::AllocateConnectionOnInterconnect;
 #[doc(hidden)]
-pub type AllocateConnectionOnInterconnectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllocateConnectionOnInterconnectInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateConnectionOnInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`AllocateConnectionOnInterconnect`](crate::operation::AllocateConnectionOnInterconnect)>
     #[allow(clippy::let_and_return)]
@@ -333,7 +334,7 @@ impl AllocateConnectionOnInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateConnectionOnInterconnect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -419,7 +420,7 @@ impl AllocateConnectionOnInterconnectInput {
             "AllocateConnectionOnInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -556,7 +557,7 @@ pub mod allocate_hosted_connection_input {
 pub type AllocateHostedConnectionInputOperationOutputAlias =
     crate::operation::AllocateHostedConnection;
 #[doc(hidden)]
-pub type AllocateHostedConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllocateHostedConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateHostedConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AllocateHostedConnection`](crate::operation::AllocateHostedConnection)>
     #[allow(clippy::let_and_return)]
@@ -567,7 +568,7 @@ impl AllocateHostedConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateHostedConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -654,7 +655,7 @@ impl AllocateHostedConnectionInput {
             "AllocateHostedConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -751,7 +752,8 @@ pub mod allocate_private_virtual_interface_input {
 pub type AllocatePrivateVirtualInterfaceInputOperationOutputAlias =
     crate::operation::AllocatePrivateVirtualInterface;
 #[doc(hidden)]
-pub type AllocatePrivateVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllocatePrivateVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocatePrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocatePrivateVirtualInterface`](crate::operation::AllocatePrivateVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -762,7 +764,7 @@ impl AllocatePrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocatePrivateVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -848,7 +850,7 @@ impl AllocatePrivateVirtualInterfaceInput {
             "AllocatePrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -945,7 +947,8 @@ pub mod allocate_public_virtual_interface_input {
 pub type AllocatePublicVirtualInterfaceInputOperationOutputAlias =
     crate::operation::AllocatePublicVirtualInterface;
 #[doc(hidden)]
-pub type AllocatePublicVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllocatePublicVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocatePublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocatePublicVirtualInterface`](crate::operation::AllocatePublicVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -956,7 +959,7 @@ impl AllocatePublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocatePublicVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1042,7 +1045,7 @@ impl AllocatePublicVirtualInterfaceInput {
             "AllocatePublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1139,7 +1142,8 @@ pub mod allocate_transit_virtual_interface_input {
 pub type AllocateTransitVirtualInterfaceInputOperationOutputAlias =
     crate::operation::AllocateTransitVirtualInterface;
 #[doc(hidden)]
-pub type AllocateTransitVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AllocateTransitVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocateTransitVirtualInterface`](crate::operation::AllocateTransitVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -1150,7 +1154,7 @@ impl AllocateTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateTransitVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1236,7 +1240,7 @@ impl AllocateTransitVirtualInterfaceInput {
             "AllocateTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1310,7 +1314,7 @@ pub mod associate_connection_with_lag_input {
 pub type AssociateConnectionWithLagInputOperationOutputAlias =
     crate::operation::AssociateConnectionWithLag;
 #[doc(hidden)]
-pub type AssociateConnectionWithLagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateConnectionWithLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConnectionWithLagInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectionWithLag`](crate::operation::AssociateConnectionWithLag)>
     #[allow(clippy::let_and_return)]
@@ -1321,7 +1325,7 @@ impl AssociateConnectionWithLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateConnectionWithLag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1407,7 +1411,7 @@ impl AssociateConnectionWithLagInput {
             "AssociateConnectionWithLag",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1484,7 +1488,7 @@ pub mod associate_hosted_connection_input {
 pub type AssociateHostedConnectionInputOperationOutputAlias =
     crate::operation::AssociateHostedConnection;
 #[doc(hidden)]
-pub type AssociateHostedConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateHostedConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateHostedConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateHostedConnection`](crate::operation::AssociateHostedConnection)>
     #[allow(clippy::let_and_return)]
@@ -1495,7 +1499,7 @@ impl AssociateHostedConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateHostedConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1582,7 +1586,7 @@ impl AssociateHostedConnectionInput {
             "AssociateHostedConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1697,7 +1701,7 @@ pub mod associate_mac_sec_key_input {
 #[doc(hidden)]
 pub type AssociateMacSecKeyInputOperationOutputAlias = crate::operation::AssociateMacSecKey;
 #[doc(hidden)]
-pub type AssociateMacSecKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateMacSecKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMacSecKeyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMacSecKey`](crate::operation::AssociateMacSecKey)>
     #[allow(clippy::let_and_return)]
@@ -1708,7 +1712,7 @@ impl AssociateMacSecKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMacSecKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1793,7 +1797,7 @@ impl AssociateMacSecKeyInput {
             "AssociateMacSecKey",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1870,7 +1874,7 @@ pub mod associate_virtual_interface_input {
 pub type AssociateVirtualInterfaceInputOperationOutputAlias =
     crate::operation::AssociateVirtualInterface;
 #[doc(hidden)]
-pub type AssociateVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateVirtualInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateVirtualInterface`](crate::operation::AssociateVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -1881,7 +1885,7 @@ impl AssociateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1968,7 +1972,7 @@ impl AssociateVirtualInterfaceInput {
             "AssociateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2029,7 +2033,7 @@ pub mod confirm_connection_input {
 #[doc(hidden)]
 pub type ConfirmConnectionInputOperationOutputAlias = crate::operation::ConfirmConnection;
 #[doc(hidden)]
-pub type ConfirmConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmConnectionInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmConnection`](crate::operation::ConfirmConnection)>
     #[allow(clippy::let_and_return)]
@@ -2040,7 +2044,7 @@ impl ConfirmConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2125,7 +2129,7 @@ impl ConfirmConnectionInput {
             "ConfirmConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2195,7 +2199,7 @@ pub mod confirm_customer_agreement_input {
 pub type ConfirmCustomerAgreementInputOperationOutputAlias =
     crate::operation::ConfirmCustomerAgreement;
 #[doc(hidden)]
-pub type ConfirmCustomerAgreementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmCustomerAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmCustomerAgreementInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmCustomerAgreement`](crate::operation::ConfirmCustomerAgreement)>
     #[allow(clippy::let_and_return)]
@@ -2206,7 +2210,7 @@ impl ConfirmCustomerAgreementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmCustomerAgreement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2293,7 +2297,7 @@ impl ConfirmCustomerAgreementInput {
             "ConfirmCustomerAgreement",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2385,7 +2389,8 @@ pub mod confirm_private_virtual_interface_input {
 pub type ConfirmPrivateVirtualInterfaceInputOperationOutputAlias =
     crate::operation::ConfirmPrivateVirtualInterface;
 #[doc(hidden)]
-pub type ConfirmPrivateVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmPrivateVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmPrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmPrivateVirtualInterface`](crate::operation::ConfirmPrivateVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -2396,7 +2401,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmPrivateVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2482,7 +2487,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
             "ConfirmPrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2544,7 +2549,8 @@ pub mod confirm_public_virtual_interface_input {
 pub type ConfirmPublicVirtualInterfaceInputOperationOutputAlias =
     crate::operation::ConfirmPublicVirtualInterface;
 #[doc(hidden)]
-pub type ConfirmPublicVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmPublicVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmPublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmPublicVirtualInterface`](crate::operation::ConfirmPublicVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -2555,7 +2561,7 @@ impl ConfirmPublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmPublicVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2641,7 +2647,7 @@ impl ConfirmPublicVirtualInterfaceInput {
             "ConfirmPublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2718,7 +2724,8 @@ pub mod confirm_transit_virtual_interface_input {
 pub type ConfirmTransitVirtualInterfaceInputOperationOutputAlias =
     crate::operation::ConfirmTransitVirtualInterface;
 #[doc(hidden)]
-pub type ConfirmTransitVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmTransitVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmTransitVirtualInterface`](crate::operation::ConfirmTransitVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -2729,7 +2736,7 @@ impl ConfirmTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmTransitVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2815,7 +2822,7 @@ impl ConfirmTransitVirtualInterfaceInput {
             "ConfirmTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2891,7 +2898,7 @@ pub mod create_bgp_peer_input {
 #[doc(hidden)]
 pub type CreateBgpPeerInputOperationOutputAlias = crate::operation::CreateBGPPeer;
 #[doc(hidden)]
-pub type CreateBgpPeerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBgpPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBgpPeerInput {
     /// Consumes the builder and constructs an Operation<[`CreateBGPPeer`](crate::operation::CreateBGPPeer)>
     #[allow(clippy::let_and_return)]
@@ -2902,7 +2909,7 @@ impl CreateBgpPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBGPPeer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2987,7 +2994,7 @@ impl CreateBgpPeerInput {
             "CreateBGPPeer",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3134,7 +3141,7 @@ pub mod create_connection_input {
 #[doc(hidden)]
 pub type CreateConnectionInputOperationOutputAlias = crate::operation::CreateConnection;
 #[doc(hidden)]
-pub type CreateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(clippy::let_and_return)]
@@ -3145,7 +3152,7 @@ impl CreateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3230,7 +3237,7 @@ impl CreateConnectionInput {
             "CreateConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3311,7 +3318,7 @@ pub mod create_direct_connect_gateway_input {
 pub type CreateDirectConnectGatewayInputOperationOutputAlias =
     crate::operation::CreateDirectConnectGateway;
 #[doc(hidden)]
-pub type CreateDirectConnectGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGateway`](crate::operation::CreateDirectConnectGateway)>
     #[allow(clippy::let_and_return)]
@@ -3322,7 +3329,7 @@ impl CreateDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3408,7 +3415,7 @@ impl CreateDirectConnectGatewayInput {
             "CreateDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3530,7 +3537,7 @@ pub type CreateDirectConnectGatewayAssociationInputOperationOutputAlias =
     crate::operation::CreateDirectConnectGatewayAssociation;
 #[doc(hidden)]
 pub type CreateDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGatewayAssociation`](crate::operation::CreateDirectConnectGatewayAssociation)>
     #[allow(clippy::let_and_return)]
@@ -3541,7 +3548,7 @@ impl CreateDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGatewayAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3627,7 +3634,7 @@ impl CreateDirectConnectGatewayAssociationInput {
             "CreateDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3778,7 +3785,7 @@ pub type CreateDirectConnectGatewayAssociationProposalInputOperationOutputAlias 
     crate::operation::CreateDirectConnectGatewayAssociationProposal;
 #[doc(hidden)]
 pub type CreateDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGatewayAssociationProposal`](crate::operation::CreateDirectConnectGatewayAssociationProposal)>
     #[allow(clippy::let_and_return)]
@@ -3789,7 +3796,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGatewayAssociationProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3875,7 +3882,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             "CreateDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4009,7 +4016,7 @@ pub mod create_interconnect_input {
 #[doc(hidden)]
 pub type CreateInterconnectInputOperationOutputAlias = crate::operation::CreateInterconnect;
 #[doc(hidden)]
-pub type CreateInterconnectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInterconnectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`CreateInterconnect`](crate::operation::CreateInterconnect)>
     #[allow(clippy::let_and_return)]
@@ -4020,7 +4027,7 @@ impl CreateInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInterconnect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4105,7 +4112,7 @@ impl CreateInterconnectInput {
             "CreateInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4294,7 +4301,7 @@ pub mod create_lag_input {
 #[doc(hidden)]
 pub type CreateLagInputOperationOutputAlias = crate::operation::CreateLag;
 #[doc(hidden)]
-pub type CreateLagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLagInput {
     /// Consumes the builder and constructs an Operation<[`CreateLag`](crate::operation::CreateLag)>
     #[allow(clippy::let_and_return)]
@@ -4305,7 +4312,7 @@ impl CreateLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4387,7 +4394,7 @@ impl CreateLagInput {
                     "CreateLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4468,7 +4475,8 @@ pub mod create_private_virtual_interface_input {
 pub type CreatePrivateVirtualInterfaceInputOperationOutputAlias =
     crate::operation::CreatePrivateVirtualInterface;
 #[doc(hidden)]
-pub type CreatePrivateVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePrivateVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePrivateVirtualInterface`](crate::operation::CreatePrivateVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -4479,7 +4487,7 @@ impl CreatePrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePrivateVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4565,7 +4573,7 @@ impl CreatePrivateVirtualInterfaceInput {
             "CreatePrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4646,7 +4654,8 @@ pub mod create_public_virtual_interface_input {
 pub type CreatePublicVirtualInterfaceInputOperationOutputAlias =
     crate::operation::CreatePublicVirtualInterface;
 #[doc(hidden)]
-pub type CreatePublicVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePublicVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicVirtualInterface`](crate::operation::CreatePublicVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -4657,7 +4666,7 @@ impl CreatePublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublicVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4743,7 +4752,7 @@ impl CreatePublicVirtualInterfaceInput {
             "CreatePublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4824,7 +4833,8 @@ pub mod create_transit_virtual_interface_input {
 pub type CreateTransitVirtualInterfaceInputOperationOutputAlias =
     crate::operation::CreateTransitVirtualInterface;
 #[doc(hidden)]
-pub type CreateTransitVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTransitVirtualInterfaceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateTransitVirtualInterface`](crate::operation::CreateTransitVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -4835,7 +4845,7 @@ impl CreateTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTransitVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4921,7 +4931,7 @@ impl CreateTransitVirtualInterfaceInput {
             "CreateTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5021,7 +5031,7 @@ pub mod delete_bgp_peer_input {
 #[doc(hidden)]
 pub type DeleteBgpPeerInputOperationOutputAlias = crate::operation::DeleteBGPPeer;
 #[doc(hidden)]
-pub type DeleteBgpPeerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBgpPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBgpPeerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBGPPeer`](crate::operation::DeleteBGPPeer)>
     #[allow(clippy::let_and_return)]
@@ -5032,7 +5042,7 @@ impl DeleteBgpPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBGPPeer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5117,7 +5127,7 @@ impl DeleteBgpPeerInput {
             "DeleteBGPPeer",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5178,7 +5188,7 @@ pub mod delete_connection_input {
 #[doc(hidden)]
 pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
 #[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -5189,7 +5199,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5274,7 +5284,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5336,7 +5346,7 @@ pub mod delete_direct_connect_gateway_input {
 pub type DeleteDirectConnectGatewayInputOperationOutputAlias =
     crate::operation::DeleteDirectConnectGateway;
 #[doc(hidden)]
-pub type DeleteDirectConnectGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGateway`](crate::operation::DeleteDirectConnectGateway)>
     #[allow(clippy::let_and_return)]
@@ -5347,7 +5357,7 @@ impl DeleteDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5433,7 +5443,7 @@ impl DeleteDirectConnectGatewayInput {
             "DeleteDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5526,7 +5536,7 @@ pub type DeleteDirectConnectGatewayAssociationInputOperationOutputAlias =
     crate::operation::DeleteDirectConnectGatewayAssociation;
 #[doc(hidden)]
 pub type DeleteDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGatewayAssociation`](crate::operation::DeleteDirectConnectGatewayAssociation)>
     #[allow(clippy::let_and_return)]
@@ -5537,7 +5547,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGatewayAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5623,7 +5633,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
             "DeleteDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5685,7 +5695,7 @@ pub type DeleteDirectConnectGatewayAssociationProposalInputOperationOutputAlias 
     crate::operation::DeleteDirectConnectGatewayAssociationProposal;
 #[doc(hidden)]
 pub type DeleteDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGatewayAssociationProposal`](crate::operation::DeleteDirectConnectGatewayAssociationProposal)>
     #[allow(clippy::let_and_return)]
@@ -5696,7 +5706,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGatewayAssociationProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5782,7 +5792,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
             "DeleteDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5844,7 +5854,7 @@ pub mod delete_interconnect_input {
 #[doc(hidden)]
 pub type DeleteInterconnectInputOperationOutputAlias = crate::operation::DeleteInterconnect;
 #[doc(hidden)]
-pub type DeleteInterconnectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInterconnectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInterconnect`](crate::operation::DeleteInterconnect)>
     #[allow(clippy::let_and_return)]
@@ -5855,7 +5865,7 @@ impl DeleteInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInterconnect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5940,7 +5950,7 @@ impl DeleteInterconnectInput {
             "DeleteInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5996,7 +6006,7 @@ pub mod delete_lag_input {
 #[doc(hidden)]
 pub type DeleteLagInputOperationOutputAlias = crate::operation::DeleteLag;
 #[doc(hidden)]
-pub type DeleteLagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLagInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLag`](crate::operation::DeleteLag)>
     #[allow(clippy::let_and_return)]
@@ -6007,7 +6017,7 @@ impl DeleteLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6089,7 +6099,7 @@ impl DeleteLagInput {
                     "DeleteLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6150,7 +6160,7 @@ pub mod delete_virtual_interface_input {
 #[doc(hidden)]
 pub type DeleteVirtualInterfaceInputOperationOutputAlias = crate::operation::DeleteVirtualInterface;
 #[doc(hidden)]
-pub type DeleteVirtualInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualInterface`](crate::operation::DeleteVirtualInterface)>
     #[allow(clippy::let_and_return)]
@@ -6161,7 +6171,7 @@ impl DeleteVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6248,7 +6258,7 @@ impl DeleteVirtualInterfaceInput {
             "DeleteVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6341,7 +6351,7 @@ pub mod describe_connection_loa_input {
 #[doc(hidden)]
 pub type DescribeConnectionLoaInputOperationOutputAlias = crate::operation::DescribeConnectionLoa;
 #[doc(hidden)]
-pub type DescribeConnectionLoaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionLoa`](crate::operation::DescribeConnectionLoa)>
     #[allow(clippy::let_and_return)]
@@ -6352,7 +6362,7 @@ impl DescribeConnectionLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionLoa,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6439,7 +6449,7 @@ impl DescribeConnectionLoaInput {
             "DescribeConnectionLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6500,7 +6510,7 @@ pub mod describe_connections_input {
 #[doc(hidden)]
 pub type DescribeConnectionsInputOperationOutputAlias = crate::operation::DescribeConnections;
 #[doc(hidden)]
-pub type DescribeConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnections`](crate::operation::DescribeConnections)>
     #[allow(clippy::let_and_return)]
@@ -6511,7 +6521,7 @@ impl DescribeConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6596,7 +6606,7 @@ impl DescribeConnectionsInput {
             "DescribeConnections",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6658,7 +6668,8 @@ pub mod describe_connections_on_interconnect_input {
 pub type DescribeConnectionsOnInterconnectInputOperationOutputAlias =
     crate::operation::DescribeConnectionsOnInterconnect;
 #[doc(hidden)]
-pub type DescribeConnectionsOnInterconnectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionsOnInterconnectInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionsOnInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionsOnInterconnect`](crate::operation::DescribeConnectionsOnInterconnect)>
     #[allow(clippy::let_and_return)]
@@ -6669,7 +6680,7 @@ impl DescribeConnectionsOnInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionsOnInterconnect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6755,7 +6766,7 @@ impl DescribeConnectionsOnInterconnectInput {
             "DescribeConnectionsOnInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6800,7 +6811,7 @@ pub mod describe_customer_metadata_input {
 pub type DescribeCustomerMetadataInputOperationOutputAlias =
     crate::operation::DescribeCustomerMetadata;
 #[doc(hidden)]
-pub type DescribeCustomerMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomerMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomerMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomerMetadata`](crate::operation::DescribeCustomerMetadata)>
     #[allow(clippy::let_and_return)]
@@ -6811,7 +6822,7 @@ impl DescribeCustomerMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomerMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6898,7 +6909,7 @@ impl DescribeCustomerMetadataInput {
             "DescribeCustomerMetadata",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7012,7 +7023,7 @@ pub type DescribeDirectConnectGatewayAssociationProposalsInputOperationOutputAli
     crate::operation::DescribeDirectConnectGatewayAssociationProposals;
 #[doc(hidden)]
 pub type DescribeDirectConnectGatewayAssociationProposalsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAssociationProposalsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAssociationProposals`](crate::operation::DescribeDirectConnectGatewayAssociationProposals)>
     #[allow(clippy::let_and_return)]
@@ -7023,7 +7034,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAssociationProposals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7109,7 +7120,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
             "DescribeDirectConnectGatewayAssociationProposals",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7251,7 +7262,7 @@ pub type DescribeDirectConnectGatewayAssociationsInputOperationOutputAlias =
     crate::operation::DescribeDirectConnectGatewayAssociations;
 #[doc(hidden)]
 pub type DescribeDirectConnectGatewayAssociationsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAssociations`](crate::operation::DescribeDirectConnectGatewayAssociations)>
     #[allow(clippy::let_and_return)]
@@ -7262,7 +7273,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7348,7 +7359,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
             "DescribeDirectConnectGatewayAssociations",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7456,7 +7467,7 @@ pub type DescribeDirectConnectGatewayAttachmentsInputOperationOutputAlias =
     crate::operation::DescribeDirectConnectGatewayAttachments;
 #[doc(hidden)]
 pub type DescribeDirectConnectGatewayAttachmentsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAttachmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAttachments`](crate::operation::DescribeDirectConnectGatewayAttachments)>
     #[allow(clippy::let_and_return)]
@@ -7467,7 +7478,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAttachments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7553,7 +7564,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
             "DescribeDirectConnectGatewayAttachments",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7645,7 +7656,8 @@ pub mod describe_direct_connect_gateways_input {
 pub type DescribeDirectConnectGatewaysInputOperationOutputAlias =
     crate::operation::DescribeDirectConnectGateways;
 #[doc(hidden)]
-pub type DescribeDirectConnectGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDirectConnectGatewaysInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGateways`](crate::operation::DescribeDirectConnectGateways)>
     #[allow(clippy::let_and_return)]
@@ -7656,7 +7668,7 @@ impl DescribeDirectConnectGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7742,7 +7754,7 @@ impl DescribeDirectConnectGatewaysInput {
             "DescribeDirectConnectGateways",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7804,7 +7816,7 @@ pub mod describe_hosted_connections_input {
 pub type DescribeHostedConnectionsInputOperationOutputAlias =
     crate::operation::DescribeHostedConnections;
 #[doc(hidden)]
-pub type DescribeHostedConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHostedConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHostedConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHostedConnections`](crate::operation::DescribeHostedConnections)>
     #[allow(clippy::let_and_return)]
@@ -7815,7 +7827,7 @@ impl DescribeHostedConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHostedConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7902,7 +7914,7 @@ impl DescribeHostedConnectionsInput {
             "DescribeHostedConnections",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7994,7 +8006,7 @@ pub mod describe_interconnect_loa_input {
 pub type DescribeInterconnectLoaInputOperationOutputAlias =
     crate::operation::DescribeInterconnectLoa;
 #[doc(hidden)]
-pub type DescribeInterconnectLoaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInterconnectLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInterconnectLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInterconnectLoa`](crate::operation::DescribeInterconnectLoa)>
     #[allow(clippy::let_and_return)]
@@ -8005,7 +8017,7 @@ impl DescribeInterconnectLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInterconnectLoa,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8092,7 +8104,7 @@ impl DescribeInterconnectLoaInput {
             "DescribeInterconnectLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8153,7 +8165,7 @@ pub mod describe_interconnects_input {
 #[doc(hidden)]
 pub type DescribeInterconnectsInputOperationOutputAlias = crate::operation::DescribeInterconnects;
 #[doc(hidden)]
-pub type DescribeInterconnectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInterconnectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInterconnectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInterconnects`](crate::operation::DescribeInterconnects)>
     #[allow(clippy::let_and_return)]
@@ -8164,7 +8176,7 @@ impl DescribeInterconnectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInterconnects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8251,7 +8263,7 @@ impl DescribeInterconnectsInput {
             "DescribeInterconnects",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8309,7 +8321,7 @@ pub mod describe_lags_input {
 #[doc(hidden)]
 pub type DescribeLagsInputOperationOutputAlias = crate::operation::DescribeLags;
 #[doc(hidden)]
-pub type DescribeLagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLags`](crate::operation::DescribeLags)>
     #[allow(clippy::let_and_return)]
@@ -8320,7 +8332,7 @@ impl DescribeLagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8404,7 +8416,7 @@ impl DescribeLagsInput {
             "DescribeLags",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8497,7 +8509,7 @@ pub mod describe_loa_input {
 #[doc(hidden)]
 pub type DescribeLoaInputOperationOutputAlias = crate::operation::DescribeLoa;
 #[doc(hidden)]
-pub type DescribeLoaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoa`](crate::operation::DescribeLoa)>
     #[allow(clippy::let_and_return)]
@@ -8508,7 +8520,7 @@ impl DescribeLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoa,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8592,7 +8604,7 @@ impl DescribeLoaInput {
             "DescribeLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8636,7 +8648,7 @@ pub mod describe_locations_input {
 #[doc(hidden)]
 pub type DescribeLocationsInputOperationOutputAlias = crate::operation::DescribeLocations;
 #[doc(hidden)]
-pub type DescribeLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocations`](crate::operation::DescribeLocations)>
     #[allow(clippy::let_and_return)]
@@ -8647,7 +8659,7 @@ impl DescribeLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLocations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8732,7 +8744,7 @@ impl DescribeLocationsInput {
             "DescribeLocations",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8801,7 +8813,7 @@ pub mod describe_router_configuration_input {
 pub type DescribeRouterConfigurationInputOperationOutputAlias =
     crate::operation::DescribeRouterConfiguration;
 #[doc(hidden)]
-pub type DescribeRouterConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRouterConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRouterConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRouterConfiguration`](crate::operation::DescribeRouterConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -8812,7 +8824,7 @@ impl DescribeRouterConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRouterConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8898,7 +8910,7 @@ impl DescribeRouterConfigurationInput {
             "DescribeRouterConfiguration",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8965,7 +8977,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -8976,7 +8988,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9060,7 +9072,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9105,7 +9117,7 @@ pub mod describe_virtual_gateways_input {
 pub type DescribeVirtualGatewaysInputOperationOutputAlias =
     crate::operation::DescribeVirtualGateways;
 #[doc(hidden)]
-pub type DescribeVirtualGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualGateways`](crate::operation::DescribeVirtualGateways)>
     #[allow(clippy::let_and_return)]
@@ -9116,7 +9128,7 @@ impl DescribeVirtualGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9203,7 +9215,7 @@ impl DescribeVirtualGatewaysInput {
             "DescribeVirtualGateways",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9272,7 +9284,7 @@ pub mod describe_virtual_interfaces_input {
 pub type DescribeVirtualInterfacesInputOperationOutputAlias =
     crate::operation::DescribeVirtualInterfaces;
 #[doc(hidden)]
-pub type DescribeVirtualInterfacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualInterfacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualInterfacesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualInterfaces`](crate::operation::DescribeVirtualInterfaces)>
     #[allow(clippy::let_and_return)]
@@ -9283,7 +9295,7 @@ impl DescribeVirtualInterfacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualInterfaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9370,7 +9382,7 @@ impl DescribeVirtualInterfacesInput {
             "DescribeVirtualInterfaces",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9444,7 +9456,8 @@ pub mod disassociate_connection_from_lag_input {
 pub type DisassociateConnectionFromLagInputOperationOutputAlias =
     crate::operation::DisassociateConnectionFromLag;
 #[doc(hidden)]
-pub type DisassociateConnectionFromLagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateConnectionFromLagInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectionFromLagInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectionFromLag`](crate::operation::DisassociateConnectionFromLag)>
     #[allow(clippy::let_and_return)]
@@ -9455,7 +9468,7 @@ impl DisassociateConnectionFromLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnectionFromLag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9541,7 +9554,7 @@ impl DisassociateConnectionFromLagInput {
             "DisassociateConnectionFromLag",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9618,7 +9631,7 @@ pub mod disassociate_mac_sec_key_input {
 #[doc(hidden)]
 pub type DisassociateMacSecKeyInputOperationOutputAlias = crate::operation::DisassociateMacSecKey;
 #[doc(hidden)]
-pub type DisassociateMacSecKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMacSecKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMacSecKeyInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMacSecKey`](crate::operation::DisassociateMacSecKey)>
     #[allow(clippy::let_and_return)]
@@ -9629,7 +9642,7 @@ impl DisassociateMacSecKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMacSecKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9716,7 +9729,7 @@ impl DisassociateMacSecKeyInput {
             "DisassociateMacSecKey",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9853,7 +9866,8 @@ pub mod list_virtual_interface_test_history_input {
 pub type ListVirtualInterfaceTestHistoryInputOperationOutputAlias =
     crate::operation::ListVirtualInterfaceTestHistory;
 #[doc(hidden)]
-pub type ListVirtualInterfaceTestHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualInterfaceTestHistoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualInterfaceTestHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualInterfaceTestHistory`](crate::operation::ListVirtualInterfaceTestHistory)>
     #[allow(clippy::let_and_return)]
@@ -9864,7 +9878,7 @@ impl ListVirtualInterfaceTestHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualInterfaceTestHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9950,7 +9964,7 @@ impl ListVirtualInterfaceTestHistoryInput {
             "ListVirtualInterfaceTestHistory",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10048,7 +10062,7 @@ pub mod start_bgp_failover_test_input {
 #[doc(hidden)]
 pub type StartBgpFailoverTestInputOperationOutputAlias = crate::operation::StartBgpFailoverTest;
 #[doc(hidden)]
-pub type StartBgpFailoverTestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartBgpFailoverTestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBgpFailoverTestInput {
     /// Consumes the builder and constructs an Operation<[`StartBgpFailoverTest`](crate::operation::StartBgpFailoverTest)>
     #[allow(clippy::let_and_return)]
@@ -10059,7 +10073,7 @@ impl StartBgpFailoverTestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBgpFailoverTest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10146,7 +10160,7 @@ impl StartBgpFailoverTestInput {
             "StartBgpFailoverTest",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10207,7 +10221,7 @@ pub mod stop_bgp_failover_test_input {
 #[doc(hidden)]
 pub type StopBgpFailoverTestInputOperationOutputAlias = crate::operation::StopBgpFailoverTest;
 #[doc(hidden)]
-pub type StopBgpFailoverTestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopBgpFailoverTestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopBgpFailoverTestInput {
     /// Consumes the builder and constructs an Operation<[`StopBgpFailoverTest`](crate::operation::StopBgpFailoverTest)>
     #[allow(clippy::let_and_return)]
@@ -10218,7 +10232,7 @@ impl StopBgpFailoverTestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopBgpFailoverTest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10305,7 +10319,7 @@ impl StopBgpFailoverTestInput {
             "StopBgpFailoverTest",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10384,7 +10398,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10395,7 +10409,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10479,7 +10493,7 @@ impl TagResourceInput {
             "TagResource",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10558,7 +10572,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -10569,7 +10583,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10653,7 +10667,7 @@ impl UntagResourceInput {
             "UntagResource",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10748,7 +10762,7 @@ pub mod update_connection_input {
 #[doc(hidden)]
 pub type UpdateConnectionInputOperationOutputAlias = crate::operation::UpdateConnection;
 #[doc(hidden)]
-pub type UpdateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(clippy::let_and_return)]
@@ -10759,7 +10773,7 @@ impl UpdateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10844,7 +10858,7 @@ impl UpdateConnectionInput {
             "UpdateConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10924,7 +10938,7 @@ pub mod update_direct_connect_gateway_input {
 pub type UpdateDirectConnectGatewayInputOperationOutputAlias =
     crate::operation::UpdateDirectConnectGateway;
 #[doc(hidden)]
-pub type UpdateDirectConnectGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDirectConnectGateway`](crate::operation::UpdateDirectConnectGateway)>
     #[allow(clippy::let_and_return)]
@@ -10935,7 +10949,7 @@ impl UpdateDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDirectConnectGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11021,7 +11035,7 @@ impl UpdateDirectConnectGatewayInput {
             "UpdateDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11140,7 +11154,7 @@ pub type UpdateDirectConnectGatewayAssociationInputOperationOutputAlias =
     crate::operation::UpdateDirectConnectGatewayAssociation;
 #[doc(hidden)]
 pub type UpdateDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDirectConnectGatewayAssociation`](crate::operation::UpdateDirectConnectGatewayAssociation)>
     #[allow(clippy::let_and_return)]
@@ -11151,7 +11165,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDirectConnectGatewayAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11237,7 +11251,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
             "UpdateDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11334,7 +11348,7 @@ pub mod update_lag_input {
 #[doc(hidden)]
 pub type UpdateLagInputOperationOutputAlias = crate::operation::UpdateLag;
 #[doc(hidden)]
-pub type UpdateLagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLagInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLag`](crate::operation::UpdateLag)>
     #[allow(clippy::let_and_return)]
@@ -11345,7 +11359,7 @@ impl UpdateLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11427,7 +11441,7 @@ impl UpdateLagInput {
                     "UpdateLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11528,7 +11542,8 @@ pub mod update_virtual_interface_attributes_input {
 pub type UpdateVirtualInterfaceAttributesInputOperationOutputAlias =
     crate::operation::UpdateVirtualInterfaceAttributes;
 #[doc(hidden)]
-pub type UpdateVirtualInterfaceAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVirtualInterfaceAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualInterfaceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualInterfaceAttributes`](crate::operation::UpdateVirtualInterfaceAttributes)>
     #[allow(clippy::let_and_return)]
@@ -11539,7 +11554,7 @@ impl UpdateVirtualInterfaceAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualInterfaceAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11625,7 +11640,7 @@ impl UpdateVirtualInterfaceAttributesInput {
             "UpdateVirtualInterfaceAttributes",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

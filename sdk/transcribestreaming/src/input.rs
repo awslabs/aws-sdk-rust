@@ -245,7 +245,8 @@ pub mod start_medical_stream_transcription_input {
 pub type StartMedicalStreamTranscriptionInputOperationOutputAlias =
     crate::operation::StartMedicalStreamTranscription;
 #[doc(hidden)]
-pub type StartMedicalStreamTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMedicalStreamTranscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartMedicalStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalStreamTranscription`](crate::operation::StartMedicalStreamTranscription)>
     #[allow(clippy::let_and_return)]
@@ -256,7 +257,7 @@ impl StartMedicalStreamTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalStreamTranscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -544,7 +545,7 @@ impl StartMedicalStreamTranscriptionInput {
             "StartMedicalStreamTranscription",
             "transcribestreaming",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1032,7 +1033,7 @@ pub mod start_stream_transcription_input {
 pub type StartStreamTranscriptionInputOperationOutputAlias =
     crate::operation::StartStreamTranscription;
 #[doc(hidden)]
-pub type StartStreamTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartStreamTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamTranscription`](crate::operation::StartStreamTranscription)>
     #[allow(clippy::let_and_return)]
@@ -1043,7 +1044,7 @@ impl StartStreamTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStreamTranscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1471,7 +1472,7 @@ impl StartStreamTranscriptionInput {
             "StartStreamTranscription",
             "transcribestreaming",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

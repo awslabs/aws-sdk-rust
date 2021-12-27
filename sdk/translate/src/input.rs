@@ -93,7 +93,7 @@ pub mod create_parallel_data_input {
 #[doc(hidden)]
 pub type CreateParallelDataInputOperationOutputAlias = crate::operation::CreateParallelData;
 #[doc(hidden)]
-pub type CreateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`CreateParallelData`](crate::operation::CreateParallelData)>
     #[allow(clippy::let_and_return)]
@@ -104,7 +104,7 @@ impl CreateParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -192,7 +192,7 @@ impl CreateParallelDataInput {
             "CreateParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -248,7 +248,7 @@ pub mod delete_parallel_data_input {
 #[doc(hidden)]
 pub type DeleteParallelDataInputOperationOutputAlias = crate::operation::DeleteParallelData;
 #[doc(hidden)]
-pub type DeleteParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParallelData`](crate::operation::DeleteParallelData)>
     #[allow(clippy::let_and_return)]
@@ -259,7 +259,7 @@ impl DeleteParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -344,7 +344,7 @@ impl DeleteParallelDataInput {
             "DeleteParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -400,7 +400,7 @@ pub mod delete_terminology_input {
 #[doc(hidden)]
 pub type DeleteTerminologyInputOperationOutputAlias = crate::operation::DeleteTerminology;
 #[doc(hidden)]
-pub type DeleteTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTerminology`](crate::operation::DeleteTerminology)>
     #[allow(clippy::let_and_return)]
@@ -411,7 +411,7 @@ impl DeleteTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -496,7 +496,7 @@ impl DeleteTerminologyInput {
             "DeleteTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -557,7 +557,7 @@ pub mod describe_text_translation_job_input {
 pub type DescribeTextTranslationJobInputOperationOutputAlias =
     crate::operation::DescribeTextTranslationJob;
 #[doc(hidden)]
-pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTextTranslationJob`](crate::operation::DescribeTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -568,7 +568,7 @@ impl DescribeTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -654,7 +654,7 @@ impl DescribeTextTranslationJobInput {
             "DescribeTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -710,7 +710,7 @@ pub mod get_parallel_data_input {
 #[doc(hidden)]
 pub type GetParallelDataInputOperationOutputAlias = crate::operation::GetParallelData;
 #[doc(hidden)]
-pub type GetParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`GetParallelData`](crate::operation::GetParallelData)>
     #[allow(clippy::let_and_return)]
@@ -721,7 +721,7 @@ impl GetParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -806,7 +806,7 @@ impl GetParallelDataInput {
             "GetParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -893,7 +893,7 @@ pub mod get_terminology_input {
 #[doc(hidden)]
 pub type GetTerminologyInputOperationOutputAlias = crate::operation::GetTerminology;
 #[doc(hidden)]
-pub type GetTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`GetTerminology`](crate::operation::GetTerminology)>
     #[allow(clippy::let_and_return)]
@@ -904,7 +904,7 @@ impl GetTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -989,7 +989,7 @@ impl GetTerminologyInput {
             "GetTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1108,7 +1108,7 @@ pub mod import_terminology_input {
 #[doc(hidden)]
 pub type ImportTerminologyInputOperationOutputAlias = crate::operation::ImportTerminology;
 #[doc(hidden)]
-pub type ImportTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`ImportTerminology`](crate::operation::ImportTerminology)>
     #[allow(clippy::let_and_return)]
@@ -1119,7 +1119,7 @@ impl ImportTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1204,7 +1204,7 @@ impl ImportTerminologyInput {
             "ImportTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1274,7 +1274,7 @@ pub mod list_parallel_data_input {
 #[doc(hidden)]
 pub type ListParallelDataInputOperationOutputAlias = crate::operation::ListParallelData;
 #[doc(hidden)]
-pub type ListParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`ListParallelData`](crate::operation::ListParallelData)>
     #[allow(clippy::let_and_return)]
@@ -1285,7 +1285,7 @@ impl ListParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1370,7 +1370,7 @@ impl ListParallelDataInput {
             "ListParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1442,7 +1442,7 @@ pub mod list_terminologies_input {
 #[doc(hidden)]
 pub type ListTerminologiesInputOperationOutputAlias = crate::operation::ListTerminologies;
 #[doc(hidden)]
-pub type ListTerminologiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTerminologiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTerminologiesInput {
     /// Consumes the builder and constructs an Operation<[`ListTerminologies`](crate::operation::ListTerminologies)>
     #[allow(clippy::let_and_return)]
@@ -1453,7 +1453,7 @@ impl ListTerminologiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTerminologies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1538,7 +1538,7 @@ impl ListTerminologiesInput {
             "ListTerminologies",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1626,7 +1626,7 @@ pub mod list_text_translation_jobs_input {
 pub type ListTextTranslationJobsInputOperationOutputAlias =
     crate::operation::ListTextTranslationJobs;
 #[doc(hidden)]
-pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTextTranslationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTextTranslationJobs`](crate::operation::ListTextTranslationJobs)>
     #[allow(clippy::let_and_return)]
@@ -1637,7 +1637,7 @@ impl ListTextTranslationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTextTranslationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1724,7 +1724,7 @@ impl ListTextTranslationJobsInput {
             "ListTextTranslationJobs",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1973,7 +1973,7 @@ pub mod start_text_translation_job_input {
 pub type StartTextTranslationJobInputOperationOutputAlias =
     crate::operation::StartTextTranslationJob;
 #[doc(hidden)]
-pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTextTranslationJob`](crate::operation::StartTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -1984,7 +1984,7 @@ impl StartTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2074,7 +2074,7 @@ impl StartTextTranslationJobInput {
             "StartTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2132,7 +2132,7 @@ pub mod stop_text_translation_job_input {
 #[doc(hidden)]
 pub type StopTextTranslationJobInputOperationOutputAlias = crate::operation::StopTextTranslationJob;
 #[doc(hidden)]
-pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTextTranslationJob`](crate::operation::StopTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +2143,7 @@ impl StopTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2230,7 +2230,7 @@ impl StopTextTranslationJobInput {
             "StopTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2374,7 +2374,7 @@ pub mod translate_text_input {
 #[doc(hidden)]
 pub type TranslateTextInputOperationOutputAlias = crate::operation::TranslateText;
 #[doc(hidden)]
-pub type TranslateTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TranslateTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TranslateTextInput {
     /// Consumes the builder and constructs an Operation<[`TranslateText`](crate::operation::TranslateText)>
     #[allow(clippy::let_and_return)]
@@ -2385,7 +2385,7 @@ impl TranslateTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TranslateText,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2469,7 +2469,7 @@ impl TranslateTextInput {
             "TranslateText",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2568,7 +2568,7 @@ pub mod update_parallel_data_input {
 #[doc(hidden)]
 pub type UpdateParallelDataInputOperationOutputAlias = crate::operation::UpdateParallelData;
 #[doc(hidden)]
-pub type UpdateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParallelData`](crate::operation::UpdateParallelData)>
     #[allow(clippy::let_and_return)]
@@ -2579,7 +2579,7 @@ impl UpdateParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2667,7 +2667,7 @@ impl UpdateParallelDataInput {
             "UpdateParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

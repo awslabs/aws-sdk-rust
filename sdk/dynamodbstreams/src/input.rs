@@ -64,7 +64,7 @@ pub mod describe_stream_input {
 #[doc(hidden)]
 pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
 #[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl DescribeStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -160,7 +160,7 @@ impl DescribeStreamInput {
             "DescribeStream",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -233,7 +233,7 @@ pub mod get_records_input {
 #[doc(hidden)]
 pub type GetRecordsInputOperationOutputAlias = crate::operation::GetRecords;
 #[doc(hidden)]
-pub type GetRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecords`](crate::operation::GetRecords)>
     #[allow(clippy::let_and_return)]
@@ -244,7 +244,7 @@ impl GetRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -328,7 +328,7 @@ impl GetRecordsInput {
             "GetRecords",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -476,7 +476,7 @@ pub mod get_shard_iterator_input {
 #[doc(hidden)]
 pub type GetShardIteratorInputOperationOutputAlias = crate::operation::GetShardIterator;
 #[doc(hidden)]
-pub type GetShardIteratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetShardIteratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetShardIteratorInput {
     /// Consumes the builder and constructs an Operation<[`GetShardIterator`](crate::operation::GetShardIterator)>
     #[allow(clippy::let_and_return)]
@@ -487,7 +487,7 @@ impl GetShardIteratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetShardIterator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -572,7 +572,7 @@ impl GetShardIteratorInput {
             "GetShardIterator",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -661,7 +661,7 @@ pub mod list_streams_input {
 #[doc(hidden)]
 pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
 #[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -672,7 +672,7 @@ impl ListStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -756,7 +756,7 @@ impl ListStreamsInput {
             "ListStreams",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

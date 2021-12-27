@@ -125,7 +125,7 @@ pub mod create_savings_plan_input {
 #[doc(hidden)]
 pub type CreateSavingsPlanInputOperationOutputAlias = crate::operation::CreateSavingsPlan;
 #[doc(hidden)]
-pub type CreateSavingsPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSavingsPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSavingsPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateSavingsPlan`](crate::operation::CreateSavingsPlan)>
     #[allow(clippy::let_and_return)]
@@ -136,7 +136,7 @@ impl CreateSavingsPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSavingsPlan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -219,7 +219,7 @@ impl CreateSavingsPlanInput {
             "CreateSavingsPlan",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -281,7 +281,7 @@ pub mod delete_queued_savings_plan_input {
 pub type DeleteQueuedSavingsPlanInputOperationOutputAlias =
     crate::operation::DeleteQueuedSavingsPlan;
 #[doc(hidden)]
-pub type DeleteQueuedSavingsPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteQueuedSavingsPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueuedSavingsPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueuedSavingsPlan`](crate::operation::DeleteQueuedSavingsPlan)>
     #[allow(clippy::let_and_return)]
@@ -292,7 +292,7 @@ impl DeleteQueuedSavingsPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueuedSavingsPlan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -374,7 +374,7 @@ impl DeleteQueuedSavingsPlanInput {
             "DeleteQueuedSavingsPlan",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -483,7 +483,7 @@ pub mod describe_savings_plan_rates_input {
 pub type DescribeSavingsPlanRatesInputOperationOutputAlias =
     crate::operation::DescribeSavingsPlanRates;
 #[doc(hidden)]
-pub type DescribeSavingsPlanRatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSavingsPlanRatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlanRatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlanRates`](crate::operation::DescribeSavingsPlanRates)>
     #[allow(clippy::let_and_return)]
@@ -494,7 +494,7 @@ impl DescribeSavingsPlanRatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlanRates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -576,7 +576,7 @@ impl DescribeSavingsPlanRatesInput {
             "DescribeSavingsPlanRates",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -732,7 +732,7 @@ pub mod describe_savings_plans_input {
 #[doc(hidden)]
 pub type DescribeSavingsPlansInputOperationOutputAlias = crate::operation::DescribeSavingsPlans;
 #[doc(hidden)]
-pub type DescribeSavingsPlansInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSavingsPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlans`](crate::operation::DescribeSavingsPlans)>
     #[allow(clippy::let_and_return)]
@@ -743,7 +743,7 @@ impl DescribeSavingsPlansInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlans,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -825,7 +825,7 @@ impl DescribeSavingsPlansInput {
             "DescribeSavingsPlans",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1086,7 +1086,8 @@ pub mod describe_savings_plans_offering_rates_input {
 pub type DescribeSavingsPlansOfferingRatesInputOperationOutputAlias =
     crate::operation::DescribeSavingsPlansOfferingRates;
 #[doc(hidden)]
-pub type DescribeSavingsPlansOfferingRatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSavingsPlansOfferingRatesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansOfferingRatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlansOfferingRates`](crate::operation::DescribeSavingsPlansOfferingRates)>
     #[allow(clippy::let_and_return)]
@@ -1097,7 +1098,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlansOfferingRates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1179,7 +1180,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
             "DescribeSavingsPlansOfferingRates",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1484,7 +1485,8 @@ pub mod describe_savings_plans_offerings_input {
 pub type DescribeSavingsPlansOfferingsInputOperationOutputAlias =
     crate::operation::DescribeSavingsPlansOfferings;
 #[doc(hidden)]
-pub type DescribeSavingsPlansOfferingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSavingsPlansOfferingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlansOfferings`](crate::operation::DescribeSavingsPlansOfferings)>
     #[allow(clippy::let_and_return)]
@@ -1495,7 +1497,7 @@ impl DescribeSavingsPlansOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlansOfferings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1576,7 +1578,7 @@ impl DescribeSavingsPlansOfferingsInput {
             "DescribeSavingsPlansOfferings",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1634,7 +1636,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1645,7 +1647,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1727,7 +1729,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1814,7 +1816,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1825,7 +1827,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1904,7 +1906,7 @@ impl TagResourceInput {
             "TagResource",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1983,7 +1985,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1994,7 +1996,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2073,7 +2075,7 @@ impl UntagResourceInput {
             "UntagResource",
             "savingsplans",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -62,7 +62,7 @@ pub mod associate_channel_flow_input {
 #[doc(hidden)]
 pub type AssociateChannelFlowInputOperationOutputAlias = crate::operation::AssociateChannelFlow;
 #[doc(hidden)]
-pub type AssociateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`AssociateChannelFlow`](crate::operation::AssociateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -73,7 +73,7 @@ impl AssociateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -199,7 +199,7 @@ impl AssociateChannelFlowInput {
             "AssociateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -314,7 +314,8 @@ pub mod batch_create_channel_membership_input {
 pub type BatchCreateChannelMembershipInputOperationOutputAlias =
     crate::operation::BatchCreateChannelMembership;
 #[doc(hidden)]
-pub type BatchCreateChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreateChannelMembershipInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateChannelMembership`](crate::operation::BatchCreateChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -325,7 +326,7 @@ impl BatchCreateChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreateChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -459,7 +460,7 @@ impl BatchCreateChannelMembershipInput {
             "BatchCreateChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -556,7 +557,7 @@ pub mod channel_flow_callback_input {
 #[doc(hidden)]
 pub type ChannelFlowCallbackInputOperationOutputAlias = crate::operation::ChannelFlowCallback;
 #[doc(hidden)]
-pub type ChannelFlowCallbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ChannelFlowCallbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ChannelFlowCallbackInput {
     /// Consumes the builder and constructs an Operation<[`ChannelFlowCallback`](crate::operation::ChannelFlowCallback)>
     #[allow(clippy::let_and_return)]
@@ -567,7 +568,7 @@ impl ChannelFlowCallbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChannelFlowCallback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -675,7 +676,7 @@ impl ChannelFlowCallbackInput {
             "ChannelFlowCallback",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -843,7 +844,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -854,7 +855,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -960,7 +961,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1042,7 +1043,7 @@ pub mod create_channel_ban_input {
 #[doc(hidden)]
 pub type CreateChannelBanInputOperationOutputAlias = crate::operation::CreateChannelBan;
 #[doc(hidden)]
-pub type CreateChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelBan`](crate::operation::CreateChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -1053,7 +1054,7 @@ impl CreateChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1177,7 +1178,7 @@ impl CreateChannelBanInput {
             "CreateChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1307,7 +1308,7 @@ pub mod create_channel_flow_input {
 #[doc(hidden)]
 pub type CreateChannelFlowInputOperationOutputAlias = crate::operation::CreateChannelFlow;
 #[doc(hidden)]
-pub type CreateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelFlow`](crate::operation::CreateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -1318,7 +1319,7 @@ impl CreateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1398,7 +1399,7 @@ impl CreateChannelFlowInput {
             "CreateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1504,7 +1505,7 @@ pub mod create_channel_membership_input {
 pub type CreateChannelMembershipInputOperationOutputAlias =
     crate::operation::CreateChannelMembership;
 #[doc(hidden)]
-pub type CreateChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelMembership`](crate::operation::CreateChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -1515,7 +1516,7 @@ impl CreateChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1641,7 +1642,7 @@ impl CreateChannelMembershipInput {
             "CreateChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1726,7 +1727,7 @@ pub mod create_channel_moderator_input {
 #[doc(hidden)]
 pub type CreateChannelModeratorInputOperationOutputAlias = crate::operation::CreateChannelModerator;
 #[doc(hidden)]
-pub type CreateChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelModerator`](crate::operation::CreateChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -1737,7 +1738,7 @@ impl CreateChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1863,7 +1864,7 @@ impl CreateChannelModeratorInput {
             "CreateChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1933,7 +1934,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1944,7 +1945,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2058,7 +2059,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2132,7 +2133,7 @@ pub mod delete_channel_ban_input {
 #[doc(hidden)]
 pub type DeleteChannelBanInputOperationOutputAlias = crate::operation::DeleteChannelBan;
 #[doc(hidden)]
-pub type DeleteChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelBan`](crate::operation::DeleteChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +2144,7 @@ impl DeleteChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2277,7 +2278,7 @@ impl DeleteChannelBanInput {
             "DeleteChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2330,7 +2331,7 @@ pub mod delete_channel_flow_input {
 #[doc(hidden)]
 pub type DeleteChannelFlowInputOperationOutputAlias = crate::operation::DeleteChannelFlow;
 #[doc(hidden)]
-pub type DeleteChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelFlow`](crate::operation::DeleteChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -2341,7 +2342,7 @@ impl DeleteChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2435,7 +2436,7 @@ impl DeleteChannelFlowInput {
             "DeleteChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2510,7 +2511,7 @@ pub mod delete_channel_membership_input {
 pub type DeleteChannelMembershipInputOperationOutputAlias =
     crate::operation::DeleteChannelMembership;
 #[doc(hidden)]
-pub type DeleteChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMembership`](crate::operation::DeleteChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -2521,7 +2522,7 @@ impl DeleteChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2655,7 +2656,7 @@ impl DeleteChannelMembershipInput {
             "DeleteChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2729,7 +2730,7 @@ pub mod delete_channel_message_input {
 #[doc(hidden)]
 pub type DeleteChannelMessageInputOperationOutputAlias = crate::operation::DeleteChannelMessage;
 #[doc(hidden)]
-pub type DeleteChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMessage`](crate::operation::DeleteChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -2740,7 +2741,7 @@ impl DeleteChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2874,7 +2875,7 @@ impl DeleteChannelMessageInput {
             "DeleteChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2951,7 +2952,7 @@ pub mod delete_channel_moderator_input {
 #[doc(hidden)]
 pub type DeleteChannelModeratorInputOperationOutputAlias = crate::operation::DeleteChannelModerator;
 #[doc(hidden)]
-pub type DeleteChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelModerator`](crate::operation::DeleteChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -2962,7 +2963,7 @@ impl DeleteChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3096,7 +3097,7 @@ impl DeleteChannelModeratorInput {
             "DeleteChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3158,7 +3159,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -3169,7 +3170,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3283,7 +3284,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3357,7 +3358,7 @@ pub mod describe_channel_ban_input {
 #[doc(hidden)]
 pub type DescribeChannelBanInputOperationOutputAlias = crate::operation::DescribeChannelBan;
 #[doc(hidden)]
-pub type DescribeChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelBan`](crate::operation::DescribeChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -3368,7 +3369,7 @@ impl DescribeChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3502,7 +3503,7 @@ impl DescribeChannelBanInput {
             "DescribeChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3555,7 +3556,7 @@ pub mod describe_channel_flow_input {
 #[doc(hidden)]
 pub type DescribeChannelFlowInputOperationOutputAlias = crate::operation::DescribeChannelFlow;
 #[doc(hidden)]
-pub type DescribeChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelFlow`](crate::operation::DescribeChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -3566,7 +3567,7 @@ impl DescribeChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3660,7 +3661,7 @@ impl DescribeChannelFlowInput {
             "DescribeChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3735,7 +3736,7 @@ pub mod describe_channel_membership_input {
 pub type DescribeChannelMembershipInputOperationOutputAlias =
     crate::operation::DescribeChannelMembership;
 #[doc(hidden)]
-pub type DescribeChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembership`](crate::operation::DescribeChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -3746,7 +3747,7 @@ impl DescribeChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3880,7 +3881,7 @@ impl DescribeChannelMembershipInput {
             "DescribeChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3961,7 +3962,7 @@ pub type DescribeChannelMembershipForAppInstanceUserInputOperationOutputAlias =
     crate::operation::DescribeChannelMembershipForAppInstanceUser;
 #[doc(hidden)]
 pub type DescribeChannelMembershipForAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembershipForAppInstanceUser`](crate::operation::DescribeChannelMembershipForAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -3972,7 +3973,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelMembershipForAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4101,7 +4102,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             "DescribeChannelMembershipForAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4183,7 +4184,7 @@ pub type DescribeChannelModeratedByAppInstanceUserInputOperationOutputAlias =
     crate::operation::DescribeChannelModeratedByAppInstanceUser;
 #[doc(hidden)]
 pub type DescribeChannelModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModeratedByAppInstanceUser`](crate::operation::DescribeChannelModeratedByAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -4194,7 +4195,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelModeratedByAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4323,7 +4324,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             "DescribeChannelModeratedByAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4402,7 +4403,7 @@ pub mod describe_channel_moderator_input {
 pub type DescribeChannelModeratorInputOperationOutputAlias =
     crate::operation::DescribeChannelModerator;
 #[doc(hidden)]
-pub type DescribeChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModerator`](crate::operation::DescribeChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -4413,7 +4414,7 @@ impl DescribeChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4547,7 +4548,7 @@ impl DescribeChannelModeratorInput {
             "DescribeChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4625,7 +4626,7 @@ pub mod disassociate_channel_flow_input {
 pub type DisassociateChannelFlowInputOperationOutputAlias =
     crate::operation::DisassociateChannelFlow;
 #[doc(hidden)]
-pub type DisassociateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateChannelFlow`](crate::operation::DisassociateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -4636,7 +4637,7 @@ impl DisassociateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4770,7 +4771,7 @@ impl DisassociateChannelFlowInput {
             "DisassociateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4845,7 +4846,8 @@ pub mod get_channel_membership_preferences_input {
 pub type GetChannelMembershipPreferencesInputOperationOutputAlias =
     crate::operation::GetChannelMembershipPreferences;
 #[doc(hidden)]
-pub type GetChannelMembershipPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMembershipPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMembershipPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMembershipPreferences`](crate::operation::GetChannelMembershipPreferences)>
     #[allow(clippy::let_and_return)]
@@ -4856,7 +4858,7 @@ impl GetChannelMembershipPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMembershipPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4990,7 +4992,7 @@ impl GetChannelMembershipPreferencesInput {
             "GetChannelMembershipPreferences",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5064,7 +5066,7 @@ pub mod get_channel_message_input {
 #[doc(hidden)]
 pub type GetChannelMessageInputOperationOutputAlias = crate::operation::GetChannelMessage;
 #[doc(hidden)]
-pub type GetChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMessage`](crate::operation::GetChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -5075,7 +5077,7 @@ impl GetChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5209,7 +5211,7 @@ impl GetChannelMessageInput {
             "GetChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5284,7 +5286,7 @@ pub mod get_channel_message_status_input {
 pub type GetChannelMessageStatusInputOperationOutputAlias =
     crate::operation::GetChannelMessageStatus;
 #[doc(hidden)]
-pub type GetChannelMessageStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMessageStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMessageStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMessageStatus`](crate::operation::GetChannelMessageStatus)>
     #[allow(clippy::let_and_return)]
@@ -5295,7 +5297,7 @@ impl GetChannelMessageStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMessageStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5438,7 +5440,7 @@ impl GetChannelMessageStatusInput {
             "GetChannelMessageStatus",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5475,7 +5477,7 @@ pub mod get_messaging_session_endpoint_input {
 pub type GetMessagingSessionEndpointInputOperationOutputAlias =
     crate::operation::GetMessagingSessionEndpoint;
 #[doc(hidden)]
-pub type GetMessagingSessionEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMessagingSessionEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMessagingSessionEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetMessagingSessionEndpoint`](crate::operation::GetMessagingSessionEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -5486,7 +5488,7 @@ impl GetMessagingSessionEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMessagingSessionEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5560,7 +5562,7 @@ impl GetMessagingSessionEndpointInput {
             "GetMessagingSessionEndpoint",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5646,7 +5648,7 @@ pub mod list_channel_bans_input {
 #[doc(hidden)]
 pub type ListChannelBansInputOperationOutputAlias = crate::operation::ListChannelBans;
 #[doc(hidden)]
-pub type ListChannelBansInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelBansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelBansInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelBans`](crate::operation::ListChannelBans)>
     #[allow(clippy::let_and_return)]
@@ -5657,7 +5659,7 @@ impl ListChannelBansInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelBans,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5792,7 +5794,7 @@ impl ListChannelBansInput {
             "ListChannelBans",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5869,7 +5871,7 @@ pub mod list_channel_flows_input {
 #[doc(hidden)]
 pub type ListChannelFlowsInputOperationOutputAlias = crate::operation::ListChannelFlows;
 #[doc(hidden)]
-pub type ListChannelFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelFlows`](crate::operation::ListChannelFlows)>
     #[allow(clippy::let_and_return)]
@@ -5880,7 +5882,7 @@ impl ListChannelFlowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelFlows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5977,7 +5979,7 @@ impl ListChannelFlowsInput {
             "ListChannelFlows",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6086,7 +6088,7 @@ pub mod list_channel_memberships_input {
 #[doc(hidden)]
 pub type ListChannelMembershipsInputOperationOutputAlias = crate::operation::ListChannelMemberships;
 #[doc(hidden)]
-pub type ListChannelMembershipsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelMembershipsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMemberships`](crate::operation::ListChannelMemberships)>
     #[allow(clippy::let_and_return)]
@@ -6097,7 +6099,7 @@ impl ListChannelMembershipsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMemberships,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6235,7 +6237,7 @@ impl ListChannelMembershipsInput {
             "ListChannelMemberships",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6330,7 +6332,7 @@ pub type ListChannelMembershipsForAppInstanceUserInputOperationOutputAlias =
     crate::operation::ListChannelMembershipsForAppInstanceUser;
 #[doc(hidden)]
 pub type ListChannelMembershipsForAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMembershipsForAppInstanceUser`](crate::operation::ListChannelMembershipsForAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -6341,7 +6343,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMembershipsForAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6463,7 +6465,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             "ListChannelMembershipsForAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6597,7 +6599,7 @@ pub mod list_channel_messages_input {
 #[doc(hidden)]
 pub type ListChannelMessagesInputOperationOutputAlias = crate::operation::ListChannelMessages;
 #[doc(hidden)]
-pub type ListChannelMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMessages`](crate::operation::ListChannelMessages)>
     #[allow(clippy::let_and_return)]
@@ -6608,7 +6610,7 @@ impl ListChannelMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6770,7 +6772,7 @@ impl ListChannelMessagesInput {
             "ListChannelMessages",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6858,7 +6860,7 @@ pub mod list_channel_moderators_input {
 #[doc(hidden)]
 pub type ListChannelModeratorsInputOperationOutputAlias = crate::operation::ListChannelModerators;
 #[doc(hidden)]
-pub type ListChannelModeratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelModeratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelModeratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelModerators`](crate::operation::ListChannelModerators)>
     #[allow(clippy::let_and_return)]
@@ -6869,7 +6871,7 @@ impl ListChannelModeratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelModerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7007,7 +7009,7 @@ impl ListChannelModeratorsInput {
             "ListChannelModerators",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7115,7 +7117,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -7126,7 +7128,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7253,7 +7255,7 @@ impl ListChannelsInput {
             "ListChannels",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7332,7 +7334,7 @@ pub type ListChannelsAssociatedWithChannelFlowInputOperationOutputAlias =
     crate::operation::ListChannelsAssociatedWithChannelFlow;
 #[doc(hidden)]
 pub type ListChannelsAssociatedWithChannelFlowInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsAssociatedWithChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelsAssociatedWithChannelFlow`](crate::operation::ListChannelsAssociatedWithChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -7343,7 +7345,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelsAssociatedWithChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7444,7 +7446,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
             "ListChannelsAssociatedWithChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7537,7 +7539,7 @@ pub type ListChannelsModeratedByAppInstanceUserInputOperationOutputAlias =
     crate::operation::ListChannelsModeratedByAppInstanceUser;
 #[doc(hidden)]
 pub type ListChannelsModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelsModeratedByAppInstanceUser`](crate::operation::ListChannelsModeratedByAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -7548,7 +7550,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelsModeratedByAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7673,7 +7675,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             "ListChannelsModeratedByAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7723,7 +7725,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7734,7 +7736,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7819,7 +7821,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7909,7 +7911,8 @@ pub mod put_channel_membership_preferences_input {
 pub type PutChannelMembershipPreferencesInputOperationOutputAlias =
     crate::operation::PutChannelMembershipPreferences;
 #[doc(hidden)]
-pub type PutChannelMembershipPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutChannelMembershipPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutChannelMembershipPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutChannelMembershipPreferences`](crate::operation::PutChannelMembershipPreferences)>
     #[allow(clippy::let_and_return)]
@@ -7920,7 +7923,7 @@ impl PutChannelMembershipPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutChannelMembershipPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8061,7 +8064,7 @@ impl PutChannelMembershipPreferencesInput {
             "PutChannelMembershipPreferences",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8143,7 +8146,7 @@ pub mod redact_channel_message_input {
 #[doc(hidden)]
 pub type RedactChannelMessageInputOperationOutputAlias = crate::operation::RedactChannelMessage;
 #[doc(hidden)]
-pub type RedactChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RedactChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RedactChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`RedactChannelMessage`](crate::operation::RedactChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -8154,7 +8157,7 @@ impl RedactChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RedactChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8297,7 +8300,7 @@ impl RedactChannelMessageInput {
             "RedactChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8476,7 +8479,7 @@ pub mod send_channel_message_input {
 #[doc(hidden)]
 pub type SendChannelMessageInputOperationOutputAlias = crate::operation::SendChannelMessage;
 #[doc(hidden)]
-pub type SendChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendChannelMessage`](crate::operation::SendChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -8487,7 +8490,7 @@ impl SendChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8614,7 +8617,7 @@ impl SendChannelMessageInput {
             "SendChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8693,7 +8696,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -8704,7 +8707,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8792,7 +8795,7 @@ impl TagResourceInput {
             "TagResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8871,7 +8874,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8882,7 +8885,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8970,7 +8973,7 @@ impl UntagResourceInput {
             "UntagResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9076,7 +9079,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -9087,7 +9090,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9206,7 +9209,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9300,7 +9303,7 @@ pub mod update_channel_flow_input {
 #[doc(hidden)]
 pub type UpdateChannelFlowInputOperationOutputAlias = crate::operation::UpdateChannelFlow;
 #[doc(hidden)]
-pub type UpdateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelFlow`](crate::operation::UpdateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -9311,7 +9314,7 @@ impl UpdateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9411,7 +9414,7 @@ impl UpdateChannelFlowInput {
             "UpdateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9517,7 +9520,7 @@ pub mod update_channel_message_input {
 #[doc(hidden)]
 pub type UpdateChannelMessageInputOperationOutputAlias = crate::operation::UpdateChannelMessage;
 #[doc(hidden)]
-pub type UpdateChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelMessage`](crate::operation::UpdateChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -9528,7 +9531,7 @@ impl UpdateChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9670,7 +9673,7 @@ impl UpdateChannelMessageInput {
             "UpdateChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9741,7 +9744,7 @@ pub mod update_channel_read_marker_input {
 pub type UpdateChannelReadMarkerInputOperationOutputAlias =
     crate::operation::UpdateChannelReadMarker;
 #[doc(hidden)]
-pub type UpdateChannelReadMarkerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelReadMarkerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelReadMarkerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelReadMarker`](crate::operation::UpdateChannelReadMarker)>
     #[allow(clippy::let_and_return)]
@@ -9752,7 +9755,7 @@ impl UpdateChannelReadMarkerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelReadMarker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9870,7 +9873,7 @@ impl UpdateChannelReadMarkerInput {
             "UpdateChannelReadMarker",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

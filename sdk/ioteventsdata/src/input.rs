@@ -48,7 +48,7 @@ pub mod batch_acknowledge_alarm_input {
 #[doc(hidden)]
 pub type BatchAcknowledgeAlarmInputOperationOutputAlias = crate::operation::BatchAcknowledgeAlarm;
 #[doc(hidden)]
-pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAcknowledgeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchAcknowledgeAlarm`](crate::operation::BatchAcknowledgeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -59,7 +59,7 @@ impl BatchAcknowledgeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAcknowledgeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -141,7 +141,7 @@ impl BatchAcknowledgeAlarmInput {
             "BatchAcknowledgeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -212,7 +212,7 @@ pub mod batch_disable_alarm_input {
 #[doc(hidden)]
 pub type BatchDisableAlarmInputOperationOutputAlias = crate::operation::BatchDisableAlarm;
 #[doc(hidden)]
-pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableAlarm`](crate::operation::BatchDisableAlarm)>
     #[allow(clippy::let_and_return)]
@@ -223,7 +223,7 @@ impl BatchDisableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisableAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl BatchDisableAlarmInput {
             "BatchDisableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -374,7 +374,7 @@ pub mod batch_enable_alarm_input {
 #[doc(hidden)]
 pub type BatchEnableAlarmInputOperationOutputAlias = crate::operation::BatchEnableAlarm;
 #[doc(hidden)]
-pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEnableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableAlarm`](crate::operation::BatchEnableAlarm)>
     #[allow(clippy::let_and_return)]
@@ -385,7 +385,7 @@ impl BatchEnableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEnableAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -465,7 +465,7 @@ impl BatchEnableAlarmInput {
             "BatchEnableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -536,7 +536,7 @@ pub mod batch_put_message_input {
 #[doc(hidden)]
 pub type BatchPutMessageInputOperationOutputAlias = crate::operation::BatchPutMessage;
 #[doc(hidden)]
-pub type BatchPutMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchPutMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(clippy::let_and_return)]
@@ -547,7 +547,7 @@ impl BatchPutMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -627,7 +627,7 @@ impl BatchPutMessageInput {
             "BatchPutMessage",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -698,7 +698,7 @@ pub mod batch_reset_alarm_input {
 #[doc(hidden)]
 pub type BatchResetAlarmInputOperationOutputAlias = crate::operation::BatchResetAlarm;
 #[doc(hidden)]
-pub type BatchResetAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchResetAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchResetAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchResetAlarm`](crate::operation::BatchResetAlarm)>
     #[allow(clippy::let_and_return)]
@@ -709,7 +709,7 @@ impl BatchResetAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchResetAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -789,7 +789,7 @@ impl BatchResetAlarmInput {
             "BatchResetAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -860,7 +860,7 @@ pub mod batch_snooze_alarm_input {
 #[doc(hidden)]
 pub type BatchSnoozeAlarmInputOperationOutputAlias = crate::operation::BatchSnoozeAlarm;
 #[doc(hidden)]
-pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchSnoozeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchSnoozeAlarm`](crate::operation::BatchSnoozeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -871,7 +871,7 @@ impl BatchSnoozeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchSnoozeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -951,7 +951,7 @@ impl BatchSnoozeAlarmInput {
             "BatchSnoozeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1019,7 +1019,7 @@ pub mod batch_update_detector_input {
 #[doc(hidden)]
 pub type BatchUpdateDetectorInputOperationOutputAlias = crate::operation::BatchUpdateDetector;
 #[doc(hidden)]
-pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDetector`](crate::operation::BatchUpdateDetector)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +1030,7 @@ impl BatchUpdateDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1110,7 +1110,7 @@ impl BatchUpdateDetectorInput {
             "BatchUpdateDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1185,7 +1185,7 @@ pub mod describe_alarm_input {
 #[doc(hidden)]
 pub type DescribeAlarmInputOperationOutputAlias = crate::operation::DescribeAlarm;
 #[doc(hidden)]
-pub type DescribeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarm`](crate::operation::DescribeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -1196,7 +1196,7 @@ impl DescribeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1301,7 +1301,7 @@ impl DescribeAlarmInput {
             "DescribeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1370,7 +1370,7 @@ pub mod describe_detector_input {
 #[doc(hidden)]
 pub type DescribeDetectorInputOperationOutputAlias = crate::operation::DescribeDetector;
 #[doc(hidden)]
-pub type DescribeDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(clippy::let_and_return)]
@@ -1381,7 +1381,7 @@ impl DescribeDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1486,7 +1486,7 @@ impl DescribeDetectorInput {
             "DescribeDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1563,7 +1563,7 @@ pub mod list_alarms_input {
 #[doc(hidden)]
 pub type ListAlarmsInputOperationOutputAlias = crate::operation::ListAlarms;
 #[doc(hidden)]
-pub type ListAlarmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAlarmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarms`](crate::operation::ListAlarms)>
     #[allow(clippy::let_and_return)]
@@ -1574,7 +1574,7 @@ impl ListAlarmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlarms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1685,7 +1685,7 @@ impl ListAlarmsInput {
             "ListAlarms",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1774,7 +1774,7 @@ pub mod list_detectors_input {
 #[doc(hidden)]
 pub type ListDetectorsInputOperationOutputAlias = crate::operation::ListDetectors;
 #[doc(hidden)]
-pub type ListDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
     #[allow(clippy::let_and_return)]
@@ -1785,7 +1785,7 @@ impl ListDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1899,7 +1899,7 @@ impl ListDetectorsInput {
             "ListDetectors",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

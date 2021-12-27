@@ -153,7 +153,7 @@ pub mod send_command_input {
 #[doc(hidden)]
 pub type SendCommandInputOperationOutputAlias = crate::operation::SendCommand;
 #[doc(hidden)]
-pub type SendCommandInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendCommandInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendCommandInput {
     /// Consumes the builder and constructs an Operation<[`SendCommand`](crate::operation::SendCommand)>
     #[allow(clippy::let_and_return)]
@@ -164,7 +164,7 @@ impl SendCommandInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendCommand,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -248,7 +248,7 @@ impl SendCommandInput {
             "SendCommand",
             "qldbsession",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

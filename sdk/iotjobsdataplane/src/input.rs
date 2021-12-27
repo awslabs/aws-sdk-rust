@@ -73,7 +73,7 @@ pub mod describe_job_execution_input {
 #[doc(hidden)]
 pub type DescribeJobExecutionInputOperationOutputAlias = crate::operation::DescribeJobExecution;
 #[doc(hidden)]
-pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobExecution`](crate::operation::DescribeJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -84,7 +84,7 @@ impl DescribeJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -214,7 +214,7 @@ impl DescribeJobExecutionInput {
             "DescribeJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -265,7 +265,7 @@ pub mod get_pending_job_executions_input {
 pub type GetPendingJobExecutionsInputOperationOutputAlias =
     crate::operation::GetPendingJobExecutions;
 #[doc(hidden)]
-pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPendingJobExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`GetPendingJobExecutions`](crate::operation::GetPendingJobExecutions)>
     #[allow(clippy::let_and_return)]
@@ -276,7 +276,7 @@ impl GetPendingJobExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPendingJobExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -366,7 +366,7 @@ impl GetPendingJobExecutionsInput {
             "GetPendingJobExecutions",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -472,7 +472,8 @@ pub mod start_next_pending_job_execution_input {
 pub type StartNextPendingJobExecutionInputOperationOutputAlias =
     crate::operation::StartNextPendingJobExecution;
 #[doc(hidden)]
-pub type StartNextPendingJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartNextPendingJobExecutionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartNextPendingJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartNextPendingJobExecution`](crate::operation::StartNextPendingJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -483,7 +484,7 @@ impl StartNextPendingJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartNextPendingJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -584,7 +585,7 @@ impl StartNextPendingJobExecutionInput {
             "StartNextPendingJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -784,7 +785,7 @@ pub mod update_job_execution_input {
 #[doc(hidden)]
 pub type UpdateJobExecutionInputOperationOutputAlias = crate::operation::UpdateJobExecution;
 #[doc(hidden)]
-pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobExecution`](crate::operation::UpdateJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -795,7 +796,7 @@ impl UpdateJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -911,7 +912,7 @@ impl UpdateJobExecutionInput {
             "UpdateJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

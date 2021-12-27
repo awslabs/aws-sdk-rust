@@ -69,7 +69,7 @@ pub mod build_bot_locale_input {
 #[doc(hidden)]
 pub type BuildBotLocaleInputOperationOutputAlias = crate::operation::BuildBotLocale;
 #[doc(hidden)]
-pub type BuildBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BuildBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BuildBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`BuildBotLocale`](crate::operation::BuildBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +80,7 @@ impl BuildBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BuildBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +206,7 @@ impl BuildBotLocaleInput {
             "BuildBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -395,7 +395,7 @@ pub mod create_bot_input {
 #[doc(hidden)]
 pub type CreateBotInputOperationOutputAlias = crate::operation::CreateBot;
 #[doc(hidden)]
-pub type CreateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotInput {
     /// Consumes the builder and constructs an Operation<[`CreateBot`](crate::operation::CreateBot)>
     #[allow(clippy::let_and_return)]
@@ -406,7 +406,7 @@ impl CreateBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -483,7 +483,7 @@ impl CreateBotInput {
                     "CreateBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -703,7 +703,7 @@ pub mod create_bot_alias_input {
 #[doc(hidden)]
 pub type CreateBotAliasInputOperationOutputAlias = crate::operation::CreateBotAlias;
 #[doc(hidden)]
-pub type CreateBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotAlias`](crate::operation::CreateBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -714,7 +714,7 @@ impl CreateBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -810,7 +810,7 @@ impl CreateBotAliasInput {
             "CreateBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -994,7 +994,7 @@ pub mod create_bot_locale_input {
 #[doc(hidden)]
 pub type CreateBotLocaleInputOperationOutputAlias = crate::operation::CreateBotLocale;
 #[doc(hidden)]
-pub type CreateBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotLocale`](crate::operation::CreateBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -1005,7 +1005,7 @@ impl CreateBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1121,7 +1121,7 @@ impl CreateBotLocaleInput {
             "CreateBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1231,7 +1231,7 @@ pub mod create_bot_version_input {
 #[doc(hidden)]
 pub type CreateBotVersionInputOperationOutputAlias = crate::operation::CreateBotVersion;
 #[doc(hidden)]
-pub type CreateBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotVersion`](crate::operation::CreateBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -1242,7 +1242,7 @@ impl CreateBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1338,7 +1338,7 @@ impl CreateBotVersionInput {
             "CreateBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1439,7 +1439,7 @@ pub mod create_export_input {
 #[doc(hidden)]
 pub type CreateExportInputOperationOutputAlias = crate::operation::CreateExport;
 #[doc(hidden)]
-pub type CreateExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExportInput {
     /// Consumes the builder and constructs an Operation<[`CreateExport`](crate::operation::CreateExport)>
     #[allow(clippy::let_and_return)]
@@ -1450,7 +1450,7 @@ impl CreateExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1529,7 +1529,7 @@ impl CreateExportInput {
             "CreateExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1906,7 +1906,7 @@ pub mod create_intent_input {
 #[doc(hidden)]
 pub type CreateIntentInputOperationOutputAlias = crate::operation::CreateIntent;
 #[doc(hidden)]
-pub type CreateIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIntentInput {
     /// Consumes the builder and constructs an Operation<[`CreateIntent`](crate::operation::CreateIntent)>
     #[allow(clippy::let_and_return)]
@@ -1917,7 +1917,7 @@ impl CreateIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2048,7 +2048,7 @@ impl CreateIntentInput {
             "CreateIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2132,7 +2132,7 @@ pub mod create_resource_policy_input {
 #[doc(hidden)]
 pub type CreateResourcePolicyInputOperationOutputAlias = crate::operation::CreateResourcePolicy;
 #[doc(hidden)]
-pub type CreateResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourcePolicy`](crate::operation::CreateResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +2143,7 @@ impl CreateResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2241,7 +2241,7 @@ impl CreateResourcePolicyInput {
             "CreateResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2452,7 +2452,8 @@ pub mod create_resource_policy_statement_input {
 pub type CreateResourcePolicyStatementInputOperationOutputAlias =
     crate::operation::CreateResourcePolicyStatement;
 #[doc(hidden)]
-pub type CreateResourcePolicyStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourcePolicyStatementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourcePolicyStatementInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourcePolicyStatement`](crate::operation::CreateResourcePolicyStatement)>
     #[allow(clippy::let_and_return)]
@@ -2463,7 +2464,7 @@ impl CreateResourcePolicyStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicyStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2578,7 +2579,7 @@ impl CreateResourcePolicyStatementInput {
             "CreateResourcePolicyStatement",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2797,7 +2798,7 @@ pub mod create_slot_input {
 #[doc(hidden)]
 pub type CreateSlotInputOperationOutputAlias = crate::operation::CreateSlot;
 #[doc(hidden)]
-pub type CreateSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSlotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlot`](crate::operation::CreateSlot)>
     #[allow(clippy::let_and_return)]
@@ -2808,7 +2809,7 @@ impl CreateSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2947,7 +2948,7 @@ impl CreateSlotInput {
             "CreateSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3170,7 +3171,7 @@ pub mod create_slot_type_input {
 #[doc(hidden)]
 pub type CreateSlotTypeInputOperationOutputAlias = crate::operation::CreateSlotType;
 #[doc(hidden)]
-pub type CreateSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlotType`](crate::operation::CreateSlotType)>
     #[allow(clippy::let_and_return)]
@@ -3181,7 +3182,7 @@ impl CreateSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3313,7 +3314,7 @@ impl CreateSlotTypeInput {
             "CreateSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3357,7 +3358,7 @@ pub mod create_upload_url_input {
 #[doc(hidden)]
 pub type CreateUploadUrlInputOperationOutputAlias = crate::operation::CreateUploadUrl;
 #[doc(hidden)]
-pub type CreateUploadUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUploadUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUploadUrlInput {
     /// Consumes the builder and constructs an Operation<[`CreateUploadUrl`](crate::operation::CreateUploadUrl)>
     #[allow(clippy::let_and_return)]
@@ -3368,7 +3369,7 @@ impl CreateUploadUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUploadUrl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3442,7 +3443,7 @@ impl CreateUploadUrlInput {
             "CreateUploadUrl",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3506,7 +3507,7 @@ pub mod delete_bot_input {
 #[doc(hidden)]
 pub type DeleteBotInputOperationOutputAlias = crate::operation::DeleteBot;
 #[doc(hidden)]
-pub type DeleteBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBot`](crate::operation::DeleteBot)>
     #[allow(clippy::let_and_return)]
@@ -3517,7 +3518,7 @@ impl DeleteBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3619,7 +3620,7 @@ impl DeleteBotInput {
                     "DeleteBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3697,7 +3698,7 @@ pub mod delete_bot_alias_input {
 #[doc(hidden)]
 pub type DeleteBotAliasInputOperationOutputAlias = crate::operation::DeleteBotAlias;
 #[doc(hidden)]
-pub type DeleteBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotAlias`](crate::operation::DeleteBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -3708,7 +3709,7 @@ impl DeleteBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3833,7 +3834,7 @@ impl DeleteBotAliasInput {
             "DeleteBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3911,7 +3912,7 @@ pub mod delete_bot_locale_input {
 #[doc(hidden)]
 pub type DeleteBotLocaleInputOperationOutputAlias = crate::operation::DeleteBotLocale;
 #[doc(hidden)]
-pub type DeleteBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotLocale`](crate::operation::DeleteBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -3922,7 +3923,7 @@ impl DeleteBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4048,7 +4049,7 @@ impl DeleteBotLocaleInput {
             "DeleteBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4132,7 +4133,7 @@ pub mod delete_bot_version_input {
 #[doc(hidden)]
 pub type DeleteBotVersionInputOperationOutputAlias = crate::operation::DeleteBotVersion;
 #[doc(hidden)]
-pub type DeleteBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotVersion`](crate::operation::DeleteBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -4143,7 +4144,7 @@ impl DeleteBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4268,7 +4269,7 @@ impl DeleteBotVersionInput {
             "DeleteBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4318,7 +4319,7 @@ pub mod delete_export_input {
 #[doc(hidden)]
 pub type DeleteExportInputOperationOutputAlias = crate::operation::DeleteExport;
 #[doc(hidden)]
-pub type DeleteExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExport`](crate::operation::DeleteExport)>
     #[allow(clippy::let_and_return)]
@@ -4329,7 +4330,7 @@ impl DeleteExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4419,7 +4420,7 @@ impl DeleteExportInput {
             "DeleteExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4469,7 +4470,7 @@ pub mod delete_import_input {
 #[doc(hidden)]
 pub type DeleteImportInputOperationOutputAlias = crate::operation::DeleteImport;
 #[doc(hidden)]
-pub type DeleteImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImport`](crate::operation::DeleteImport)>
     #[allow(clippy::let_and_return)]
@@ -4480,7 +4481,7 @@ impl DeleteImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4570,7 +4571,7 @@ impl DeleteImportInput {
             "DeleteImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4660,7 +4661,7 @@ pub mod delete_intent_input {
 #[doc(hidden)]
 pub type DeleteIntentInputOperationOutputAlias = crate::operation::DeleteIntent;
 #[doc(hidden)]
-pub type DeleteIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIntentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntent`](crate::operation::DeleteIntent)>
     #[allow(clippy::let_and_return)]
@@ -4671,7 +4672,7 @@ impl DeleteIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4813,7 +4814,7 @@ impl DeleteIntentInput {
             "DeleteIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4886,7 +4887,7 @@ pub mod delete_resource_policy_input {
 #[doc(hidden)]
 pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
 #[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4897,7 +4898,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5001,7 +5002,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5089,7 +5090,8 @@ pub mod delete_resource_policy_statement_input {
 pub type DeleteResourcePolicyStatementInputOperationOutputAlias =
     crate::operation::DeleteResourcePolicyStatement;
 #[doc(hidden)]
-pub type DeleteResourcePolicyStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyStatementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyStatementInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicyStatement`](crate::operation::DeleteResourcePolicyStatement)>
     #[allow(clippy::let_and_return)]
@@ -5100,7 +5102,7 @@ impl DeleteResourcePolicyStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicyStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5224,7 +5226,7 @@ impl DeleteResourcePolicyStatementInput {
             "DeleteResourcePolicyStatement",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5326,7 +5328,7 @@ pub mod delete_slot_input {
 #[doc(hidden)]
 pub type DeleteSlotInputOperationOutputAlias = crate::operation::DeleteSlot;
 #[doc(hidden)]
-pub type DeleteSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlot`](crate::operation::DeleteSlot)>
     #[allow(clippy::let_and_return)]
@@ -5337,7 +5339,7 @@ impl DeleteSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5486,7 +5488,7 @@ impl DeleteSlotInput {
             "DeleteSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5596,7 +5598,7 @@ pub mod delete_slot_type_input {
 #[doc(hidden)]
 pub type DeleteSlotTypeInputOperationOutputAlias = crate::operation::DeleteSlotType;
 #[doc(hidden)]
-pub type DeleteSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlotType`](crate::operation::DeleteSlotType)>
     #[allow(clippy::let_and_return)]
@@ -5607,7 +5609,7 @@ impl DeleteSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5756,7 +5758,7 @@ impl DeleteSlotTypeInput {
             "DeleteSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5840,7 +5842,7 @@ pub mod delete_utterances_input {
 #[doc(hidden)]
 pub type DeleteUtterancesInputOperationOutputAlias = crate::operation::DeleteUtterances;
 #[doc(hidden)]
-pub type DeleteUtterancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUtterancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUtterancesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUtterances`](crate::operation::DeleteUtterances)>
     #[allow(clippy::let_and_return)]
@@ -5851,7 +5853,7 @@ impl DeleteUtterancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUtterances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5955,7 +5957,7 @@ impl DeleteUtterancesInput {
             "DeleteUtterances",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6005,7 +6007,7 @@ pub mod describe_bot_input {
 #[doc(hidden)]
 pub type DescribeBotInputOperationOutputAlias = crate::operation::DescribeBot;
 #[doc(hidden)]
-pub type DescribeBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBot`](crate::operation::DescribeBot)>
     #[allow(clippy::let_and_return)]
@@ -6016,7 +6018,7 @@ impl DescribeBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6105,7 +6107,7 @@ impl DescribeBotInput {
             "DescribeBot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6169,7 +6171,7 @@ pub mod describe_bot_alias_input {
 #[doc(hidden)]
 pub type DescribeBotAliasInputOperationOutputAlias = crate::operation::DescribeBotAlias;
 #[doc(hidden)]
-pub type DescribeBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotAlias`](crate::operation::DescribeBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -6180,7 +6182,7 @@ impl DescribeBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6290,7 +6292,7 @@ impl DescribeBotAliasInput {
             "DescribeBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6368,7 +6370,7 @@ pub mod describe_bot_locale_input {
 #[doc(hidden)]
 pub type DescribeBotLocaleInputOperationOutputAlias = crate::operation::DescribeBotLocale;
 #[doc(hidden)]
-pub type DescribeBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotLocale`](crate::operation::DescribeBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -6379,7 +6381,7 @@ impl DescribeBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6505,7 +6507,7 @@ impl DescribeBotLocaleInput {
             "DescribeBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6603,7 +6605,7 @@ pub mod describe_bot_recommendation_input {
 pub type DescribeBotRecommendationInputOperationOutputAlias =
     crate::operation::DescribeBotRecommendation;
 #[doc(hidden)]
-pub type DescribeBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotRecommendation`](crate::operation::DescribeBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -6614,7 +6616,7 @@ impl DescribeBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6748,7 +6750,7 @@ impl DescribeBotRecommendationInput {
             "DescribeBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6812,7 +6814,7 @@ pub mod describe_bot_version_input {
 #[doc(hidden)]
 pub type DescribeBotVersionInputOperationOutputAlias = crate::operation::DescribeBotVersion;
 #[doc(hidden)]
-pub type DescribeBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotVersion`](crate::operation::DescribeBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -6823,7 +6825,7 @@ impl DescribeBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6933,7 +6935,7 @@ impl DescribeBotVersionInput {
             "DescribeBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6983,7 +6985,7 @@ pub mod describe_export_input {
 #[doc(hidden)]
 pub type DescribeExportInputOperationOutputAlias = crate::operation::DescribeExport;
 #[doc(hidden)]
-pub type DescribeExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExport`](crate::operation::DescribeExport)>
     #[allow(clippy::let_and_return)]
@@ -6994,7 +6996,7 @@ impl DescribeExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7084,7 +7086,7 @@ impl DescribeExportInput {
             "DescribeExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7134,7 +7136,7 @@ pub mod describe_import_input {
 #[doc(hidden)]
 pub type DescribeImportInputOperationOutputAlias = crate::operation::DescribeImport;
 #[doc(hidden)]
-pub type DescribeImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImport`](crate::operation::DescribeImport)>
     #[allow(clippy::let_and_return)]
@@ -7145,7 +7147,7 @@ impl DescribeImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7235,7 +7237,7 @@ impl DescribeImportInput {
             "DescribeImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7325,7 +7327,7 @@ pub mod describe_intent_input {
 #[doc(hidden)]
 pub type DescribeIntentInputOperationOutputAlias = crate::operation::DescribeIntent;
 #[doc(hidden)]
-pub type DescribeIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIntentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIntent`](crate::operation::DescribeIntent)>
     #[allow(clippy::let_and_return)]
@@ -7336,7 +7338,7 @@ impl DescribeIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7478,7 +7480,7 @@ impl DescribeIntentInput {
             "DescribeIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7530,7 +7532,7 @@ pub mod describe_resource_policy_input {
 #[doc(hidden)]
 pub type DescribeResourcePolicyInputOperationOutputAlias = crate::operation::DescribeResourcePolicy;
 #[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -7541,7 +7543,7 @@ impl DescribeResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7631,7 +7633,7 @@ impl DescribeResourcePolicyInput {
             "DescribeResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7733,7 +7735,7 @@ pub mod describe_slot_input {
 #[doc(hidden)]
 pub type DescribeSlotInputOperationOutputAlias = crate::operation::DescribeSlot;
 #[doc(hidden)]
-pub type DescribeSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSlotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSlot`](crate::operation::DescribeSlot)>
     #[allow(clippy::let_and_return)]
@@ -7744,7 +7746,7 @@ impl DescribeSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7893,7 +7895,7 @@ impl DescribeSlotInput {
             "DescribeSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7983,7 +7985,7 @@ pub mod describe_slot_type_input {
 #[doc(hidden)]
 pub type DescribeSlotTypeInputOperationOutputAlias = crate::operation::DescribeSlotType;
 #[doc(hidden)]
-pub type DescribeSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSlotType`](crate::operation::DescribeSlotType)>
     #[allow(clippy::let_and_return)]
@@ -7994,7 +7996,7 @@ impl DescribeSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8128,7 +8130,7 @@ impl DescribeSlotTypeInput {
             "DescribeSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8334,7 +8336,7 @@ pub mod list_aggregated_utterances_input {
 pub type ListAggregatedUtterancesInputOperationOutputAlias =
     crate::operation::ListAggregatedUtterances;
 #[doc(hidden)]
-pub type ListAggregatedUtterancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAggregatedUtterancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAggregatedUtterancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAggregatedUtterances`](crate::operation::ListAggregatedUtterances)>
     #[allow(clippy::let_and_return)]
@@ -8345,7 +8347,7 @@ impl ListAggregatedUtterancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAggregatedUtterances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8443,7 +8445,7 @@ impl ListAggregatedUtterancesInput {
             "ListAggregatedUtterances",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8537,7 +8539,7 @@ pub mod list_bot_aliases_input {
 #[doc(hidden)]
 pub type ListBotAliasesInputOperationOutputAlias = crate::operation::ListBotAliases;
 #[doc(hidden)]
-pub type ListBotAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListBotAliases`](crate::operation::ListBotAliases)>
     #[allow(clippy::let_and_return)]
@@ -8548,7 +8550,7 @@ impl ListBotAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8644,7 +8646,7 @@ impl ListBotAliasesInput {
             "ListBotAliases",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8792,7 +8794,7 @@ pub mod list_bot_locales_input {
 #[doc(hidden)]
 pub type ListBotLocalesInputOperationOutputAlias = crate::operation::ListBotLocales;
 #[doc(hidden)]
-pub type ListBotLocalesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotLocalesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotLocalesInput {
     /// Consumes the builder and constructs an Operation<[`ListBotLocales`](crate::operation::ListBotLocales)>
     #[allow(clippy::let_and_return)]
@@ -8803,7 +8805,7 @@ impl ListBotLocalesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotLocales,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8919,7 +8921,7 @@ impl ListBotLocalesInput {
             "ListBotLocales",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9041,7 +9043,7 @@ pub mod list_bot_recommendations_input {
 #[doc(hidden)]
 pub type ListBotRecommendationsInputOperationOutputAlias = crate::operation::ListBotRecommendations;
 #[doc(hidden)]
-pub type ListBotRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListBotRecommendations`](crate::operation::ListBotRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -9052,7 +9054,7 @@ impl ListBotRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9186,7 +9188,7 @@ impl ListBotRecommendationsInput {
             "ListBotRecommendations",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9307,7 +9309,7 @@ pub mod list_bots_input {
 #[doc(hidden)]
 pub type ListBotsInputOperationOutputAlias = crate::operation::ListBots;
 #[doc(hidden)]
-pub type ListBotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotsInput {
     /// Consumes the builder and constructs an Operation<[`ListBots`](crate::operation::ListBots)>
     #[allow(clippy::let_and_return)]
@@ -9318,7 +9320,7 @@ impl ListBotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9395,7 +9397,7 @@ impl ListBotsInput {
                     "ListBots",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9508,7 +9510,7 @@ pub mod list_bot_versions_input {
 #[doc(hidden)]
 pub type ListBotVersionsInputOperationOutputAlias = crate::operation::ListBotVersions;
 #[doc(hidden)]
-pub type ListBotVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListBotVersions`](crate::operation::ListBotVersions)>
     #[allow(clippy::let_and_return)]
@@ -9519,7 +9521,7 @@ impl ListBotVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9615,7 +9617,7 @@ impl ListBotVersionsInput {
             "ListBotVersions",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9732,7 +9734,7 @@ pub mod list_built_in_intents_input {
 #[doc(hidden)]
 pub type ListBuiltInIntentsInputOperationOutputAlias = crate::operation::ListBuiltInIntents;
 #[doc(hidden)]
-pub type ListBuiltInIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBuiltInIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuiltInIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBuiltInIntents`](crate::operation::ListBuiltInIntents)>
     #[allow(clippy::let_and_return)]
@@ -9743,7 +9745,7 @@ impl ListBuiltInIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9843,7 +9845,7 @@ impl ListBuiltInIntentsInput {
             "ListBuiltInIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9962,7 +9964,7 @@ pub mod list_built_in_slot_types_input {
 #[doc(hidden)]
 pub type ListBuiltInSlotTypesInputOperationOutputAlias = crate::operation::ListBuiltInSlotTypes;
 #[doc(hidden)]
-pub type ListBuiltInSlotTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBuiltInSlotTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuiltInSlotTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListBuiltInSlotTypes`](crate::operation::ListBuiltInSlotTypes)>
     #[allow(clippy::let_and_return)]
@@ -9973,7 +9975,7 @@ impl ListBuiltInSlotTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInSlotTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10075,7 +10077,7 @@ impl ListBuiltInSlotTypesInput {
             "ListBuiltInSlotTypes",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10225,7 +10227,7 @@ pub mod list_exports_input {
 #[doc(hidden)]
 pub type ListExportsInputOperationOutputAlias = crate::operation::ListExports;
 #[doc(hidden)]
-pub type ListExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExports`](crate::operation::ListExports)>
     #[allow(clippy::let_and_return)]
@@ -10236,7 +10238,7 @@ impl ListExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10315,7 +10317,7 @@ impl ListExportsInput {
             "ListExports",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10465,7 +10467,7 @@ pub mod list_imports_input {
 #[doc(hidden)]
 pub type ListImportsInputOperationOutputAlias = crate::operation::ListImports;
 #[doc(hidden)]
-pub type ListImportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImportsInput {
     /// Consumes the builder and constructs an Operation<[`ListImports`](crate::operation::ListImports)>
     #[allow(clippy::let_and_return)]
@@ -10476,7 +10478,7 @@ impl ListImportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10555,7 +10557,7 @@ impl ListImportsInput {
             "ListImports",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10723,7 +10725,7 @@ pub mod list_intents_input {
 #[doc(hidden)]
 pub type ListIntentsInputOperationOutputAlias = crate::operation::ListIntents;
 #[doc(hidden)]
-pub type ListIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListIntents`](crate::operation::ListIntents)>
     #[allow(clippy::let_and_return)]
@@ -10734,7 +10736,7 @@ impl ListIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10865,7 +10867,7 @@ impl ListIntentsInput {
             "ListIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11002,7 +11004,7 @@ pub mod list_recommended_intents_input {
 #[doc(hidden)]
 pub type ListRecommendedIntentsInputOperationOutputAlias = crate::operation::ListRecommendedIntents;
 #[doc(hidden)]
-pub type ListRecommendedIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecommendedIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendedIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendedIntents`](crate::operation::ListRecommendedIntents)>
     #[allow(clippy::let_and_return)]
@@ -11013,7 +11015,7 @@ impl ListRecommendedIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendedIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11155,7 +11157,7 @@ impl ListRecommendedIntentsInput {
             "ListRecommendedIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11330,7 +11332,7 @@ pub mod list_slots_input {
 #[doc(hidden)]
 pub type ListSlotsInputOperationOutputAlias = crate::operation::ListSlots;
 #[doc(hidden)]
-pub type ListSlotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSlotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlotsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlots`](crate::operation::ListSlots)>
     #[allow(clippy::let_and_return)]
@@ -11341,7 +11343,7 @@ impl ListSlotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11478,7 +11480,7 @@ impl ListSlotsInput {
                     "ListSlots",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11648,7 +11650,7 @@ pub mod list_slot_types_input {
 #[doc(hidden)]
 pub type ListSlotTypesInputOperationOutputAlias = crate::operation::ListSlotTypes;
 #[doc(hidden)]
-pub type ListSlotTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSlotTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlotTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListSlotTypes`](crate::operation::ListSlotTypes)>
     #[allow(clippy::let_and_return)]
@@ -11659,7 +11661,7 @@ impl ListSlotTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlotTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11791,7 +11793,7 @@ impl ListSlotTypesInput {
             "ListSlotTypes",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11851,7 +11853,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -11862,7 +11864,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11952,7 +11954,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12130,7 +12132,7 @@ pub mod search_associated_transcripts_input {
 pub type SearchAssociatedTranscriptsInputOperationOutputAlias =
     crate::operation::SearchAssociatedTranscripts;
 #[doc(hidden)]
-pub type SearchAssociatedTranscriptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchAssociatedTranscriptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchAssociatedTranscriptsInput {
     /// Consumes the builder and constructs an Operation<[`SearchAssociatedTranscripts`](crate::operation::SearchAssociatedTranscripts)>
     #[allow(clippy::let_and_return)]
@@ -12141,7 +12143,7 @@ impl SearchAssociatedTranscriptsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchAssociatedTranscripts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12282,7 +12284,7 @@ impl SearchAssociatedTranscriptsInput {
             "SearchAssociatedTranscripts",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12412,7 +12414,7 @@ pub mod start_bot_recommendation_input {
 #[doc(hidden)]
 pub type StartBotRecommendationInputOperationOutputAlias = crate::operation::StartBotRecommendation;
 #[doc(hidden)]
-pub type StartBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`StartBotRecommendation`](crate::operation::StartBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -12423,7 +12425,7 @@ impl StartBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12557,7 +12559,7 @@ impl StartBotRecommendationInput {
             "StartBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12676,7 +12678,7 @@ pub mod start_import_input {
 #[doc(hidden)]
 pub type StartImportInputOperationOutputAlias = crate::operation::StartImport;
 #[doc(hidden)]
-pub type StartImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportInput {
     /// Consumes the builder and constructs an Operation<[`StartImport`](crate::operation::StartImport)>
     #[allow(clippy::let_and_return)]
@@ -12687,7 +12689,7 @@ impl StartImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12766,7 +12768,7 @@ impl StartImportInput {
             "StartImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12857,7 +12859,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12868,7 +12870,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12963,7 +12965,7 @@ impl TagResourceInput {
             "TagResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13046,7 +13048,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13057,7 +13059,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13160,7 +13162,7 @@ impl UntagResourceInput {
             "UntagResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13291,7 +13293,7 @@ pub mod update_bot_input {
 #[doc(hidden)]
 pub type UpdateBotInputOperationOutputAlias = crate::operation::UpdateBot;
 #[doc(hidden)]
-pub type UpdateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBot`](crate::operation::UpdateBot)>
     #[allow(clippy::let_and_return)]
@@ -13302,7 +13304,7 @@ impl UpdateBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13394,7 +13396,7 @@ impl UpdateBotInput {
                     "UpdateBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13579,7 +13581,7 @@ pub mod update_bot_alias_input {
 #[doc(hidden)]
 pub type UpdateBotAliasInputOperationOutputAlias = crate::operation::UpdateBotAlias;
 #[doc(hidden)]
-pub type UpdateBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotAlias`](crate::operation::UpdateBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -13590,7 +13592,7 @@ impl UpdateBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13706,7 +13708,7 @@ impl UpdateBotAliasInput {
             "UpdateBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13842,7 +13844,7 @@ pub mod update_bot_locale_input {
 #[doc(hidden)]
 pub type UpdateBotLocaleInputOperationOutputAlias = crate::operation::UpdateBotLocale;
 #[doc(hidden)]
-pub type UpdateBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotLocale`](crate::operation::UpdateBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -13853,7 +13855,7 @@ impl UpdateBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13985,7 +13987,7 @@ impl UpdateBotLocaleInput {
             "UpdateBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14114,7 +14116,7 @@ pub mod update_bot_recommendation_input {
 pub type UpdateBotRecommendationInputOperationOutputAlias =
     crate::operation::UpdateBotRecommendation;
 #[doc(hidden)]
-pub type UpdateBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotRecommendation`](crate::operation::UpdateBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -14125,7 +14127,7 @@ impl UpdateBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14267,7 +14269,7 @@ impl UpdateBotRecommendationInput {
             "UpdateBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14340,7 +14342,7 @@ pub mod update_export_input {
 #[doc(hidden)]
 pub type UpdateExportInputOperationOutputAlias = crate::operation::UpdateExport;
 #[doc(hidden)]
-pub type UpdateExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExportInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExport`](crate::operation::UpdateExport)>
     #[allow(clippy::let_and_return)]
@@ -14351,7 +14353,7 @@ impl UpdateExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14446,7 +14448,7 @@ impl UpdateExportInput {
             "UpdateExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14772,7 +14774,7 @@ pub mod update_intent_input {
 #[doc(hidden)]
 pub type UpdateIntentInputOperationOutputAlias = crate::operation::UpdateIntent;
 #[doc(hidden)]
-pub type UpdateIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIntentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIntent`](crate::operation::UpdateIntent)>
     #[allow(clippy::let_and_return)]
@@ -14783,7 +14785,7 @@ impl UpdateIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14930,7 +14932,7 @@ impl UpdateIntentInput {
             "UpdateIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15037,7 +15039,7 @@ pub mod update_resource_policy_input {
 #[doc(hidden)]
 pub type UpdateResourcePolicyInputOperationOutputAlias = crate::operation::UpdateResourcePolicy;
 #[doc(hidden)]
-pub type UpdateResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourcePolicy`](crate::operation::UpdateResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -15048,7 +15050,7 @@ impl UpdateResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15160,7 +15162,7 @@ impl UpdateResourcePolicyInput {
             "UpdateResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15377,7 +15379,7 @@ pub mod update_slot_input {
 #[doc(hidden)]
 pub type UpdateSlotInputOperationOutputAlias = crate::operation::UpdateSlot;
 #[doc(hidden)]
-pub type UpdateSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSlotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlot`](crate::operation::UpdateSlot)>
     #[allow(clippy::let_and_return)]
@@ -15388,7 +15390,7 @@ impl UpdateSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15542,7 +15544,7 @@ impl UpdateSlotInput {
             "UpdateSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15731,7 +15733,7 @@ pub mod update_slot_type_input {
 #[doc(hidden)]
 pub type UpdateSlotTypeInputOperationOutputAlias = crate::operation::UpdateSlotType;
 #[doc(hidden)]
-pub type UpdateSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlotType`](crate::operation::UpdateSlotType)>
     #[allow(clippy::let_and_return)]
@@ -15742,7 +15744,7 @@ impl UpdateSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15882,7 +15884,7 @@ impl UpdateSlotTypeInput {
             "UpdateSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

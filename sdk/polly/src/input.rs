@@ -35,7 +35,7 @@ pub mod delete_lexicon_input {
 #[doc(hidden)]
 pub type DeleteLexiconInputOperationOutputAlias = crate::operation::DeleteLexicon;
 #[doc(hidden)]
-pub type DeleteLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLexiconInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLexiconInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl DeleteLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLexicon,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +135,7 @@ impl DeleteLexiconInput {
             "DeleteLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -251,7 +251,7 @@ pub mod describe_voices_input {
 #[doc(hidden)]
 pub type DescribeVoicesInputOperationOutputAlias = crate::operation::DescribeVoices;
 #[doc(hidden)]
-pub type DescribeVoicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVoicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVoicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
     #[allow(clippy::let_and_return)]
@@ -262,7 +262,7 @@ impl DescribeVoicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVoices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +365,7 @@ impl DescribeVoicesInput {
             "DescribeVoices",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -413,7 +413,7 @@ pub mod get_lexicon_input {
 #[doc(hidden)]
 pub type GetLexiconInputOperationOutputAlias = crate::operation::GetLexicon;
 #[doc(hidden)]
-pub type GetLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLexiconInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLexiconInput {
     /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
     #[allow(clippy::let_and_return)]
@@ -424,7 +424,7 @@ impl GetLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLexicon,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -513,7 +513,7 @@ impl GetLexiconInput {
             "GetLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -563,7 +563,7 @@ pub mod get_speech_synthesis_task_input {
 #[doc(hidden)]
 pub type GetSpeechSynthesisTaskInputOperationOutputAlias = crate::operation::GetSpeechSynthesisTask;
 #[doc(hidden)]
-pub type GetSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSpeechSynthesisTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
@@ -574,7 +574,7 @@ impl GetSpeechSynthesisTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSpeechSynthesisTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -664,7 +664,7 @@ impl GetSpeechSynthesisTaskInput {
             "GetSpeechSynthesisTask",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -718,7 +718,7 @@ pub mod list_lexicons_input {
 #[doc(hidden)]
 pub type ListLexiconsInputOperationOutputAlias = crate::operation::ListLexicons;
 #[doc(hidden)]
-pub type ListLexiconsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLexiconsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLexiconsInput {
     /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
     #[allow(clippy::let_and_return)]
@@ -729,7 +729,7 @@ impl ListLexiconsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLexicons,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -814,7 +814,7 @@ impl ListLexiconsInput {
             "ListLexicons",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -895,7 +895,7 @@ pub mod list_speech_synthesis_tasks_input {
 pub type ListSpeechSynthesisTasksInputOperationOutputAlias =
     crate::operation::ListSpeechSynthesisTasks;
 #[doc(hidden)]
-pub type ListSpeechSynthesisTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSpeechSynthesisTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSpeechSynthesisTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
     #[allow(clippy::let_and_return)]
@@ -906,7 +906,7 @@ impl ListSpeechSynthesisTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSpeechSynthesisTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1000,7 +1000,7 @@ impl ListSpeechSynthesisTasksInput {
             "ListSpeechSynthesisTasks",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1066,7 +1066,7 @@ pub mod put_lexicon_input {
 #[doc(hidden)]
 pub type PutLexiconInputOperationOutputAlias = crate::operation::PutLexicon;
 #[doc(hidden)]
-pub type PutLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLexiconInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLexiconInput {
     /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
     #[allow(clippy::let_and_return)]
@@ -1077,7 +1077,7 @@ impl PutLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLexicon,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1171,7 +1171,7 @@ impl PutLexiconInput {
             "PutLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1440,7 +1440,7 @@ pub mod start_speech_synthesis_task_input {
 pub type StartSpeechSynthesisTaskInputOperationOutputAlias =
     crate::operation::StartSpeechSynthesisTask;
 #[doc(hidden)]
-pub type StartSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSpeechSynthesisTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
@@ -1451,7 +1451,7 @@ impl StartSpeechSynthesisTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSpeechSynthesisTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1533,7 +1533,7 @@ impl StartSpeechSynthesisTaskInput {
             "StartSpeechSynthesisTask",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1804,7 +1804,7 @@ pub mod synthesize_speech_input {
 #[doc(hidden)]
 pub type SynthesizeSpeechInputOperationOutputAlias = crate::operation::SynthesizeSpeech;
 #[doc(hidden)]
-pub type SynthesizeSpeechInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SynthesizeSpeechInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SynthesizeSpeechInput {
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]
@@ -1815,7 +1815,7 @@ impl SynthesizeSpeechInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1940,7 +1940,7 @@ impl SynthesizeSpeechInput {
             "SynthesizeSpeech",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     ///
@@ -1994,7 +1994,7 @@ impl SynthesizeSpeechInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2074,7 +2074,7 @@ impl SynthesizeSpeechInput {
             "SynthesizeSpeech",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

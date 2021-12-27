@@ -38,7 +38,7 @@ pub mod delete_human_loop_input {
 #[doc(hidden)]
 pub type DeleteHumanLoopInputOperationOutputAlias = crate::operation::DeleteHumanLoop;
 #[doc(hidden)]
-pub type DeleteHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHumanLoop`](crate::operation::DeleteHumanLoop)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl DeleteHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHumanLoop,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -143,7 +143,7 @@ impl DeleteHumanLoopInput {
             "DeleteHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -196,7 +196,7 @@ pub mod describe_human_loop_input {
 #[doc(hidden)]
 pub type DescribeHumanLoopInputOperationOutputAlias = crate::operation::DescribeHumanLoop;
 #[doc(hidden)]
-pub type DescribeHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHumanLoop`](crate::operation::DescribeHumanLoop)>
     #[allow(clippy::let_and_return)]
@@ -207,7 +207,7 @@ impl DescribeHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHumanLoop,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -301,7 +301,7 @@ impl DescribeHumanLoopInput {
             "DescribeHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -429,7 +429,7 @@ pub mod list_human_loops_input {
 #[doc(hidden)]
 pub type ListHumanLoopsInputOperationOutputAlias = crate::operation::ListHumanLoops;
 #[doc(hidden)]
-pub type ListHumanLoopsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHumanLoopsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHumanLoopsInput {
     /// Consumes the builder and constructs an Operation<[`ListHumanLoops`](crate::operation::ListHumanLoops)>
     #[allow(clippy::let_and_return)]
@@ -440,7 +440,7 @@ impl ListHumanLoopsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHumanLoops,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -558,7 +558,7 @@ impl ListHumanLoopsInput {
             "ListHumanLoops",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -660,7 +660,7 @@ pub mod start_human_loop_input {
 #[doc(hidden)]
 pub type StartHumanLoopInputOperationOutputAlias = crate::operation::StartHumanLoop;
 #[doc(hidden)]
-pub type StartHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StartHumanLoop`](crate::operation::StartHumanLoop)>
     #[allow(clippy::let_and_return)]
@@ -671,7 +671,7 @@ impl StartHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartHumanLoop,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -751,7 +751,7 @@ impl StartHumanLoopInput {
             "StartHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -812,7 +812,7 @@ pub mod stop_human_loop_input {
 #[doc(hidden)]
 pub type StopHumanLoopInputOperationOutputAlias = crate::operation::StopHumanLoop;
 #[doc(hidden)]
-pub type StopHumanLoopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StopHumanLoop`](crate::operation::StopHumanLoop)>
     #[allow(clippy::let_and_return)]
@@ -823,7 +823,7 @@ impl StopHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopHumanLoop,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -903,7 +903,7 @@ impl StopHumanLoopInput {
             "StopHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

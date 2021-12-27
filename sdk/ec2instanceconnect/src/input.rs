@@ -69,7 +69,8 @@ pub mod send_serial_console_ssh_public_key_input {
 pub type SendSerialConsoleSshPublicKeyInputOperationOutputAlias =
     crate::operation::SendSerialConsoleSSHPublicKey;
 #[doc(hidden)]
-pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SendSerialConsoleSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSerialConsoleSSHPublicKey`](crate::operation::SendSerialConsoleSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +81,7 @@ impl SendSerialConsoleSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSerialConsoleSSHPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +167,7 @@ impl SendSerialConsoleSshPublicKeyInput {
             "SendSerialConsoleSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -269,7 +270,7 @@ pub mod send_ssh_public_key_input {
 #[doc(hidden)]
 pub type SendSshPublicKeyInputOperationOutputAlias = crate::operation::SendSSHPublicKey;
 #[doc(hidden)]
-pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSSHPublicKey`](crate::operation::SendSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -280,7 +281,7 @@ impl SendSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSSHPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +366,7 @@ impl SendSshPublicKeyInput {
             "SendSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

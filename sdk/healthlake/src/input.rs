@@ -126,7 +126,7 @@ pub mod create_fhir_datastore_input {
 #[doc(hidden)]
 pub type CreateFhirDatastoreInputOperationOutputAlias = crate::operation::CreateFHIRDatastore;
 #[doc(hidden)]
-pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateFHIRDatastore`](crate::operation::CreateFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -137,7 +137,7 @@ impl CreateFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -225,7 +225,7 @@ impl CreateFhirDatastoreInput {
             "CreateFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -283,7 +283,7 @@ pub mod delete_fhir_datastore_input {
 #[doc(hidden)]
 pub type DeleteFhirDatastoreInputOperationOutputAlias = crate::operation::DeleteFHIRDatastore;
 #[doc(hidden)]
-pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFHIRDatastore`](crate::operation::DeleteFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -294,7 +294,7 @@ impl DeleteFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -379,7 +379,7 @@ impl DeleteFhirDatastoreInput {
             "DeleteFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -437,7 +437,7 @@ pub mod describe_fhir_datastore_input {
 #[doc(hidden)]
 pub type DescribeFhirDatastoreInputOperationOutputAlias = crate::operation::DescribeFHIRDatastore;
 #[doc(hidden)]
-pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRDatastore`](crate::operation::DescribeFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -448,7 +448,7 @@ impl DescribeFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -535,7 +535,7 @@ impl DescribeFhirDatastoreInput {
             "DescribeFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -605,7 +605,7 @@ pub mod describe_fhir_export_job_input {
 #[doc(hidden)]
 pub type DescribeFhirExportJobInputOperationOutputAlias = crate::operation::DescribeFHIRExportJob;
 #[doc(hidden)]
-pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRExportJob`](crate::operation::DescribeFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -616,7 +616,7 @@ impl DescribeFhirExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -703,7 +703,7 @@ impl DescribeFhirExportJobInput {
             "DescribeFHIRExportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -773,7 +773,7 @@ pub mod describe_fhir_import_job_input {
 #[doc(hidden)]
 pub type DescribeFhirImportJobInputOperationOutputAlias = crate::operation::DescribeFHIRImportJob;
 #[doc(hidden)]
-pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRImportJob`](crate::operation::DescribeFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -784,7 +784,7 @@ impl DescribeFhirImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -871,7 +871,7 @@ impl DescribeFhirImportJobInput {
             "DescribeFHIRImportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -958,7 +958,7 @@ pub mod list_fhir_datastores_input {
 #[doc(hidden)]
 pub type ListFhirDatastoresInputOperationOutputAlias = crate::operation::ListFHIRDatastores;
 #[doc(hidden)]
-pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRDatastores`](crate::operation::ListFHIRDatastores)>
     #[allow(clippy::let_and_return)]
@@ -969,7 +969,7 @@ impl ListFhirDatastoresInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRDatastores,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1054,7 @@ impl ListFhirDatastoresInput {
             "ListFHIRDatastores",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1221,7 +1221,7 @@ pub mod list_fhir_export_jobs_input {
 #[doc(hidden)]
 pub type ListFhirExportJobsInputOperationOutputAlias = crate::operation::ListFHIRExportJobs;
 #[doc(hidden)]
-pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRExportJobs`](crate::operation::ListFHIRExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1232,7 +1232,7 @@ impl ListFhirExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1317,7 +1317,7 @@ impl ListFhirExportJobsInput {
             "ListFHIRExportJobs",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1484,7 +1484,7 @@ pub mod list_fhir_import_jobs_input {
 #[doc(hidden)]
 pub type ListFhirImportJobsInputOperationOutputAlias = crate::operation::ListFHIRImportJobs;
 #[doc(hidden)]
-pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRImportJobs`](crate::operation::ListFHIRImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1495,7 +1495,7 @@ impl ListFhirImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1580,7 +1580,7 @@ impl ListFhirImportJobsInput {
             "ListFHIRImportJobs",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1642,7 +1642,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1653,7 +1653,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1740,7 +1740,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1852,7 +1852,7 @@ pub mod start_fhir_export_job_input {
 #[doc(hidden)]
 pub type StartFhirExportJobInputOperationOutputAlias = crate::operation::StartFHIRExportJob;
 #[doc(hidden)]
-pub type StartFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRExportJob`](crate::operation::StartFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -1863,7 +1863,7 @@ impl StartFhirExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFHIRExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1951,7 +1951,7 @@ impl StartFhirExportJobInput {
             "StartFHIRExportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2078,7 +2078,7 @@ pub mod start_fhir_import_job_input {
 #[doc(hidden)]
 pub type StartFhirImportJobInputOperationOutputAlias = crate::operation::StartFHIRImportJob;
 #[doc(hidden)]
-pub type StartFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRImportJob`](crate::operation::StartFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -2089,7 +2089,7 @@ impl StartFhirImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFHIRImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2177,7 +2177,7 @@ impl StartFhirImportJobInput {
             "StartFHIRImportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2264,7 +2264,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2275,7 +2275,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2359,7 +2359,7 @@ impl TagResourceInput {
             "TagResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2446,7 +2446,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2457,7 +2457,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2541,7 +2541,7 @@ impl UntagResourceInput {
             "UntagResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

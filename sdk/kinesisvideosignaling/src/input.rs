@@ -75,7 +75,7 @@ pub mod get_ice_server_config_input {
 #[doc(hidden)]
 pub type GetIceServerConfigInputOperationOutputAlias = crate::operation::GetIceServerConfig;
 #[doc(hidden)]
-pub type GetIceServerConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIceServerConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIceServerConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetIceServerConfig`](crate::operation::GetIceServerConfig)>
     #[allow(clippy::let_and_return)]
@@ -86,7 +86,7 @@ impl GetIceServerConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIceServerConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +166,7 @@ impl GetIceServerConfigInput {
             "GetIceServerConfig",
             "kinesisvideosignaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -256,7 +256,7 @@ pub mod send_alexa_offer_to_master_input {
 #[doc(hidden)]
 pub type SendAlexaOfferToMasterInputOperationOutputAlias = crate::operation::SendAlexaOfferToMaster;
 #[doc(hidden)]
-pub type SendAlexaOfferToMasterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendAlexaOfferToMasterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendAlexaOfferToMasterInput {
     /// Consumes the builder and constructs an Operation<[`SendAlexaOfferToMaster`](crate::operation::SendAlexaOfferToMaster)>
     #[allow(clippy::let_and_return)]
@@ -267,7 +267,7 @@ impl SendAlexaOfferToMasterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendAlexaOfferToMaster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -349,7 +349,7 @@ impl SendAlexaOfferToMasterInput {
             "SendAlexaOfferToMaster",
             "kinesisvideosignaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

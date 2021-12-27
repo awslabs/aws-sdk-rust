@@ -240,7 +240,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -251,7 +251,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -331,7 +331,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -465,7 +465,7 @@ pub mod create_application_version_input {
 pub type CreateApplicationVersionInputOperationOutputAlias =
     crate::operation::CreateApplicationVersion;
 #[doc(hidden)]
-pub type CreateApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationVersion`](crate::operation::CreateApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -476,7 +476,7 @@ impl CreateApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -594,7 +594,7 @@ impl CreateApplicationVersionInput {
             "CreateApplicationVersion",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -925,7 +925,8 @@ pub mod create_cloud_formation_change_set_input {
 pub type CreateCloudFormationChangeSetInputOperationOutputAlias =
     crate::operation::CreateCloudFormationChangeSet;
 #[doc(hidden)]
-pub type CreateCloudFormationChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCloudFormationChangeSetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCloudFormationChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateCloudFormationChangeSet`](crate::operation::CreateCloudFormationChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -936,7 +937,7 @@ impl CreateCloudFormationChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCloudFormationChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1037,7 +1038,7 @@ impl CreateCloudFormationChangeSetInput {
             "CreateCloudFormationChangeSet",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1118,7 +1119,8 @@ pub mod create_cloud_formation_template_input {
 pub type CreateCloudFormationTemplateInputOperationOutputAlias =
     crate::operation::CreateCloudFormationTemplate;
 #[doc(hidden)]
-pub type CreateCloudFormationTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCloudFormationTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCloudFormationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateCloudFormationTemplate`](crate::operation::CreateCloudFormationTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1129,7 +1131,7 @@ impl CreateCloudFormationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCloudFormationTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1230,7 +1232,7 @@ impl CreateCloudFormationTemplateInput {
             "CreateCloudFormationTemplate",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1291,7 +1293,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -1302,7 +1304,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1396,7 +1398,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1464,7 +1466,7 @@ pub mod get_application_input {
 #[doc(hidden)]
 pub type GetApplicationInputOperationOutputAlias = crate::operation::GetApplication;
 #[doc(hidden)]
-pub type GetApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(clippy::let_and_return)]
@@ -1475,7 +1477,7 @@ impl GetApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1583,7 +1585,7 @@ impl GetApplicationInput {
             "GetApplication",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1636,7 +1638,7 @@ pub mod get_application_policy_input {
 #[doc(hidden)]
 pub type GetApplicationPolicyInputOperationOutputAlias = crate::operation::GetApplicationPolicy;
 #[doc(hidden)]
-pub type GetApplicationPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationPolicy`](crate::operation::GetApplicationPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1647,7 +1649,7 @@ impl GetApplicationPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplicationPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1741,7 +1743,7 @@ impl GetApplicationPolicyInput {
             "GetApplicationPolicy",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1807,7 +1809,7 @@ pub mod get_cloud_formation_template_input {
 pub type GetCloudFormationTemplateInputOperationOutputAlias =
     crate::operation::GetCloudFormationTemplate;
 #[doc(hidden)]
-pub type GetCloudFormationTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCloudFormationTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCloudFormationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFormationTemplate`](crate::operation::GetCloudFormationTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1818,7 +1820,7 @@ impl GetCloudFormationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFormationTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1928,7 +1930,7 @@ impl GetCloudFormationTemplateInput {
             "GetCloudFormationTemplate",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2021,7 +2023,7 @@ pub mod list_application_dependencies_input {
 pub type ListApplicationDependenciesInputOperationOutputAlias =
     crate::operation::ListApplicationDependencies;
 #[doc(hidden)]
-pub type ListApplicationDependenciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationDependenciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationDependenciesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationDependencies`](crate::operation::ListApplicationDependencies)>
     #[allow(clippy::let_and_return)]
@@ -2032,7 +2034,7 @@ impl ListApplicationDependenciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationDependencies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2149,7 +2151,7 @@ impl ListApplicationDependenciesInput {
             "ListApplicationDependencies",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2211,7 +2213,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -2222,7 +2224,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2313,7 +2315,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2391,7 +2393,7 @@ pub mod list_application_versions_input {
 pub type ListApplicationVersionsInputOperationOutputAlias =
     crate::operation::ListApplicationVersions;
 #[doc(hidden)]
-pub type ListApplicationVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationVersions`](crate::operation::ListApplicationVersions)>
     #[allow(clippy::let_and_return)]
@@ -2402,7 +2404,7 @@ impl ListApplicationVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2513,7 +2515,7 @@ impl ListApplicationVersionsInput {
             "ListApplicationVersions",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2591,7 +2593,7 @@ pub mod put_application_policy_input {
 #[doc(hidden)]
 pub type PutApplicationPolicyInputOperationOutputAlias = crate::operation::PutApplicationPolicy;
 #[doc(hidden)]
-pub type PutApplicationPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutApplicationPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutApplicationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutApplicationPolicy`](crate::operation::PutApplicationPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2602,7 +2604,7 @@ impl PutApplicationPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutApplicationPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2704,7 +2706,7 @@ impl PutApplicationPolicyInput {
             "PutApplicationPolicy",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2780,7 +2782,7 @@ pub mod unshare_application_input {
 #[doc(hidden)]
 pub type UnshareApplicationInputOperationOutputAlias = crate::operation::UnshareApplication;
 #[doc(hidden)]
-pub type UnshareApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnshareApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnshareApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UnshareApplication`](crate::operation::UnshareApplication)>
     #[allow(clippy::let_and_return)]
@@ -2791,7 +2793,7 @@ impl UnshareApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnshareApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2891,7 +2893,7 @@ impl UnshareApplicationInput {
             "UnshareApplication",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3036,7 +3038,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -3047,7 +3049,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3147,7 +3149,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "serverlessapplicationrepository",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

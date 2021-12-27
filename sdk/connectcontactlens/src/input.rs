@@ -75,7 +75,7 @@ pub type ListRealtimeContactAnalysisSegmentsInputOperationOutputAlias =
     crate::operation::ListRealtimeContactAnalysisSegments;
 #[doc(hidden)]
 pub type ListRealtimeContactAnalysisSegmentsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeContactAnalysisSegments`](crate::operation::ListRealtimeContactAnalysisSegments)>
     #[allow(clippy::let_and_return)]
@@ -86,7 +86,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRealtimeContactAnalysisSegments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -168,7 +168,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             "ListRealtimeContactAnalysisSegments",
             "connectcontactlens",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

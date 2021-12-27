@@ -69,7 +69,7 @@ pub mod create_container_input {
 #[doc(hidden)]
 pub type CreateContainerInputOperationOutputAlias = crate::operation::CreateContainer;
 #[doc(hidden)]
-pub type CreateContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainer`](crate::operation::CreateContainer)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +80,7 @@ impl CreateContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl CreateContainerInput {
             "CreateContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -226,7 +226,7 @@ pub mod delete_container_input {
 #[doc(hidden)]
 pub type DeleteContainerInputOperationOutputAlias = crate::operation::DeleteContainer;
 #[doc(hidden)]
-pub type DeleteContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainer`](crate::operation::DeleteContainer)>
     #[allow(clippy::let_and_return)]
@@ -237,7 +237,7 @@ impl DeleteContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -322,7 +322,7 @@ impl DeleteContainerInput {
             "DeleteContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -383,7 +383,7 @@ pub mod delete_container_policy_input {
 #[doc(hidden)]
 pub type DeleteContainerPolicyInputOperationOutputAlias = crate::operation::DeleteContainerPolicy;
 #[doc(hidden)]
-pub type DeleteContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerPolicy`](crate::operation::DeleteContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -394,7 +394,7 @@ impl DeleteContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +481,7 @@ impl DeleteContainerPolicyInput {
             "DeleteContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -542,7 +542,7 @@ pub mod delete_cors_policy_input {
 #[doc(hidden)]
 pub type DeleteCorsPolicyInputOperationOutputAlias = crate::operation::DeleteCorsPolicy;
 #[doc(hidden)]
-pub type DeleteCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCorsPolicy`](crate::operation::DeleteCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -553,7 +553,7 @@ impl DeleteCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -638,7 +638,7 @@ impl DeleteCorsPolicyInput {
             "DeleteCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -699,7 +699,7 @@ pub mod delete_lifecycle_policy_input {
 #[doc(hidden)]
 pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
 #[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -710,7 +710,7 @@ impl DeleteLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -797,7 +797,7 @@ impl DeleteLifecyclePolicyInput {
             "DeleteLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -858,7 +858,7 @@ pub mod delete_metric_policy_input {
 #[doc(hidden)]
 pub type DeleteMetricPolicyInputOperationOutputAlias = crate::operation::DeleteMetricPolicy;
 #[doc(hidden)]
-pub type DeleteMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricPolicy`](crate::operation::DeleteMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -869,7 +869,7 @@ impl DeleteMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -954,7 +954,7 @@ impl DeleteMetricPolicyInput {
             "DeleteMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1015,7 +1015,7 @@ pub mod describe_container_input {
 #[doc(hidden)]
 pub type DescribeContainerInputOperationOutputAlias = crate::operation::DescribeContainer;
 #[doc(hidden)]
-pub type DescribeContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContainerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContainer`](crate::operation::DescribeContainer)>
     #[allow(clippy::let_and_return)]
@@ -1026,7 +1026,7 @@ impl DescribeContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1111,7 +1111,7 @@ impl DescribeContainerInput {
             "DescribeContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1172,7 +1172,7 @@ pub mod get_container_policy_input {
 #[doc(hidden)]
 pub type GetContainerPolicyInputOperationOutputAlias = crate::operation::GetContainerPolicy;
 #[doc(hidden)]
-pub type GetContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerPolicy`](crate::operation::GetContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1183,7 +1183,7 @@ impl GetContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1268,7 +1268,7 @@ impl GetContainerPolicyInput {
             "GetContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1329,7 +1329,7 @@ pub mod get_cors_policy_input {
 #[doc(hidden)]
 pub type GetCorsPolicyInputOperationOutputAlias = crate::operation::GetCorsPolicy;
 #[doc(hidden)]
-pub type GetCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCorsPolicy`](crate::operation::GetCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1340,7 +1340,7 @@ impl GetCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1425,7 +1425,7 @@ impl GetCorsPolicyInput {
             "GetCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1486,7 +1486,7 @@ pub mod get_lifecycle_policy_input {
 #[doc(hidden)]
 pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
 #[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1497,7 +1497,7 @@ impl GetLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1582,7 +1582,7 @@ impl GetLifecyclePolicyInput {
             "GetLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1643,7 +1643,7 @@ pub mod get_metric_policy_input {
 #[doc(hidden)]
 pub type GetMetricPolicyInputOperationOutputAlias = crate::operation::GetMetricPolicy;
 #[doc(hidden)]
-pub type GetMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricPolicy`](crate::operation::GetMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1654,7 +1654,7 @@ impl GetMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1739,7 +1739,7 @@ impl GetMetricPolicyInput {
             "GetMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1815,7 +1815,7 @@ pub mod list_containers_input {
 #[doc(hidden)]
 pub type ListContainersInputOperationOutputAlias = crate::operation::ListContainers;
 #[doc(hidden)]
-pub type ListContainersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContainersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainersInput {
     /// Consumes the builder and constructs an Operation<[`ListContainers`](crate::operation::ListContainers)>
     #[allow(clippy::let_and_return)]
@@ -1826,7 +1826,7 @@ impl ListContainersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContainers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1911,7 +1911,7 @@ impl ListContainersInput {
             "ListContainers",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1969,7 +1969,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1980,7 +1980,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2067,7 +2067,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2158,7 +2158,7 @@ pub mod put_container_policy_input {
 #[doc(hidden)]
 pub type PutContainerPolicyInputOperationOutputAlias = crate::operation::PutContainerPolicy;
 #[doc(hidden)]
-pub type PutContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerPolicy`](crate::operation::PutContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2169,7 +2169,7 @@ impl PutContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2254,7 +2254,7 @@ impl PutContainerPolicyInput {
             "PutContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2336,7 +2336,7 @@ pub mod put_cors_policy_input {
 #[doc(hidden)]
 pub type PutCorsPolicyInputOperationOutputAlias = crate::operation::PutCorsPolicy;
 #[doc(hidden)]
-pub type PutCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutCorsPolicy`](crate::operation::PutCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2347,7 +2347,7 @@ impl PutCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2432,7 +2432,7 @@ impl PutCorsPolicyInput {
             "PutCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2508,7 +2508,7 @@ pub mod put_lifecycle_policy_input {
 #[doc(hidden)]
 pub type PutLifecyclePolicyInputOperationOutputAlias = crate::operation::PutLifecyclePolicy;
 #[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecyclePolicy`](crate::operation::PutLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2519,7 +2519,7 @@ impl PutLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2604,7 +2604,7 @@ impl PutLifecyclePolicyInput {
             "PutLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2696,7 +2696,7 @@ pub mod put_metric_policy_input {
 #[doc(hidden)]
 pub type PutMetricPolicyInputOperationOutputAlias = crate::operation::PutMetricPolicy;
 #[doc(hidden)]
-pub type PutMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricPolicy`](crate::operation::PutMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2707,7 +2707,7 @@ impl PutMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2792,7 +2792,7 @@ impl PutMetricPolicyInput {
             "PutMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2853,7 +2853,7 @@ pub mod start_access_logging_input {
 #[doc(hidden)]
 pub type StartAccessLoggingInputOperationOutputAlias = crate::operation::StartAccessLogging;
 #[doc(hidden)]
-pub type StartAccessLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartAccessLogging`](crate::operation::StartAccessLogging)>
     #[allow(clippy::let_and_return)]
@@ -2864,7 +2864,7 @@ impl StartAccessLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAccessLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2949,7 +2949,7 @@ impl StartAccessLoggingInput {
             "StartAccessLogging",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3010,7 +3010,7 @@ pub mod stop_access_logging_input {
 #[doc(hidden)]
 pub type StopAccessLoggingInputOperationOutputAlias = crate::operation::StopAccessLogging;
 #[doc(hidden)]
-pub type StopAccessLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopAccessLogging`](crate::operation::StopAccessLogging)>
     #[allow(clippy::let_and_return)]
@@ -3021,7 +3021,7 @@ impl StopAccessLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAccessLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3106,7 +3106,7 @@ impl StopAccessLoggingInput {
             "StopAccessLogging",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3191,7 +3191,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3202,7 +3202,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3286,7 +3286,7 @@ impl TagResourceInput {
             "TagResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3369,7 +3369,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3380,7 +3380,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3464,7 +3464,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

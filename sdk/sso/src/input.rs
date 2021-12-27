@@ -61,7 +61,7 @@ pub mod get_role_credentials_input {
 #[doc(hidden)]
 pub type GetRoleCredentialsInputOperationOutputAlias = crate::operation::GetRoleCredentials;
 #[doc(hidden)]
-pub type GetRoleCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRoleCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoleCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetRoleCredentials`](crate::operation::GetRoleCredentials)>
     #[allow(clippy::let_and_return)]
@@ -72,7 +72,7 @@ impl GetRoleCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoleCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -185,7 +185,7 @@ impl GetRoleCredentialsInput {
             "GetRoleCredentials",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -273,7 +273,7 @@ pub mod list_account_roles_input {
 #[doc(hidden)]
 pub type ListAccountRolesInputOperationOutputAlias = crate::operation::ListAccountRoles;
 #[doc(hidden)]
-pub type ListAccountRolesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountRolesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountRolesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountRoles`](crate::operation::ListAccountRoles)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +284,7 @@ impl ListAccountRolesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountRoles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -403,7 +403,7 @@ impl ListAccountRolesInput {
             "ListAccountRoles",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -479,7 +479,7 @@ pub mod list_accounts_input {
 #[doc(hidden)]
 pub type ListAccountsInputOperationOutputAlias = crate::operation::ListAccounts;
 #[doc(hidden)]
-pub type ListAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccounts`](crate::operation::ListAccounts)>
     #[allow(clippy::let_and_return)]
@@ -490,7 +490,7 @@ impl ListAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -606,7 +606,7 @@ impl ListAccountsInput {
             "ListAccounts",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -656,7 +656,7 @@ pub mod logout_input {
 #[doc(hidden)]
 pub type LogoutInputOperationOutputAlias = crate::operation::Logout;
 #[doc(hidden)]
-pub type LogoutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LogoutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LogoutInput {
     /// Consumes the builder and constructs an Operation<[`Logout`](crate::operation::Logout)>
     #[allow(clippy::let_and_return)]
@@ -667,7 +667,7 @@ impl LogoutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Logout,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -761,7 +761,7 @@ impl LogoutInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::Logout::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("Logout", "sso"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

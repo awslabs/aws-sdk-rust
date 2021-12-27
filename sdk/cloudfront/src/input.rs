@@ -50,7 +50,7 @@ pub mod associate_alias_input {
 #[doc(hidden)]
 pub type AssociateAliasInputOperationOutputAlias = crate::operation::AssociateAlias;
 #[doc(hidden)]
-pub type AssociateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAlias`](crate::operation::AssociateAlias)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl AssociateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +166,7 @@ impl AssociateAliasInput {
             "AssociateAlias",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -219,7 +219,7 @@ pub mod create_cache_policy_input {
 #[doc(hidden)]
 pub type CreateCachePolicyInputOperationOutputAlias = crate::operation::CreateCachePolicy;
 #[doc(hidden)]
-pub type CreateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateCachePolicy`](crate::operation::CreateCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -230,7 +230,7 @@ impl CreateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +310,7 @@ impl CreateCachePolicyInput {
             "CreateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -378,7 +378,7 @@ pub type CreateCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::CreateCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type CreateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`CreateCloudFrontOriginAccessIdentity`](crate::operation::CreateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -389,7 +389,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -472,7 +472,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
             "CreateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -533,7 +533,7 @@ pub mod create_distribution_input {
 #[doc(hidden)]
 pub type CreateDistributionInputOperationOutputAlias = crate::operation::CreateDistribution;
 #[doc(hidden)]
-pub type CreateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistribution`](crate::operation::CreateDistribution)>
     #[allow(clippy::let_and_return)]
@@ -544,7 +544,7 @@ impl CreateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -624,7 +624,7 @@ impl CreateDistributionInput {
             "CreateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -690,7 +690,7 @@ pub mod create_distribution_with_tags_input {
 pub type CreateDistributionWithTagsInputOperationOutputAlias =
     crate::operation::CreateDistributionWithTags;
 #[doc(hidden)]
-pub type CreateDistributionWithTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionWithTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionWithTags`](crate::operation::CreateDistributionWithTags)>
     #[allow(clippy::let_and_return)]
@@ -701,7 +701,7 @@ impl CreateDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistributionWithTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -791,7 +791,7 @@ impl CreateDistributionWithTagsInput {
             "CreateDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -857,7 +857,8 @@ pub mod create_field_level_encryption_config_input {
 pub type CreateFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::CreateFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type CreateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionConfig`](crate::operation::CreateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -868,7 +869,7 @@ impl CreateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -950,7 +951,7 @@ impl CreateFieldLevelEncryptionConfigInput {
             "CreateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1016,7 +1017,8 @@ pub mod create_field_level_encryption_profile_input {
 pub type CreateFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::CreateFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type CreateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionProfile`](crate::operation::CreateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -1027,7 +1029,7 @@ impl CreateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1109,7 +1111,7 @@ impl CreateFieldLevelEncryptionProfileInput {
             "CreateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1201,7 +1203,7 @@ pub mod create_function_input {
 #[doc(hidden)]
 pub type CreateFunctionInputOperationOutputAlias = crate::operation::CreateFunction;
 #[doc(hidden)]
-pub type CreateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunction`](crate::operation::CreateFunction)>
     #[allow(clippy::let_and_return)]
@@ -1212,7 +1214,7 @@ impl CreateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1292,7 +1294,7 @@ impl CreateFunctionInput {
             "CreateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1368,7 +1370,7 @@ pub mod create_invalidation_input {
 #[doc(hidden)]
 pub type CreateInvalidationInputOperationOutputAlias = crate::operation::CreateInvalidation;
 #[doc(hidden)]
-pub type CreateInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInvalidationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInvalidation`](crate::operation::CreateInvalidation)>
     #[allow(clippy::let_and_return)]
@@ -1379,7 +1381,7 @@ impl CreateInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInvalidation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1479,7 +1481,7 @@ impl CreateInvalidationInput {
             "CreateInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1540,7 +1542,7 @@ pub mod create_key_group_input {
 #[doc(hidden)]
 pub type CreateKeyGroupInputOperationOutputAlias = crate::operation::CreateKeyGroup;
 #[doc(hidden)]
-pub type CreateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeyGroup`](crate::operation::CreateKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -1551,7 +1553,7 @@ impl CreateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1631,7 +1633,7 @@ impl CreateKeyGroupInput {
             "CreateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1714,7 +1716,8 @@ pub mod create_monitoring_subscription_input {
 pub type CreateMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::CreateMonitoringSubscription;
 #[doc(hidden)]
-pub type CreateMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMonitoringSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateMonitoringSubscription`](crate::operation::CreateMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -1725,7 +1728,7 @@ impl CreateMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1826,7 +1829,7 @@ impl CreateMonitoringSubscriptionInput {
             "CreateMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1892,7 +1895,7 @@ pub mod create_origin_request_policy_input {
 pub type CreateOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::CreateOriginRequestPolicy;
 #[doc(hidden)]
-pub type CreateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateOriginRequestPolicy`](crate::operation::CreateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1903,7 +1906,7 @@ impl CreateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1984,7 +1987,7 @@ impl CreateOriginRequestPolicyInput {
             "CreateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2045,7 +2048,7 @@ pub mod create_public_key_input {
 #[doc(hidden)]
 pub type CreatePublicKeyInputOperationOutputAlias = crate::operation::CreatePublicKey;
 #[doc(hidden)]
-pub type CreatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicKey`](crate::operation::CreatePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -2056,7 +2059,7 @@ impl CreatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2136,7 +2139,7 @@ impl CreatePublicKeyInput {
             "CreatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2259,7 +2262,7 @@ pub mod create_realtime_log_config_input {
 pub type CreateRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::CreateRealtimeLogConfig;
 #[doc(hidden)]
-pub type CreateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateRealtimeLogConfig`](crate::operation::CreateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -2270,7 +2273,7 @@ impl CreateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2355,7 @@ impl CreateRealtimeLogConfigInput {
             "CreateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2420,7 +2423,7 @@ pub mod create_response_headers_policy_input {
 pub type CreateResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::CreateResponseHeadersPolicy;
 #[doc(hidden)]
-pub type CreateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateResponseHeadersPolicy`](crate::operation::CreateResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2431,7 +2434,7 @@ impl CreateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2513,7 +2516,7 @@ impl CreateResponseHeadersPolicyInput {
             "CreateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2579,7 +2582,7 @@ pub mod create_streaming_distribution_input {
 pub type CreateStreamingDistributionInputOperationOutputAlias =
     crate::operation::CreateStreamingDistribution;
 #[doc(hidden)]
-pub type CreateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistribution`](crate::operation::CreateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -2590,7 +2593,7 @@ impl CreateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2672,7 +2675,7 @@ impl CreateStreamingDistributionInput {
             "CreateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2740,7 +2743,7 @@ pub type CreateStreamingDistributionWithTagsInputOperationOutputAlias =
     crate::operation::CreateStreamingDistributionWithTags;
 #[doc(hidden)]
 pub type CreateStreamingDistributionWithTagsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistributionWithTags`](crate::operation::CreateStreamingDistributionWithTags)>
     #[allow(clippy::let_and_return)]
@@ -2751,7 +2754,7 @@ impl CreateStreamingDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistributionWithTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2842,7 +2845,7 @@ impl CreateStreamingDistributionWithTagsInput {
             "CreateStreamingDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2920,7 +2923,7 @@ pub mod delete_cache_policy_input {
 #[doc(hidden)]
 pub type DeleteCachePolicyInputOperationOutputAlias = crate::operation::DeleteCachePolicy;
 #[doc(hidden)]
-pub type DeleteCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCachePolicy`](crate::operation::DeleteCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2931,7 +2934,7 @@ impl DeleteCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3045,7 +3048,7 @@ impl DeleteCachePolicyInput {
             "DeleteCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3111,7 +3114,7 @@ pub type DeleteCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::DeleteCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type DeleteCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCloudFrontOriginAccessIdentity`](crate::operation::DeleteCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -3122,7 +3125,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3240,7 +3243,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
             "DeleteCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3304,7 +3307,7 @@ pub mod delete_distribution_input {
 #[doc(hidden)]
 pub type DeleteDistributionInputOperationOutputAlias = crate::operation::DeleteDistribution;
 #[doc(hidden)]
-pub type DeleteDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistribution`](crate::operation::DeleteDistribution)>
     #[allow(clippy::let_and_return)]
@@ -3315,7 +3318,7 @@ impl DeleteDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3429,7 +3432,7 @@ impl DeleteDistributionInput {
             "DeleteDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3494,7 +3497,8 @@ pub mod delete_field_level_encryption_config_input {
 pub type DeleteFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::DeleteFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type DeleteFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionConfig`](crate::operation::DeleteFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -3505,7 +3509,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3619,7 +3623,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
             "DeleteFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3684,7 +3688,8 @@ pub mod delete_field_level_encryption_profile_input {
 pub type DeleteFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::DeleteFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type DeleteFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionProfile`](crate::operation::DeleteFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -3695,7 +3700,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3813,7 +3818,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
             "DeleteFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3877,7 +3882,7 @@ pub mod delete_function_input {
 #[doc(hidden)]
 pub type DeleteFunctionInputOperationOutputAlias = crate::operation::DeleteFunction;
 #[doc(hidden)]
-pub type DeleteFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunction`](crate::operation::DeleteFunction)>
     #[allow(clippy::let_and_return)]
@@ -3888,7 +3893,7 @@ impl DeleteFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4002,7 +4007,7 @@ impl DeleteFunctionInput {
             "DeleteFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4070,7 +4075,7 @@ pub mod delete_key_group_input {
 #[doc(hidden)]
 pub type DeleteKeyGroupInputOperationOutputAlias = crate::operation::DeleteKeyGroup;
 #[doc(hidden)]
-pub type DeleteKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyGroup`](crate::operation::DeleteKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -4081,7 +4086,7 @@ impl DeleteKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4195,7 +4200,7 @@ impl DeleteKeyGroupInput {
             "DeleteKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4249,7 +4254,8 @@ pub mod delete_monitoring_subscription_input {
 pub type DeleteMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::DeleteMonitoringSubscription;
 #[doc(hidden)]
-pub type DeleteMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMonitoringSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMonitoringSubscription`](crate::operation::DeleteMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -4260,7 +4266,7 @@ impl DeleteMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4354,7 +4360,7 @@ impl DeleteMonitoringSubscriptionInput {
             "DeleteMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4425,7 +4431,7 @@ pub mod delete_origin_request_policy_input {
 pub type DeleteOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::DeleteOriginRequestPolicy;
 #[doc(hidden)]
-pub type DeleteOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOriginRequestPolicy`](crate::operation::DeleteOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4436,7 +4442,7 @@ impl DeleteOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4550,7 +4556,7 @@ impl DeleteOriginRequestPolicyInput {
             "DeleteOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4614,7 +4620,7 @@ pub mod delete_public_key_input {
 #[doc(hidden)]
 pub type DeletePublicKeyInputOperationOutputAlias = crate::operation::DeletePublicKey;
 #[doc(hidden)]
-pub type DeletePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePublicKey`](crate::operation::DeletePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -4625,7 +4631,7 @@ impl DeletePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4739,7 +4745,7 @@ impl DeletePublicKeyInput {
             "DeletePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4802,7 +4808,7 @@ pub mod delete_realtime_log_config_input {
 pub type DeleteRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::DeleteRealtimeLogConfig;
 #[doc(hidden)]
-pub type DeleteRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRealtimeLogConfig`](crate::operation::DeleteRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -4813,7 +4819,7 @@ impl DeleteRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4896,7 +4902,7 @@ impl DeleteRealtimeLogConfigInput {
             "DeleteRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4977,7 +4983,7 @@ pub mod delete_response_headers_policy_input {
 pub type DeleteResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::DeleteResponseHeadersPolicy;
 #[doc(hidden)]
-pub type DeleteResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResponseHeadersPolicy`](crate::operation::DeleteResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4988,7 +4994,7 @@ impl DeleteResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5102,7 +5108,7 @@ impl DeleteResponseHeadersPolicyInput {
             "DeleteResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5167,7 +5173,7 @@ pub mod delete_streaming_distribution_input {
 pub type DeleteStreamingDistributionInputOperationOutputAlias =
     crate::operation::DeleteStreamingDistribution;
 #[doc(hidden)]
-pub type DeleteStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingDistribution`](crate::operation::DeleteStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -5178,7 +5184,7 @@ impl DeleteStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5292,7 +5298,7 @@ impl DeleteStreamingDistributionInput {
             "DeleteStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5357,7 +5363,7 @@ pub mod describe_function_input {
 #[doc(hidden)]
 pub type DescribeFunctionInputOperationOutputAlias = crate::operation::DescribeFunction;
 #[doc(hidden)]
-pub type DescribeFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFunction`](crate::operation::DescribeFunction)>
     #[allow(clippy::let_and_return)]
@@ -5368,7 +5374,7 @@ impl DescribeFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5469,7 +5475,7 @@ impl DescribeFunctionInput {
             "DescribeFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5525,7 +5531,7 @@ pub mod get_cache_policy_input {
 #[doc(hidden)]
 pub type GetCachePolicyInputOperationOutputAlias = crate::operation::GetCachePolicy;
 #[doc(hidden)]
-pub type GetCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicy`](crate::operation::GetCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -5536,7 +5542,7 @@ impl GetCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5626,7 +5632,7 @@ impl GetCachePolicyInput {
             "GetCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5682,7 +5688,7 @@ pub mod get_cache_policy_config_input {
 #[doc(hidden)]
 pub type GetCachePolicyConfigInputOperationOutputAlias = crate::operation::GetCachePolicyConfig;
 #[doc(hidden)]
-pub type GetCachePolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCachePolicyConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCachePolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicyConfig`](crate::operation::GetCachePolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -5693,7 +5699,7 @@ impl GetCachePolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5783,7 +5789,7 @@ impl GetCachePolicyConfigInput {
             "GetCachePolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5832,7 +5838,8 @@ pub mod get_cloud_front_origin_access_identity_input {
 pub type GetCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::GetCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
-pub type GetCloudFrontOriginAccessIdentityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCloudFrontOriginAccessIdentityInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentity`](crate::operation::GetCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -5843,7 +5850,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5937,7 +5944,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
             "GetCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5987,7 +5994,7 @@ pub type GetCloudFrontOriginAccessIdentityConfigInputOperationOutputAlias =
     crate::operation::GetCloudFrontOriginAccessIdentityConfig;
 #[doc(hidden)]
 pub type GetCloudFrontOriginAccessIdentityConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCloudFrontOriginAccessIdentityConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentityConfig`](crate::operation::GetCloudFrontOriginAccessIdentityConfig)>
     #[allow(clippy::let_and_return)]
@@ -5998,7 +6005,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentityConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6092,7 +6099,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
             "GetCloudFrontOriginAccessIdentityConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6140,7 +6147,7 @@ pub mod get_distribution_input {
 #[doc(hidden)]
 pub type GetDistributionInputOperationOutputAlias = crate::operation::GetDistribution;
 #[doc(hidden)]
-pub type GetDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetDistribution`](crate::operation::GetDistribution)>
     #[allow(clippy::let_and_return)]
@@ -6151,7 +6158,7 @@ impl GetDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6241,7 +6248,7 @@ impl GetDistributionInput {
             "GetDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6289,7 +6296,7 @@ pub mod get_distribution_config_input {
 #[doc(hidden)]
 pub type GetDistributionConfigInputOperationOutputAlias = crate::operation::GetDistributionConfig;
 #[doc(hidden)]
-pub type GetDistributionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfig`](crate::operation::GetDistributionConfig)>
     #[allow(clippy::let_and_return)]
@@ -6300,7 +6307,7 @@ impl GetDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistributionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6390,7 +6397,7 @@ impl GetDistributionConfigInput {
             "GetDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6439,7 +6446,7 @@ pub mod get_field_level_encryption_input {
 pub type GetFieldLevelEncryptionInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryption;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryption`](crate::operation::GetFieldLevelEncryption)>
     #[allow(clippy::let_and_return)]
@@ -6450,7 +6457,7 @@ impl GetFieldLevelEncryptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryption,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +6547,7 @@ impl GetFieldLevelEncryptionInput {
             "GetFieldLevelEncryption",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6589,7 +6596,8 @@ pub mod get_field_level_encryption_config_input {
 pub type GetFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionConfig`](crate::operation::GetFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -6600,7 +6608,7 @@ impl GetFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6694,7 +6702,7 @@ impl GetFieldLevelEncryptionConfigInput {
             "GetFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6743,7 +6751,8 @@ pub mod get_field_level_encryption_profile_input {
 pub type GetFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfile`](crate::operation::GetFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -6754,7 +6763,7 @@ impl GetFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6848,7 +6857,7 @@ impl GetFieldLevelEncryptionProfileInput {
             "GetFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6898,7 +6907,7 @@ pub type GetFieldLevelEncryptionProfileConfigInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionProfileConfig;
 #[doc(hidden)]
 pub type GetFieldLevelEncryptionProfileConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionProfileConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfileConfig`](crate::operation::GetFieldLevelEncryptionProfileConfig)>
     #[allow(clippy::let_and_return)]
@@ -6909,7 +6918,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfileConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7003,7 +7012,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
             "GetFieldLevelEncryptionProfileConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7068,7 +7077,7 @@ pub mod get_function_input {
 #[doc(hidden)]
 pub type GetFunctionInputOperationOutputAlias = crate::operation::GetFunction;
 #[doc(hidden)]
-pub type GetFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunction`](crate::operation::GetFunction)>
     #[allow(clippy::let_and_return)]
@@ -7079,7 +7088,7 @@ impl GetFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7180,7 +7189,7 @@ impl GetFunctionInput {
             "GetFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7247,7 +7256,7 @@ pub mod get_invalidation_input {
 #[doc(hidden)]
 pub type GetInvalidationInputOperationOutputAlias = crate::operation::GetInvalidation;
 #[doc(hidden)]
-pub type GetInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvalidationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`GetInvalidation`](crate::operation::GetInvalidation)>
     #[allow(clippy::let_and_return)]
@@ -7258,7 +7267,7 @@ impl GetInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvalidation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7368,7 +7377,7 @@ impl GetInvalidationInput {
             "GetInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7418,7 +7427,7 @@ pub mod get_key_group_input {
 #[doc(hidden)]
 pub type GetKeyGroupInputOperationOutputAlias = crate::operation::GetKeyGroup;
 #[doc(hidden)]
-pub type GetKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroup`](crate::operation::GetKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -7429,7 +7438,7 @@ impl GetKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7519,7 +7528,7 @@ impl GetKeyGroupInput {
             "GetKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7569,7 +7578,7 @@ pub mod get_key_group_config_input {
 #[doc(hidden)]
 pub type GetKeyGroupConfigInputOperationOutputAlias = crate::operation::GetKeyGroupConfig;
 #[doc(hidden)]
-pub type GetKeyGroupConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKeyGroupConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKeyGroupConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroupConfig`](crate::operation::GetKeyGroupConfig)>
     #[allow(clippy::let_and_return)]
@@ -7580,7 +7589,7 @@ impl GetKeyGroupConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroupConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7670,7 +7679,7 @@ impl GetKeyGroupConfigInput {
             "GetKeyGroupConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7724,7 +7733,7 @@ pub mod get_monitoring_subscription_input {
 pub type GetMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::GetMonitoringSubscription;
 #[doc(hidden)]
-pub type GetMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMonitoringSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`GetMonitoringSubscription`](crate::operation::GetMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -7735,7 +7744,7 @@ impl GetMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7829,7 +7838,7 @@ impl GetMonitoringSubscriptionInput {
             "GetMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7885,7 +7894,7 @@ pub mod get_origin_request_policy_input {
 #[doc(hidden)]
 pub type GetOriginRequestPolicyInputOperationOutputAlias = crate::operation::GetOriginRequestPolicy;
 #[doc(hidden)]
-pub type GetOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicy`](crate::operation::GetOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7896,7 +7905,7 @@ impl GetOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7986,7 +7995,7 @@ impl GetOriginRequestPolicyInput {
             "GetOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8043,7 +8052,8 @@ pub mod get_origin_request_policy_config_input {
 pub type GetOriginRequestPolicyConfigInputOperationOutputAlias =
     crate::operation::GetOriginRequestPolicyConfig;
 #[doc(hidden)]
-pub type GetOriginRequestPolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOriginRequestPolicyConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOriginRequestPolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicyConfig`](crate::operation::GetOriginRequestPolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8054,7 +8064,7 @@ impl GetOriginRequestPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8148,7 +8158,7 @@ impl GetOriginRequestPolicyConfigInput {
             "GetOriginRequestPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8196,7 +8206,7 @@ pub mod get_public_key_input {
 #[doc(hidden)]
 pub type GetPublicKeyInputOperationOutputAlias = crate::operation::GetPublicKey;
 #[doc(hidden)]
-pub type GetPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -8207,7 +8217,7 @@ impl GetPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8297,7 +8307,7 @@ impl GetPublicKeyInput {
             "GetPublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8345,7 +8355,7 @@ pub mod get_public_key_config_input {
 #[doc(hidden)]
 pub type GetPublicKeyConfigInputOperationOutputAlias = crate::operation::GetPublicKeyConfig;
 #[doc(hidden)]
-pub type GetPublicKeyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPublicKeyConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPublicKeyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKeyConfig`](crate::operation::GetPublicKeyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8356,7 +8366,7 @@ impl GetPublicKeyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKeyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8446,7 +8456,7 @@ impl GetPublicKeyConfigInput {
             "GetPublicKeyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8508,7 +8518,7 @@ pub mod get_realtime_log_config_input {
 #[doc(hidden)]
 pub type GetRealtimeLogConfigInputOperationOutputAlias = crate::operation::GetRealtimeLogConfig;
 #[doc(hidden)]
-pub type GetRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetRealtimeLogConfig`](crate::operation::GetRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -8519,7 +8529,7 @@ impl GetRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8602,7 +8612,7 @@ impl GetRealtimeLogConfigInput {
             "GetRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8669,7 +8679,7 @@ pub mod get_response_headers_policy_input {
 pub type GetResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::GetResponseHeadersPolicy;
 #[doc(hidden)]
-pub type GetResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicy`](crate::operation::GetResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8680,7 +8690,7 @@ impl GetResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8770,7 +8780,7 @@ impl GetResponseHeadersPolicyInput {
             "GetResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8829,7 +8839,8 @@ pub mod get_response_headers_policy_config_input {
 pub type GetResponseHeadersPolicyConfigInputOperationOutputAlias =
     crate::operation::GetResponseHeadersPolicyConfig;
 #[doc(hidden)]
-pub type GetResponseHeadersPolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResponseHeadersPolicyConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResponseHeadersPolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicyConfig`](crate::operation::GetResponseHeadersPolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8840,7 +8851,7 @@ impl GetResponseHeadersPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8934,7 +8945,7 @@ impl GetResponseHeadersPolicyConfigInput {
             "GetResponseHeadersPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8983,7 +8994,7 @@ pub mod get_streaming_distribution_input {
 pub type GetStreamingDistributionInputOperationOutputAlias =
     crate::operation::GetStreamingDistribution;
 #[doc(hidden)]
-pub type GetStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistribution`](crate::operation::GetStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -8994,7 +9005,7 @@ impl GetStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9084,7 +9095,7 @@ impl GetStreamingDistributionInput {
             "GetStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9133,7 +9144,8 @@ pub mod get_streaming_distribution_config_input {
 pub type GetStreamingDistributionConfigInputOperationOutputAlias =
     crate::operation::GetStreamingDistributionConfig;
 #[doc(hidden)]
-pub type GetStreamingDistributionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingDistributionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistributionConfig`](crate::operation::GetStreamingDistributionConfig)>
     #[allow(clippy::let_and_return)]
@@ -9144,7 +9156,7 @@ impl GetStreamingDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistributionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9238,7 +9250,7 @@ impl GetStreamingDistributionConfigInput {
             "GetStreamingDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9343,7 +9355,7 @@ pub mod list_cache_policies_input {
 #[doc(hidden)]
 pub type ListCachePoliciesInputOperationOutputAlias = crate::operation::ListCachePolicies;
 #[doc(hidden)]
-pub type ListCachePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCachePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCachePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListCachePolicies`](crate::operation::ListCachePolicies)>
     #[allow(clippy::let_and_return)]
@@ -9354,7 +9366,7 @@ impl ListCachePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCachePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9448,7 +9460,7 @@ impl ListCachePoliciesInput {
             "ListCachePolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9522,7 +9534,7 @@ pub type ListCloudFrontOriginAccessIdentitiesInputOperationOutputAlias =
     crate::operation::ListCloudFrontOriginAccessIdentities;
 #[doc(hidden)]
 pub type ListCloudFrontOriginAccessIdentitiesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListCloudFrontOriginAccessIdentities`](crate::operation::ListCloudFrontOriginAccessIdentities)>
     #[allow(clippy::let_and_return)]
@@ -9533,7 +9545,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCloudFrontOriginAccessIdentities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9625,7 +9637,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
             "ListCloudFrontOriginAccessIdentities",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9722,7 +9734,7 @@ pub mod list_conflicting_aliases_input {
 #[doc(hidden)]
 pub type ListConflictingAliasesInputOperationOutputAlias = crate::operation::ListConflictingAliases;
 #[doc(hidden)]
-pub type ListConflictingAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConflictingAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConflictingAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListConflictingAliases`](crate::operation::ListConflictingAliases)>
     #[allow(clippy::let_and_return)]
@@ -9733,7 +9745,7 @@ impl ListConflictingAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConflictingAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9833,7 +9845,7 @@ impl ListConflictingAliasesInput {
             "ListConflictingAliases",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9903,7 +9915,7 @@ pub mod list_distributions_input {
 #[doc(hidden)]
 pub type ListDistributionsInputOperationOutputAlias = crate::operation::ListDistributions;
 #[doc(hidden)]
-pub type ListDistributionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributions`](crate::operation::ListDistributions)>
     #[allow(clippy::let_and_return)]
@@ -9914,7 +9926,7 @@ impl ListDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10005,7 +10017,7 @@ impl ListDistributionsInput {
             "ListDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10089,7 +10101,8 @@ pub mod list_distributions_by_cache_policy_id_input {
 pub type ListDistributionsByCachePolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByCachePolicyId;
 #[doc(hidden)]
-pub type ListDistributionsByCachePolicyIdInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByCachePolicyIdInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByCachePolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByCachePolicyId`](crate::operation::ListDistributionsByCachePolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10100,7 +10113,7 @@ impl ListDistributionsByCachePolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByCachePolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10211,7 +10224,7 @@ impl ListDistributionsByCachePolicyIdInput {
             "ListDistributionsByCachePolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10292,7 +10305,7 @@ pub mod list_distributions_by_key_group_input {
 pub type ListDistributionsByKeyGroupInputOperationOutputAlias =
     crate::operation::ListDistributionsByKeyGroup;
 #[doc(hidden)]
-pub type ListDistributionsByKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByKeyGroup`](crate::operation::ListDistributionsByKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -10303,7 +10316,7 @@ impl ListDistributionsByKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10414,7 +10427,7 @@ impl ListDistributionsByKeyGroupInput {
             "ListDistributionsByKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10503,7 +10516,7 @@ pub type ListDistributionsByOriginRequestPolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByOriginRequestPolicyId;
 #[doc(hidden)]
 pub type ListDistributionsByOriginRequestPolicyIdInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByOriginRequestPolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByOriginRequestPolicyId`](crate::operation::ListDistributionsByOriginRequestPolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10514,7 +10527,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByOriginRequestPolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10625,7 +10638,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             "ListDistributionsByOriginRequestPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10730,7 +10743,7 @@ pub type ListDistributionsByRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::ListDistributionsByRealtimeLogConfig;
 #[doc(hidden)]
 pub type ListDistributionsByRealtimeLogConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByRealtimeLogConfig`](crate::operation::ListDistributionsByRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -10741,7 +10754,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10823,7 +10836,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
             "ListDistributionsByRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10920,7 +10933,7 @@ pub type ListDistributionsByResponseHeadersPolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByResponseHeadersPolicyId;
 #[doc(hidden)]
 pub type ListDistributionsByResponseHeadersPolicyIdInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByResponseHeadersPolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByResponseHeadersPolicyId`](crate::operation::ListDistributionsByResponseHeadersPolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10931,7 +10944,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByResponseHeadersPolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11042,7 +11055,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
             "ListDistributionsByResponseHeadersPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11132,7 +11145,7 @@ pub mod list_distributions_by_web_acl_id_input {
 pub type ListDistributionsByWebAclIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByWebACLId;
 #[doc(hidden)]
-pub type ListDistributionsByWebAclIdInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByWebAclIdInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByWebAclIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByWebACLId`](crate::operation::ListDistributionsByWebACLId)>
     #[allow(clippy::let_and_return)]
@@ -11143,7 +11156,7 @@ impl ListDistributionsByWebAclIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByWebACLId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11254,7 +11267,7 @@ impl ListDistributionsByWebAclIdInput {
             "ListDistributionsByWebACLId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11321,7 +11334,8 @@ pub mod list_field_level_encryption_configs_input {
 pub type ListFieldLevelEncryptionConfigsInputOperationOutputAlias =
     crate::operation::ListFieldLevelEncryptionConfigs;
 #[doc(hidden)]
-pub type ListFieldLevelEncryptionConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFieldLevelEncryptionConfigsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFieldLevelEncryptionConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionConfigs`](crate::operation::ListFieldLevelEncryptionConfigs)>
     #[allow(clippy::let_and_return)]
@@ -11332,7 +11346,7 @@ impl ListFieldLevelEncryptionConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionConfigs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11424,7 +11438,7 @@ impl ListFieldLevelEncryptionConfigsInput {
             "ListFieldLevelEncryptionConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11491,7 +11505,8 @@ pub mod list_field_level_encryption_profiles_input {
 pub type ListFieldLevelEncryptionProfilesInputOperationOutputAlias =
     crate::operation::ListFieldLevelEncryptionProfiles;
 #[doc(hidden)]
-pub type ListFieldLevelEncryptionProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFieldLevelEncryptionProfilesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFieldLevelEncryptionProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionProfiles`](crate::operation::ListFieldLevelEncryptionProfiles)>
     #[allow(clippy::let_and_return)]
@@ -11502,7 +11517,7 @@ impl ListFieldLevelEncryptionProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11594,7 +11609,7 @@ impl ListFieldLevelEncryptionProfilesInput {
             "ListFieldLevelEncryptionProfiles",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11679,7 +11694,7 @@ pub mod list_functions_input {
 #[doc(hidden)]
 pub type ListFunctionsInputOperationOutputAlias = crate::operation::ListFunctions;
 #[doc(hidden)]
-pub type ListFunctionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFunctionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctions`](crate::operation::ListFunctions)>
     #[allow(clippy::let_and_return)]
@@ -11690,7 +11705,7 @@ impl ListFunctionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFunctions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11784,7 +11799,7 @@ impl ListFunctionsInput {
             "ListFunctions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11873,7 +11888,7 @@ pub mod list_invalidations_input {
 #[doc(hidden)]
 pub type ListInvalidationsInputOperationOutputAlias = crate::operation::ListInvalidations;
 #[doc(hidden)]
-pub type ListInvalidationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvalidationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvalidationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvalidations`](crate::operation::ListInvalidations)>
     #[allow(clippy::let_and_return)]
@@ -11884,7 +11899,7 @@ impl ListInvalidationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvalidations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11995,7 +12010,7 @@ impl ListInvalidationsInput {
             "ListInvalidations",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12063,7 +12078,7 @@ pub mod list_key_groups_input {
 #[doc(hidden)]
 pub type ListKeyGroupsInputOperationOutputAlias = crate::operation::ListKeyGroups;
 #[doc(hidden)]
-pub type ListKeyGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListKeyGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKeyGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyGroups`](crate::operation::ListKeyGroups)>
     #[allow(clippy::let_and_return)]
@@ -12074,7 +12089,7 @@ impl ListKeyGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKeyGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12165,7 +12180,7 @@ impl ListKeyGroupsInput {
             "ListKeyGroups",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12271,7 +12286,7 @@ pub mod list_origin_request_policies_input {
 pub type ListOriginRequestPoliciesInputOperationOutputAlias =
     crate::operation::ListOriginRequestPolicies;
 #[doc(hidden)]
-pub type ListOriginRequestPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOriginRequestPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOriginRequestPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListOriginRequestPolicies`](crate::operation::ListOriginRequestPolicies)>
     #[allow(clippy::let_and_return)]
@@ -12282,7 +12297,7 @@ impl ListOriginRequestPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginRequestPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12376,7 +12391,7 @@ impl ListOriginRequestPoliciesInput {
             "ListOriginRequestPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12442,7 +12457,7 @@ pub mod list_public_keys_input {
 #[doc(hidden)]
 pub type ListPublicKeysInputOperationOutputAlias = crate::operation::ListPublicKeys;
 #[doc(hidden)]
-pub type ListPublicKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublicKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(clippy::let_and_return)]
@@ -12453,7 +12468,7 @@ impl ListPublicKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublicKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12544,7 +12559,7 @@ impl ListPublicKeysInput {
             "ListPublicKeys",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12612,7 +12627,7 @@ pub mod list_realtime_log_configs_input {
 #[doc(hidden)]
 pub type ListRealtimeLogConfigsInputOperationOutputAlias = crate::operation::ListRealtimeLogConfigs;
 #[doc(hidden)]
-pub type ListRealtimeLogConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRealtimeLogConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRealtimeLogConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeLogConfigs`](crate::operation::ListRealtimeLogConfigs)>
     #[allow(clippy::let_and_return)]
@@ -12623,7 +12638,7 @@ impl ListRealtimeLogConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRealtimeLogConfigs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12714,7 +12729,7 @@ impl ListRealtimeLogConfigsInput {
             "ListRealtimeLogConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12822,7 +12837,7 @@ pub mod list_response_headers_policies_input {
 pub type ListResponseHeadersPoliciesInputOperationOutputAlias =
     crate::operation::ListResponseHeadersPolicies;
 #[doc(hidden)]
-pub type ListResponseHeadersPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResponseHeadersPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResponseHeadersPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListResponseHeadersPolicies`](crate::operation::ListResponseHeadersPolicies)>
     #[allow(clippy::let_and_return)]
@@ -12833,7 +12848,7 @@ impl ListResponseHeadersPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResponseHeadersPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12928,7 +12943,7 @@ impl ListResponseHeadersPoliciesInput {
             "ListResponseHeadersPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12991,7 +13006,7 @@ pub mod list_streaming_distributions_input {
 pub type ListStreamingDistributionsInputOperationOutputAlias =
     crate::operation::ListStreamingDistributions;
 #[doc(hidden)]
-pub type ListStreamingDistributionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamingDistributionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingDistributions`](crate::operation::ListStreamingDistributions)>
     #[allow(clippy::let_and_return)]
@@ -13002,7 +13017,7 @@ impl ListStreamingDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamingDistributions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13094,7 +13109,7 @@ impl ListStreamingDistributionsInput {
             "ListStreamingDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13144,7 +13159,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -13155,7 +13170,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13240,7 +13255,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13304,7 +13319,7 @@ pub mod publish_function_input {
 #[doc(hidden)]
 pub type PublishFunctionInputOperationOutputAlias = crate::operation::PublishFunction;
 #[doc(hidden)]
-pub type PublishFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishFunctionInput {
     /// Consumes the builder and constructs an Operation<[`PublishFunction`](crate::operation::PublishFunction)>
     #[allow(clippy::let_and_return)]
@@ -13315,7 +13330,7 @@ impl PublishFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13429,7 +13444,7 @@ impl PublishFunctionInput {
             "PublishFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13491,7 +13506,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -13502,7 +13517,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13593,7 +13608,7 @@ impl TagResourceInput {
             "TagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13699,7 +13714,7 @@ pub mod test_function_input {
 #[doc(hidden)]
 pub type TestFunctionInputOperationOutputAlias = crate::operation::TestFunction;
 #[doc(hidden)]
-pub type TestFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestFunctionInput {
     /// Consumes the builder and constructs an Operation<[`TestFunction`](crate::operation::TestFunction)>
     #[allow(clippy::let_and_return)]
@@ -13710,7 +13725,7 @@ impl TestFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13829,7 +13844,7 @@ impl TestFunctionInput {
             "TestFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13899,7 +13914,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13910,7 +13925,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14001,7 +14016,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14094,7 +14109,7 @@ pub mod update_cache_policy_input {
 #[doc(hidden)]
 pub type UpdateCachePolicyInputOperationOutputAlias = crate::operation::UpdateCachePolicy;
 #[doc(hidden)]
-pub type UpdateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCachePolicy`](crate::operation::UpdateCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -14105,7 +14120,7 @@ impl UpdateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14225,7 +14240,7 @@ impl UpdateCachePolicyInput {
             "UpdateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14319,7 +14334,7 @@ pub type UpdateCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::UpdateCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type UpdateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCloudFrontOriginAccessIdentity`](crate::operation::UpdateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -14330,7 +14345,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14456,7 +14471,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             "UpdateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14543,7 +14558,7 @@ pub mod update_distribution_input {
 #[doc(hidden)]
 pub type UpdateDistributionInputOperationOutputAlias = crate::operation::UpdateDistribution;
 #[doc(hidden)]
-pub type UpdateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistribution`](crate::operation::UpdateDistribution)>
     #[allow(clippy::let_and_return)]
@@ -14554,7 +14569,7 @@ impl UpdateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14674,7 +14689,7 @@ impl UpdateDistributionInput {
             "UpdateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14766,7 +14781,8 @@ pub mod update_field_level_encryption_config_input {
 pub type UpdateFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::UpdateFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type UpdateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionConfig`](crate::operation::UpdateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -14777,7 +14793,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14902,7 +14918,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
             "UpdateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14994,7 +15010,8 @@ pub mod update_field_level_encryption_profile_input {
 pub type UpdateFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::UpdateFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type UpdateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionProfile`](crate::operation::UpdateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -15005,7 +15022,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15130,7 +15147,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
             "UpdateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15234,7 +15251,7 @@ pub mod update_function_input {
 #[doc(hidden)]
 pub type UpdateFunctionInputOperationOutputAlias = crate::operation::UpdateFunction;
 #[doc(hidden)]
-pub type UpdateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunction`](crate::operation::UpdateFunction)>
     #[allow(clippy::let_and_return)]
@@ -15245,7 +15262,7 @@ impl UpdateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15365,7 +15382,7 @@ impl UpdateFunctionInput {
             "UpdateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15452,7 +15469,7 @@ pub mod update_key_group_input {
 #[doc(hidden)]
 pub type UpdateKeyGroupInputOperationOutputAlias = crate::operation::UpdateKeyGroup;
 #[doc(hidden)]
-pub type UpdateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKeyGroup`](crate::operation::UpdateKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -15463,7 +15480,7 @@ impl UpdateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15583,7 +15600,7 @@ impl UpdateKeyGroupInput {
             "UpdateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15681,7 +15698,7 @@ pub mod update_origin_request_policy_input {
 pub type UpdateOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::UpdateOriginRequestPolicy;
 #[doc(hidden)]
-pub type UpdateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOriginRequestPolicy`](crate::operation::UpdateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -15692,7 +15709,7 @@ impl UpdateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15813,7 +15830,7 @@ impl UpdateOriginRequestPolicyInput {
             "UpdateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15900,7 +15917,7 @@ pub mod update_public_key_input {
 #[doc(hidden)]
 pub type UpdatePublicKeyInputOperationOutputAlias = crate::operation::UpdatePublicKey;
 #[doc(hidden)]
-pub type UpdatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePublicKey`](crate::operation::UpdatePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -15911,7 +15928,7 @@ impl UpdatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16031,7 +16048,7 @@ impl UpdatePublicKeyInput {
             "UpdatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16166,7 +16183,7 @@ pub mod update_realtime_log_config_input {
 pub type UpdateRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::UpdateRealtimeLogConfig;
 #[doc(hidden)]
-pub type UpdateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRealtimeLogConfig`](crate::operation::UpdateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -16177,7 +16194,7 @@ impl UpdateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16259,7 +16276,7 @@ impl UpdateRealtimeLogConfigInput {
             "UpdateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16353,7 +16370,7 @@ pub mod update_response_headers_policy_input {
 pub type UpdateResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::UpdateResponseHeadersPolicy;
 #[doc(hidden)]
-pub type UpdateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResponseHeadersPolicy`](crate::operation::UpdateResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -16364,7 +16381,7 @@ impl UpdateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16485,7 +16502,7 @@ impl UpdateResponseHeadersPolicyInput {
             "UpdateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16577,7 +16594,7 @@ pub mod update_streaming_distribution_input {
 pub type UpdateStreamingDistributionInputOperationOutputAlias =
     crate::operation::UpdateStreamingDistribution;
 #[doc(hidden)]
-pub type UpdateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingDistribution`](crate::operation::UpdateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -16588,7 +16605,7 @@ impl UpdateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16713,7 +16730,7 @@ impl UpdateStreamingDistributionInput {
             "UpdateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

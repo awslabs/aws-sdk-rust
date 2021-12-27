@@ -87,7 +87,7 @@ pub mod associate_web_acl_input {
 #[doc(hidden)]
 pub type AssociateWebAclInputOperationOutputAlias = crate::operation::AssociateWebACL;
 #[doc(hidden)]
-pub type AssociateWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWebACL`](crate::operation::AssociateWebACL)>
     #[allow(clippy::let_and_return)]
@@ -98,7 +98,7 @@ impl AssociateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -183,7 +183,7 @@ impl AssociateWebAclInput {
             "AssociateWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -282,7 +282,7 @@ pub mod check_capacity_input {
 #[doc(hidden)]
 pub type CheckCapacityInputOperationOutputAlias = crate::operation::CheckCapacity;
 #[doc(hidden)]
-pub type CheckCapacityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckCapacityInput {
     /// Consumes the builder and constructs an Operation<[`CheckCapacity`](crate::operation::CheckCapacity)>
     #[allow(clippy::let_and_return)]
@@ -293,7 +293,7 @@ impl CheckCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckCapacity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -377,7 +377,7 @@ impl CheckCapacityInput {
             "CheckCapacity",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -568,7 +568,7 @@ pub mod create_ip_set_input {
 #[doc(hidden)]
 pub type CreateIpSetInputOperationOutputAlias = crate::operation::CreateIPSet;
 #[doc(hidden)]
-pub type CreateIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateIPSet`](crate::operation::CreateIPSet)>
     #[allow(clippy::let_and_return)]
@@ -579,7 +579,7 @@ impl CreateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -663,7 +663,7 @@ impl CreateIpSetInput {
             "CreateIPSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -805,7 +805,7 @@ pub mod create_regex_pattern_set_input {
 #[doc(hidden)]
 pub type CreateRegexPatternSetInputOperationOutputAlias = crate::operation::CreateRegexPatternSet;
 #[doc(hidden)]
-pub type CreateRegexPatternSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateRegexPatternSet`](crate::operation::CreateRegexPatternSet)>
     #[allow(clippy::let_and_return)]
@@ -816,7 +816,7 @@ impl CreateRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRegexPatternSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -903,7 +903,7 @@ impl CreateRegexPatternSetInput {
             "CreateRegexPatternSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1137,7 +1137,7 @@ pub mod create_rule_group_input {
 #[doc(hidden)]
 pub type CreateRuleGroupInputOperationOutputAlias = crate::operation::CreateRuleGroup;
 #[doc(hidden)]
-pub type CreateRuleGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroup`](crate::operation::CreateRuleGroup)>
     #[allow(clippy::let_and_return)]
@@ -1148,7 +1148,7 @@ impl CreateRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1233,7 +1233,7 @@ impl CreateRuleGroupInput {
             "CreateRuleGroup",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1463,7 +1463,7 @@ pub mod create_web_acl_input {
 #[doc(hidden)]
 pub type CreateWebAclInputOperationOutputAlias = crate::operation::CreateWebACL;
 #[doc(hidden)]
-pub type CreateWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebACL`](crate::operation::CreateWebACL)>
     #[allow(clippy::let_and_return)]
@@ -1474,7 +1474,7 @@ impl CreateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1558,7 +1558,7 @@ impl CreateWebAclInput {
             "CreateWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1632,7 +1632,8 @@ pub mod delete_firewall_manager_rule_groups_input {
 pub type DeleteFirewallManagerRuleGroupsInputOperationOutputAlias =
     crate::operation::DeleteFirewallManagerRuleGroups;
 #[doc(hidden)]
-pub type DeleteFirewallManagerRuleGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFirewallManagerRuleGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallManagerRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallManagerRuleGroups`](crate::operation::DeleteFirewallManagerRuleGroups)>
     #[allow(clippy::let_and_return)]
@@ -1643,7 +1644,7 @@ impl DeleteFirewallManagerRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFirewallManagerRuleGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1729,7 +1730,7 @@ impl DeleteFirewallManagerRuleGroupsInput {
             "DeleteFirewallManagerRuleGroups",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1841,7 +1842,7 @@ pub mod delete_ip_set_input {
 #[doc(hidden)]
 pub type DeleteIpSetInputOperationOutputAlias = crate::operation::DeleteIPSet;
 #[doc(hidden)]
-pub type DeleteIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIpSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIPSet`](crate::operation::DeleteIPSet)>
     #[allow(clippy::let_and_return)]
@@ -1852,7 +1853,7 @@ impl DeleteIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1936,7 +1937,7 @@ impl DeleteIpSetInput {
             "DeleteIPSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1997,7 +1998,7 @@ pub mod delete_logging_configuration_input {
 pub type DeleteLoggingConfigurationInputOperationOutputAlias =
     crate::operation::DeleteLoggingConfiguration;
 #[doc(hidden)]
-pub type DeleteLoggingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoggingConfiguration`](crate::operation::DeleteLoggingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2008,7 +2009,7 @@ impl DeleteLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoggingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2095,7 +2096,7 @@ impl DeleteLoggingConfigurationInput {
             "DeleteLoggingConfiguration",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2157,7 +2158,7 @@ pub mod delete_permission_policy_input {
 #[doc(hidden)]
 pub type DeletePermissionPolicyInputOperationOutputAlias = crate::operation::DeletePermissionPolicy;
 #[doc(hidden)]
-pub type DeletePermissionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionPolicy`](crate::operation::DeletePermissionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2168,7 +2169,7 @@ impl DeletePermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePermissionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2255,7 +2256,7 @@ impl DeletePermissionPolicyInput {
             "DeletePermissionPolicy",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2367,7 +2368,7 @@ pub mod delete_regex_pattern_set_input {
 #[doc(hidden)]
 pub type DeleteRegexPatternSetInputOperationOutputAlias = crate::operation::DeleteRegexPatternSet;
 #[doc(hidden)]
-pub type DeleteRegexPatternSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRegexPatternSet`](crate::operation::DeleteRegexPatternSet)>
     #[allow(clippy::let_and_return)]
@@ -2378,7 +2379,7 @@ impl DeleteRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegexPatternSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2465,7 +2466,7 @@ impl DeleteRegexPatternSetInput {
             "DeleteRegexPatternSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2577,7 +2578,7 @@ pub mod delete_rule_group_input {
 #[doc(hidden)]
 pub type DeleteRuleGroupInputOperationOutputAlias = crate::operation::DeleteRuleGroup;
 #[doc(hidden)]
-pub type DeleteRuleGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroup`](crate::operation::DeleteRuleGroup)>
     #[allow(clippy::let_and_return)]
@@ -2588,7 +2589,7 @@ impl DeleteRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2673,7 +2674,7 @@ impl DeleteRuleGroupInput {
             "DeleteRuleGroup",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2785,7 +2786,7 @@ pub mod delete_web_acl_input {
 #[doc(hidden)]
 pub type DeleteWebAclInputOperationOutputAlias = crate::operation::DeleteWebACL;
 #[doc(hidden)]
-pub type DeleteWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebAclInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebACL`](crate::operation::DeleteWebACL)>
     #[allow(clippy::let_and_return)]
@@ -2796,7 +2797,7 @@ impl DeleteWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2880,7 +2881,7 @@ impl DeleteWebAclInput {
             "DeleteWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2997,7 +2998,7 @@ pub mod describe_managed_rule_group_input {
 pub type DescribeManagedRuleGroupInputOperationOutputAlias =
     crate::operation::DescribeManagedRuleGroup;
 #[doc(hidden)]
-pub type DescribeManagedRuleGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeManagedRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeManagedRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedRuleGroup`](crate::operation::DescribeManagedRuleGroup)>
     #[allow(clippy::let_and_return)]
@@ -3008,7 +3009,7 @@ impl DescribeManagedRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeManagedRuleGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3095,7 +3096,7 @@ impl DescribeManagedRuleGroupInput {
             "DescribeManagedRuleGroup",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3191,7 +3192,7 @@ pub mod disassociate_web_acl_input {
 #[doc(hidden)]
 pub type DisassociateWebAclInputOperationOutputAlias = crate::operation::DisassociateWebACL;
 #[doc(hidden)]
-pub type DisassociateWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWebACL`](crate::operation::DisassociateWebACL)>
     #[allow(clippy::let_and_return)]
@@ -3202,7 +3203,7 @@ impl DisassociateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3287,7 +3288,7 @@ impl DisassociateWebAclInput {
             "DisassociateWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3385,7 +3386,7 @@ pub mod get_ip_set_input {
 #[doc(hidden)]
 pub type GetIpSetInputOperationOutputAlias = crate::operation::GetIPSet;
 #[doc(hidden)]
-pub type GetIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIpSetInput {
     /// Consumes the builder and constructs an Operation<[`GetIPSet`](crate::operation::GetIPSet)>
     #[allow(clippy::let_and_return)]
@@ -3396,7 +3397,7 @@ impl GetIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3477,7 +3478,7 @@ impl GetIpSetInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetIPSet", "wafv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3538,7 +3539,7 @@ pub mod get_logging_configuration_input {
 pub type GetLoggingConfigurationInputOperationOutputAlias =
     crate::operation::GetLoggingConfiguration;
 #[doc(hidden)]
-pub type GetLoggingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLoggingConfiguration`](crate::operation::GetLoggingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3549,7 +3550,7 @@ impl GetLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLoggingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3636,7 +3637,7 @@ impl GetLoggingConfigurationInput {
             "GetLoggingConfiguration",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3738,7 +3739,7 @@ pub mod get_managed_rule_set_input {
 #[doc(hidden)]
 pub type GetManagedRuleSetInputOperationOutputAlias = crate::operation::GetManagedRuleSet;
 #[doc(hidden)]
-pub type GetManagedRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetManagedRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetManagedRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`GetManagedRuleSet`](crate::operation::GetManagedRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -3749,7 +3750,7 @@ impl GetManagedRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetManagedRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3834,7 +3835,7 @@ impl GetManagedRuleSetInput {
             "GetManagedRuleSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3894,7 +3895,7 @@ pub mod get_permission_policy_input {
 #[doc(hidden)]
 pub type GetPermissionPolicyInputOperationOutputAlias = crate::operation::GetPermissionPolicy;
 #[doc(hidden)]
-pub type GetPermissionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPermissionPolicy`](crate::operation::GetPermissionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3905,7 +3906,7 @@ impl GetPermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPermissionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3990,7 +3991,7 @@ impl GetPermissionPolicyInput {
             "GetPermissionPolicy",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4120,7 +4121,8 @@ pub mod get_rate_based_statement_managed_keys_input {
 pub type GetRateBasedStatementManagedKeysInputOperationOutputAlias =
     crate::operation::GetRateBasedStatementManagedKeys;
 #[doc(hidden)]
-pub type GetRateBasedStatementManagedKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRateBasedStatementManagedKeysInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRateBasedStatementManagedKeysInput {
     /// Consumes the builder and constructs an Operation<[`GetRateBasedStatementManagedKeys`](crate::operation::GetRateBasedStatementManagedKeys)>
     #[allow(clippy::let_and_return)]
@@ -4131,7 +4133,7 @@ impl GetRateBasedStatementManagedKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRateBasedStatementManagedKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4217,7 +4219,7 @@ impl GetRateBasedStatementManagedKeysInput {
             "GetRateBasedStatementManagedKeys",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4317,7 +4319,7 @@ pub mod get_regex_pattern_set_input {
 #[doc(hidden)]
 pub type GetRegexPatternSetInputOperationOutputAlias = crate::operation::GetRegexPatternSet;
 #[doc(hidden)]
-pub type GetRegexPatternSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`GetRegexPatternSet`](crate::operation::GetRegexPatternSet)>
     #[allow(clippy::let_and_return)]
@@ -4328,7 +4330,7 @@ impl GetRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegexPatternSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4413,7 +4415,7 @@ impl GetRegexPatternSetInput {
             "GetRegexPatternSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4525,7 +4527,7 @@ pub mod get_rule_group_input {
 #[doc(hidden)]
 pub type GetRuleGroupInputOperationOutputAlias = crate::operation::GetRuleGroup;
 #[doc(hidden)]
-pub type GetRuleGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetRuleGroup`](crate::operation::GetRuleGroup)>
     #[allow(clippy::let_and_return)]
@@ -4536,7 +4538,7 @@ impl GetRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRuleGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4620,7 +4622,7 @@ impl GetRuleGroupInput {
             "GetRuleGroup",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4770,7 +4772,7 @@ pub mod get_sampled_requests_input {
 #[doc(hidden)]
 pub type GetSampledRequestsInputOperationOutputAlias = crate::operation::GetSampledRequests;
 #[doc(hidden)]
-pub type GetSampledRequestsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSampledRequestsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSampledRequestsInput {
     /// Consumes the builder and constructs an Operation<[`GetSampledRequests`](crate::operation::GetSampledRequests)>
     #[allow(clippy::let_and_return)]
@@ -4781,7 +4783,7 @@ impl GetSampledRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSampledRequests,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4866,7 +4868,7 @@ impl GetSampledRequestsInput {
             "GetSampledRequests",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4964,7 +4966,7 @@ pub mod get_web_acl_input {
 #[doc(hidden)]
 pub type GetWebAclInputOperationOutputAlias = crate::operation::GetWebACL;
 #[doc(hidden)]
-pub type GetWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebAclInput {
     /// Consumes the builder and constructs an Operation<[`GetWebACL`](crate::operation::GetWebACL)>
     #[allow(clippy::let_and_return)]
@@ -4975,7 +4977,7 @@ impl GetWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5057,7 +5059,7 @@ impl GetWebAclInput {
                     "GetWebACL",
                     "wafv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5115,7 +5117,7 @@ pub mod get_web_acl_for_resource_input {
 #[doc(hidden)]
 pub type GetWebAclForResourceInputOperationOutputAlias = crate::operation::GetWebACLForResource;
 #[doc(hidden)]
-pub type GetWebAclForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWebAclForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebAclForResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetWebACLForResource`](crate::operation::GetWebACLForResource)>
     #[allow(clippy::let_and_return)]
@@ -5126,7 +5128,7 @@ impl GetWebAclForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWebACLForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5213,7 +5215,7 @@ impl GetWebAclForResourceInput {
             "GetWebACLForResource",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5322,7 +5324,8 @@ pub mod list_available_managed_rule_groups_input {
 pub type ListAvailableManagedRuleGroupsInputOperationOutputAlias =
     crate::operation::ListAvailableManagedRuleGroups;
 #[doc(hidden)]
-pub type ListAvailableManagedRuleGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAvailableManagedRuleGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagedRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagedRuleGroups`](crate::operation::ListAvailableManagedRuleGroups)>
     #[allow(clippy::let_and_return)]
@@ -5333,7 +5336,7 @@ impl ListAvailableManagedRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableManagedRuleGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5419,7 +5422,7 @@ impl ListAvailableManagedRuleGroupsInput {
             "ListAvailableManagedRuleGroups",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5553,7 +5556,7 @@ pub type ListAvailableManagedRuleGroupVersionsInputOperationOutputAlias =
     crate::operation::ListAvailableManagedRuleGroupVersions;
 #[doc(hidden)]
 pub type ListAvailableManagedRuleGroupVersionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagedRuleGroupVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagedRuleGroupVersions`](crate::operation::ListAvailableManagedRuleGroupVersions)>
     #[allow(clippy::let_and_return)]
@@ -5564,7 +5567,7 @@ impl ListAvailableManagedRuleGroupVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableManagedRuleGroupVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5650,7 +5653,7 @@ impl ListAvailableManagedRuleGroupVersionsInput {
             "ListAvailableManagedRuleGroupVersions",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5758,7 +5761,7 @@ pub mod list_ip_sets_input {
 #[doc(hidden)]
 pub type ListIpSetsInputOperationOutputAlias = crate::operation::ListIPSets;
 #[doc(hidden)]
-pub type ListIpSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIpSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIpSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListIPSets`](crate::operation::ListIPSets)>
     #[allow(clippy::let_and_return)]
@@ -5769,7 +5772,7 @@ impl ListIpSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIPSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5853,7 +5856,7 @@ impl ListIpSetsInput {
             "ListIPSets",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5962,7 +5965,7 @@ pub mod list_logging_configurations_input {
 pub type ListLoggingConfigurationsInputOperationOutputAlias =
     crate::operation::ListLoggingConfigurations;
 #[doc(hidden)]
-pub type ListLoggingConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLoggingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLoggingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLoggingConfigurations`](crate::operation::ListLoggingConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -5973,7 +5976,7 @@ impl ListLoggingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLoggingConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6060,7 +6063,7 @@ impl ListLoggingConfigurationsInput {
             "ListLoggingConfigurations",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6168,7 +6171,7 @@ pub mod list_managed_rule_sets_input {
 #[doc(hidden)]
 pub type ListManagedRuleSetsInputOperationOutputAlias = crate::operation::ListManagedRuleSets;
 #[doc(hidden)]
-pub type ListManagedRuleSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListManagedRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedRuleSets`](crate::operation::ListManagedRuleSets)>
     #[allow(clippy::let_and_return)]
@@ -6179,7 +6182,7 @@ impl ListManagedRuleSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedRuleSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6266,7 +6269,7 @@ impl ListManagedRuleSetsInput {
             "ListManagedRuleSets",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6374,7 +6377,7 @@ pub mod list_regex_pattern_sets_input {
 #[doc(hidden)]
 pub type ListRegexPatternSetsInputOperationOutputAlias = crate::operation::ListRegexPatternSets;
 #[doc(hidden)]
-pub type ListRegexPatternSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRegexPatternSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRegexPatternSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListRegexPatternSets`](crate::operation::ListRegexPatternSets)>
     #[allow(clippy::let_and_return)]
@@ -6385,7 +6388,7 @@ impl ListRegexPatternSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegexPatternSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6472,7 +6475,7 @@ impl ListRegexPatternSetsInput {
             "ListRegexPatternSets",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6547,7 +6550,7 @@ pub mod list_resources_for_web_acl_input {
 #[doc(hidden)]
 pub type ListResourcesForWebAclInputOperationOutputAlias = crate::operation::ListResourcesForWebACL;
 #[doc(hidden)]
-pub type ListResourcesForWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourcesForWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesForWebAclInput {
     /// Consumes the builder and constructs an Operation<[`ListResourcesForWebACL`](crate::operation::ListResourcesForWebACL)>
     #[allow(clippy::let_and_return)]
@@ -6558,7 +6561,7 @@ impl ListResourcesForWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourcesForWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6645,7 +6648,7 @@ impl ListResourcesForWebAclInput {
             "ListResourcesForWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6753,7 +6756,7 @@ pub mod list_rule_groups_input {
 #[doc(hidden)]
 pub type ListRuleGroupsInputOperationOutputAlias = crate::operation::ListRuleGroups;
 #[doc(hidden)]
-pub type ListRuleGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRuleGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroups`](crate::operation::ListRuleGroups)>
     #[allow(clippy::let_and_return)]
@@ -6764,7 +6767,7 @@ impl ListRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRuleGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6849,7 +6852,7 @@ impl ListRuleGroupsInput {
             "ListRuleGroups",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6939,7 +6942,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6950,7 +6953,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7037,7 +7040,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7145,7 +7148,7 @@ pub mod list_web_ac_ls_input {
 #[doc(hidden)]
 pub type ListWebAcLsInputOperationOutputAlias = crate::operation::ListWebACLs;
 #[doc(hidden)]
-pub type ListWebAcLsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWebAcLsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebAcLsInput {
     /// Consumes the builder and constructs an Operation<[`ListWebACLs`](crate::operation::ListWebACLs)>
     #[allow(clippy::let_and_return)]
@@ -7156,7 +7159,7 @@ impl ListWebAcLsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebACLs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7240,7 +7243,7 @@ impl ListWebAcLsInput {
             "ListWebACLs",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7302,7 +7305,7 @@ pub mod put_logging_configuration_input {
 pub type PutLoggingConfigurationInputOperationOutputAlias =
     crate::operation::PutLoggingConfiguration;
 #[doc(hidden)]
-pub type PutLoggingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutLoggingConfiguration`](crate::operation::PutLoggingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -7313,7 +7316,7 @@ impl PutLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLoggingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7400,7 +7403,7 @@ impl PutLoggingConfigurationInput {
             "PutLoggingConfiguration",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7563,7 +7566,7 @@ pub mod put_managed_rule_set_versions_input {
 pub type PutManagedRuleSetVersionsInputOperationOutputAlias =
     crate::operation::PutManagedRuleSetVersions;
 #[doc(hidden)]
-pub type PutManagedRuleSetVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutManagedRuleSetVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutManagedRuleSetVersionsInput {
     /// Consumes the builder and constructs an Operation<[`PutManagedRuleSetVersions`](crate::operation::PutManagedRuleSetVersions)>
     #[allow(clippy::let_and_return)]
@@ -7574,7 +7577,7 @@ impl PutManagedRuleSetVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutManagedRuleSetVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7660,7 +7663,7 @@ impl PutManagedRuleSetVersionsInput {
             "PutManagedRuleSetVersions",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7776,7 +7779,7 @@ pub mod put_permission_policy_input {
 #[doc(hidden)]
 pub type PutPermissionPolicyInputOperationOutputAlias = crate::operation::PutPermissionPolicy;
 #[doc(hidden)]
-pub type PutPermissionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutPermissionPolicy`](crate::operation::PutPermissionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7787,7 +7790,7 @@ impl PutPermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermissionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7872,7 +7875,7 @@ impl PutPermissionPolicyInput {
             "PutPermissionPolicy",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7951,7 +7954,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7962,7 +7965,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8046,7 +8049,7 @@ impl TagResourceInput {
             "TagResource",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8125,7 +8128,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8136,7 +8139,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8220,7 +8223,7 @@ impl UntagResourceInput {
             "UntagResource",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8399,7 +8402,7 @@ pub mod update_ip_set_input {
 #[doc(hidden)]
 pub type UpdateIpSetInputOperationOutputAlias = crate::operation::UpdateIPSet;
 #[doc(hidden)]
-pub type UpdateIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIPSet`](crate::operation::UpdateIPSet)>
     #[allow(clippy::let_and_return)]
@@ -8410,7 +8413,7 @@ impl UpdateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8494,7 +8497,7 @@ impl UpdateIpSetInput {
             "UpdateIPSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8644,7 +8647,7 @@ pub type UpdateManagedRuleSetVersionExpiryDateInputOperationOutputAlias =
     crate::operation::UpdateManagedRuleSetVersionExpiryDate;
 #[doc(hidden)]
 pub type UpdateManagedRuleSetVersionExpiryDateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateManagedRuleSetVersionExpiryDateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateManagedRuleSetVersionExpiryDate`](crate::operation::UpdateManagedRuleSetVersionExpiryDate)>
     #[allow(clippy::let_and_return)]
@@ -8655,7 +8658,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateManagedRuleSetVersionExpiryDate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8741,7 +8744,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
             "UpdateManagedRuleSetVersionExpiryDate",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8886,7 +8889,7 @@ pub mod update_regex_pattern_set_input {
 #[doc(hidden)]
 pub type UpdateRegexPatternSetInputOperationOutputAlias = crate::operation::UpdateRegexPatternSet;
 #[doc(hidden)]
-pub type UpdateRegexPatternSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRegexPatternSet`](crate::operation::UpdateRegexPatternSet)>
     #[allow(clippy::let_and_return)]
@@ -8897,7 +8900,7 @@ impl UpdateRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegexPatternSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8984,7 +8987,7 @@ impl UpdateRegexPatternSetInput {
             "UpdateRegexPatternSet",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9187,7 +9190,7 @@ pub mod update_rule_group_input {
 #[doc(hidden)]
 pub type UpdateRuleGroupInputOperationOutputAlias = crate::operation::UpdateRuleGroup;
 #[doc(hidden)]
-pub type UpdateRuleGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleGroup`](crate::operation::UpdateRuleGroup)>
     #[allow(clippy::let_and_return)]
@@ -9198,7 +9201,7 @@ impl UpdateRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9283,7 +9286,7 @@ impl UpdateRuleGroupInput {
             "UpdateRuleGroup",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9516,7 +9519,7 @@ pub mod update_web_acl_input {
 #[doc(hidden)]
 pub type UpdateWebAclInputOperationOutputAlias = crate::operation::UpdateWebACL;
 #[doc(hidden)]
-pub type UpdateWebAclInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebACL`](crate::operation::UpdateWebACL)>
     #[allow(clippy::let_and_return)]
@@ -9527,7 +9530,7 @@ impl UpdateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWebACL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9611,7 +9614,7 @@ impl UpdateWebAclInput {
             "UpdateWebACL",
             "wafv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

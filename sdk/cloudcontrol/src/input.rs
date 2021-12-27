@@ -40,7 +40,7 @@ pub mod cancel_resource_request_input {
 #[doc(hidden)]
 pub type CancelResourceRequestInputOperationOutputAlias = crate::operation::CancelResourceRequest;
 #[doc(hidden)]
-pub type CancelResourceRequestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelResourceRequestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelResourceRequestInput {
     /// Consumes the builder and constructs an Operation<[`CancelResourceRequest`](crate::operation::CancelResourceRequest)>
     #[allow(clippy::let_and_return)]
@@ -51,7 +51,7 @@ impl CancelResourceRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelResourceRequest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +138,7 @@ impl CancelResourceRequestInput {
             "CancelResourceRequest",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -302,7 +302,7 @@ pub mod create_resource_input {
 #[doc(hidden)]
 pub type CreateResourceInputOperationOutputAlias = crate::operation::CreateResource;
 #[doc(hidden)]
-pub type CreateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateResource`](crate::operation::CreateResource)>
     #[allow(clippy::let_and_return)]
@@ -313,7 +313,7 @@ impl CreateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -401,7 +401,7 @@ impl CreateResourceInput {
             "CreateResource",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -530,7 +530,7 @@ pub mod delete_resource_input {
 #[doc(hidden)]
 pub type DeleteResourceInputOperationOutputAlias = crate::operation::DeleteResource;
 #[doc(hidden)]
-pub type DeleteResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResource`](crate::operation::DeleteResource)>
     #[allow(clippy::let_and_return)]
@@ -541,7 +541,7 @@ impl DeleteResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -629,7 +629,7 @@ impl DeleteResourceInput {
             "DeleteResource",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -740,7 +740,7 @@ pub mod get_resource_input {
 #[doc(hidden)]
 pub type GetResourceInputOperationOutputAlias = crate::operation::GetResource;
 #[doc(hidden)]
-pub type GetResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetResource`](crate::operation::GetResource)>
     #[allow(clippy::let_and_return)]
@@ -751,7 +751,7 @@ impl GetResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -835,7 +835,7 @@ impl GetResourceInput {
             "GetResource",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -901,7 +901,7 @@ pub mod get_resource_request_status_input {
 pub type GetResourceRequestStatusInputOperationOutputAlias =
     crate::operation::GetResourceRequestStatus;
 #[doc(hidden)]
-pub type GetResourceRequestStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceRequestStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceRequestStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceRequestStatus`](crate::operation::GetResourceRequestStatus)>
     #[allow(clippy::let_and_return)]
@@ -912,7 +912,7 @@ impl GetResourceRequestStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceRequestStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -999,7 +999,7 @@ impl GetResourceRequestStatusInput {
             "GetResourceRequestStatus",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1096,7 +1096,7 @@ pub mod list_resource_requests_input {
 #[doc(hidden)]
 pub type ListResourceRequestsInputOperationOutputAlias = crate::operation::ListResourceRequests;
 #[doc(hidden)]
-pub type ListResourceRequestsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceRequestsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceRequestsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceRequests`](crate::operation::ListResourceRequests)>
     #[allow(clippy::let_and_return)]
@@ -1107,7 +1107,7 @@ impl ListResourceRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceRequests,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1194,7 +1194,7 @@ impl ListResourceRequestsInput {
             "ListResourceRequests",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1334,7 +1334,7 @@ pub mod list_resources_input {
 #[doc(hidden)]
 pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
 #[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(clippy::let_and_return)]
@@ -1345,7 +1345,7 @@ impl ListResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1429,7 +1429,7 @@ impl ListResourcesInput {
             "ListResources",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1577,7 +1577,7 @@ pub mod update_resource_input {
 #[doc(hidden)]
 pub type UpdateResourceInputOperationOutputAlias = crate::operation::UpdateResource;
 #[doc(hidden)]
-pub type UpdateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResource`](crate::operation::UpdateResource)>
     #[allow(clippy::let_and_return)]
@@ -1588,7 +1588,7 @@ impl UpdateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1676,7 +1676,7 @@ impl UpdateResourceInput {
             "UpdateResource",
             "cloudcontrol",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

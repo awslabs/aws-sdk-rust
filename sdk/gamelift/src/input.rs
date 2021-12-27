@@ -75,7 +75,7 @@ pub mod accept_match_input {
 #[doc(hidden)]
 pub type AcceptMatchInputOperationOutputAlias = crate::operation::AcceptMatch;
 #[doc(hidden)]
-pub type AcceptMatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptMatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptMatchInput {
     /// Consumes the builder and constructs an Operation<[`AcceptMatch`](crate::operation::AcceptMatch)>
     #[allow(clippy::let_and_return)]
@@ -86,7 +86,7 @@ impl AcceptMatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptMatch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -170,7 +170,7 @@ impl AcceptMatchInput {
             "AcceptMatch",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -273,7 +273,7 @@ pub mod claim_game_server_input {
 #[doc(hidden)]
 pub type ClaimGameServerInputOperationOutputAlias = crate::operation::ClaimGameServer;
 #[doc(hidden)]
-pub type ClaimGameServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ClaimGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimGameServerInput {
     /// Consumes the builder and constructs an Operation<[`ClaimGameServer`](crate::operation::ClaimGameServer)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +284,7 @@ impl ClaimGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClaimGameServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -369,7 +369,7 @@ impl ClaimGameServerInput {
             "ClaimGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -491,7 +491,7 @@ pub mod create_alias_input {
 #[doc(hidden)]
 pub type CreateAliasInputOperationOutputAlias = crate::operation::CreateAlias;
 #[doc(hidden)]
-pub type CreateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
     #[allow(clippy::let_and_return)]
@@ -502,7 +502,7 @@ impl CreateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -586,7 +586,7 @@ impl CreateAliasInput {
             "CreateAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -743,7 +743,7 @@ pub mod create_build_input {
 #[doc(hidden)]
 pub type CreateBuildInputOperationOutputAlias = crate::operation::CreateBuild;
 #[doc(hidden)]
-pub type CreateBuildInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBuildInput {
     /// Consumes the builder and constructs an Operation<[`CreateBuild`](crate::operation::CreateBuild)>
     #[allow(clippy::let_and_return)]
@@ -754,7 +754,7 @@ impl CreateBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBuild,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -838,7 +838,7 @@ impl CreateBuildInput {
             "CreateBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1374,7 +1374,7 @@ pub mod create_fleet_input {
 #[doc(hidden)]
 pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
 #[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(clippy::let_and_return)]
@@ -1385,7 +1385,7 @@ impl CreateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1469,7 +1469,7 @@ impl CreateFleetInput {
             "CreateFleet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1553,7 +1553,7 @@ pub mod create_fleet_locations_input {
 #[doc(hidden)]
 pub type CreateFleetLocationsInputOperationOutputAlias = crate::operation::CreateFleetLocations;
 #[doc(hidden)]
-pub type CreateFleetLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetLocationsInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleetLocations`](crate::operation::CreateFleetLocations)>
     #[allow(clippy::let_and_return)]
@@ -1564,7 +1564,7 @@ impl CreateFleetLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleetLocations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1651,7 +1651,7 @@ impl CreateFleetLocationsInput {
             "CreateFleetLocations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2033,7 +2033,7 @@ pub mod create_game_server_group_input {
 #[doc(hidden)]
 pub type CreateGameServerGroupInputOperationOutputAlias = crate::operation::CreateGameServerGroup;
 #[doc(hidden)]
-pub type CreateGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameServerGroup`](crate::operation::CreateGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -2044,7 +2044,7 @@ impl CreateGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2131,7 +2131,7 @@ impl CreateGameServerGroupInput {
             "CreateGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2359,7 +2359,7 @@ pub mod create_game_session_input {
 #[doc(hidden)]
 pub type CreateGameSessionInputOperationOutputAlias = crate::operation::CreateGameSession;
 #[doc(hidden)]
-pub type CreateGameSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGameSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameSession`](crate::operation::CreateGameSession)>
     #[allow(clippy::let_and_return)]
@@ -2370,7 +2370,7 @@ impl CreateGameSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2455,7 +2455,7 @@ impl CreateGameSessionInput {
             "CreateGameSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2699,7 +2699,7 @@ pub mod create_game_session_queue_input {
 #[doc(hidden)]
 pub type CreateGameSessionQueueInputOperationOutputAlias = crate::operation::CreateGameSessionQueue;
 #[doc(hidden)]
-pub type CreateGameSessionQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameSessionQueue`](crate::operation::CreateGameSessionQueue)>
     #[allow(clippy::let_and_return)]
@@ -2710,7 +2710,7 @@ impl CreateGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSessionQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2797,7 +2797,7 @@ impl CreateGameSessionQueueInput {
             "CreateGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3173,7 +3173,8 @@ pub mod create_matchmaking_configuration_input {
 pub type CreateMatchmakingConfigurationInputOperationOutputAlias =
     crate::operation::CreateMatchmakingConfiguration;
 #[doc(hidden)]
-pub type CreateMatchmakingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMatchmakingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateMatchmakingConfiguration`](crate::operation::CreateMatchmakingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3184,7 +3185,7 @@ impl CreateMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3270,7 +3271,7 @@ impl CreateMatchmakingConfigurationInput {
             "CreateMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3387,7 +3388,7 @@ pub mod create_matchmaking_rule_set_input {
 pub type CreateMatchmakingRuleSetInputOperationOutputAlias =
     crate::operation::CreateMatchmakingRuleSet;
 #[doc(hidden)]
-pub type CreateMatchmakingRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateMatchmakingRuleSet`](crate::operation::CreateMatchmakingRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -3398,7 +3399,7 @@ impl CreateMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3485,7 +3486,7 @@ impl CreateMatchmakingRuleSetInput {
             "CreateMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3570,7 +3571,7 @@ pub mod create_player_session_input {
 #[doc(hidden)]
 pub type CreatePlayerSessionInputOperationOutputAlias = crate::operation::CreatePlayerSession;
 #[doc(hidden)]
-pub type CreatePlayerSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlayerSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlayerSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlayerSession`](crate::operation::CreatePlayerSession)>
     #[allow(clippy::let_and_return)]
@@ -3581,7 +3582,7 @@ impl CreatePlayerSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3666,7 +3667,7 @@ impl CreatePlayerSessionInput {
             "CreatePlayerSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3783,7 +3784,7 @@ pub mod create_player_sessions_input {
 #[doc(hidden)]
 pub type CreatePlayerSessionsInputOperationOutputAlias = crate::operation::CreatePlayerSessions;
 #[doc(hidden)]
-pub type CreatePlayerSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlayerSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlayerSessionsInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlayerSessions`](crate::operation::CreatePlayerSessions)>
     #[allow(clippy::let_and_return)]
@@ -3794,7 +3795,7 @@ impl CreatePlayerSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3881,7 +3882,7 @@ impl CreatePlayerSessionsInput {
             "CreatePlayerSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4037,7 +4038,7 @@ pub mod create_script_input {
 #[doc(hidden)]
 pub type CreateScriptInputOperationOutputAlias = crate::operation::CreateScript;
 #[doc(hidden)]
-pub type CreateScriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScriptInput {
     /// Consumes the builder and constructs an Operation<[`CreateScript`](crate::operation::CreateScript)>
     #[allow(clippy::let_and_return)]
@@ -4048,7 +4049,7 @@ impl CreateScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateScript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4132,7 +4133,7 @@ impl CreateScriptInput {
             "CreateScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4214,7 +4215,8 @@ pub mod create_vpc_peering_authorization_input {
 pub type CreateVpcPeeringAuthorizationInputOperationOutputAlias =
     crate::operation::CreateVpcPeeringAuthorization;
 #[doc(hidden)]
-pub type CreateVpcPeeringAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVpcPeeringAuthorizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcPeeringAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcPeeringAuthorization`](crate::operation::CreateVpcPeeringAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -4225,7 +4227,7 @@ impl CreateVpcPeeringAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4311,7 +4313,7 @@ impl CreateVpcPeeringAuthorizationInput {
             "CreateVpcPeeringAuthorization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4409,7 +4411,7 @@ pub mod create_vpc_peering_connection_input {
 pub type CreateVpcPeeringConnectionInputOperationOutputAlias =
     crate::operation::CreateVpcPeeringConnection;
 #[doc(hidden)]
-pub type CreateVpcPeeringConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVpcPeeringConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcPeeringConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcPeeringConnection`](crate::operation::CreateVpcPeeringConnection)>
     #[allow(clippy::let_and_return)]
@@ -4420,7 +4422,7 @@ impl CreateVpcPeeringConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4506,7 +4508,7 @@ impl CreateVpcPeeringConnectionInput {
             "CreateVpcPeeringConnection",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4566,7 +4568,7 @@ pub mod delete_alias_input {
 #[doc(hidden)]
 pub type DeleteAliasInputOperationOutputAlias = crate::operation::DeleteAlias;
 #[doc(hidden)]
-pub type DeleteAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
     #[allow(clippy::let_and_return)]
@@ -4577,7 +4579,7 @@ impl DeleteAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4661,7 +4663,7 @@ impl DeleteAliasInput {
             "DeleteAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4719,7 +4721,7 @@ pub mod delete_build_input {
 #[doc(hidden)]
 pub type DeleteBuildInputOperationOutputAlias = crate::operation::DeleteBuild;
 #[doc(hidden)]
-pub type DeleteBuildInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBuildInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBuild`](crate::operation::DeleteBuild)>
     #[allow(clippy::let_and_return)]
@@ -4730,7 +4732,7 @@ impl DeleteBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBuild,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4814,7 +4816,7 @@ impl DeleteBuildInput {
             "DeleteBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4872,7 +4874,7 @@ pub mod delete_fleet_input {
 #[doc(hidden)]
 pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
 #[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(clippy::let_and_return)]
@@ -4883,7 +4885,7 @@ impl DeleteFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4967,7 +4969,7 @@ impl DeleteFleetInput {
             "DeleteFleet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5050,7 +5052,7 @@ pub mod delete_fleet_locations_input {
 #[doc(hidden)]
 pub type DeleteFleetLocationsInputOperationOutputAlias = crate::operation::DeleteFleetLocations;
 #[doc(hidden)]
-pub type DeleteFleetLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetLocationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleetLocations`](crate::operation::DeleteFleetLocations)>
     #[allow(clippy::let_and_return)]
@@ -5061,7 +5063,7 @@ impl DeleteFleetLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleetLocations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5148,7 +5150,7 @@ impl DeleteFleetLocationsInput {
             "DeleteFleetLocations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5262,7 +5264,7 @@ pub mod delete_game_server_group_input {
 #[doc(hidden)]
 pub type DeleteGameServerGroupInputOperationOutputAlias = crate::operation::DeleteGameServerGroup;
 #[doc(hidden)]
-pub type DeleteGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGameServerGroup`](crate::operation::DeleteGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -5273,7 +5275,7 @@ impl DeleteGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5360,7 +5362,7 @@ impl DeleteGameServerGroupInput {
             "DeleteGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5416,7 +5418,7 @@ pub mod delete_game_session_queue_input {
 #[doc(hidden)]
 pub type DeleteGameSessionQueueInputOperationOutputAlias = crate::operation::DeleteGameSessionQueue;
 #[doc(hidden)]
-pub type DeleteGameSessionQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGameSessionQueue`](crate::operation::DeleteGameSessionQueue)>
     #[allow(clippy::let_and_return)]
@@ -5427,7 +5429,7 @@ impl DeleteGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameSessionQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5514,7 +5516,7 @@ impl DeleteGameSessionQueueInput {
             "DeleteGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5571,7 +5573,8 @@ pub mod delete_matchmaking_configuration_input {
 pub type DeleteMatchmakingConfigurationInputOperationOutputAlias =
     crate::operation::DeleteMatchmakingConfiguration;
 #[doc(hidden)]
-pub type DeleteMatchmakingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMatchmakingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMatchmakingConfiguration`](crate::operation::DeleteMatchmakingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5582,7 +5585,7 @@ impl DeleteMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5668,7 +5671,7 @@ impl DeleteMatchmakingConfigurationInput {
             "DeleteMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5727,7 +5730,7 @@ pub mod delete_matchmaking_rule_set_input {
 pub type DeleteMatchmakingRuleSetInputOperationOutputAlias =
     crate::operation::DeleteMatchmakingRuleSet;
 #[doc(hidden)]
-pub type DeleteMatchmakingRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMatchmakingRuleSet`](crate::operation::DeleteMatchmakingRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -5738,7 +5741,7 @@ impl DeleteMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5825,7 +5828,7 @@ impl DeleteMatchmakingRuleSetInput {
             "DeleteMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5895,7 +5898,7 @@ pub mod delete_scaling_policy_input {
 #[doc(hidden)]
 pub type DeleteScalingPolicyInputOperationOutputAlias = crate::operation::DeleteScalingPolicy;
 #[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPolicy`](crate::operation::DeleteScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5906,7 +5909,7 @@ impl DeleteScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5991,7 +5994,7 @@ impl DeleteScalingPolicyInput {
             "DeleteScalingPolicy",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6049,7 +6052,7 @@ pub mod delete_script_input {
 #[doc(hidden)]
 pub type DeleteScriptInputOperationOutputAlias = crate::operation::DeleteScript;
 #[doc(hidden)]
-pub type DeleteScriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScriptInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScript`](crate::operation::DeleteScript)>
     #[allow(clippy::let_and_return)]
@@ -6060,7 +6063,7 @@ impl DeleteScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6144,7 +6147,7 @@ impl DeleteScriptInput {
             "DeleteScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6226,7 +6229,8 @@ pub mod delete_vpc_peering_authorization_input {
 pub type DeleteVpcPeeringAuthorizationInputOperationOutputAlias =
     crate::operation::DeleteVpcPeeringAuthorization;
 #[doc(hidden)]
-pub type DeleteVpcPeeringAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVpcPeeringAuthorizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVpcPeeringAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVpcPeeringAuthorization`](crate::operation::DeleteVpcPeeringAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -6237,7 +6241,7 @@ impl DeleteVpcPeeringAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6323,7 +6327,7 @@ impl DeleteVpcPeeringAuthorizationInput {
             "DeleteVpcPeeringAuthorization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6399,7 +6403,7 @@ pub mod delete_vpc_peering_connection_input {
 pub type DeleteVpcPeeringConnectionInputOperationOutputAlias =
     crate::operation::DeleteVpcPeeringConnection;
 #[doc(hidden)]
-pub type DeleteVpcPeeringConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVpcPeeringConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVpcPeeringConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVpcPeeringConnection`](crate::operation::DeleteVpcPeeringConnection)>
     #[allow(clippy::let_and_return)]
@@ -6410,7 +6414,7 @@ impl DeleteVpcPeeringConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6496,7 +6500,7 @@ impl DeleteVpcPeeringConnectionInput {
             "DeleteVpcPeeringConnection",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6574,7 +6578,7 @@ pub mod deregister_game_server_input {
 #[doc(hidden)]
 pub type DeregisterGameServerInputOperationOutputAlias = crate::operation::DeregisterGameServer;
 #[doc(hidden)]
-pub type DeregisterGameServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterGameServerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterGameServer`](crate::operation::DeregisterGameServer)>
     #[allow(clippy::let_and_return)]
@@ -6585,7 +6589,7 @@ impl DeregisterGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterGameServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6672,7 +6676,7 @@ impl DeregisterGameServerInput {
             "DeregisterGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6732,7 +6736,7 @@ pub mod describe_alias_input {
 #[doc(hidden)]
 pub type DescribeAliasInputOperationOutputAlias = crate::operation::DescribeAlias;
 #[doc(hidden)]
-pub type DescribeAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAliasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlias`](crate::operation::DescribeAlias)>
     #[allow(clippy::let_and_return)]
@@ -6743,7 +6747,7 @@ impl DescribeAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6827,7 +6831,7 @@ impl DescribeAliasInput {
             "DescribeAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6885,7 +6889,7 @@ pub mod describe_build_input {
 #[doc(hidden)]
 pub type DescribeBuildInputOperationOutputAlias = crate::operation::DescribeBuild;
 #[doc(hidden)]
-pub type DescribeBuildInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBuildInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBuild`](crate::operation::DescribeBuild)>
     #[allow(clippy::let_and_return)]
@@ -6896,7 +6900,7 @@ impl DescribeBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBuild,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6980,7 +6984,7 @@ impl DescribeBuildInput {
             "DescribeBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7062,7 +7066,7 @@ pub mod describe_ec2_instance_limits_input {
 pub type DescribeEc2InstanceLimitsInputOperationOutputAlias =
     crate::operation::DescribeEC2InstanceLimits;
 #[doc(hidden)]
-pub type DescribeEc2InstanceLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEc2InstanceLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEc2InstanceLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEC2InstanceLimits`](crate::operation::DescribeEC2InstanceLimits)>
     #[allow(clippy::let_and_return)]
@@ -7073,7 +7077,7 @@ impl DescribeEc2InstanceLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEC2InstanceLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7160,7 +7164,7 @@ impl DescribeEc2InstanceLimitsInput {
             "DescribeEC2InstanceLimits",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7260,7 +7264,7 @@ pub mod describe_fleet_attributes_input {
 pub type DescribeFleetAttributesInputOperationOutputAlias =
     crate::operation::DescribeFleetAttributes;
 #[doc(hidden)]
-pub type DescribeFleetAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetAttributes`](crate::operation::DescribeFleetAttributes)>
     #[allow(clippy::let_and_return)]
@@ -7271,7 +7275,7 @@ impl DescribeFleetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7358,7 +7362,7 @@ impl DescribeFleetAttributesInput {
             "DescribeFleetAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7457,7 +7461,7 @@ pub mod describe_fleet_capacity_input {
 #[doc(hidden)]
 pub type DescribeFleetCapacityInputOperationOutputAlias = crate::operation::DescribeFleetCapacity;
 #[doc(hidden)]
-pub type DescribeFleetCapacityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetCapacityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetCapacity`](crate::operation::DescribeFleetCapacity)>
     #[allow(clippy::let_and_return)]
@@ -7468,7 +7472,7 @@ impl DescribeFleetCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetCapacity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7555,7 +7559,7 @@ impl DescribeFleetCapacityInput {
             "DescribeFleetCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7675,7 +7679,7 @@ pub mod describe_fleet_events_input {
 #[doc(hidden)]
 pub type DescribeFleetEventsInputOperationOutputAlias = crate::operation::DescribeFleetEvents;
 #[doc(hidden)]
-pub type DescribeFleetEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetEvents`](crate::operation::DescribeFleetEvents)>
     #[allow(clippy::let_and_return)]
@@ -7686,7 +7690,7 @@ impl DescribeFleetEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7771,7 +7775,7 @@ impl DescribeFleetEventsInput {
             "DescribeFleetEvents",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7879,7 +7883,8 @@ pub mod describe_fleet_location_attributes_input {
 pub type DescribeFleetLocationAttributesInputOperationOutputAlias =
     crate::operation::DescribeFleetLocationAttributes;
 #[doc(hidden)]
-pub type DescribeFleetLocationAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetLocationAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationAttributes`](crate::operation::DescribeFleetLocationAttributes)>
     #[allow(clippy::let_and_return)]
@@ -7890,7 +7895,7 @@ impl DescribeFleetLocationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7976,7 +7981,7 @@ impl DescribeFleetLocationAttributesInput {
             "DescribeFleetLocationAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8051,7 +8056,8 @@ pub mod describe_fleet_location_capacity_input {
 pub type DescribeFleetLocationCapacityInputOperationOutputAlias =
     crate::operation::DescribeFleetLocationCapacity;
 #[doc(hidden)]
-pub type DescribeFleetLocationCapacityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetLocationCapacityInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationCapacityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationCapacity`](crate::operation::DescribeFleetLocationCapacity)>
     #[allow(clippy::let_and_return)]
@@ -8062,7 +8068,7 @@ impl DescribeFleetLocationCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationCapacity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8148,7 +8154,7 @@ impl DescribeFleetLocationCapacityInput {
             "DescribeFleetLocationCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8223,7 +8229,8 @@ pub mod describe_fleet_location_utilization_input {
 pub type DescribeFleetLocationUtilizationInputOperationOutputAlias =
     crate::operation::DescribeFleetLocationUtilization;
 #[doc(hidden)]
-pub type DescribeFleetLocationUtilizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetLocationUtilizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationUtilization`](crate::operation::DescribeFleetLocationUtilization)>
     #[allow(clippy::let_and_return)]
@@ -8234,7 +8241,7 @@ impl DescribeFleetLocationUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationUtilization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8320,7 +8327,7 @@ impl DescribeFleetLocationUtilizationInput {
             "DescribeFleetLocationUtilization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8395,7 +8402,7 @@ pub mod describe_fleet_port_settings_input {
 pub type DescribeFleetPortSettingsInputOperationOutputAlias =
     crate::operation::DescribeFleetPortSettings;
 #[doc(hidden)]
-pub type DescribeFleetPortSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetPortSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetPortSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetPortSettings`](crate::operation::DescribeFleetPortSettings)>
     #[allow(clippy::let_and_return)]
@@ -8406,7 +8413,7 @@ impl DescribeFleetPortSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetPortSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8493,7 +8500,7 @@ impl DescribeFleetPortSettingsInput {
             "DescribeFleetPortSettings",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8591,7 +8598,7 @@ pub mod describe_fleet_utilization_input {
 pub type DescribeFleetUtilizationInputOperationOutputAlias =
     crate::operation::DescribeFleetUtilization;
 #[doc(hidden)]
-pub type DescribeFleetUtilizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetUtilization`](crate::operation::DescribeFleetUtilization)>
     #[allow(clippy::let_and_return)]
@@ -8602,7 +8609,7 @@ impl DescribeFleetUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetUtilization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8689,7 +8696,7 @@ impl DescribeFleetUtilizationInput {
             "DescribeFleetUtilization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8767,7 +8774,7 @@ pub mod describe_game_server_input {
 #[doc(hidden)]
 pub type DescribeGameServerInputOperationOutputAlias = crate::operation::DescribeGameServer;
 #[doc(hidden)]
-pub type DescribeGameServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServer`](crate::operation::DescribeGameServer)>
     #[allow(clippy::let_and_return)]
@@ -8778,7 +8785,7 @@ impl DescribeGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8863,7 +8870,7 @@ impl DescribeGameServerInput {
             "DescribeGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8925,7 +8932,7 @@ pub mod describe_game_server_group_input {
 pub type DescribeGameServerGroupInputOperationOutputAlias =
     crate::operation::DescribeGameServerGroup;
 #[doc(hidden)]
-pub type DescribeGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServerGroup`](crate::operation::DescribeGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -8936,7 +8943,7 @@ impl DescribeGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9023,7 +9030,7 @@ impl DescribeGameServerGroupInput {
             "DescribeGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9142,7 +9149,7 @@ pub mod describe_game_server_instances_input {
 pub type DescribeGameServerInstancesInputOperationOutputAlias =
     crate::operation::DescribeGameServerInstances;
 #[doc(hidden)]
-pub type DescribeGameServerInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameServerInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServerInstances`](crate::operation::DescribeGameServerInstances)>
     #[allow(clippy::let_and_return)]
@@ -9153,7 +9160,7 @@ impl DescribeGameServerInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9239,7 +9246,7 @@ impl DescribeGameServerInstancesInput {
             "DescribeGameServerInstances",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9386,7 +9393,7 @@ pub mod describe_game_session_details_input {
 pub type DescribeGameSessionDetailsInputOperationOutputAlias =
     crate::operation::DescribeGameSessionDetails;
 #[doc(hidden)]
-pub type DescribeGameSessionDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameSessionDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionDetailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionDetails`](crate::operation::DescribeGameSessionDetails)>
     #[allow(clippy::let_and_return)]
@@ -9397,7 +9404,7 @@ impl DescribeGameSessionDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9483,7 +9490,7 @@ impl DescribeGameSessionDetailsInput {
             "DescribeGameSessionDetails",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9542,7 +9549,8 @@ pub mod describe_game_session_placement_input {
 pub type DescribeGameSessionPlacementInputOperationOutputAlias =
     crate::operation::DescribeGameSessionPlacement;
 #[doc(hidden)]
-pub type DescribeGameSessionPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameSessionPlacementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionPlacement`](crate::operation::DescribeGameSessionPlacement)>
     #[allow(clippy::let_and_return)]
@@ -9553,7 +9561,7 @@ impl DescribeGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9639,7 +9647,7 @@ impl DescribeGameSessionPlacementInput {
             "DescribeGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9733,7 +9741,7 @@ pub mod describe_game_session_queues_input {
 pub type DescribeGameSessionQueuesInputOperationOutputAlias =
     crate::operation::DescribeGameSessionQueues;
 #[doc(hidden)]
-pub type DescribeGameSessionQueuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameSessionQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionQueuesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionQueues`](crate::operation::DescribeGameSessionQueues)>
     #[allow(clippy::let_and_return)]
@@ -9744,7 +9752,7 @@ impl DescribeGameSessionQueuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionQueues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9831,7 +9839,7 @@ impl DescribeGameSessionQueuesInput {
             "DescribeGameSessionQueues",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9979,7 +9987,7 @@ pub mod describe_game_sessions_input {
 #[doc(hidden)]
 pub type DescribeGameSessionsInputOperationOutputAlias = crate::operation::DescribeGameSessions;
 #[doc(hidden)]
-pub type DescribeGameSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGameSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessions`](crate::operation::DescribeGameSessions)>
     #[allow(clippy::let_and_return)]
@@ -9990,7 +9998,7 @@ impl DescribeGameSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10077,7 +10085,7 @@ impl DescribeGameSessionsInput {
             "DescribeGameSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10189,7 +10197,7 @@ pub mod describe_instances_input {
 #[doc(hidden)]
 pub type DescribeInstancesInputOperationOutputAlias = crate::operation::DescribeInstances;
 #[doc(hidden)]
-pub type DescribeInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstances`](crate::operation::DescribeInstances)>
     #[allow(clippy::let_and_return)]
@@ -10200,7 +10208,7 @@ impl DescribeInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10285,7 +10293,7 @@ impl DescribeInstancesInput {
             "DescribeInstances",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10352,7 +10360,7 @@ pub mod describe_matchmaking_input {
 #[doc(hidden)]
 pub type DescribeMatchmakingInputOperationOutputAlias = crate::operation::DescribeMatchmaking;
 #[doc(hidden)]
-pub type DescribeMatchmakingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmaking`](crate::operation::DescribeMatchmaking)>
     #[allow(clippy::let_and_return)]
@@ -10363,7 +10371,7 @@ impl DescribeMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmaking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10448,7 +10456,7 @@ impl DescribeMatchmakingInput {
             "DescribeMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10559,7 +10567,8 @@ pub mod describe_matchmaking_configurations_input {
 pub type DescribeMatchmakingConfigurationsInputOperationOutputAlias =
     crate::operation::DescribeMatchmakingConfigurations;
 #[doc(hidden)]
-pub type DescribeMatchmakingConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMatchmakingConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmakingConfigurations`](crate::operation::DescribeMatchmakingConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -10570,7 +10579,7 @@ impl DescribeMatchmakingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10656,7 +10665,7 @@ impl DescribeMatchmakingConfigurationsInput {
             "DescribeMatchmakingConfigurations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10752,7 +10761,7 @@ pub mod describe_matchmaking_rule_sets_input {
 pub type DescribeMatchmakingRuleSetsInputOperationOutputAlias =
     crate::operation::DescribeMatchmakingRuleSets;
 #[doc(hidden)]
-pub type DescribeMatchmakingRuleSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMatchmakingRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmakingRuleSets`](crate::operation::DescribeMatchmakingRuleSets)>
     #[allow(clippy::let_and_return)]
@@ -10763,7 +10772,7 @@ impl DescribeMatchmakingRuleSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingRuleSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10849,7 +10858,7 @@ impl DescribeMatchmakingRuleSetsInput {
             "DescribeMatchmakingRuleSets",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11029,7 +11038,7 @@ pub mod describe_player_sessions_input {
 #[doc(hidden)]
 pub type DescribePlayerSessionsInputOperationOutputAlias = crate::operation::DescribePlayerSessions;
 #[doc(hidden)]
-pub type DescribePlayerSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePlayerSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlayerSessionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlayerSessions`](crate::operation::DescribePlayerSessions)>
     #[allow(clippy::let_and_return)]
@@ -11040,7 +11049,7 @@ impl DescribePlayerSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlayerSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11127,7 +11136,7 @@ impl DescribePlayerSessionsInput {
             "DescribePlayerSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11188,7 +11197,8 @@ pub mod describe_runtime_configuration_input {
 pub type DescribeRuntimeConfigurationInputOperationOutputAlias =
     crate::operation::DescribeRuntimeConfiguration;
 #[doc(hidden)]
-pub type DescribeRuntimeConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRuntimeConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuntimeConfiguration`](crate::operation::DescribeRuntimeConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11199,7 +11209,7 @@ impl DescribeRuntimeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuntimeConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11285,7 +11295,7 @@ impl DescribeRuntimeConfigurationInput {
             "DescribeRuntimeConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11477,7 +11487,7 @@ pub mod describe_scaling_policies_input {
 pub type DescribeScalingPoliciesInputOperationOutputAlias =
     crate::operation::DescribeScalingPolicies;
 #[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPolicies`](crate::operation::DescribeScalingPolicies)>
     #[allow(clippy::let_and_return)]
@@ -11488,7 +11498,7 @@ impl DescribeScalingPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11575,7 +11585,7 @@ impl DescribeScalingPoliciesInput {
             "DescribeScalingPolicies",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11635,7 +11645,7 @@ pub mod describe_script_input {
 #[doc(hidden)]
 pub type DescribeScriptInputOperationOutputAlias = crate::operation::DescribeScript;
 #[doc(hidden)]
-pub type DescribeScriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScriptInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScript`](crate::operation::DescribeScript)>
     #[allow(clippy::let_and_return)]
@@ -11646,7 +11656,7 @@ impl DescribeScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11731,7 +11741,7 @@ impl DescribeScriptInput {
             "DescribeScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11776,7 +11786,8 @@ pub mod describe_vpc_peering_authorizations_input {
 pub type DescribeVpcPeeringAuthorizationsInputOperationOutputAlias =
     crate::operation::DescribeVpcPeeringAuthorizations;
 #[doc(hidden)]
-pub type DescribeVpcPeeringAuthorizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVpcPeeringAuthorizationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVpcPeeringAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVpcPeeringAuthorizations`](crate::operation::DescribeVpcPeeringAuthorizations)>
     #[allow(clippy::let_and_return)]
@@ -11787,7 +11798,7 @@ impl DescribeVpcPeeringAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringAuthorizations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11873,7 +11884,7 @@ impl DescribeVpcPeeringAuthorizationsInput {
             "DescribeVpcPeeringAuthorizations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11924,7 +11935,8 @@ pub mod describe_vpc_peering_connections_input {
 pub type DescribeVpcPeeringConnectionsInputOperationOutputAlias =
     crate::operation::DescribeVpcPeeringConnections;
 #[doc(hidden)]
-pub type DescribeVpcPeeringConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVpcPeeringConnectionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVpcPeeringConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVpcPeeringConnections`](crate::operation::DescribeVpcPeeringConnections)>
     #[allow(clippy::let_and_return)]
@@ -11935,7 +11947,7 @@ impl DescribeVpcPeeringConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12021,7 +12033,7 @@ impl DescribeVpcPeeringConnectionsInput {
             "DescribeVpcPeeringConnections",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12082,7 +12094,7 @@ pub mod get_game_session_log_url_input {
 #[doc(hidden)]
 pub type GetGameSessionLogUrlInputOperationOutputAlias = crate::operation::GetGameSessionLogUrl;
 #[doc(hidden)]
-pub type GetGameSessionLogUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGameSessionLogUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGameSessionLogUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetGameSessionLogUrl`](crate::operation::GetGameSessionLogUrl)>
     #[allow(clippy::let_and_return)]
@@ -12093,7 +12105,7 @@ impl GetGameSessionLogUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGameSessionLogUrl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12180,7 +12192,7 @@ impl GetGameSessionLogUrlInput {
             "GetGameSessionLogUrl",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12260,7 +12272,7 @@ pub mod get_instance_access_input {
 #[doc(hidden)]
 pub type GetInstanceAccessInputOperationOutputAlias = crate::operation::GetInstanceAccess;
 #[doc(hidden)]
-pub type GetInstanceAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInstanceAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInstanceAccessInput {
     /// Consumes the builder and constructs an Operation<[`GetInstanceAccess`](crate::operation::GetInstanceAccess)>
     #[allow(clippy::let_and_return)]
@@ -12271,7 +12283,7 @@ impl GetInstanceAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInstanceAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12356,7 +12368,7 @@ impl GetInstanceAccessInput {
             "GetInstanceAccess",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12483,7 +12495,7 @@ pub mod list_aliases_input {
 #[doc(hidden)]
 pub type ListAliasesInputOperationOutputAlias = crate::operation::ListAliases;
 #[doc(hidden)]
-pub type ListAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
     #[allow(clippy::let_and_return)]
@@ -12494,7 +12506,7 @@ impl ListAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12578,7 +12590,7 @@ impl ListAliasesInput {
             "ListAliases",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12702,7 +12714,7 @@ pub mod list_builds_input {
 #[doc(hidden)]
 pub type ListBuildsInputOperationOutputAlias = crate::operation::ListBuilds;
 #[doc(hidden)]
-pub type ListBuildsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBuildsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuildsInput {
     /// Consumes the builder and constructs an Operation<[`ListBuilds`](crate::operation::ListBuilds)>
     #[allow(clippy::let_and_return)]
@@ -12713,7 +12725,7 @@ impl ListBuildsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuilds,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12797,7 +12809,7 @@ impl ListBuildsInput {
             "ListBuilds",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12895,7 +12907,7 @@ pub mod list_fleets_input {
 #[doc(hidden)]
 pub type ListFleetsInputOperationOutputAlias = crate::operation::ListFleets;
 #[doc(hidden)]
-pub type ListFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
     #[allow(clippy::let_and_return)]
@@ -12906,7 +12918,7 @@ impl ListFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12990,7 +13002,7 @@ impl ListFleetsInput {
             "ListFleets",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13060,7 +13072,7 @@ pub mod list_game_server_groups_input {
 #[doc(hidden)]
 pub type ListGameServerGroupsInputOperationOutputAlias = crate::operation::ListGameServerGroups;
 #[doc(hidden)]
-pub type ListGameServerGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGameServerGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGameServerGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGameServerGroups`](crate::operation::ListGameServerGroups)>
     #[allow(clippy::let_and_return)]
@@ -13071,7 +13083,7 @@ impl ListGameServerGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGameServerGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13158,7 +13170,7 @@ impl ListGameServerGroupsInput {
             "ListGameServerGroups",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13266,7 +13278,7 @@ pub mod list_game_servers_input {
 #[doc(hidden)]
 pub type ListGameServersInputOperationOutputAlias = crate::operation::ListGameServers;
 #[doc(hidden)]
-pub type ListGameServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGameServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGameServersInput {
     /// Consumes the builder and constructs an Operation<[`ListGameServers`](crate::operation::ListGameServers)>
     #[allow(clippy::let_and_return)]
@@ -13277,7 +13289,7 @@ impl ListGameServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGameServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13362,7 +13374,7 @@ impl ListGameServersInput {
             "ListGameServers",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13432,7 +13444,7 @@ pub mod list_scripts_input {
 #[doc(hidden)]
 pub type ListScriptsInputOperationOutputAlias = crate::operation::ListScripts;
 #[doc(hidden)]
-pub type ListScriptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListScriptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListScriptsInput {
     /// Consumes the builder and constructs an Operation<[`ListScripts`](crate::operation::ListScripts)>
     #[allow(clippy::let_and_return)]
@@ -13443,7 +13455,7 @@ impl ListScriptsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListScripts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13527,7 +13539,7 @@ impl ListScriptsInput {
             "ListScripts",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13595,7 +13607,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -13606,7 +13618,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13693,7 +13705,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14068,7 +14080,7 @@ pub mod put_scaling_policy_input {
 #[doc(hidden)]
 pub type PutScalingPolicyInputOperationOutputAlias = crate::operation::PutScalingPolicy;
 #[doc(hidden)]
-pub type PutScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutScalingPolicy`](crate::operation::PutScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -14079,7 +14091,7 @@ impl PutScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14164,7 +14176,7 @@ impl PutScalingPolicyInput {
             "PutScalingPolicy",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14296,7 +14308,7 @@ pub mod register_game_server_input {
 #[doc(hidden)]
 pub type RegisterGameServerInputOperationOutputAlias = crate::operation::RegisterGameServer;
 #[doc(hidden)]
-pub type RegisterGameServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterGameServerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterGameServer`](crate::operation::RegisterGameServer)>
     #[allow(clippy::let_and_return)]
@@ -14307,7 +14319,7 @@ impl RegisterGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterGameServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14392,7 +14404,7 @@ impl RegisterGameServerInput {
             "RegisterGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14451,7 +14463,7 @@ pub mod request_upload_credentials_input {
 pub type RequestUploadCredentialsInputOperationOutputAlias =
     crate::operation::RequestUploadCredentials;
 #[doc(hidden)]
-pub type RequestUploadCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RequestUploadCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestUploadCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`RequestUploadCredentials`](crate::operation::RequestUploadCredentials)>
     #[allow(clippy::let_and_return)]
@@ -14462,7 +14474,7 @@ impl RequestUploadCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestUploadCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14549,7 +14561,7 @@ impl RequestUploadCredentialsInput {
             "RequestUploadCredentials",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14609,7 +14621,7 @@ pub mod resolve_alias_input {
 #[doc(hidden)]
 pub type ResolveAliasInputOperationOutputAlias = crate::operation::ResolveAlias;
 #[doc(hidden)]
-pub type ResolveAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResolveAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveAliasInput {
     /// Consumes the builder and constructs an Operation<[`ResolveAlias`](crate::operation::ResolveAlias)>
     #[allow(clippy::let_and_return)]
@@ -14620,7 +14632,7 @@ impl ResolveAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14704,7 +14716,7 @@ impl ResolveAliasInput {
             "ResolveAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14790,7 +14802,7 @@ pub mod resume_game_server_group_input {
 #[doc(hidden)]
 pub type ResumeGameServerGroupInputOperationOutputAlias = crate::operation::ResumeGameServerGroup;
 #[doc(hidden)]
-pub type ResumeGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResumeGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResumeGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`ResumeGameServerGroup`](crate::operation::ResumeGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -14801,7 +14813,7 @@ impl ResumeGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResumeGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14888,7 +14900,7 @@ impl ResumeGameServerGroupInput {
             "ResumeGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15196,7 +15208,7 @@ pub mod search_game_sessions_input {
 #[doc(hidden)]
 pub type SearchGameSessionsInputOperationOutputAlias = crate::operation::SearchGameSessions;
 #[doc(hidden)]
-pub type SearchGameSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchGameSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchGameSessionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchGameSessions`](crate::operation::SearchGameSessions)>
     #[allow(clippy::let_and_return)]
@@ -15207,7 +15219,7 @@ impl SearchGameSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchGameSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15292,7 +15304,7 @@ impl SearchGameSessionsInput {
             "SearchGameSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15385,7 +15397,7 @@ pub mod start_fleet_actions_input {
 #[doc(hidden)]
 pub type StartFleetActionsInputOperationOutputAlias = crate::operation::StartFleetActions;
 #[doc(hidden)]
-pub type StartFleetActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFleetActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFleetActionsInput {
     /// Consumes the builder and constructs an Operation<[`StartFleetActions`](crate::operation::StartFleetActions)>
     #[allow(clippy::let_and_return)]
@@ -15396,7 +15408,7 @@ impl StartFleetActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFleetActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15481,7 +15493,7 @@ impl StartFleetActionsInput {
             "StartFleetActions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15677,7 +15689,7 @@ pub mod start_game_session_placement_input {
 pub type StartGameSessionPlacementInputOperationOutputAlias =
     crate::operation::StartGameSessionPlacement;
 #[doc(hidden)]
-pub type StartGameSessionPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartGameSessionPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`StartGameSessionPlacement`](crate::operation::StartGameSessionPlacement)>
     #[allow(clippy::let_and_return)]
@@ -15688,7 +15700,7 @@ impl StartGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartGameSessionPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15775,7 +15787,7 @@ impl StartGameSessionPlacementInput {
             "StartGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15928,7 +15940,7 @@ pub mod start_match_backfill_input {
 #[doc(hidden)]
 pub type StartMatchBackfillInputOperationOutputAlias = crate::operation::StartMatchBackfill;
 #[doc(hidden)]
-pub type StartMatchBackfillInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMatchBackfillInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMatchBackfillInput {
     /// Consumes the builder and constructs an Operation<[`StartMatchBackfill`](crate::operation::StartMatchBackfill)>
     #[allow(clippy::let_and_return)]
@@ -15939,7 +15951,7 @@ impl StartMatchBackfillInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMatchBackfill,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16024,7 +16036,7 @@ impl StartMatchBackfillInput {
             "StartMatchBackfill",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16132,7 +16144,7 @@ pub mod start_matchmaking_input {
 #[doc(hidden)]
 pub type StartMatchmakingInputOperationOutputAlias = crate::operation::StartMatchmaking;
 #[doc(hidden)]
-pub type StartMatchmakingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`StartMatchmaking`](crate::operation::StartMatchmaking)>
     #[allow(clippy::let_and_return)]
@@ -16143,7 +16155,7 @@ impl StartMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMatchmaking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16228,7 +16240,7 @@ impl StartMatchmakingInput {
             "StartMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16321,7 +16333,7 @@ pub mod stop_fleet_actions_input {
 #[doc(hidden)]
 pub type StopFleetActionsInputOperationOutputAlias = crate::operation::StopFleetActions;
 #[doc(hidden)]
-pub type StopFleetActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopFleetActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFleetActionsInput {
     /// Consumes the builder and constructs an Operation<[`StopFleetActions`](crate::operation::StopFleetActions)>
     #[allow(clippy::let_and_return)]
@@ -16332,7 +16344,7 @@ impl StopFleetActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopFleetActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16417,7 +16429,7 @@ impl StopFleetActionsInput {
             "StopFleetActions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16476,7 +16488,7 @@ pub mod stop_game_session_placement_input {
 pub type StopGameSessionPlacementInputOperationOutputAlias =
     crate::operation::StopGameSessionPlacement;
 #[doc(hidden)]
-pub type StopGameSessionPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopGameSessionPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`StopGameSessionPlacement`](crate::operation::StopGameSessionPlacement)>
     #[allow(clippy::let_and_return)]
@@ -16487,7 +16499,7 @@ impl StopGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopGameSessionPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16574,7 +16586,7 @@ impl StopGameSessionPlacementInput {
             "StopGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16632,7 +16644,7 @@ pub mod stop_matchmaking_input {
 #[doc(hidden)]
 pub type StopMatchmakingInputOperationOutputAlias = crate::operation::StopMatchmaking;
 #[doc(hidden)]
-pub type StopMatchmakingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`StopMatchmaking`](crate::operation::StopMatchmaking)>
     #[allow(clippy::let_and_return)]
@@ -16643,7 +16655,7 @@ impl StopMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMatchmaking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16728,7 +16740,7 @@ impl StopMatchmakingInput {
             "StopMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16814,7 +16826,7 @@ pub mod suspend_game_server_group_input {
 #[doc(hidden)]
 pub type SuspendGameServerGroupInputOperationOutputAlias = crate::operation::SuspendGameServerGroup;
 #[doc(hidden)]
-pub type SuspendGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SuspendGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuspendGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`SuspendGameServerGroup`](crate::operation::SuspendGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -16825,7 +16837,7 @@ impl SuspendGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SuspendGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16912,7 +16924,7 @@ impl SuspendGameServerGroupInput {
             "SuspendGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17007,7 +17019,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -17018,7 +17030,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17102,7 +17114,7 @@ impl TagResourceInput {
             "TagResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17191,7 +17203,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -17202,7 +17214,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17286,7 +17298,7 @@ impl UntagResourceInput {
             "UntagResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17387,7 +17399,7 @@ pub mod update_alias_input {
 #[doc(hidden)]
 pub type UpdateAliasInputOperationOutputAlias = crate::operation::UpdateAlias;
 #[doc(hidden)]
-pub type UpdateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
     #[allow(clippy::let_and_return)]
@@ -17398,7 +17410,7 @@ impl UpdateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17482,7 +17494,7 @@ impl UpdateAliasInput {
             "UpdateAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17564,7 +17576,7 @@ pub mod update_build_input {
 #[doc(hidden)]
 pub type UpdateBuildInputOperationOutputAlias = crate::operation::UpdateBuild;
 #[doc(hidden)]
-pub type UpdateBuildInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBuildInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBuild`](crate::operation::UpdateBuild)>
     #[allow(clippy::let_and_return)]
@@ -17575,7 +17587,7 @@ impl UpdateBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBuild,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17659,7 +17671,7 @@ impl UpdateBuildInput {
             "UpdateBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17840,7 +17852,7 @@ pub mod update_fleet_attributes_input {
 #[doc(hidden)]
 pub type UpdateFleetAttributesInputOperationOutputAlias = crate::operation::UpdateFleetAttributes;
 #[doc(hidden)]
-pub type UpdateFleetAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetAttributes`](crate::operation::UpdateFleetAttributes)>
     #[allow(clippy::let_and_return)]
@@ -17851,7 +17863,7 @@ impl UpdateFleetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17938,7 +17950,7 @@ impl UpdateFleetAttributesInput {
             "UpdateFleetAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18054,7 +18066,7 @@ pub mod update_fleet_capacity_input {
 #[doc(hidden)]
 pub type UpdateFleetCapacityInputOperationOutputAlias = crate::operation::UpdateFleetCapacity;
 #[doc(hidden)]
-pub type UpdateFleetCapacityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetCapacityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetCapacity`](crate::operation::UpdateFleetCapacity)>
     #[allow(clippy::let_and_return)]
@@ -18065,7 +18077,7 @@ impl UpdateFleetCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetCapacity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18150,7 +18162,7 @@ impl UpdateFleetCapacityInput {
             "UpdateFleetCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18261,7 +18273,7 @@ pub mod update_fleet_port_settings_input {
 pub type UpdateFleetPortSettingsInputOperationOutputAlias =
     crate::operation::UpdateFleetPortSettings;
 #[doc(hidden)]
-pub type UpdateFleetPortSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetPortSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetPortSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetPortSettings`](crate::operation::UpdateFleetPortSettings)>
     #[allow(clippy::let_and_return)]
@@ -18272,7 +18284,7 @@ impl UpdateFleetPortSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetPortSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18359,7 +18371,7 @@ impl UpdateFleetPortSettingsInput {
             "UpdateFleetPortSettings",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18494,7 +18506,7 @@ pub mod update_game_server_input {
 #[doc(hidden)]
 pub type UpdateGameServerInputOperationOutputAlias = crate::operation::UpdateGameServer;
 #[doc(hidden)]
-pub type UpdateGameServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameServer`](crate::operation::UpdateGameServer)>
     #[allow(clippy::let_and_return)]
@@ -18505,7 +18517,7 @@ impl UpdateGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18590,7 +18602,7 @@ impl UpdateGameServerInput {
             "UpdateGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18800,7 +18812,7 @@ pub mod update_game_server_group_input {
 #[doc(hidden)]
 pub type UpdateGameServerGroupInputOperationOutputAlias = crate::operation::UpdateGameServerGroup;
 #[doc(hidden)]
-pub type UpdateGameServerGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameServerGroup`](crate::operation::UpdateGameServerGroup)>
     #[allow(clippy::let_and_return)]
@@ -18811,7 +18823,7 @@ impl UpdateGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServerGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18898,7 +18910,7 @@ impl UpdateGameServerGroupInput {
             "UpdateGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19043,7 +19055,7 @@ pub mod update_game_session_input {
 #[doc(hidden)]
 pub type UpdateGameSessionInputOperationOutputAlias = crate::operation::UpdateGameSession;
 #[doc(hidden)]
-pub type UpdateGameSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGameSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameSessionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameSession`](crate::operation::UpdateGameSession)>
     #[allow(clippy::let_and_return)]
@@ -19054,7 +19066,7 @@ impl UpdateGameSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19139,7 +19151,7 @@ impl UpdateGameSessionInput {
             "UpdateGameSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19348,7 +19360,7 @@ pub mod update_game_session_queue_input {
 #[doc(hidden)]
 pub type UpdateGameSessionQueueInputOperationOutputAlias = crate::operation::UpdateGameSessionQueue;
 #[doc(hidden)]
-pub type UpdateGameSessionQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameSessionQueue`](crate::operation::UpdateGameSessionQueue)>
     #[allow(clippy::let_and_return)]
@@ -19359,7 +19371,7 @@ impl UpdateGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSessionQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19446,7 +19458,7 @@ impl UpdateGameSessionQueueInput {
             "UpdateGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19777,7 +19789,8 @@ pub mod update_matchmaking_configuration_input {
 pub type UpdateMatchmakingConfigurationInputOperationOutputAlias =
     crate::operation::UpdateMatchmakingConfiguration;
 #[doc(hidden)]
-pub type UpdateMatchmakingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMatchmakingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMatchmakingConfiguration`](crate::operation::UpdateMatchmakingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -19788,7 +19801,7 @@ impl UpdateMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMatchmakingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19874,7 +19887,7 @@ impl UpdateMatchmakingConfigurationInput {
             "UpdateMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19956,7 +19969,7 @@ pub mod update_runtime_configuration_input {
 pub type UpdateRuntimeConfigurationInputOperationOutputAlias =
     crate::operation::UpdateRuntimeConfiguration;
 #[doc(hidden)]
-pub type UpdateRuntimeConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRuntimeConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuntimeConfiguration`](crate::operation::UpdateRuntimeConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -19967,7 +19980,7 @@ impl UpdateRuntimeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuntimeConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20054,7 +20067,7 @@ impl UpdateRuntimeConfigurationInput {
             "UpdateRuntimeConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20185,7 +20198,7 @@ pub mod update_script_input {
 #[doc(hidden)]
 pub type UpdateScriptInputOperationOutputAlias = crate::operation::UpdateScript;
 #[doc(hidden)]
-pub type UpdateScriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScriptInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScript`](crate::operation::UpdateScript)>
     #[allow(clippy::let_and_return)]
@@ -20196,7 +20209,7 @@ impl UpdateScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20280,7 +20293,7 @@ impl UpdateScriptInput {
             "UpdateScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20342,7 +20355,7 @@ pub mod validate_matchmaking_rule_set_input {
 pub type ValidateMatchmakingRuleSetInputOperationOutputAlias =
     crate::operation::ValidateMatchmakingRuleSet;
 #[doc(hidden)]
-pub type ValidateMatchmakingRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ValidateMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`ValidateMatchmakingRuleSet`](crate::operation::ValidateMatchmakingRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -20353,7 +20366,7 @@ impl ValidateMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidateMatchmakingRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20439,7 +20452,7 @@ impl ValidateMatchmakingRuleSetInput {
             "ValidateMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

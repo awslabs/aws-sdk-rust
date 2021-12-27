@@ -373,7 +373,7 @@ pub mod delete_scaling_policy_input {
 #[doc(hidden)]
 pub type DeleteScalingPolicyInputOperationOutputAlias = crate::operation::DeleteScalingPolicy;
 #[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPolicy`](crate::operation::DeleteScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -384,7 +384,7 @@ impl DeleteScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -469,7 +469,7 @@ impl DeleteScalingPolicyInput {
             "DeleteScalingPolicy",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -868,7 +868,7 @@ pub mod delete_scheduled_action_input {
 #[doc(hidden)]
 pub type DeleteScheduledActionInputOperationOutputAlias = crate::operation::DeleteScheduledAction;
 #[doc(hidden)]
-pub type DeleteScheduledActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScheduledAction`](crate::operation::DeleteScheduledAction)>
     #[allow(clippy::let_and_return)]
@@ -879,7 +879,7 @@ impl DeleteScheduledActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScheduledAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -966,7 +966,7 @@ impl DeleteScheduledActionInput {
             "DeleteScheduledAction",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1353,7 +1353,7 @@ pub mod deregister_scalable_target_input {
 pub type DeregisterScalableTargetInputOperationOutputAlias =
     crate::operation::DeregisterScalableTarget;
 #[doc(hidden)]
-pub type DeregisterScalableTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterScalableTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterScalableTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterScalableTarget`](crate::operation::DeregisterScalableTarget)>
     #[allow(clippy::let_and_return)]
@@ -1364,7 +1364,7 @@ impl DeregisterScalableTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterScalableTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1451,7 +1451,7 @@ impl DeregisterScalableTargetInput {
             "DeregisterScalableTarget",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1883,7 +1883,7 @@ pub mod describe_scalable_targets_input {
 pub type DescribeScalableTargetsInputOperationOutputAlias =
     crate::operation::DescribeScalableTargets;
 #[doc(hidden)]
-pub type DescribeScalableTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScalableTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalableTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalableTargets`](crate::operation::DescribeScalableTargets)>
     #[allow(clippy::let_and_return)]
@@ -1894,7 +1894,7 @@ impl DescribeScalableTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalableTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1981,7 +1981,7 @@ impl DescribeScalableTargetsInput {
             "DescribeScalableTargets",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2404,7 +2404,7 @@ pub mod describe_scaling_activities_input {
 pub type DescribeScalingActivitiesInputOperationOutputAlias =
     crate::operation::DescribeScalingActivities;
 #[doc(hidden)]
-pub type DescribeScalingActivitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScalingActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingActivities`](crate::operation::DescribeScalingActivities)>
     #[allow(clippy::let_and_return)]
@@ -2415,7 +2415,7 @@ impl DescribeScalingActivitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingActivities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2502,7 +2502,7 @@ impl DescribeScalingActivitiesInput {
             "DescribeScalingActivities",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2946,7 +2946,7 @@ pub mod describe_scaling_policies_input {
 pub type DescribeScalingPoliciesInputOperationOutputAlias =
     crate::operation::DescribeScalingPolicies;
 #[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPolicies`](crate::operation::DescribeScalingPolicies)>
     #[allow(clippy::let_and_return)]
@@ -2957,7 +2957,7 @@ impl DescribeScalingPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3044,7 +3044,7 @@ impl DescribeScalingPoliciesInput {
             "DescribeScalingPolicies",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3488,7 +3488,7 @@ pub mod describe_scheduled_actions_input {
 pub type DescribeScheduledActionsInputOperationOutputAlias =
     crate::operation::DescribeScheduledActions;
 #[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScheduledActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduledActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScheduledActions`](crate::operation::DescribeScheduledActions)>
     #[allow(clippy::let_and_return)]
@@ -3499,7 +3499,7 @@ impl DescribeScheduledActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScheduledActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3586,7 +3586,7 @@ impl DescribeScheduledActionsInput {
             "DescribeScheduledActions",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4062,7 +4062,7 @@ pub mod put_scaling_policy_input {
 #[doc(hidden)]
 pub type PutScalingPolicyInputOperationOutputAlias = crate::operation::PutScalingPolicy;
 #[doc(hidden)]
-pub type PutScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutScalingPolicy`](crate::operation::PutScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4073,7 +4073,7 @@ impl PutScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4158,7 +4158,7 @@ impl PutScalingPolicyInput {
             "PutScalingPolicy",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4682,7 +4682,7 @@ pub mod put_scheduled_action_input {
 #[doc(hidden)]
 pub type PutScheduledActionInputOperationOutputAlias = crate::operation::PutScheduledAction;
 #[doc(hidden)]
-pub type PutScheduledActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`PutScheduledAction`](crate::operation::PutScheduledAction)>
     #[allow(clippy::let_and_return)]
@@ -4693,7 +4693,7 @@ impl PutScheduledActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutScheduledAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4778,7 +4778,7 @@ impl PutScheduledActionInput {
             "PutScheduledAction",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5293,7 +5293,7 @@ pub mod register_scalable_target_input {
 #[doc(hidden)]
 pub type RegisterScalableTargetInputOperationOutputAlias = crate::operation::RegisterScalableTarget;
 #[doc(hidden)]
-pub type RegisterScalableTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterScalableTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterScalableTargetInput {
     /// Consumes the builder and constructs an Operation<[`RegisterScalableTarget`](crate::operation::RegisterScalableTarget)>
     #[allow(clippy::let_and_return)]
@@ -5304,7 +5304,7 @@ impl RegisterScalableTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterScalableTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5391,7 +5391,7 @@ impl RegisterScalableTargetInput {
             "RegisterScalableTarget",
             "applicationautoscaling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

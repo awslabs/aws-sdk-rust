@@ -38,7 +38,7 @@ pub mod create_anomaly_monitor_input {
 #[doc(hidden)]
 pub type CreateAnomalyMonitorInputOperationOutputAlias = crate::operation::CreateAnomalyMonitor;
 #[doc(hidden)]
-pub type CreateAnomalyMonitorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnomalyMonitor`](crate::operation::CreateAnomalyMonitor)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl CreateAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalyMonitor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -136,7 +136,7 @@ impl CreateAnomalyMonitorInput {
             "CreateAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -198,7 +198,7 @@ pub mod create_anomaly_subscription_input {
 pub type CreateAnomalySubscriptionInputOperationOutputAlias =
     crate::operation::CreateAnomalySubscription;
 #[doc(hidden)]
-pub type CreateAnomalySubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnomalySubscription`](crate::operation::CreateAnomalySubscription)>
     #[allow(clippy::let_and_return)]
@@ -209,7 +209,7 @@ impl CreateAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalySubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -296,7 +296,7 @@ impl CreateAnomalySubscriptionInput {
             "CreateAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -439,7 +439,8 @@ pub mod create_cost_category_definition_input {
 pub type CreateCostCategoryDefinitionInputOperationOutputAlias =
     crate::operation::CreateCostCategoryDefinition;
 #[doc(hidden)]
-pub type CreateCostCategoryDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCostCategoryDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCostCategoryDefinition`](crate::operation::CreateCostCategoryDefinition)>
     #[allow(clippy::let_and_return)]
@@ -450,7 +451,7 @@ impl CreateCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCostCategoryDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -536,7 +537,7 @@ impl CreateCostCategoryDefinitionInput {
             "CreateCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -594,7 +595,7 @@ pub mod delete_anomaly_monitor_input {
 #[doc(hidden)]
 pub type DeleteAnomalyMonitorInputOperationOutputAlias = crate::operation::DeleteAnomalyMonitor;
 #[doc(hidden)]
-pub type DeleteAnomalyMonitorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyMonitor`](crate::operation::DeleteAnomalyMonitor)>
     #[allow(clippy::let_and_return)]
@@ -605,7 +606,7 @@ impl DeleteAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalyMonitor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -692,7 +693,7 @@ impl DeleteAnomalyMonitorInput {
             "DeleteAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -754,7 +755,7 @@ pub mod delete_anomaly_subscription_input {
 pub type DeleteAnomalySubscriptionInputOperationOutputAlias =
     crate::operation::DeleteAnomalySubscription;
 #[doc(hidden)]
-pub type DeleteAnomalySubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalySubscription`](crate::operation::DeleteAnomalySubscription)>
     #[allow(clippy::let_and_return)]
@@ -765,7 +766,7 @@ impl DeleteAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalySubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -852,7 +853,7 @@ impl DeleteAnomalySubscriptionInput {
             "DeleteAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -918,7 +919,8 @@ pub mod delete_cost_category_definition_input {
 pub type DeleteCostCategoryDefinitionInputOperationOutputAlias =
     crate::operation::DeleteCostCategoryDefinition;
 #[doc(hidden)]
-pub type DeleteCostCategoryDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCostCategoryDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCostCategoryDefinition`](crate::operation::DeleteCostCategoryDefinition)>
     #[allow(clippy::let_and_return)]
@@ -929,7 +931,7 @@ impl DeleteCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCostCategoryDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1015,7 +1017,7 @@ impl DeleteCostCategoryDefinitionInput {
             "DeleteCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1097,7 +1099,8 @@ pub mod describe_cost_category_definition_input {
 pub type DescribeCostCategoryDefinitionInputOperationOutputAlias =
     crate::operation::DescribeCostCategoryDefinition;
 #[doc(hidden)]
-pub type DescribeCostCategoryDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCostCategoryDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCostCategoryDefinition`](crate::operation::DescribeCostCategoryDefinition)>
     #[allow(clippy::let_and_return)]
@@ -1108,7 +1111,7 @@ impl DescribeCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCostCategoryDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1194,7 +1197,7 @@ impl DescribeCostCategoryDefinitionInput {
             "DescribeCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1334,7 +1337,7 @@ pub mod get_anomalies_input {
 #[doc(hidden)]
 pub type GetAnomaliesInputOperationOutputAlias = crate::operation::GetAnomalies;
 #[doc(hidden)]
-pub type GetAnomaliesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnomaliesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomaliesInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalies`](crate::operation::GetAnomalies)>
     #[allow(clippy::let_and_return)]
@@ -1345,7 +1348,7 @@ impl GetAnomaliesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1429,7 +1432,7 @@ impl GetAnomaliesInput {
             "GetAnomalies",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1525,7 +1528,7 @@ pub mod get_anomaly_monitors_input {
 #[doc(hidden)]
 pub type GetAnomalyMonitorsInputOperationOutputAlias = crate::operation::GetAnomalyMonitors;
 #[doc(hidden)]
-pub type GetAnomalyMonitorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnomalyMonitorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomalyMonitorsInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalyMonitors`](crate::operation::GetAnomalyMonitors)>
     #[allow(clippy::let_and_return)]
@@ -1536,7 +1539,7 @@ impl GetAnomalyMonitorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalyMonitors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1621,7 +1624,7 @@ impl GetAnomalyMonitorsInput {
             "GetAnomalyMonitors",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1730,7 +1733,7 @@ pub mod get_anomaly_subscriptions_input {
 pub type GetAnomalySubscriptionsInputOperationOutputAlias =
     crate::operation::GetAnomalySubscriptions;
 #[doc(hidden)]
-pub type GetAnomalySubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnomalySubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomalySubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalySubscriptions`](crate::operation::GetAnomalySubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -1741,7 +1744,7 @@ impl GetAnomalySubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalySubscriptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1828,7 +1831,7 @@ impl GetAnomalySubscriptionsInput {
             "GetAnomalySubscriptions",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2027,7 +2030,7 @@ pub mod get_cost_and_usage_input {
 #[doc(hidden)]
 pub type GetCostAndUsageInputOperationOutputAlias = crate::operation::GetCostAndUsage;
 #[doc(hidden)]
-pub type GetCostAndUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCostAndUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostAndUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetCostAndUsage`](crate::operation::GetCostAndUsage)>
     #[allow(clippy::let_and_return)]
@@ -2038,7 +2041,7 @@ impl GetCostAndUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2123,7 +2126,7 @@ impl GetCostAndUsageInput {
             "GetCostAndUsage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2319,7 +2322,8 @@ pub mod get_cost_and_usage_with_resources_input {
 pub type GetCostAndUsageWithResourcesInputOperationOutputAlias =
     crate::operation::GetCostAndUsageWithResources;
 #[doc(hidden)]
-pub type GetCostAndUsageWithResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCostAndUsageWithResourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostAndUsageWithResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetCostAndUsageWithResources`](crate::operation::GetCostAndUsageWithResources)>
     #[allow(clippy::let_and_return)]
@@ -2330,7 +2334,7 @@ impl GetCostAndUsageWithResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsageWithResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2416,7 +2420,7 @@ impl GetCostAndUsageWithResourcesInput {
             "GetCostAndUsageWithResources",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2761,7 +2765,7 @@ pub mod get_cost_categories_input {
 #[doc(hidden)]
 pub type GetCostCategoriesInputOperationOutputAlias = crate::operation::GetCostCategories;
 #[doc(hidden)]
-pub type GetCostCategoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCostCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`GetCostCategories`](crate::operation::GetCostCategories)>
     #[allow(clippy::let_and_return)]
@@ -2772,7 +2776,7 @@ impl GetCostCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostCategories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2857,7 +2861,7 @@ impl GetCostCategoriesInput {
             "GetCostCategories",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3251,7 +3255,7 @@ pub mod get_cost_forecast_input {
 #[doc(hidden)]
 pub type GetCostForecastInputOperationOutputAlias = crate::operation::GetCostForecast;
 #[doc(hidden)]
-pub type GetCostForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCostForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostForecastInput {
     /// Consumes the builder and constructs an Operation<[`GetCostForecast`](crate::operation::GetCostForecast)>
     #[allow(clippy::let_and_return)]
@@ -3262,7 +3266,7 @@ impl GetCostForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3347,7 +3351,7 @@ impl GetCostForecastInput {
             "GetCostForecast",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3940,7 +3944,7 @@ pub mod get_dimension_values_input {
 #[doc(hidden)]
 pub type GetDimensionValuesInputOperationOutputAlias = crate::operation::GetDimensionValues;
 #[doc(hidden)]
-pub type GetDimensionValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDimensionValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDimensionValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionValues`](crate::operation::GetDimensionValues)>
     #[allow(clippy::let_and_return)]
@@ -3951,7 +3955,7 @@ impl GetDimensionValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionValues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4036,7 +4040,7 @@ impl GetDimensionValuesInput {
             "GetDimensionValues",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4484,7 +4488,7 @@ pub mod get_reservation_coverage_input {
 #[doc(hidden)]
 pub type GetReservationCoverageInputOperationOutputAlias = crate::operation::GetReservationCoverage;
 #[doc(hidden)]
-pub type GetReservationCoverageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReservationCoverageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationCoverageInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationCoverage`](crate::operation::GetReservationCoverage)>
     #[allow(clippy::let_and_return)]
@@ -4495,7 +4499,7 @@ impl GetReservationCoverageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationCoverage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4582,7 +4586,7 @@ impl GetReservationCoverageInput {
             "GetReservationCoverage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4879,7 +4883,7 @@ pub type GetReservationPurchaseRecommendationInputOperationOutputAlias =
     crate::operation::GetReservationPurchaseRecommendation;
 #[doc(hidden)]
 pub type GetReservationPurchaseRecommendationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationPurchaseRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationPurchaseRecommendation`](crate::operation::GetReservationPurchaseRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -4890,7 +4894,7 @@ impl GetReservationPurchaseRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationPurchaseRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4976,7 +4980,7 @@ impl GetReservationPurchaseRecommendationInput {
             "GetReservationPurchaseRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5398,7 +5402,7 @@ pub mod get_reservation_utilization_input {
 pub type GetReservationUtilizationInputOperationOutputAlias =
     crate::operation::GetReservationUtilization;
 #[doc(hidden)]
-pub type GetReservationUtilizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReservationUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationUtilization`](crate::operation::GetReservationUtilization)>
     #[allow(clippy::let_and_return)]
@@ -5409,7 +5413,7 @@ impl GetReservationUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationUtilization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5496,7 +5500,7 @@ impl GetReservationUtilizationInput {
             "GetReservationUtilization",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5731,7 +5735,8 @@ pub mod get_rightsizing_recommendation_input {
 pub type GetRightsizingRecommendationInputOperationOutputAlias =
     crate::operation::GetRightsizingRecommendation;
 #[doc(hidden)]
-pub type GetRightsizingRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRightsizingRecommendationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRightsizingRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetRightsizingRecommendation`](crate::operation::GetRightsizingRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -5742,7 +5747,7 @@ impl GetRightsizingRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRightsizingRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5828,7 +5833,7 @@ impl GetRightsizingRecommendationInput {
             "GetRightsizingRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6134,7 +6139,7 @@ pub mod get_savings_plans_coverage_input {
 pub type GetSavingsPlansCoverageInputOperationOutputAlias =
     crate::operation::GetSavingsPlansCoverage;
 #[doc(hidden)]
-pub type GetSavingsPlansCoverageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSavingsPlansCoverageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansCoverageInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansCoverage`](crate::operation::GetSavingsPlansCoverage)>
     #[allow(clippy::let_and_return)]
@@ -6145,7 +6150,7 @@ impl GetSavingsPlansCoverageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansCoverage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6232,7 +6237,7 @@ impl GetSavingsPlansCoverageInput {
             "GetSavingsPlansCoverage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6422,7 +6427,7 @@ pub type GetSavingsPlansPurchaseRecommendationInputOperationOutputAlias =
     crate::operation::GetSavingsPlansPurchaseRecommendation;
 #[doc(hidden)]
 pub type GetSavingsPlansPurchaseRecommendationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansPurchaseRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansPurchaseRecommendation`](crate::operation::GetSavingsPlansPurchaseRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -6433,7 +6438,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansPurchaseRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6519,7 +6524,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
             "GetSavingsPlansPurchaseRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6757,7 +6762,7 @@ pub mod get_savings_plans_utilization_input {
 pub type GetSavingsPlansUtilizationInputOperationOutputAlias =
     crate::operation::GetSavingsPlansUtilization;
 #[doc(hidden)]
-pub type GetSavingsPlansUtilizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSavingsPlansUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansUtilization`](crate::operation::GetSavingsPlansUtilization)>
     #[allow(clippy::let_and_return)]
@@ -6768,7 +6773,7 @@ impl GetSavingsPlansUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6854,7 +6859,7 @@ impl GetSavingsPlansUtilizationInput {
             "GetSavingsPlansUtilization",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7133,7 +7138,8 @@ pub mod get_savings_plans_utilization_details_input {
 pub type GetSavingsPlansUtilizationDetailsInputOperationOutputAlias =
     crate::operation::GetSavingsPlansUtilizationDetails;
 #[doc(hidden)]
-pub type GetSavingsPlansUtilizationDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSavingsPlansUtilizationDetailsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansUtilizationDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansUtilizationDetails`](crate::operation::GetSavingsPlansUtilizationDetails)>
     #[allow(clippy::let_and_return)]
@@ -7144,7 +7150,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilizationDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7230,7 +7236,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
             "GetSavingsPlansUtilizationDetails",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7568,7 +7574,7 @@ pub mod get_tags_input {
 #[doc(hidden)]
 pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
 #[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(clippy::let_and_return)]
@@ -7579,7 +7585,7 @@ impl GetTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7661,7 +7667,7 @@ impl GetTagsInput {
                     "GetTags",
                     "costexplorer",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8035,7 +8041,7 @@ pub mod get_usage_forecast_input {
 #[doc(hidden)]
 pub type GetUsageForecastInputOperationOutputAlias = crate::operation::GetUsageForecast;
 #[doc(hidden)]
-pub type GetUsageForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUsageForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageForecastInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageForecast`](crate::operation::GetUsageForecast)>
     #[allow(clippy::let_and_return)]
@@ -8046,7 +8052,7 @@ impl GetUsageForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUsageForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8131,7 +8137,7 @@ impl GetUsageForecastInput {
             "GetUsageForecast",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8222,7 +8228,7 @@ pub mod list_cost_category_definitions_input {
 pub type ListCostCategoryDefinitionsInputOperationOutputAlias =
     crate::operation::ListCostCategoryDefinitions;
 #[doc(hidden)]
-pub type ListCostCategoryDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCostCategoryDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCostCategoryDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCostCategoryDefinitions`](crate::operation::ListCostCategoryDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -8233,7 +8239,7 @@ impl ListCostCategoryDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCostCategoryDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8319,7 +8325,7 @@ impl ListCostCategoryDefinitionsInput {
             "ListCostCategoryDefinitions",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8392,7 +8398,7 @@ pub mod provide_anomaly_feedback_input {
 #[doc(hidden)]
 pub type ProvideAnomalyFeedbackInputOperationOutputAlias = crate::operation::ProvideAnomalyFeedback;
 #[doc(hidden)]
-pub type ProvideAnomalyFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ProvideAnomalyFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvideAnomalyFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`ProvideAnomalyFeedback`](crate::operation::ProvideAnomalyFeedback)>
     #[allow(clippy::let_and_return)]
@@ -8403,7 +8409,7 @@ impl ProvideAnomalyFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ProvideAnomalyFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8490,7 +8496,7 @@ impl ProvideAnomalyFeedbackInput {
             "ProvideAnomalyFeedback",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8560,7 +8566,7 @@ pub mod update_anomaly_monitor_input {
 #[doc(hidden)]
 pub type UpdateAnomalyMonitorInputOperationOutputAlias = crate::operation::UpdateAnomalyMonitor;
 #[doc(hidden)]
-pub type UpdateAnomalyMonitorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnomalyMonitor`](crate::operation::UpdateAnomalyMonitor)>
     #[allow(clippy::let_and_return)]
@@ -8571,7 +8577,7 @@ impl UpdateAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalyMonitor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8658,7 +8664,7 @@ impl UpdateAnomalyMonitorInput {
             "UpdateAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8804,7 +8810,7 @@ pub mod update_anomaly_subscription_input {
 pub type UpdateAnomalySubscriptionInputOperationOutputAlias =
     crate::operation::UpdateAnomalySubscription;
 #[doc(hidden)]
-pub type UpdateAnomalySubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnomalySubscription`](crate::operation::UpdateAnomalySubscription)>
     #[allow(clippy::let_and_return)]
@@ -8815,7 +8821,7 @@ impl UpdateAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalySubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8902,7 +8908,7 @@ impl UpdateAnomalySubscriptionInput {
             "UpdateAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9048,7 +9054,8 @@ pub mod update_cost_category_definition_input {
 pub type UpdateCostCategoryDefinitionInputOperationOutputAlias =
     crate::operation::UpdateCostCategoryDefinition;
 #[doc(hidden)]
-pub type UpdateCostCategoryDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCostCategoryDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCostCategoryDefinition`](crate::operation::UpdateCostCategoryDefinition)>
     #[allow(clippy::let_and_return)]
@@ -9059,7 +9066,7 @@ impl UpdateCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCostCategoryDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9145,7 +9152,7 @@ impl UpdateCostCategoryDefinitionInput {
             "UpdateCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

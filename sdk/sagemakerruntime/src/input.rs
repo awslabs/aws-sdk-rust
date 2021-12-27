@@ -197,7 +197,7 @@ pub mod invoke_endpoint_input {
 #[doc(hidden)]
 pub type InvokeEndpointInputOperationOutputAlias = crate::operation::InvokeEndpoint;
 #[doc(hidden)]
-pub type InvokeEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InvokeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`InvokeEndpoint`](crate::operation::InvokeEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -208,7 +208,7 @@ impl InvokeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -428,7 +428,7 @@ impl InvokeEndpointInput {
             "InvokeEndpoint",
             "sagemakerruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -603,7 +603,7 @@ pub mod invoke_endpoint_async_input {
 #[doc(hidden)]
 pub type InvokeEndpointAsyncInputOperationOutputAlias = crate::operation::InvokeEndpointAsync;
 #[doc(hidden)]
-pub type InvokeEndpointAsyncInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InvokeEndpointAsyncInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeEndpointAsyncInput {
     /// Consumes the builder and constructs an Operation<[`InvokeEndpointAsync`](crate::operation::InvokeEndpointAsync)>
     #[allow(clippy::let_and_return)]
@@ -614,7 +614,7 @@ impl InvokeEndpointAsyncInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpointAsync,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -813,7 +813,7 @@ impl InvokeEndpointAsyncInput {
             "InvokeEndpointAsync",
             "sagemakerruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

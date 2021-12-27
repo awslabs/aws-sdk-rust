@@ -49,7 +49,7 @@ pub mod batch_detect_dominant_language_input {
 pub type BatchDetectDominantLanguageInputOperationOutputAlias =
     crate::operation::BatchDetectDominantLanguage;
 #[doc(hidden)]
-pub type BatchDetectDominantLanguageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDetectDominantLanguageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectDominantLanguageInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectDominantLanguage`](crate::operation::BatchDetectDominantLanguage)>
     #[allow(clippy::let_and_return)]
@@ -60,7 +60,7 @@ impl BatchDetectDominantLanguageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectDominantLanguage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +146,7 @@ impl BatchDetectDominantLanguageInput {
             "BatchDetectDominantLanguage",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -234,7 +234,7 @@ pub mod batch_detect_entities_input {
 #[doc(hidden)]
 pub type BatchDetectEntitiesInputOperationOutputAlias = crate::operation::BatchDetectEntities;
 #[doc(hidden)]
-pub type BatchDetectEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectEntities`](crate::operation::BatchDetectEntities)>
     #[allow(clippy::let_and_return)]
@@ -245,7 +245,7 @@ impl BatchDetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -330,7 +330,7 @@ impl BatchDetectEntitiesInput {
             "BatchDetectEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -418,7 +418,7 @@ pub mod batch_detect_key_phrases_input {
 #[doc(hidden)]
 pub type BatchDetectKeyPhrasesInputOperationOutputAlias = crate::operation::BatchDetectKeyPhrases;
 #[doc(hidden)]
-pub type BatchDetectKeyPhrasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDetectKeyPhrasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectKeyPhrasesInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectKeyPhrases`](crate::operation::BatchDetectKeyPhrases)>
     #[allow(clippy::let_and_return)]
@@ -429,7 +429,7 @@ impl BatchDetectKeyPhrasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectKeyPhrases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -516,7 +516,7 @@ impl BatchDetectKeyPhrasesInput {
             "BatchDetectKeyPhrases",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -604,7 +604,7 @@ pub mod batch_detect_sentiment_input {
 #[doc(hidden)]
 pub type BatchDetectSentimentInputOperationOutputAlias = crate::operation::BatchDetectSentiment;
 #[doc(hidden)]
-pub type BatchDetectSentimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDetectSentimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectSentimentInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectSentiment`](crate::operation::BatchDetectSentiment)>
     #[allow(clippy::let_and_return)]
@@ -615,7 +615,7 @@ impl BatchDetectSentimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectSentiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -702,7 +702,7 @@ impl BatchDetectSentimentInput {
             "BatchDetectSentiment",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -792,7 +792,7 @@ pub mod batch_detect_syntax_input {
 #[doc(hidden)]
 pub type BatchDetectSyntaxInputOperationOutputAlias = crate::operation::BatchDetectSyntax;
 #[doc(hidden)]
-pub type BatchDetectSyntaxInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDetectSyntaxInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectSyntaxInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectSyntax`](crate::operation::BatchDetectSyntax)>
     #[allow(clippy::let_and_return)]
@@ -803,7 +803,7 @@ impl BatchDetectSyntaxInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectSyntax,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -888,7 +888,7 @@ impl BatchDetectSyntaxInput {
             "BatchDetectSyntax",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -958,7 +958,7 @@ pub mod classify_document_input {
 #[doc(hidden)]
 pub type ClassifyDocumentInputOperationOutputAlias = crate::operation::ClassifyDocument;
 #[doc(hidden)]
-pub type ClassifyDocumentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ClassifyDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClassifyDocumentInput {
     /// Consumes the builder and constructs an Operation<[`ClassifyDocument`](crate::operation::ClassifyDocument)>
     #[allow(clippy::let_and_return)]
@@ -969,7 +969,7 @@ impl ClassifyDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClassifyDocument,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1054,7 @@ impl ClassifyDocumentInput {
             "ClassifyDocument",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1129,7 +1129,7 @@ pub mod contains_pii_entities_input {
 #[doc(hidden)]
 pub type ContainsPiiEntitiesInputOperationOutputAlias = crate::operation::ContainsPiiEntities;
 #[doc(hidden)]
-pub type ContainsPiiEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ContainsPiiEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ContainsPiiEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ContainsPiiEntities`](crate::operation::ContainsPiiEntities)>
     #[allow(clippy::let_and_return)]
@@ -1140,7 +1140,7 @@ impl ContainsPiiEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ContainsPiiEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1225,7 +1225,7 @@ impl ContainsPiiEntitiesInput {
             "ContainsPiiEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1545,7 +1545,7 @@ pub mod create_document_classifier_input {
 pub type CreateDocumentClassifierInputOperationOutputAlias =
     crate::operation::CreateDocumentClassifier;
 #[doc(hidden)]
-pub type CreateDocumentClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`CreateDocumentClassifier`](crate::operation::CreateDocumentClassifier)>
     #[allow(clippy::let_and_return)]
@@ -1556,7 +1556,7 @@ impl CreateDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDocumentClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1646,7 +1646,7 @@ impl CreateDocumentClassifierInput {
             "CreateDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1802,7 +1802,7 @@ pub mod create_endpoint_input {
 #[doc(hidden)]
 pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
 #[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1813,7 +1813,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1901,7 +1901,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2184,7 +2184,7 @@ pub mod create_entity_recognizer_input {
 #[doc(hidden)]
 pub type CreateEntityRecognizerInputOperationOutputAlias = crate::operation::CreateEntityRecognizer;
 #[doc(hidden)]
-pub type CreateEntityRecognizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`CreateEntityRecognizer`](crate::operation::CreateEntityRecognizer)>
     #[allow(clippy::let_and_return)]
@@ -2195,7 +2195,7 @@ impl CreateEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEntityRecognizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2285,7 +2285,7 @@ impl CreateEntityRecognizerInput {
             "CreateEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2347,7 +2347,7 @@ pub mod delete_document_classifier_input {
 pub type DeleteDocumentClassifierInputOperationOutputAlias =
     crate::operation::DeleteDocumentClassifier;
 #[doc(hidden)]
-pub type DeleteDocumentClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDocumentClassifier`](crate::operation::DeleteDocumentClassifier)>
     #[allow(clippy::let_and_return)]
@@ -2358,7 +2358,7 @@ impl DeleteDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDocumentClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2445,7 +2445,7 @@ impl DeleteDocumentClassifierInput {
             "DeleteDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2503,7 +2503,7 @@ pub mod delete_endpoint_input {
 #[doc(hidden)]
 pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
 #[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -2514,7 +2514,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2599,7 +2599,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2660,7 +2660,7 @@ pub mod delete_entity_recognizer_input {
 #[doc(hidden)]
 pub type DeleteEntityRecognizerInputOperationOutputAlias = crate::operation::DeleteEntityRecognizer;
 #[doc(hidden)]
-pub type DeleteEntityRecognizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEntityRecognizer`](crate::operation::DeleteEntityRecognizer)>
     #[allow(clippy::let_and_return)]
@@ -2671,7 +2671,7 @@ impl DeleteEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEntityRecognizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2758,7 +2758,7 @@ impl DeleteEntityRecognizerInput {
             "DeleteEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2819,7 +2819,8 @@ pub mod describe_document_classification_job_input {
 pub type DescribeDocumentClassificationJobInputOperationOutputAlias =
     crate::operation::DescribeDocumentClassificationJob;
 #[doc(hidden)]
-pub type DescribeDocumentClassificationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDocumentClassificationJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDocumentClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDocumentClassificationJob`](crate::operation::DescribeDocumentClassificationJob)>
     #[allow(clippy::let_and_return)]
@@ -2830,7 +2831,7 @@ impl DescribeDocumentClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDocumentClassificationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2916,7 +2917,7 @@ impl DescribeDocumentClassificationJobInput {
             "DescribeDocumentClassificationJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2980,7 +2981,7 @@ pub mod describe_document_classifier_input {
 pub type DescribeDocumentClassifierInputOperationOutputAlias =
     crate::operation::DescribeDocumentClassifier;
 #[doc(hidden)]
-pub type DescribeDocumentClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDocumentClassifier`](crate::operation::DescribeDocumentClassifier)>
     #[allow(clippy::let_and_return)]
@@ -2991,7 +2992,7 @@ impl DescribeDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDocumentClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3078,7 +3079,7 @@ impl DescribeDocumentClassifierInput {
             "DescribeDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3140,7 +3141,7 @@ pub type DescribeDominantLanguageDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeDominantLanguageDetectionJob;
 #[doc(hidden)]
 pub type DescribeDominantLanguageDetectionJobInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDominantLanguageDetectionJob`](crate::operation::DescribeDominantLanguageDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3151,7 +3152,7 @@ impl DescribeDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDominantLanguageDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3237,7 +3238,7 @@ impl DescribeDominantLanguageDetectionJobInput {
             "DescribeDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3295,7 +3296,7 @@ pub mod describe_endpoint_input {
 #[doc(hidden)]
 pub type DescribeEndpointInputOperationOutputAlias = crate::operation::DescribeEndpoint;
 #[doc(hidden)]
-pub type DescribeEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoint`](crate::operation::DescribeEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -3306,7 +3307,7 @@ impl DescribeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3391,7 +3392,7 @@ impl DescribeEndpointInput {
             "DescribeEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3452,7 +3453,8 @@ pub mod describe_entities_detection_job_input {
 pub type DescribeEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeEntitiesDetectionJob;
 #[doc(hidden)]
-pub type DescribeEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEntitiesDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionJob`](crate::operation::DescribeEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3463,7 +3465,7 @@ impl DescribeEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3549,7 +3551,7 @@ impl DescribeEntitiesDetectionJobInput {
             "DescribeEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3611,7 +3613,7 @@ pub mod describe_entity_recognizer_input {
 pub type DescribeEntityRecognizerInputOperationOutputAlias =
     crate::operation::DescribeEntityRecognizer;
 #[doc(hidden)]
-pub type DescribeEntityRecognizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntityRecognizer`](crate::operation::DescribeEntityRecognizer)>
     #[allow(clippy::let_and_return)]
@@ -3622,7 +3624,7 @@ impl DescribeEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntityRecognizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3709,7 +3711,7 @@ impl DescribeEntityRecognizerInput {
             "DescribeEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3768,7 +3770,7 @@ pub mod describe_events_detection_job_input {
 pub type DescribeEventsDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeEventsDetectionJob;
 #[doc(hidden)]
-pub type DescribeEventsDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventsDetectionJob`](crate::operation::DescribeEventsDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3779,7 +3781,7 @@ impl DescribeEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventsDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3865,7 +3867,7 @@ impl DescribeEventsDetectionJobInput {
             "DescribeEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3926,7 +3928,8 @@ pub mod describe_key_phrases_detection_job_input {
 pub type DescribeKeyPhrasesDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeKeyPhrasesDetectionJob;
 #[doc(hidden)]
-pub type DescribeKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeKeyPhrasesDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKeyPhrasesDetectionJob`](crate::operation::DescribeKeyPhrasesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3937,7 +3940,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeKeyPhrasesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4023,7 +4026,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
             "DescribeKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4084,7 +4087,8 @@ pub mod describe_pii_entities_detection_job_input {
 pub type DescribePiiEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::DescribePiiEntitiesDetectionJob;
 #[doc(hidden)]
-pub type DescribePiiEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePiiEntitiesDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePiiEntitiesDetectionJob`](crate::operation::DescribePiiEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -4095,7 +4099,7 @@ impl DescribePiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePiiEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4181,7 +4185,7 @@ impl DescribePiiEntitiesDetectionJobInput {
             "DescribePiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4242,7 +4246,8 @@ pub mod describe_sentiment_detection_job_input {
 pub type DescribeSentimentDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeSentimentDetectionJob;
 #[doc(hidden)]
-pub type DescribeSentimentDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSentimentDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSentimentDetectionJob`](crate::operation::DescribeSentimentDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -4253,7 +4258,7 @@ impl DescribeSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSentimentDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4339,7 +4344,7 @@ impl DescribeSentimentDetectionJobInput {
             "DescribeSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4398,7 +4403,7 @@ pub mod describe_topics_detection_job_input {
 pub type DescribeTopicsDetectionJobInputOperationOutputAlias =
     crate::operation::DescribeTopicsDetectionJob;
 #[doc(hidden)]
-pub type DescribeTopicsDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTopicsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTopicsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTopicsDetectionJob`](crate::operation::DescribeTopicsDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -4409,7 +4414,7 @@ impl DescribeTopicsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTopicsDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4495,7 +4500,7 @@ impl DescribeTopicsDetectionJobInput {
             "DescribeTopicsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4553,7 +4558,7 @@ pub mod detect_dominant_language_input {
 #[doc(hidden)]
 pub type DetectDominantLanguageInputOperationOutputAlias = crate::operation::DetectDominantLanguage;
 #[doc(hidden)]
-pub type DetectDominantLanguageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectDominantLanguageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectDominantLanguageInput {
     /// Consumes the builder and constructs an Operation<[`DetectDominantLanguage`](crate::operation::DetectDominantLanguage)>
     #[allow(clippy::let_and_return)]
@@ -4564,7 +4569,7 @@ impl DetectDominantLanguageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectDominantLanguage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4651,7 +4656,7 @@ impl DetectDominantLanguageInput {
             "DetectDominantLanguage",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4754,7 +4759,7 @@ pub mod detect_entities_input {
 #[doc(hidden)]
 pub type DetectEntitiesInputOperationOutputAlias = crate::operation::DetectEntities;
 #[doc(hidden)]
-pub type DetectEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(clippy::let_and_return)]
@@ -4765,7 +4770,7 @@ impl DetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4850,7 +4855,7 @@ impl DetectEntitiesInput {
             "DetectEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4927,7 +4932,7 @@ pub mod detect_key_phrases_input {
 #[doc(hidden)]
 pub type DetectKeyPhrasesInputOperationOutputAlias = crate::operation::DetectKeyPhrases;
 #[doc(hidden)]
-pub type DetectKeyPhrasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectKeyPhrasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectKeyPhrasesInput {
     /// Consumes the builder and constructs an Operation<[`DetectKeyPhrases`](crate::operation::DetectKeyPhrases)>
     #[allow(clippy::let_and_return)]
@@ -4938,7 +4943,7 @@ impl DetectKeyPhrasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectKeyPhrases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5023,7 +5028,7 @@ impl DetectKeyPhrasesInput {
             "DetectKeyPhrases",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5098,7 +5103,7 @@ pub mod detect_pii_entities_input {
 #[doc(hidden)]
 pub type DetectPiiEntitiesInputOperationOutputAlias = crate::operation::DetectPiiEntities;
 #[doc(hidden)]
-pub type DetectPiiEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectPiiEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectPiiEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectPiiEntities`](crate::operation::DetectPiiEntities)>
     #[allow(clippy::let_and_return)]
@@ -5109,7 +5114,7 @@ impl DetectPiiEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectPiiEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5194,7 +5199,7 @@ impl DetectPiiEntitiesInput {
             "DetectPiiEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5271,7 +5276,7 @@ pub mod detect_sentiment_input {
 #[doc(hidden)]
 pub type DetectSentimentInputOperationOutputAlias = crate::operation::DetectSentiment;
 #[doc(hidden)]
-pub type DetectSentimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectSentimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectSentimentInput {
     /// Consumes the builder and constructs an Operation<[`DetectSentiment`](crate::operation::DetectSentiment)>
     #[allow(clippy::let_and_return)]
@@ -5282,7 +5287,7 @@ impl DetectSentimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectSentiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5367,7 +5372,7 @@ impl DetectSentimentInput {
             "DetectSentiment",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5446,7 +5451,7 @@ pub mod detect_syntax_input {
 #[doc(hidden)]
 pub type DetectSyntaxInputOperationOutputAlias = crate::operation::DetectSyntax;
 #[doc(hidden)]
-pub type DetectSyntaxInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectSyntaxInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectSyntaxInput {
     /// Consumes the builder and constructs an Operation<[`DetectSyntax`](crate::operation::DetectSyntax)>
     #[allow(clippy::let_and_return)]
@@ -5457,7 +5462,7 @@ impl DetectSyntaxInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectSyntax,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5541,7 +5546,7 @@ impl DetectSyntaxInput {
             "DetectSyntax",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5629,7 +5634,8 @@ pub mod list_document_classification_jobs_input {
 pub type ListDocumentClassificationJobsInputOperationOutputAlias =
     crate::operation::ListDocumentClassificationJobs;
 #[doc(hidden)]
-pub type ListDocumentClassificationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDocumentClassificationJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassificationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassificationJobs`](crate::operation::ListDocumentClassificationJobs)>
     #[allow(clippy::let_and_return)]
@@ -5640,7 +5646,7 @@ impl ListDocumentClassificationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassificationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5726,7 +5732,7 @@ impl ListDocumentClassificationJobsInput {
             "ListDocumentClassificationJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5814,7 +5820,7 @@ pub mod list_document_classifiers_input {
 pub type ListDocumentClassifiersInputOperationOutputAlias =
     crate::operation::ListDocumentClassifiers;
 #[doc(hidden)]
-pub type ListDocumentClassifiersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDocumentClassifiersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassifiersInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassifiers`](crate::operation::ListDocumentClassifiers)>
     #[allow(clippy::let_and_return)]
@@ -5825,7 +5831,7 @@ impl ListDocumentClassifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassifiers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5912,7 +5918,7 @@ impl ListDocumentClassifiersInput {
             "ListDocumentClassifiers",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5983,7 +5989,8 @@ pub mod list_document_classifier_summaries_input {
 pub type ListDocumentClassifierSummariesInputOperationOutputAlias =
     crate::operation::ListDocumentClassifierSummaries;
 #[doc(hidden)]
-pub type ListDocumentClassifierSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDocumentClassifierSummariesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassifierSummariesInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassifierSummaries`](crate::operation::ListDocumentClassifierSummaries)>
     #[allow(clippy::let_and_return)]
@@ -5994,7 +6001,7 @@ impl ListDocumentClassifierSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassifierSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6080,7 +6087,7 @@ impl ListDocumentClassifierSummariesInput {
             "ListDocumentClassifierSummaries",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6168,7 +6175,8 @@ pub mod list_dominant_language_detection_jobs_input {
 pub type ListDominantLanguageDetectionJobsInputOperationOutputAlias =
     crate::operation::ListDominantLanguageDetectionJobs;
 #[doc(hidden)]
-pub type ListDominantLanguageDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDominantLanguageDetectionJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDominantLanguageDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDominantLanguageDetectionJobs`](crate::operation::ListDominantLanguageDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -6179,7 +6187,7 @@ impl ListDominantLanguageDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDominantLanguageDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6265,7 +6273,7 @@ impl ListDominantLanguageDetectionJobsInput {
             "ListDominantLanguageDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6354,7 +6362,7 @@ pub mod list_endpoints_input {
 #[doc(hidden)]
 pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
 #[doc(hidden)]
-pub type ListEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -6365,7 +6373,7 @@ impl ListEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6449,7 +6457,7 @@ impl ListEndpointsInput {
             "ListEndpoints",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6537,7 +6545,7 @@ pub mod list_entities_detection_jobs_input {
 pub type ListEntitiesDetectionJobsInputOperationOutputAlias =
     crate::operation::ListEntitiesDetectionJobs;
 #[doc(hidden)]
-pub type ListEntitiesDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntitiesDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionJobs`](crate::operation::ListEntitiesDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -6548,7 +6556,7 @@ impl ListEntitiesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitiesDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6635,7 +6643,7 @@ impl ListEntitiesDetectionJobsInput {
             "ListEntitiesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6724,7 +6732,7 @@ pub mod list_entity_recognizers_input {
 #[doc(hidden)]
 pub type ListEntityRecognizersInputOperationOutputAlias = crate::operation::ListEntityRecognizers;
 #[doc(hidden)]
-pub type ListEntityRecognizersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntityRecognizersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntityRecognizersInput {
     /// Consumes the builder and constructs an Operation<[`ListEntityRecognizers`](crate::operation::ListEntityRecognizers)>
     #[allow(clippy::let_and_return)]
@@ -6735,7 +6743,7 @@ impl ListEntityRecognizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntityRecognizers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6822,7 +6830,7 @@ impl ListEntityRecognizersInput {
             "ListEntityRecognizers",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6893,7 +6901,8 @@ pub mod list_entity_recognizer_summaries_input {
 pub type ListEntityRecognizerSummariesInputOperationOutputAlias =
     crate::operation::ListEntityRecognizerSummaries;
 #[doc(hidden)]
-pub type ListEntityRecognizerSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntityRecognizerSummariesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntityRecognizerSummariesInput {
     /// Consumes the builder and constructs an Operation<[`ListEntityRecognizerSummaries`](crate::operation::ListEntityRecognizerSummaries)>
     #[allow(clippy::let_and_return)]
@@ -6904,7 +6913,7 @@ impl ListEntityRecognizerSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntityRecognizerSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6990,7 +6999,7 @@ impl ListEntityRecognizerSummariesInput {
             "ListEntityRecognizerSummaries",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7078,7 +7087,7 @@ pub mod list_events_detection_jobs_input {
 pub type ListEventsDetectionJobsInputOperationOutputAlias =
     crate::operation::ListEventsDetectionJobs;
 #[doc(hidden)]
-pub type ListEventsDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventsDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventsDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventsDetectionJobs`](crate::operation::ListEventsDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -7089,7 +7098,7 @@ impl ListEventsDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventsDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7176,7 +7185,7 @@ impl ListEventsDetectionJobsInput {
             "ListEventsDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7264,7 +7273,7 @@ pub mod list_key_phrases_detection_jobs_input {
 pub type ListKeyPhrasesDetectionJobsInputOperationOutputAlias =
     crate::operation::ListKeyPhrasesDetectionJobs;
 #[doc(hidden)]
-pub type ListKeyPhrasesDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListKeyPhrasesDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKeyPhrasesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyPhrasesDetectionJobs`](crate::operation::ListKeyPhrasesDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -7275,7 +7284,7 @@ impl ListKeyPhrasesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKeyPhrasesDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7361,7 +7370,7 @@ impl ListKeyPhrasesDetectionJobsInput {
             "ListKeyPhrasesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7449,7 +7458,8 @@ pub mod list_pii_entities_detection_jobs_input {
 pub type ListPiiEntitiesDetectionJobsInputOperationOutputAlias =
     crate::operation::ListPiiEntitiesDetectionJobs;
 #[doc(hidden)]
-pub type ListPiiEntitiesDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPiiEntitiesDetectionJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPiiEntitiesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPiiEntitiesDetectionJobs`](crate::operation::ListPiiEntitiesDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -7460,7 +7470,7 @@ impl ListPiiEntitiesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPiiEntitiesDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7546,7 +7556,7 @@ impl ListPiiEntitiesDetectionJobsInput {
             "ListPiiEntitiesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7634,7 +7644,7 @@ pub mod list_sentiment_detection_jobs_input {
 pub type ListSentimentDetectionJobsInputOperationOutputAlias =
     crate::operation::ListSentimentDetectionJobs;
 #[doc(hidden)]
-pub type ListSentimentDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSentimentDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSentimentDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSentimentDetectionJobs`](crate::operation::ListSentimentDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -7645,7 +7655,7 @@ impl ListSentimentDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSentimentDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7731,7 +7741,7 @@ impl ListSentimentDetectionJobsInput {
             "ListSentimentDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7791,7 +7801,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7802,7 +7812,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7889,7 +7899,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7977,7 +7987,7 @@ pub mod list_topics_detection_jobs_input {
 pub type ListTopicsDetectionJobsInputOperationOutputAlias =
     crate::operation::ListTopicsDetectionJobs;
 #[doc(hidden)]
-pub type ListTopicsDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTopicsDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTopicsDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTopicsDetectionJobs`](crate::operation::ListTopicsDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -7988,7 +7998,7 @@ impl ListTopicsDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTopicsDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8075,7 +8085,7 @@ impl ListTopicsDetectionJobsInput {
             "ListTopicsDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8302,7 +8312,8 @@ pub mod start_document_classification_job_input {
 pub type StartDocumentClassificationJobInputOperationOutputAlias =
     crate::operation::StartDocumentClassificationJob;
 #[doc(hidden)]
-pub type StartDocumentClassificationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDocumentClassificationJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDocumentClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentClassificationJob`](crate::operation::StartDocumentClassificationJob)>
     #[allow(clippy::let_and_return)]
@@ -8313,7 +8324,7 @@ impl StartDocumentClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDocumentClassificationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8402,7 +8413,7 @@ impl StartDocumentClassificationJobInput {
             "StartDocumentClassificationJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8610,7 +8621,8 @@ pub mod start_dominant_language_detection_job_input {
 pub type StartDominantLanguageDetectionJobInputOperationOutputAlias =
     crate::operation::StartDominantLanguageDetectionJob;
 #[doc(hidden)]
-pub type StartDominantLanguageDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDominantLanguageDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDominantLanguageDetectionJob`](crate::operation::StartDominantLanguageDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -8621,7 +8633,7 @@ impl StartDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDominantLanguageDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8710,7 +8722,7 @@ impl StartDominantLanguageDetectionJobInput {
             "StartDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8958,7 +8970,7 @@ pub mod start_entities_detection_job_input {
 pub type StartEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::StartEntitiesDetectionJob;
 #[doc(hidden)]
-pub type StartEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionJob`](crate::operation::StartEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -8969,7 +8981,7 @@ impl StartEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9059,7 +9071,7 @@ impl StartEntitiesDetectionJobInput {
             "StartEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9243,7 +9255,7 @@ pub mod start_events_detection_job_input {
 pub type StartEventsDetectionJobInputOperationOutputAlias =
     crate::operation::StartEventsDetectionJob;
 #[doc(hidden)]
-pub type StartEventsDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartEventsDetectionJob`](crate::operation::StartEventsDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -9254,7 +9266,7 @@ impl StartEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEventsDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9344,7 +9356,7 @@ impl StartEventsDetectionJobInput {
             "StartEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9571,7 +9583,7 @@ pub mod start_key_phrases_detection_job_input {
 pub type StartKeyPhrasesDetectionJobInputOperationOutputAlias =
     crate::operation::StartKeyPhrasesDetectionJob;
 #[doc(hidden)]
-pub type StartKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartKeyPhrasesDetectionJob`](crate::operation::StartKeyPhrasesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -9582,7 +9594,7 @@ impl StartKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartKeyPhrasesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9671,7 +9683,7 @@ impl StartKeyPhrasesDetectionJobInput {
             "StartKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9872,7 +9884,8 @@ pub mod start_pii_entities_detection_job_input {
 pub type StartPiiEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::StartPiiEntitiesDetectionJob;
 #[doc(hidden)]
-pub type StartPiiEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPiiEntitiesDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartPiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPiiEntitiesDetectionJob`](crate::operation::StartPiiEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -9883,7 +9896,7 @@ impl StartPiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPiiEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9972,7 +9985,7 @@ impl StartPiiEntitiesDetectionJobInput {
             "StartPiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10197,7 +10210,7 @@ pub mod start_sentiment_detection_job_input {
 pub type StartSentimentDetectionJobInputOperationOutputAlias =
     crate::operation::StartSentimentDetectionJob;
 #[doc(hidden)]
-pub type StartSentimentDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSentimentDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSentimentDetectionJob`](crate::operation::StartSentimentDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -10208,7 +10221,7 @@ impl StartSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSentimentDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10297,7 +10310,7 @@ impl StartSentimentDetectionJobInput {
             "StartSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10521,7 +10534,7 @@ pub mod start_topics_detection_job_input {
 pub type StartTopicsDetectionJobInputOperationOutputAlias =
     crate::operation::StartTopicsDetectionJob;
 #[doc(hidden)]
-pub type StartTopicsDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTopicsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTopicsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTopicsDetectionJob`](crate::operation::StartTopicsDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -10532,7 +10545,7 @@ impl StartTopicsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTopicsDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10622,7 +10635,7 @@ impl StartTopicsDetectionJobInput {
             "StartTopicsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10681,7 +10694,8 @@ pub mod stop_dominant_language_detection_job_input {
 pub type StopDominantLanguageDetectionJobInputOperationOutputAlias =
     crate::operation::StopDominantLanguageDetectionJob;
 #[doc(hidden)]
-pub type StopDominantLanguageDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopDominantLanguageDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StopDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopDominantLanguageDetectionJob`](crate::operation::StopDominantLanguageDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -10692,7 +10706,7 @@ impl StopDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopDominantLanguageDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10778,7 +10792,7 @@ impl StopDominantLanguageDetectionJobInput {
             "StopDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10837,7 +10851,7 @@ pub mod stop_entities_detection_job_input {
 pub type StopEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::StopEntitiesDetectionJob;
 #[doc(hidden)]
-pub type StopEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionJob`](crate::operation::StopEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -10848,7 +10862,7 @@ impl StopEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10935,7 +10949,7 @@ impl StopEntitiesDetectionJobInput {
             "StopEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10993,7 +11007,7 @@ pub mod stop_events_detection_job_input {
 #[doc(hidden)]
 pub type StopEventsDetectionJobInputOperationOutputAlias = crate::operation::StopEventsDetectionJob;
 #[doc(hidden)]
-pub type StopEventsDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopEventsDetectionJob`](crate::operation::StopEventsDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -11004,7 +11018,7 @@ impl StopEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEventsDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11091,7 +11105,7 @@ impl StopEventsDetectionJobInput {
             "StopEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11150,7 +11164,7 @@ pub mod stop_key_phrases_detection_job_input {
 pub type StopKeyPhrasesDetectionJobInputOperationOutputAlias =
     crate::operation::StopKeyPhrasesDetectionJob;
 #[doc(hidden)]
-pub type StopKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopKeyPhrasesDetectionJob`](crate::operation::StopKeyPhrasesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -11161,7 +11175,7 @@ impl StopKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopKeyPhrasesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11247,7 +11261,7 @@ impl StopKeyPhrasesDetectionJobInput {
             "StopKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11306,7 +11320,7 @@ pub mod stop_pii_entities_detection_job_input {
 pub type StopPiiEntitiesDetectionJobInputOperationOutputAlias =
     crate::operation::StopPiiEntitiesDetectionJob;
 #[doc(hidden)]
-pub type StopPiiEntitiesDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopPiiEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPiiEntitiesDetectionJob`](crate::operation::StopPiiEntitiesDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -11317,7 +11331,7 @@ impl StopPiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPiiEntitiesDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11403,7 +11417,7 @@ impl StopPiiEntitiesDetectionJobInput {
             "StopPiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11462,7 +11476,7 @@ pub mod stop_sentiment_detection_job_input {
 pub type StopSentimentDetectionJobInputOperationOutputAlias =
     crate::operation::StopSentimentDetectionJob;
 #[doc(hidden)]
-pub type StopSentimentDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopSentimentDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopSentimentDetectionJob`](crate::operation::StopSentimentDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -11473,7 +11487,7 @@ impl StopSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopSentimentDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11560,7 +11574,7 @@ impl StopSentimentDetectionJobInput {
             "StopSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11624,7 +11638,8 @@ pub mod stop_training_document_classifier_input {
 pub type StopTrainingDocumentClassifierInputOperationOutputAlias =
     crate::operation::StopTrainingDocumentClassifier;
 #[doc(hidden)]
-pub type StopTrainingDocumentClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopTrainingDocumentClassifierInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StopTrainingDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`StopTrainingDocumentClassifier`](crate::operation::StopTrainingDocumentClassifier)>
     #[allow(clippy::let_and_return)]
@@ -11635,7 +11650,7 @@ impl StopTrainingDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrainingDocumentClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11721,7 +11736,7 @@ impl StopTrainingDocumentClassifierInput {
             "StopTrainingDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11785,7 +11800,8 @@ pub mod stop_training_entity_recognizer_input {
 pub type StopTrainingEntityRecognizerInputOperationOutputAlias =
     crate::operation::StopTrainingEntityRecognizer;
 #[doc(hidden)]
-pub type StopTrainingEntityRecognizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopTrainingEntityRecognizerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StopTrainingEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`StopTrainingEntityRecognizer`](crate::operation::StopTrainingEntityRecognizer)>
     #[allow(clippy::let_and_return)]
@@ -11796,7 +11812,7 @@ impl StopTrainingEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrainingEntityRecognizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11882,7 +11898,7 @@ impl StopTrainingEntityRecognizerInput {
             "StopTrainingEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11965,7 +11981,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -11976,7 +11992,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12060,7 +12076,7 @@ impl TagResourceInput {
             "TagResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12147,7 +12163,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -12158,7 +12174,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12242,7 +12258,7 @@ impl UntagResourceInput {
             "UntagResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12349,7 +12365,7 @@ pub mod update_endpoint_input {
 #[doc(hidden)]
 pub type UpdateEndpointInputOperationOutputAlias = crate::operation::UpdateEndpoint;
 #[doc(hidden)]
-pub type UpdateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpoint`](crate::operation::UpdateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -12360,7 +12376,7 @@ impl UpdateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12445,7 +12461,7 @@ impl UpdateEndpointInput {
             "UpdateEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

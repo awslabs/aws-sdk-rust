@@ -98,7 +98,7 @@ impl ReplayingConnection {
                     ))
                 })
                 .collect::<Vec<_>>();
-            aws_smithy_protocol_test::validate_headers(&actual, expected_headers.as_slice())?;
+            aws_smithy_protocol_test::validate_headers(&actual, expected_headers)?;
         }
         Ok(())
     }

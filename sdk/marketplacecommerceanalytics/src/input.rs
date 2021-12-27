@@ -374,7 +374,7 @@ pub mod generate_data_set_input {
 #[doc(hidden)]
 pub type GenerateDataSetInputOperationOutputAlias = crate::operation::GenerateDataSet;
 #[doc(hidden)]
-pub type GenerateDataSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateDataSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateDataSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataSet`](crate::operation::GenerateDataSet)>
     #[allow(clippy::let_and_return)]
@@ -385,7 +385,7 @@ impl GenerateDataSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -470,7 +470,7 @@ impl GenerateDataSetInput {
             "GenerateDataSet",
             "marketplacecommerceanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -671,7 +671,7 @@ pub mod start_support_data_export_input {
 #[doc(hidden)]
 pub type StartSupportDataExportInputOperationOutputAlias = crate::operation::StartSupportDataExport;
 #[doc(hidden)]
-pub type StartSupportDataExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSupportDataExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSupportDataExportInput {
     /// Consumes the builder and constructs an Operation<[`StartSupportDataExport`](crate::operation::StartSupportDataExport)>
     #[allow(clippy::let_and_return)]
@@ -682,7 +682,7 @@ impl StartSupportDataExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSupportDataExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -769,7 +769,7 @@ impl StartSupportDataExportInput {
             "StartSupportDataExport",
             "marketplacecommerceanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

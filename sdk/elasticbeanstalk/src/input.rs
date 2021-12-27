@@ -57,7 +57,7 @@ pub mod abort_environment_update_input {
 #[doc(hidden)]
 pub type AbortEnvironmentUpdateInputOperationOutputAlias = crate::operation::AbortEnvironmentUpdate;
 #[doc(hidden)]
-pub type AbortEnvironmentUpdateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AbortEnvironmentUpdateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AbortEnvironmentUpdateInput {
     /// Consumes the builder and constructs an Operation<[`AbortEnvironmentUpdate`](crate::operation::AbortEnvironmentUpdate)>
     #[allow(clippy::let_and_return)]
@@ -68,7 +68,7 @@ impl AbortEnvironmentUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AbortEnvironmentUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -150,7 +150,7 @@ impl AbortEnvironmentUpdateInput {
             "AbortEnvironmentUpdate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -239,7 +239,8 @@ pub mod apply_environment_managed_action_input {
 pub type ApplyEnvironmentManagedActionInputOperationOutputAlias =
     crate::operation::ApplyEnvironmentManagedAction;
 #[doc(hidden)]
-pub type ApplyEnvironmentManagedActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApplyEnvironmentManagedActionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ApplyEnvironmentManagedActionInput {
     /// Consumes the builder and constructs an Operation<[`ApplyEnvironmentManagedAction`](crate::operation::ApplyEnvironmentManagedAction)>
     #[allow(clippy::let_and_return)]
@@ -250,7 +251,7 @@ impl ApplyEnvironmentManagedActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplyEnvironmentManagedAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -331,7 +332,7 @@ impl ApplyEnvironmentManagedActionInput {
             "ApplyEnvironmentManagedAction",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -410,7 +411,8 @@ pub mod associate_environment_operations_role_input {
 pub type AssociateEnvironmentOperationsRoleInputOperationOutputAlias =
     crate::operation::AssociateEnvironmentOperationsRole;
 #[doc(hidden)]
-pub type AssociateEnvironmentOperationsRoleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateEnvironmentOperationsRoleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateEnvironmentOperationsRoleInput {
     /// Consumes the builder and constructs an Operation<[`AssociateEnvironmentOperationsRole`](crate::operation::AssociateEnvironmentOperationsRole)>
     #[allow(clippy::let_and_return)]
@@ -421,7 +423,7 @@ impl AssociateEnvironmentOperationsRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateEnvironmentOperationsRole,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -502,7 +504,7 @@ impl AssociateEnvironmentOperationsRoleInput {
             "AssociateEnvironmentOperationsRole",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -560,7 +562,7 @@ pub mod check_dns_availability_input {
 #[doc(hidden)]
 pub type CheckDnsAvailabilityInputOperationOutputAlias = crate::operation::CheckDNSAvailability;
 #[doc(hidden)]
-pub type CheckDnsAvailabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckDnsAvailabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckDnsAvailabilityInput {
     /// Consumes the builder and constructs an Operation<[`CheckDNSAvailability`](crate::operation::CheckDNSAvailability)>
     #[allow(clippy::let_and_return)]
@@ -571,7 +573,7 @@ impl CheckDnsAvailabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDNSAvailability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -653,7 +655,7 @@ impl CheckDnsAvailabilityInput {
             "CheckDNSAvailability",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -759,7 +761,7 @@ pub mod compose_environments_input {
 #[doc(hidden)]
 pub type ComposeEnvironmentsInputOperationOutputAlias = crate::operation::ComposeEnvironments;
 #[doc(hidden)]
-pub type ComposeEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ComposeEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ComposeEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ComposeEnvironments`](crate::operation::ComposeEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -770,7 +772,7 @@ impl ComposeEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ComposeEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -850,7 +852,7 @@ impl ComposeEnvironmentsInput {
             "ComposeEnvironments",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -969,7 +971,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -980,7 +982,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1060,7 +1062,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1301,7 +1303,7 @@ pub mod create_application_version_input {
 pub type CreateApplicationVersionInputOperationOutputAlias =
     crate::operation::CreateApplicationVersion;
 #[doc(hidden)]
-pub type CreateApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationVersion`](crate::operation::CreateApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -1312,7 +1314,7 @@ impl CreateApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1394,7 +1396,7 @@ impl CreateApplicationVersionInput {
             "CreateApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1656,7 +1658,7 @@ pub mod create_configuration_template_input {
 pub type CreateConfigurationTemplateInputOperationOutputAlias =
     crate::operation::CreateConfigurationTemplate;
 #[doc(hidden)]
-pub type CreateConfigurationTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConfigurationTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationTemplate`](crate::operation::CreateConfigurationTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1667,7 +1669,7 @@ impl CreateConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1748,7 +1750,7 @@ impl CreateConfigurationTemplateInput {
             "CreateConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2098,7 +2100,7 @@ pub mod create_environment_input {
 #[doc(hidden)]
 pub type CreateEnvironmentInputOperationOutputAlias = crate::operation::CreateEnvironment;
 #[doc(hidden)]
-pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -2109,7 +2111,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2189,7 +2191,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2345,7 +2347,7 @@ pub mod create_platform_version_input {
 #[doc(hidden)]
 pub type CreatePlatformVersionInputOperationOutputAlias = crate::operation::CreatePlatformVersion;
 #[doc(hidden)]
-pub type CreatePlatformVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlatformVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlatformVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlatformVersion`](crate::operation::CreatePlatformVersion)>
     #[allow(clippy::let_and_return)]
@@ -2356,7 +2358,7 @@ impl CreatePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2438,7 +2440,7 @@ impl CreatePlatformVersionInput {
             "CreatePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2482,7 +2484,7 @@ pub mod create_storage_location_input {
 #[doc(hidden)]
 pub type CreateStorageLocationInputOperationOutputAlias = crate::operation::CreateStorageLocation;
 #[doc(hidden)]
-pub type CreateStorageLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStorageLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStorageLocationInput {
     /// Consumes the builder and constructs an Operation<[`CreateStorageLocation`](crate::operation::CreateStorageLocation)>
     #[allow(clippy::let_and_return)]
@@ -2493,7 +2495,7 @@ impl CreateStorageLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStorageLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2575,7 +2577,7 @@ impl CreateStorageLocationInput {
             "CreateStorageLocation",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2642,7 +2644,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -2653,7 +2655,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2733,7 +2735,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2826,7 +2828,7 @@ pub mod delete_application_version_input {
 pub type DeleteApplicationVersionInputOperationOutputAlias =
     crate::operation::DeleteApplicationVersion;
 #[doc(hidden)]
-pub type DeleteApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationVersion`](crate::operation::DeleteApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -2837,7 +2839,7 @@ impl DeleteApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2919,7 +2921,7 @@ impl DeleteApplicationVersionInput {
             "DeleteApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2996,7 +2998,7 @@ pub mod delete_configuration_template_input {
 pub type DeleteConfigurationTemplateInputOperationOutputAlias =
     crate::operation::DeleteConfigurationTemplate;
 #[doc(hidden)]
-pub type DeleteConfigurationTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigurationTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationTemplate`](crate::operation::DeleteConfigurationTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3007,7 +3009,7 @@ impl DeleteConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3088,7 +3090,7 @@ impl DeleteConfigurationTemplateInput {
             "DeleteConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3165,7 +3167,8 @@ pub mod delete_environment_configuration_input {
 pub type DeleteEnvironmentConfigurationInputOperationOutputAlias =
     crate::operation::DeleteEnvironmentConfiguration;
 #[doc(hidden)]
-pub type DeleteEnvironmentConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironmentConfiguration`](crate::operation::DeleteEnvironmentConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3176,7 +3179,7 @@ impl DeleteEnvironmentConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironmentConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3257,7 +3260,7 @@ impl DeleteEnvironmentConfigurationInput {
             "DeleteEnvironmentConfiguration",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3315,7 +3318,7 @@ pub mod delete_platform_version_input {
 #[doc(hidden)]
 pub type DeletePlatformVersionInputOperationOutputAlias = crate::operation::DeletePlatformVersion;
 #[doc(hidden)]
-pub type DeletePlatformVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlatformVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlatformVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlatformVersion`](crate::operation::DeletePlatformVersion)>
     #[allow(clippy::let_and_return)]
@@ -3326,7 +3329,7 @@ impl DeletePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlatformVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3408,7 +3411,7 @@ impl DeletePlatformVersionInput {
             "DeletePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3453,7 +3456,7 @@ pub mod describe_account_attributes_input {
 pub type DescribeAccountAttributesInputOperationOutputAlias =
     crate::operation::DescribeAccountAttributes;
 #[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3464,7 +3467,7 @@ impl DescribeAccountAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3546,7 +3549,7 @@ impl DescribeAccountAttributesInput {
             "DescribeAccountAttributes",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3607,7 +3610,7 @@ pub mod describe_applications_input {
 #[doc(hidden)]
 pub type DescribeApplicationsInputOperationOutputAlias = crate::operation::DescribeApplications;
 #[doc(hidden)]
-pub type DescribeApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplications`](crate::operation::DescribeApplications)>
     #[allow(clippy::let_and_return)]
@@ -3618,7 +3621,7 @@ impl DescribeApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3698,7 +3701,7 @@ impl DescribeApplicationsInput {
             "DescribeApplications",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3817,7 +3820,7 @@ pub mod describe_application_versions_input {
 pub type DescribeApplicationVersionsInputOperationOutputAlias =
     crate::operation::DescribeApplicationVersions;
 #[doc(hidden)]
-pub type DescribeApplicationVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationVersions`](crate::operation::DescribeApplicationVersions)>
     #[allow(clippy::let_and_return)]
@@ -3828,7 +3831,7 @@ impl DescribeApplicationVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3909,7 +3912,7 @@ impl DescribeApplicationVersionsInput {
             "DescribeApplicationVersions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4057,7 +4060,8 @@ pub mod describe_configuration_options_input {
 pub type DescribeConfigurationOptionsInputOperationOutputAlias =
     crate::operation::DescribeConfigurationOptions;
 #[doc(hidden)]
-pub type DescribeConfigurationOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationOptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationOptions`](crate::operation::DescribeConfigurationOptions)>
     #[allow(clippy::let_and_return)]
@@ -4068,7 +4072,7 @@ impl DescribeConfigurationOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4149,7 +4153,7 @@ impl DescribeConfigurationOptionsInput {
             "DescribeConfigurationOptions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4257,7 +4261,8 @@ pub mod describe_configuration_settings_input {
 pub type DescribeConfigurationSettingsInputOperationOutputAlias =
     crate::operation::DescribeConfigurationSettings;
 #[doc(hidden)]
-pub type DescribeConfigurationSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationSettings`](crate::operation::DescribeConfigurationSettings)>
     #[allow(clippy::let_and_return)]
@@ -4268,7 +4273,7 @@ impl DescribeConfigurationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4349,7 +4354,7 @@ impl DescribeConfigurationSettingsInput {
             "DescribeConfigurationSettings",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4459,7 +4464,7 @@ pub mod describe_environment_health_input {
 pub type DescribeEnvironmentHealthInputOperationOutputAlias =
     crate::operation::DescribeEnvironmentHealth;
 #[doc(hidden)]
-pub type DescribeEnvironmentHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEnvironmentHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentHealth`](crate::operation::DescribeEnvironmentHealth)>
     #[allow(clippy::let_and_return)]
@@ -4470,7 +4475,7 @@ impl DescribeEnvironmentHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4552,7 +4557,7 @@ impl DescribeEnvironmentHealthInput {
             "DescribeEnvironmentHealth",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4654,7 +4659,7 @@ pub type DescribeEnvironmentManagedActionHistoryInputOperationOutputAlias =
     crate::operation::DescribeEnvironmentManagedActionHistory;
 #[doc(hidden)]
 pub type DescribeEnvironmentManagedActionHistoryInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentManagedActionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentManagedActionHistory`](crate::operation::DescribeEnvironmentManagedActionHistory)>
     #[allow(clippy::let_and_return)]
@@ -4665,7 +4670,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentManagedActionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4746,7 +4751,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
             "DescribeEnvironmentManagedActionHistory",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4838,7 +4843,8 @@ pub mod describe_environment_managed_actions_input {
 pub type DescribeEnvironmentManagedActionsInputOperationOutputAlias =
     crate::operation::DescribeEnvironmentManagedActions;
 #[doc(hidden)]
-pub type DescribeEnvironmentManagedActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEnvironmentManagedActionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentManagedActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentManagedActions`](crate::operation::DescribeEnvironmentManagedActions)>
     #[allow(clippy::let_and_return)]
@@ -4849,7 +4855,7 @@ impl DescribeEnvironmentManagedActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentManagedActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4930,7 +4936,7 @@ impl DescribeEnvironmentManagedActionsInput {
             "DescribeEnvironmentManagedActions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5019,7 +5025,8 @@ pub mod describe_environment_resources_input {
 pub type DescribeEnvironmentResourcesInputOperationOutputAlias =
     crate::operation::DescribeEnvironmentResources;
 #[doc(hidden)]
-pub type DescribeEnvironmentResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEnvironmentResourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentResourcesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentResources`](crate::operation::DescribeEnvironmentResources)>
     #[allow(clippy::let_and_return)]
@@ -5030,7 +5037,7 @@ impl DescribeEnvironmentResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5111,7 +5118,7 @@ impl DescribeEnvironmentResourcesInput {
             "DescribeEnvironmentResources",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5310,7 +5317,7 @@ pub mod describe_environments_input {
 #[doc(hidden)]
 pub type DescribeEnvironmentsInputOperationOutputAlias = crate::operation::DescribeEnvironments;
 #[doc(hidden)]
-pub type DescribeEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironments`](crate::operation::DescribeEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -5321,7 +5328,7 @@ impl DescribeEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5401,7 +5408,7 @@ impl DescribeEnvironmentsInput {
             "DescribeEnvironments",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5637,7 +5644,7 @@ pub mod describe_events_input {
 #[doc(hidden)]
 pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
 #[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(clippy::let_and_return)]
@@ -5648,7 +5655,7 @@ impl DescribeEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5728,7 +5735,7 @@ impl DescribeEventsInput {
             "DescribeEvents",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5846,7 +5853,7 @@ pub mod describe_instances_health_input {
 pub type DescribeInstancesHealthInputOperationOutputAlias =
     crate::operation::DescribeInstancesHealth;
 #[doc(hidden)]
-pub type DescribeInstancesHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInstancesHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstancesHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstancesHealth`](crate::operation::DescribeInstancesHealth)>
     #[allow(clippy::let_and_return)]
@@ -5857,7 +5864,7 @@ impl DescribeInstancesHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstancesHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5939,7 +5946,7 @@ impl DescribeInstancesHealthInput {
             "DescribeInstancesHealth",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5998,7 +6005,7 @@ pub mod describe_platform_version_input {
 pub type DescribePlatformVersionInputOperationOutputAlias =
     crate::operation::DescribePlatformVersion;
 #[doc(hidden)]
-pub type DescribePlatformVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePlatformVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlatformVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlatformVersion`](crate::operation::DescribePlatformVersion)>
     #[allow(clippy::let_and_return)]
@@ -6009,7 +6016,7 @@ impl DescribePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlatformVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6091,7 +6098,7 @@ impl DescribePlatformVersionInput {
             "DescribePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6154,7 +6161,7 @@ pub type DisassociateEnvironmentOperationsRoleInputOperationOutputAlias =
     crate::operation::DisassociateEnvironmentOperationsRole;
 #[doc(hidden)]
 pub type DisassociateEnvironmentOperationsRoleInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateEnvironmentOperationsRoleInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateEnvironmentOperationsRole`](crate::operation::DisassociateEnvironmentOperationsRole)>
     #[allow(clippy::let_and_return)]
@@ -6165,7 +6172,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateEnvironmentOperationsRole,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6246,7 +6253,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
             "DisassociateEnvironmentOperationsRole",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6291,7 +6298,7 @@ pub mod list_available_solution_stacks_input {
 pub type ListAvailableSolutionStacksInputOperationOutputAlias =
     crate::operation::ListAvailableSolutionStacks;
 #[doc(hidden)]
-pub type ListAvailableSolutionStacksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAvailableSolutionStacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableSolutionStacksInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableSolutionStacks`](crate::operation::ListAvailableSolutionStacks)>
     #[allow(clippy::let_and_return)]
@@ -6302,7 +6309,7 @@ impl ListAvailableSolutionStacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableSolutionStacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6383,7 +6390,7 @@ impl ListAvailableSolutionStacksInput {
             "ListAvailableSolutionStacks",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6610,7 +6617,7 @@ pub mod list_platform_branches_input {
 #[doc(hidden)]
 pub type ListPlatformBranchesInputOperationOutputAlias = crate::operation::ListPlatformBranches;
 #[doc(hidden)]
-pub type ListPlatformBranchesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlatformBranchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlatformBranchesInput {
     /// Consumes the builder and constructs an Operation<[`ListPlatformBranches`](crate::operation::ListPlatformBranches)>
     #[allow(clippy::let_and_return)]
@@ -6621,7 +6628,7 @@ impl ListPlatformBranchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformBranches,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6703,7 +6710,7 @@ impl ListPlatformBranchesInput {
             "ListPlatformBranches",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6804,7 +6811,7 @@ pub mod list_platform_versions_input {
 #[doc(hidden)]
 pub type ListPlatformVersionsInputOperationOutputAlias = crate::operation::ListPlatformVersions;
 #[doc(hidden)]
-pub type ListPlatformVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlatformVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlatformVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlatformVersions`](crate::operation::ListPlatformVersions)>
     #[allow(clippy::let_and_return)]
@@ -6815,7 +6822,7 @@ impl ListPlatformVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6897,7 +6904,7 @@ impl ListPlatformVersionsInput {
             "ListPlatformVersions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6957,7 +6964,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6968,7 +6975,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7050,7 +7057,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7138,7 +7145,7 @@ pub mod rebuild_environment_input {
 #[doc(hidden)]
 pub type RebuildEnvironmentInputOperationOutputAlias = crate::operation::RebuildEnvironment;
 #[doc(hidden)]
-pub type RebuildEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebuildEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebuildEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`RebuildEnvironment`](crate::operation::RebuildEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -7149,7 +7156,7 @@ impl RebuildEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebuildEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7229,7 +7236,7 @@ impl RebuildEnvironmentInput {
             "RebuildEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7340,7 +7347,7 @@ pub mod request_environment_info_input {
 #[doc(hidden)]
 pub type RequestEnvironmentInfoInputOperationOutputAlias = crate::operation::RequestEnvironmentInfo;
 #[doc(hidden)]
-pub type RequestEnvironmentInfoInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RequestEnvironmentInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestEnvironmentInfoInput {
     /// Consumes the builder and constructs an Operation<[`RequestEnvironmentInfo`](crate::operation::RequestEnvironmentInfo)>
     #[allow(clippy::let_and_return)]
@@ -7351,7 +7358,7 @@ impl RequestEnvironmentInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestEnvironmentInfo,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7433,7 +7440,7 @@ impl RequestEnvironmentInfoInput {
             "RequestEnvironmentInfo",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7521,7 +7528,7 @@ pub mod restart_app_server_input {
 #[doc(hidden)]
 pub type RestartAppServerInputOperationOutputAlias = crate::operation::RestartAppServer;
 #[doc(hidden)]
-pub type RestartAppServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestartAppServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestartAppServerInput {
     /// Consumes the builder and constructs an Operation<[`RestartAppServer`](crate::operation::RestartAppServer)>
     #[allow(clippy::let_and_return)]
@@ -7532,7 +7539,7 @@ impl RestartAppServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestartAppServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7612,7 +7619,7 @@ impl RestartAppServerInput {
             "RestartAppServer",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7722,7 +7729,7 @@ pub mod retrieve_environment_info_input {
 pub type RetrieveEnvironmentInfoInputOperationOutputAlias =
     crate::operation::RetrieveEnvironmentInfo;
 #[doc(hidden)]
-pub type RetrieveEnvironmentInfoInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RetrieveEnvironmentInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetrieveEnvironmentInfoInput {
     /// Consumes the builder and constructs an Operation<[`RetrieveEnvironmentInfo`](crate::operation::RetrieveEnvironmentInfo)>
     #[allow(clippy::let_and_return)]
@@ -7733,7 +7740,7 @@ impl RetrieveEnvironmentInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetrieveEnvironmentInfo,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7815,7 +7822,7 @@ impl RetrieveEnvironmentInfoInput {
             "RetrieveEnvironmentInfo",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7954,7 +7961,7 @@ pub mod swap_environment_cnam_es_input {
 #[doc(hidden)]
 pub type SwapEnvironmentCnamEsInputOperationOutputAlias = crate::operation::SwapEnvironmentCNAMEs;
 #[doc(hidden)]
-pub type SwapEnvironmentCnamEsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SwapEnvironmentCnamEsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SwapEnvironmentCnamEsInput {
     /// Consumes the builder and constructs an Operation<[`SwapEnvironmentCNAMEs`](crate::operation::SwapEnvironmentCNAMEs)>
     #[allow(clippy::let_and_return)]
@@ -7965,7 +7972,7 @@ impl SwapEnvironmentCnamEsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SwapEnvironmentCNAMEs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8047,7 +8054,7 @@ impl SwapEnvironmentCnamEsInput {
             "SwapEnvironmentCNAMEs",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8199,7 +8206,7 @@ pub mod terminate_environment_input {
 #[doc(hidden)]
 pub type TerminateEnvironmentInputOperationOutputAlias = crate::operation::TerminateEnvironment;
 #[doc(hidden)]
-pub type TerminateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`TerminateEnvironment`](crate::operation::TerminateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -8210,7 +8217,7 @@ impl TerminateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8290,7 +8297,7 @@ impl TerminateEnvironmentInput {
             "TerminateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8371,7 +8378,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -8382,7 +8389,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8462,7 +8469,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8543,7 +8550,8 @@ pub mod update_application_resource_lifecycle_input {
 pub type UpdateApplicationResourceLifecycleInputOperationOutputAlias =
     crate::operation::UpdateApplicationResourceLifecycle;
 #[doc(hidden)]
-pub type UpdateApplicationResourceLifecycleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationResourceLifecycleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationResourceLifecycleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationResourceLifecycle`](crate::operation::UpdateApplicationResourceLifecycle)>
     #[allow(clippy::let_and_return)]
@@ -8554,7 +8562,7 @@ impl UpdateApplicationResourceLifecycleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationResourceLifecycle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8635,7 +8643,7 @@ impl UpdateApplicationResourceLifecycleInput {
             "UpdateApplicationResourceLifecycle",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8732,7 +8740,7 @@ pub mod update_application_version_input {
 pub type UpdateApplicationVersionInputOperationOutputAlias =
     crate::operation::UpdateApplicationVersion;
 #[doc(hidden)]
-pub type UpdateApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationVersion`](crate::operation::UpdateApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -8743,7 +8751,7 @@ impl UpdateApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8825,7 +8833,7 @@ impl UpdateApplicationVersionInput {
             "UpdateApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8982,7 +8990,7 @@ pub mod update_configuration_template_input {
 pub type UpdateConfigurationTemplateInputOperationOutputAlias =
     crate::operation::UpdateConfigurationTemplate;
 #[doc(hidden)]
-pub type UpdateConfigurationTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConfigurationTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationTemplate`](crate::operation::UpdateConfigurationTemplate)>
     #[allow(clippy::let_and_return)]
@@ -8993,7 +9001,7 @@ impl UpdateConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9074,7 +9082,7 @@ impl UpdateConfigurationTemplateInput {
             "UpdateConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9357,7 +9365,7 @@ pub mod update_environment_input {
 #[doc(hidden)]
 pub type UpdateEnvironmentInputOperationOutputAlias = crate::operation::UpdateEnvironment;
 #[doc(hidden)]
-pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -9368,7 +9376,7 @@ impl UpdateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9448,7 +9456,7 @@ impl UpdateEnvironmentInput {
             "UpdateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9560,7 +9568,7 @@ pub mod update_tags_for_resource_input {
 #[doc(hidden)]
 pub type UpdateTagsForResourceInputOperationOutputAlias = crate::operation::UpdateTagsForResource;
 #[doc(hidden)]
-pub type UpdateTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTagsForResource`](crate::operation::UpdateTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -9571,7 +9579,7 @@ impl UpdateTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9653,7 +9661,7 @@ impl UpdateTagsForResourceInput {
             "UpdateTagsForResource",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9776,7 +9784,8 @@ pub mod validate_configuration_settings_input {
 pub type ValidateConfigurationSettingsInputOperationOutputAlias =
     crate::operation::ValidateConfigurationSettings;
 #[doc(hidden)]
-pub type ValidateConfigurationSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ValidateConfigurationSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateConfigurationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ValidateConfigurationSettings`](crate::operation::ValidateConfigurationSettings)>
     #[allow(clippy::let_and_return)]
@@ -9787,7 +9796,7 @@ impl ValidateConfigurationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidateConfigurationSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9868,7 +9877,7 @@ impl ValidateConfigurationSettingsInput {
             "ValidateConfigurationSettings",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

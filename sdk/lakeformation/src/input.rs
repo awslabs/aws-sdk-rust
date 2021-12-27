@@ -68,7 +68,7 @@ pub mod add_lf_tags_to_resource_input {
 #[doc(hidden)]
 pub type AddLfTagsToResourceInputOperationOutputAlias = crate::operation::AddLFTagsToResource;
 #[doc(hidden)]
-pub type AddLfTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddLfTagsToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddLfTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddLFTagsToResource`](crate::operation::AddLFTagsToResource)>
     #[allow(clippy::let_and_return)]
@@ -79,7 +79,7 @@ impl AddLfTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddLFTagsToResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -161,7 +161,7 @@ impl AddLfTagsToResourceInput {
             "AddLFTagsToResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -244,7 +244,7 @@ pub mod batch_grant_permissions_input {
 #[doc(hidden)]
 pub type BatchGrantPermissionsInputOperationOutputAlias = crate::operation::BatchGrantPermissions;
 #[doc(hidden)]
-pub type BatchGrantPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGrantPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGrantPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGrantPermissions`](crate::operation::BatchGrantPermissions)>
     #[allow(clippy::let_and_return)]
@@ -255,7 +255,7 @@ impl BatchGrantPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGrantPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +337,7 @@ impl BatchGrantPermissionsInput {
             "BatchGrantPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -420,7 +420,7 @@ pub mod batch_revoke_permissions_input {
 #[doc(hidden)]
 pub type BatchRevokePermissionsInputOperationOutputAlias = crate::operation::BatchRevokePermissions;
 #[doc(hidden)]
-pub type BatchRevokePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchRevokePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchRevokePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`BatchRevokePermissions`](crate::operation::BatchRevokePermissions)>
     #[allow(clippy::let_and_return)]
@@ -431,7 +431,7 @@ impl BatchRevokePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchRevokePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -513,7 +513,7 @@ impl BatchRevokePermissionsInput {
             "BatchRevokePermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -574,7 +574,7 @@ pub mod cancel_transaction_input {
 #[doc(hidden)]
 pub type CancelTransactionInputOperationOutputAlias = crate::operation::CancelTransaction;
 #[doc(hidden)]
-pub type CancelTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelTransactionInput {
     /// Consumes the builder and constructs an Operation<[`CancelTransaction`](crate::operation::CancelTransaction)>
     #[allow(clippy::let_and_return)]
@@ -585,7 +585,7 @@ impl CancelTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -665,7 +665,7 @@ impl CancelTransactionInput {
             "CancelTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -726,7 +726,7 @@ pub mod commit_transaction_input {
 #[doc(hidden)]
 pub type CommitTransactionInputOperationOutputAlias = crate::operation::CommitTransaction;
 #[doc(hidden)]
-pub type CommitTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CommitTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CommitTransactionInput {
     /// Consumes the builder and constructs an Operation<[`CommitTransaction`](crate::operation::CommitTransaction)>
     #[allow(clippy::let_and_return)]
@@ -737,7 +737,7 @@ impl CommitTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -817,7 +817,7 @@ impl CommitTransactionInput {
             "CommitTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -878,7 +878,7 @@ pub mod create_data_cells_filter_input {
 #[doc(hidden)]
 pub type CreateDataCellsFilterInputOperationOutputAlias = crate::operation::CreateDataCellsFilter;
 #[doc(hidden)]
-pub type CreateDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataCellsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataCellsFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataCellsFilter`](crate::operation::CreateDataCellsFilter)>
     #[allow(clippy::let_and_return)]
@@ -889,7 +889,7 @@ impl CreateDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataCellsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -971,7 +971,7 @@ impl CreateDataCellsFilterInput {
             "CreateDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1062,7 +1062,7 @@ pub mod create_lf_tag_input {
 #[doc(hidden)]
 pub type CreateLfTagInputOperationOutputAlias = crate::operation::CreateLFTag;
 #[doc(hidden)]
-pub type CreateLfTagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLfTagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLfTagInput {
     /// Consumes the builder and constructs an Operation<[`CreateLFTag`](crate::operation::CreateLFTag)>
     #[allow(clippy::let_and_return)]
@@ -1073,7 +1073,7 @@ impl CreateLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLFTag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1152,7 +1152,7 @@ impl CreateLfTagInput {
             "CreateLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1252,7 +1252,7 @@ pub mod delete_data_cells_filter_input {
 #[doc(hidden)]
 pub type DeleteDataCellsFilterInputOperationOutputAlias = crate::operation::DeleteDataCellsFilter;
 #[doc(hidden)]
-pub type DeleteDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDataCellsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataCellsFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataCellsFilter`](crate::operation::DeleteDataCellsFilter)>
     #[allow(clippy::let_and_return)]
@@ -1263,7 +1263,7 @@ impl DeleteDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataCellsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1345,7 +1345,7 @@ impl DeleteDataCellsFilterInput {
             "DeleteDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1415,7 +1415,7 @@ pub mod delete_lf_tag_input {
 #[doc(hidden)]
 pub type DeleteLfTagInputOperationOutputAlias = crate::operation::DeleteLFTag;
 #[doc(hidden)]
-pub type DeleteLfTagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLfTagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLfTagInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLFTag`](crate::operation::DeleteLFTag)>
     #[allow(clippy::let_and_return)]
@@ -1426,7 +1426,7 @@ impl DeleteLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLFTag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1505,7 +1505,7 @@ impl DeleteLfTagInput {
             "DeleteLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1626,7 +1626,7 @@ pub mod delete_objects_on_cancel_input {
 #[doc(hidden)]
 pub type DeleteObjectsOnCancelInputOperationOutputAlias = crate::operation::DeleteObjectsOnCancel;
 #[doc(hidden)]
-pub type DeleteObjectsOnCancelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteObjectsOnCancelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteObjectsOnCancelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObjectsOnCancel`](crate::operation::DeleteObjectsOnCancel)>
     #[allow(clippy::let_and_return)]
@@ -1637,7 +1637,7 @@ impl DeleteObjectsOnCancelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteObjectsOnCancel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1719,7 +1719,7 @@ impl DeleteObjectsOnCancelInput {
             "DeleteObjectsOnCancel",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1777,7 +1777,7 @@ pub mod deregister_resource_input {
 #[doc(hidden)]
 pub type DeregisterResourceInputOperationOutputAlias = crate::operation::DeregisterResource;
 #[doc(hidden)]
-pub type DeregisterResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterResourceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterResource`](crate::operation::DeregisterResource)>
     #[allow(clippy::let_and_return)]
@@ -1788,7 +1788,7 @@ impl DeregisterResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1868,7 +1868,7 @@ impl DeregisterResourceInput {
             "DeregisterResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1926,7 +1926,7 @@ pub mod describe_resource_input {
 #[doc(hidden)]
 pub type DescribeResourceInputOperationOutputAlias = crate::operation::DescribeResource;
 #[doc(hidden)]
-pub type DescribeResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResource`](crate::operation::DescribeResource)>
     #[allow(clippy::let_and_return)]
@@ -1937,7 +1937,7 @@ impl DescribeResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2017,7 +2017,7 @@ impl DescribeResourceInput {
             "DescribeResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2078,7 +2078,7 @@ pub mod describe_transaction_input {
 #[doc(hidden)]
 pub type DescribeTransactionInputOperationOutputAlias = crate::operation::DescribeTransaction;
 #[doc(hidden)]
-pub type DescribeTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTransactionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTransaction`](crate::operation::DescribeTransaction)>
     #[allow(clippy::let_and_return)]
@@ -2089,7 +2089,7 @@ impl DescribeTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2169,7 +2169,7 @@ impl DescribeTransactionInput {
             "DescribeTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2230,7 +2230,7 @@ pub mod extend_transaction_input {
 #[doc(hidden)]
 pub type ExtendTransactionInputOperationOutputAlias = crate::operation::ExtendTransaction;
 #[doc(hidden)]
-pub type ExtendTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExtendTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExtendTransactionInput {
     /// Consumes the builder and constructs an Operation<[`ExtendTransaction`](crate::operation::ExtendTransaction)>
     #[allow(clippy::let_and_return)]
@@ -2241,7 +2241,7 @@ impl ExtendTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExtendTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2321,7 +2321,7 @@ impl ExtendTransactionInput {
             "ExtendTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2379,7 +2379,7 @@ pub mod get_data_lake_settings_input {
 #[doc(hidden)]
 pub type GetDataLakeSettingsInputOperationOutputAlias = crate::operation::GetDataLakeSettings;
 #[doc(hidden)]
-pub type GetDataLakeSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataLakeSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataLakeSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetDataLakeSettings`](crate::operation::GetDataLakeSettings)>
     #[allow(clippy::let_and_return)]
@@ -2390,7 +2390,7 @@ impl GetDataLakeSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataLakeSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2472,7 +2472,7 @@ impl GetDataLakeSettingsInput {
             "GetDataLakeSettings",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2567,7 +2567,8 @@ pub mod get_effective_permissions_for_path_input {
 pub type GetEffectivePermissionsForPathInputOperationOutputAlias =
     crate::operation::GetEffectivePermissionsForPath;
 #[doc(hidden)]
-pub type GetEffectivePermissionsForPathInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEffectivePermissionsForPathInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEffectivePermissionsForPathInput {
     /// Consumes the builder and constructs an Operation<[`GetEffectivePermissionsForPath`](crate::operation::GetEffectivePermissionsForPath)>
     #[allow(clippy::let_and_return)]
@@ -2578,7 +2579,7 @@ impl GetEffectivePermissionsForPathInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEffectivePermissionsForPath,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2659,7 +2660,7 @@ impl GetEffectivePermissionsForPathInput {
             "GetEffectivePermissionsForPath",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2727,7 +2728,7 @@ pub mod get_lf_tag_input {
 #[doc(hidden)]
 pub type GetLfTagInputOperationOutputAlias = crate::operation::GetLFTag;
 #[doc(hidden)]
-pub type GetLfTagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLfTagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLfTagInput {
     /// Consumes the builder and constructs an Operation<[`GetLFTag`](crate::operation::GetLFTag)>
     #[allow(clippy::let_and_return)]
@@ -2738,7 +2739,7 @@ impl GetLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLFTag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2815,7 +2816,7 @@ impl GetLfTagInput {
                     "GetLFTag",
                     "lakeformation",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2873,7 +2874,7 @@ pub mod get_query_state_input {
 #[doc(hidden)]
 pub type GetQueryStateInputOperationOutputAlias = crate::operation::GetQueryState;
 #[doc(hidden)]
-pub type GetQueryStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQueryStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryStateInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryState`](crate::operation::GetQueryState)>
     #[allow(clippy::let_and_return)]
@@ -2884,7 +2885,7 @@ impl GetQueryStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2966,7 +2967,7 @@ impl GetQueryStateInput {
             "GetQueryState",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3024,7 +3025,7 @@ pub mod get_query_statistics_input {
 #[doc(hidden)]
 pub type GetQueryStatisticsInputOperationOutputAlias = crate::operation::GetQueryStatistics;
 #[doc(hidden)]
-pub type GetQueryStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQueryStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryStatistics`](crate::operation::GetQueryStatistics)>
     #[allow(clippy::let_and_return)]
@@ -3035,7 +3036,7 @@ impl GetQueryStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3117,7 +3118,7 @@ impl GetQueryStatisticsInput {
             "GetQueryStatistics",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3199,7 +3200,7 @@ pub mod get_resource_lf_tags_input {
 #[doc(hidden)]
 pub type GetResourceLfTagsInputOperationOutputAlias = crate::operation::GetResourceLFTags;
 #[doc(hidden)]
-pub type GetResourceLfTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceLfTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceLfTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceLFTags`](crate::operation::GetResourceLFTags)>
     #[allow(clippy::let_and_return)]
@@ -3210,7 +3211,7 @@ impl GetResourceLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceLFTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3290,7 +3291,7 @@ impl GetResourceLfTagsInput {
             "GetResourceLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3466,7 +3467,7 @@ pub mod get_table_objects_input {
 #[doc(hidden)]
 pub type GetTableObjectsInputOperationOutputAlias = crate::operation::GetTableObjects;
 #[doc(hidden)]
-pub type GetTableObjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTableObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableObjectsInput {
     /// Consumes the builder and constructs an Operation<[`GetTableObjects`](crate::operation::GetTableObjects)>
     #[allow(clippy::let_and_return)]
@@ -3477,7 +3478,7 @@ impl GetTableObjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTableObjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3557,7 +3558,7 @@ impl GetTableObjectsInput {
             "GetTableObjects",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3642,7 +3643,7 @@ pub mod get_work_unit_results_input {
 #[doc(hidden)]
 pub type GetWorkUnitResultsInputOperationOutputAlias = crate::operation::GetWorkUnitResults;
 #[doc(hidden)]
-pub type GetWorkUnitResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkUnitResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkUnitResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkUnitResults`](crate::operation::GetWorkUnitResults)>
     #[allow(clippy::let_and_return)]
@@ -3653,7 +3654,7 @@ impl GetWorkUnitResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkUnitResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3735,7 +3736,7 @@ impl GetWorkUnitResultsInput {
             "GetWorkUnitResults",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3817,7 +3818,7 @@ pub mod get_work_units_input {
 #[doc(hidden)]
 pub type GetWorkUnitsInputOperationOutputAlias = crate::operation::GetWorkUnits;
 #[doc(hidden)]
-pub type GetWorkUnitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkUnitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkUnitsInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkUnits`](crate::operation::GetWorkUnits)>
     #[allow(clippy::let_and_return)]
@@ -3828,7 +3829,7 @@ impl GetWorkUnitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkUnits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3909,7 +3910,7 @@ impl GetWorkUnitsInput {
             "GetWorkUnits",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4042,7 +4043,7 @@ pub mod grant_permissions_input {
 #[doc(hidden)]
 pub type GrantPermissionsInputOperationOutputAlias = crate::operation::GrantPermissions;
 #[doc(hidden)]
-pub type GrantPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GrantPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GrantPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`GrantPermissions`](crate::operation::GrantPermissions)>
     #[allow(clippy::let_and_return)]
@@ -4053,7 +4054,7 @@ impl GrantPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GrantPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4133,7 +4134,7 @@ impl GrantPermissionsInput {
             "GrantPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4218,7 +4219,7 @@ pub mod list_data_cells_filter_input {
 #[doc(hidden)]
 pub type ListDataCellsFilterInputOperationOutputAlias = crate::operation::ListDataCellsFilter;
 #[doc(hidden)]
-pub type ListDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDataCellsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataCellsFilterInput {
     /// Consumes the builder and constructs an Operation<[`ListDataCellsFilter`](crate::operation::ListDataCellsFilter)>
     #[allow(clippy::let_and_return)]
@@ -4229,7 +4230,7 @@ impl ListDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataCellsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4311,7 +4312,7 @@ impl ListDataCellsFilterInput {
             "ListDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4408,7 +4409,7 @@ pub mod list_lf_tags_input {
 #[doc(hidden)]
 pub type ListLfTagsInputOperationOutputAlias = crate::operation::ListLFTags;
 #[doc(hidden)]
-pub type ListLfTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLfTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLfTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListLFTags`](crate::operation::ListLFTags)>
     #[allow(clippy::let_and_return)]
@@ -4419,7 +4420,7 @@ impl ListLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLFTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4498,7 +4499,7 @@ impl ListLfTagsInput {
             "ListLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4639,7 +4640,7 @@ pub mod list_permissions_input {
 #[doc(hidden)]
 pub type ListPermissionsInputOperationOutputAlias = crate::operation::ListPermissions;
 #[doc(hidden)]
-pub type ListPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
     #[allow(clippy::let_and_return)]
@@ -4650,7 +4651,7 @@ impl ListPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4730,7 +4731,7 @@ impl ListPermissionsInput {
             "ListPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4825,7 +4826,7 @@ pub mod list_resources_input {
 #[doc(hidden)]
 pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
 #[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(clippy::let_and_return)]
@@ -4836,7 +4837,7 @@ impl ListResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4915,7 +4916,7 @@ impl ListResourcesInput {
             "ListResources",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5040,7 +5041,7 @@ pub mod list_table_storage_optimizers_input {
 pub type ListTableStorageOptimizersInputOperationOutputAlias =
     crate::operation::ListTableStorageOptimizers;
 #[doc(hidden)]
-pub type ListTableStorageOptimizersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTableStorageOptimizersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableStorageOptimizersInput {
     /// Consumes the builder and constructs an Operation<[`ListTableStorageOptimizers`](crate::operation::ListTableStorageOptimizers)>
     #[allow(clippy::let_and_return)]
@@ -5051,7 +5052,7 @@ impl ListTableStorageOptimizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTableStorageOptimizers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5132,7 +5133,7 @@ impl ListTableStorageOptimizersInput {
             "ListTableStorageOptimizers",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5229,7 +5230,7 @@ pub mod list_transactions_input {
 #[doc(hidden)]
 pub type ListTransactionsInputOperationOutputAlias = crate::operation::ListTransactions;
 #[doc(hidden)]
-pub type ListTransactionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTransactionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTransactionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTransactions`](crate::operation::ListTransactions)>
     #[allow(clippy::let_and_return)]
@@ -5240,7 +5241,7 @@ impl ListTransactionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTransactions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5320,7 +5321,7 @@ impl ListTransactionsInput {
             "ListTransactions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5393,7 +5394,7 @@ pub mod put_data_lake_settings_input {
 #[doc(hidden)]
 pub type PutDataLakeSettingsInputOperationOutputAlias = crate::operation::PutDataLakeSettings;
 #[doc(hidden)]
-pub type PutDataLakeSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutDataLakeSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDataLakeSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutDataLakeSettings`](crate::operation::PutDataLakeSettings)>
     #[allow(clippy::let_and_return)]
@@ -5404,7 +5405,7 @@ impl PutDataLakeSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDataLakeSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5486,7 +5487,7 @@ impl PutDataLakeSettingsInput {
             "PutDataLakeSettings",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5572,7 +5573,7 @@ pub mod register_resource_input {
 #[doc(hidden)]
 pub type RegisterResourceInputOperationOutputAlias = crate::operation::RegisterResource;
 #[doc(hidden)]
-pub type RegisterResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterResourceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterResource`](crate::operation::RegisterResource)>
     #[allow(clippy::let_and_return)]
@@ -5583,7 +5584,7 @@ impl RegisterResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5663,7 +5664,7 @@ impl RegisterResourceInput {
             "RegisterResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5755,7 +5756,7 @@ pub mod remove_lf_tags_from_resource_input {
 pub type RemoveLfTagsFromResourceInputOperationOutputAlias =
     crate::operation::RemoveLFTagsFromResource;
 #[doc(hidden)]
-pub type RemoveLfTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveLfTagsFromResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveLfTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveLFTagsFromResource`](crate::operation::RemoveLFTagsFromResource)>
     #[allow(clippy::let_and_return)]
@@ -5766,7 +5767,7 @@ impl RemoveLfTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveLFTagsFromResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5848,7 +5849,7 @@ impl RemoveLfTagsFromResourceInput {
             "RemoveLFTagsFromResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5981,7 +5982,7 @@ pub mod revoke_permissions_input {
 #[doc(hidden)]
 pub type RevokePermissionsInputOperationOutputAlias = crate::operation::RevokePermissions;
 #[doc(hidden)]
-pub type RevokePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`RevokePermissions`](crate::operation::RevokePermissions)>
     #[allow(clippy::let_and_return)]
@@ -5992,7 +5993,7 @@ impl RevokePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6072,7 +6073,7 @@ impl RevokePermissionsInput {
             "RevokePermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6176,7 +6177,7 @@ pub mod search_databases_by_lf_tags_input {
 pub type SearchDatabasesByLfTagsInputOperationOutputAlias =
     crate::operation::SearchDatabasesByLFTags;
 #[doc(hidden)]
-pub type SearchDatabasesByLfTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchDatabasesByLfTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchDatabasesByLfTagsInput {
     /// Consumes the builder and constructs an Operation<[`SearchDatabasesByLFTags`](crate::operation::SearchDatabasesByLFTags)>
     #[allow(clippy::let_and_return)]
@@ -6187,7 +6188,7 @@ impl SearchDatabasesByLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchDatabasesByLFTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6269,7 +6270,7 @@ impl SearchDatabasesByLfTagsInput {
             "SearchDatabasesByLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6372,7 +6373,7 @@ pub mod search_tables_by_lf_tags_input {
 #[doc(hidden)]
 pub type SearchTablesByLfTagsInputOperationOutputAlias = crate::operation::SearchTablesByLFTags;
 #[doc(hidden)]
-pub type SearchTablesByLfTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchTablesByLfTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchTablesByLfTagsInput {
     /// Consumes the builder and constructs an Operation<[`SearchTablesByLFTags`](crate::operation::SearchTablesByLFTags)>
     #[allow(clippy::let_and_return)]
@@ -6383,7 +6384,7 @@ impl SearchTablesByLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchTablesByLFTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6465,7 +6466,7 @@ impl SearchTablesByLfTagsInput {
             "SearchTablesByLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6538,7 +6539,7 @@ pub mod start_query_planning_input {
 #[doc(hidden)]
 pub type StartQueryPlanningInputOperationOutputAlias = crate::operation::StartQueryPlanning;
 #[doc(hidden)]
-pub type StartQueryPlanningInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartQueryPlanningInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartQueryPlanningInput {
     /// Consumes the builder and constructs an Operation<[`StartQueryPlanning`](crate::operation::StartQueryPlanning)>
     #[allow(clippy::let_and_return)]
@@ -6549,7 +6550,7 @@ impl StartQueryPlanningInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartQueryPlanning,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6631,7 +6632,7 @@ impl StartQueryPlanningInput {
             "StartQueryPlanning",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6692,7 +6693,7 @@ pub mod start_transaction_input {
 #[doc(hidden)]
 pub type StartTransactionInputOperationOutputAlias = crate::operation::StartTransaction;
 #[doc(hidden)]
-pub type StartTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTransactionInput {
     /// Consumes the builder and constructs an Operation<[`StartTransaction`](crate::operation::StartTransaction)>
     #[allow(clippy::let_and_return)]
@@ -6703,7 +6704,7 @@ impl StartTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6783,7 +6784,7 @@ impl StartTransactionInput {
             "StartTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6895,7 +6896,7 @@ pub mod update_lf_tag_input {
 #[doc(hidden)]
 pub type UpdateLfTagInputOperationOutputAlias = crate::operation::UpdateLFTag;
 #[doc(hidden)]
-pub type UpdateLfTagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLfTagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLfTagInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLFTag`](crate::operation::UpdateLFTag)>
     #[allow(clippy::let_and_return)]
@@ -6906,7 +6907,7 @@ impl UpdateLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLFTag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6985,7 +6986,7 @@ impl UpdateLfTagInput {
             "UpdateLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7055,7 +7056,7 @@ pub mod update_resource_input {
 #[doc(hidden)]
 pub type UpdateResourceInputOperationOutputAlias = crate::operation::UpdateResource;
 #[doc(hidden)]
-pub type UpdateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResource`](crate::operation::UpdateResource)>
     #[allow(clippy::let_and_return)]
@@ -7066,7 +7067,7 @@ impl UpdateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7146,7 +7147,7 @@ impl UpdateResourceInput {
             "UpdateResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7268,7 +7269,7 @@ pub mod update_table_objects_input {
 #[doc(hidden)]
 pub type UpdateTableObjectsInputOperationOutputAlias = crate::operation::UpdateTableObjects;
 #[doc(hidden)]
-pub type UpdateTableObjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableObjectsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTableObjects`](crate::operation::UpdateTableObjects)>
     #[allow(clippy::let_and_return)]
@@ -7279,7 +7280,7 @@ impl UpdateTableObjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableObjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7359,7 +7360,7 @@ impl UpdateTableObjectsInput {
             "UpdateTableObjects",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7480,7 +7481,7 @@ pub mod update_table_storage_optimizer_input {
 pub type UpdateTableStorageOptimizerInputOperationOutputAlias =
     crate::operation::UpdateTableStorageOptimizer;
 #[doc(hidden)]
-pub type UpdateTableStorageOptimizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableStorageOptimizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableStorageOptimizerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTableStorageOptimizer`](crate::operation::UpdateTableStorageOptimizer)>
     #[allow(clippy::let_and_return)]
@@ -7491,7 +7492,7 @@ impl UpdateTableStorageOptimizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableStorageOptimizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7572,7 +7573,7 @@ impl UpdateTableStorageOptimizerInput {
             "UpdateTableStorageOptimizer",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -228,7 +228,7 @@ pub mod create_changeset_input {
 #[doc(hidden)]
 pub type CreateChangesetInputOperationOutputAlias = crate::operation::CreateChangeset;
 #[doc(hidden)]
-pub type CreateChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateChangeset`](crate::operation::CreateChangeset)>
     #[allow(clippy::let_and_return)]
@@ -239,7 +239,7 @@ impl CreateChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -342,7 +342,7 @@ impl CreateChangesetInput {
             "CreateChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -523,7 +523,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -534,7 +534,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -616,7 +616,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -771,7 +771,7 @@ pub mod create_data_view_input {
 #[doc(hidden)]
 pub type CreateDataViewInputOperationOutputAlias = crate::operation::CreateDataView;
 #[doc(hidden)]
-pub type CreateDataViewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataViewInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataView`](crate::operation::CreateDataView)>
     #[allow(clippy::let_and_return)]
@@ -782,7 +782,7 @@ impl CreateDataViewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataView,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -885,7 +885,7 @@ impl CreateDataViewInput {
             "CreateDataView",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -955,7 +955,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -966,7 +966,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1070,7 +1070,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1132,7 +1132,7 @@ pub mod get_changeset_input {
 #[doc(hidden)]
 pub type GetChangesetInputOperationOutputAlias = crate::operation::GetChangeset;
 #[doc(hidden)]
-pub type GetChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChangesetInput {
     /// Consumes the builder and constructs an Operation<[`GetChangeset`](crate::operation::GetChangeset)>
     #[allow(clippy::let_and_return)]
@@ -1143,7 +1143,7 @@ impl GetChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1253,7 +1253,7 @@ impl GetChangesetInput {
             "GetChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1303,7 +1303,7 @@ pub mod get_dataset_input {
 #[doc(hidden)]
 pub type GetDatasetInputOperationOutputAlias = crate::operation::GetDataset;
 #[doc(hidden)]
-pub type GetDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatasetInput {
     /// Consumes the builder and constructs an Operation<[`GetDataset`](crate::operation::GetDataset)>
     #[allow(clippy::let_and_return)]
@@ -1314,7 +1314,7 @@ impl GetDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1404,7 +1404,7 @@ impl GetDatasetInput {
             "GetDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1466,7 +1466,7 @@ pub mod get_data_view_input {
 #[doc(hidden)]
 pub type GetDataViewInputOperationOutputAlias = crate::operation::GetDataView;
 #[doc(hidden)]
-pub type GetDataViewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataViewInput {
     /// Consumes the builder and constructs an Operation<[`GetDataView`](crate::operation::GetDataView)>
     #[allow(clippy::let_and_return)]
@@ -1477,7 +1477,7 @@ impl GetDataViewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataView,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1587,7 +1587,7 @@ impl GetDataViewInput {
             "GetDataView",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1653,7 +1653,8 @@ pub mod get_programmatic_access_credentials_input {
 pub type GetProgrammaticAccessCredentialsInputOperationOutputAlias =
     crate::operation::GetProgrammaticAccessCredentials;
 #[doc(hidden)]
-pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProgrammaticAccessCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetProgrammaticAccessCredentials`](crate::operation::GetProgrammaticAccessCredentials)>
     #[allow(clippy::let_and_return)]
@@ -1664,7 +1665,7 @@ impl GetProgrammaticAccessCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProgrammaticAccessCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1758,7 +1759,7 @@ impl GetProgrammaticAccessCredentialsInput {
             "GetProgrammaticAccessCredentials",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1835,7 +1836,7 @@ pub mod get_working_location_input {
 #[doc(hidden)]
 pub type GetWorkingLocationInputOperationOutputAlias = crate::operation::GetWorkingLocation;
 #[doc(hidden)]
-pub type GetWorkingLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkingLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkingLocationInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkingLocation`](crate::operation::GetWorkingLocation)>
     #[allow(clippy::let_and_return)]
@@ -1846,7 +1847,7 @@ impl GetWorkingLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkingLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1926,7 +1927,7 @@ impl GetWorkingLocationInput {
             "GetWorkingLocation",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2008,7 +2009,7 @@ pub mod list_changesets_input {
 #[doc(hidden)]
 pub type ListChangesetsInputOperationOutputAlias = crate::operation::ListChangesets;
 #[doc(hidden)]
-pub type ListChangesetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChangesetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangesetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangesets`](crate::operation::ListChangesets)>
     #[allow(clippy::let_and_return)]
@@ -2019,7 +2020,7 @@ impl ListChangesetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangesets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2130,7 +2131,7 @@ impl ListChangesetsInput {
             "ListChangesets",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2192,7 +2193,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -2203,7 +2204,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2294,7 +2295,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2368,7 +2369,7 @@ pub mod list_data_views_input {
 #[doc(hidden)]
 pub type ListDataViewsInputOperationOutputAlias = crate::operation::ListDataViews;
 #[doc(hidden)]
-pub type ListDataViewsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDataViewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataViewsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataViews`](crate::operation::ListDataViews)>
     #[allow(clippy::let_and_return)]
@@ -2379,7 +2380,7 @@ impl ListDataViewsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataViews,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2490,7 +2491,7 @@ impl ListDataViewsInput {
             "ListDataViews",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2622,7 +2623,7 @@ pub mod update_changeset_input {
 #[doc(hidden)]
 pub type UpdateChangesetInputOperationOutputAlias = crate::operation::UpdateChangeset;
 #[doc(hidden)]
-pub type UpdateChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChangeset`](crate::operation::UpdateChangeset)>
     #[allow(clippy::let_and_return)]
@@ -2633,7 +2634,7 @@ impl UpdateChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2752,7 +2753,7 @@ impl UpdateChangesetInput {
             "UpdateChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2911,7 +2912,7 @@ pub mod update_dataset_input {
 #[doc(hidden)]
 pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
 #[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(clippy::let_and_return)]
@@ -2922,7 +2923,7 @@ impl UpdateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3020,7 +3021,7 @@ impl UpdateDatasetInput {
             "UpdateDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

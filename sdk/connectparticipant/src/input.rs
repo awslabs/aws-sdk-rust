@@ -74,7 +74,7 @@ pub mod complete_attachment_upload_input {
 pub type CompleteAttachmentUploadInputOperationOutputAlias =
     crate::operation::CompleteAttachmentUpload;
 #[doc(hidden)]
-pub type CompleteAttachmentUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CompleteAttachmentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteAttachmentUpload`](crate::operation::CompleteAttachmentUpload)>
     #[allow(clippy::let_and_return)]
@@ -85,7 +85,7 @@ impl CompleteAttachmentUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteAttachmentUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -195,7 +195,7 @@ impl CompleteAttachmentUploadInput {
             "CompleteAttachmentUpload",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -296,7 +296,7 @@ pub mod create_participant_connection_input {
 pub type CreateParticipantConnectionInputOperationOutputAlias =
     crate::operation::CreateParticipantConnection;
 #[doc(hidden)]
-pub type CreateParticipantConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateParticipantConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParticipantConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateParticipantConnection`](crate::operation::CreateParticipantConnection)>
     #[allow(clippy::let_and_return)]
@@ -307,7 +307,7 @@ impl CreateParticipantConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateParticipantConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -412,7 +412,7 @@ impl CreateParticipantConnectionInput {
             "CreateParticipantConnection",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -487,7 +487,7 @@ pub mod disconnect_participant_input {
 #[doc(hidden)]
 pub type DisconnectParticipantInputOperationOutputAlias = crate::operation::DisconnectParticipant;
 #[doc(hidden)]
-pub type DisconnectParticipantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisconnectParticipantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectParticipantInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectParticipant`](crate::operation::DisconnectParticipant)>
     #[allow(clippy::let_and_return)]
@@ -498,7 +498,7 @@ impl DisconnectParticipantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisconnectParticipant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -607,7 +607,7 @@ impl DisconnectParticipantInput {
             "DisconnectParticipant",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -683,7 +683,7 @@ pub mod get_attachment_input {
 #[doc(hidden)]
 pub type GetAttachmentInputOperationOutputAlias = crate::operation::GetAttachment;
 #[doc(hidden)]
-pub type GetAttachmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAttachment`](crate::operation::GetAttachment)>
     #[allow(clippy::let_and_return)]
@@ -694,7 +694,7 @@ impl GetAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAttachment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -797,7 +797,7 @@ impl GetAttachmentInput {
             "GetAttachment",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -940,7 +940,7 @@ pub mod get_transcript_input {
 #[doc(hidden)]
 pub type GetTranscriptInputOperationOutputAlias = crate::operation::GetTranscript;
 #[doc(hidden)]
-pub type GetTranscriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTranscriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTranscriptInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscript`](crate::operation::GetTranscript)>
     #[allow(clippy::let_and_return)]
@@ -951,7 +951,7 @@ impl GetTranscriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTranscript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1054,7 @@ impl GetTranscriptInput {
             "GetTranscript",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1171,7 +1171,7 @@ pub mod send_event_input {
 #[doc(hidden)]
 pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
 #[doc(hidden)]
-pub type SendEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(clippy::let_and_return)]
@@ -1182,7 +1182,7 @@ impl SendEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1286,7 +1286,7 @@ impl SendEventInput {
                     "SendEvent",
                     "connectparticipant",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1385,7 +1385,7 @@ pub mod send_message_input {
 #[doc(hidden)]
 pub type SendMessageInputOperationOutputAlias = crate::operation::SendMessage;
 #[doc(hidden)]
-pub type SendMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendMessage`](crate::operation::SendMessage)>
     #[allow(clippy::let_and_return)]
@@ -1396,7 +1396,7 @@ impl SendMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1502,7 +1502,7 @@ impl SendMessageInput {
             "SendMessage",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1614,7 +1614,7 @@ pub mod start_attachment_upload_input {
 #[doc(hidden)]
 pub type StartAttachmentUploadInputOperationOutputAlias = crate::operation::StartAttachmentUpload;
 #[doc(hidden)]
-pub type StartAttachmentUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAttachmentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`StartAttachmentUpload`](crate::operation::StartAttachmentUpload)>
     #[allow(clippy::let_and_return)]
@@ -1625,7 +1625,7 @@ impl StartAttachmentUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAttachmentUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1735,7 +1735,7 @@ impl StartAttachmentUploadInput {
             "StartAttachmentUpload",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

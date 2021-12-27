@@ -157,7 +157,7 @@ pub mod batch_execute_statement_input {
 #[doc(hidden)]
 pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
 #[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -168,7 +168,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -250,7 +250,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -344,7 +344,7 @@ pub mod begin_transaction_input {
 #[doc(hidden)]
 pub type BeginTransactionInputOperationOutputAlias = crate::operation::BeginTransaction;
 #[doc(hidden)]
-pub type BeginTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BeginTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BeginTransactionInput {
     /// Consumes the builder and constructs an Operation<[`BeginTransaction`](crate::operation::BeginTransaction)>
     #[allow(clippy::let_and_return)]
@@ -355,7 +355,7 @@ impl BeginTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BeginTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -435,7 +435,7 @@ impl BeginTransactionInput {
             "BeginTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -520,7 +520,7 @@ pub mod commit_transaction_input {
 #[doc(hidden)]
 pub type CommitTransactionInputOperationOutputAlias = crate::operation::CommitTransaction;
 #[doc(hidden)]
-pub type CommitTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CommitTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CommitTransactionInput {
     /// Consumes the builder and constructs an Operation<[`CommitTransaction`](crate::operation::CommitTransaction)>
     #[allow(clippy::let_and_return)]
@@ -531,7 +531,7 @@ impl CommitTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -611,7 +611,7 @@ impl CommitTransactionInput {
             "CommitTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -732,7 +732,7 @@ pub mod execute_sql_input {
 #[doc(hidden)]
 pub type ExecuteSqlInputOperationOutputAlias = crate::operation::ExecuteSql;
 #[doc(hidden)]
-pub type ExecuteSqlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteSqlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteSqlInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteSql`](crate::operation::ExecuteSql)>
     #[allow(clippy::let_and_return)]
@@ -743,7 +743,7 @@ impl ExecuteSqlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteSql,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -822,7 +822,7 @@ impl ExecuteSqlInput {
             "ExecuteSql",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1035,7 +1035,7 @@ pub mod execute_statement_input {
 #[doc(hidden)]
 pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
 #[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -1046,7 +1046,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1126,7 +1126,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1211,7 +1211,7 @@ pub mod rollback_transaction_input {
 #[doc(hidden)]
 pub type RollbackTransactionInputOperationOutputAlias = crate::operation::RollbackTransaction;
 #[doc(hidden)]
-pub type RollbackTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RollbackTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RollbackTransactionInput {
     /// Consumes the builder and constructs an Operation<[`RollbackTransaction`](crate::operation::RollbackTransaction)>
     #[allow(clippy::let_and_return)]
@@ -1222,7 +1222,7 @@ impl RollbackTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RollbackTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1302,7 +1302,7 @@ impl RollbackTransactionInput {
             "RollbackTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

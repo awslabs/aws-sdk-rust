@@ -57,7 +57,7 @@ pub mod batch_associate_scram_secret_input {
 pub type BatchAssociateScramSecretInputOperationOutputAlias =
     crate::operation::BatchAssociateScramSecret;
 #[doc(hidden)]
-pub type BatchAssociateScramSecretInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchAssociateScramSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateScramSecretInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateScramSecret`](crate::operation::BatchAssociateScramSecret)>
     #[allow(clippy::let_and_return)]
@@ -68,7 +68,7 @@ impl BatchAssociateScramSecretInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateScramSecret,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -170,7 +170,7 @@ impl BatchAssociateScramSecretInput {
             "BatchAssociateScramSecret",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -250,7 +250,8 @@ pub mod batch_disassociate_scram_secret_input {
 pub type BatchDisassociateScramSecretInputOperationOutputAlias =
     crate::operation::BatchDisassociateScramSecret;
 #[doc(hidden)]
-pub type BatchDisassociateScramSecretInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisassociateScramSecretInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateScramSecretInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateScramSecret`](crate::operation::BatchDisassociateScramSecret)>
     #[allow(clippy::let_and_return)]
@@ -261,7 +262,7 @@ impl BatchDisassociateScramSecretInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateScramSecret,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -362,7 +363,7 @@ impl BatchDisassociateScramSecretInput {
             "BatchDisassociateScramSecret",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -581,7 +582,7 @@ pub mod create_cluster_input {
 #[doc(hidden)]
 pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
 #[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
@@ -592,7 +593,7 @@ impl CreateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -671,7 +672,7 @@ impl CreateClusterInput {
             "CreateCluster",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -788,7 +789,7 @@ pub mod create_cluster_v2_input {
 #[doc(hidden)]
 pub type CreateClusterV2InputOperationOutputAlias = crate::operation::CreateClusterV2;
 #[doc(hidden)]
-pub type CreateClusterV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterV2Input {
     /// Consumes the builder and constructs an Operation<[`CreateClusterV2`](crate::operation::CreateClusterV2)>
     #[allow(clippy::let_and_return)]
@@ -799,7 +800,7 @@ impl CreateClusterV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateClusterV2,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -879,7 +880,7 @@ impl CreateClusterV2Input {
             "CreateClusterV2",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -987,7 +988,7 @@ pub mod create_configuration_input {
 #[doc(hidden)]
 pub type CreateConfigurationInputOperationOutputAlias = crate::operation::CreateConfiguration;
 #[doc(hidden)]
-pub type CreateConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfiguration`](crate::operation::CreateConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -998,7 +999,7 @@ impl CreateConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1078,7 +1079,7 @@ impl CreateConfigurationInput {
             "CreateConfiguration",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1151,7 +1152,7 @@ pub mod delete_cluster_input {
 #[doc(hidden)]
 pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
 #[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(clippy::let_and_return)]
@@ -1162,7 +1163,7 @@ impl DeleteClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1270,7 +1271,7 @@ impl DeleteClusterInput {
             "DeleteCluster",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1318,7 +1319,7 @@ pub mod delete_configuration_input {
 #[doc(hidden)]
 pub type DeleteConfigurationInputOperationOutputAlias = crate::operation::DeleteConfiguration;
 #[doc(hidden)]
-pub type DeleteConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfiguration`](crate::operation::DeleteConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1329,7 +1330,7 @@ impl DeleteConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1419,7 +1420,7 @@ impl DeleteConfigurationInput {
             "DeleteConfiguration",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1469,7 +1470,7 @@ pub mod describe_cluster_input {
 #[doc(hidden)]
 pub type DescribeClusterInputOperationOutputAlias = crate::operation::DescribeCluster;
 #[doc(hidden)]
-pub type DescribeClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(clippy::let_and_return)]
@@ -1480,7 +1481,7 @@ impl DescribeClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1574,7 +1575,7 @@ impl DescribeClusterInput {
             "DescribeCluster",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1628,7 +1629,7 @@ pub mod describe_cluster_operation_input {
 pub type DescribeClusterOperationInputOperationOutputAlias =
     crate::operation::DescribeClusterOperation;
 #[doc(hidden)]
-pub type DescribeClusterOperationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterOperationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterOperationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterOperation`](crate::operation::DescribeClusterOperation)>
     #[allow(clippy::let_and_return)]
@@ -1639,7 +1640,7 @@ impl DescribeClusterOperationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClusterOperation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1733,7 +1734,7 @@ impl DescribeClusterOperationInput {
             "DescribeClusterOperation",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1783,7 +1784,7 @@ pub mod describe_cluster_v2_input {
 #[doc(hidden)]
 pub type DescribeClusterV2InputOperationOutputAlias = crate::operation::DescribeClusterV2;
 #[doc(hidden)]
-pub type DescribeClusterV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterV2Input {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterV2`](crate::operation::DescribeClusterV2)>
     #[allow(clippy::let_and_return)]
@@ -1794,7 +1795,7 @@ impl DescribeClusterV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClusterV2,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1888,7 +1889,7 @@ impl DescribeClusterV2Input {
             "DescribeClusterV2",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1936,7 +1937,7 @@ pub mod describe_configuration_input {
 #[doc(hidden)]
 pub type DescribeConfigurationInputOperationOutputAlias = crate::operation::DescribeConfiguration;
 #[doc(hidden)]
-pub type DescribeConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfiguration`](crate::operation::DescribeConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1947,7 +1948,7 @@ impl DescribeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2037,7 +2038,7 @@ impl DescribeConfigurationInput {
             "DescribeConfiguration",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2100,7 +2101,8 @@ pub mod describe_configuration_revision_input {
 pub type DescribeConfigurationRevisionInputOperationOutputAlias =
     crate::operation::DescribeConfigurationRevision;
 #[doc(hidden)]
-pub type DescribeConfigurationRevisionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationRevisionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRevisionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRevision`](crate::operation::DescribeConfigurationRevision)>
     #[allow(clippy::let_and_return)]
@@ -2111,7 +2113,7 @@ impl DescribeConfigurationRevisionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRevision,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2215,7 +2217,7 @@ impl DescribeConfigurationRevisionInput {
             "DescribeConfigurationRevision",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2265,7 +2267,7 @@ pub mod get_bootstrap_brokers_input {
 #[doc(hidden)]
 pub type GetBootstrapBrokersInputOperationOutputAlias = crate::operation::GetBootstrapBrokers;
 #[doc(hidden)]
-pub type GetBootstrapBrokersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBootstrapBrokersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBootstrapBrokersInput {
     /// Consumes the builder and constructs an Operation<[`GetBootstrapBrokers`](crate::operation::GetBootstrapBrokers)>
     #[allow(clippy::let_and_return)]
@@ -2276,7 +2278,7 @@ impl GetBootstrapBrokersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBootstrapBrokers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2370,7 +2372,7 @@ impl GetBootstrapBrokersInput {
             "GetBootstrapBrokers",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2421,7 +2423,7 @@ pub mod get_compatible_kafka_versions_input {
 pub type GetCompatibleKafkaVersionsInputOperationOutputAlias =
     crate::operation::GetCompatibleKafkaVersions;
 #[doc(hidden)]
-pub type GetCompatibleKafkaVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCompatibleKafkaVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCompatibleKafkaVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetCompatibleKafkaVersions`](crate::operation::GetCompatibleKafkaVersions)>
     #[allow(clippy::let_and_return)]
@@ -2432,7 +2434,7 @@ impl GetCompatibleKafkaVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCompatibleKafkaVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2517,7 +2519,7 @@ impl GetCompatibleKafkaVersionsInput {
             "GetCompatibleKafkaVersions",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2593,7 +2595,7 @@ pub mod list_cluster_operations_input {
 #[doc(hidden)]
 pub type ListClusterOperationsInputOperationOutputAlias = crate::operation::ListClusterOperations;
 #[doc(hidden)]
-pub type ListClusterOperationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClusterOperationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClusterOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListClusterOperations`](crate::operation::ListClusterOperations)>
     #[allow(clippy::let_and_return)]
@@ -2604,7 +2606,7 @@ impl ListClusterOperationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusterOperations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2715,7 +2717,7 @@ impl ListClusterOperationsInput {
             "ListClusterOperations",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2794,7 +2796,7 @@ pub mod list_clusters_input {
 #[doc(hidden)]
 pub type ListClustersInputOperationOutputAlias = crate::operation::ListClusters;
 #[doc(hidden)]
-pub type ListClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(clippy::let_and_return)]
@@ -2805,7 +2807,7 @@ impl ListClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2902,7 +2904,7 @@ impl ListClustersInput {
             "ListClusters",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2996,7 +2998,7 @@ pub mod list_clusters_v2_input {
 #[doc(hidden)]
 pub type ListClustersV2InputOperationOutputAlias = crate::operation::ListClustersV2;
 #[doc(hidden)]
-pub type ListClustersV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClustersV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersV2Input {
     /// Consumes the builder and constructs an Operation<[`ListClustersV2`](crate::operation::ListClustersV2)>
     #[allow(clippy::let_and_return)]
@@ -3007,7 +3009,7 @@ impl ListClustersV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClustersV2,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3110,7 +3112,7 @@ impl ListClustersV2Input {
             "ListClustersV2",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3187,7 +3189,7 @@ pub mod list_configuration_revisions_input {
 pub type ListConfigurationRevisionsInputOperationOutputAlias =
     crate::operation::ListConfigurationRevisions;
 #[doc(hidden)]
-pub type ListConfigurationRevisionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConfigurationRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationRevisions`](crate::operation::ListConfigurationRevisions)>
     #[allow(clippy::let_and_return)]
@@ -3198,7 +3200,7 @@ impl ListConfigurationRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationRevisions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3305,7 +3307,7 @@ impl ListConfigurationRevisionsInput {
             "ListConfigurationRevisions",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3369,7 +3371,7 @@ pub mod list_configurations_input {
 #[doc(hidden)]
 pub type ListConfigurationsInputOperationOutputAlias = crate::operation::ListConfigurations;
 #[doc(hidden)]
-pub type ListConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurations`](crate::operation::ListConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -3380,7 +3382,7 @@ impl ListConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3471,7 +3473,7 @@ impl ListConfigurationsInput {
             "ListConfigurations",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3533,7 +3535,7 @@ pub mod list_kafka_versions_input {
 #[doc(hidden)]
 pub type ListKafkaVersionsInputOperationOutputAlias = crate::operation::ListKafkaVersions;
 #[doc(hidden)]
-pub type ListKafkaVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListKafkaVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKafkaVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListKafkaVersions`](crate::operation::ListKafkaVersions)>
     #[allow(clippy::let_and_return)]
@@ -3544,7 +3546,7 @@ impl ListKafkaVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKafkaVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3635,7 +3637,7 @@ impl ListKafkaVersionsInput {
             "ListKafkaVersions",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3709,7 +3711,7 @@ pub mod list_nodes_input {
 #[doc(hidden)]
 pub type ListNodesInputOperationOutputAlias = crate::operation::ListNodes;
 #[doc(hidden)]
-pub type ListNodesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListNodes`](crate::operation::ListNodes)>
     #[allow(clippy::let_and_return)]
@@ -3720,7 +3722,7 @@ impl ListNodesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNodes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3829,7 +3831,7 @@ impl ListNodesInput {
                     "ListNodes",
                     "kafka",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3903,7 +3905,7 @@ pub mod list_scram_secrets_input {
 #[doc(hidden)]
 pub type ListScramSecretsInputOperationOutputAlias = crate::operation::ListScramSecrets;
 #[doc(hidden)]
-pub type ListScramSecretsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListScramSecretsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListScramSecretsInput {
     /// Consumes the builder and constructs an Operation<[`ListScramSecrets`](crate::operation::ListScramSecrets)>
     #[allow(clippy::let_and_return)]
@@ -3914,7 +3916,7 @@ impl ListScramSecretsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListScramSecrets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4025,7 +4027,7 @@ impl ListScramSecretsInput {
             "ListScramSecrets",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4075,7 +4077,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4086,7 +4088,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4176,7 +4178,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4247,7 +4249,7 @@ pub mod reboot_broker_input {
 #[doc(hidden)]
 pub type RebootBrokerInputOperationOutputAlias = crate::operation::RebootBroker;
 #[doc(hidden)]
-pub type RebootBrokerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebootBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootBrokerInput {
     /// Consumes the builder and constructs an Operation<[`RebootBroker`](crate::operation::RebootBroker)>
     #[allow(clippy::let_and_return)]
@@ -4258,7 +4260,7 @@ impl RebootBrokerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebootBroker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4357,7 +4359,7 @@ impl RebootBrokerInput {
             "RebootBroker",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4444,7 +4446,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4455,7 +4457,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4550,7 +4552,7 @@ impl TagResourceInput {
             "TagResource",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4667,7 +4669,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4678,7 +4680,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4781,7 +4783,7 @@ impl UntagResourceInput {
             "UntagResource",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4863,7 +4865,7 @@ pub mod update_broker_count_input {
 #[doc(hidden)]
 pub type UpdateBrokerCountInputOperationOutputAlias = crate::operation::UpdateBrokerCount;
 #[doc(hidden)]
-pub type UpdateBrokerCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBrokerCountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrokerCountInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBrokerCount`](crate::operation::UpdateBrokerCount)>
     #[allow(clippy::let_and_return)]
@@ -4874,7 +4876,7 @@ impl UpdateBrokerCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBrokerCount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4974,7 +4976,7 @@ impl UpdateBrokerCountInput {
             "UpdateBrokerCount",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5072,7 +5074,7 @@ pub mod update_broker_storage_input {
 #[doc(hidden)]
 pub type UpdateBrokerStorageInputOperationOutputAlias = crate::operation::UpdateBrokerStorage;
 #[doc(hidden)]
-pub type UpdateBrokerStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBrokerStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrokerStorageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBrokerStorage`](crate::operation::UpdateBrokerStorage)>
     #[allow(clippy::let_and_return)]
@@ -5083,7 +5085,7 @@ impl UpdateBrokerStorageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBrokerStorage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5183,7 +5185,7 @@ impl UpdateBrokerStorageInput {
             "UpdateBrokerStorage",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5271,7 +5273,7 @@ pub mod update_broker_type_input {
 #[doc(hidden)]
 pub type UpdateBrokerTypeInputOperationOutputAlias = crate::operation::UpdateBrokerType;
 #[doc(hidden)]
-pub type UpdateBrokerTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBrokerTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrokerTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBrokerType`](crate::operation::UpdateBrokerType)>
     #[allow(clippy::let_and_return)]
@@ -5282,7 +5284,7 @@ impl UpdateBrokerTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBrokerType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5382,7 +5384,7 @@ impl UpdateBrokerTypeInput {
             "UpdateBrokerType",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5471,7 +5473,7 @@ pub mod update_cluster_configuration_input {
 pub type UpdateClusterConfigurationInputOperationOutputAlias =
     crate::operation::UpdateClusterConfiguration;
 #[doc(hidden)]
-pub type UpdateClusterConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClusterConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClusterConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateClusterConfiguration`](crate::operation::UpdateClusterConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5482,7 +5484,7 @@ impl UpdateClusterConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateClusterConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5584,7 +5586,7 @@ impl UpdateClusterConfigurationInput {
             "UpdateClusterConfiguration",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5688,7 +5690,7 @@ pub mod update_cluster_kafka_version_input {
 pub type UpdateClusterKafkaVersionInputOperationOutputAlias =
     crate::operation::UpdateClusterKafkaVersion;
 #[doc(hidden)]
-pub type UpdateClusterKafkaVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClusterKafkaVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClusterKafkaVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateClusterKafkaVersion`](crate::operation::UpdateClusterKafkaVersion)>
     #[allow(clippy::let_and_return)]
@@ -5699,7 +5701,7 @@ impl UpdateClusterKafkaVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateClusterKafkaVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5801,7 +5803,7 @@ impl UpdateClusterKafkaVersionInput {
             "UpdateClusterKafkaVersion",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5888,7 +5890,7 @@ pub mod update_configuration_input {
 #[doc(hidden)]
 pub type UpdateConfigurationInputOperationOutputAlias = crate::operation::UpdateConfiguration;
 #[doc(hidden)]
-pub type UpdateConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfiguration`](crate::operation::UpdateConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5899,7 +5901,7 @@ impl UpdateConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5995,7 +5997,7 @@ impl UpdateConfigurationInput {
             "UpdateConfiguration",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6083,7 +6085,7 @@ pub mod update_connectivity_input {
 #[doc(hidden)]
 pub type UpdateConnectivityInputOperationOutputAlias = crate::operation::UpdateConnectivity;
 #[doc(hidden)]
-pub type UpdateConnectivityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectivityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectivity`](crate::operation::UpdateConnectivity)>
     #[allow(clippy::let_and_return)]
@@ -6094,7 +6096,7 @@ impl UpdateConnectivityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnectivity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6194,7 +6196,7 @@ impl UpdateConnectivityInput {
             "UpdateConnectivity",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6312,7 +6314,7 @@ pub mod update_monitoring_input {
 #[doc(hidden)]
 pub type UpdateMonitoringInputOperationOutputAlias = crate::operation::UpdateMonitoring;
 #[doc(hidden)]
-pub type UpdateMonitoringInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMonitoringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMonitoringInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMonitoring`](crate::operation::UpdateMonitoring)>
     #[allow(clippy::let_and_return)]
@@ -6323,7 +6325,7 @@ impl UpdateMonitoringInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMonitoring,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6423,7 +6425,7 @@ impl UpdateMonitoringInput {
             "UpdateMonitoring",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6526,7 +6528,7 @@ pub mod update_security_input {
 #[doc(hidden)]
 pub type UpdateSecurityInputOperationOutputAlias = crate::operation::UpdateSecurity;
 #[doc(hidden)]
-pub type UpdateSecurityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSecurityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSecurityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSecurity`](crate::operation::UpdateSecurity)>
     #[allow(clippy::let_and_return)]
@@ -6537,7 +6539,7 @@ impl UpdateSecurityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSecurity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6637,7 +6639,7 @@ impl UpdateSecurityInput {
             "UpdateSecurity",
             "kafka",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

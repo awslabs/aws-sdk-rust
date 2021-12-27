@@ -38,7 +38,7 @@ pub mod get_routing_control_state_input {
 #[doc(hidden)]
 pub type GetRoutingControlStateInputOperationOutputAlias = crate::operation::GetRoutingControlState;
 #[doc(hidden)]
-pub type GetRoutingControlStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRoutingControlStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`GetRoutingControlState`](crate::operation::GetRoutingControlState)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl GetRoutingControlStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoutingControlState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -136,7 +136,7 @@ impl GetRoutingControlStateInput {
             "GetRoutingControlState",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -213,7 +213,7 @@ pub mod update_routing_control_state_input {
 pub type UpdateRoutingControlStateInputOperationOutputAlias =
     crate::operation::UpdateRoutingControlState;
 #[doc(hidden)]
-pub type UpdateRoutingControlStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRoutingControlStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlState`](crate::operation::UpdateRoutingControlState)>
     #[allow(clippy::let_and_return)]
@@ -224,7 +224,7 @@ impl UpdateRoutingControlStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoutingControlState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -311,7 +311,7 @@ impl UpdateRoutingControlStateInput {
             "UpdateRoutingControlState",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -385,7 +385,7 @@ pub mod update_routing_control_states_input {
 pub type UpdateRoutingControlStatesInputOperationOutputAlias =
     crate::operation::UpdateRoutingControlStates;
 #[doc(hidden)]
-pub type UpdateRoutingControlStatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRoutingControlStatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlStatesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlStates`](crate::operation::UpdateRoutingControlStates)>
     #[allow(clippy::let_and_return)]
@@ -396,7 +396,7 @@ impl UpdateRoutingControlStatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoutingControlStates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -482,7 +482,7 @@ impl UpdateRoutingControlStatesInput {
             "UpdateRoutingControlStates",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -102,7 +102,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -113,7 +113,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -200,7 +200,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -427,7 +427,7 @@ pub mod create_inference_scheduler_input {
 pub type CreateInferenceSchedulerInputOperationOutputAlias =
     crate::operation::CreateInferenceScheduler;
 #[doc(hidden)]
-pub type CreateInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`CreateInferenceScheduler`](crate::operation::CreateInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -438,7 +438,7 @@ impl CreateInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -528,7 +528,7 @@ impl CreateInferenceSchedulerInput {
             "CreateInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -820,7 +820,7 @@ pub mod create_model_input {
 #[doc(hidden)]
 pub type CreateModelInputOperationOutputAlias = crate::operation::CreateModel;
 #[doc(hidden)]
-pub type CreateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(clippy::let_and_return)]
@@ -831,7 +831,7 @@ impl CreateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -918,7 +918,7 @@ impl CreateModelInput {
             "CreateModel",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -976,7 +976,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +987,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1071,7 +1071,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1133,7 +1133,7 @@ pub mod delete_inference_scheduler_input {
 pub type DeleteInferenceSchedulerInputOperationOutputAlias =
     crate::operation::DeleteInferenceScheduler;
 #[doc(hidden)]
-pub type DeleteInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInferenceScheduler`](crate::operation::DeleteInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -1144,7 +1144,7 @@ impl DeleteInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1231,7 +1231,7 @@ impl DeleteInferenceSchedulerInput {
             "DeleteInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1289,7 +1289,7 @@ pub mod delete_model_input {
 #[doc(hidden)]
 pub type DeleteModelInputOperationOutputAlias = crate::operation::DeleteModel;
 #[doc(hidden)]
-pub type DeleteModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(clippy::let_and_return)]
@@ -1300,7 +1300,7 @@ impl DeleteModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1384,7 +1384,7 @@ impl DeleteModelInput {
             "DeleteModel",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1443,7 +1443,7 @@ pub mod describe_data_ingestion_job_input {
 pub type DescribeDataIngestionJobInputOperationOutputAlias =
     crate::operation::DescribeDataIngestionJob;
 #[doc(hidden)]
-pub type DescribeDataIngestionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDataIngestionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataIngestionJob`](crate::operation::DescribeDataIngestionJob)>
     #[allow(clippy::let_and_return)]
@@ -1454,7 +1454,7 @@ impl DescribeDataIngestionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataIngestionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1541,7 +1541,7 @@ impl DescribeDataIngestionJobInput {
             "DescribeDataIngestionJob",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1599,7 +1599,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -1610,7 +1610,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1695,7 +1695,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1757,7 +1757,7 @@ pub mod describe_inference_scheduler_input {
 pub type DescribeInferenceSchedulerInputOperationOutputAlias =
     crate::operation::DescribeInferenceScheduler;
 #[doc(hidden)]
-pub type DescribeInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInferenceScheduler`](crate::operation::DescribeInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -1768,7 +1768,7 @@ impl DescribeInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1855,7 +1855,7 @@ impl DescribeInferenceSchedulerInput {
             "DescribeInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1913,7 +1913,7 @@ pub mod describe_model_input {
 #[doc(hidden)]
 pub type DescribeModelInputOperationOutputAlias = crate::operation::DescribeModel;
 #[doc(hidden)]
-pub type DescribeModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModel`](crate::operation::DescribeModel)>
     #[allow(clippy::let_and_return)]
@@ -1924,7 +1924,7 @@ impl DescribeModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2008,7 +2008,7 @@ impl DescribeModelInput {
             "DescribeModel",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2107,7 +2107,7 @@ pub mod list_data_ingestion_jobs_input {
 #[doc(hidden)]
 pub type ListDataIngestionJobsInputOperationOutputAlias = crate::operation::ListDataIngestionJobs;
 #[doc(hidden)]
-pub type ListDataIngestionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDataIngestionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataIngestionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIngestionJobs`](crate::operation::ListDataIngestionJobs)>
     #[allow(clippy::let_and_return)]
@@ -2118,7 +2118,7 @@ impl ListDataIngestionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataIngestionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2205,7 +2205,7 @@ impl ListDataIngestionJobsInput {
             "ListDataIngestionJobs",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2292,7 +2292,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -2303,7 +2303,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2387,7 +2387,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2524,7 +2524,7 @@ pub mod list_inference_executions_input {
 pub type ListInferenceExecutionsInputOperationOutputAlias =
     crate::operation::ListInferenceExecutions;
 #[doc(hidden)]
-pub type ListInferenceExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInferenceExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInferenceExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceExecutions`](crate::operation::ListInferenceExecutions)>
     #[allow(clippy::let_and_return)]
@@ -2535,7 +2535,7 @@ impl ListInferenceExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInferenceExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2622,7 +2622,7 @@ impl ListInferenceExecutionsInput {
             "ListInferenceExecutions",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2725,7 +2725,7 @@ pub mod list_inference_schedulers_input {
 pub type ListInferenceSchedulersInputOperationOutputAlias =
     crate::operation::ListInferenceSchedulers;
 #[doc(hidden)]
-pub type ListInferenceSchedulersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInferenceSchedulersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInferenceSchedulersInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceSchedulers`](crate::operation::ListInferenceSchedulers)>
     #[allow(clippy::let_and_return)]
@@ -2736,7 +2736,7 @@ impl ListInferenceSchedulersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInferenceSchedulers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2823,7 +2823,7 @@ impl ListInferenceSchedulersInput {
             "ListInferenceSchedulers",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2937,7 +2937,7 @@ pub mod list_models_input {
 #[doc(hidden)]
 pub type ListModelsInputOperationOutputAlias = crate::operation::ListModels;
 #[doc(hidden)]
-pub type ListModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListModels`](crate::operation::ListModels)>
     #[allow(clippy::let_and_return)]
@@ -2948,7 +2948,7 @@ impl ListModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3032,7 +3032,7 @@ impl ListModelsInput {
             "ListModels",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3092,7 +3092,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3103,7 +3103,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3190,7 +3190,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3297,7 +3297,7 @@ pub mod start_data_ingestion_job_input {
 #[doc(hidden)]
 pub type StartDataIngestionJobInputOperationOutputAlias = crate::operation::StartDataIngestionJob;
 #[doc(hidden)]
-pub type StartDataIngestionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDataIngestionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDataIngestionJob`](crate::operation::StartDataIngestionJob)>
     #[allow(clippy::let_and_return)]
@@ -3308,7 +3308,7 @@ impl StartDataIngestionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDataIngestionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3398,7 +3398,7 @@ impl StartDataIngestionJobInput {
             "StartDataIngestionJob",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3460,7 +3460,7 @@ pub mod start_inference_scheduler_input {
 pub type StartInferenceSchedulerInputOperationOutputAlias =
     crate::operation::StartInferenceScheduler;
 #[doc(hidden)]
-pub type StartInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StartInferenceScheduler`](crate::operation::StartInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -3471,7 +3471,7 @@ impl StartInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3558,7 +3558,7 @@ impl StartInferenceSchedulerInput {
             "StartInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3619,7 +3619,7 @@ pub mod stop_inference_scheduler_input {
 #[doc(hidden)]
 pub type StopInferenceSchedulerInputOperationOutputAlias = crate::operation::StopInferenceScheduler;
 #[doc(hidden)]
-pub type StopInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StopInferenceScheduler`](crate::operation::StopInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -3630,7 +3630,7 @@ impl StopInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3717,7 +3717,7 @@ impl StopInferenceSchedulerInput {
             "StopInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3800,7 +3800,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3811,7 +3811,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3895,7 +3895,7 @@ impl TagResourceInput {
             "TagResource",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3976,7 +3976,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3987,7 +3987,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4071,7 +4071,7 @@ impl UntagResourceInput {
             "UntagResource",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4232,7 +4232,7 @@ pub mod update_inference_scheduler_input {
 pub type UpdateInferenceSchedulerInputOperationOutputAlias =
     crate::operation::UpdateInferenceScheduler;
 #[doc(hidden)]
-pub type UpdateInferenceSchedulerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInferenceScheduler`](crate::operation::UpdateInferenceScheduler)>
     #[allow(clippy::let_and_return)]
@@ -4243,7 +4243,7 @@ impl UpdateInferenceSchedulerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInferenceScheduler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4330,7 +4330,7 @@ impl UpdateInferenceSchedulerInput {
             "UpdateInferenceScheduler",
             "lookoutequipment",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -98,7 +98,8 @@ pub mod delete_recommendation_preferences_input {
 pub type DeleteRecommendationPreferencesInputOperationOutputAlias =
     crate::operation::DeleteRecommendationPreferences;
 #[doc(hidden)]
-pub type DeleteRecommendationPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecommendationPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecommendationPreferences`](crate::operation::DeleteRecommendationPreferences)>
     #[allow(clippy::let_and_return)]
@@ -109,7 +110,7 @@ impl DeleteRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecommendationPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -195,7 +196,7 @@ impl DeleteRecommendationPreferencesInput {
             "DeleteRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -320,7 +321,8 @@ pub mod describe_recommendation_export_jobs_input {
 pub type DescribeRecommendationExportJobsInputOperationOutputAlias =
     crate::operation::DescribeRecommendationExportJobs;
 #[doc(hidden)]
-pub type DescribeRecommendationExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRecommendationExportJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecommendationExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecommendationExportJobs`](crate::operation::DescribeRecommendationExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -331,7 +333,7 @@ impl DescribeRecommendationExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecommendationExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -417,7 +419,7 @@ impl DescribeRecommendationExportJobsInput {
             "DescribeRecommendationExportJobs",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -657,7 +659,7 @@ pub type ExportAutoScalingGroupRecommendationsInputOperationOutputAlias =
     crate::operation::ExportAutoScalingGroupRecommendations;
 #[doc(hidden)]
 pub type ExportAutoScalingGroupRecommendationsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportAutoScalingGroupRecommendations`](crate::operation::ExportAutoScalingGroupRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +670,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportAutoScalingGroupRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -754,7 +756,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
             "ExportAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -970,7 +972,8 @@ pub mod export_ebs_volume_recommendations_input {
 pub type ExportEbsVolumeRecommendationsInputOperationOutputAlias =
     crate::operation::ExportEBSVolumeRecommendations;
 #[doc(hidden)]
-pub type ExportEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportEbsVolumeRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEBSVolumeRecommendations`](crate::operation::ExportEBSVolumeRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -981,7 +984,7 @@ impl ExportEbsVolumeRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportEBSVolumeRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1067,7 +1070,7 @@ impl ExportEbsVolumeRecommendationsInput {
             "ExportEBSVolumeRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1304,7 +1307,8 @@ pub mod export_ec2_instance_recommendations_input {
 pub type ExportEc2InstanceRecommendationsInputOperationOutputAlias =
     crate::operation::ExportEC2InstanceRecommendations;
 #[doc(hidden)]
-pub type ExportEc2InstanceRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportEc2InstanceRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEC2InstanceRecommendations`](crate::operation::ExportEC2InstanceRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -1315,7 +1319,7 @@ impl ExportEc2InstanceRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportEC2InstanceRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1401,7 +1405,7 @@ impl ExportEc2InstanceRecommendationsInput {
             "ExportEC2InstanceRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1624,7 +1628,7 @@ pub type ExportLambdaFunctionRecommendationsInputOperationOutputAlias =
     crate::operation::ExportLambdaFunctionRecommendations;
 #[doc(hidden)]
 pub type ExportLambdaFunctionRecommendationsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportLambdaFunctionRecommendations`](crate::operation::ExportLambdaFunctionRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -1635,7 +1639,7 @@ impl ExportLambdaFunctionRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportLambdaFunctionRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1721,7 +1725,7 @@ impl ExportLambdaFunctionRecommendationsInput {
             "ExportLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1896,7 +1900,8 @@ pub mod get_auto_scaling_group_recommendations_input {
 pub type GetAutoScalingGroupRecommendationsInputOperationOutputAlias =
     crate::operation::GetAutoScalingGroupRecommendations;
 #[doc(hidden)]
-pub type GetAutoScalingGroupRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAutoScalingGroupRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetAutoScalingGroupRecommendations`](crate::operation::GetAutoScalingGroupRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -1907,7 +1912,7 @@ impl GetAutoScalingGroupRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAutoScalingGroupRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1993,7 +1998,7 @@ impl GetAutoScalingGroupRecommendationsInput {
             "GetAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2143,7 +2148,7 @@ pub mod get_ebs_volume_recommendations_input {
 pub type GetEbsVolumeRecommendationsInputOperationOutputAlias =
     crate::operation::GetEBSVolumeRecommendations;
 #[doc(hidden)]
-pub type GetEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEBSVolumeRecommendations`](crate::operation::GetEBSVolumeRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -2154,7 +2159,7 @@ impl GetEbsVolumeRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEBSVolumeRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2240,7 +2245,7 @@ impl GetEbsVolumeRecommendationsInput {
             "GetEBSVolumeRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2411,7 +2416,8 @@ pub mod get_ec2_instance_recommendations_input {
 pub type GetEc2InstanceRecommendationsInputOperationOutputAlias =
     crate::operation::GetEC2InstanceRecommendations;
 #[doc(hidden)]
-pub type GetEc2InstanceRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEc2InstanceRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2InstanceRecommendations`](crate::operation::GetEC2InstanceRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -2422,7 +2428,7 @@ impl GetEc2InstanceRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEC2InstanceRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2508,7 +2514,7 @@ impl GetEc2InstanceRecommendationsInput {
             "GetEC2InstanceRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2648,7 +2654,7 @@ pub type GetEc2RecommendationProjectedMetricsInputOperationOutputAlias =
     crate::operation::GetEC2RecommendationProjectedMetrics;
 #[doc(hidden)]
 pub type GetEc2RecommendationProjectedMetricsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEc2RecommendationProjectedMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2RecommendationProjectedMetrics`](crate::operation::GetEC2RecommendationProjectedMetrics)>
     #[allow(clippy::let_and_return)]
@@ -2659,7 +2665,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEC2RecommendationProjectedMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2745,7 +2751,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
             "GetEC2RecommendationProjectedMetrics",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2809,7 +2815,7 @@ pub type GetEffectiveRecommendationPreferencesInputOperationOutputAlias =
     crate::operation::GetEffectiveRecommendationPreferences;
 #[doc(hidden)]
 pub type GetEffectiveRecommendationPreferencesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEffectiveRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetEffectiveRecommendationPreferences`](crate::operation::GetEffectiveRecommendationPreferences)>
     #[allow(clippy::let_and_return)]
@@ -2820,7 +2826,7 @@ impl GetEffectiveRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEffectiveRecommendationPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2906,7 +2912,7 @@ impl GetEffectiveRecommendationPreferencesInput {
             "GetEffectiveRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2950,7 +2956,7 @@ pub mod get_enrollment_status_input {
 #[doc(hidden)]
 pub type GetEnrollmentStatusInputOperationOutputAlias = crate::operation::GetEnrollmentStatus;
 #[doc(hidden)]
-pub type GetEnrollmentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnrollmentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatus`](crate::operation::GetEnrollmentStatus)>
     #[allow(clippy::let_and_return)]
@@ -2961,7 +2967,7 @@ impl GetEnrollmentStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3046,7 +3052,7 @@ impl GetEnrollmentStatusInput {
             "GetEnrollmentStatus",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3139,7 +3145,7 @@ pub type GetEnrollmentStatusesForOrganizationInputOperationOutputAlias =
     crate::operation::GetEnrollmentStatusesForOrganization;
 #[doc(hidden)]
 pub type GetEnrollmentStatusesForOrganizationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnrollmentStatusesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatusesForOrganization`](crate::operation::GetEnrollmentStatusesForOrganization)>
     #[allow(clippy::let_and_return)]
@@ -3150,7 +3156,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatusesForOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3236,7 +3242,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
             "GetEnrollmentStatusesForOrganization",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3406,7 +3412,8 @@ pub mod get_lambda_function_recommendations_input {
 pub type GetLambdaFunctionRecommendationsInputOperationOutputAlias =
     crate::operation::GetLambdaFunctionRecommendations;
 #[doc(hidden)]
-pub type GetLambdaFunctionRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLambdaFunctionRecommendationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetLambdaFunctionRecommendations`](crate::operation::GetLambdaFunctionRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -3417,7 +3424,7 @@ impl GetLambdaFunctionRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLambdaFunctionRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3503,7 +3510,7 @@ impl GetLambdaFunctionRecommendationsInput {
             "GetLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3625,7 +3632,8 @@ pub mod get_recommendation_preferences_input {
 pub type GetRecommendationPreferencesInputOperationOutputAlias =
     crate::operation::GetRecommendationPreferences;
 #[doc(hidden)]
-pub type GetRecommendationPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationPreferences`](crate::operation::GetRecommendationPreferences)>
     #[allow(clippy::let_and_return)]
@@ -3636,7 +3644,7 @@ impl GetRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3722,7 +3730,7 @@ impl GetRecommendationPreferencesInput {
             "GetRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3826,7 +3834,7 @@ pub mod get_recommendation_summaries_input {
 pub type GetRecommendationSummariesInputOperationOutputAlias =
     crate::operation::GetRecommendationSummaries;
 #[doc(hidden)]
-pub type GetRecommendationSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationSummariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationSummaries`](crate::operation::GetRecommendationSummaries)>
     #[allow(clippy::let_and_return)]
@@ -3837,7 +3845,7 @@ impl GetRecommendationSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3924,7 +3932,7 @@ impl GetRecommendationSummariesInput {
             "GetRecommendationSummaries",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4057,7 +4065,8 @@ pub mod put_recommendation_preferences_input {
 pub type PutRecommendationPreferencesInputOperationOutputAlias =
     crate::operation::PutRecommendationPreferences;
 #[doc(hidden)]
-pub type PutRecommendationPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRecommendationPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutRecommendationPreferences`](crate::operation::PutRecommendationPreferences)>
     #[allow(clippy::let_and_return)]
@@ -4068,7 +4077,7 @@ impl PutRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRecommendationPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4154,7 +4163,7 @@ impl PutRecommendationPreferencesInput {
             "PutRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4268,7 +4277,7 @@ pub mod update_enrollment_status_input {
 #[doc(hidden)]
 pub type UpdateEnrollmentStatusInputOperationOutputAlias = crate::operation::UpdateEnrollmentStatus;
 #[doc(hidden)]
-pub type UpdateEnrollmentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnrollmentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnrollmentStatus`](crate::operation::UpdateEnrollmentStatus)>
     #[allow(clippy::let_and_return)]
@@ -4279,7 +4288,7 @@ impl UpdateEnrollmentStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnrollmentStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4366,7 +4375,7 @@ impl UpdateEnrollmentStatusInput {
             "UpdateEnrollmentStatus",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -22,7 +22,8 @@ pub mod associate_service_quota_template_input {
 pub type AssociateServiceQuotaTemplateInputOperationOutputAlias =
     crate::operation::AssociateServiceQuotaTemplate;
 #[doc(hidden)]
-pub type AssociateServiceQuotaTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateServiceQuotaTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateServiceQuotaTemplate`](crate::operation::AssociateServiceQuotaTemplate)>
     #[allow(clippy::let_and_return)]
@@ -33,7 +34,7 @@ impl AssociateServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateServiceQuotaTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -119,7 +120,7 @@ impl AssociateServiceQuotaTemplateInput {
             "AssociateServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -197,7 +198,7 @@ pub type DeleteServiceQuotaIncreaseRequestFromTemplateInputOperationOutputAlias 
     crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate;
 #[doc(hidden)]
 pub type DeleteServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate)>
     #[allow(clippy::let_and_return)]
@@ -208,7 +209,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -294,7 +295,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
             "DeleteServiceQuotaIncreaseRequestFromTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -340,7 +341,8 @@ pub mod disassociate_service_quota_template_input {
 pub type DisassociateServiceQuotaTemplateInputOperationOutputAlias =
     crate::operation::DisassociateServiceQuotaTemplate;
 #[doc(hidden)]
-pub type DisassociateServiceQuotaTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateServiceQuotaTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateServiceQuotaTemplate`](crate::operation::DisassociateServiceQuotaTemplate)>
     #[allow(clippy::let_and_return)]
@@ -351,7 +353,7 @@ impl DisassociateServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateServiceQuotaTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -437,7 +439,7 @@ impl DisassociateServiceQuotaTemplateInput {
             "DisassociateServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -475,7 +477,7 @@ pub type GetAssociationForServiceQuotaTemplateInputOperationOutputAlias =
     crate::operation::GetAssociationForServiceQuotaTemplate;
 #[doc(hidden)]
 pub type GetAssociationForServiceQuotaTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssociationForServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetAssociationForServiceQuotaTemplate`](crate::operation::GetAssociationForServiceQuotaTemplate)>
     #[allow(clippy::let_and_return)]
@@ -486,7 +488,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssociationForServiceQuotaTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -572,7 +574,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
             "GetAssociationForServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -635,7 +637,7 @@ pub mod get_aws_default_service_quota_input {
 pub type GetAwsDefaultServiceQuotaInputOperationOutputAlias =
     crate::operation::GetAWSDefaultServiceQuota;
 #[doc(hidden)]
-pub type GetAwsDefaultServiceQuotaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAwsDefaultServiceQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAwsDefaultServiceQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetAWSDefaultServiceQuota`](crate::operation::GetAWSDefaultServiceQuota)>
     #[allow(clippy::let_and_return)]
@@ -646,7 +648,7 @@ impl GetAwsDefaultServiceQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAWSDefaultServiceQuota,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -732,7 +734,7 @@ impl GetAwsDefaultServiceQuotaInput {
             "GetAWSDefaultServiceQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -791,7 +793,8 @@ pub mod get_requested_service_quota_change_input {
 pub type GetRequestedServiceQuotaChangeInputOperationOutputAlias =
     crate::operation::GetRequestedServiceQuotaChange;
 #[doc(hidden)]
-pub type GetRequestedServiceQuotaChangeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRequestedServiceQuotaChangeInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRequestedServiceQuotaChangeInput {
     /// Consumes the builder and constructs an Operation<[`GetRequestedServiceQuotaChange`](crate::operation::GetRequestedServiceQuotaChange)>
     #[allow(clippy::let_and_return)]
@@ -802,7 +805,7 @@ impl GetRequestedServiceQuotaChangeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRequestedServiceQuotaChange,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -888,7 +891,7 @@ impl GetRequestedServiceQuotaChangeInput {
             "GetRequestedServiceQuotaChange",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -958,7 +961,7 @@ pub mod get_service_quota_input {
 #[doc(hidden)]
 pub type GetServiceQuotaInputOperationOutputAlias = crate::operation::GetServiceQuota;
 #[doc(hidden)]
-pub type GetServiceQuotaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceQuota`](crate::operation::GetServiceQuota)>
     #[allow(clippy::let_and_return)]
@@ -969,7 +972,7 @@ impl GetServiceQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceQuota,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1057,7 @@ impl GetServiceQuotaInput {
             "GetServiceQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1140,7 +1143,7 @@ pub type GetServiceQuotaIncreaseRequestFromTemplateInputOperationOutputAlias =
     crate::operation::GetServiceQuotaIncreaseRequestFromTemplate;
 #[doc(hidden)]
 pub type GetServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceQuotaIncreaseRequestFromTemplate`](crate::operation::GetServiceQuotaIncreaseRequestFromTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1151,7 +1154,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceQuotaIncreaseRequestFromTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1237,7 +1240,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
             "GetServiceQuotaIncreaseRequestFromTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1323,7 +1326,7 @@ pub mod list_aws_default_service_quotas_input {
 pub type ListAwsDefaultServiceQuotasInputOperationOutputAlias =
     crate::operation::ListAWSDefaultServiceQuotas;
 #[doc(hidden)]
-pub type ListAwsDefaultServiceQuotasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAwsDefaultServiceQuotasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAwsDefaultServiceQuotasInput {
     /// Consumes the builder and constructs an Operation<[`ListAWSDefaultServiceQuotas`](crate::operation::ListAWSDefaultServiceQuotas)>
     #[allow(clippy::let_and_return)]
@@ -1334,7 +1337,7 @@ impl ListAwsDefaultServiceQuotasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAWSDefaultServiceQuotas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1420,7 +1423,7 @@ impl ListAwsDefaultServiceQuotasInput {
             "ListAWSDefaultServiceQuotas",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1521,7 +1524,7 @@ pub type ListRequestedServiceQuotaChangeHistoryInputOperationOutputAlias =
     crate::operation::ListRequestedServiceQuotaChangeHistory;
 #[doc(hidden)]
 pub type ListRequestedServiceQuotaChangeHistoryInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRequestedServiceQuotaChangeHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListRequestedServiceQuotaChangeHistory`](crate::operation::ListRequestedServiceQuotaChangeHistory)>
     #[allow(clippy::let_and_return)]
@@ -1532,7 +1535,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRequestedServiceQuotaChangeHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1618,7 +1621,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
             "ListRequestedServiceQuotaChangeHistory",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1733,7 +1736,7 @@ pub type ListRequestedServiceQuotaChangeHistoryByQuotaInputOperationOutputAlias 
     crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota;
 #[doc(hidden)]
 pub type ListRequestedServiceQuotaChangeHistoryByQuotaInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// Consumes the builder and constructs an Operation<[`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota)>
     #[allow(clippy::let_and_return)]
@@ -1744,7 +1747,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1830,7 +1833,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
             "ListRequestedServiceQuotaChangeHistoryByQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1931,7 +1934,7 @@ pub type ListServiceQuotaIncreaseRequestsInTemplateInputOperationOutputAlias =
     crate::operation::ListServiceQuotaIncreaseRequestsInTemplate;
 #[doc(hidden)]
 pub type ListServiceQuotaIncreaseRequestsInTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceQuotaIncreaseRequestsInTemplate`](crate::operation::ListServiceQuotaIncreaseRequestsInTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1942,7 +1945,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceQuotaIncreaseRequestsInTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2028,7 +2031,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
             "ListServiceQuotaIncreaseRequestsInTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2113,7 +2116,7 @@ pub mod list_service_quotas_input {
 #[doc(hidden)]
 pub type ListServiceQuotasInputOperationOutputAlias = crate::operation::ListServiceQuotas;
 #[doc(hidden)]
-pub type ListServiceQuotasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceQuotasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceQuotasInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceQuotas`](crate::operation::ListServiceQuotas)>
     #[allow(clippy::let_and_return)]
@@ -2124,7 +2127,7 @@ impl ListServiceQuotasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceQuotas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2209,7 +2212,7 @@ impl ListServiceQuotasInput {
             "ListServiceQuotas",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2281,7 +2284,7 @@ pub mod list_services_input {
 #[doc(hidden)]
 pub type ListServicesInputOperationOutputAlias = crate::operation::ListServices;
 #[doc(hidden)]
-pub type ListServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(clippy::let_and_return)]
@@ -2292,7 +2295,7 @@ impl ListServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2376,7 +2379,7 @@ impl ListServicesInput {
             "ListServices",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2438,7 +2441,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2449,7 +2452,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2536,7 +2539,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2634,7 +2637,7 @@ pub type PutServiceQuotaIncreaseRequestIntoTemplateInputOperationOutputAlias =
     crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate;
 #[doc(hidden)]
 pub type PutServiceQuotaIncreaseRequestIntoTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// Consumes the builder and constructs an Operation<[`PutServiceQuotaIncreaseRequestIntoTemplate`](crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2645,7 +2648,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2731,7 +2734,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
             "PutServiceQuotaIncreaseRequestIntoTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2815,7 +2818,7 @@ pub mod request_service_quota_increase_input {
 pub type RequestServiceQuotaIncreaseInputOperationOutputAlias =
     crate::operation::RequestServiceQuotaIncrease;
 #[doc(hidden)]
-pub type RequestServiceQuotaIncreaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RequestServiceQuotaIncreaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestServiceQuotaIncreaseInput {
     /// Consumes the builder and constructs an Operation<[`RequestServiceQuotaIncrease`](crate::operation::RequestServiceQuotaIncrease)>
     #[allow(clippy::let_and_return)]
@@ -2826,7 +2829,7 @@ impl RequestServiceQuotaIncreaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestServiceQuotaIncrease,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2912,7 +2915,7 @@ impl RequestServiceQuotaIncreaseInput {
             "RequestServiceQuotaIncrease",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2993,7 +2996,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3004,7 +3007,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3088,7 +3091,7 @@ impl TagResourceInput {
             "TagResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3169,7 +3172,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3180,7 +3183,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3264,7 +3267,7 @@ impl UntagResourceInput {
             "UntagResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

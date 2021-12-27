@@ -35,7 +35,7 @@ pub mod delete_report_definition_input {
 #[doc(hidden)]
 pub type DeleteReportDefinitionInputOperationOutputAlias = crate::operation::DeleteReportDefinition;
 #[doc(hidden)]
-pub type DeleteReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReportDefinition`](crate::operation::DeleteReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl DeleteReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -133,7 +133,7 @@ impl DeleteReportDefinitionInput {
             "DeleteReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -204,7 +204,7 @@ pub mod describe_report_definitions_input {
 pub type DescribeReportDefinitionsInputOperationOutputAlias =
     crate::operation::DescribeReportDefinitions;
 #[doc(hidden)]
-pub type DescribeReportDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReportDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReportDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportDefinitions`](crate::operation::DescribeReportDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -215,7 +215,7 @@ impl DescribeReportDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -302,7 +302,7 @@ impl DescribeReportDefinitionsInput {
             "DescribeReportDefinitions",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -383,7 +383,7 @@ pub mod modify_report_definition_input {
 #[doc(hidden)]
 pub type ModifyReportDefinitionInputOperationOutputAlias = crate::operation::ModifyReportDefinition;
 #[doc(hidden)]
-pub type ModifyReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReportDefinition`](crate::operation::ModifyReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -394,7 +394,7 @@ impl ModifyReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +481,7 @@ impl ModifyReportDefinitionInput {
             "ModifyReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -544,7 +544,7 @@ pub mod put_report_definition_input {
 #[doc(hidden)]
 pub type PutReportDefinitionInputOperationOutputAlias = crate::operation::PutReportDefinition;
 #[doc(hidden)]
-pub type PutReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutReportDefinition`](crate::operation::PutReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -555,7 +555,7 @@ impl PutReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -640,7 +640,7 @@ impl PutReportDefinitionInput {
             "PutReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

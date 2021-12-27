@@ -45,7 +45,7 @@ pub type AcceptInboundCrossClusterSearchConnectionInputOperationOutputAlias =
     crate::operation::AcceptInboundCrossClusterSearchConnection;
 #[doc(hidden)]
 pub type AcceptInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInboundCrossClusterSearchConnection`](crate::operation::AcceptInboundCrossClusterSearchConnection)>
     #[allow(clippy::let_and_return)]
@@ -56,7 +56,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInboundCrossClusterSearchConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -151,7 +151,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
             "AcceptInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -221,7 +221,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -232,7 +232,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -309,7 +309,7 @@ impl AddTagsInput {
                     "AddTags",
                     "elasticsearchservice",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -379,7 +379,7 @@ pub mod associate_package_input {
 #[doc(hidden)]
 pub type AssociatePackageInputOperationOutputAlias = crate::operation::AssociatePackage;
 #[doc(hidden)]
-pub type AssociatePackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePackageInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePackage`](crate::operation::AssociatePackage)>
     #[allow(clippy::let_and_return)]
@@ -390,7 +390,7 @@ impl AssociatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociatePackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -500,7 +500,7 @@ impl AssociatePackageInput {
             "AssociatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -554,7 +554,7 @@ pub type CancelElasticsearchServiceSoftwareUpdateInputOperationOutputAlias =
     crate::operation::CancelElasticsearchServiceSoftwareUpdate;
 #[doc(hidden)]
 pub type CancelElasticsearchServiceSoftwareUpdateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelElasticsearchServiceSoftwareUpdateInput {
     /// Consumes the builder and constructs an Operation<[`CancelElasticsearchServiceSoftwareUpdate`](crate::operation::CancelElasticsearchServiceSoftwareUpdate)>
     #[allow(clippy::let_and_return)]
@@ -565,7 +565,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelElasticsearchServiceSoftwareUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -647,7 +647,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
             "CancelElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -989,7 +989,7 @@ pub mod create_elasticsearch_domain_input {
 pub type CreateElasticsearchDomainInputOperationOutputAlias =
     crate::operation::CreateElasticsearchDomain;
 #[doc(hidden)]
-pub type CreateElasticsearchDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateElasticsearchDomain`](crate::operation::CreateElasticsearchDomain)>
     #[allow(clippy::let_and_return)]
@@ -1000,7 +1000,7 @@ impl CreateElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateElasticsearchDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1082,7 +1082,7 @@ impl CreateElasticsearchDomainInput {
             "CreateElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1177,7 +1177,7 @@ pub type CreateOutboundCrossClusterSearchConnectionInputOperationOutputAlias =
     crate::operation::CreateOutboundCrossClusterSearchConnection;
 #[doc(hidden)]
 pub type CreateOutboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOutboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateOutboundCrossClusterSearchConnection`](crate::operation::CreateOutboundCrossClusterSearchConnection)>
     #[allow(clippy::let_and_return)]
@@ -1188,7 +1188,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOutboundCrossClusterSearchConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1270,7 +1270,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
             "CreateOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1374,7 +1374,7 @@ pub mod create_package_input {
 #[doc(hidden)]
 pub type CreatePackageInputOperationOutputAlias = crate::operation::CreatePackage;
 #[doc(hidden)]
-pub type CreatePackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackageInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackage`](crate::operation::CreatePackage)>
     #[allow(clippy::let_and_return)]
@@ -1385,7 +1385,7 @@ impl CreatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1464,7 +1464,7 @@ impl CreatePackageInput {
             "CreatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1523,7 +1523,7 @@ pub mod delete_elasticsearch_domain_input {
 pub type DeleteElasticsearchDomainInputOperationOutputAlias =
     crate::operation::DeleteElasticsearchDomain;
 #[doc(hidden)]
-pub type DeleteElasticsearchDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteElasticsearchDomain`](crate::operation::DeleteElasticsearchDomain)>
     #[allow(clippy::let_and_return)]
@@ -1534,7 +1534,7 @@ impl DeleteElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1628,7 +1628,7 @@ impl DeleteElasticsearchDomainInput {
             "DeleteElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1665,7 +1665,8 @@ pub mod delete_elasticsearch_service_role_input {
 pub type DeleteElasticsearchServiceRoleInputOperationOutputAlias =
     crate::operation::DeleteElasticsearchServiceRole;
 #[doc(hidden)]
-pub type DeleteElasticsearchServiceRoleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteElasticsearchServiceRoleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteElasticsearchServiceRoleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteElasticsearchServiceRole`](crate::operation::DeleteElasticsearchServiceRole)>
     #[allow(clippy::let_and_return)]
@@ -1676,7 +1677,7 @@ impl DeleteElasticsearchServiceRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchServiceRole,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1750,7 +1751,7 @@ impl DeleteElasticsearchServiceRoleInput {
             "DeleteElasticsearchServiceRole",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1810,7 +1811,7 @@ pub type DeleteInboundCrossClusterSearchConnectionInputOperationOutputAlias =
     crate::operation::DeleteInboundCrossClusterSearchConnection;
 #[doc(hidden)]
 pub type DeleteInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInboundCrossClusterSearchConnection`](crate::operation::DeleteInboundCrossClusterSearchConnection)>
     #[allow(clippy::let_and_return)]
@@ -1821,7 +1822,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInboundCrossClusterSearchConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1916,7 +1917,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
             "DeleteInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1977,7 +1978,7 @@ pub type DeleteOutboundCrossClusterSearchConnectionInputOperationOutputAlias =
     crate::operation::DeleteOutboundCrossClusterSearchConnection;
 #[doc(hidden)]
 pub type DeleteOutboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutboundCrossClusterSearchConnection`](crate::operation::DeleteOutboundCrossClusterSearchConnection)>
     #[allow(clippy::let_and_return)]
@@ -1988,7 +1989,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOutboundCrossClusterSearchConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2083,7 +2084,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
             "DeleteOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2134,7 +2135,7 @@ pub mod delete_package_input {
 #[doc(hidden)]
 pub type DeletePackageInputOperationOutputAlias = crate::operation::DeletePackage;
 #[doc(hidden)]
-pub type DeletePackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackageInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackage`](crate::operation::DeletePackage)>
     #[allow(clippy::let_and_return)]
@@ -2145,7 +2146,7 @@ impl DeletePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2239,7 +2240,7 @@ impl DeletePackageInput {
             "DeletePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2314,7 +2315,7 @@ pub mod describe_domain_auto_tunes_input {
 pub type DescribeDomainAutoTunesInputOperationOutputAlias =
     crate::operation::DescribeDomainAutoTunes;
 #[doc(hidden)]
-pub type DescribeDomainAutoTunesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainAutoTunesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainAutoTunesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainAutoTunes`](crate::operation::DescribeDomainAutoTunes)>
     #[allow(clippy::let_and_return)]
@@ -2325,7 +2326,7 @@ impl DescribeDomainAutoTunesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainAutoTunes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2427,7 +2428,7 @@ impl DescribeDomainAutoTunesInput {
             "DescribeDomainAutoTunes",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2486,7 +2487,7 @@ pub mod describe_elasticsearch_domain_input {
 pub type DescribeElasticsearchDomainInputOperationOutputAlias =
     crate::operation::DescribeElasticsearchDomain;
 #[doc(hidden)]
-pub type DescribeElasticsearchDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomain`](crate::operation::DescribeElasticsearchDomain)>
     #[allow(clippy::let_and_return)]
@@ -2497,7 +2498,7 @@ impl DescribeElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2591,7 +2592,7 @@ impl DescribeElasticsearchDomainInput {
             "DescribeElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2642,7 +2643,8 @@ pub mod describe_elasticsearch_domain_config_input {
 pub type DescribeElasticsearchDomainConfigInputOperationOutputAlias =
     crate::operation::DescribeElasticsearchDomainConfig;
 #[doc(hidden)]
-pub type DescribeElasticsearchDomainConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeElasticsearchDomainConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainConfigInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomainConfig`](crate::operation::DescribeElasticsearchDomainConfig)>
     #[allow(clippy::let_and_return)]
@@ -2653,7 +2655,7 @@ impl DescribeElasticsearchDomainConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomainConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2747,7 +2749,7 @@ impl DescribeElasticsearchDomainConfigInput {
             "DescribeElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2807,7 +2809,8 @@ pub mod describe_elasticsearch_domains_input {
 pub type DescribeElasticsearchDomainsInputOperationOutputAlias =
     crate::operation::DescribeElasticsearchDomains;
 #[doc(hidden)]
-pub type DescribeElasticsearchDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeElasticsearchDomainsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomains`](crate::operation::DescribeElasticsearchDomains)>
     #[allow(clippy::let_and_return)]
@@ -2818,7 +2821,7 @@ impl DescribeElasticsearchDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2899,7 +2902,7 @@ impl DescribeElasticsearchDomainsInput {
             "DescribeElasticsearchDomains",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3029,7 +3032,7 @@ pub type DescribeElasticsearchInstanceTypeLimitsInputOperationOutputAlias =
     crate::operation::DescribeElasticsearchInstanceTypeLimits;
 #[doc(hidden)]
 pub type DescribeElasticsearchInstanceTypeLimitsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchInstanceTypeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchInstanceTypeLimits`](crate::operation::DescribeElasticsearchInstanceTypeLimits)>
     #[allow(clippy::let_and_return)]
@@ -3040,7 +3043,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchInstanceTypeLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3161,7 +3164,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             "DescribeElasticsearchInstanceTypeLimits",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3268,7 +3271,7 @@ pub type DescribeInboundCrossClusterSearchConnectionsInputOperationOutputAlias =
     crate::operation::DescribeInboundCrossClusterSearchConnections;
 #[doc(hidden)]
 pub type DescribeInboundCrossClusterSearchConnectionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInboundCrossClusterSearchConnections`](crate::operation::DescribeInboundCrossClusterSearchConnections)>
     #[allow(clippy::let_and_return)]
@@ -3279,7 +3282,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInboundCrossClusterSearchConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3361,7 +3364,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
             "DescribeInboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3477,7 +3480,7 @@ pub type DescribeOutboundCrossClusterSearchConnectionsInputOperationOutputAlias 
     crate::operation::DescribeOutboundCrossClusterSearchConnections;
 #[doc(hidden)]
 pub type DescribeOutboundCrossClusterSearchConnectionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOutboundCrossClusterSearchConnections`](crate::operation::DescribeOutboundCrossClusterSearchConnections)>
     #[allow(clippy::let_and_return)]
@@ -3488,7 +3491,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOutboundCrossClusterSearchConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3570,7 +3573,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
             "DescribeOutboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3663,7 +3666,7 @@ pub mod describe_packages_input {
 #[doc(hidden)]
 pub type DescribePackagesInputOperationOutputAlias = crate::operation::DescribePackages;
 #[doc(hidden)]
-pub type DescribePackagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackages`](crate::operation::DescribePackages)>
     #[allow(clippy::let_and_return)]
@@ -3674,7 +3677,7 @@ impl DescribePackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePackages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3754,7 +3757,7 @@ impl DescribePackagesInput {
             "DescribePackages",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3850,7 +3853,7 @@ pub type DescribeReservedElasticsearchInstanceOfferingsInputOperationOutputAlias
     crate::operation::DescribeReservedElasticsearchInstanceOfferings;
 #[doc(hidden)]
 pub type DescribeReservedElasticsearchInstanceOfferingsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedElasticsearchInstanceOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedElasticsearchInstanceOfferings`](crate::operation::DescribeReservedElasticsearchInstanceOfferings)>
     #[allow(clippy::let_and_return)]
@@ -3861,7 +3864,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstanceOfferings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3956,7 +3959,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
             "DescribeReservedElasticsearchInstanceOfferings",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4041,7 +4044,7 @@ pub type DescribeReservedElasticsearchInstancesInputOperationOutputAlias =
     crate::operation::DescribeReservedElasticsearchInstances;
 #[doc(hidden)]
 pub type DescribeReservedElasticsearchInstancesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedElasticsearchInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedElasticsearchInstances`](crate::operation::DescribeReservedElasticsearchInstances)>
     #[allow(clippy::let_and_return)]
@@ -4052,7 +4055,7 @@ impl DescribeReservedElasticsearchInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4149,7 +4152,7 @@ impl DescribeReservedElasticsearchInstancesInput {
             "DescribeReservedElasticsearchInstances",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4211,7 +4214,7 @@ pub mod dissociate_package_input {
 #[doc(hidden)]
 pub type DissociatePackageInputOperationOutputAlias = crate::operation::DissociatePackage;
 #[doc(hidden)]
-pub type DissociatePackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DissociatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DissociatePackageInput {
     /// Consumes the builder and constructs an Operation<[`DissociatePackage`](crate::operation::DissociatePackage)>
     #[allow(clippy::let_and_return)]
@@ -4222,7 +4225,7 @@ impl DissociatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DissociatePackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4332,7 +4335,7 @@ impl DissociatePackageInput {
             "DissociatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4383,7 +4386,8 @@ pub mod get_compatible_elasticsearch_versions_input {
 pub type GetCompatibleElasticsearchVersionsInputOperationOutputAlias =
     crate::operation::GetCompatibleElasticsearchVersions;
 #[doc(hidden)]
-pub type GetCompatibleElasticsearchVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCompatibleElasticsearchVersionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCompatibleElasticsearchVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetCompatibleElasticsearchVersions`](crate::operation::GetCompatibleElasticsearchVersions)>
     #[allow(clippy::let_and_return)]
@@ -4394,7 +4398,7 @@ impl GetCompatibleElasticsearchVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCompatibleElasticsearchVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4479,7 +4483,7 @@ impl GetCompatibleElasticsearchVersionsInput {
             "GetCompatibleElasticsearchVersions",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4554,7 +4558,7 @@ pub mod get_package_version_history_input {
 pub type GetPackageVersionHistoryInputOperationOutputAlias =
     crate::operation::GetPackageVersionHistory;
 #[doc(hidden)]
-pub type GetPackageVersionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPackageVersionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPackageVersionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetPackageVersionHistory`](crate::operation::GetPackageVersionHistory)>
     #[allow(clippy::let_and_return)]
@@ -4565,7 +4569,7 @@ impl GetPackageVersionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPackageVersionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4676,7 +4680,7 @@ impl GetPackageVersionHistoryInput {
             "GetPackageVersionHistory",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4760,7 +4764,7 @@ pub mod get_upgrade_history_input {
 #[doc(hidden)]
 pub type GetUpgradeHistoryInputOperationOutputAlias = crate::operation::GetUpgradeHistory;
 #[doc(hidden)]
-pub type GetUpgradeHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUpgradeHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUpgradeHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetUpgradeHistory`](crate::operation::GetUpgradeHistory)>
     #[allow(clippy::let_and_return)]
@@ -4771,7 +4775,7 @@ impl GetUpgradeHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4882,7 +4886,7 @@ impl GetUpgradeHistoryInput {
             "GetUpgradeHistory",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4932,7 +4936,7 @@ pub mod get_upgrade_status_input {
 #[doc(hidden)]
 pub type GetUpgradeStatusInputOperationOutputAlias = crate::operation::GetUpgradeStatus;
 #[doc(hidden)]
-pub type GetUpgradeStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUpgradeStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUpgradeStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetUpgradeStatus`](crate::operation::GetUpgradeStatus)>
     #[allow(clippy::let_and_return)]
@@ -4943,7 +4947,7 @@ impl GetUpgradeStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5037,7 +5041,7 @@ impl GetUpgradeStatusInput {
             "GetUpgradeStatus",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5090,7 +5094,7 @@ pub mod list_domain_names_input {
 #[doc(hidden)]
 pub type ListDomainNamesInputOperationOutputAlias = crate::operation::ListDomainNames;
 #[doc(hidden)]
-pub type ListDomainNamesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainNames`](crate::operation::ListDomainNames)>
     #[allow(clippy::let_and_return)]
@@ -5101,7 +5105,7 @@ impl ListDomainNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainNames,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5186,7 +5190,7 @@ impl ListDomainNamesInput {
             "ListDomainNames",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5260,7 +5264,7 @@ pub mod list_domains_for_package_input {
 #[doc(hidden)]
 pub type ListDomainsForPackageInputOperationOutputAlias = crate::operation::ListDomainsForPackage;
 #[doc(hidden)]
-pub type ListDomainsForPackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsForPackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsForPackageInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainsForPackage`](crate::operation::ListDomainsForPackage)>
     #[allow(clippy::let_and_return)]
@@ -5271,7 +5275,7 @@ impl ListDomainsForPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainsForPackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5382,7 +5386,7 @@ impl ListDomainsForPackageInput {
             "ListDomainsForPackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5490,7 +5494,8 @@ pub mod list_elasticsearch_instance_types_input {
 pub type ListElasticsearchInstanceTypesInputOperationOutputAlias =
     crate::operation::ListElasticsearchInstanceTypes;
 #[doc(hidden)]
-pub type ListElasticsearchInstanceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListElasticsearchInstanceTypesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListElasticsearchInstanceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListElasticsearchInstanceTypes`](crate::operation::ListElasticsearchInstanceTypes)>
     #[allow(clippy::let_and_return)]
@@ -5501,7 +5506,7 @@ impl ListElasticsearchInstanceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchInstanceTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5615,7 +5620,7 @@ impl ListElasticsearchInstanceTypesInput {
             "ListElasticsearchInstanceTypes",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5690,7 +5695,7 @@ pub mod list_elasticsearch_versions_input {
 pub type ListElasticsearchVersionsInputOperationOutputAlias =
     crate::operation::ListElasticsearchVersions;
 #[doc(hidden)]
-pub type ListElasticsearchVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListElasticsearchVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListElasticsearchVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListElasticsearchVersions`](crate::operation::ListElasticsearchVersions)>
     #[allow(clippy::let_and_return)]
@@ -5701,7 +5706,7 @@ impl ListElasticsearchVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5792,7 +5797,7 @@ impl ListElasticsearchVersionsInput {
             "ListElasticsearchVersions",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5866,7 +5871,7 @@ pub mod list_packages_for_domain_input {
 #[doc(hidden)]
 pub type ListPackagesForDomainInputOperationOutputAlias = crate::operation::ListPackagesForDomain;
 #[doc(hidden)]
-pub type ListPackagesForDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPackagesForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagesForDomainInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagesForDomain`](crate::operation::ListPackagesForDomain)>
     #[allow(clippy::let_and_return)]
@@ -5877,7 +5882,7 @@ impl ListPackagesForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPackagesForDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5988,7 +5993,7 @@ impl ListPackagesForDomainInput {
             "ListPackagesForDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6034,7 +6039,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -6045,7 +6050,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6128,7 +6133,7 @@ impl ListTagsInput {
                     "ListTags",
                     "elasticsearchservice",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6217,7 +6222,7 @@ pub type PurchaseReservedElasticsearchInstanceOfferingInputOperationOutputAlias 
     crate::operation::PurchaseReservedElasticsearchInstanceOffering;
 #[doc(hidden)]
 pub type PurchaseReservedElasticsearchInstanceOfferingInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseReservedElasticsearchInstanceOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseReservedElasticsearchInstanceOffering`](crate::operation::PurchaseReservedElasticsearchInstanceOffering)>
     #[allow(clippy::let_and_return)]
@@ -6228,7 +6233,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PurchaseReservedElasticsearchInstanceOffering,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6310,7 +6315,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
             "PurchaseReservedElasticsearchInstanceOffering",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6379,7 +6384,7 @@ pub type RejectInboundCrossClusterSearchConnectionInputOperationOutputAlias =
     crate::operation::RejectInboundCrossClusterSearchConnection;
 #[doc(hidden)]
 pub type RejectInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`RejectInboundCrossClusterSearchConnection`](crate::operation::RejectInboundCrossClusterSearchConnection)>
     #[allow(clippy::let_and_return)]
@@ -6390,7 +6395,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInboundCrossClusterSearchConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6485,7 +6490,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
             "RejectInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6557,7 +6562,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -6568,7 +6573,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6647,7 +6652,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6707,7 +6712,7 @@ pub type StartElasticsearchServiceSoftwareUpdateInputOperationOutputAlias =
     crate::operation::StartElasticsearchServiceSoftwareUpdate;
 #[doc(hidden)]
 pub type StartElasticsearchServiceSoftwareUpdateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartElasticsearchServiceSoftwareUpdateInput {
     /// Consumes the builder and constructs an Operation<[`StartElasticsearchServiceSoftwareUpdate`](crate::operation::StartElasticsearchServiceSoftwareUpdate)>
     #[allow(clippy::let_and_return)]
@@ -6718,7 +6723,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartElasticsearchServiceSoftwareUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6800,7 +6805,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
             "StartElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7124,7 +7129,8 @@ pub mod update_elasticsearch_domain_config_input {
 pub type UpdateElasticsearchDomainConfigInputOperationOutputAlias =
     crate::operation::UpdateElasticsearchDomainConfig;
 #[doc(hidden)]
-pub type UpdateElasticsearchDomainConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateElasticsearchDomainConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateElasticsearchDomainConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateElasticsearchDomainConfig`](crate::operation::UpdateElasticsearchDomainConfig)>
     #[allow(clippy::let_and_return)]
@@ -7135,7 +7141,7 @@ impl UpdateElasticsearchDomainConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateElasticsearchDomainConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7236,7 +7242,7 @@ impl UpdateElasticsearchDomainConfigInput {
             "UpdateElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7339,7 +7345,7 @@ pub mod update_package_input {
 #[doc(hidden)]
 pub type UpdatePackageInputOperationOutputAlias = crate::operation::UpdatePackage;
 #[doc(hidden)]
-pub type UpdatePackageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePackageInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePackage`](crate::operation::UpdatePackage)>
     #[allow(clippy::let_and_return)]
@@ -7350,7 +7356,7 @@ impl UpdatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePackage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7429,7 +7435,7 @@ impl UpdatePackageInput {
             "UpdatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7521,7 +7527,7 @@ pub mod upgrade_elasticsearch_domain_input {
 pub type UpgradeElasticsearchDomainInputOperationOutputAlias =
     crate::operation::UpgradeElasticsearchDomain;
 #[doc(hidden)]
-pub type UpgradeElasticsearchDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpgradeElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradeElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpgradeElasticsearchDomain`](crate::operation::UpgradeElasticsearchDomain)>
     #[allow(clippy::let_and_return)]
@@ -7532,7 +7538,7 @@ impl UpgradeElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpgradeElasticsearchDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7614,7 +7620,7 @@ impl UpgradeElasticsearchDomainInput {
             "UpgradeElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

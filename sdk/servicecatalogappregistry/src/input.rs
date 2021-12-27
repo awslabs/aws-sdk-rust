@@ -51,7 +51,7 @@ pub mod associate_attribute_group_input {
 pub type AssociateAttributeGroupInputOperationOutputAlias =
     crate::operation::AssociateAttributeGroup;
 #[doc(hidden)]
-pub type AssociateAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAttributeGroup`](crate::operation::AssociateAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -62,7 +62,7 @@ impl AssociateAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -172,7 +172,7 @@ impl AssociateAttributeGroupInput {
             "AssociateAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -249,7 +249,7 @@ pub mod associate_resource_input {
 #[doc(hidden)]
 pub type AssociateResourceInputOperationOutputAlias = crate::operation::AssociateResource;
 #[doc(hidden)]
-pub type AssociateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResource`](crate::operation::AssociateResource)>
     #[allow(clippy::let_and_return)]
@@ -260,7 +260,7 @@ impl AssociateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -386,7 +386,7 @@ impl AssociateResourceInput {
             "AssociateResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -495,7 +495,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -506,7 +506,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -589,7 +589,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -718,7 +718,7 @@ pub mod create_attribute_group_input {
 #[doc(hidden)]
 pub type CreateAttributeGroupInputOperationOutputAlias = crate::operation::CreateAttributeGroup;
 #[doc(hidden)]
-pub type CreateAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttributeGroup`](crate::operation::CreateAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -729,7 +729,7 @@ impl CreateAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -814,7 +814,7 @@ impl CreateAttributeGroupInput {
             "CreateAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -872,7 +872,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -883,7 +883,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -977,7 +977,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1030,7 +1030,7 @@ pub mod delete_attribute_group_input {
 #[doc(hidden)]
 pub type DeleteAttributeGroupInputOperationOutputAlias = crate::operation::DeleteAttributeGroup;
 #[doc(hidden)]
-pub type DeleteAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttributeGroup`](crate::operation::DeleteAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -1041,7 +1041,7 @@ impl DeleteAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1135,7 +1135,7 @@ impl DeleteAttributeGroupInput {
             "DeleteAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1201,7 +1201,7 @@ pub mod disassociate_attribute_group_input {
 pub type DisassociateAttributeGroupInputOperationOutputAlias =
     crate::operation::DisassociateAttributeGroup;
 #[doc(hidden)]
-pub type DisassociateAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAttributeGroup`](crate::operation::DisassociateAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -1212,7 +1212,7 @@ impl DisassociateAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1322,7 +1322,7 @@ impl DisassociateAttributeGroupInput {
             "DisassociateAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1399,7 +1399,7 @@ pub mod disassociate_resource_input {
 #[doc(hidden)]
 pub type DisassociateResourceInputOperationOutputAlias = crate::operation::DisassociateResource;
 #[doc(hidden)]
-pub type DisassociateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResource`](crate::operation::DisassociateResource)>
     #[allow(clippy::let_and_return)]
@@ -1410,7 +1410,7 @@ impl DisassociateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1536,7 +1536,7 @@ impl DisassociateResourceInput {
             "DisassociateResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1586,7 +1586,7 @@ pub mod get_application_input {
 #[doc(hidden)]
 pub type GetApplicationInputOperationOutputAlias = crate::operation::GetApplication;
 #[doc(hidden)]
-pub type GetApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(clippy::let_and_return)]
@@ -1597,7 +1597,7 @@ impl GetApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1691,7 +1691,7 @@ impl GetApplicationInput {
             "GetApplication",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1768,7 +1768,7 @@ pub mod get_associated_resource_input {
 #[doc(hidden)]
 pub type GetAssociatedResourceInputOperationOutputAlias = crate::operation::GetAssociatedResource;
 #[doc(hidden)]
-pub type GetAssociatedResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssociatedResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssociatedResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetAssociatedResource`](crate::operation::GetAssociatedResource)>
     #[allow(clippy::let_and_return)]
@@ -1779,7 +1779,7 @@ impl GetAssociatedResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssociatedResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1905,7 +1905,7 @@ impl GetAssociatedResourceInput {
             "GetAssociatedResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1958,7 +1958,7 @@ pub mod get_attribute_group_input {
 #[doc(hidden)]
 pub type GetAttributeGroupInputOperationOutputAlias = crate::operation::GetAttributeGroup;
 #[doc(hidden)]
-pub type GetAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetAttributeGroup`](crate::operation::GetAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -1969,7 +1969,7 @@ impl GetAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2063,7 +2063,7 @@ impl GetAttributeGroupInput {
             "GetAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2125,7 +2125,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -2136,7 +2136,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2227,7 +2227,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2302,7 +2302,8 @@ pub mod list_associated_attribute_groups_input {
 pub type ListAssociatedAttributeGroupsInputOperationOutputAlias =
     crate::operation::ListAssociatedAttributeGroups;
 #[doc(hidden)]
-pub type ListAssociatedAttributeGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedAttributeGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedAttributeGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedAttributeGroups`](crate::operation::ListAssociatedAttributeGroups)>
     #[allow(clippy::let_and_return)]
@@ -2313,7 +2314,7 @@ impl ListAssociatedAttributeGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedAttributeGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2424,7 +2425,7 @@ impl ListAssociatedAttributeGroupsInput {
             "ListAssociatedAttributeGroups",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2499,7 +2500,7 @@ pub mod list_associated_resources_input {
 pub type ListAssociatedResourcesInputOperationOutputAlias =
     crate::operation::ListAssociatedResources;
 #[doc(hidden)]
-pub type ListAssociatedResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedResources`](crate::operation::ListAssociatedResources)>
     #[allow(clippy::let_and_return)]
@@ -2510,7 +2511,7 @@ impl ListAssociatedResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2621,7 +2622,7 @@ impl ListAssociatedResourcesInput {
             "ListAssociatedResources",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2683,7 +2684,7 @@ pub mod list_attribute_groups_input {
 #[doc(hidden)]
 pub type ListAttributeGroupsInputOperationOutputAlias = crate::operation::ListAttributeGroups;
 #[doc(hidden)]
-pub type ListAttributeGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAttributeGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttributeGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAttributeGroups`](crate::operation::ListAttributeGroups)>
     #[allow(clippy::let_and_return)]
@@ -2694,7 +2695,7 @@ impl ListAttributeGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAttributeGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2785,7 +2786,7 @@ impl ListAttributeGroupsInput {
             "ListAttributeGroups",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2835,7 +2836,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2846,7 +2847,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2936,7 +2937,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3001,7 +3002,7 @@ pub mod sync_resource_input {
 #[doc(hidden)]
 pub type SyncResourceInputOperationOutputAlias = crate::operation::SyncResource;
 #[doc(hidden)]
-pub type SyncResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SyncResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SyncResourceInput {
     /// Consumes the builder and constructs an Operation<[`SyncResource`](crate::operation::SyncResource)>
     #[allow(clippy::let_and_return)]
@@ -3012,7 +3013,7 @@ impl SyncResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SyncResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3122,7 +3123,7 @@ impl SyncResourceInput {
             "SyncResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3201,7 +3202,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3212,7 +3213,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3307,7 +3308,7 @@ impl TagResourceInput {
             "TagResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3386,7 +3387,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3397,7 +3398,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3500,7 +3501,7 @@ impl UntagResourceInput {
             "UntagResource",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3574,7 +3575,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -3585,7 +3586,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3685,7 +3686,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3784,7 +3785,7 @@ pub mod update_attribute_group_input {
 #[doc(hidden)]
 pub type UpdateAttributeGroupInputOperationOutputAlias = crate::operation::UpdateAttributeGroup;
 #[doc(hidden)]
-pub type UpdateAttributeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAttributeGroup`](crate::operation::UpdateAttributeGroup)>
     #[allow(clippy::let_and_return)]
@@ -3795,7 +3796,7 @@ impl UpdateAttributeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAttributeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3897,7 +3898,7 @@ impl UpdateAttributeGroupInput {
             "UpdateAttributeGroup",
             "servicecatalogappregistry",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

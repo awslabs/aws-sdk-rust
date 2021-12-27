@@ -10,6 +10,7 @@ pub use aws_smithy_client::retry::Config as RetryConfig;
 
 use aws_endpoint::AwsEndpointStage;
 use aws_http::auth::CredentialsStage;
+use aws_http::recursion_detection::RecursionDetectionStage;
 use aws_http::user_agent::UserAgentStage;
 use aws_sig_auth::middleware::SigV4SigningStage;
 use aws_sig_auth::signer::SigV4Signer;
@@ -19,10 +20,16 @@ use tower::layer::util::{Identity, Stack};
 use tower::ServiceBuilder;
 
 type DefaultMiddlewareStack = Stack<
-    MapRequestLayer<SigV4SigningStage>,
+    MapRequestLayer<RecursionDetectionStage>,
     Stack<
-        AsyncMapRequestLayer<CredentialsStage>,
-        Stack<MapRequestLayer<UserAgentStage>, Stack<MapRequestLayer<AwsEndpointStage>, Identity>>,
+        MapRequestLayer<SigV4SigningStage>,
+        Stack<
+            AsyncMapRequestLayer<CredentialsStage>,
+            Stack<
+                MapRequestLayer<UserAgentStage>,
+                Stack<MapRequestLayer<AwsEndpointStage>, Identity>,
+            >,
+        >,
     >,
 >;
 
@@ -52,6 +59,7 @@ fn base() -> ServiceBuilder<DefaultMiddlewareStack> {
     let signer = MapRequestLayer::for_mapper(SigV4SigningStage::new(SigV4Signer::new()));
     let endpoint_resolver = MapRequestLayer::for_mapper(AwsEndpointStage);
     let user_agent = MapRequestLayer::for_mapper(UserAgentStage::new());
+    let recursion_detection = MapRequestLayer::for_mapper(RecursionDetectionStage::new());
     // These layers can be considered as occurring in order, that is:
     // 1. Resolve an endpoint
     // 2. Add a user agent
@@ -63,6 +71,7 @@ fn base() -> ServiceBuilder<DefaultMiddlewareStack> {
         .layer(user_agent)
         .layer(credential_provider)
         .layer(signer)
+        .layer(recursion_detection)
 }
 
 impl<S> tower::Layer<S> for DefaultMiddleware {

@@ -168,7 +168,7 @@ pub mod get_personalized_ranking_input {
 #[doc(hidden)]
 pub type GetPersonalizedRankingInputOperationOutputAlias = crate::operation::GetPersonalizedRanking;
 #[doc(hidden)]
-pub type GetPersonalizedRankingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPersonalizedRankingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPersonalizedRankingInput {
     /// Consumes the builder and constructs an Operation<[`GetPersonalizedRanking`](crate::operation::GetPersonalizedRanking)>
     #[allow(clippy::let_and_return)]
@@ -179,7 +179,7 @@ impl GetPersonalizedRankingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPersonalizedRanking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -261,7 +261,7 @@ impl GetPersonalizedRankingInput {
             "GetPersonalizedRanking",
             "personalizeruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -472,7 +472,7 @@ pub mod get_recommendations_input {
 #[doc(hidden)]
 pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
 #[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -483,7 +483,7 @@ impl GetRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -563,7 +563,7 @@ impl GetRecommendationsInput {
             "GetRecommendations",
             "personalizeruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

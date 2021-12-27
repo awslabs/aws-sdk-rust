@@ -119,7 +119,7 @@ pub mod associate_file_system_aliases_input {
 pub type AssociateFileSystemAliasesInputOperationOutputAlias =
     crate::operation::AssociateFileSystemAliases;
 #[doc(hidden)]
-pub type AssociateFileSystemAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateFileSystemAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateFileSystemAliasesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFileSystemAliases`](crate::operation::AssociateFileSystemAliases)>
     #[allow(clippy::let_and_return)]
@@ -130,7 +130,7 @@ impl AssociateFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateFileSystemAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -219,7 +219,7 @@ impl AssociateFileSystemAliasesInput {
             "AssociateFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -278,7 +278,7 @@ pub mod cancel_data_repository_task_input {
 pub type CancelDataRepositoryTaskInputOperationOutputAlias =
     crate::operation::CancelDataRepositoryTask;
 #[doc(hidden)]
-pub type CancelDataRepositoryTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelDataRepositoryTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDataRepositoryTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelDataRepositoryTask`](crate::operation::CancelDataRepositoryTask)>
     #[allow(clippy::let_and_return)]
@@ -289,7 +289,7 @@ impl CancelDataRepositoryTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDataRepositoryTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -376,7 +376,7 @@ impl CancelDataRepositoryTaskInput {
             "CancelDataRepositoryTask",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -546,7 +546,7 @@ pub mod copy_backup_input {
 #[doc(hidden)]
 pub type CopyBackupInputOperationOutputAlias = crate::operation::CopyBackup;
 #[doc(hidden)]
-pub type CopyBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CopyBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyBackupInput {
     /// Consumes the builder and constructs an Operation<[`CopyBackup`](crate::operation::CopyBackup)>
     #[allow(clippy::let_and_return)]
@@ -557,7 +557,7 @@ impl CopyBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CopyBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -644,7 +644,7 @@ impl CopyBackupInput {
             "CopyBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -765,7 +765,7 @@ pub mod create_backup_input {
 #[doc(hidden)]
 pub type CreateBackupInputOperationOutputAlias = crate::operation::CreateBackup;
 #[doc(hidden)]
-pub type CreateBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackup`](crate::operation::CreateBackup)>
     #[allow(clippy::let_and_return)]
@@ -776,7 +776,7 @@ impl CreateBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -863,7 +863,7 @@ impl CreateBackupInput {
             "CreateBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1089,7 +1089,8 @@ pub mod create_data_repository_association_input {
 pub type CreateDataRepositoryAssociationInputOperationOutputAlias =
     crate::operation::CreateDataRepositoryAssociation;
 #[doc(hidden)]
-pub type CreateDataRepositoryAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataRepositoryAssociationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataRepositoryAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataRepositoryAssociation`](crate::operation::CreateDataRepositoryAssociation)>
     #[allow(clippy::let_and_return)]
@@ -1100,7 +1101,7 @@ impl CreateDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataRepositoryAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1189,7 +1190,7 @@ impl CreateDataRepositoryAssociationInput {
             "CreateDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1356,7 +1357,7 @@ pub mod create_data_repository_task_input {
 pub type CreateDataRepositoryTaskInputOperationOutputAlias =
     crate::operation::CreateDataRepositoryTask;
 #[doc(hidden)]
-pub type CreateDataRepositoryTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataRepositoryTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataRepositoryTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataRepositoryTask`](crate::operation::CreateDataRepositoryTask)>
     #[allow(clippy::let_and_return)]
@@ -1367,7 +1368,7 @@ impl CreateDataRepositoryTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataRepositoryTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1457,7 +1458,7 @@ impl CreateDataRepositoryTaskInput {
             "CreateDataRepositoryTask",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1980,7 +1981,7 @@ pub mod create_file_system_input {
 #[doc(hidden)]
 pub type CreateFileSystemInputOperationOutputAlias = crate::operation::CreateFileSystem;
 #[doc(hidden)]
-pub type CreateFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`CreateFileSystem`](crate::operation::CreateFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -1991,7 +1992,7 @@ impl CreateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2079,7 +2080,7 @@ impl CreateFileSystemInput {
             "CreateFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2451,7 +2452,7 @@ pub mod create_file_system_from_backup_input {
 pub type CreateFileSystemFromBackupInputOperationOutputAlias =
     crate::operation::CreateFileSystemFromBackup;
 #[doc(hidden)]
-pub type CreateFileSystemFromBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFileSystemFromBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFileSystemFromBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateFileSystemFromBackup`](crate::operation::CreateFileSystemFromBackup)>
     #[allow(clippy::let_and_return)]
@@ -2462,7 +2463,7 @@ impl CreateFileSystemFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFileSystemFromBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2551,7 +2552,7 @@ impl CreateFileSystemFromBackupInput {
             "CreateFileSystemFromBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2661,7 +2662,7 @@ pub mod create_snapshot_input {
 #[doc(hidden)]
 pub type CreateSnapshotInputOperationOutputAlias = crate::operation::CreateSnapshot;
 #[doc(hidden)]
-pub type CreateSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshot`](crate::operation::CreateSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -2672,7 +2673,7 @@ impl CreateSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2760,7 +2761,7 @@ impl CreateSnapshotInput {
             "CreateSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2973,7 +2974,7 @@ pub mod create_storage_virtual_machine_input {
 pub type CreateStorageVirtualMachineInputOperationOutputAlias =
     crate::operation::CreateStorageVirtualMachine;
 #[doc(hidden)]
-pub type CreateStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStorageVirtualMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStorageVirtualMachineInput {
     /// Consumes the builder and constructs an Operation<[`CreateStorageVirtualMachine`](crate::operation::CreateStorageVirtualMachine)>
     #[allow(clippy::let_and_return)]
@@ -2984,7 +2985,7 @@ impl CreateStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStorageVirtualMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3073,7 +3074,7 @@ impl CreateStorageVirtualMachineInput {
             "CreateStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3226,7 +3227,7 @@ pub mod create_volume_input {
 #[doc(hidden)]
 pub type CreateVolumeInputOperationOutputAlias = crate::operation::CreateVolume;
 #[doc(hidden)]
-pub type CreateVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVolumeInput {
     /// Consumes the builder and constructs an Operation<[`CreateVolume`](crate::operation::CreateVolume)>
     #[allow(clippy::let_and_return)]
@@ -3237,7 +3238,7 @@ impl CreateVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3324,7 +3325,7 @@ impl CreateVolumeInput {
             "CreateVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3453,7 +3454,7 @@ pub mod create_volume_from_backup_input {
 #[doc(hidden)]
 pub type CreateVolumeFromBackupInputOperationOutputAlias = crate::operation::CreateVolumeFromBackup;
 #[doc(hidden)]
-pub type CreateVolumeFromBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVolumeFromBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVolumeFromBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateVolumeFromBackup`](crate::operation::CreateVolumeFromBackup)>
     #[allow(clippy::let_and_return)]
@@ -3464,7 +3465,7 @@ impl CreateVolumeFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVolumeFromBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3554,7 +3555,7 @@ impl CreateVolumeFromBackupInput {
             "CreateVolumeFromBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3631,7 +3632,7 @@ pub mod delete_backup_input {
 #[doc(hidden)]
 pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
 #[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(clippy::let_and_return)]
@@ -3642,7 +3643,7 @@ impl DeleteBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3729,7 +3730,7 @@ impl DeleteBackupInput {
             "DeleteBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3824,7 +3825,8 @@ pub mod delete_data_repository_association_input {
 pub type DeleteDataRepositoryAssociationInputOperationOutputAlias =
     crate::operation::DeleteDataRepositoryAssociation;
 #[doc(hidden)]
-pub type DeleteDataRepositoryAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDataRepositoryAssociationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataRepositoryAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataRepositoryAssociation`](crate::operation::DeleteDataRepositoryAssociation)>
     #[allow(clippy::let_and_return)]
@@ -3835,7 +3837,7 @@ impl DeleteDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataRepositoryAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3924,7 +3926,7 @@ impl DeleteDataRepositoryAssociationInput {
             "DeleteDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4067,7 +4069,7 @@ pub mod delete_file_system_input {
 #[doc(hidden)]
 pub type DeleteFileSystemInputOperationOutputAlias = crate::operation::DeleteFileSystem;
 #[doc(hidden)]
-pub type DeleteFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFileSystem`](crate::operation::DeleteFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -4078,7 +4080,7 @@ impl DeleteFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4166,7 +4168,7 @@ impl DeleteFileSystemInput {
             "DeleteFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4243,7 +4245,7 @@ pub mod delete_snapshot_input {
 #[doc(hidden)]
 pub type DeleteSnapshotInputOperationOutputAlias = crate::operation::DeleteSnapshot;
 #[doc(hidden)]
-pub type DeleteSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSnapshot`](crate::operation::DeleteSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -4254,7 +4256,7 @@ impl DeleteSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4342,7 +4344,7 @@ impl DeleteSnapshotInput {
             "DeleteSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4423,7 +4425,7 @@ pub mod delete_storage_virtual_machine_input {
 pub type DeleteStorageVirtualMachineInputOperationOutputAlias =
     crate::operation::DeleteStorageVirtualMachine;
 #[doc(hidden)]
-pub type DeleteStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStorageVirtualMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStorageVirtualMachineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStorageVirtualMachine`](crate::operation::DeleteStorageVirtualMachine)>
     #[allow(clippy::let_and_return)]
@@ -4434,7 +4436,7 @@ impl DeleteStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageVirtualMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4523,7 +4525,7 @@ impl DeleteStorageVirtualMachineInput {
             "DeleteStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4644,7 +4646,7 @@ pub mod delete_volume_input {
 #[doc(hidden)]
 pub type DeleteVolumeInputOperationOutputAlias = crate::operation::DeleteVolume;
 #[doc(hidden)]
-pub type DeleteVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVolumeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVolume`](crate::operation::DeleteVolume)>
     #[allow(clippy::let_and_return)]
@@ -4655,7 +4657,7 @@ impl DeleteVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4742,7 +4744,7 @@ impl DeleteVolumeInput {
             "DeleteVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4870,7 +4872,7 @@ pub mod describe_backups_input {
 #[doc(hidden)]
 pub type DescribeBackupsInputOperationOutputAlias = crate::operation::DescribeBackups;
 #[doc(hidden)]
-pub type DescribeBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackups`](crate::operation::DescribeBackups)>
     #[allow(clippy::let_and_return)]
@@ -4881,7 +4883,7 @@ impl DescribeBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4966,7 +4968,7 @@ impl DescribeBackupsInput {
             "DescribeBackups",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5087,7 +5089,8 @@ pub mod describe_data_repository_associations_input {
 pub type DescribeDataRepositoryAssociationsInputOperationOutputAlias =
     crate::operation::DescribeDataRepositoryAssociations;
 #[doc(hidden)]
-pub type DescribeDataRepositoryAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDataRepositoryAssociationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataRepositoryAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataRepositoryAssociations`](crate::operation::DescribeDataRepositoryAssociations)>
     #[allow(clippy::let_and_return)]
@@ -5098,7 +5101,7 @@ impl DescribeDataRepositoryAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataRepositoryAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5184,7 +5187,7 @@ impl DescribeDataRepositoryAssociationsInput {
             "DescribeDataRepositoryAssociations",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5308,7 +5311,7 @@ pub mod describe_data_repository_tasks_input {
 pub type DescribeDataRepositoryTasksInputOperationOutputAlias =
     crate::operation::DescribeDataRepositoryTasks;
 #[doc(hidden)]
-pub type DescribeDataRepositoryTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDataRepositoryTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataRepositoryTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataRepositoryTasks`](crate::operation::DescribeDataRepositoryTasks)>
     #[allow(clippy::let_and_return)]
@@ -5319,7 +5322,7 @@ impl DescribeDataRepositoryTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataRepositoryTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5405,7 +5408,7 @@ impl DescribeDataRepositoryTasksInput {
             "DescribeDataRepositoryTasks",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5522,7 +5525,7 @@ pub mod describe_file_system_aliases_input {
 pub type DescribeFileSystemAliasesInputOperationOutputAlias =
     crate::operation::DescribeFileSystemAliases;
 #[doc(hidden)]
-pub type DescribeFileSystemAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFileSystemAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFileSystemAliasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFileSystemAliases`](crate::operation::DescribeFileSystemAliases)>
     #[allow(clippy::let_and_return)]
@@ -5533,7 +5536,7 @@ impl DescribeFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystemAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5623,7 +5626,7 @@ impl DescribeFileSystemAliasesInput {
             "DescribeFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5726,7 +5729,7 @@ pub mod describe_file_systems_input {
 #[doc(hidden)]
 pub type DescribeFileSystemsInputOperationOutputAlias = crate::operation::DescribeFileSystems;
 #[doc(hidden)]
-pub type DescribeFileSystemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFileSystemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFileSystemsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFileSystems`](crate::operation::DescribeFileSystems)>
     #[allow(clippy::let_and_return)]
@@ -5737,7 +5740,7 @@ impl DescribeFileSystemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5822,7 +5825,7 @@ impl DescribeFileSystemsInput {
             "DescribeFileSystems",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5944,7 +5947,7 @@ pub mod describe_snapshots_input {
 #[doc(hidden)]
 pub type DescribeSnapshotsInputOperationOutputAlias = crate::operation::DescribeSnapshots;
 #[doc(hidden)]
-pub type DescribeSnapshotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSnapshots`](crate::operation::DescribeSnapshots)>
     #[allow(clippy::let_and_return)]
@@ -5955,7 +5958,7 @@ impl DescribeSnapshotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSnapshots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6040,7 +6043,7 @@ impl DescribeSnapshotsInput {
             "DescribeSnapshots",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6167,7 +6170,8 @@ pub mod describe_storage_virtual_machines_input {
 pub type DescribeStorageVirtualMachinesInputOperationOutputAlias =
     crate::operation::DescribeStorageVirtualMachines;
 #[doc(hidden)]
-pub type DescribeStorageVirtualMachinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStorageVirtualMachinesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStorageVirtualMachinesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStorageVirtualMachines`](crate::operation::DescribeStorageVirtualMachines)>
     #[allow(clippy::let_and_return)]
@@ -6178,7 +6182,7 @@ impl DescribeStorageVirtualMachinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStorageVirtualMachines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6264,7 +6268,7 @@ impl DescribeStorageVirtualMachinesInput {
             "DescribeStorageVirtualMachines",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6384,7 +6388,7 @@ pub mod describe_volumes_input {
 #[doc(hidden)]
 pub type DescribeVolumesInputOperationOutputAlias = crate::operation::DescribeVolumes;
 #[doc(hidden)]
-pub type DescribeVolumesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVolumesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVolumes`](crate::operation::DescribeVolumes)>
     #[allow(clippy::let_and_return)]
@@ -6395,7 +6399,7 @@ impl DescribeVolumesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVolumes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6480,7 +6484,7 @@ impl DescribeVolumesInput {
             "DescribeVolumes",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6582,7 +6586,8 @@ pub mod disassociate_file_system_aliases_input {
 pub type DisassociateFileSystemAliasesInputOperationOutputAlias =
     crate::operation::DisassociateFileSystemAliases;
 #[doc(hidden)]
-pub type DisassociateFileSystemAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateFileSystemAliasesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFileSystemAliasesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFileSystemAliases`](crate::operation::DisassociateFileSystemAliases)>
     #[allow(clippy::let_and_return)]
@@ -6593,7 +6598,7 @@ impl DisassociateFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFileSystemAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6682,7 +6687,7 @@ impl DisassociateFileSystemAliasesInput {
             "DisassociateFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6774,7 +6779,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6785,7 +6790,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6872,7 +6877,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6953,7 +6958,7 @@ pub mod release_file_system_nfs_v3_locks_input {
 pub type ReleaseFileSystemNfsV3LocksInputOperationOutputAlias =
     crate::operation::ReleaseFileSystemNfsV3Locks;
 #[doc(hidden)]
-pub type ReleaseFileSystemNfsV3LocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ReleaseFileSystemNfsV3LocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReleaseFileSystemNfsV3LocksInput {
     /// Consumes the builder and constructs an Operation<[`ReleaseFileSystemNfsV3Locks`](crate::operation::ReleaseFileSystemNfsV3Locks)>
     #[allow(clippy::let_and_return)]
@@ -6964,7 +6969,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReleaseFileSystemNfsV3Locks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7053,7 +7058,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
             "ReleaseFileSystemNfsV3Locks",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7198,7 +7203,7 @@ pub mod restore_volume_from_snapshot_input {
 pub type RestoreVolumeFromSnapshotInputOperationOutputAlias =
     crate::operation::RestoreVolumeFromSnapshot;
 #[doc(hidden)]
-pub type RestoreVolumeFromSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreVolumeFromSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreVolumeFromSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`RestoreVolumeFromSnapshot`](crate::operation::RestoreVolumeFromSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -7209,7 +7214,7 @@ impl RestoreVolumeFromSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreVolumeFromSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7299,7 +7304,7 @@ impl RestoreVolumeFromSnapshotInput {
             "RestoreVolumeFromSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7382,7 +7387,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7393,7 +7398,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7477,7 +7482,7 @@ impl TagResourceInput {
             "TagResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7558,7 +7563,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -7569,7 +7574,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7653,7 +7658,7 @@ impl UntagResourceInput {
             "UntagResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7783,7 +7788,8 @@ pub mod update_data_repository_association_input {
 pub type UpdateDataRepositoryAssociationInputOperationOutputAlias =
     crate::operation::UpdateDataRepositoryAssociation;
 #[doc(hidden)]
-pub type UpdateDataRepositoryAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDataRepositoryAssociationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataRepositoryAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataRepositoryAssociation`](crate::operation::UpdateDataRepositoryAssociation)>
     #[allow(clippy::let_and_return)]
@@ -7794,7 +7800,7 @@ impl UpdateDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataRepositoryAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7883,7 +7889,7 @@ impl UpdateDataRepositoryAssociationInput {
             "UpdateDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8125,7 +8131,7 @@ pub mod update_file_system_input {
 #[doc(hidden)]
 pub type UpdateFileSystemInputOperationOutputAlias = crate::operation::UpdateFileSystem;
 #[doc(hidden)]
-pub type UpdateFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFileSystem`](crate::operation::UpdateFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -8136,7 +8142,7 @@ impl UpdateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8224,7 +8230,7 @@ impl UpdateFileSystemInput {
             "UpdateFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8315,7 +8321,7 @@ pub mod update_snapshot_input {
 #[doc(hidden)]
 pub type UpdateSnapshotInputOperationOutputAlias = crate::operation::UpdateSnapshot;
 #[doc(hidden)]
-pub type UpdateSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSnapshot`](crate::operation::UpdateSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -8326,7 +8332,7 @@ impl UpdateSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8414,7 +8420,7 @@ impl UpdateSnapshotInput {
             "UpdateSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8529,7 +8535,7 @@ pub mod update_storage_virtual_machine_input {
 pub type UpdateStorageVirtualMachineInputOperationOutputAlias =
     crate::operation::UpdateStorageVirtualMachine;
 #[doc(hidden)]
-pub type UpdateStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStorageVirtualMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStorageVirtualMachineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStorageVirtualMachine`](crate::operation::UpdateStorageVirtualMachine)>
     #[allow(clippy::let_and_return)]
@@ -8540,7 +8546,7 @@ impl UpdateStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStorageVirtualMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8629,7 +8635,7 @@ impl UpdateStorageVirtualMachineInput {
             "UpdateStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8762,7 +8768,7 @@ pub mod update_volume_input {
 #[doc(hidden)]
 pub type UpdateVolumeInputOperationOutputAlias = crate::operation::UpdateVolume;
 #[doc(hidden)]
-pub type UpdateVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVolumeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVolume`](crate::operation::UpdateVolume)>
     #[allow(clippy::let_and_return)]
@@ -8773,7 +8779,7 @@ impl UpdateVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8860,7 +8866,7 @@ impl UpdateVolumeInput {
             "UpdateVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

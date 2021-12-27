@@ -63,7 +63,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -74,7 +74,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -151,7 +151,7 @@ impl AddTagsInput {
                     "AddTags",
                     "elasticloadbalancing",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -234,7 +234,8 @@ pub mod apply_security_groups_to_load_balancer_input {
 pub type ApplySecurityGroupsToLoadBalancerInputOperationOutputAlias =
     crate::operation::ApplySecurityGroupsToLoadBalancer;
 #[doc(hidden)]
-pub type ApplySecurityGroupsToLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApplySecurityGroupsToLoadBalancerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`ApplySecurityGroupsToLoadBalancer`](crate::operation::ApplySecurityGroupsToLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -245,7 +246,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplySecurityGroupsToLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -326,7 +327,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             "ApplySecurityGroupsToLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -409,7 +410,7 @@ pub mod attach_load_balancer_to_subnets_input {
 pub type AttachLoadBalancerToSubnetsInputOperationOutputAlias =
     crate::operation::AttachLoadBalancerToSubnets;
 #[doc(hidden)]
-pub type AttachLoadBalancerToSubnetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachLoadBalancerToSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachLoadBalancerToSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`AttachLoadBalancerToSubnets`](crate::operation::AttachLoadBalancerToSubnets)>
     #[allow(clippy::let_and_return)]
@@ -420,7 +421,7 @@ impl AttachLoadBalancerToSubnetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachLoadBalancerToSubnets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -501,7 +502,7 @@ impl AttachLoadBalancerToSubnetsInput {
             "AttachLoadBalancerToSubnets",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -577,7 +578,7 @@ pub mod configure_health_check_input {
 #[doc(hidden)]
 pub type ConfigureHealthCheckInputOperationOutputAlias = crate::operation::ConfigureHealthCheck;
 #[doc(hidden)]
-pub type ConfigureHealthCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfigureHealthCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureHealthCheck`](crate::operation::ConfigureHealthCheck)>
     #[allow(clippy::let_and_return)]
@@ -588,7 +589,7 @@ impl ConfigureHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureHealthCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -670,7 +671,7 @@ impl ConfigureHealthCheckInput {
             "ConfigureHealthCheck",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -756,7 +757,8 @@ pub mod create_app_cookie_stickiness_policy_input {
 pub type CreateAppCookieStickinessPolicyInputOperationOutputAlias =
     crate::operation::CreateAppCookieStickinessPolicy;
 #[doc(hidden)]
-pub type CreateAppCookieStickinessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppCookieStickinessPolicyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppCookieStickinessPolicy`](crate::operation::CreateAppCookieStickinessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -767,7 +769,7 @@ impl CreateAppCookieStickinessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppCookieStickinessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -848,7 +850,7 @@ impl CreateAppCookieStickinessPolicyInput {
             "CreateAppCookieStickinessPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -934,7 +936,8 @@ pub mod create_lb_cookie_stickiness_policy_input {
 pub type CreateLbCookieStickinessPolicyInputOperationOutputAlias =
     crate::operation::CreateLBCookieStickinessPolicy;
 #[doc(hidden)]
-pub type CreateLbCookieStickinessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLbCookieStickinessPolicyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLbCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLBCookieStickinessPolicy`](crate::operation::CreateLBCookieStickinessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -945,7 +948,7 @@ impl CreateLbCookieStickinessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLBCookieStickinessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1026,7 +1029,7 @@ impl CreateLbCookieStickinessPolicyInput {
             "CreateLBCookieStickinessPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1230,7 +1233,7 @@ pub mod create_load_balancer_input {
 #[doc(hidden)]
 pub type CreateLoadBalancerInputOperationOutputAlias = crate::operation::CreateLoadBalancer;
 #[doc(hidden)]
-pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -1241,7 +1244,7 @@ impl CreateLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1321,7 +1324,7 @@ impl CreateLoadBalancerInput {
             "CreateLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1404,7 +1407,7 @@ pub mod create_load_balancer_listeners_input {
 pub type CreateLoadBalancerListenersInputOperationOutputAlias =
     crate::operation::CreateLoadBalancerListeners;
 #[doc(hidden)]
-pub type CreateLoadBalancerListenersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLoadBalancerListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerListeners`](crate::operation::CreateLoadBalancerListeners)>
     #[allow(clippy::let_and_return)]
@@ -1415,7 +1418,7 @@ impl CreateLoadBalancerListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancerListeners,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1496,7 +1499,7 @@ impl CreateLoadBalancerListenersInput {
             "CreateLoadBalancerListeners",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1612,7 +1615,7 @@ pub mod create_load_balancer_policy_input {
 pub type CreateLoadBalancerPolicyInputOperationOutputAlias =
     crate::operation::CreateLoadBalancerPolicy;
 #[doc(hidden)]
-pub type CreateLoadBalancerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLoadBalancerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerPolicy`](crate::operation::CreateLoadBalancerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1623,7 +1626,7 @@ impl CreateLoadBalancerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1705,7 +1708,7 @@ impl CreateLoadBalancerPolicyInput {
             "CreateLoadBalancerPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1766,7 +1769,7 @@ pub mod delete_load_balancer_input {
 #[doc(hidden)]
 pub type DeleteLoadBalancerInputOperationOutputAlias = crate::operation::DeleteLoadBalancer;
 #[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -1777,7 +1780,7 @@ impl DeleteLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1857,7 +1860,7 @@ impl DeleteLoadBalancerInput {
             "DeleteLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1940,7 +1943,7 @@ pub mod delete_load_balancer_listeners_input {
 pub type DeleteLoadBalancerListenersInputOperationOutputAlias =
     crate::operation::DeleteLoadBalancerListeners;
 #[doc(hidden)]
-pub type DeleteLoadBalancerListenersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLoadBalancerListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerListeners`](crate::operation::DeleteLoadBalancerListeners)>
     #[allow(clippy::let_and_return)]
@@ -1951,7 +1954,7 @@ impl DeleteLoadBalancerListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancerListeners,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2032,7 +2035,7 @@ impl DeleteLoadBalancerListenersInput {
             "DeleteLoadBalancerListeners",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2106,7 +2109,7 @@ pub mod delete_load_balancer_policy_input {
 pub type DeleteLoadBalancerPolicyInputOperationOutputAlias =
     crate::operation::DeleteLoadBalancerPolicy;
 #[doc(hidden)]
-pub type DeleteLoadBalancerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLoadBalancerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerPolicy`](crate::operation::DeleteLoadBalancerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2117,7 +2120,7 @@ impl DeleteLoadBalancerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2199,7 +2202,7 @@ impl DeleteLoadBalancerPolicyInput {
             "DeleteLoadBalancerPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2283,7 +2286,7 @@ pub type DeregisterInstancesFromLoadBalancerInputOperationOutputAlias =
     crate::operation::DeregisterInstancesFromLoadBalancer;
 #[doc(hidden)]
 pub type DeregisterInstancesFromLoadBalancerInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterInstancesFromLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstancesFromLoadBalancer`](crate::operation::DeregisterInstancesFromLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -2294,7 +2297,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterInstancesFromLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2375,7 +2378,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
             "DeregisterInstancesFromLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2445,7 +2448,7 @@ pub mod describe_account_limits_input {
 #[doc(hidden)]
 pub type DescribeAccountLimitsInputOperationOutputAlias = crate::operation::DescribeAccountLimits;
 #[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(clippy::let_and_return)]
@@ -2456,7 +2459,7 @@ impl DescribeAccountLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2538,7 +2541,7 @@ impl DescribeAccountLimitsInput {
             "DescribeAccountLimits",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2620,7 +2623,7 @@ pub mod describe_instance_health_input {
 #[doc(hidden)]
 pub type DescribeInstanceHealthInputOperationOutputAlias = crate::operation::DescribeInstanceHealth;
 #[doc(hidden)]
-pub type DescribeInstanceHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInstanceHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstanceHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceHealth`](crate::operation::DescribeInstanceHealth)>
     #[allow(clippy::let_and_return)]
@@ -2631,7 +2634,7 @@ impl DescribeInstanceHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstanceHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2713,7 +2716,7 @@ impl DescribeInstanceHealthInput {
             "DescribeInstanceHealth",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2775,7 +2778,8 @@ pub mod describe_load_balancer_attributes_input {
 pub type DescribeLoadBalancerAttributesInputOperationOutputAlias =
     crate::operation::DescribeLoadBalancerAttributes;
 #[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancerAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
     #[allow(clippy::let_and_return)]
@@ -2786,7 +2790,7 @@ impl DescribeLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2867,7 +2871,7 @@ impl DescribeLoadBalancerAttributesInput {
             "DescribeLoadBalancerAttributes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2950,7 +2954,8 @@ pub mod describe_load_balancer_policies_input {
 pub type DescribeLoadBalancerPoliciesInputOperationOutputAlias =
     crate::operation::DescribeLoadBalancerPolicies;
 #[doc(hidden)]
-pub type DescribeLoadBalancerPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancerPoliciesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicies`](crate::operation::DescribeLoadBalancerPolicies)>
     #[allow(clippy::let_and_return)]
@@ -2961,7 +2966,7 @@ impl DescribeLoadBalancerPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3042,7 +3047,7 @@ impl DescribeLoadBalancerPoliciesInput {
             "DescribeLoadBalancerPolicies",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3110,7 +3115,8 @@ pub mod describe_load_balancer_policy_types_input {
 pub type DescribeLoadBalancerPolicyTypesInputOperationOutputAlias =
     crate::operation::DescribeLoadBalancerPolicyTypes;
 #[doc(hidden)]
-pub type DescribeLoadBalancerPolicyTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancerPolicyTypesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerPolicyTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicyTypes`](crate::operation::DescribeLoadBalancerPolicyTypes)>
     #[allow(clippy::let_and_return)]
@@ -3121,7 +3127,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerPolicyTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3202,7 +3208,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
             "DescribeLoadBalancerPolicyTypes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3293,7 +3299,7 @@ pub mod describe_load_balancers_input {
 #[doc(hidden)]
 pub type DescribeLoadBalancersInputOperationOutputAlias = crate::operation::DescribeLoadBalancers;
 #[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(clippy::let_and_return)]
@@ -3304,7 +3310,7 @@ impl DescribeLoadBalancersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3386,7 +3392,7 @@ impl DescribeLoadBalancersInput {
             "DescribeLoadBalancers",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3453,7 +3459,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -3464,7 +3470,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3543,7 +3549,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3626,7 +3632,8 @@ pub mod detach_load_balancer_from_subnets_input {
 pub type DetachLoadBalancerFromSubnetsInputOperationOutputAlias =
     crate::operation::DetachLoadBalancerFromSubnets;
 #[doc(hidden)]
-pub type DetachLoadBalancerFromSubnetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachLoadBalancerFromSubnetsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DetachLoadBalancerFromSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`DetachLoadBalancerFromSubnets`](crate::operation::DetachLoadBalancerFromSubnets)>
     #[allow(clippy::let_and_return)]
@@ -3637,7 +3644,7 @@ impl DetachLoadBalancerFromSubnetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachLoadBalancerFromSubnets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3718,7 +3725,7 @@ impl DetachLoadBalancerFromSubnetsInput {
             "DetachLoadBalancerFromSubnets",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3802,7 +3809,7 @@ pub type DisableAvailabilityZonesForLoadBalancerInputOperationOutputAlias =
     crate::operation::DisableAvailabilityZonesForLoadBalancer;
 #[doc(hidden)]
 pub type DisableAvailabilityZonesForLoadBalancerInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DisableAvailabilityZonesForLoadBalancer`](crate::operation::DisableAvailabilityZonesForLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -3813,7 +3820,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableAvailabilityZonesForLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3894,7 +3901,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             "DisableAvailabilityZonesForLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3978,7 +3985,7 @@ pub type EnableAvailabilityZonesForLoadBalancerInputOperationOutputAlias =
     crate::operation::EnableAvailabilityZonesForLoadBalancer;
 #[doc(hidden)]
 pub type EnableAvailabilityZonesForLoadBalancerInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`EnableAvailabilityZonesForLoadBalancer`](crate::operation::EnableAvailabilityZonesForLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -3989,7 +3996,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableAvailabilityZonesForLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4070,7 +4077,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             "EnableAvailabilityZonesForLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4151,7 +4158,8 @@ pub mod modify_load_balancer_attributes_input {
 pub type ModifyLoadBalancerAttributesInputOperationOutputAlias =
     crate::operation::ModifyLoadBalancerAttributes;
 #[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyLoadBalancerAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4162,7 +4170,7 @@ impl ModifyLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLoadBalancerAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4243,7 +4251,7 @@ impl ModifyLoadBalancerAttributesInput {
             "ModifyLoadBalancerAttributes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4326,7 +4334,8 @@ pub mod register_instances_with_load_balancer_input {
 pub type RegisterInstancesWithLoadBalancerInputOperationOutputAlias =
     crate::operation::RegisterInstancesWithLoadBalancer;
 #[doc(hidden)]
-pub type RegisterInstancesWithLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterInstancesWithLoadBalancerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterInstancesWithLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstancesWithLoadBalancer`](crate::operation::RegisterInstancesWithLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -4337,7 +4346,7 @@ impl RegisterInstancesWithLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterInstancesWithLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4418,7 +4427,7 @@ impl RegisterInstancesWithLoadBalancerInput {
             "RegisterInstancesWithLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4506,7 +4515,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -4517,7 +4526,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4596,7 +4605,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4686,7 +4695,7 @@ pub type SetLoadBalancerListenerSslCertificateInputOperationOutputAlias =
     crate::operation::SetLoadBalancerListenerSSLCertificate;
 #[doc(hidden)]
 pub type SetLoadBalancerListenerSslCertificateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerListenerSslCertificateInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerListenerSSLCertificate`](crate::operation::SetLoadBalancerListenerSSLCertificate)>
     #[allow(clippy::let_and_return)]
@@ -4697,7 +4706,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerListenerSSLCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4778,7 +4787,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
             "SetLoadBalancerListenerSSLCertificate",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4874,7 +4883,7 @@ pub type SetLoadBalancerPoliciesForBackendServerInputOperationOutputAlias =
     crate::operation::SetLoadBalancerPoliciesForBackendServer;
 #[doc(hidden)]
 pub type SetLoadBalancerPoliciesForBackendServerInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesForBackendServer`](crate::operation::SetLoadBalancerPoliciesForBackendServer)>
     #[allow(clippy::let_and_return)]
@@ -4885,7 +4894,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerPoliciesForBackendServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4966,7 +4975,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             "SetLoadBalancerPoliciesForBackendServer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5061,7 +5070,8 @@ pub mod set_load_balancer_policies_of_listener_input {
 pub type SetLoadBalancerPoliciesOfListenerInputOperationOutputAlias =
     crate::operation::SetLoadBalancerPoliciesOfListener;
 #[doc(hidden)]
-pub type SetLoadBalancerPoliciesOfListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetLoadBalancerPoliciesOfListenerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerPoliciesOfListenerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesOfListener`](crate::operation::SetLoadBalancerPoliciesOfListener)>
     #[allow(clippy::let_and_return)]
@@ -5072,7 +5082,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerPoliciesOfListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5153,7 +5163,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             "SetLoadBalancerPoliciesOfListener",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

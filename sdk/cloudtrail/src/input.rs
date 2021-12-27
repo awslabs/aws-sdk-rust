@@ -60,7 +60,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +71,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -153,7 +153,7 @@ impl AddTagsInput {
                     "AddTags",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -471,7 +471,7 @@ pub mod create_trail_input {
 #[doc(hidden)]
 pub type CreateTrailInputOperationOutputAlias = crate::operation::CreateTrail;
 #[doc(hidden)]
-pub type CreateTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrailInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrail`](crate::operation::CreateTrail)>
     #[allow(clippy::let_and_return)]
@@ -482,7 +482,7 @@ impl CreateTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -566,7 +566,7 @@ impl CreateTrailInput {
             "CreateTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -628,7 +628,7 @@ pub mod delete_trail_input {
 #[doc(hidden)]
 pub type DeleteTrailInputOperationOutputAlias = crate::operation::DeleteTrail;
 #[doc(hidden)]
-pub type DeleteTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrailInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrail`](crate::operation::DeleteTrail)>
     #[allow(clippy::let_and_return)]
@@ -639,7 +639,7 @@ impl DeleteTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -723,7 +723,7 @@ impl DeleteTrailInput {
             "DeleteTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -840,7 +840,7 @@ pub mod describe_trails_input {
 #[doc(hidden)]
 pub type DescribeTrailsInputOperationOutputAlias = crate::operation::DescribeTrails;
 #[doc(hidden)]
-pub type DescribeTrailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrails`](crate::operation::DescribeTrails)>
     #[allow(clippy::let_and_return)]
@@ -851,7 +851,7 @@ impl DescribeTrailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -936,7 +936,7 @@ impl DescribeTrailsInput {
             "DescribeTrails",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1040,7 +1040,7 @@ pub mod get_event_selectors_input {
 #[doc(hidden)]
 pub type GetEventSelectorsInputOperationOutputAlias = crate::operation::GetEventSelectors;
 #[doc(hidden)]
-pub type GetEventSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetEventSelectors`](crate::operation::GetEventSelectors)>
     #[allow(clippy::let_and_return)]
@@ -1051,7 +1051,7 @@ impl GetEventSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1136,7 +1136,7 @@ impl GetEventSelectorsInput {
             "GetEventSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1240,7 +1240,7 @@ pub mod get_insight_selectors_input {
 #[doc(hidden)]
 pub type GetInsightSelectorsInputOperationOutputAlias = crate::operation::GetInsightSelectors;
 #[doc(hidden)]
-pub type GetInsightSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightSelectors`](crate::operation::GetInsightSelectors)>
     #[allow(clippy::let_and_return)]
@@ -1251,7 +1251,7 @@ impl GetInsightSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1336,7 +1336,7 @@ impl GetInsightSelectorsInput {
             "GetInsightSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1390,7 +1390,7 @@ pub mod get_trail_input {
 #[doc(hidden)]
 pub type GetTrailInputOperationOutputAlias = crate::operation::GetTrail;
 #[doc(hidden)]
-pub type GetTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailInput {
     /// Consumes the builder and constructs an Operation<[`GetTrail`](crate::operation::GetTrail)>
     #[allow(clippy::let_and_return)]
@@ -1401,7 +1401,7 @@ impl GetTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1483,7 +1483,7 @@ impl GetTrailInput {
                     "GetTrail",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1547,7 +1547,7 @@ pub mod get_trail_status_input {
 #[doc(hidden)]
 pub type GetTrailStatusInputOperationOutputAlias = crate::operation::GetTrailStatus;
 #[doc(hidden)]
-pub type GetTrailStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrailStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetTrailStatus`](crate::operation::GetTrailStatus)>
     #[allow(clippy::let_and_return)]
@@ -1558,7 +1558,7 @@ impl GetTrailStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrailStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1643,7 +1643,7 @@ impl GetTrailStatusInput {
             "GetTrailStatus",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1735,7 +1735,7 @@ pub mod list_public_keys_input {
 #[doc(hidden)]
 pub type ListPublicKeysInputOperationOutputAlias = crate::operation::ListPublicKeys;
 #[doc(hidden)]
-pub type ListPublicKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublicKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(clippy::let_and_return)]
@@ -1746,7 +1746,7 @@ impl ListPublicKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublicKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1831,7 +1831,7 @@ impl ListPublicKeysInput {
             "ListPublicKeys",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1916,7 +1916,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -1927,7 +1927,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2009,7 +2009,7 @@ impl ListTagsInput {
                     "ListTags",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2073,7 +2073,7 @@ pub mod list_trails_input {
 #[doc(hidden)]
 pub type ListTrailsInputOperationOutputAlias = crate::operation::ListTrails;
 #[doc(hidden)]
-pub type ListTrailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrailsInput {
     /// Consumes the builder and constructs an Operation<[`ListTrails`](crate::operation::ListTrails)>
     #[allow(clippy::let_and_return)]
@@ -2084,7 +2084,7 @@ impl ListTrailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2168,7 +2168,7 @@ impl ListTrailsInput {
             "ListTrails",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2312,7 +2312,7 @@ pub mod lookup_events_input {
 #[doc(hidden)]
 pub type LookupEventsInputOperationOutputAlias = crate::operation::LookupEvents;
 #[doc(hidden)]
-pub type LookupEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LookupEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LookupEventsInput {
     /// Consumes the builder and constructs an Operation<[`LookupEvents`](crate::operation::LookupEvents)>
     #[allow(clippy::let_and_return)]
@@ -2323,7 +2323,7 @@ impl LookupEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LookupEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2407,7 +2407,7 @@ impl LookupEventsInput {
             "LookupEvents",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2577,7 +2577,7 @@ pub mod put_event_selectors_input {
 #[doc(hidden)]
 pub type PutEventSelectorsInputOperationOutputAlias = crate::operation::PutEventSelectors;
 #[doc(hidden)]
-pub type PutEventSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutEventSelectors`](crate::operation::PutEventSelectors)>
     #[allow(clippy::let_and_return)]
@@ -2588,7 +2588,7 @@ impl PutEventSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEventSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2673,7 +2673,7 @@ impl PutEventSelectorsInput {
             "PutEventSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2756,7 +2756,7 @@ pub mod put_insight_selectors_input {
 #[doc(hidden)]
 pub type PutInsightSelectorsInputOperationOutputAlias = crate::operation::PutInsightSelectors;
 #[doc(hidden)]
-pub type PutInsightSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightSelectors`](crate::operation::PutInsightSelectors)>
     #[allow(clippy::let_and_return)]
@@ -2767,7 +2767,7 @@ impl PutInsightSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutInsightSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2852,7 +2852,7 @@ impl PutInsightSelectorsInput {
             "PutInsightSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2937,7 +2937,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -2948,7 +2948,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3032,7 +3032,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3096,7 +3096,7 @@ pub mod start_logging_input {
 #[doc(hidden)]
 pub type StartLoggingInputOperationOutputAlias = crate::operation::StartLogging;
 #[doc(hidden)]
-pub type StartLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartLogging`](crate::operation::StartLogging)>
     #[allow(clippy::let_and_return)]
@@ -3107,7 +3107,7 @@ impl StartLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3191,7 +3191,7 @@ impl StartLoggingInput {
             "StartLogging",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3255,7 +3255,7 @@ pub mod stop_logging_input {
 #[doc(hidden)]
 pub type StopLoggingInputOperationOutputAlias = crate::operation::StopLogging;
 #[doc(hidden)]
-pub type StopLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopLogging`](crate::operation::StopLogging)>
     #[allow(clippy::let_and_return)]
@@ -3266,7 +3266,7 @@ impl StopLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3350,7 +3350,7 @@ impl StopLoggingInput {
             "StopLogging",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3663,7 +3663,7 @@ pub mod update_trail_input {
 #[doc(hidden)]
 pub type UpdateTrailInputOperationOutputAlias = crate::operation::UpdateTrail;
 #[doc(hidden)]
-pub type UpdateTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrailInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrail`](crate::operation::UpdateTrail)>
     #[allow(clippy::let_and_return)]
@@ -3674,7 +3674,7 @@ impl UpdateTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3758,7 +3758,7 @@ impl UpdateTrailInput {
             "UpdateTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

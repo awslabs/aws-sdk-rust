@@ -64,7 +64,7 @@ pub mod create_call_analytics_category_input {
 pub type CreateCallAnalyticsCategoryInputOperationOutputAlias =
     crate::operation::CreateCallAnalyticsCategory;
 #[doc(hidden)]
-pub type CreateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateCallAnalyticsCategory`](crate::operation::CreateCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl CreateCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCallAnalyticsCategory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -161,7 +161,7 @@ impl CreateCallAnalyticsCategoryInput {
             "CreateCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -299,7 +299,7 @@ pub mod create_language_model_input {
 #[doc(hidden)]
 pub type CreateLanguageModelInputOperationOutputAlias = crate::operation::CreateLanguageModel;
 #[doc(hidden)]
-pub type CreateLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateLanguageModel`](crate::operation::CreateLanguageModel)>
     #[allow(clippy::let_and_return)]
@@ -310,7 +310,7 @@ impl CreateLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLanguageModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -395,7 +395,7 @@ impl CreateLanguageModelInput {
             "CreateLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -546,7 +546,7 @@ pub mod create_medical_vocabulary_input {
 pub type CreateMedicalVocabularyInputOperationOutputAlias =
     crate::operation::CreateMedicalVocabulary;
 #[doc(hidden)]
-pub type CreateMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateMedicalVocabulary`](crate::operation::CreateMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -557,7 +557,7 @@ impl CreateMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMedicalVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -644,7 +644,7 @@ impl CreateMedicalVocabularyInput {
             "CreateMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -799,7 +799,7 @@ pub mod create_vocabulary_input {
 #[doc(hidden)]
 pub type CreateVocabularyInputOperationOutputAlias = crate::operation::CreateVocabulary;
 #[doc(hidden)]
-pub type CreateVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabulary`](crate::operation::CreateVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -810,7 +810,7 @@ impl CreateVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -895,7 +895,7 @@ impl CreateVocabularyInput {
             "CreateVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1050,7 +1050,7 @@ pub mod create_vocabulary_filter_input {
 #[doc(hidden)]
 pub type CreateVocabularyFilterInputOperationOutputAlias = crate::operation::CreateVocabularyFilter;
 #[doc(hidden)]
-pub type CreateVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabularyFilter`](crate::operation::CreateVocabularyFilter)>
     #[allow(clippy::let_and_return)]
@@ -1061,7 +1061,7 @@ impl CreateVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabularyFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1148,7 +1148,7 @@ impl CreateVocabularyFilterInput {
             "CreateVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1212,7 +1212,7 @@ pub mod delete_call_analytics_category_input {
 pub type DeleteCallAnalyticsCategoryInputOperationOutputAlias =
     crate::operation::DeleteCallAnalyticsCategory;
 #[doc(hidden)]
-pub type DeleteCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsCategory`](crate::operation::DeleteCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
@@ -1223,7 +1223,7 @@ impl DeleteCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsCategory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1309,7 +1309,7 @@ impl DeleteCallAnalyticsCategoryInput {
             "DeleteCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1370,7 +1370,7 @@ pub mod delete_call_analytics_job_input {
 #[doc(hidden)]
 pub type DeleteCallAnalyticsJobInputOperationOutputAlias = crate::operation::DeleteCallAnalyticsJob;
 #[doc(hidden)]
-pub type DeleteCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsJob`](crate::operation::DeleteCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
@@ -1381,7 +1381,7 @@ impl DeleteCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1468,7 +1468,7 @@ impl DeleteCallAnalyticsJobInput {
             "DeleteCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1526,7 +1526,7 @@ pub mod delete_language_model_input {
 #[doc(hidden)]
 pub type DeleteLanguageModelInputOperationOutputAlias = crate::operation::DeleteLanguageModel;
 #[doc(hidden)]
-pub type DeleteLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLanguageModel`](crate::operation::DeleteLanguageModel)>
     #[allow(clippy::let_and_return)]
@@ -1537,7 +1537,7 @@ impl DeleteLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLanguageModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1622,7 +1622,7 @@ impl DeleteLanguageModelInput {
             "DeleteLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1689,7 +1689,8 @@ pub mod delete_medical_transcription_job_input {
 pub type DeleteMedicalTranscriptionJobInputOperationOutputAlias =
     crate::operation::DeleteMedicalTranscriptionJob;
 #[doc(hidden)]
-pub type DeleteMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMedicalTranscriptionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalTranscriptionJob`](crate::operation::DeleteMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -1700,7 +1701,7 @@ impl DeleteMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1786,7 +1787,7 @@ impl DeleteMedicalTranscriptionJobInput {
             "DeleteMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1848,7 +1849,7 @@ pub mod delete_medical_vocabulary_input {
 pub type DeleteMedicalVocabularyInputOperationOutputAlias =
     crate::operation::DeleteMedicalVocabulary;
 #[doc(hidden)]
-pub type DeleteMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalVocabulary`](crate::operation::DeleteMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -1859,7 +1860,7 @@ impl DeleteMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1946,7 +1947,7 @@ impl DeleteMedicalVocabularyInput {
             "DeleteMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2007,7 +2008,7 @@ pub mod delete_transcription_job_input {
 #[doc(hidden)]
 pub type DeleteTranscriptionJobInputOperationOutputAlias = crate::operation::DeleteTranscriptionJob;
 #[doc(hidden)]
-pub type DeleteTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTranscriptionJob`](crate::operation::DeleteTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -2018,7 +2019,7 @@ impl DeleteTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2105,7 +2106,7 @@ impl DeleteTranscriptionJobInput {
             "DeleteTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2166,7 +2167,7 @@ pub mod delete_vocabulary_input {
 #[doc(hidden)]
 pub type DeleteVocabularyInputOperationOutputAlias = crate::operation::DeleteVocabulary;
 #[doc(hidden)]
-pub type DeleteVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabulary`](crate::operation::DeleteVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -2177,7 +2178,7 @@ impl DeleteVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2262,7 +2263,7 @@ impl DeleteVocabularyInput {
             "DeleteVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2323,7 +2324,7 @@ pub mod delete_vocabulary_filter_input {
 #[doc(hidden)]
 pub type DeleteVocabularyFilterInputOperationOutputAlias = crate::operation::DeleteVocabularyFilter;
 #[doc(hidden)]
-pub type DeleteVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabularyFilter`](crate::operation::DeleteVocabularyFilter)>
     #[allow(clippy::let_and_return)]
@@ -2334,7 +2335,7 @@ impl DeleteVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabularyFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2421,7 +2422,7 @@ impl DeleteVocabularyFilterInput {
             "DeleteVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2479,7 +2480,7 @@ pub mod describe_language_model_input {
 #[doc(hidden)]
 pub type DescribeLanguageModelInputOperationOutputAlias = crate::operation::DescribeLanguageModel;
 #[doc(hidden)]
-pub type DescribeLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLanguageModel`](crate::operation::DescribeLanguageModel)>
     #[allow(clippy::let_and_return)]
@@ -2490,7 +2491,7 @@ impl DescribeLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLanguageModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2577,7 +2578,7 @@ impl DescribeLanguageModelInput {
             "DescribeLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2639,7 +2640,7 @@ pub mod get_call_analytics_category_input {
 pub type GetCallAnalyticsCategoryInputOperationOutputAlias =
     crate::operation::GetCallAnalyticsCategory;
 #[doc(hidden)]
-pub type GetCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsCategory`](crate::operation::GetCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
@@ -2650,7 +2651,7 @@ impl GetCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsCategory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2737,7 +2738,7 @@ impl GetCallAnalyticsCategoryInput {
             "GetCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2800,7 +2801,7 @@ pub mod get_call_analytics_job_input {
 #[doc(hidden)]
 pub type GetCallAnalyticsJobInputOperationOutputAlias = crate::operation::GetCallAnalyticsJob;
 #[doc(hidden)]
-pub type GetCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsJob`](crate::operation::GetCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
@@ -2811,7 +2812,7 @@ impl GetCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2898,7 +2899,7 @@ impl GetCallAnalyticsJobInput {
             "GetCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2963,7 +2964,7 @@ pub mod get_medical_transcription_job_input {
 pub type GetMedicalTranscriptionJobInputOperationOutputAlias =
     crate::operation::GetMedicalTranscriptionJob;
 #[doc(hidden)]
-pub type GetMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMedicalTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalTranscriptionJob`](crate::operation::GetMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -2974,7 +2975,7 @@ impl GetMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3060,7 +3061,7 @@ impl GetMedicalTranscriptionJobInput {
             "GetMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3121,7 +3122,7 @@ pub mod get_medical_vocabulary_input {
 #[doc(hidden)]
 pub type GetMedicalVocabularyInputOperationOutputAlias = crate::operation::GetMedicalVocabulary;
 #[doc(hidden)]
-pub type GetMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalVocabulary`](crate::operation::GetMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -3132,7 +3133,7 @@ impl GetMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3219,7 +3220,7 @@ impl GetMedicalVocabularyInput {
             "GetMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3280,7 +3281,7 @@ pub mod get_transcription_job_input {
 #[doc(hidden)]
 pub type GetTranscriptionJobInputOperationOutputAlias = crate::operation::GetTranscriptionJob;
 #[doc(hidden)]
-pub type GetTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscriptionJob`](crate::operation::GetTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -3291,7 +3292,7 @@ impl GetTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3376,7 +3377,7 @@ impl GetTranscriptionJobInput {
             "GetTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3439,7 +3440,7 @@ pub mod get_vocabulary_input {
 #[doc(hidden)]
 pub type GetVocabularyInputOperationOutputAlias = crate::operation::GetVocabulary;
 #[doc(hidden)]
-pub type GetVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabulary`](crate::operation::GetVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -3450,7 +3451,7 @@ impl GetVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3534,7 +3535,7 @@ impl GetVocabularyInput {
             "GetVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3595,7 +3596,7 @@ pub mod get_vocabulary_filter_input {
 #[doc(hidden)]
 pub type GetVocabularyFilterInputOperationOutputAlias = crate::operation::GetVocabularyFilter;
 #[doc(hidden)]
-pub type GetVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabularyFilter`](crate::operation::GetVocabularyFilter)>
     #[allow(clippy::let_and_return)]
@@ -3606,7 +3607,7 @@ impl GetVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVocabularyFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3691,7 +3692,7 @@ impl GetVocabularyFilterInput {
             "GetVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3768,7 +3769,7 @@ pub mod list_call_analytics_categories_input {
 pub type ListCallAnalyticsCategoriesInputOperationOutputAlias =
     crate::operation::ListCallAnalyticsCategories;
 #[doc(hidden)]
-pub type ListCallAnalyticsCategoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCallAnalyticsCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCallAnalyticsCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsCategories`](crate::operation::ListCallAnalyticsCategories)>
     #[allow(clippy::let_and_return)]
@@ -3779,7 +3780,7 @@ impl ListCallAnalyticsCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsCategories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3882,7 +3883,7 @@ impl ListCallAnalyticsCategoriesInput {
             "ListCallAnalyticsCategories",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3996,7 +3997,7 @@ pub mod list_call_analytics_jobs_input {
 #[doc(hidden)]
 pub type ListCallAnalyticsJobsInputOperationOutputAlias = crate::operation::ListCallAnalyticsJobs;
 #[doc(hidden)]
-pub type ListCallAnalyticsJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCallAnalyticsJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCallAnalyticsJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsJobs`](crate::operation::ListCallAnalyticsJobs)>
     #[allow(clippy::let_and_return)]
@@ -4007,7 +4008,7 @@ impl ListCallAnalyticsJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4120,7 +4121,7 @@ impl ListCallAnalyticsJobsInput {
             "ListCallAnalyticsJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4226,7 +4227,7 @@ pub mod list_language_models_input {
 #[doc(hidden)]
 pub type ListLanguageModelsInputOperationOutputAlias = crate::operation::ListLanguageModels;
 #[doc(hidden)]
-pub type ListLanguageModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLanguageModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLanguageModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListLanguageModels`](crate::operation::ListLanguageModels)>
     #[allow(clippy::let_and_return)]
@@ -4237,7 +4238,7 @@ impl ListLanguageModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLanguageModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4351,7 +4352,7 @@ impl ListLanguageModelsInput {
             "ListLanguageModels",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4462,7 +4463,8 @@ pub mod list_medical_transcription_jobs_input {
 pub type ListMedicalTranscriptionJobsInputOperationOutputAlias =
     crate::operation::ListMedicalTranscriptionJobs;
 #[doc(hidden)]
-pub type ListMedicalTranscriptionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMedicalTranscriptionJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListMedicalTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalTranscriptionJobs`](crate::operation::ListMedicalTranscriptionJobs)>
     #[allow(clippy::let_and_return)]
@@ -4473,7 +4475,7 @@ impl ListMedicalTranscriptionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalTranscriptionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4585,7 +4587,7 @@ impl ListMedicalTranscriptionJobsInput {
             "ListMedicalTranscriptionJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4696,7 +4698,7 @@ pub mod list_medical_vocabularies_input {
 pub type ListMedicalVocabulariesInputOperationOutputAlias =
     crate::operation::ListMedicalVocabularies;
 #[doc(hidden)]
-pub type ListMedicalVocabulariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMedicalVocabulariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMedicalVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalVocabularies`](crate::operation::ListMedicalVocabularies)>
     #[allow(clippy::let_and_return)]
@@ -4707,7 +4709,7 @@ impl ListMedicalVocabulariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalVocabularies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4823,7 +4825,7 @@ impl ListMedicalVocabulariesInput {
             "ListMedicalVocabularies",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4893,7 +4895,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4904,7 +4906,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4991,7 +4993,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5099,7 +5101,7 @@ pub mod list_transcription_jobs_input {
 #[doc(hidden)]
 pub type ListTranscriptionJobsInputOperationOutputAlias = crate::operation::ListTranscriptionJobs;
 #[doc(hidden)]
-pub type ListTranscriptionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTranscriptionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTranscriptionJobs`](crate::operation::ListTranscriptionJobs)>
     #[allow(clippy::let_and_return)]
@@ -5110,7 +5112,7 @@ impl ListTranscriptionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTranscriptionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5223,7 +5225,7 @@ impl ListTranscriptionJobsInput {
             "ListTranscriptionJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5333,7 +5335,7 @@ pub mod list_vocabularies_input {
 #[doc(hidden)]
 pub type ListVocabulariesInputOperationOutputAlias = crate::operation::ListVocabularies;
 #[doc(hidden)]
-pub type ListVocabulariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVocabulariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularies`](crate::operation::ListVocabularies)>
     #[allow(clippy::let_and_return)]
@@ -5344,7 +5346,7 @@ impl ListVocabulariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5458,7 +5460,7 @@ impl ListVocabulariesInput {
             "ListVocabularies",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5547,7 +5549,7 @@ pub mod list_vocabulary_filters_input {
 #[doc(hidden)]
 pub type ListVocabularyFiltersInputOperationOutputAlias = crate::operation::ListVocabularyFilters;
 #[doc(hidden)]
-pub type ListVocabularyFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVocabularyFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVocabularyFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularyFilters`](crate::operation::ListVocabularyFilters)>
     #[allow(clippy::let_and_return)]
@@ -5558,7 +5560,7 @@ impl ListVocabularyFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularyFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5668,7 +5670,7 @@ impl ListVocabularyFiltersInput {
             "ListVocabularyFilters",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5937,7 +5939,7 @@ pub mod start_call_analytics_job_input {
 #[doc(hidden)]
 pub type StartCallAnalyticsJobInputOperationOutputAlias = crate::operation::StartCallAnalyticsJob;
 #[doc(hidden)]
-pub type StartCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`StartCallAnalyticsJob`](crate::operation::StartCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
@@ -5948,7 +5950,7 @@ impl StartCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCallAnalyticsJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6035,7 +6037,7 @@ impl StartCallAnalyticsJobInput {
             "StartCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6418,7 +6420,8 @@ pub mod start_medical_transcription_job_input {
 pub type StartMedicalTranscriptionJobInputOperationOutputAlias =
     crate::operation::StartMedicalTranscriptionJob;
 #[doc(hidden)]
-pub type StartMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMedicalTranscriptionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalTranscriptionJob`](crate::operation::StartMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -6429,7 +6432,7 @@ impl StartMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6515,7 +6518,7 @@ impl StartMedicalTranscriptionJobInput {
             "StartMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6990,7 +6993,7 @@ pub mod start_transcription_job_input {
 #[doc(hidden)]
 pub type StartTranscriptionJobInputOperationOutputAlias = crate::operation::StartTranscriptionJob;
 #[doc(hidden)]
-pub type StartTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTranscriptionJob`](crate::operation::StartTranscriptionJob)>
     #[allow(clippy::let_and_return)]
@@ -7001,7 +7004,7 @@ impl StartTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTranscriptionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7088,7 +7091,7 @@ impl StartTranscriptionJobInput {
             "StartTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7179,7 +7182,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7190,7 +7193,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7274,7 +7277,7 @@ impl TagResourceInput {
             "TagResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7367,7 +7370,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -7378,7 +7381,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7462,7 +7465,7 @@ impl UntagResourceInput {
             "UntagResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7549,7 +7552,7 @@ pub mod update_call_analytics_category_input {
 pub type UpdateCallAnalyticsCategoryInputOperationOutputAlias =
     crate::operation::UpdateCallAnalyticsCategory;
 #[doc(hidden)]
-pub type UpdateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCallAnalyticsCategory`](crate::operation::UpdateCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
@@ -7560,7 +7563,7 @@ impl UpdateCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCallAnalyticsCategory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7646,7 +7649,7 @@ impl UpdateCallAnalyticsCategoryInput {
             "UpdateCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7768,7 +7771,7 @@ pub mod update_medical_vocabulary_input {
 pub type UpdateMedicalVocabularyInputOperationOutputAlias =
     crate::operation::UpdateMedicalVocabulary;
 #[doc(hidden)]
-pub type UpdateMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMedicalVocabulary`](crate::operation::UpdateMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -7779,7 +7782,7 @@ impl UpdateMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMedicalVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7866,7 +7869,7 @@ impl UpdateMedicalVocabularyInput {
             "UpdateMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7996,7 +7999,7 @@ pub mod update_vocabulary_input {
 #[doc(hidden)]
 pub type UpdateVocabularyInputOperationOutputAlias = crate::operation::UpdateVocabulary;
 #[doc(hidden)]
-pub type UpdateVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabulary`](crate::operation::UpdateVocabulary)>
     #[allow(clippy::let_and_return)]
@@ -8007,7 +8010,7 @@ impl UpdateVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabulary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8092,7 +8095,7 @@ impl UpdateVocabularyInput {
             "UpdateVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8207,7 +8210,7 @@ pub mod update_vocabulary_filter_input {
 #[doc(hidden)]
 pub type UpdateVocabularyFilterInputOperationOutputAlias = crate::operation::UpdateVocabularyFilter;
 #[doc(hidden)]
-pub type UpdateVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabularyFilter`](crate::operation::UpdateVocabularyFilter)>
     #[allow(clippy::let_and_return)]
@@ -8218,7 +8221,7 @@ impl UpdateVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabularyFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8305,7 +8308,7 @@ impl UpdateVocabularyFilterInput {
             "UpdateVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

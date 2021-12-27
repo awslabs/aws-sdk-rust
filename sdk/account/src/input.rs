@@ -84,7 +84,7 @@ pub mod delete_alternate_contact_input {
 #[doc(hidden)]
 pub type DeleteAlternateContactInputOperationOutputAlias = crate::operation::DeleteAlternateContact;
 #[doc(hidden)]
-pub type DeleteAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlternateContact`](crate::operation::DeleteAlternateContact)>
     #[allow(clippy::let_and_return)]
@@ -95,7 +95,7 @@ impl DeleteAlternateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlternateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -177,7 +177,7 @@ impl DeleteAlternateContactInput {
             "DeleteAlternateContact",
             "account",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -284,7 +284,7 @@ pub mod get_alternate_contact_input {
 #[doc(hidden)]
 pub type GetAlternateContactInputOperationOutputAlias = crate::operation::GetAlternateContact;
 #[doc(hidden)]
-pub type GetAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`GetAlternateContact`](crate::operation::GetAlternateContact)>
     #[allow(clippy::let_and_return)]
@@ -295,7 +295,7 @@ impl GetAlternateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAlternateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -375,7 +375,7 @@ impl GetAlternateContactInput {
             "GetAlternateContact",
             "account",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -533,7 +533,7 @@ pub mod put_alternate_contact_input {
 #[doc(hidden)]
 pub type PutAlternateContactInputOperationOutputAlias = crate::operation::PutAlternateContact;
 #[doc(hidden)]
-pub type PutAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`PutAlternateContact`](crate::operation::PutAlternateContact)>
     #[allow(clippy::let_and_return)]
@@ -544,7 +544,7 @@ impl PutAlternateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAlternateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -624,7 +624,7 @@ impl PutAlternateContactInput {
             "PutAlternateContact",
             "account",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

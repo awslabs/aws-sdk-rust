@@ -50,7 +50,7 @@ pub mod batch_get_record_input {
 #[doc(hidden)]
 pub type BatchGetRecordInputOperationOutputAlias = crate::operation::BatchGetRecord;
 #[doc(hidden)]
-pub type BatchGetRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetRecordInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetRecord`](crate::operation::BatchGetRecord)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl BatchGetRecordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetRecord,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -141,7 +141,7 @@ impl BatchGetRecordInput {
             "BatchGetRecord",
             "sagemakerfeaturestoreruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -236,7 +236,7 @@ pub mod delete_record_input {
 #[doc(hidden)]
 pub type DeleteRecordInputOperationOutputAlias = crate::operation::DeleteRecord;
 #[doc(hidden)]
-pub type DeleteRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecord`](crate::operation::DeleteRecord)>
     #[allow(clippy::let_and_return)]
@@ -247,7 +247,7 @@ impl DeleteRecordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecord,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -358,7 +358,7 @@ impl DeleteRecordInput {
             "DeleteRecord",
             "sagemakerfeaturestoreruntime",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -452,7 +452,7 @@ pub mod get_record_input {
 #[doc(hidden)]
 pub type GetRecordInputOperationOutputAlias = crate::operation::GetRecord;
 #[doc(hidden)]
-pub type GetRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordInput {
     /// Consumes the builder and constructs an Operation<[`GetRecord`](crate::operation::GetRecord)>
     #[allow(clippy::let_and_return)]
@@ -463,7 +463,7 @@ impl GetRecordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecord,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -574,7 +574,7 @@ impl GetRecordInput {
                     "GetRecord",
                     "sagemakerfeaturestoreruntime",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -670,7 +670,7 @@ pub mod put_record_input {
 #[doc(hidden)]
 pub type PutRecordInputOperationOutputAlias = crate::operation::PutRecord;
 #[doc(hidden)]
-pub type PutRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
     #[allow(clippy::let_and_return)]
@@ -681,7 +681,7 @@ impl PutRecordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRecord,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -778,7 +778,7 @@ impl PutRecordInput {
                     "PutRecord",
                     "sagemakerfeaturestoreruntime",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

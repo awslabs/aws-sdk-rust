@@ -64,7 +64,7 @@ pub mod get_clip_input {
 #[doc(hidden)]
 pub type GetClipInputOperationOutputAlias = crate::operation::GetClip;
 #[doc(hidden)]
-pub type GetClipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetClipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClipInput {
     /// Consumes the builder and constructs an Operation<[`GetClip`](crate::operation::GetClip)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl GetClipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClip,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -152,7 +152,7 @@ impl GetClipInput {
                     "GetClip",
                     "kinesisvideoarchivedmedia",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -538,7 +538,7 @@ pub mod get_dash_streaming_session_url_input {
 pub type GetDashStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetDASHStreamingSessionURL;
 #[doc(hidden)]
-pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDashStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetDASHStreamingSessionURL`](crate::operation::GetDASHStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -549,7 +549,7 @@ impl GetDashStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDASHStreamingSessionURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -630,7 +630,7 @@ impl GetDashStreamingSessionUrlInput {
             "GetDASHStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1099,7 +1099,7 @@ pub mod get_hls_streaming_session_url_input {
 pub type GetHlsStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetHLSStreamingSessionURL;
 #[doc(hidden)]
-pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHlsStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetHLSStreamingSessionURL`](crate::operation::GetHLSStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -1110,7 +1110,7 @@ impl GetHlsStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHLSStreamingSessionURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1191,7 +1191,7 @@ impl GetHlsStreamingSessionUrlInput {
             "GetHLSStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1285,7 +1285,7 @@ pub mod get_media_for_fragment_list_input {
 pub type GetMediaForFragmentListInputOperationOutputAlias =
     crate::operation::GetMediaForFragmentList;
 #[doc(hidden)]
-pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaForFragmentListInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaForFragmentList`](crate::operation::GetMediaForFragmentList)>
     #[allow(clippy::let_and_return)]
@@ -1296,7 +1296,7 @@ impl GetMediaForFragmentListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMediaForFragmentList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1378,7 +1378,7 @@ impl GetMediaForFragmentListInput {
             "GetMediaForFragmentList",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1495,7 +1495,7 @@ pub mod list_fragments_input {
 #[doc(hidden)]
 pub type ListFragmentsInputOperationOutputAlias = crate::operation::ListFragments;
 #[doc(hidden)]
-pub type ListFragmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFragmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFragmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListFragments`](crate::operation::ListFragments)>
     #[allow(clippy::let_and_return)]
@@ -1506,7 +1506,7 @@ impl ListFragmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFragments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1585,7 +1585,7 @@ impl ListFragmentsInput {
             "ListFragments",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

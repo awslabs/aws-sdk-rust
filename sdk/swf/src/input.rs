@@ -206,7 +206,8 @@ pub mod count_closed_workflow_executions_input {
 pub type CountClosedWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::CountClosedWorkflowExecutions;
 #[doc(hidden)]
-pub type CountClosedWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountClosedWorkflowExecutionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CountClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountClosedWorkflowExecutions`](crate::operation::CountClosedWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -217,7 +218,7 @@ impl CountClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountClosedWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +304,7 @@ impl CountClosedWorkflowExecutionsInput {
             "CountClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -458,7 +459,7 @@ pub mod count_open_workflow_executions_input {
 pub type CountOpenWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::CountOpenWorkflowExecutions;
 #[doc(hidden)]
-pub type CountOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountOpenWorkflowExecutions`](crate::operation::CountOpenWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -469,7 +470,7 @@ impl CountOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountOpenWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -555,7 +556,7 @@ impl CountOpenWorkflowExecutionsInput {
             "CountOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -626,7 +627,7 @@ pub mod count_pending_activity_tasks_input {
 pub type CountPendingActivityTasksInputOperationOutputAlias =
     crate::operation::CountPendingActivityTasks;
 #[doc(hidden)]
-pub type CountPendingActivityTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountPendingActivityTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingActivityTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingActivityTasks`](crate::operation::CountPendingActivityTasks)>
     #[allow(clippy::let_and_return)]
@@ -637,7 +638,7 @@ impl CountPendingActivityTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingActivityTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -724,7 +725,7 @@ impl CountPendingActivityTasksInput {
             "CountPendingActivityTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -795,7 +796,7 @@ pub mod count_pending_decision_tasks_input {
 pub type CountPendingDecisionTasksInputOperationOutputAlias =
     crate::operation::CountPendingDecisionTasks;
 #[doc(hidden)]
-pub type CountPendingDecisionTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountPendingDecisionTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingDecisionTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingDecisionTasks`](crate::operation::CountPendingDecisionTasks)>
     #[allow(clippy::let_and_return)]
@@ -806,7 +807,7 @@ impl CountPendingDecisionTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingDecisionTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -893,7 +894,7 @@ impl CountPendingDecisionTasksInput {
             "CountPendingDecisionTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -966,7 +967,7 @@ pub mod deprecate_activity_type_input {
 #[doc(hidden)]
 pub type DeprecateActivityTypeInputOperationOutputAlias = crate::operation::DeprecateActivityType;
 #[doc(hidden)]
-pub type DeprecateActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateActivityType`](crate::operation::DeprecateActivityType)>
     #[allow(clippy::let_and_return)]
@@ -977,7 +978,7 @@ impl DeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1064,7 +1065,7 @@ impl DeprecateActivityTypeInput {
             "DeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1120,7 +1121,7 @@ pub mod deprecate_domain_input {
 #[doc(hidden)]
 pub type DeprecateDomainInputOperationOutputAlias = crate::operation::DeprecateDomain;
 #[doc(hidden)]
-pub type DeprecateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateDomain`](crate::operation::DeprecateDomain)>
     #[allow(clippy::let_and_return)]
@@ -1131,7 +1132,7 @@ impl DeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1216,7 +1217,7 @@ impl DeprecateDomainInput {
             "DeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1289,7 +1290,7 @@ pub mod deprecate_workflow_type_input {
 #[doc(hidden)]
 pub type DeprecateWorkflowTypeInputOperationOutputAlias = crate::operation::DeprecateWorkflowType;
 #[doc(hidden)]
-pub type DeprecateWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateWorkflowType`](crate::operation::DeprecateWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -1300,7 +1301,7 @@ impl DeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1388,7 @@ impl DeprecateWorkflowTypeInput {
             "DeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1464,7 +1465,7 @@ pub mod describe_activity_type_input {
 #[doc(hidden)]
 pub type DescribeActivityTypeInputOperationOutputAlias = crate::operation::DescribeActivityType;
 #[doc(hidden)]
-pub type DescribeActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivityType`](crate::operation::DescribeActivityType)>
     #[allow(clippy::let_and_return)]
@@ -1475,7 +1476,7 @@ impl DescribeActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1562,7 +1563,7 @@ impl DescribeActivityTypeInput {
             "DescribeActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1618,7 +1619,7 @@ pub mod describe_domain_input {
 #[doc(hidden)]
 pub type DescribeDomainInputOperationOutputAlias = crate::operation::DescribeDomain;
 #[doc(hidden)]
-pub type DescribeDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
     #[allow(clippy::let_and_return)]
@@ -1629,7 +1630,7 @@ impl DescribeDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1714,7 +1715,7 @@ impl DescribeDomainInput {
             "DescribeDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1788,7 +1789,7 @@ pub mod describe_workflow_execution_input {
 pub type DescribeWorkflowExecutionInputOperationOutputAlias =
     crate::operation::DescribeWorkflowExecution;
 #[doc(hidden)]
-pub type DescribeWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowExecution`](crate::operation::DescribeWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -1799,7 +1800,7 @@ impl DescribeWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1886,7 +1887,7 @@ impl DescribeWorkflowExecutionInput {
             "DescribeWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1959,7 +1960,7 @@ pub mod describe_workflow_type_input {
 #[doc(hidden)]
 pub type DescribeWorkflowTypeInputOperationOutputAlias = crate::operation::DescribeWorkflowType;
 #[doc(hidden)]
-pub type DescribeWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowType`](crate::operation::DescribeWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -1970,7 +1971,7 @@ impl DescribeWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2057,7 +2058,7 @@ impl DescribeWorkflowTypeInput {
             "DescribeWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2190,7 +2191,7 @@ pub mod get_workflow_execution_history_input {
 pub type GetWorkflowExecutionHistoryInputOperationOutputAlias =
     crate::operation::GetWorkflowExecutionHistory;
 #[doc(hidden)]
-pub type GetWorkflowExecutionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowExecutionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowExecutionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowExecutionHistory`](crate::operation::GetWorkflowExecutionHistory)>
     #[allow(clippy::let_and_return)]
@@ -2201,7 +2202,7 @@ impl GetWorkflowExecutionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowExecutionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2287,7 +2288,7 @@ impl GetWorkflowExecutionHistoryInput {
             "GetWorkflowExecutionHistory",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2431,7 +2432,7 @@ pub mod list_activity_types_input {
 #[doc(hidden)]
 pub type ListActivityTypesInputOperationOutputAlias = crate::operation::ListActivityTypes;
 #[doc(hidden)]
-pub type ListActivityTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActivityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActivityTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActivityTypes`](crate::operation::ListActivityTypes)>
     #[allow(clippy::let_and_return)]
@@ -2442,7 +2443,7 @@ impl ListActivityTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActivityTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2527,7 +2528,7 @@ impl ListActivityTypesInput {
             "ListActivityTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2819,7 +2820,8 @@ pub mod list_closed_workflow_executions_input {
 pub type ListClosedWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::ListClosedWorkflowExecutions;
 #[doc(hidden)]
-pub type ListClosedWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClosedWorkflowExecutionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListClosedWorkflowExecutions`](crate::operation::ListClosedWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -2830,7 +2832,7 @@ impl ListClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClosedWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2916,7 +2918,7 @@ impl ListClosedWorkflowExecutionsInput {
             "ListClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3036,7 +3038,7 @@ pub mod list_domains_input {
 #[doc(hidden)]
 pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
 #[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(clippy::let_and_return)]
@@ -3047,7 +3049,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3131,7 +3133,7 @@ impl ListDomainsInput {
             "ListDomains",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3343,7 +3345,7 @@ pub mod list_open_workflow_executions_input {
 pub type ListOpenWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::ListOpenWorkflowExecutions;
 #[doc(hidden)]
-pub type ListOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListOpenWorkflowExecutions`](crate::operation::ListOpenWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -3354,7 +3356,7 @@ impl ListOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOpenWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3440,7 +3442,7 @@ impl ListOpenWorkflowExecutionsInput {
             "ListOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3498,7 +3500,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3509,7 +3511,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3596,7 +3598,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3740,7 +3742,7 @@ pub mod list_workflow_types_input {
 #[doc(hidden)]
 pub type ListWorkflowTypesInputOperationOutputAlias = crate::operation::ListWorkflowTypes;
 #[doc(hidden)]
-pub type ListWorkflowTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkflowTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkflowTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowTypes`](crate::operation::ListWorkflowTypes)>
     #[allow(clippy::let_and_return)]
@@ -3751,7 +3753,7 @@ impl ListWorkflowTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflowTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3836,7 +3838,7 @@ impl ListWorkflowTypesInput {
             "ListWorkflowTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3932,7 +3934,7 @@ pub mod poll_for_activity_task_input {
 #[doc(hidden)]
 pub type PollForActivityTaskInputOperationOutputAlias = crate::operation::PollForActivityTask;
 #[doc(hidden)]
-pub type PollForActivityTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForActivityTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForActivityTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForActivityTask`](crate::operation::PollForActivityTask)>
     #[allow(clippy::let_and_return)]
@@ -3943,7 +3945,7 @@ impl PollForActivityTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForActivityTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4030,7 +4032,7 @@ impl PollForActivityTaskInput {
             "PollForActivityTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4201,7 +4203,7 @@ pub mod poll_for_decision_task_input {
 #[doc(hidden)]
 pub type PollForDecisionTaskInputOperationOutputAlias = crate::operation::PollForDecisionTask;
 #[doc(hidden)]
-pub type PollForDecisionTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForDecisionTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForDecisionTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForDecisionTask`](crate::operation::PollForDecisionTask)>
     #[allow(clippy::let_and_return)]
@@ -4212,7 +4214,7 @@ impl PollForDecisionTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForDecisionTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4299,7 +4301,7 @@ impl PollForDecisionTaskInput {
             "PollForDecisionTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4382,7 +4384,7 @@ pub mod record_activity_task_heartbeat_input {
 pub type RecordActivityTaskHeartbeatInputOperationOutputAlias =
     crate::operation::RecordActivityTaskHeartbeat;
 #[doc(hidden)]
-pub type RecordActivityTaskHeartbeatInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RecordActivityTaskHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecordActivityTaskHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`RecordActivityTaskHeartbeat`](crate::operation::RecordActivityTaskHeartbeat)>
     #[allow(clippy::let_and_return)]
@@ -4393,7 +4395,7 @@ impl RecordActivityTaskHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecordActivityTaskHeartbeat,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4479,7 +4481,7 @@ impl RecordActivityTaskHeartbeatInput {
             "RecordActivityTaskHeartbeat",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4769,7 +4771,7 @@ pub mod register_activity_type_input {
 #[doc(hidden)]
 pub type RegisterActivityTypeInputOperationOutputAlias = crate::operation::RegisterActivityType;
 #[doc(hidden)]
-pub type RegisterActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterActivityType`](crate::operation::RegisterActivityType)>
     #[allow(clippy::let_and_return)]
@@ -4780,7 +4782,7 @@ impl RegisterActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4867,7 +4869,7 @@ impl RegisterActivityTypeInput {
             "RegisterActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5008,7 +5010,7 @@ pub mod register_domain_input {
 #[doc(hidden)]
 pub type RegisterDomainInputOperationOutputAlias = crate::operation::RegisterDomain;
 #[doc(hidden)]
-pub type RegisterDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(clippy::let_and_return)]
@@ -5019,7 +5021,7 @@ impl RegisterDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5104,7 +5106,7 @@ impl RegisterDomainInput {
             "RegisterDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5424,7 +5426,7 @@ pub mod register_workflow_type_input {
 #[doc(hidden)]
 pub type RegisterWorkflowTypeInputOperationOutputAlias = crate::operation::RegisterWorkflowType;
 #[doc(hidden)]
-pub type RegisterWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkflowType`](crate::operation::RegisterWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -5435,7 +5437,7 @@ impl RegisterWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5522,7 +5524,7 @@ impl RegisterWorkflowTypeInput {
             "RegisterWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5605,7 +5607,8 @@ pub mod request_cancel_workflow_execution_input {
 pub type RequestCancelWorkflowExecutionInputOperationOutputAlias =
     crate::operation::RequestCancelWorkflowExecution;
 #[doc(hidden)]
-pub type RequestCancelWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RequestCancelWorkflowExecutionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RequestCancelWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RequestCancelWorkflowExecution`](crate::operation::RequestCancelWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -5616,7 +5619,7 @@ impl RequestCancelWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestCancelWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5702,7 +5705,7 @@ impl RequestCancelWorkflowExecutionInput {
             "RequestCancelWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5785,7 +5788,7 @@ pub mod respond_activity_task_canceled_input {
 pub type RespondActivityTaskCanceledInputOperationOutputAlias =
     crate::operation::RespondActivityTaskCanceled;
 #[doc(hidden)]
-pub type RespondActivityTaskCanceledInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskCanceledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCanceledInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCanceled`](crate::operation::RespondActivityTaskCanceled)>
     #[allow(clippy::let_and_return)]
@@ -5796,7 +5799,7 @@ impl RespondActivityTaskCanceledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCanceled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5882,7 +5885,7 @@ impl RespondActivityTaskCanceledInput {
             "RespondActivityTaskCanceled",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5967,7 +5970,8 @@ pub mod respond_activity_task_completed_input {
 pub type RespondActivityTaskCompletedInputOperationOutputAlias =
     crate::operation::RespondActivityTaskCompleted;
 #[doc(hidden)]
-pub type RespondActivityTaskCompletedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskCompletedInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCompleted`](crate::operation::RespondActivityTaskCompleted)>
     #[allow(clippy::let_and_return)]
@@ -5978,7 +5982,7 @@ impl RespondActivityTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCompleted,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6064,7 +6068,7 @@ impl RespondActivityTaskCompletedInput {
             "RespondActivityTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6161,7 +6165,7 @@ pub mod respond_activity_task_failed_input {
 pub type RespondActivityTaskFailedInputOperationOutputAlias =
     crate::operation::RespondActivityTaskFailed;
 #[doc(hidden)]
-pub type RespondActivityTaskFailedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskFailedInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskFailedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskFailed`](crate::operation::RespondActivityTaskFailed)>
     #[allow(clippy::let_and_return)]
@@ -6172,7 +6176,7 @@ impl RespondActivityTaskFailedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskFailed,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6259,7 +6263,7 @@ impl RespondActivityTaskFailedInput {
             "RespondActivityTaskFailed",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6370,7 +6374,8 @@ pub mod respond_decision_task_completed_input {
 pub type RespondDecisionTaskCompletedInputOperationOutputAlias =
     crate::operation::RespondDecisionTaskCompleted;
 #[doc(hidden)]
-pub type RespondDecisionTaskCompletedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondDecisionTaskCompletedInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondDecisionTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondDecisionTaskCompleted`](crate::operation::RespondDecisionTaskCompleted)>
     #[allow(clippy::let_and_return)]
@@ -6381,7 +6386,7 @@ impl RespondDecisionTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondDecisionTaskCompleted,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6467,7 +6472,7 @@ impl RespondDecisionTaskCompletedInput {
             "RespondDecisionTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6576,7 +6581,7 @@ pub mod signal_workflow_execution_input {
 pub type SignalWorkflowExecutionInputOperationOutputAlias =
     crate::operation::SignalWorkflowExecution;
 #[doc(hidden)]
-pub type SignalWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SignalWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignalWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`SignalWorkflowExecution`](crate::operation::SignalWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -6587,7 +6592,7 @@ impl SignalWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignalWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6674,7 +6679,7 @@ impl SignalWorkflowExecutionInput {
             "SignalWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7056,7 +7061,7 @@ pub mod start_workflow_execution_input {
 #[doc(hidden)]
 pub type StartWorkflowExecutionInputOperationOutputAlias = crate::operation::StartWorkflowExecution;
 #[doc(hidden)]
-pub type StartWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflowExecution`](crate::operation::StartWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -7067,7 +7072,7 @@ impl StartWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7154,7 +7159,7 @@ impl StartWorkflowExecutionInput {
             "StartWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7235,7 +7240,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7246,7 +7251,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7330,7 +7335,7 @@ impl TagResourceInput {
             "TagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7504,7 +7509,7 @@ pub mod terminate_workflow_execution_input {
 pub type TerminateWorkflowExecutionInputOperationOutputAlias =
     crate::operation::TerminateWorkflowExecution;
 #[doc(hidden)]
-pub type TerminateWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkflowExecution`](crate::operation::TerminateWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -7515,7 +7520,7 @@ impl TerminateWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7602,7 +7607,7 @@ impl TerminateWorkflowExecutionInput {
             "TerminateWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7676,7 +7681,7 @@ pub mod undeprecate_activity_type_input {
 pub type UndeprecateActivityTypeInputOperationOutputAlias =
     crate::operation::UndeprecateActivityType;
 #[doc(hidden)]
-pub type UndeprecateActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateActivityType`](crate::operation::UndeprecateActivityType)>
     #[allow(clippy::let_and_return)]
@@ -7687,7 +7692,7 @@ impl UndeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7774,7 +7779,7 @@ impl UndeprecateActivityTypeInput {
             "UndeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7830,7 +7835,7 @@ pub mod undeprecate_domain_input {
 #[doc(hidden)]
 pub type UndeprecateDomainInputOperationOutputAlias = crate::operation::UndeprecateDomain;
 #[doc(hidden)]
-pub type UndeprecateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateDomain`](crate::operation::UndeprecateDomain)>
     #[allow(clippy::let_and_return)]
@@ -7841,7 +7846,7 @@ impl UndeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7926,7 +7931,7 @@ impl UndeprecateDomainInput {
             "UndeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8000,7 +8005,7 @@ pub mod undeprecate_workflow_type_input {
 pub type UndeprecateWorkflowTypeInputOperationOutputAlias =
     crate::operation::UndeprecateWorkflowType;
 #[doc(hidden)]
-pub type UndeprecateWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateWorkflowType`](crate::operation::UndeprecateWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -8011,7 +8016,7 @@ impl UndeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8098,7 +8103,7 @@ impl UndeprecateWorkflowTypeInput {
             "UndeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8177,7 +8182,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8188,7 +8193,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8272,7 +8277,7 @@ impl UntagResourceInput {
             "UntagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

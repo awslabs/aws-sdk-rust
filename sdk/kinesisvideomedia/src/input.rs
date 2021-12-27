@@ -66,7 +66,7 @@ pub mod get_media_input {
 #[doc(hidden)]
 pub type GetMediaInputOperationOutputAlias = crate::operation::GetMedia;
 #[doc(hidden)]
-pub type GetMediaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaInput {
     /// Consumes the builder and constructs an Operation<[`GetMedia`](crate::operation::GetMedia)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +77,7 @@ impl GetMediaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedia,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +154,7 @@ impl GetMediaInput {
                     "GetMedia",
                     "kinesisvideomedia",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

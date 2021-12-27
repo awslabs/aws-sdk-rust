@@ -62,7 +62,7 @@ pub mod batch_meter_usage_input {
 #[doc(hidden)]
 pub type BatchMeterUsageInputOperationOutputAlias = crate::operation::BatchMeterUsage;
 #[doc(hidden)]
-pub type BatchMeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchMeterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchMeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`BatchMeterUsage`](crate::operation::BatchMeterUsage)>
     #[allow(clippy::let_and_return)]
@@ -73,7 +73,7 @@ impl BatchMeterUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchMeterUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -158,7 +158,7 @@ impl BatchMeterUsageInput {
             "BatchMeterUsage",
             "marketplacemetering",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -319,7 +319,7 @@ pub mod meter_usage_input {
 #[doc(hidden)]
 pub type MeterUsageInputOperationOutputAlias = crate::operation::MeterUsage;
 #[doc(hidden)]
-pub type MeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type MeterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`MeterUsage`](crate::operation::MeterUsage)>
     #[allow(clippy::let_and_return)]
@@ -330,7 +330,7 @@ impl MeterUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MeterUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -414,7 +414,7 @@ impl MeterUsageInput {
             "MeterUsage",
             "marketplacemetering",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -502,7 +502,7 @@ pub mod register_usage_input {
 #[doc(hidden)]
 pub type RegisterUsageInputOperationOutputAlias = crate::operation::RegisterUsage;
 #[doc(hidden)]
-pub type RegisterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterUsageInput {
     /// Consumes the builder and constructs an Operation<[`RegisterUsage`](crate::operation::RegisterUsage)>
     #[allow(clippy::let_and_return)]
@@ -513,7 +513,7 @@ impl RegisterUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -597,7 +597,7 @@ impl RegisterUsageInput {
             "RegisterUsage",
             "marketplacemetering",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -662,7 +662,7 @@ pub mod resolve_customer_input {
 #[doc(hidden)]
 pub type ResolveCustomerInputOperationOutputAlias = crate::operation::ResolveCustomer;
 #[doc(hidden)]
-pub type ResolveCustomerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResolveCustomerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveCustomerInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCustomer`](crate::operation::ResolveCustomer)>
     #[allow(clippy::let_and_return)]
@@ -673,7 +673,7 @@ impl ResolveCustomerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveCustomer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -758,7 +758,7 @@ impl ResolveCustomerInput {
             "ResolveCustomer",
             "marketplacemetering",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

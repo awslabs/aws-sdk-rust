@@ -70,7 +70,7 @@ pub type BatchAssociateClientDeviceWithCoreDeviceInputOperationOutputAlias =
     crate::operation::BatchAssociateClientDeviceWithCoreDevice;
 #[doc(hidden)]
 pub type BatchAssociateClientDeviceWithCoreDeviceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateClientDeviceWithCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateClientDeviceWithCoreDevice`](crate::operation::BatchAssociateClientDeviceWithCoreDevice)>
     #[allow(clippy::let_and_return)]
@@ -81,7 +81,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateClientDeviceWithCoreDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -182,7 +182,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
             "BatchAssociateClientDeviceWithCoreDevice",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -276,7 +276,7 @@ pub type BatchDisassociateClientDeviceFromCoreDeviceInputOperationOutputAlias =
     crate::operation::BatchDisassociateClientDeviceFromCoreDevice;
 #[doc(hidden)]
 pub type BatchDisassociateClientDeviceFromCoreDeviceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateClientDeviceFromCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateClientDeviceFromCoreDevice`](crate::operation::BatchDisassociateClientDeviceFromCoreDevice)>
     #[allow(clippy::let_and_return)]
@@ -287,7 +287,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateClientDeviceFromCoreDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -388,7 +388,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
             "BatchDisassociateClientDeviceFromCoreDevice",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -450,7 +450,7 @@ pub mod cancel_deployment_input {
 #[doc(hidden)]
 pub type CancelDeploymentInputOperationOutputAlias = crate::operation::CancelDeployment;
 #[doc(hidden)]
-pub type CancelDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CancelDeployment`](crate::operation::CancelDeployment)>
     #[allow(clippy::let_and_return)]
@@ -461,7 +461,7 @@ impl CancelDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -555,7 +555,7 @@ impl CancelDeploymentInput {
             "CancelDeployment",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -682,7 +682,7 @@ pub mod create_component_version_input {
 #[doc(hidden)]
 pub type CreateComponentVersionInputOperationOutputAlias = crate::operation::CreateComponentVersion;
 #[doc(hidden)]
-pub type CreateComponentVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateComponentVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponentVersion`](crate::operation::CreateComponentVersion)>
     #[allow(clippy::let_and_return)]
@@ -693,7 +693,7 @@ impl CreateComponentVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateComponentVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -779,7 +779,7 @@ impl CreateComponentVersionInput {
             "CreateComponentVersion",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -980,7 +980,7 @@ pub mod create_deployment_input {
 #[doc(hidden)]
 pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
 #[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(clippy::let_and_return)]
@@ -991,7 +991,7 @@ impl CreateDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1074,7 +1074,7 @@ impl CreateDeploymentInput {
             "CreateDeployment",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1130,7 +1130,7 @@ pub mod delete_component_input {
 #[doc(hidden)]
 pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
 #[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(clippy::let_and_return)]
@@ -1141,7 +1141,7 @@ impl DeleteComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1231,7 +1231,7 @@ impl DeleteComponentInput {
             "DeleteComponent",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1284,7 +1284,7 @@ pub mod delete_core_device_input {
 #[doc(hidden)]
 pub type DeleteCoreDeviceInputOperationOutputAlias = crate::operation::DeleteCoreDevice;
 #[doc(hidden)]
-pub type DeleteCoreDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCoreDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCoreDevice`](crate::operation::DeleteCoreDevice)>
     #[allow(clippy::let_and_return)]
@@ -1295,7 +1295,7 @@ impl DeleteCoreDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCoreDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1389,7 +1389,7 @@ impl DeleteCoreDeviceInput {
             "DeleteCoreDevice",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1437,7 +1437,7 @@ pub mod describe_component_input {
 #[doc(hidden)]
 pub type DescribeComponentInputOperationOutputAlias = crate::operation::DescribeComponent;
 #[doc(hidden)]
-pub type DescribeComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComponentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComponent`](crate::operation::DescribeComponent)>
     #[allow(clippy::let_and_return)]
@@ -1448,7 +1448,7 @@ impl DescribeComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1542,7 +1542,7 @@ impl DescribeComponentInput {
             "DescribeComponent",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1607,7 +1607,7 @@ pub mod get_component_input {
 #[doc(hidden)]
 pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
 #[doc(hidden)]
-pub type GetComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(clippy::let_and_return)]
@@ -1618,7 +1618,7 @@ impl GetComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1722,7 +1722,7 @@ impl GetComponentInput {
             "GetComponent",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1798,7 +1798,7 @@ pub mod get_component_version_artifact_input {
 pub type GetComponentVersionArtifactInputOperationOutputAlias =
     crate::operation::GetComponentVersionArtifact;
 #[doc(hidden)]
-pub type GetComponentVersionArtifactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentVersionArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentVersionArtifactInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentVersionArtifact`](crate::operation::GetComponentVersionArtifact)>
     #[allow(clippy::let_and_return)]
@@ -1809,7 +1809,7 @@ impl GetComponentVersionArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponentVersionArtifact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1919,7 +1919,7 @@ impl GetComponentVersionArtifactInput {
             "GetComponentVersionArtifact",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1972,7 +1972,7 @@ pub mod get_core_device_input {
 #[doc(hidden)]
 pub type GetCoreDeviceInputOperationOutputAlias = crate::operation::GetCoreDevice;
 #[doc(hidden)]
-pub type GetCoreDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCoreDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreDevice`](crate::operation::GetCoreDevice)>
     #[allow(clippy::let_and_return)]
@@ -1983,7 +1983,7 @@ impl GetCoreDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCoreDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2077,7 +2077,7 @@ impl GetCoreDeviceInput {
             "GetCoreDevice",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2130,7 +2130,7 @@ pub mod get_deployment_input {
 #[doc(hidden)]
 pub type GetDeploymentInputOperationOutputAlias = crate::operation::GetDeployment;
 #[doc(hidden)]
-pub type GetDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
     #[allow(clippy::let_and_return)]
@@ -2141,7 +2141,7 @@ impl GetDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2235,7 +2235,7 @@ impl GetDeploymentInput {
             "GetDeployment",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2316,7 +2316,7 @@ pub type ListClientDevicesAssociatedWithCoreDeviceInputOperationOutputAlias =
     crate::operation::ListClientDevicesAssociatedWithCoreDevice;
 #[doc(hidden)]
 pub type ListClientDevicesAssociatedWithCoreDeviceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListClientDevicesAssociatedWithCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ListClientDevicesAssociatedWithCoreDevice`](crate::operation::ListClientDevicesAssociatedWithCoreDevice)>
     #[allow(clippy::let_and_return)]
@@ -2327,7 +2327,7 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClientDevicesAssociatedWithCoreDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2438,7 +2438,7 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
             "ListClientDevicesAssociatedWithCoreDevice",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2520,7 +2520,7 @@ pub mod list_components_input {
 #[doc(hidden)]
 pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
 #[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(clippy::let_and_return)]
@@ -2531,7 +2531,7 @@ impl ListComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2625,7 +2625,7 @@ impl ListComponentsInput {
             "ListComponents",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2699,7 +2699,7 @@ pub mod list_component_versions_input {
 #[doc(hidden)]
 pub type ListComponentVersionsInputOperationOutputAlias = crate::operation::ListComponentVersions;
 #[doc(hidden)]
-pub type ListComponentVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentVersions`](crate::operation::ListComponentVersions)>
     #[allow(clippy::let_and_return)]
@@ -2710,7 +2710,7 @@ impl ListComponentVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponentVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2821,7 +2821,7 @@ impl ListComponentVersionsInput {
             "ListComponentVersions",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2939,7 +2939,7 @@ pub mod list_core_devices_input {
 #[doc(hidden)]
 pub type ListCoreDevicesInputOperationOutputAlias = crate::operation::ListCoreDevices;
 #[doc(hidden)]
-pub type ListCoreDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCoreDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreDevices`](crate::operation::ListCoreDevices)>
     #[allow(clippy::let_and_return)]
@@ -2950,7 +2950,7 @@ impl ListCoreDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCoreDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3050,7 +3050,7 @@ impl ListCoreDevicesInput {
             "ListCoreDevices",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3165,7 +3165,7 @@ pub mod list_deployments_input {
 #[doc(hidden)]
 pub type ListDeploymentsInputOperationOutputAlias = crate::operation::ListDeployments;
 #[doc(hidden)]
-pub type ListDeploymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeployments`](crate::operation::ListDeployments)>
     #[allow(clippy::let_and_return)]
@@ -3176,7 +3176,7 @@ impl ListDeploymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeployments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3276,7 +3276,7 @@ impl ListDeploymentsInput {
             "ListDeployments",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3354,7 +3354,7 @@ pub mod list_effective_deployments_input {
 pub type ListEffectiveDeploymentsInputOperationOutputAlias =
     crate::operation::ListEffectiveDeployments;
 #[doc(hidden)]
-pub type ListEffectiveDeploymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEffectiveDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEffectiveDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEffectiveDeployments`](crate::operation::ListEffectiveDeployments)>
     #[allow(clippy::let_and_return)]
@@ -3365,7 +3365,7 @@ impl ListEffectiveDeploymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEffectiveDeployments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3476,7 +3476,7 @@ impl ListEffectiveDeploymentsInput {
             "ListEffectiveDeployments",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3554,7 +3554,7 @@ pub mod list_installed_components_input {
 pub type ListInstalledComponentsInputOperationOutputAlias =
     crate::operation::ListInstalledComponents;
 #[doc(hidden)]
-pub type ListInstalledComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInstalledComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstalledComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListInstalledComponents`](crate::operation::ListInstalledComponents)>
     #[allow(clippy::let_and_return)]
@@ -3565,7 +3565,7 @@ impl ListInstalledComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInstalledComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3676,7 +3676,7 @@ impl ListInstalledComponentsInput {
             "ListInstalledComponents",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3726,7 +3726,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3737,7 +3737,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3827,7 +3827,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3906,7 +3906,7 @@ pub mod resolve_component_candidates_input {
 pub type ResolveComponentCandidatesInputOperationOutputAlias =
     crate::operation::ResolveComponentCandidates;
 #[doc(hidden)]
-pub type ResolveComponentCandidatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResolveComponentCandidatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveComponentCandidatesInput {
     /// Consumes the builder and constructs an Operation<[`ResolveComponentCandidates`](crate::operation::ResolveComponentCandidates)>
     #[allow(clippy::let_and_return)]
@@ -3917,7 +3917,7 @@ impl ResolveComponentCandidatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveComponentCandidates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4000,7 +4000,7 @@ impl ResolveComponentCandidatesInput {
             "ResolveComponentCandidates",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4091,7 +4091,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4102,7 +4102,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4197,7 +4197,7 @@ impl TagResourceInput {
             "TagResource",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4276,7 +4276,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4287,7 +4287,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4390,7 +4390,7 @@ impl UntagResourceInput {
             "UntagResource",
             "greengrassv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -131,7 +131,7 @@ pub mod batch_create_table_rows_input {
 #[doc(hidden)]
 pub type BatchCreateTableRowsInputOperationOutputAlias = crate::operation::BatchCreateTableRows;
 #[doc(hidden)]
-pub type BatchCreateTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreateTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateTableRows`](crate::operation::BatchCreateTableRows)>
     #[allow(clippy::let_and_return)]
@@ -142,7 +142,7 @@ impl BatchCreateTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreateTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -260,7 +260,7 @@ impl BatchCreateTableRowsInput {
             "BatchCreateTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -410,7 +410,7 @@ pub mod batch_delete_table_rows_input {
 #[doc(hidden)]
 pub type BatchDeleteTableRowsInputOperationOutputAlias = crate::operation::BatchDeleteTableRows;
 #[doc(hidden)]
-pub type BatchDeleteTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTableRows`](crate::operation::BatchDeleteTableRows)>
     #[allow(clippy::let_and_return)]
@@ -421,7 +421,7 @@ impl BatchDeleteTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -539,7 +539,7 @@ impl BatchDeleteTableRowsInput {
             "BatchDeleteTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -695,7 +695,7 @@ pub mod batch_update_table_rows_input {
 #[doc(hidden)]
 pub type BatchUpdateTableRowsInputOperationOutputAlias = crate::operation::BatchUpdateTableRows;
 #[doc(hidden)]
-pub type BatchUpdateTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateTableRows`](crate::operation::BatchUpdateTableRows)>
     #[allow(clippy::let_and_return)]
@@ -706,7 +706,7 @@ impl BatchUpdateTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -824,7 +824,7 @@ impl BatchUpdateTableRowsInput {
             "BatchUpdateTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -982,7 +982,7 @@ pub mod batch_upsert_table_rows_input {
 #[doc(hidden)]
 pub type BatchUpsertTableRowsInputOperationOutputAlias = crate::operation::BatchUpsertTableRows;
 #[doc(hidden)]
-pub type BatchUpsertTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpsertTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpsertTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpsertTableRows`](crate::operation::BatchUpsertTableRows)>
     #[allow(clippy::let_and_return)]
@@ -993,7 +993,7 @@ impl BatchUpsertTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpsertTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1111,7 +1111,7 @@ impl BatchUpsertTableRowsInput {
             "BatchUpsertTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1212,7 +1212,7 @@ pub mod describe_table_data_import_job_input {
 pub type DescribeTableDataImportJobInputOperationOutputAlias =
     crate::operation::DescribeTableDataImportJob;
 #[doc(hidden)]
-pub type DescribeTableDataImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableDataImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableDataImportJob`](crate::operation::DescribeTableDataImportJob)>
     #[allow(clippy::let_and_return)]
@@ -1223,7 +1223,7 @@ impl DescribeTableDataImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTableDataImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1349,7 +1349,7 @@ impl DescribeTableDataImportJobInput {
             "DescribeTableDataImportJob",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1510,7 +1510,7 @@ pub mod get_screen_data_input {
 #[doc(hidden)]
 pub type GetScreenDataInputOperationOutputAlias = crate::operation::GetScreenData;
 #[doc(hidden)]
-pub type GetScreenDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetScreenDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetScreenDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScreenData`](crate::operation::GetScreenData)>
     #[allow(clippy::let_and_return)]
@@ -1521,7 +1521,7 @@ impl GetScreenDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetScreenData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1601,7 +1601,7 @@ impl GetScreenDataInput {
             "GetScreenData",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1786,7 +1786,7 @@ pub mod invoke_screen_automation_input {
 #[doc(hidden)]
 pub type InvokeScreenAutomationInputOperationOutputAlias = crate::operation::InvokeScreenAutomation;
 #[doc(hidden)]
-pub type InvokeScreenAutomationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InvokeScreenAutomationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeScreenAutomationInput {
     /// Consumes the builder and constructs an Operation<[`InvokeScreenAutomation`](crate::operation::InvokeScreenAutomation)>
     #[allow(clippy::let_and_return)]
@@ -1797,7 +1797,7 @@ impl InvokeScreenAutomationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeScreenAutomation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1939,7 +1939,7 @@ impl InvokeScreenAutomationInput {
             "InvokeScreenAutomation",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2045,7 +2045,7 @@ pub mod list_table_columns_input {
 #[doc(hidden)]
 pub type ListTableColumnsInputOperationOutputAlias = crate::operation::ListTableColumns;
 #[doc(hidden)]
-pub type ListTableColumnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTableColumnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableColumnsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableColumns`](crate::operation::ListTableColumns)>
     #[allow(clippy::let_and_return)]
@@ -2056,7 +2056,7 @@ impl ListTableColumnsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTableColumns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2177,7 +2177,7 @@ impl ListTableColumnsInput {
             "ListTableColumns",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2316,7 +2316,7 @@ pub mod list_table_rows_input {
 #[doc(hidden)]
 pub type ListTableRowsInputOperationOutputAlias = crate::operation::ListTableRows;
 #[doc(hidden)]
-pub type ListTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableRows`](crate::operation::ListTableRows)>
     #[allow(clippy::let_and_return)]
@@ -2327,7 +2327,7 @@ impl ListTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2443,7 +2443,7 @@ impl ListTableRowsInput {
             "ListTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2543,7 +2543,7 @@ pub mod list_tables_input {
 #[doc(hidden)]
 pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
 #[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(clippy::let_and_return)]
@@ -2554,7 +2554,7 @@ impl ListTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2665,7 +2665,7 @@ impl ListTablesInput {
             "ListTables",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2792,7 +2792,7 @@ pub mod query_table_rows_input {
 #[doc(hidden)]
 pub type QueryTableRowsInputOperationOutputAlias = crate::operation::QueryTableRows;
 #[doc(hidden)]
-pub type QueryTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QueryTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`QueryTableRows`](crate::operation::QueryTableRows)>
     #[allow(clippy::let_and_return)]
@@ -2803,7 +2803,7 @@ impl QueryTableRowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryTableRows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2919,7 +2919,7 @@ impl QueryTableRowsInput {
             "QueryTableRows",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3099,7 +3099,7 @@ pub mod start_table_data_import_job_input {
 pub type StartTableDataImportJobInputOperationOutputAlias =
     crate::operation::StartTableDataImportJob;
 #[doc(hidden)]
-pub type StartTableDataImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTableDataImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTableDataImportJob`](crate::operation::StartTableDataImportJob)>
     #[allow(clippy::let_and_return)]
@@ -3110,7 +3110,7 @@ impl StartTableDataImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTableDataImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3228,7 +3228,7 @@ impl StartTableDataImportJobInput {
             "StartTableDataImportJob",
             "honeycode",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

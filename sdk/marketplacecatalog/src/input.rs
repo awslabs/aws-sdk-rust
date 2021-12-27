@@ -54,7 +54,7 @@ pub mod cancel_change_set_input {
 #[doc(hidden)]
 pub type CancelChangeSetInputOperationOutputAlias = crate::operation::CancelChangeSet;
 #[doc(hidden)]
-pub type CancelChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`CancelChangeSet`](crate::operation::CancelChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -65,7 +65,7 @@ impl CancelChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -153,7 +153,7 @@ impl CancelChangeSetInput {
             "CancelChangeSet",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -224,7 +224,7 @@ pub mod describe_change_set_input {
 #[doc(hidden)]
 pub type DescribeChangeSetInputOperationOutputAlias = crate::operation::DescribeChangeSet;
 #[doc(hidden)]
-pub type DescribeChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChangeSet`](crate::operation::DescribeChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -235,7 +235,7 @@ impl DescribeChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -323,7 +323,7 @@ impl DescribeChangeSetInput {
             "DescribeChangeSet",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -389,7 +389,7 @@ pub mod describe_entity_input {
 #[doc(hidden)]
 pub type DescribeEntityInputOperationOutputAlias = crate::operation::DescribeEntity;
 #[doc(hidden)]
-pub type DescribeEntityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEntityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntity`](crate::operation::DescribeEntity)>
     #[allow(clippy::let_and_return)]
@@ -400,7 +400,7 @@ impl DescribeEntityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -488,7 +488,7 @@ impl DescribeEntityInput {
             "DescribeEntity",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -605,7 +605,7 @@ pub mod list_change_sets_input {
 #[doc(hidden)]
 pub type ListChangeSetsInputOperationOutputAlias = crate::operation::ListChangeSets;
 #[doc(hidden)]
-pub type ListChangeSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChangeSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangeSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangeSets`](crate::operation::ListChangeSets)>
     #[allow(clippy::let_and_return)]
@@ -616,7 +616,7 @@ impl ListChangeSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangeSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -696,7 +696,7 @@ impl ListChangeSetsInput {
             "ListChangeSets",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -831,7 +831,7 @@ pub mod list_entities_input {
 #[doc(hidden)]
 pub type ListEntitiesInputOperationOutputAlias = crate::operation::ListEntities;
 #[doc(hidden)]
-pub type ListEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListEntities`](crate::operation::ListEntities)>
     #[allow(clippy::let_and_return)]
@@ -842,7 +842,7 @@ impl ListEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -921,7 +921,7 @@ impl ListEntitiesInput {
             "ListEntities",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1034,7 +1034,7 @@ pub mod start_change_set_input {
 #[doc(hidden)]
 pub type StartChangeSetInputOperationOutputAlias = crate::operation::StartChangeSet;
 #[doc(hidden)]
-pub type StartChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`StartChangeSet`](crate::operation::StartChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -1045,7 +1045,7 @@ impl StartChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1125,7 +1125,7 @@ impl StartChangeSetInput {
             "StartChangeSet",
             "marketplacecatalog",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

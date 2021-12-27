@@ -617,7 +617,7 @@ pub mod search_input {
 #[doc(hidden)]
 pub type SearchInputOperationOutputAlias = crate::operation::Search;
 #[doc(hidden)]
-pub type SearchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchInput {
     /// Consumes the builder and constructs an Operation<[`Search`](crate::operation::Search)>
     #[allow(clippy::let_and_return)]
@@ -628,7 +628,7 @@ impl SearchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Search,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -761,7 +761,7 @@ impl SearchInput {
                     "Search",
                     "cloudsearchdomain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -833,7 +833,7 @@ pub mod suggest_input {
 #[doc(hidden)]
 pub type SuggestInputOperationOutputAlias = crate::operation::Suggest;
 #[doc(hidden)]
-pub type SuggestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SuggestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuggestInput {
     /// Consumes the builder and constructs an Operation<[`Suggest`](crate::operation::Suggest)>
     #[allow(clippy::let_and_return)]
@@ -844,7 +844,7 @@ impl SuggestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Suggest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -938,7 +938,7 @@ impl SuggestInput {
                     "Suggest",
                     "cloudsearchdomain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1014,7 +1014,7 @@ pub mod upload_documents_input {
 #[doc(hidden)]
 pub type UploadDocumentsInputOperationOutputAlias = crate::operation::UploadDocuments;
 #[doc(hidden)]
-pub type UploadDocumentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UploadDocumentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadDocumentsInput {
     /// Consumes the builder and constructs an Operation<[`UploadDocuments`](crate::operation::UploadDocuments)>
     #[allow(clippy::let_and_return)]
@@ -1025,7 +1025,7 @@ impl UploadDocumentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadDocuments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1137,7 +1137,7 @@ impl UploadDocumentsInput {
             "UploadDocuments",
             "cloudsearchdomain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -339,7 +339,7 @@ pub mod describe_dimension_keys_input {
 #[doc(hidden)]
 pub type DescribeDimensionKeysInputOperationOutputAlias = crate::operation::DescribeDimensionKeys;
 #[doc(hidden)]
-pub type DescribeDimensionKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDimensionKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDimensionKeysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDimensionKeys`](crate::operation::DescribeDimensionKeys)>
     #[allow(clippy::let_and_return)]
@@ -350,7 +350,7 @@ impl DescribeDimensionKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDimensionKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -437,7 +437,7 @@ impl DescribeDimensionKeysInput {
             "DescribeDimensionKeys",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -572,7 +572,7 @@ pub mod get_dimension_key_details_input {
 #[doc(hidden)]
 pub type GetDimensionKeyDetailsInputOperationOutputAlias = crate::operation::GetDimensionKeyDetails;
 #[doc(hidden)]
-pub type GetDimensionKeyDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDimensionKeyDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDimensionKeyDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionKeyDetails`](crate::operation::GetDimensionKeyDetails)>
     #[allow(clippy::let_and_return)]
@@ -583,7 +583,7 @@ impl GetDimensionKeyDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionKeyDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -670,7 +670,7 @@ impl GetDimensionKeyDetailsInput {
             "GetDimensionKeyDetails",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -918,7 +918,7 @@ pub mod get_resource_metrics_input {
 #[doc(hidden)]
 pub type GetResourceMetricsInputOperationOutputAlias = crate::operation::GetResourceMetrics;
 #[doc(hidden)]
-pub type GetResourceMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceMetrics`](crate::operation::GetResourceMetrics)>
     #[allow(clippy::let_and_return)]
@@ -929,7 +929,7 @@ impl GetResourceMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1014,7 +1014,7 @@ impl GetResourceMetricsInput {
             "GetResourceMetrics",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

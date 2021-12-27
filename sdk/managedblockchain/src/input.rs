@@ -80,7 +80,7 @@ pub mod create_member_input {
 #[doc(hidden)]
 pub type CreateMemberInputOperationOutputAlias = crate::operation::CreateMember;
 #[doc(hidden)]
-pub type CreateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMemberInput {
     /// Consumes the builder and constructs an Operation<[`CreateMember`](crate::operation::CreateMember)>
     #[allow(clippy::let_and_return)]
@@ -91,7 +91,7 @@ impl CreateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -193,7 +193,7 @@ impl CreateMemberInput {
             "CreateMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -398,7 +398,7 @@ pub mod create_network_input {
 #[doc(hidden)]
 pub type CreateNetworkInputOperationOutputAlias = crate::operation::CreateNetwork;
 #[doc(hidden)]
-pub type CreateNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetwork`](crate::operation::CreateNetwork)>
     #[allow(clippy::let_and_return)]
@@ -409,7 +409,7 @@ impl CreateNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNetwork,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -491,7 +491,7 @@ impl CreateNetworkInput {
             "CreateNetwork",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -662,7 +662,7 @@ pub mod create_node_input {
 #[doc(hidden)]
 pub type CreateNodeInputOperationOutputAlias = crate::operation::CreateNode;
 #[doc(hidden)]
-pub type CreateNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNodeInput {
     /// Consumes the builder and constructs an Operation<[`CreateNode`](crate::operation::CreateNode)>
     #[allow(clippy::let_and_return)]
@@ -673,7 +673,7 @@ impl CreateNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -775,7 +775,7 @@ impl CreateNodeInput {
             "CreateNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -922,7 +922,7 @@ pub mod create_proposal_input {
 #[doc(hidden)]
 pub type CreateProposalInputOperationOutputAlias = crate::operation::CreateProposal;
 #[doc(hidden)]
-pub type CreateProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProposalInput {
     /// Consumes the builder and constructs an Operation<[`CreateProposal`](crate::operation::CreateProposal)>
     #[allow(clippy::let_and_return)]
@@ -933,7 +933,7 @@ impl CreateProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1036,7 +1036,7 @@ impl CreateProposalInput {
             "CreateProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1106,7 +1106,7 @@ pub mod delete_member_input {
 #[doc(hidden)]
 pub type DeleteMemberInputOperationOutputAlias = crate::operation::DeleteMember;
 #[doc(hidden)]
-pub type DeleteMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMember`](crate::operation::DeleteMember)>
     #[allow(clippy::let_and_return)]
@@ -1117,7 +1117,7 @@ impl DeleteMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1227,7 +1227,7 @@ impl DeleteMemberInput {
             "DeleteMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1339,7 +1339,7 @@ pub mod delete_node_input {
 #[doc(hidden)]
 pub type DeleteNodeInputOperationOutputAlias = crate::operation::DeleteNode;
 #[doc(hidden)]
-pub type DeleteNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNodeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNode`](crate::operation::DeleteNode)>
     #[allow(clippy::let_and_return)]
@@ -1350,7 +1350,7 @@ impl DeleteNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1471,7 +1471,7 @@ impl DeleteNodeInput {
             "DeleteNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1531,7 +1531,7 @@ pub mod get_member_input {
 #[doc(hidden)]
 pub type GetMemberInputOperationOutputAlias = crate::operation::GetMember;
 #[doc(hidden)]
-pub type GetMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetMember`](crate::operation::GetMember)>
     #[allow(clippy::let_and_return)]
@@ -1542,7 +1542,7 @@ impl GetMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1650,7 +1650,7 @@ impl GetMemberInput {
                     "GetMember",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1700,7 +1700,7 @@ pub mod get_network_input {
 #[doc(hidden)]
 pub type GetNetworkInputOperationOutputAlias = crate::operation::GetNetwork;
 #[doc(hidden)]
-pub type GetNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkInput {
     /// Consumes the builder and constructs an Operation<[`GetNetwork`](crate::operation::GetNetwork)>
     #[allow(clippy::let_and_return)]
@@ -1711,7 +1711,7 @@ impl GetNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetwork,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1801,7 +1801,7 @@ impl GetNetworkInput {
             "GetNetwork",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1875,7 +1875,7 @@ pub mod get_node_input {
 #[doc(hidden)]
 pub type GetNodeInputOperationOutputAlias = crate::operation::GetNode;
 #[doc(hidden)]
-pub type GetNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNodeInput {
     /// Consumes the builder and constructs an Operation<[`GetNode`](crate::operation::GetNode)>
     #[allow(clippy::let_and_return)]
@@ -1886,7 +1886,7 @@ impl GetNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2005,7 +2005,7 @@ impl GetNodeInput {
                     "GetNode",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2067,7 +2067,7 @@ pub mod get_proposal_input {
 #[doc(hidden)]
 pub type GetProposalInputOperationOutputAlias = crate::operation::GetProposal;
 #[doc(hidden)]
-pub type GetProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProposalInput {
     /// Consumes the builder and constructs an Operation<[`GetProposal`](crate::operation::GetProposal)>
     #[allow(clippy::let_and_return)]
@@ -2078,7 +2078,7 @@ impl GetProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2188,7 +2188,7 @@ impl GetProposalInput {
             "GetProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2250,7 +2250,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2261,7 +2261,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2352,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2469,7 +2469,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -2480,7 +2480,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2603,7 +2603,7 @@ impl ListMembersInput {
             "ListMembers",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2709,7 +2709,7 @@ pub mod list_networks_input {
 #[doc(hidden)]
 pub type ListNetworksInputOperationOutputAlias = crate::operation::ListNetworks;
 #[doc(hidden)]
-pub type ListNetworksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNetworksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNetworksInput {
     /// Consumes the builder and constructs an Operation<[`ListNetworks`](crate::operation::ListNetworks)>
     #[allow(clippy::let_and_return)]
@@ -2720,7 +2720,7 @@ impl ListNetworksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNetworks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2820,7 +2820,7 @@ impl ListNetworksInput {
             "ListNetworks",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2918,7 +2918,7 @@ pub mod list_nodes_input {
 #[doc(hidden)]
 pub type ListNodesInputOperationOutputAlias = crate::operation::ListNodes;
 #[doc(hidden)]
-pub type ListNodesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListNodes`](crate::operation::ListNodes)>
     #[allow(clippy::let_and_return)]
@@ -2929,7 +2929,7 @@ impl ListNodesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNodes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3044,7 +3044,7 @@ impl ListNodesInput {
                     "ListNodes",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3130,7 +3130,7 @@ pub mod list_proposals_input {
 #[doc(hidden)]
 pub type ListProposalsInputOperationOutputAlias = crate::operation::ListProposals;
 #[doc(hidden)]
-pub type ListProposalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProposalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProposalsInput {
     /// Consumes the builder and constructs an Operation<[`ListProposals`](crate::operation::ListProposals)>
     #[allow(clippy::let_and_return)]
@@ -3141,7 +3141,7 @@ impl ListProposalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProposals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3252,7 +3252,7 @@ impl ListProposalsInput {
             "ListProposals",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3354,7 +3354,7 @@ pub mod list_proposal_votes_input {
 #[doc(hidden)]
 pub type ListProposalVotesInputOperationOutputAlias = crate::operation::ListProposalVotes;
 #[doc(hidden)]
-pub type ListProposalVotesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProposalVotesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProposalVotesInput {
     /// Consumes the builder and constructs an Operation<[`ListProposalVotes`](crate::operation::ListProposalVotes)>
     #[allow(clippy::let_and_return)]
@@ -3365,7 +3365,7 @@ impl ListProposalVotesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProposalVotes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3492,7 +3492,7 @@ impl ListProposalVotesInput {
             "ListProposalVotes",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3542,7 +3542,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3553,7 +3553,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3643,7 +3643,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3696,7 +3696,7 @@ pub mod reject_invitation_input {
 #[doc(hidden)]
 pub type RejectInvitationInputOperationOutputAlias = crate::operation::RejectInvitation;
 #[doc(hidden)]
-pub type RejectInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectInvitation`](crate::operation::RejectInvitation)>
     #[allow(clippy::let_and_return)]
@@ -3707,7 +3707,7 @@ impl RejectInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3801,7 +3801,7 @@ impl RejectInvitationInput {
             "RejectInvitation",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3880,7 +3880,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3891,7 +3891,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3986,7 +3986,7 @@ impl TagResourceInput {
             "TagResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4065,7 +4065,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4076,7 +4076,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4179,7 +4179,7 @@ impl UntagResourceInput {
             "UntagResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4260,7 +4260,7 @@ pub mod update_member_input {
 #[doc(hidden)]
 pub type UpdateMemberInputOperationOutputAlias = crate::operation::UpdateMember;
 #[doc(hidden)]
-pub type UpdateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMember`](crate::operation::UpdateMember)>
     #[allow(clippy::let_and_return)]
@@ -4271,7 +4271,7 @@ impl UpdateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4386,7 +4386,7 @@ impl UpdateMemberInput {
             "UpdateMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4489,7 +4489,7 @@ pub mod update_node_input {
 #[doc(hidden)]
 pub type UpdateNodeInputOperationOutputAlias = crate::operation::UpdateNode;
 #[doc(hidden)]
-pub type UpdateNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNodeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNode`](crate::operation::UpdateNode)>
     #[allow(clippy::let_and_return)]
@@ -4500,7 +4500,7 @@ impl UpdateNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4615,7 +4615,7 @@ impl UpdateNodeInput {
             "UpdateNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4726,7 +4726,7 @@ pub mod vote_on_proposal_input {
 #[doc(hidden)]
 pub type VoteOnProposalInputOperationOutputAlias = crate::operation::VoteOnProposal;
 #[doc(hidden)]
-pub type VoteOnProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VoteOnProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VoteOnProposalInput {
     /// Consumes the builder and constructs an Operation<[`VoteOnProposal`](crate::operation::VoteOnProposal)>
     #[allow(clippy::let_and_return)]
@@ -4737,7 +4737,7 @@ impl VoteOnProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VoteOnProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4853,7 +4853,7 @@ impl VoteOnProposalInput {
             "VoteOnProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

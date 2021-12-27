@@ -344,7 +344,7 @@ pub mod create_canary_input {
 #[doc(hidden)]
 pub type CreateCanaryInputOperationOutputAlias = crate::operation::CreateCanary;
 #[doc(hidden)]
-pub type CreateCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCanaryInput {
     /// Consumes the builder and constructs an Operation<[`CreateCanary`](crate::operation::CreateCanary)>
     #[allow(clippy::let_and_return)]
@@ -355,7 +355,7 @@ impl CreateCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -434,7 +434,7 @@ impl CreateCanaryInput {
             "CreateCanary",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -490,7 +490,7 @@ pub mod delete_canary_input {
 #[doc(hidden)]
 pub type DeleteCanaryInputOperationOutputAlias = crate::operation::DeleteCanary;
 #[doc(hidden)]
-pub type DeleteCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCanaryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCanary`](crate::operation::DeleteCanary)>
     #[allow(clippy::let_and_return)]
@@ -501,7 +501,7 @@ impl DeleteCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -590,7 +590,7 @@ impl DeleteCanaryInput {
             "DeleteCanary",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -658,7 +658,7 @@ pub mod describe_canaries_input {
 #[doc(hidden)]
 pub type DescribeCanariesInputOperationOutputAlias = crate::operation::DescribeCanaries;
 #[doc(hidden)]
-pub type DescribeCanariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCanariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCanariesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCanaries`](crate::operation::DescribeCanaries)>
     #[allow(clippy::let_and_return)]
@@ -669,7 +669,7 @@ impl DescribeCanariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCanaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -749,7 +749,7 @@ impl DescribeCanariesInput {
             "DescribeCanaries",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -826,7 +826,7 @@ pub mod describe_canaries_last_run_input {
 pub type DescribeCanariesLastRunInputOperationOutputAlias =
     crate::operation::DescribeCanariesLastRun;
 #[doc(hidden)]
-pub type DescribeCanariesLastRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCanariesLastRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCanariesLastRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCanariesLastRun`](crate::operation::DescribeCanariesLastRun)>
     #[allow(clippy::let_and_return)]
@@ -837,7 +837,7 @@ impl DescribeCanariesLastRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCanariesLastRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -919,7 +919,7 @@ impl DescribeCanariesLastRunInput {
             "DescribeCanariesLastRun",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -996,7 +996,7 @@ pub mod describe_runtime_versions_input {
 pub type DescribeRuntimeVersionsInputOperationOutputAlias =
     crate::operation::DescribeRuntimeVersions;
 #[doc(hidden)]
-pub type DescribeRuntimeVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRuntimeVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuntimeVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuntimeVersions`](crate::operation::DescribeRuntimeVersions)>
     #[allow(clippy::let_and_return)]
@@ -1007,7 +1007,7 @@ impl DescribeRuntimeVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuntimeVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1089,7 +1089,7 @@ impl DescribeRuntimeVersionsInput {
             "DescribeRuntimeVersions",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1143,7 +1143,7 @@ pub mod get_canary_input {
 #[doc(hidden)]
 pub type GetCanaryInputOperationOutputAlias = crate::operation::GetCanary;
 #[doc(hidden)]
-pub type GetCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCanaryInput {
     /// Consumes the builder and constructs an Operation<[`GetCanary`](crate::operation::GetCanary)>
     #[allow(clippy::let_and_return)]
@@ -1154,7 +1154,7 @@ impl GetCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1241,7 +1241,7 @@ impl GetCanaryInput {
                     "GetCanary",
                     "synthetics",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1321,7 +1321,7 @@ pub mod get_canary_runs_input {
 #[doc(hidden)]
 pub type GetCanaryRunsInputOperationOutputAlias = crate::operation::GetCanaryRuns;
 #[doc(hidden)]
-pub type GetCanaryRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCanaryRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCanaryRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetCanaryRuns`](crate::operation::GetCanaryRuns)>
     #[allow(clippy::let_and_return)]
@@ -1332,7 +1332,7 @@ impl GetCanaryRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCanaryRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1427,7 +1427,7 @@ impl GetCanaryRunsInput {
             "GetCanaryRuns",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1491,7 +1491,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1502,7 +1502,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1592,7 +1592,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1642,7 +1642,7 @@ pub mod start_canary_input {
 #[doc(hidden)]
 pub type StartCanaryInputOperationOutputAlias = crate::operation::StartCanary;
 #[doc(hidden)]
-pub type StartCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCanaryInput {
     /// Consumes the builder and constructs an Operation<[`StartCanary`](crate::operation::StartCanary)>
     #[allow(clippy::let_and_return)]
@@ -1653,7 +1653,7 @@ impl StartCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1742,7 +1742,7 @@ impl StartCanaryInput {
             "StartCanary",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1792,7 +1792,7 @@ pub mod stop_canary_input {
 #[doc(hidden)]
 pub type StopCanaryInputOperationOutputAlias = crate::operation::StopCanary;
 #[doc(hidden)]
-pub type StopCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopCanaryInput {
     /// Consumes the builder and constructs an Operation<[`StopCanary`](crate::operation::StopCanary)>
     #[allow(clippy::let_and_return)]
@@ -1803,7 +1803,7 @@ impl StopCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1892,7 +1892,7 @@ impl StopCanaryInput {
             "StopCanary",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1977,7 +1977,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1988,7 +1988,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2083,7 +2083,7 @@ impl TagResourceInput {
             "TagResource",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2168,7 +2168,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2179,7 +2179,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2282,7 +2282,7 @@ impl UntagResourceInput {
             "UntagResource",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2621,7 +2621,7 @@ pub mod update_canary_input {
 #[doc(hidden)]
 pub type UpdateCanaryInputOperationOutputAlias = crate::operation::UpdateCanary;
 #[doc(hidden)]
-pub type UpdateCanaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCanaryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCanary`](crate::operation::UpdateCanary)>
     #[allow(clippy::let_and_return)]
@@ -2632,7 +2632,7 @@ impl UpdateCanaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCanary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2726,7 +2726,7 @@ impl UpdateCanaryInput {
             "UpdateCanary",
             "synthetics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

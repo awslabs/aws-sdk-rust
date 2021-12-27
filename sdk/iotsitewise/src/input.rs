@@ -78,7 +78,7 @@ pub mod associate_assets_input {
 #[doc(hidden)]
 pub type AssociateAssetsInputOperationOutputAlias = crate::operation::AssociateAssets;
 #[doc(hidden)]
-pub type AssociateAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAssetsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAssets`](crate::operation::AssociateAssets)>
     #[allow(clippy::let_and_return)]
@@ -89,7 +89,7 @@ impl AssociateAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -190,7 +190,7 @@ impl AssociateAssetsInput {
             "AssociateAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -285,7 +285,8 @@ pub mod associate_time_series_to_asset_property_input {
 pub type AssociateTimeSeriesToAssetPropertyInputOperationOutputAlias =
     crate::operation::AssociateTimeSeriesToAssetProperty;
 #[doc(hidden)]
-pub type AssociateTimeSeriesToAssetPropertyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateTimeSeriesToAssetPropertyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTimeSeriesToAssetPropertyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTimeSeriesToAssetProperty`](crate::operation::AssociateTimeSeriesToAssetProperty)>
     #[allow(clippy::let_and_return)]
@@ -296,7 +297,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTimeSeriesToAssetProperty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -399,7 +400,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
             "AssociateTimeSeriesToAssetProperty",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -491,7 +492,7 @@ pub mod batch_associate_project_assets_input {
 pub type BatchAssociateProjectAssetsInputOperationOutputAlias =
     crate::operation::BatchAssociateProjectAssets;
 #[doc(hidden)]
-pub type BatchAssociateProjectAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchAssociateProjectAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateProjectAssetsInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateProjectAssets`](crate::operation::BatchAssociateProjectAssets)>
     #[allow(clippy::let_and_return)]
@@ -502,7 +503,7 @@ impl BatchAssociateProjectAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateProjectAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -608,7 +609,7 @@ impl BatchAssociateProjectAssetsInput {
             "BatchAssociateProjectAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -700,7 +701,8 @@ pub mod batch_disassociate_project_assets_input {
 pub type BatchDisassociateProjectAssetsInputOperationOutputAlias =
     crate::operation::BatchDisassociateProjectAssets;
 #[doc(hidden)]
-pub type BatchDisassociateProjectAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisassociateProjectAssetsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateProjectAssetsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateProjectAssets`](crate::operation::BatchDisassociateProjectAssets)>
     #[allow(clippy::let_and_return)]
@@ -711,7 +713,7 @@ impl BatchDisassociateProjectAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateProjectAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -817,7 +819,7 @@ impl BatchDisassociateProjectAssetsInput {
             "BatchDisassociateProjectAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -891,7 +893,7 @@ pub mod batch_put_asset_property_value_input {
 pub type BatchPutAssetPropertyValueInputOperationOutputAlias =
     crate::operation::BatchPutAssetPropertyValue;
 #[doc(hidden)]
-pub type BatchPutAssetPropertyValueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchPutAssetPropertyValueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutAssetPropertyValueInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutAssetPropertyValue`](crate::operation::BatchPutAssetPropertyValue)>
     #[allow(clippy::let_and_return)]
@@ -902,7 +904,7 @@ impl BatchPutAssetPropertyValueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutAssetPropertyValue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -985,7 +987,7 @@ impl BatchPutAssetPropertyValueInput {
             "BatchPutAssetPropertyValue",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1121,7 +1123,7 @@ pub mod create_access_policy_input {
 #[doc(hidden)]
 pub type CreateAccessPolicyInputOperationOutputAlias = crate::operation::CreateAccessPolicy;
 #[doc(hidden)]
-pub type CreateAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPolicy`](crate::operation::CreateAccessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1132,7 +1134,7 @@ impl CreateAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1217,7 +1219,7 @@ impl CreateAccessPolicyInput {
             "CreateAccessPolicy",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1335,7 +1337,7 @@ pub mod create_asset_input {
 #[doc(hidden)]
 pub type CreateAssetInputOperationOutputAlias = crate::operation::CreateAsset;
 #[doc(hidden)]
-pub type CreateAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssetInput {
     /// Consumes the builder and constructs an Operation<[`CreateAsset`](crate::operation::CreateAsset)>
     #[allow(clippy::let_and_return)]
@@ -1346,7 +1348,7 @@ impl CreateAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1430,7 +1432,7 @@ impl CreateAssetInput {
             "CreateAsset",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1648,7 +1650,7 @@ pub mod create_asset_model_input {
 #[doc(hidden)]
 pub type CreateAssetModelInputOperationOutputAlias = crate::operation::CreateAssetModel;
 #[doc(hidden)]
-pub type CreateAssetModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssetModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssetModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssetModel`](crate::operation::CreateAssetModel)>
     #[allow(clippy::let_and_return)]
@@ -1659,7 +1661,7 @@ impl CreateAssetModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAssetModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1744,7 +1746,7 @@ impl CreateAssetModelInput {
             "CreateAssetModel",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1894,7 +1896,7 @@ pub mod create_dashboard_input {
 #[doc(hidden)]
 pub type CreateDashboardInputOperationOutputAlias = crate::operation::CreateDashboard;
 #[doc(hidden)]
-pub type CreateDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDashboardInput {
     /// Consumes the builder and constructs an Operation<[`CreateDashboard`](crate::operation::CreateDashboard)>
     #[allow(clippy::let_and_return)]
@@ -1905,7 +1907,7 @@ impl CreateDashboardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDashboard,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1990,7 +1992,7 @@ impl CreateDashboardInput {
             "CreateDashboard",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2096,7 +2098,7 @@ pub mod create_gateway_input {
 #[doc(hidden)]
 pub type CreateGatewayInputOperationOutputAlias = crate::operation::CreateGateway;
 #[doc(hidden)]
-pub type CreateGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateGateway`](crate::operation::CreateGateway)>
     #[allow(clippy::let_and_return)]
@@ -2107,7 +2109,7 @@ impl CreateGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2188,7 +2190,7 @@ impl CreateGatewayInput {
             "CreateGateway",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2448,7 +2450,7 @@ pub mod create_portal_input {
 #[doc(hidden)]
 pub type CreatePortalInputOperationOutputAlias = crate::operation::CreatePortal;
 #[doc(hidden)]
-pub type CreatePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePortalInput {
     /// Consumes the builder and constructs an Operation<[`CreatePortal`](crate::operation::CreatePortal)>
     #[allow(clippy::let_and_return)]
@@ -2459,7 +2461,7 @@ impl CreatePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2543,7 +2545,7 @@ impl CreatePortalInput {
             "CreatePortal",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2673,7 +2675,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -2684,7 +2686,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2768,7 +2770,7 @@ impl CreateProjectInput {
             "CreateProject",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2841,7 +2843,7 @@ pub mod delete_access_policy_input {
 #[doc(hidden)]
 pub type DeleteAccessPolicyInputOperationOutputAlias = crate::operation::DeleteAccessPolicy;
 #[doc(hidden)]
-pub type DeleteAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPolicy`](crate::operation::DeleteAccessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2852,7 +2854,7 @@ impl DeleteAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2962,7 +2964,7 @@ impl DeleteAccessPolicyInput {
             "DeleteAccessPolicy",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3024,7 +3026,7 @@ pub mod delete_asset_input {
 #[doc(hidden)]
 pub type DeleteAssetInputOperationOutputAlias = crate::operation::DeleteAsset;
 #[doc(hidden)]
-pub type DeleteAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAsset`](crate::operation::DeleteAsset)>
     #[allow(clippy::let_and_return)]
@@ -3035,7 +3037,7 @@ impl DeleteAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3144,7 +3146,7 @@ impl DeleteAssetInput {
             "DeleteAsset",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3209,7 +3211,7 @@ pub mod delete_asset_model_input {
 #[doc(hidden)]
 pub type DeleteAssetModelInputOperationOutputAlias = crate::operation::DeleteAssetModel;
 #[doc(hidden)]
-pub type DeleteAssetModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssetModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssetModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssetModel`](crate::operation::DeleteAssetModel)>
     #[allow(clippy::let_and_return)]
@@ -3220,7 +3222,7 @@ impl DeleteAssetModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssetModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3333,7 +3335,7 @@ impl DeleteAssetModelInput {
             "DeleteAssetModel",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3395,7 +3397,7 @@ pub mod delete_dashboard_input {
 #[doc(hidden)]
 pub type DeleteDashboardInputOperationOutputAlias = crate::operation::DeleteDashboard;
 #[doc(hidden)]
-pub type DeleteDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDashboardInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDashboard`](crate::operation::DeleteDashboard)>
     #[allow(clippy::let_and_return)]
@@ -3406,7 +3408,7 @@ impl DeleteDashboardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDashboard,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3519,7 +3521,7 @@ impl DeleteDashboardInput {
             "DeleteDashboard",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3569,7 +3571,7 @@ pub mod delete_gateway_input {
 #[doc(hidden)]
 pub type DeleteGatewayInputOperationOutputAlias = crate::operation::DeleteGateway;
 #[doc(hidden)]
-pub type DeleteGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGateway`](crate::operation::DeleteGateway)>
     #[allow(clippy::let_and_return)]
@@ -3580,7 +3582,7 @@ impl DeleteGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3676,7 +3678,7 @@ impl DeleteGatewayInput {
             "DeleteGateway",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3738,7 +3740,7 @@ pub mod delete_portal_input {
 #[doc(hidden)]
 pub type DeletePortalInputOperationOutputAlias = crate::operation::DeletePortal;
 #[doc(hidden)]
-pub type DeletePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePortalInput {
     /// Consumes the builder and constructs an Operation<[`DeletePortal`](crate::operation::DeletePortal)>
     #[allow(clippy::let_and_return)]
@@ -3749,7 +3751,7 @@ impl DeletePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3858,7 +3860,7 @@ impl DeletePortalInput {
             "DeletePortal",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3920,7 +3922,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -3931,7 +3933,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4040,7 +4042,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4126,7 +4128,7 @@ pub mod delete_time_series_input {
 #[doc(hidden)]
 pub type DeleteTimeSeriesInputOperationOutputAlias = crate::operation::DeleteTimeSeries;
 #[doc(hidden)]
-pub type DeleteTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTimeSeriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTimeSeriesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTimeSeries`](crate::operation::DeleteTimeSeries)>
     #[allow(clippy::let_and_return)]
@@ -4137,7 +4139,7 @@ impl DeleteTimeSeriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTimeSeries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4239,7 +4241,7 @@ impl DeleteTimeSeriesInput {
             "DeleteTimeSeries",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4300,7 +4302,7 @@ pub mod describe_access_policy_input {
 #[doc(hidden)]
 pub type DescribeAccessPolicyInputOperationOutputAlias = crate::operation::DescribeAccessPolicy;
 #[doc(hidden)]
-pub type DescribeAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccessPolicy`](crate::operation::DescribeAccessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4311,7 +4313,7 @@ impl DescribeAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4407,7 +4409,7 @@ impl DescribeAccessPolicyInput {
             "DescribeAccessPolicy",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4457,7 +4459,7 @@ pub mod describe_asset_input {
 #[doc(hidden)]
 pub type DescribeAssetInputOperationOutputAlias = crate::operation::DescribeAsset;
 #[doc(hidden)]
-pub type DescribeAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAsset`](crate::operation::DescribeAsset)>
     #[allow(clippy::let_and_return)]
@@ -4468,7 +4470,7 @@ impl DescribeAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4560,7 +4562,7 @@ impl DescribeAssetInput {
             "DescribeAsset",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4613,7 +4615,7 @@ pub mod describe_asset_model_input {
 #[doc(hidden)]
 pub type DescribeAssetModelInputOperationOutputAlias = crate::operation::DescribeAssetModel;
 #[doc(hidden)]
-pub type DescribeAssetModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssetModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssetModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssetModel`](crate::operation::DescribeAssetModel)>
     #[allow(clippy::let_and_return)]
@@ -4624,7 +4626,7 @@ impl DescribeAssetModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAssetModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4720,7 +4722,7 @@ impl DescribeAssetModelInput {
             "DescribeAssetModel",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4782,7 +4784,7 @@ pub mod describe_asset_property_input {
 #[doc(hidden)]
 pub type DescribeAssetPropertyInputOperationOutputAlias = crate::operation::DescribeAssetProperty;
 #[doc(hidden)]
-pub type DescribeAssetPropertyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssetPropertyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssetPropertyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssetProperty`](crate::operation::DescribeAssetProperty)>
     #[allow(clippy::let_and_return)]
@@ -4793,7 +4795,7 @@ impl DescribeAssetPropertyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAssetProperty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4905,7 +4907,7 @@ impl DescribeAssetPropertyInput {
             "DescribeAssetProperty",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4955,7 +4957,7 @@ pub mod describe_dashboard_input {
 #[doc(hidden)]
 pub type DescribeDashboardInputOperationOutputAlias = crate::operation::DescribeDashboard;
 #[doc(hidden)]
-pub type DescribeDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDashboardInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDashboard`](crate::operation::DescribeDashboard)>
     #[allow(clippy::let_and_return)]
@@ -4966,7 +4968,7 @@ impl DescribeDashboardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDashboard,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5062,7 +5064,7 @@ impl DescribeDashboardInput {
             "DescribeDashboard",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5100,7 +5102,7 @@ pub type DescribeDefaultEncryptionConfigurationInputOperationOutputAlias =
     crate::operation::DescribeDefaultEncryptionConfiguration;
 #[doc(hidden)]
 pub type DescribeDefaultEncryptionConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDefaultEncryptionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDefaultEncryptionConfiguration`](crate::operation::DescribeDefaultEncryptionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5111,7 +5113,7 @@ impl DescribeDefaultEncryptionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDefaultEncryptionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5187,7 +5189,7 @@ impl DescribeDefaultEncryptionConfigurationInput {
             "DescribeDefaultEncryptionConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5237,7 +5239,7 @@ pub mod describe_gateway_input {
 #[doc(hidden)]
 pub type DescribeGatewayInputOperationOutputAlias = crate::operation::DescribeGateway;
 #[doc(hidden)]
-pub type DescribeGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGateway`](crate::operation::DescribeGateway)>
     #[allow(clippy::let_and_return)]
@@ -5248,7 +5250,7 @@ impl DescribeGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5344,7 +5346,7 @@ impl DescribeGatewayInput {
             "DescribeGateway",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5419,7 +5421,7 @@ pub type DescribeGatewayCapabilityConfigurationInputOperationOutputAlias =
     crate::operation::DescribeGatewayCapabilityConfiguration;
 #[doc(hidden)]
 pub type DescribeGatewayCapabilityConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGatewayCapabilityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGatewayCapabilityConfiguration`](crate::operation::DescribeGatewayCapabilityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5430,7 +5432,7 @@ impl DescribeGatewayCapabilityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGatewayCapabilityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5542,7 +5544,7 @@ impl DescribeGatewayCapabilityConfigurationInput {
             "DescribeGatewayCapabilityConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5578,7 +5580,7 @@ pub mod describe_logging_options_input {
 #[doc(hidden)]
 pub type DescribeLoggingOptionsInputOperationOutputAlias = crate::operation::DescribeLoggingOptions;
 #[doc(hidden)]
-pub type DescribeLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingOptions`](crate::operation::DescribeLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -5589,7 +5591,7 @@ impl DescribeLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5665,7 +5667,7 @@ impl DescribeLoggingOptionsInput {
             "DescribeLoggingOptions",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5715,7 +5717,7 @@ pub mod describe_portal_input {
 #[doc(hidden)]
 pub type DescribePortalInputOperationOutputAlias = crate::operation::DescribePortal;
 #[doc(hidden)]
-pub type DescribePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePortalInput {
     /// Consumes the builder and constructs an Operation<[`DescribePortal`](crate::operation::DescribePortal)>
     #[allow(clippy::let_and_return)]
@@ -5726,7 +5728,7 @@ impl DescribePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5818,7 +5820,7 @@ impl DescribePortalInput {
             "DescribePortal",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5868,7 +5870,7 @@ pub mod describe_project_input {
 #[doc(hidden)]
 pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
 #[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
@@ -5879,7 +5881,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5971,7 +5973,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6008,7 +6010,8 @@ pub mod describe_storage_configuration_input {
 pub type DescribeStorageConfigurationInputOperationOutputAlias =
     crate::operation::DescribeStorageConfiguration;
 #[doc(hidden)]
-pub type DescribeStorageConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStorageConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStorageConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStorageConfiguration`](crate::operation::DescribeStorageConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -6019,7 +6022,7 @@ impl DescribeStorageConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStorageConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6095,7 +6098,7 @@ impl DescribeStorageConfigurationInput {
             "DescribeStorageConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6169,7 +6172,7 @@ pub mod describe_time_series_input {
 #[doc(hidden)]
 pub type DescribeTimeSeriesInputOperationOutputAlias = crate::operation::DescribeTimeSeries;
 #[doc(hidden)]
-pub type DescribeTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTimeSeriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeSeriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeSeries`](crate::operation::DescribeTimeSeries)>
     #[allow(clippy::let_and_return)]
@@ -6180,7 +6183,7 @@ impl DescribeTimeSeriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeSeries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6273,7 +6276,7 @@ impl DescribeTimeSeriesInput {
             "DescribeTimeSeries",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6368,7 +6371,7 @@ pub mod disassociate_assets_input {
 #[doc(hidden)]
 pub type DisassociateAssetsInputOperationOutputAlias = crate::operation::DisassociateAssets;
 #[doc(hidden)]
-pub type DisassociateAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAssetsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAssets`](crate::operation::DisassociateAssets)>
     #[allow(clippy::let_and_return)]
@@ -6379,7 +6382,7 @@ impl DisassociateAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6480,7 +6483,7 @@ impl DisassociateAssetsInput {
             "DisassociateAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6576,7 +6579,7 @@ pub type DisassociateTimeSeriesFromAssetPropertyInputOperationOutputAlias =
     crate::operation::DisassociateTimeSeriesFromAssetProperty;
 #[doc(hidden)]
 pub type DisassociateTimeSeriesFromAssetPropertyInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTimeSeriesFromAssetPropertyInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTimeSeriesFromAssetProperty`](crate::operation::DisassociateTimeSeriesFromAssetProperty)>
     #[allow(clippy::let_and_return)]
@@ -6587,7 +6590,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTimeSeriesFromAssetProperty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6690,7 +6693,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
             "DisassociateTimeSeriesFromAssetProperty",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6911,7 +6914,7 @@ pub mod get_asset_property_aggregates_input {
 pub type GetAssetPropertyAggregatesInputOperationOutputAlias =
     crate::operation::GetAssetPropertyAggregates;
 #[doc(hidden)]
-pub type GetAssetPropertyAggregatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssetPropertyAggregatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssetPropertyAggregatesInput {
     /// Consumes the builder and constructs an Operation<[`GetAssetPropertyAggregates`](crate::operation::GetAssetPropertyAggregates)>
     #[allow(clippy::let_and_return)]
@@ -6922,7 +6925,7 @@ impl GetAssetPropertyAggregatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssetPropertyAggregates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7067,7 +7070,7 @@ impl GetAssetPropertyAggregatesInput {
             "GetAssetPropertyAggregates",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7150,7 +7153,7 @@ pub mod get_asset_property_value_input {
 #[doc(hidden)]
 pub type GetAssetPropertyValueInputOperationOutputAlias = crate::operation::GetAssetPropertyValue;
 #[doc(hidden)]
-pub type GetAssetPropertyValueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssetPropertyValueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssetPropertyValueInput {
     /// Consumes the builder and constructs an Operation<[`GetAssetPropertyValue`](crate::operation::GetAssetPropertyValue)>
     #[allow(clippy::let_and_return)]
@@ -7161,7 +7164,7 @@ impl GetAssetPropertyValueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssetPropertyValue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7257,7 +7260,7 @@ impl GetAssetPropertyValueInput {
             "GetAssetPropertyValue",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7437,7 +7440,8 @@ pub mod get_asset_property_value_history_input {
 pub type GetAssetPropertyValueHistoryInputOperationOutputAlias =
     crate::operation::GetAssetPropertyValueHistory;
 #[doc(hidden)]
-pub type GetAssetPropertyValueHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssetPropertyValueHistoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssetPropertyValueHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetAssetPropertyValueHistory`](crate::operation::GetAssetPropertyValueHistory)>
     #[allow(clippy::let_and_return)]
@@ -7448,7 +7452,7 @@ impl GetAssetPropertyValueHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssetPropertyValueHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7582,7 +7586,7 @@ impl GetAssetPropertyValueHistoryInput {
             "GetAssetPropertyValueHistory",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7892,7 +7896,8 @@ pub mod get_interpolated_asset_property_values_input {
 pub type GetInterpolatedAssetPropertyValuesInputOperationOutputAlias =
     crate::operation::GetInterpolatedAssetPropertyValues;
 #[doc(hidden)]
-pub type GetInterpolatedAssetPropertyValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInterpolatedAssetPropertyValuesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetInterpolatedAssetPropertyValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetInterpolatedAssetPropertyValues`](crate::operation::GetInterpolatedAssetPropertyValues)>
     #[allow(clippy::let_and_return)]
@@ -7903,7 +7908,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInterpolatedAssetPropertyValues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8050,7 +8055,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
             "GetInterpolatedAssetPropertyValues",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8192,7 +8197,7 @@ pub mod list_access_policies_input {
 #[doc(hidden)]
 pub type ListAccessPoliciesInputOperationOutputAlias = crate::operation::ListAccessPolicies;
 #[doc(hidden)]
-pub type ListAccessPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPolicies`](crate::operation::ListAccessPolicies)>
     #[allow(clippy::let_and_return)]
@@ -8203,7 +8208,7 @@ impl ListAccessPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8317,7 +8322,7 @@ impl ListAccessPoliciesInput {
             "ListAccessPolicies",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8381,7 +8386,7 @@ pub mod list_asset_models_input {
 #[doc(hidden)]
 pub type ListAssetModelsInputOperationOutputAlias = crate::operation::ListAssetModels;
 #[doc(hidden)]
-pub type ListAssetModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssetModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssetModels`](crate::operation::ListAssetModels)>
     #[allow(clippy::let_and_return)]
@@ -8392,7 +8397,7 @@ impl ListAssetModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssetModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8485,7 +8490,7 @@ impl ListAssetModelsInput {
             "ListAssetModels",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8592,7 +8597,7 @@ pub mod list_asset_relationships_input {
 #[doc(hidden)]
 pub type ListAssetRelationshipsInputOperationOutputAlias = crate::operation::ListAssetRelationships;
 #[doc(hidden)]
-pub type ListAssetRelationshipsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssetRelationshipsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetRelationshipsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssetRelationships`](crate::operation::ListAssetRelationships)>
     #[allow(clippy::let_and_return)]
@@ -8603,7 +8608,7 @@ impl ListAssetRelationshipsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssetRelationships,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8722,7 +8727,7 @@ impl ListAssetRelationshipsInput {
             "ListAssetRelationships",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8848,7 +8853,7 @@ pub mod list_assets_input {
 #[doc(hidden)]
 pub type ListAssetsInputOperationOutputAlias = crate::operation::ListAssets;
 #[doc(hidden)]
-pub type ListAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssets`](crate::operation::ListAssets)>
     #[allow(clippy::let_and_return)]
@@ -8859,7 +8864,7 @@ impl ListAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8961,7 +8966,7 @@ impl ListAssetsInput {
             "ListAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9100,7 +9105,7 @@ pub mod list_associated_assets_input {
 #[doc(hidden)]
 pub type ListAssociatedAssetsInputOperationOutputAlias = crate::operation::ListAssociatedAssets;
 #[doc(hidden)]
-pub type ListAssociatedAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedAssets`](crate::operation::ListAssociatedAssets)>
     #[allow(clippy::let_and_return)]
@@ -9111,7 +9116,7 @@ impl ListAssociatedAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9232,7 +9237,7 @@ impl ListAssociatedAssetsInput {
             "ListAssociatedAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9308,7 +9313,7 @@ pub mod list_dashboards_input {
 #[doc(hidden)]
 pub type ListDashboardsInputOperationOutputAlias = crate::operation::ListDashboards;
 #[doc(hidden)]
-pub type ListDashboardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDashboardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`ListDashboards`](crate::operation::ListDashboards)>
     #[allow(clippy::let_and_return)]
@@ -9319,7 +9324,7 @@ impl ListDashboardsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDashboards,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9415,7 +9420,7 @@ impl ListDashboardsInput {
             "ListDashboards",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9479,7 +9484,7 @@ pub mod list_gateways_input {
 #[doc(hidden)]
 pub type ListGatewaysInputOperationOutputAlias = crate::operation::ListGateways;
 #[doc(hidden)]
-pub type ListGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListGateways`](crate::operation::ListGateways)>
     #[allow(clippy::let_and_return)]
@@ -9490,7 +9495,7 @@ impl ListGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9583,7 +9588,7 @@ impl ListGatewaysInput {
             "ListGateways",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9647,7 +9652,7 @@ pub mod list_portals_input {
 #[doc(hidden)]
 pub type ListPortalsInputOperationOutputAlias = crate::operation::ListPortals;
 #[doc(hidden)]
-pub type ListPortalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPortalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPortals`](crate::operation::ListPortals)>
     #[allow(clippy::let_and_return)]
@@ -9658,7 +9663,7 @@ impl ListPortalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPortals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9751,7 +9756,7 @@ impl ListPortalsInput {
             "ListPortals",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9827,7 +9832,7 @@ pub mod list_project_assets_input {
 #[doc(hidden)]
 pub type ListProjectAssetsInputOperationOutputAlias = crate::operation::ListProjectAssets;
 #[doc(hidden)]
-pub type ListProjectAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjectAssets`](crate::operation::ListProjectAssets)>
     #[allow(clippy::let_and_return)]
@@ -9838,7 +9843,7 @@ impl ListProjectAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjectAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9951,7 +9956,7 @@ impl ListProjectAssetsInput {
             "ListProjectAssets",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10027,7 +10032,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -10038,7 +10043,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10134,7 +10139,7 @@ impl ListProjectsInput {
             "ListProjects",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10184,7 +10189,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -10195,7 +10200,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10285,7 +10290,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10412,7 +10417,7 @@ pub mod list_time_series_input {
 #[doc(hidden)]
 pub type ListTimeSeriesInputOperationOutputAlias = crate::operation::ListTimeSeries;
 #[doc(hidden)]
-pub type ListTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTimeSeriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTimeSeriesInput {
     /// Consumes the builder and constructs an Operation<[`ListTimeSeries`](crate::operation::ListTimeSeries)>
     #[allow(clippy::let_and_return)]
@@ -10423,7 +10428,7 @@ impl ListTimeSeriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTimeSeries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10531,7 +10536,7 @@ impl ListTimeSeriesInput {
             "ListTimeSeries",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10599,7 +10604,8 @@ pub mod put_default_encryption_configuration_input {
 pub type PutDefaultEncryptionConfigurationInputOperationOutputAlias =
     crate::operation::PutDefaultEncryptionConfiguration;
 #[doc(hidden)]
-pub type PutDefaultEncryptionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutDefaultEncryptionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutDefaultEncryptionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutDefaultEncryptionConfiguration`](crate::operation::PutDefaultEncryptionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10610,7 +10616,7 @@ impl PutDefaultEncryptionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDefaultEncryptionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10693,7 +10699,7 @@ impl PutDefaultEncryptionConfigurationInput {
             "PutDefaultEncryptionConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10754,7 +10760,7 @@ pub mod put_logging_options_input {
 #[doc(hidden)]
 pub type PutLoggingOptionsInputOperationOutputAlias = crate::operation::PutLoggingOptions;
 #[doc(hidden)]
-pub type PutLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutLoggingOptions`](crate::operation::PutLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -10765,7 +10771,7 @@ impl PutLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10847,7 +10853,7 @@ impl PutLoggingOptionsInput {
             "PutLoggingOptions",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11018,7 +11024,7 @@ pub mod put_storage_configuration_input {
 pub type PutStorageConfigurationInputOperationOutputAlias =
     crate::operation::PutStorageConfiguration;
 #[doc(hidden)]
-pub type PutStorageConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutStorageConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStorageConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutStorageConfiguration`](crate::operation::PutStorageConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11029,7 +11035,7 @@ impl PutStorageConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStorageConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11113,7 +11119,7 @@ impl PutStorageConfigurationInput {
             "PutStorageConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11204,7 +11210,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -11215,7 +11221,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11310,7 +11316,7 @@ impl TagResourceInput {
             "TagResource",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11389,7 +11395,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -11400,7 +11406,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11495,7 +11501,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11605,7 +11611,7 @@ pub mod update_access_policy_input {
 #[doc(hidden)]
 pub type UpdateAccessPolicyInputOperationOutputAlias = crate::operation::UpdateAccessPolicy;
 #[doc(hidden)]
-pub type UpdateAccessPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccessPolicy`](crate::operation::UpdateAccessPolicy)>
     #[allow(clippy::let_and_return)]
@@ -11616,7 +11622,7 @@ impl UpdateAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccessPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11721,7 +11727,7 @@ impl UpdateAccessPolicyInput {
             "UpdateAccessPolicy",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11803,7 +11809,7 @@ pub mod update_asset_input {
 #[doc(hidden)]
 pub type UpdateAssetInputOperationOutputAlias = crate::operation::UpdateAsset;
 #[doc(hidden)]
-pub type UpdateAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAssetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAsset`](crate::operation::UpdateAsset)>
     #[allow(clippy::let_and_return)]
@@ -11814,7 +11820,7 @@ impl UpdateAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11914,7 +11920,7 @@ impl UpdateAssetInput {
             "UpdateAsset",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12112,7 +12118,7 @@ pub mod update_asset_model_input {
 #[doc(hidden)]
 pub type UpdateAssetModelInputOperationOutputAlias = crate::operation::UpdateAssetModel;
 #[doc(hidden)]
-pub type UpdateAssetModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAssetModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAssetModelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAssetModel`](crate::operation::UpdateAssetModel)>
     #[allow(clippy::let_and_return)]
@@ -12123,7 +12129,7 @@ impl UpdateAssetModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAssetModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12228,7 +12234,7 @@ impl UpdateAssetModelInput {
             "UpdateAssetModel",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12358,7 +12364,7 @@ pub mod update_asset_property_input {
 #[doc(hidden)]
 pub type UpdateAssetPropertyInputOperationOutputAlias = crate::operation::UpdateAssetProperty;
 #[doc(hidden)]
-pub type UpdateAssetPropertyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAssetPropertyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAssetPropertyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAssetProperty`](crate::operation::UpdateAssetProperty)>
     #[allow(clippy::let_and_return)]
@@ -12369,7 +12375,7 @@ impl UpdateAssetPropertyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAssetProperty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12490,7 +12496,7 @@ impl UpdateAssetPropertyInput {
             "UpdateAssetProperty",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12607,7 +12613,7 @@ pub mod update_dashboard_input {
 #[doc(hidden)]
 pub type UpdateDashboardInputOperationOutputAlias = crate::operation::UpdateDashboard;
 #[doc(hidden)]
-pub type UpdateDashboardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDashboardInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDashboard`](crate::operation::UpdateDashboard)>
     #[allow(clippy::let_and_return)]
@@ -12618,7 +12624,7 @@ impl UpdateDashboardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDashboard,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12723,7 +12729,7 @@ impl UpdateDashboardInput {
             "UpdateDashboard",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12793,7 +12799,7 @@ pub mod update_gateway_input {
 #[doc(hidden)]
 pub type UpdateGatewayInputOperationOutputAlias = crate::operation::UpdateGateway;
 #[doc(hidden)]
-pub type UpdateGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGateway`](crate::operation::UpdateGateway)>
     #[allow(clippy::let_and_return)]
@@ -12804,7 +12810,7 @@ impl UpdateGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12905,7 +12911,7 @@ impl UpdateGatewayInput {
             "UpdateGateway",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13005,7 +13011,7 @@ pub type UpdateGatewayCapabilityConfigurationInputOperationOutputAlias =
     crate::operation::UpdateGatewayCapabilityConfiguration;
 #[doc(hidden)]
 pub type UpdateGatewayCapabilityConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayCapabilityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayCapabilityConfiguration`](crate::operation::UpdateGatewayCapabilityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -13016,7 +13022,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGatewayCapabilityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13119,7 +13125,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
             "UpdateGatewayCapabilityConfiguration",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13309,7 +13315,7 @@ pub mod update_portal_input {
 #[doc(hidden)]
 pub type UpdatePortalInputOperationOutputAlias = crate::operation::UpdatePortal;
 #[doc(hidden)]
-pub type UpdatePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePortalInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePortal`](crate::operation::UpdatePortal)>
     #[allow(clippy::let_and_return)]
@@ -13320,7 +13326,7 @@ impl UpdatePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13420,7 +13426,7 @@ impl UpdatePortalInput {
             "UpdatePortal",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13517,7 +13523,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -13528,7 +13534,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13628,7 +13634,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "iotsitewise",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

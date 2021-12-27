@@ -191,7 +191,7 @@ pub mod create_notification_rule_input {
 #[doc(hidden)]
 pub type CreateNotificationRuleInputOperationOutputAlias = crate::operation::CreateNotificationRule;
 #[doc(hidden)]
-pub type CreateNotificationRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotificationRule`](crate::operation::CreateNotificationRule)>
     #[allow(clippy::let_and_return)]
@@ -202,7 +202,7 @@ impl CreateNotificationRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotificationRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -287,7 +287,7 @@ impl CreateNotificationRuleInput {
             "CreateNotificationRule",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -343,7 +343,7 @@ pub mod delete_notification_rule_input {
 #[doc(hidden)]
 pub type DeleteNotificationRuleInputOperationOutputAlias = crate::operation::DeleteNotificationRule;
 #[doc(hidden)]
-pub type DeleteNotificationRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotificationRule`](crate::operation::DeleteNotificationRule)>
     #[allow(clippy::let_and_return)]
@@ -354,7 +354,7 @@ impl DeleteNotificationRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotificationRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -436,7 +436,7 @@ impl DeleteNotificationRuleInput {
             "DeleteNotificationRule",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -513,7 +513,7 @@ pub mod delete_target_input {
 #[doc(hidden)]
 pub type DeleteTargetInputOperationOutputAlias = crate::operation::DeleteTarget;
 #[doc(hidden)]
-pub type DeleteTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTarget`](crate::operation::DeleteTarget)>
     #[allow(clippy::let_and_return)]
@@ -524,7 +524,7 @@ impl DeleteTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -603,7 +603,7 @@ impl DeleteTargetInput {
             "DeleteTarget",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -660,7 +660,7 @@ pub mod describe_notification_rule_input {
 pub type DescribeNotificationRuleInputOperationOutputAlias =
     crate::operation::DescribeNotificationRule;
 #[doc(hidden)]
-pub type DescribeNotificationRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationRule`](crate::operation::DescribeNotificationRule)>
     #[allow(clippy::let_and_return)]
@@ -671,7 +671,7 @@ impl DescribeNotificationRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -753,7 +753,7 @@ impl DescribeNotificationRuleInput {
             "DescribeNotificationRule",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -848,7 +848,7 @@ pub mod list_event_types_input {
 #[doc(hidden)]
 pub type ListEventTypesInputOperationOutputAlias = crate::operation::ListEventTypes;
 #[doc(hidden)]
-pub type ListEventTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListEventTypes`](crate::operation::ListEventTypes)>
     #[allow(clippy::let_and_return)]
@@ -859,7 +859,7 @@ impl ListEventTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -939,7 +939,7 @@ impl ListEventTypesInput {
             "ListEventTypes",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1046,7 +1046,7 @@ pub mod list_notification_rules_input {
 #[doc(hidden)]
 pub type ListNotificationRulesInputOperationOutputAlias = crate::operation::ListNotificationRules;
 #[doc(hidden)]
-pub type ListNotificationRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNotificationRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotificationRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListNotificationRules`](crate::operation::ListNotificationRules)>
     #[allow(clippy::let_and_return)]
@@ -1057,7 +1057,7 @@ impl ListNotificationRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotificationRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1139,7 +1139,7 @@ impl ListNotificationRulesInput {
             "ListNotificationRules",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1195,7 +1195,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1206,7 +1206,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1288,7 +1288,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1391,7 +1391,7 @@ pub mod list_targets_input {
 #[doc(hidden)]
 pub type ListTargetsInputOperationOutputAlias = crate::operation::ListTargets;
 #[doc(hidden)]
-pub type ListTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsInput {
     /// Consumes the builder and constructs an Operation<[`ListTargets`](crate::operation::ListTargets)>
     #[allow(clippy::let_and_return)]
@@ -1402,7 +1402,7 @@ impl ListTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1481,7 +1481,7 @@ impl ListTargetsInput {
             "ListTargets",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1566,7 +1566,7 @@ pub mod subscribe_input {
 #[doc(hidden)]
 pub type SubscribeInputOperationOutputAlias = crate::operation::Subscribe;
 #[doc(hidden)]
-pub type SubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubscribeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Subscribe`](crate::operation::Subscribe)>
     #[allow(clippy::let_and_return)]
@@ -1577,7 +1577,7 @@ impl SubscribeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Subscribe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1654,7 +1654,7 @@ impl SubscribeInput {
                     "Subscribe",
                     "codestarnotifications",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1741,7 +1741,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1752,7 +1752,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1831,7 +1831,7 @@ impl TagResourceInput {
             "TagResource",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1904,7 +1904,7 @@ pub mod unsubscribe_input {
 #[doc(hidden)]
 pub type UnsubscribeInputOperationOutputAlias = crate::operation::Unsubscribe;
 #[doc(hidden)]
-pub type UnsubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnsubscribeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Unsubscribe`](crate::operation::Unsubscribe)>
     #[allow(clippy::let_and_return)]
@@ -1915,7 +1915,7 @@ impl UnsubscribeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Unsubscribe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1994,7 +1994,7 @@ impl UnsubscribeInput {
             "Unsubscribe",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2075,7 +2075,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2086,7 +2086,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2165,7 +2165,7 @@ impl UntagResourceInput {
             "UntagResource",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2315,7 +2315,7 @@ pub mod update_notification_rule_input {
 #[doc(hidden)]
 pub type UpdateNotificationRuleInputOperationOutputAlias = crate::operation::UpdateNotificationRule;
 #[doc(hidden)]
-pub type UpdateNotificationRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotificationRule`](crate::operation::UpdateNotificationRule)>
     #[allow(clippy::let_and_return)]
@@ -2326,7 +2326,7 @@ impl UpdateNotificationRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotificationRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2408,7 +2408,7 @@ impl UpdateNotificationRuleInput {
             "UpdateNotificationRule",
             "codestarnotifications",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

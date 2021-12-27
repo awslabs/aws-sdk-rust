@@ -112,7 +112,7 @@ pub mod batch_execute_statement_input {
 #[doc(hidden)]
 pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
 #[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -123,7 +123,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -210,7 +210,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -550,7 +550,7 @@ pub mod batch_get_item_input {
 #[doc(hidden)]
 pub type BatchGetItemInputOperationOutputAlias = crate::operation::BatchGetItem;
 #[doc(hidden)]
-pub type BatchGetItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetItem`](crate::operation::BatchGetItem)>
     #[allow(clippy::let_and_return)]
@@ -561,7 +561,7 @@ impl BatchGetItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -645,7 +645,7 @@ impl BatchGetItemInput {
             "BatchGetItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -902,7 +902,7 @@ pub mod batch_write_item_input {
 #[doc(hidden)]
 pub type BatchWriteItemInputOperationOutputAlias = crate::operation::BatchWriteItem;
 #[doc(hidden)]
-pub type BatchWriteItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchWriteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchWriteItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchWriteItem`](crate::operation::BatchWriteItem)>
     #[allow(clippy::let_and_return)]
@@ -913,7 +913,7 @@ impl BatchWriteItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchWriteItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -998,7 +998,7 @@ impl BatchWriteItemInput {
             "BatchWriteItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1068,7 +1068,7 @@ pub mod create_backup_input {
 #[doc(hidden)]
 pub type CreateBackupInputOperationOutputAlias = crate::operation::CreateBackup;
 #[doc(hidden)]
-pub type CreateBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackup`](crate::operation::CreateBackup)>
     #[allow(clippy::let_and_return)]
@@ -1079,7 +1079,7 @@ impl CreateBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1163,7 +1163,7 @@ impl CreateBackupInput {
             "CreateBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1245,7 +1245,7 @@ pub mod create_global_table_input {
 #[doc(hidden)]
 pub type CreateGlobalTableInputOperationOutputAlias = crate::operation::CreateGlobalTable;
 #[doc(hidden)]
-pub type CreateGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateGlobalTable`](crate::operation::CreateGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -1256,7 +1256,7 @@ impl CreateGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1341,7 +1341,7 @@ impl CreateGlobalTableInput {
             "CreateGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2028,7 +2028,7 @@ pub mod create_table_input {
 #[doc(hidden)]
 pub type CreateTableInputOperationOutputAlias = crate::operation::CreateTable;
 #[doc(hidden)]
-pub type CreateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(clippy::let_and_return)]
@@ -2039,7 +2039,7 @@ impl CreateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2123,7 +2123,7 @@ impl CreateTableInput {
             "CreateTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2181,7 +2181,7 @@ pub mod delete_backup_input {
 #[doc(hidden)]
 pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
 #[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(clippy::let_and_return)]
@@ -2192,7 +2192,7 @@ impl DeleteBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2276,7 +2276,7 @@ impl DeleteBackupInput {
             "DeleteBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2824,7 +2824,7 @@ pub mod delete_item_input {
 #[doc(hidden)]
 pub type DeleteItemInputOperationOutputAlias = crate::operation::DeleteItem;
 #[doc(hidden)]
-pub type DeleteItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteItemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteItem`](crate::operation::DeleteItem)>
     #[allow(clippy::let_and_return)]
@@ -2835,7 +2835,7 @@ impl DeleteItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2919,7 +2919,7 @@ impl DeleteItemInput {
             "DeleteItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2977,7 +2977,7 @@ pub mod delete_table_input {
 #[doc(hidden)]
 pub type DeleteTableInputOperationOutputAlias = crate::operation::DeleteTable;
 #[doc(hidden)]
-pub type DeleteTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(clippy::let_and_return)]
@@ -2988,7 +2988,7 @@ impl DeleteTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3072,7 +3072,7 @@ impl DeleteTableInput {
             "DeleteTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3130,7 +3130,7 @@ pub mod describe_backup_input {
 #[doc(hidden)]
 pub type DescribeBackupInputOperationOutputAlias = crate::operation::DescribeBackup;
 #[doc(hidden)]
-pub type DescribeBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackup`](crate::operation::DescribeBackup)>
     #[allow(clippy::let_and_return)]
@@ -3141,7 +3141,7 @@ impl DescribeBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3226,7 +3226,7 @@ impl DescribeBackupInput {
             "DescribeBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3287,7 +3287,7 @@ pub mod describe_continuous_backups_input {
 pub type DescribeContinuousBackupsInputOperationOutputAlias =
     crate::operation::DescribeContinuousBackups;
 #[doc(hidden)]
-pub type DescribeContinuousBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContinuousBackups`](crate::operation::DescribeContinuousBackups)>
     #[allow(clippy::let_and_return)]
@@ -3298,7 +3298,7 @@ impl DescribeContinuousBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContinuousBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3385,7 +3385,7 @@ impl DescribeContinuousBackupsInput {
             "DescribeContinuousBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3456,7 +3456,7 @@ pub mod describe_contributor_insights_input {
 pub type DescribeContributorInsightsInputOperationOutputAlias =
     crate::operation::DescribeContributorInsights;
 #[doc(hidden)]
-pub type DescribeContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContributorInsights`](crate::operation::DescribeContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -3467,7 +3467,7 @@ impl DescribeContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3553,7 +3553,7 @@ impl DescribeContributorInsightsInput {
             "DescribeContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3597,7 +3597,7 @@ pub mod describe_endpoints_input {
 #[doc(hidden)]
 pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
 #[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -3608,7 +3608,7 @@ impl DescribeEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3693,7 +3693,7 @@ impl DescribeEndpointsInput {
             "DescribeEndpoints",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3743,7 +3743,7 @@ pub mod describe_export_input {
 #[doc(hidden)]
 pub type DescribeExportInputOperationOutputAlias = crate::operation::DescribeExport;
 #[doc(hidden)]
-pub type DescribeExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExport`](crate::operation::DescribeExport)>
     #[allow(clippy::let_and_return)]
@@ -3754,7 +3754,7 @@ impl DescribeExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3839,7 +3839,7 @@ impl DescribeExportInput {
             "DescribeExport",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3900,7 +3900,7 @@ pub mod describe_global_table_input {
 #[doc(hidden)]
 pub type DescribeGlobalTableInputOperationOutputAlias = crate::operation::DescribeGlobalTable;
 #[doc(hidden)]
-pub type DescribeGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTable`](crate::operation::DescribeGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -3911,7 +3911,7 @@ impl DescribeGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3996,7 +3996,7 @@ impl DescribeGlobalTableInput {
             "DescribeGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4058,7 +4058,7 @@ pub mod describe_global_table_settings_input {
 pub type DescribeGlobalTableSettingsInputOperationOutputAlias =
     crate::operation::DescribeGlobalTableSettings;
 #[doc(hidden)]
-pub type DescribeGlobalTableSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTableSettings`](crate::operation::DescribeGlobalTableSettings)>
     #[allow(clippy::let_and_return)]
@@ -4069,7 +4069,7 @@ impl DescribeGlobalTableSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTableSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4155,7 +4155,7 @@ impl DescribeGlobalTableSettingsInput {
             "DescribeGlobalTableSettings",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4215,7 +4215,7 @@ pub type DescribeKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::DescribeKinesisStreamingDestination;
 #[doc(hidden)]
 pub type DescribeKinesisStreamingDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKinesisStreamingDestination`](crate::operation::DescribeKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -4226,7 +4226,7 @@ impl DescribeKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4312,7 +4312,7 @@ impl DescribeKinesisStreamingDestinationInput {
             "DescribeKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4356,7 +4356,7 @@ pub mod describe_limits_input {
 #[doc(hidden)]
 pub type DescribeLimitsInputOperationOutputAlias = crate::operation::DescribeLimits;
 #[doc(hidden)]
-pub type DescribeLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLimits`](crate::operation::DescribeLimits)>
     #[allow(clippy::let_and_return)]
@@ -4367,7 +4367,7 @@ impl DescribeLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4452,7 +4452,7 @@ impl DescribeLimitsInput {
             "DescribeLimits",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4502,7 +4502,7 @@ pub mod describe_table_input {
 #[doc(hidden)]
 pub type DescribeTableInputOperationOutputAlias = crate::operation::DescribeTable;
 #[doc(hidden)]
-pub type DescribeTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTable`](crate::operation::DescribeTable)>
     #[allow(clippy::let_and_return)]
@@ -4513,7 +4513,7 @@ impl DescribeTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4597,7 +4597,7 @@ impl DescribeTableInput {
             "DescribeTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4656,7 +4656,8 @@ pub mod describe_table_replica_auto_scaling_input {
 pub type DescribeTableReplicaAutoScalingInputOperationOutputAlias =
     crate::operation::DescribeTableReplicaAutoScaling;
 #[doc(hidden)]
-pub type DescribeTableReplicaAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableReplicaAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableReplicaAutoScaling`](crate::operation::DescribeTableReplicaAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -4667,7 +4668,7 @@ impl DescribeTableReplicaAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTableReplicaAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4753,7 +4754,7 @@ impl DescribeTableReplicaAutoScalingInput {
             "DescribeTableReplicaAutoScaling",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4811,7 +4812,7 @@ pub mod describe_time_to_live_input {
 #[doc(hidden)]
 pub type DescribeTimeToLiveInputOperationOutputAlias = crate::operation::DescribeTimeToLive;
 #[doc(hidden)]
-pub type DescribeTimeToLiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeToLive`](crate::operation::DescribeTimeToLive)>
     #[allow(clippy::let_and_return)]
@@ -4822,7 +4823,7 @@ impl DescribeTimeToLiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeToLive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4907,7 +4908,7 @@ impl DescribeTimeToLiveInput {
             "DescribeTimeToLive",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4978,7 +4979,8 @@ pub mod disable_kinesis_streaming_destination_input {
 pub type DisableKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::DisableKinesisStreamingDestination;
 #[doc(hidden)]
-pub type DisableKinesisStreamingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableKinesisStreamingDestinationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DisableKinesisStreamingDestination`](crate::operation::DisableKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -4989,7 +4991,7 @@ impl DisableKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5075,7 +5077,7 @@ impl DisableKinesisStreamingDestinationInput {
             "DisableKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5146,7 +5148,8 @@ pub mod enable_kinesis_streaming_destination_input {
 pub type EnableKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::EnableKinesisStreamingDestination;
 #[doc(hidden)]
-pub type EnableKinesisStreamingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableKinesisStreamingDestinationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`EnableKinesisStreamingDestination`](crate::operation::EnableKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -5157,7 +5160,7 @@ impl EnableKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5243,7 +5246,7 @@ impl EnableKinesisStreamingDestinationInput {
             "EnableKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5417,7 +5420,7 @@ pub mod execute_statement_input {
 #[doc(hidden)]
 pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
 #[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -5428,7 +5431,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5513,7 +5516,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5622,7 +5625,7 @@ pub mod execute_transaction_input {
 #[doc(hidden)]
 pub type ExecuteTransactionInputOperationOutputAlias = crate::operation::ExecuteTransaction;
 #[doc(hidden)]
-pub type ExecuteTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteTransactionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteTransaction`](crate::operation::ExecuteTransaction)>
     #[allow(clippy::let_and_return)]
@@ -5633,7 +5636,7 @@ impl ExecuteTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5721,7 +5724,7 @@ impl ExecuteTransactionInput {
             "ExecuteTransaction",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5945,7 +5948,7 @@ pub mod export_table_to_point_in_time_input {
 pub type ExportTableToPointInTimeInputOperationOutputAlias =
     crate::operation::ExportTableToPointInTime;
 #[doc(hidden)]
-pub type ExportTableToPointInTimeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`ExportTableToPointInTime`](crate::operation::ExportTableToPointInTime)>
     #[allow(clippy::let_and_return)]
@@ -5956,7 +5959,7 @@ impl ExportTableToPointInTimeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportTableToPointInTime,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6045,7 +6048,7 @@ impl ExportTableToPointInTimeInput {
             "ExportTableToPointInTime",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6404,7 +6407,7 @@ pub mod get_item_input {
 #[doc(hidden)]
 pub type GetItemInputOperationOutputAlias = crate::operation::GetItem;
 #[doc(hidden)]
-pub type GetItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetItemInput {
     /// Consumes the builder and constructs an Operation<[`GetItem`](crate::operation::GetItem)>
     #[allow(clippy::let_and_return)]
@@ -6415,7 +6418,7 @@ impl GetItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6496,7 +6499,7 @@ impl GetItemInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetItem", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6670,7 +6673,7 @@ pub mod list_backups_input {
 #[doc(hidden)]
 pub type ListBackupsInputOperationOutputAlias = crate::operation::ListBackups;
 #[doc(hidden)]
-pub type ListBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackups`](crate::operation::ListBackups)>
     #[allow(clippy::let_and_return)]
@@ -6681,7 +6684,7 @@ impl ListBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6765,7 +6768,7 @@ impl ListBackupsInput {
             "ListBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6848,7 +6851,7 @@ pub mod list_contributor_insights_input {
 pub type ListContributorInsightsInputOperationOutputAlias =
     crate::operation::ListContributorInsights;
 #[doc(hidden)]
-pub type ListContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListContributorInsights`](crate::operation::ListContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -6859,7 +6862,7 @@ impl ListContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6946,7 +6949,7 @@ impl ListContributorInsightsInput {
             "ListContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7032,7 +7035,7 @@ pub mod list_exports_input {
 #[doc(hidden)]
 pub type ListExportsInputOperationOutputAlias = crate::operation::ListExports;
 #[doc(hidden)]
-pub type ListExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExports`](crate::operation::ListExports)>
     #[allow(clippy::let_and_return)]
@@ -7043,7 +7046,7 @@ impl ListExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7127,7 +7130,7 @@ impl ListExportsInput {
             "ListExports",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7225,7 +7228,7 @@ pub mod list_global_tables_input {
 #[doc(hidden)]
 pub type ListGlobalTablesInputOperationOutputAlias = crate::operation::ListGlobalTables;
 #[doc(hidden)]
-pub type ListGlobalTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGlobalTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGlobalTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListGlobalTables`](crate::operation::ListGlobalTables)>
     #[allow(clippy::let_and_return)]
@@ -7236,7 +7239,7 @@ impl ListGlobalTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGlobalTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7321,7 +7324,7 @@ impl ListGlobalTablesInput {
             "ListGlobalTables",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7400,7 +7403,7 @@ pub mod list_tables_input {
 #[doc(hidden)]
 pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
 #[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(clippy::let_and_return)]
@@ -7411,7 +7414,7 @@ impl ListTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7495,7 +7498,7 @@ impl ListTablesInput {
             "ListTables",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7571,7 +7574,7 @@ pub mod list_tags_of_resource_input {
 #[doc(hidden)]
 pub type ListTagsOfResourceInputOperationOutputAlias = crate::operation::ListTagsOfResource;
 #[doc(hidden)]
-pub type ListTagsOfResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsOfResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsOfResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsOfResource`](crate::operation::ListTagsOfResource)>
     #[allow(clippy::let_and_return)]
@@ -7582,7 +7585,7 @@ impl ListTagsOfResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsOfResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7667,7 +7670,7 @@ impl ListTagsOfResourceInput {
             "ListTagsOfResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8243,7 +8246,7 @@ pub mod put_item_input {
 #[doc(hidden)]
 pub type PutItemInputOperationOutputAlias = crate::operation::PutItem;
 #[doc(hidden)]
-pub type PutItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutItemInput {
     /// Consumes the builder and constructs an Operation<[`PutItem`](crate::operation::PutItem)>
     #[allow(clippy::let_and_return)]
@@ -8254,7 +8257,7 @@ impl PutItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8335,7 +8338,7 @@ impl PutItemInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "PutItem", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9334,7 +9337,7 @@ pub mod query_input {
 #[doc(hidden)]
 pub type QueryInputOperationOutputAlias = crate::operation::Query;
 #[doc(hidden)]
-pub type QueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryInput {
     /// Consumes the builder and constructs an Operation<[`Query`](crate::operation::Query)>
     #[allow(clippy::let_and_return)]
@@ -9345,7 +9348,7 @@ impl QueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Query,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9426,7 +9429,7 @@ impl QueryInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "Query", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9606,7 +9609,7 @@ pub mod restore_table_from_backup_input {
 #[doc(hidden)]
 pub type RestoreTableFromBackupInputOperationOutputAlias = crate::operation::RestoreTableFromBackup;
 #[doc(hidden)]
-pub type RestoreTableFromBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreTableFromBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableFromBackupInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableFromBackup`](crate::operation::RestoreTableFromBackup)>
     #[allow(clippy::let_and_return)]
@@ -9617,7 +9620,7 @@ impl RestoreTableFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableFromBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9704,7 +9707,7 @@ impl RestoreTableFromBackupInput {
             "RestoreTableFromBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9934,7 +9937,7 @@ pub mod restore_table_to_point_in_time_input {
 pub type RestoreTableToPointInTimeInputOperationOutputAlias =
     crate::operation::RestoreTableToPointInTime;
 #[doc(hidden)]
-pub type RestoreTableToPointInTimeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableToPointInTime`](crate::operation::RestoreTableToPointInTime)>
     #[allow(clippy::let_and_return)]
@@ -9945,7 +9948,7 @@ impl RestoreTableToPointInTimeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableToPointInTime,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10031,7 +10034,7 @@ impl RestoreTableToPointInTimeInput {
             "RestoreTableToPointInTime",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10804,7 +10807,7 @@ pub mod scan_input {
 #[doc(hidden)]
 pub type ScanInputOperationOutputAlias = crate::operation::Scan;
 #[doc(hidden)]
-pub type ScanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ScanInput {
     /// Consumes the builder and constructs an Operation<[`Scan`](crate::operation::Scan)>
     #[allow(clippy::let_and_return)]
@@ -10815,7 +10818,7 @@ impl ScanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Scan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10895,7 +10898,7 @@ impl ScanInput {
             .with_metadata(aws_smithy_http::operation::Metadata::new(
                 "Scan", "dynamodb",
             ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10976,7 +10979,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10987,7 +10990,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11071,7 +11074,7 @@ impl TagResourceInput {
             "TagResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11164,7 +11167,7 @@ pub mod transact_get_items_input {
 #[doc(hidden)]
 pub type TransactGetItemsInputOperationOutputAlias = crate::operation::TransactGetItems;
 #[doc(hidden)]
-pub type TransactGetItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransactGetItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactGetItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactGetItems`](crate::operation::TransactGetItems)>
     #[allow(clippy::let_and_return)]
@@ -11175,7 +11178,7 @@ impl TransactGetItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransactGetItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11260,7 +11263,7 @@ impl TransactGetItemsInput {
             "TransactGetItems",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11475,7 +11478,7 @@ pub mod transact_write_items_input {
 #[doc(hidden)]
 pub type TransactWriteItemsInputOperationOutputAlias = crate::operation::TransactWriteItems;
 #[doc(hidden)]
-pub type TransactWriteItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransactWriteItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactWriteItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactWriteItems`](crate::operation::TransactWriteItems)>
     #[allow(clippy::let_and_return)]
@@ -11486,7 +11489,7 @@ impl TransactWriteItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransactWriteItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11574,7 +11577,7 @@ impl TransactWriteItemsInput {
             "TransactWriteItems",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11657,7 +11660,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -11668,7 +11671,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11752,7 +11755,7 @@ impl UntagResourceInput {
             "UntagResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11830,7 +11833,7 @@ pub mod update_continuous_backups_input {
 pub type UpdateContinuousBackupsInputOperationOutputAlias =
     crate::operation::UpdateContinuousBackups;
 #[doc(hidden)]
-pub type UpdateContinuousBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContinuousBackups`](crate::operation::UpdateContinuousBackups)>
     #[allow(clippy::let_and_return)]
@@ -11841,7 +11844,7 @@ impl UpdateContinuousBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContinuousBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11928,7 +11931,7 @@ impl UpdateContinuousBackupsInput {
             "UpdateContinuousBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12018,7 +12021,7 @@ pub mod update_contributor_insights_input {
 pub type UpdateContributorInsightsInputOperationOutputAlias =
     crate::operation::UpdateContributorInsights;
 #[doc(hidden)]
-pub type UpdateContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContributorInsights`](crate::operation::UpdateContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -12029,7 +12032,7 @@ impl UpdateContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12116,7 +12119,7 @@ impl UpdateContributorInsightsInput {
             "UpdateContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12198,7 +12201,7 @@ pub mod update_global_table_input {
 #[doc(hidden)]
 pub type UpdateGlobalTableInputOperationOutputAlias = crate::operation::UpdateGlobalTable;
 #[doc(hidden)]
-pub type UpdateGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTable`](crate::operation::UpdateGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -12209,7 +12212,7 @@ impl UpdateGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12294,7 +12297,7 @@ impl UpdateGlobalTableInput {
             "UpdateGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12501,7 +12504,7 @@ pub mod update_global_table_settings_input {
 pub type UpdateGlobalTableSettingsInputOperationOutputAlias =
     crate::operation::UpdateGlobalTableSettings;
 #[doc(hidden)]
-pub type UpdateGlobalTableSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTableSettings`](crate::operation::UpdateGlobalTableSettings)>
     #[allow(clippy::let_and_return)]
@@ -12512,7 +12515,7 @@ impl UpdateGlobalTableSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTableSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12599,7 +12602,7 @@ impl UpdateGlobalTableSettingsInput {
             "UpdateGlobalTableSettings",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13431,7 +13434,7 @@ pub mod update_item_input {
 #[doc(hidden)]
 pub type UpdateItemInputOperationOutputAlias = crate::operation::UpdateItem;
 #[doc(hidden)]
-pub type UpdateItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateItemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateItem`](crate::operation::UpdateItem)>
     #[allow(clippy::let_and_return)]
@@ -13442,7 +13445,7 @@ impl UpdateItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13526,7 +13529,7 @@ impl UpdateItemInput {
             "UpdateItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13837,7 +13840,7 @@ pub mod update_table_input {
 #[doc(hidden)]
 pub type UpdateTableInputOperationOutputAlias = crate::operation::UpdateTable;
 #[doc(hidden)]
-pub type UpdateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(clippy::let_and_return)]
@@ -13848,7 +13851,7 @@ impl UpdateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13932,7 +13935,7 @@ impl UpdateTableInput {
             "UpdateTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14069,7 +14072,8 @@ pub mod update_table_replica_auto_scaling_input {
 pub type UpdateTableReplicaAutoScalingInputOperationOutputAlias =
     crate::operation::UpdateTableReplicaAutoScaling;
 #[doc(hidden)]
-pub type UpdateTableReplicaAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableReplicaAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTableReplicaAutoScaling`](crate::operation::UpdateTableReplicaAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -14080,7 +14084,7 @@ impl UpdateTableReplicaAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableReplicaAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14166,7 +14170,7 @@ impl UpdateTableReplicaAutoScalingInput {
             "UpdateTableReplicaAutoScaling",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14245,7 +14249,7 @@ pub mod update_time_to_live_input {
 #[doc(hidden)]
 pub type UpdateTimeToLiveInputOperationOutputAlias = crate::operation::UpdateTimeToLive;
 #[doc(hidden)]
-pub type UpdateTimeToLiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTimeToLive`](crate::operation::UpdateTimeToLive)>
     #[allow(clippy::let_and_return)]
@@ -14256,7 +14260,7 @@ impl UpdateTimeToLiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTimeToLive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14341,7 +14345,7 @@ impl UpdateTimeToLiveInput {
             "UpdateTimeToLive",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

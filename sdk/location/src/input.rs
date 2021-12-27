@@ -64,7 +64,7 @@ pub mod associate_tracker_consumer_input {
 pub type AssociateTrackerConsumerInputOperationOutputAlias =
     crate::operation::AssociateTrackerConsumer;
 #[doc(hidden)]
-pub type AssociateTrackerConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateTrackerConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTrackerConsumer`](crate::operation::AssociateTrackerConsumer)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl AssociateTrackerConsumerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTrackerConsumer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -179,7 +179,7 @@ impl AssociateTrackerConsumerInput {
             "AssociateTrackerConsumer",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -273,7 +273,8 @@ pub mod batch_delete_device_position_history_input {
 pub type BatchDeleteDevicePositionHistoryInputOperationOutputAlias =
     crate::operation::BatchDeleteDevicePositionHistory;
 #[doc(hidden)]
-pub type BatchDeleteDevicePositionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteDevicePositionHistoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDevicePositionHistory`](crate::operation::BatchDeleteDevicePositionHistory)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +285,7 @@ impl BatchDeleteDevicePositionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteDevicePositionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -387,7 +388,7 @@ impl BatchDeleteDevicePositionHistoryInput {
             "BatchDeleteDevicePositionHistory",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -469,7 +470,7 @@ pub mod batch_delete_geofence_input {
 #[doc(hidden)]
 pub type BatchDeleteGeofenceInputOperationOutputAlias = crate::operation::BatchDeleteGeofence;
 #[doc(hidden)]
-pub type BatchDeleteGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteGeofence`](crate::operation::BatchDeleteGeofence)>
     #[allow(clippy::let_and_return)]
@@ -480,7 +481,7 @@ impl BatchDeleteGeofenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteGeofence,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -582,7 +583,7 @@ impl BatchDeleteGeofenceInput {
             "BatchDeleteGeofence",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -672,7 +673,7 @@ pub mod batch_evaluate_geofences_input {
 #[doc(hidden)]
 pub type BatchEvaluateGeofencesInputOperationOutputAlias = crate::operation::BatchEvaluateGeofences;
 #[doc(hidden)]
-pub type BatchEvaluateGeofencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchEvaluateGeofencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEvaluateGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`BatchEvaluateGeofences`](crate::operation::BatchEvaluateGeofences)>
     #[allow(clippy::let_and_return)]
@@ -683,7 +684,7 @@ impl BatchEvaluateGeofencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEvaluateGeofences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -788,7 +789,7 @@ impl BatchEvaluateGeofencesInput {
             "BatchEvaluateGeofences",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -881,7 +882,7 @@ pub mod batch_get_device_position_input {
 #[doc(hidden)]
 pub type BatchGetDevicePositionInputOperationOutputAlias = crate::operation::BatchGetDevicePosition;
 #[doc(hidden)]
-pub type BatchGetDevicePositionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetDevicePosition`](crate::operation::BatchGetDevicePosition)>
     #[allow(clippy::let_and_return)]
@@ -892,7 +893,7 @@ impl BatchGetDevicePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetDevicePosition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -996,7 +997,7 @@ impl BatchGetDevicePositionInput {
             "BatchGetDevicePosition",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1082,7 +1083,7 @@ pub mod batch_put_geofence_input {
 #[doc(hidden)]
 pub type BatchPutGeofenceInputOperationOutputAlias = crate::operation::BatchPutGeofence;
 #[doc(hidden)]
-pub type BatchPutGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchPutGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutGeofence`](crate::operation::BatchPutGeofence)>
     #[allow(clippy::let_and_return)]
@@ -1093,7 +1094,7 @@ impl BatchPutGeofenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutGeofence,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1195,7 +1196,7 @@ impl BatchPutGeofenceInput {
             "BatchPutGeofence",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1275,7 +1276,7 @@ pub mod batch_update_device_position_input {
 pub type BatchUpdateDevicePositionInputOperationOutputAlias =
     crate::operation::BatchUpdateDevicePosition;
 #[doc(hidden)]
-pub type BatchUpdateDevicePositionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDevicePosition`](crate::operation::BatchUpdateDevicePosition)>
     #[allow(clippy::let_and_return)]
@@ -1286,7 +1287,7 @@ impl BatchUpdateDevicePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDevicePosition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1390,7 +1391,7 @@ impl BatchUpdateDevicePositionInput {
             "BatchUpdateDevicePosition",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1801,7 +1802,7 @@ pub mod calculate_route_input {
 #[doc(hidden)]
 pub type CalculateRouteInputOperationOutputAlias = crate::operation::CalculateRoute;
 #[doc(hidden)]
-pub type CalculateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CalculateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CalculateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CalculateRoute`](crate::operation::CalculateRoute)>
     #[allow(clippy::let_and_return)]
@@ -1812,7 +1813,7 @@ impl CalculateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CalculateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1914,7 +1915,7 @@ impl CalculateRouteInput {
             "CalculateRoute",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2173,7 +2174,7 @@ pub mod create_geofence_collection_input {
 pub type CreateGeofenceCollectionInputOperationOutputAlias =
     crate::operation::CreateGeofenceCollection;
 #[doc(hidden)]
-pub type CreateGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGeofenceCollection`](crate::operation::CreateGeofenceCollection)>
     #[allow(clippy::let_and_return)]
@@ -2184,7 +2185,7 @@ impl CreateGeofenceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGeofenceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2268,7 +2269,7 @@ impl CreateGeofenceCollectionInput {
             "CreateGeofenceCollection",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2471,7 +2472,7 @@ pub mod create_map_input {
 #[doc(hidden)]
 pub type CreateMapInputOperationOutputAlias = crate::operation::CreateMap;
 #[doc(hidden)]
-pub type CreateMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMapInput {
     /// Consumes the builder and constructs an Operation<[`CreateMap`](crate::operation::CreateMap)>
     #[allow(clippy::let_and_return)]
@@ -2482,7 +2483,7 @@ impl CreateMapInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMap,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2561,7 +2562,7 @@ impl CreateMapInput {
                     "CreateMap",
                     "location",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2834,7 +2835,7 @@ pub mod create_place_index_input {
 #[doc(hidden)]
 pub type CreatePlaceIndexInputOperationOutputAlias = crate::operation::CreatePlaceIndex;
 #[doc(hidden)]
-pub type CreatePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlaceIndex`](crate::operation::CreatePlaceIndex)>
     #[allow(clippy::let_and_return)]
@@ -2845,7 +2846,7 @@ impl CreatePlaceIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlaceIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2927,7 +2928,7 @@ impl CreatePlaceIndexInput {
             "CreatePlaceIndex",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3184,7 +3185,7 @@ pub mod create_route_calculator_input {
 #[doc(hidden)]
 pub type CreateRouteCalculatorInputOperationOutputAlias = crate::operation::CreateRouteCalculator;
 #[doc(hidden)]
-pub type CreateRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`CreateRouteCalculator`](crate::operation::CreateRouteCalculator)>
     #[allow(clippy::let_and_return)]
@@ -3195,7 +3196,7 @@ impl CreateRouteCalculatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRouteCalculator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3279,7 +3280,7 @@ impl CreateRouteCalculatorInput {
             "CreateRouteCalculator",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3577,7 +3578,7 @@ pub mod create_tracker_input {
 #[doc(hidden)]
 pub type CreateTrackerInputOperationOutputAlias = crate::operation::CreateTracker;
 #[doc(hidden)]
-pub type CreateTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`CreateTracker`](crate::operation::CreateTracker)>
     #[allow(clippy::let_and_return)]
@@ -3588,7 +3589,7 @@ impl CreateTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3669,7 +3670,7 @@ impl CreateTrackerInput {
             "CreateTracker",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3731,7 +3732,7 @@ pub mod delete_geofence_collection_input {
 pub type DeleteGeofenceCollectionInputOperationOutputAlias =
     crate::operation::DeleteGeofenceCollection;
 #[doc(hidden)]
-pub type DeleteGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGeofenceCollection`](crate::operation::DeleteGeofenceCollection)>
     #[allow(clippy::let_and_return)]
@@ -3742,7 +3743,7 @@ impl DeleteGeofenceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGeofenceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3838,7 +3839,7 @@ impl DeleteGeofenceCollectionInput {
             "DeleteGeofenceCollection",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3886,7 +3887,7 @@ pub mod delete_map_input {
 #[doc(hidden)]
 pub type DeleteMapInputOperationOutputAlias = crate::operation::DeleteMap;
 #[doc(hidden)]
-pub type DeleteMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMapInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMap`](crate::operation::DeleteMap)>
     #[allow(clippy::let_and_return)]
@@ -3897,7 +3898,7 @@ impl DeleteMapInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMap,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3987,7 +3988,7 @@ impl DeleteMapInput {
                     "DeleteMap",
                     "location",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4037,7 +4038,7 @@ pub mod delete_place_index_input {
 #[doc(hidden)]
 pub type DeletePlaceIndexInputOperationOutputAlias = crate::operation::DeletePlaceIndex;
 #[doc(hidden)]
-pub type DeletePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaceIndex`](crate::operation::DeletePlaceIndex)>
     #[allow(clippy::let_and_return)]
@@ -4048,7 +4049,7 @@ impl DeletePlaceIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlaceIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4144,7 +4145,7 @@ impl DeletePlaceIndexInput {
             "DeletePlaceIndex",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4197,7 +4198,7 @@ pub mod delete_route_calculator_input {
 #[doc(hidden)]
 pub type DeleteRouteCalculatorInputOperationOutputAlias = crate::operation::DeleteRouteCalculator;
 #[doc(hidden)]
-pub type DeleteRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteCalculator`](crate::operation::DeleteRouteCalculator)>
     #[allow(clippy::let_and_return)]
@@ -4208,7 +4209,7 @@ impl DeleteRouteCalculatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteCalculator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4304,7 +4305,7 @@ impl DeleteRouteCalculatorInput {
             "DeleteRouteCalculator",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4354,7 +4355,7 @@ pub mod delete_tracker_input {
 #[doc(hidden)]
 pub type DeleteTrackerInputOperationOutputAlias = crate::operation::DeleteTracker;
 #[doc(hidden)]
-pub type DeleteTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTracker`](crate::operation::DeleteTracker)>
     #[allow(clippy::let_and_return)]
@@ -4365,7 +4366,7 @@ impl DeleteTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4461,7 +4462,7 @@ impl DeleteTrackerInput {
             "DeleteTracker",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4515,7 +4516,7 @@ pub mod describe_geofence_collection_input {
 pub type DescribeGeofenceCollectionInputOperationOutputAlias =
     crate::operation::DescribeGeofenceCollection;
 #[doc(hidden)]
-pub type DescribeGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGeofenceCollection`](crate::operation::DescribeGeofenceCollection)>
     #[allow(clippy::let_and_return)]
@@ -4526,7 +4527,7 @@ impl DescribeGeofenceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGeofenceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4623,7 +4624,7 @@ impl DescribeGeofenceCollectionInput {
             "DescribeGeofenceCollection",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4673,7 +4674,7 @@ pub mod describe_map_input {
 #[doc(hidden)]
 pub type DescribeMapInputOperationOutputAlias = crate::operation::DescribeMap;
 #[doc(hidden)]
-pub type DescribeMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMapInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMap`](crate::operation::DescribeMap)>
     #[allow(clippy::let_and_return)]
@@ -4684,7 +4685,7 @@ impl DescribeMapInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMap,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4777,7 +4778,7 @@ impl DescribeMapInput {
             "DescribeMap",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4827,7 +4828,7 @@ pub mod describe_place_index_input {
 #[doc(hidden)]
 pub type DescribePlaceIndexInputOperationOutputAlias = crate::operation::DescribePlaceIndex;
 #[doc(hidden)]
-pub type DescribePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlaceIndex`](crate::operation::DescribePlaceIndex)>
     #[allow(clippy::let_and_return)]
@@ -4838,7 +4839,7 @@ impl DescribePlaceIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlaceIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4935,7 +4936,7 @@ impl DescribePlaceIndexInput {
             "DescribePlaceIndex",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4989,7 +4990,7 @@ pub mod describe_route_calculator_input {
 pub type DescribeRouteCalculatorInputOperationOutputAlias =
     crate::operation::DescribeRouteCalculator;
 #[doc(hidden)]
-pub type DescribeRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRouteCalculator`](crate::operation::DescribeRouteCalculator)>
     #[allow(clippy::let_and_return)]
@@ -5000,7 +5001,7 @@ impl DescribeRouteCalculatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRouteCalculator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5097,7 +5098,7 @@ impl DescribeRouteCalculatorInput {
             "DescribeRouteCalculator",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5147,7 +5148,7 @@ pub mod describe_tracker_input {
 #[doc(hidden)]
 pub type DescribeTrackerInputOperationOutputAlias = crate::operation::DescribeTracker;
 #[doc(hidden)]
-pub type DescribeTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTracker`](crate::operation::DescribeTracker)>
     #[allow(clippy::let_and_return)]
@@ -5158,7 +5159,7 @@ impl DescribeTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5255,7 +5256,7 @@ impl DescribeTrackerInput {
             "DescribeTracker",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5334,7 +5335,7 @@ pub mod disassociate_tracker_consumer_input {
 pub type DisassociateTrackerConsumerInputOperationOutputAlias =
     crate::operation::DisassociateTrackerConsumer;
 #[doc(hidden)]
-pub type DisassociateTrackerConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateTrackerConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTrackerConsumer`](crate::operation::DisassociateTrackerConsumer)>
     #[allow(clippy::let_and_return)]
@@ -5345,7 +5346,7 @@ impl DisassociateTrackerConsumerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTrackerConsumer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5457,7 +5458,7 @@ impl DisassociateTrackerConsumerInput {
             "DisassociateTrackerConsumer",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5519,7 +5520,7 @@ pub mod get_device_position_input {
 #[doc(hidden)]
 pub type GetDevicePositionInputOperationOutputAlias = crate::operation::GetDevicePosition;
 #[doc(hidden)]
-pub type GetDevicePositionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePosition`](crate::operation::GetDevicePosition)>
     #[allow(clippy::let_and_return)]
@@ -5530,7 +5531,7 @@ impl GetDevicePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevicePosition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5642,7 +5643,7 @@ impl GetDevicePositionInput {
             "GetDevicePosition",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5789,7 +5790,7 @@ pub mod get_device_position_history_input {
 pub type GetDevicePositionHistoryInputOperationOutputAlias =
     crate::operation::GetDevicePositionHistory;
 #[doc(hidden)]
-pub type GetDevicePositionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevicePositionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePositionHistory`](crate::operation::GetDevicePositionHistory)>
     #[allow(clippy::let_and_return)]
@@ -5800,7 +5801,7 @@ impl GetDevicePositionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevicePositionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5920,7 +5921,7 @@ impl GetDevicePositionHistoryInput {
             "GetDevicePositionHistory",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5993,7 +5994,7 @@ pub mod get_geofence_input {
 #[doc(hidden)]
 pub type GetGeofenceInputOperationOutputAlias = crate::operation::GetGeofence;
 #[doc(hidden)]
-pub type GetGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`GetGeofence`](crate::operation::GetGeofence)>
     #[allow(clippy::let_and_return)]
@@ -6004,7 +6005,7 @@ impl GetGeofenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGeofence,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6116,7 +6117,7 @@ impl GetGeofenceInput {
             "GetGeofence",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6275,7 +6276,7 @@ pub mod get_map_glyphs_input {
 #[doc(hidden)]
 pub type GetMapGlyphsInputOperationOutputAlias = crate::operation::GetMapGlyphs;
 #[doc(hidden)]
-pub type GetMapGlyphsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMapGlyphsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapGlyphsInput {
     /// Consumes the builder and constructs an Operation<[`GetMapGlyphs`](crate::operation::GetMapGlyphs)>
     #[allow(clippy::let_and_return)]
@@ -6286,7 +6287,7 @@ impl GetMapGlyphsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMapGlyphs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6414,7 +6415,7 @@ impl GetMapGlyphsInput {
             "GetMapGlyphs",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6522,7 +6523,7 @@ pub mod get_map_sprites_input {
 #[doc(hidden)]
 pub type GetMapSpritesInputOperationOutputAlias = crate::operation::GetMapSprites;
 #[doc(hidden)]
-pub type GetMapSpritesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMapSpritesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapSpritesInput {
     /// Consumes the builder and constructs an Operation<[`GetMapSprites`](crate::operation::GetMapSprites)>
     #[allow(clippy::let_and_return)]
@@ -6533,7 +6534,7 @@ impl GetMapSpritesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMapSprites,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6645,7 +6646,7 @@ impl GetMapSpritesInput {
             "GetMapSprites",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6695,7 +6696,7 @@ pub mod get_map_style_descriptor_input {
 #[doc(hidden)]
 pub type GetMapStyleDescriptorInputOperationOutputAlias = crate::operation::GetMapStyleDescriptor;
 #[doc(hidden)]
-pub type GetMapStyleDescriptorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMapStyleDescriptorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapStyleDescriptorInput {
     /// Consumes the builder and constructs an Operation<[`GetMapStyleDescriptor`](crate::operation::GetMapStyleDescriptor)>
     #[allow(clippy::let_and_return)]
@@ -6706,7 +6707,7 @@ impl GetMapStyleDescriptorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMapStyleDescriptor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6802,7 +6803,7 @@ impl GetMapStyleDescriptorInput {
             "GetMapStyleDescriptor",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6888,7 +6889,7 @@ pub mod get_map_tile_input {
 #[doc(hidden)]
 pub type GetMapTileInputOperationOutputAlias = crate::operation::GetMapTile;
 #[doc(hidden)]
-pub type GetMapTileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMapTileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapTileInput {
     /// Consumes the builder and constructs an Operation<[`GetMapTile`](crate::operation::GetMapTile)>
     #[allow(clippy::let_and_return)]
@@ -6899,7 +6900,7 @@ impl GetMapTileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMapTile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7043,7 +7044,7 @@ impl GetMapTileInput {
             "GetMapTile",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7127,7 +7128,7 @@ pub mod list_device_positions_input {
 #[doc(hidden)]
 pub type ListDevicePositionsInputOperationOutputAlias = crate::operation::ListDevicePositions;
 #[doc(hidden)]
-pub type ListDevicePositionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevicePositionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicePositionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevicePositions`](crate::operation::ListDevicePositions)>
     #[allow(clippy::let_and_return)]
@@ -7138,7 +7139,7 @@ impl ListDevicePositionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevicePositions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7240,7 +7241,7 @@ impl ListDevicePositionsInput {
             "ListDevicePositions",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7321,7 +7322,7 @@ pub mod list_geofence_collections_input {
 pub type ListGeofenceCollectionsInputOperationOutputAlias =
     crate::operation::ListGeofenceCollections;
 #[doc(hidden)]
-pub type ListGeofenceCollectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGeofenceCollectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGeofenceCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofenceCollections`](crate::operation::ListGeofenceCollections)>
     #[allow(clippy::let_and_return)]
@@ -7332,7 +7333,7 @@ impl ListGeofenceCollectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGeofenceCollections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7416,7 +7417,7 @@ impl ListGeofenceCollectionsInput {
             "ListGeofenceCollections",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7495,7 +7496,7 @@ pub mod list_geofences_input {
 #[doc(hidden)]
 pub type ListGeofencesInputOperationOutputAlias = crate::operation::ListGeofences;
 #[doc(hidden)]
-pub type ListGeofencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGeofencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofences`](crate::operation::ListGeofences)>
     #[allow(clippy::let_and_return)]
@@ -7506,7 +7507,7 @@ impl ListGeofencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGeofences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7607,7 +7608,7 @@ impl ListGeofencesInput {
             "ListGeofences",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7685,7 +7686,7 @@ pub mod list_maps_input {
 #[doc(hidden)]
 pub type ListMapsInputOperationOutputAlias = crate::operation::ListMaps;
 #[doc(hidden)]
-pub type ListMapsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMapsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMapsInput {
     /// Consumes the builder and constructs an Operation<[`ListMaps`](crate::operation::ListMaps)>
     #[allow(clippy::let_and_return)]
@@ -7696,7 +7697,7 @@ impl ListMapsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMaps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7774,7 +7775,7 @@ impl ListMapsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListMaps", "location",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7854,7 +7855,7 @@ pub mod list_place_indexes_input {
 #[doc(hidden)]
 pub type ListPlaceIndexesInputOperationOutputAlias = crate::operation::ListPlaceIndexes;
 #[doc(hidden)]
-pub type ListPlaceIndexesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlaceIndexesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaceIndexesInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaceIndexes`](crate::operation::ListPlaceIndexes)>
     #[allow(clippy::let_and_return)]
@@ -7865,7 +7866,7 @@ impl ListPlaceIndexesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlaceIndexes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7947,7 +7948,7 @@ impl ListPlaceIndexesInput {
             "ListPlaceIndexes",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8027,7 +8028,7 @@ pub mod list_route_calculators_input {
 #[doc(hidden)]
 pub type ListRouteCalculatorsInputOperationOutputAlias = crate::operation::ListRouteCalculators;
 #[doc(hidden)]
-pub type ListRouteCalculatorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRouteCalculatorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRouteCalculatorsInput {
     /// Consumes the builder and constructs an Operation<[`ListRouteCalculators`](crate::operation::ListRouteCalculators)>
     #[allow(clippy::let_and_return)]
@@ -8038,7 +8039,7 @@ impl ListRouteCalculatorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRouteCalculators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8122,7 +8123,7 @@ impl ListRouteCalculatorsInput {
             "ListRouteCalculators",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8192,7 +8193,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8203,7 +8204,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8295,7 +8296,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8379,7 +8380,7 @@ pub mod list_tracker_consumers_input {
 #[doc(hidden)]
 pub type ListTrackerConsumersInputOperationOutputAlias = crate::operation::ListTrackerConsumers;
 #[doc(hidden)]
-pub type ListTrackerConsumersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrackerConsumersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrackerConsumersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackerConsumers`](crate::operation::ListTrackerConsumers)>
     #[allow(clippy::let_and_return)]
@@ -8390,7 +8391,7 @@ impl ListTrackerConsumersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrackerConsumers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8494,7 +8495,7 @@ impl ListTrackerConsumersInput {
             "ListTrackerConsumers",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8574,7 +8575,7 @@ pub mod list_trackers_input {
 #[doc(hidden)]
 pub type ListTrackersInputOperationOutputAlias = crate::operation::ListTrackers;
 #[doc(hidden)]
-pub type ListTrackersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrackersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrackersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackers`](crate::operation::ListTrackers)>
     #[allow(clippy::let_and_return)]
@@ -8585,7 +8586,7 @@ impl ListTrackersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrackers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8666,7 +8667,7 @@ impl ListTrackersInput {
             "ListTrackers",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8760,7 +8761,7 @@ pub mod put_geofence_input {
 #[doc(hidden)]
 pub type PutGeofenceInputOperationOutputAlias = crate::operation::PutGeofence;
 #[doc(hidden)]
-pub type PutGeofenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`PutGeofence`](crate::operation::PutGeofence)>
     #[allow(clippy::let_and_return)]
@@ -8771,7 +8772,7 @@ impl PutGeofenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutGeofence,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8888,7 +8889,7 @@ impl PutGeofenceInput {
             "PutGeofence",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9013,7 +9014,7 @@ pub mod search_place_index_for_position_input {
 pub type SearchPlaceIndexForPositionInputOperationOutputAlias =
     crate::operation::SearchPlaceIndexForPosition;
 #[doc(hidden)]
-pub type SearchPlaceIndexForPositionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchPlaceIndexForPositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchPlaceIndexForPositionInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForPosition`](crate::operation::SearchPlaceIndexForPosition)>
     #[allow(clippy::let_and_return)]
@@ -9024,7 +9025,7 @@ impl SearchPlaceIndexForPositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchPlaceIndexForPosition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9127,7 +9128,7 @@ impl SearchPlaceIndexForPositionInput {
             "SearchPlaceIndexForPosition",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9359,7 +9360,7 @@ pub mod search_place_index_for_text_input {
 pub type SearchPlaceIndexForTextInputOperationOutputAlias =
     crate::operation::SearchPlaceIndexForText;
 #[doc(hidden)]
-pub type SearchPlaceIndexForTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchPlaceIndexForTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchPlaceIndexForTextInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForText`](crate::operation::SearchPlaceIndexForText)>
     #[allow(clippy::let_and_return)]
@@ -9370,7 +9371,7 @@ impl SearchPlaceIndexForTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchPlaceIndexForText,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9474,7 +9475,7 @@ impl SearchPlaceIndexForTextInput {
             "SearchPlaceIndexForText",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9623,7 +9624,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9634,7 +9635,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9731,7 +9732,7 @@ impl TagResourceInput {
             "TagResource",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9822,7 +9823,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9833,7 +9834,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9938,7 +9939,7 @@ impl UntagResourceInput {
             "UntagResource",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10064,7 +10065,7 @@ pub mod update_geofence_collection_input {
 pub type UpdateGeofenceCollectionInputOperationOutputAlias =
     crate::operation::UpdateGeofenceCollection;
 #[doc(hidden)]
-pub type UpdateGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGeofenceCollection`](crate::operation::UpdateGeofenceCollection)>
     #[allow(clippy::let_and_return)]
@@ -10075,7 +10076,7 @@ impl UpdateGeofenceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGeofenceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10179,7 +10180,7 @@ impl UpdateGeofenceCollectionInput {
             "UpdateGeofenceCollection",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10264,7 +10265,7 @@ pub mod update_map_input {
 #[doc(hidden)]
 pub type UpdateMapInputOperationOutputAlias = crate::operation::UpdateMap;
 #[doc(hidden)]
-pub type UpdateMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMapInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMap`](crate::operation::UpdateMap)>
     #[allow(clippy::let_and_return)]
@@ -10275,7 +10276,7 @@ impl UpdateMapInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMap,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10370,7 +10371,7 @@ impl UpdateMapInput {
                     "UpdateMap",
                     "location",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10476,7 +10477,7 @@ pub mod update_place_index_input {
 #[doc(hidden)]
 pub type UpdatePlaceIndexInputOperationOutputAlias = crate::operation::UpdatePlaceIndex;
 #[doc(hidden)]
-pub type UpdatePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlaceIndex`](crate::operation::UpdatePlaceIndex)>
     #[allow(clippy::let_and_return)]
@@ -10487,7 +10488,7 @@ impl UpdatePlaceIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePlaceIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10589,7 +10590,7 @@ impl UpdatePlaceIndexInput {
             "UpdatePlaceIndex",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10681,7 +10682,7 @@ pub mod update_route_calculator_input {
 #[doc(hidden)]
 pub type UpdateRouteCalculatorInputOperationOutputAlias = crate::operation::UpdateRouteCalculator;
 #[doc(hidden)]
-pub type UpdateRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRouteCalculator`](crate::operation::UpdateRouteCalculator)>
     #[allow(clippy::let_and_return)]
@@ -10692,7 +10693,7 @@ impl UpdateRouteCalculatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRouteCalculator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10796,7 +10797,7 @@ impl UpdateRouteCalculatorInput {
             "UpdateRouteCalculator",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10973,7 +10974,7 @@ pub mod update_tracker_input {
 #[doc(hidden)]
 pub type UpdateTrackerInputOperationOutputAlias = crate::operation::UpdateTracker;
 #[doc(hidden)]
-pub type UpdateTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTracker`](crate::operation::UpdateTracker)>
     #[allow(clippy::let_and_return)]
@@ -10984,7 +10985,7 @@ impl UpdateTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11085,7 +11086,7 @@ impl UpdateTrackerInput {
             "UpdateTracker",
             "location",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

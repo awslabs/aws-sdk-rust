@@ -107,7 +107,7 @@ pub mod complete_snapshot_input {
 #[doc(hidden)]
 pub type CompleteSnapshotInputOperationOutputAlias = crate::operation::CompleteSnapshot;
 #[doc(hidden)]
-pub type CompleteSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CompleteSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CompleteSnapshot`](crate::operation::CompleteSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -118,7 +118,7 @@ impl CompleteSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -285,7 +285,7 @@ impl CompleteSnapshotInput {
             "CompleteSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -375,7 +375,7 @@ pub mod get_snapshot_block_input {
 #[doc(hidden)]
 pub type GetSnapshotBlockInputOperationOutputAlias = crate::operation::GetSnapshotBlock;
 #[doc(hidden)]
-pub type GetSnapshotBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshotBlock`](crate::operation::GetSnapshotBlock)>
     #[allow(clippy::let_and_return)]
@@ -386,7 +386,7 @@ impl GetSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSnapshotBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -508,7 +508,7 @@ impl GetSnapshotBlockInput {
             "GetSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -632,7 +632,7 @@ pub mod list_changed_blocks_input {
 #[doc(hidden)]
 pub type ListChangedBlocksInputOperationOutputAlias = crate::operation::ListChangedBlocks;
 #[doc(hidden)]
-pub type ListChangedBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChangedBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangedBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListChangedBlocks`](crate::operation::ListChangedBlocks)>
     #[allow(clippy::let_and_return)]
@@ -643,7 +643,7 @@ impl ListChangedBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangedBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -766,7 +766,7 @@ impl ListChangedBlocksInput {
             "ListChangedBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -854,7 +854,7 @@ pub mod list_snapshot_blocks_input {
 #[doc(hidden)]
 pub type ListSnapshotBlocksInputOperationOutputAlias = crate::operation::ListSnapshotBlocks;
 #[doc(hidden)]
-pub type ListSnapshotBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSnapshotBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnapshotBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshotBlocks`](crate::operation::ListSnapshotBlocks)>
     #[allow(clippy::let_and_return)]
@@ -865,7 +865,7 @@ impl ListSnapshotBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSnapshotBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -982,7 +982,7 @@ impl ListSnapshotBlocksInput {
             "ListSnapshotBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1148,7 +1148,7 @@ pub mod put_snapshot_block_input {
 #[doc(hidden)]
 pub type PutSnapshotBlockInputOperationOutputAlias = crate::operation::PutSnapshotBlock;
 #[doc(hidden)]
-pub type PutSnapshotBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`PutSnapshotBlock`](crate::operation::PutSnapshotBlock)>
     #[allow(clippy::let_and_return)]
@@ -1159,7 +1159,7 @@ impl PutSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSnapshotBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1353,7 +1353,7 @@ impl PutSnapshotBlockInput {
             "PutSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1593,7 +1593,7 @@ pub mod start_snapshot_input {
 #[doc(hidden)]
 pub type StartSnapshotInputOperationOutputAlias = crate::operation::StartSnapshot;
 #[doc(hidden)]
-pub type StartSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`StartSnapshot`](crate::operation::StartSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -1604,7 +1604,7 @@ impl StartSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1686,7 +1686,7 @@ impl StartSnapshotInput {
             "StartSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

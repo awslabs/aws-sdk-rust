@@ -124,7 +124,7 @@ pub mod query_forecast_input {
 #[doc(hidden)]
 pub type QueryForecastInputOperationOutputAlias = crate::operation::QueryForecast;
 #[doc(hidden)]
-pub type QueryForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QueryForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryForecastInput {
     /// Consumes the builder and constructs an Operation<[`QueryForecast`](crate::operation::QueryForecast)>
     #[allow(clippy::let_and_return)]
@@ -135,7 +135,7 @@ impl QueryForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -219,7 +219,7 @@ impl QueryForecastInput {
             "QueryForecast",
             "forecastquery",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

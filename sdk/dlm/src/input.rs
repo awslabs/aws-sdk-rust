@@ -113,7 +113,7 @@ pub mod create_lifecycle_policy_input {
 #[doc(hidden)]
 pub type CreateLifecyclePolicyInputOperationOutputAlias = crate::operation::CreateLifecyclePolicy;
 #[doc(hidden)]
-pub type CreateLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLifecyclePolicy`](crate::operation::CreateLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -124,7 +124,7 @@ impl CreateLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +206,7 @@ impl CreateLifecyclePolicyInput {
             "CreateLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -264,7 +264,7 @@ pub mod delete_lifecycle_policy_input {
 #[doc(hidden)]
 pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
 #[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -275,7 +275,7 @@ impl DeleteLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +365,7 @@ impl DeleteLifecyclePolicyInput {
             "DeleteLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -512,7 +512,7 @@ pub mod get_lifecycle_policies_input {
 #[doc(hidden)]
 pub type GetLifecyclePoliciesInputOperationOutputAlias = crate::operation::GetLifecyclePolicies;
 #[doc(hidden)]
-pub type GetLifecyclePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicies`](crate::operation::GetLifecyclePolicies)>
     #[allow(clippy::let_and_return)]
@@ -523,7 +523,7 @@ impl GetLifecyclePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -631,7 +631,7 @@ impl GetLifecyclePoliciesInput {
             "GetLifecyclePolicies",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -681,7 +681,7 @@ pub mod get_lifecycle_policy_input {
 #[doc(hidden)]
 pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
 #[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -692,7 +692,7 @@ impl GetLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -782,7 +782,7 @@ impl GetLifecyclePolicyInput {
             "GetLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -832,7 +832,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -843,7 +843,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -933,7 +933,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1012,7 +1012,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1023,7 +1023,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1118,7 +1118,7 @@ impl TagResourceInput {
             "TagResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1197,7 +1197,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1208,7 +1208,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1311,7 +1311,7 @@ impl UntagResourceInput {
             "UntagResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1422,7 +1422,7 @@ pub mod update_lifecycle_policy_input {
 #[doc(hidden)]
 pub type UpdateLifecyclePolicyInputOperationOutputAlias = crate::operation::UpdateLifecyclePolicy;
 #[doc(hidden)]
-pub type UpdateLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLifecyclePolicy`](crate::operation::UpdateLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1433,7 +1433,7 @@ impl UpdateLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1531,7 +1531,7 @@ impl UpdateLifecyclePolicyInput {
             "UpdateLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

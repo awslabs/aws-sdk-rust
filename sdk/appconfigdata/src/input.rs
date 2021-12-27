@@ -38,7 +38,7 @@ pub mod get_latest_configuration_input {
 #[doc(hidden)]
 pub type GetLatestConfigurationInputOperationOutputAlias = crate::operation::GetLatestConfiguration;
 #[doc(hidden)]
-pub type GetLatestConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLatestConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLatestConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLatestConfiguration`](crate::operation::GetLatestConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl GetLatestConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLatestConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -137,7 +137,7 @@ impl GetLatestConfigurationInput {
             "GetLatestConfiguration",
             "appconfigdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -244,7 +244,7 @@ pub mod start_configuration_session_input {
 pub type StartConfigurationSessionInputOperationOutputAlias =
     crate::operation::StartConfigurationSession;
 #[doc(hidden)]
-pub type StartConfigurationSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartConfigurationSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigurationSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigurationSession`](crate::operation::StartConfigurationSession)>
     #[allow(clippy::let_and_return)]
@@ -255,7 +255,7 @@ impl StartConfigurationSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigurationSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +337,7 @@ impl StartConfigurationSessionInput {
             "StartConfigurationSession",
             "appconfigdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

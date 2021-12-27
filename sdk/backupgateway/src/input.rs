@@ -50,7 +50,7 @@ pub mod associate_gateway_to_server_input {
 pub type AssociateGatewayToServerInputOperationOutputAlias =
     crate::operation::AssociateGatewayToServer;
 #[doc(hidden)]
-pub type AssociateGatewayToServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateGatewayToServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateGatewayToServerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateGatewayToServer`](crate::operation::AssociateGatewayToServer)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl AssociateGatewayToServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateGatewayToServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -148,7 +148,7 @@ impl AssociateGatewayToServerInput {
             "AssociateGatewayToServer",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -260,7 +260,7 @@ pub mod create_gateway_input {
 #[doc(hidden)]
 pub type CreateGatewayInputOperationOutputAlias = crate::operation::CreateGateway;
 #[doc(hidden)]
-pub type CreateGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateGateway`](crate::operation::CreateGateway)>
     #[allow(clippy::let_and_return)]
@@ -271,7 +271,7 @@ impl CreateGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -355,7 +355,7 @@ impl CreateGatewayInput {
             "CreateGateway",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -413,7 +413,7 @@ pub mod delete_gateway_input {
 #[doc(hidden)]
 pub type DeleteGatewayInputOperationOutputAlias = crate::operation::DeleteGateway;
 #[doc(hidden)]
-pub type DeleteGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGateway`](crate::operation::DeleteGateway)>
     #[allow(clippy::let_and_return)]
@@ -424,7 +424,7 @@ impl DeleteGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -508,7 +508,7 @@ impl DeleteGatewayInput {
             "DeleteGateway",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -569,7 +569,7 @@ pub mod delete_hypervisor_input {
 #[doc(hidden)]
 pub type DeleteHypervisorInputOperationOutputAlias = crate::operation::DeleteHypervisor;
 #[doc(hidden)]
-pub type DeleteHypervisorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHypervisorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHypervisorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHypervisor`](crate::operation::DeleteHypervisor)>
     #[allow(clippy::let_and_return)]
@@ -580,7 +580,7 @@ impl DeleteHypervisorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHypervisor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -665,7 +665,7 @@ impl DeleteHypervisorInput {
             "DeleteHypervisor",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -724,7 +724,8 @@ pub mod disassociate_gateway_from_server_input {
 pub type DisassociateGatewayFromServerInputOperationOutputAlias =
     crate::operation::DisassociateGatewayFromServer;
 #[doc(hidden)]
-pub type DisassociateGatewayFromServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateGatewayFromServerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateGatewayFromServerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateGatewayFromServer`](crate::operation::DisassociateGatewayFromServer)>
     #[allow(clippy::let_and_return)]
@@ -735,7 +736,7 @@ impl DisassociateGatewayFromServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateGatewayFromServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -821,7 +822,7 @@ impl DisassociateGatewayFromServerInput {
             "DisassociateGatewayFromServer",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -951,7 +952,8 @@ pub mod import_hypervisor_configuration_input {
 pub type ImportHypervisorConfigurationInputOperationOutputAlias =
     crate::operation::ImportHypervisorConfiguration;
 #[doc(hidden)]
-pub type ImportHypervisorConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportHypervisorConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ImportHypervisorConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ImportHypervisorConfiguration`](crate::operation::ImportHypervisorConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -962,7 +964,7 @@ impl ImportHypervisorConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportHypervisorConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1048,7 +1050,7 @@ impl ImportHypervisorConfigurationInput {
             "ImportHypervisorConfiguration",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1124,7 +1126,7 @@ pub mod list_gateways_input {
 #[doc(hidden)]
 pub type ListGatewaysInputOperationOutputAlias = crate::operation::ListGateways;
 #[doc(hidden)]
-pub type ListGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListGateways`](crate::operation::ListGateways)>
     #[allow(clippy::let_and_return)]
@@ -1135,7 +1137,7 @@ impl ListGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1219,7 +1221,7 @@ impl ListGatewaysInput {
             "ListGateways",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1295,7 +1297,7 @@ pub mod list_hypervisors_input {
 #[doc(hidden)]
 pub type ListHypervisorsInputOperationOutputAlias = crate::operation::ListHypervisors;
 #[doc(hidden)]
-pub type ListHypervisorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHypervisorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHypervisorsInput {
     /// Consumes the builder and constructs an Operation<[`ListHypervisors`](crate::operation::ListHypervisors)>
     #[allow(clippy::let_and_return)]
@@ -1306,7 +1308,7 @@ impl ListHypervisorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHypervisors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1391,7 +1393,7 @@ impl ListHypervisorsInput {
             "ListHypervisors",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1449,7 +1451,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1460,7 +1462,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1547,7 +1549,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1623,7 +1625,7 @@ pub mod list_virtual_machines_input {
 #[doc(hidden)]
 pub type ListVirtualMachinesInputOperationOutputAlias = crate::operation::ListVirtualMachines;
 #[doc(hidden)]
-pub type ListVirtualMachinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualMachinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualMachinesInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualMachines`](crate::operation::ListVirtualMachines)>
     #[allow(clippy::let_and_return)]
@@ -1634,7 +1636,7 @@ impl ListVirtualMachinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualMachines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1719,7 +1721,7 @@ impl ListVirtualMachinesInput {
             "ListVirtualMachines",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1830,7 +1832,7 @@ pub mod put_maintenance_start_time_input {
 pub type PutMaintenanceStartTimeInputOperationOutputAlias =
     crate::operation::PutMaintenanceStartTime;
 #[doc(hidden)]
-pub type PutMaintenanceStartTimeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMaintenanceStartTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMaintenanceStartTimeInput {
     /// Consumes the builder and constructs an Operation<[`PutMaintenanceStartTime`](crate::operation::PutMaintenanceStartTime)>
     #[allow(clippy::let_and_return)]
@@ -1841,7 +1843,7 @@ impl PutMaintenanceStartTimeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMaintenanceStartTime,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1928,7 +1930,7 @@ impl PutMaintenanceStartTimeInput {
             "PutMaintenanceStartTime",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2007,7 +2009,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2018,7 +2020,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2102,7 +2104,7 @@ impl TagResourceInput {
             "TagResource",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2199,7 +2201,7 @@ pub mod test_hypervisor_configuration_input {
 pub type TestHypervisorConfigurationInputOperationOutputAlias =
     crate::operation::TestHypervisorConfiguration;
 #[doc(hidden)]
-pub type TestHypervisorConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestHypervisorConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestHypervisorConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`TestHypervisorConfiguration`](crate::operation::TestHypervisorConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2210,7 +2212,7 @@ impl TestHypervisorConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestHypervisorConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2296,7 +2298,7 @@ impl TestHypervisorConfigurationInput {
             "TestHypervisorConfiguration",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2375,7 +2377,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2386,7 +2388,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2470,7 +2472,7 @@ impl UntagResourceInput {
             "UntagResource",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2544,7 +2546,7 @@ pub mod update_gateway_information_input {
 pub type UpdateGatewayInformationInputOperationOutputAlias =
     crate::operation::UpdateGatewayInformation;
 #[doc(hidden)]
-pub type UpdateGatewayInformationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGatewayInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayInformationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayInformation`](crate::operation::UpdateGatewayInformation)>
     #[allow(clippy::let_and_return)]
@@ -2555,7 +2557,7 @@ impl UpdateGatewayInformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGatewayInformation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2642,7 +2644,7 @@ impl UpdateGatewayInformationInput {
             "UpdateGatewayInformation",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2741,7 +2743,7 @@ pub mod update_hypervisor_input {
 #[doc(hidden)]
 pub type UpdateHypervisorInputOperationOutputAlias = crate::operation::UpdateHypervisor;
 #[doc(hidden)]
-pub type UpdateHypervisorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateHypervisorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHypervisorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHypervisor`](crate::operation::UpdateHypervisor)>
     #[allow(clippy::let_and_return)]
@@ -2752,7 +2754,7 @@ impl UpdateHypervisorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateHypervisor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2837,7 +2839,7 @@ impl UpdateHypervisorInput {
             "UpdateHypervisor",
             "backupgateway",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

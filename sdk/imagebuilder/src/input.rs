@@ -50,7 +50,7 @@ pub mod cancel_image_creation_input {
 #[doc(hidden)]
 pub type CancelImageCreationInputOperationOutputAlias = crate::operation::CancelImageCreation;
 #[doc(hidden)]
-pub type CancelImageCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelImageCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelImageCreationInput {
     /// Consumes the builder and constructs an Operation<[`CancelImageCreation`](crate::operation::CancelImageCreation)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl CancelImageCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelImageCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -144,7 +144,7 @@ impl CancelImageCreationInput {
             "CancelImageCreation",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -392,7 +392,7 @@ pub mod create_component_input {
 #[doc(hidden)]
 pub type CreateComponentInputOperationOutputAlias = crate::operation::CreateComponent;
 #[doc(hidden)]
-pub type CreateComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
     #[allow(clippy::let_and_return)]
@@ -403,7 +403,7 @@ impl CreateComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -486,7 +486,7 @@ impl CreateComponentInput {
             "CreateComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -808,7 +808,7 @@ pub mod create_container_recipe_input {
 #[doc(hidden)]
 pub type CreateContainerRecipeInputOperationOutputAlias = crate::operation::CreateContainerRecipe;
 #[doc(hidden)]
-pub type CreateContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainerRecipe`](crate::operation::CreateContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -819,7 +819,7 @@ impl CreateContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -904,7 +904,7 @@ impl CreateContainerRecipeInput {
             "CreateContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1037,7 +1037,8 @@ pub mod create_distribution_configuration_input {
 pub type CreateDistributionConfigurationInputOperationOutputAlias =
     crate::operation::CreateDistributionConfiguration;
 #[doc(hidden)]
-pub type CreateDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionConfiguration`](crate::operation::CreateDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1048,7 +1049,7 @@ impl CreateDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1132,7 +1133,7 @@ impl CreateDistributionConfigurationInput {
             "CreateDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1329,7 +1330,7 @@ pub mod create_image_input {
 #[doc(hidden)]
 pub type CreateImageInputOperationOutputAlias = crate::operation::CreateImage;
 #[doc(hidden)]
-pub type CreateImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateImage`](crate::operation::CreateImage)>
     #[allow(clippy::let_and_return)]
@@ -1340,7 +1341,7 @@ impl CreateImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1422,7 +1423,7 @@ impl CreateImageInput {
             "CreateImage",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1670,7 +1671,7 @@ pub mod create_image_pipeline_input {
 #[doc(hidden)]
 pub type CreateImagePipelineInputOperationOutputAlias = crate::operation::CreateImagePipeline;
 #[doc(hidden)]
-pub type CreateImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateImagePipeline`](crate::operation::CreateImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -1681,7 +1682,7 @@ impl CreateImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1764,7 +1765,7 @@ impl CreateImagePipelineInput {
             "CreateImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2020,7 +2021,7 @@ pub mod create_image_recipe_input {
 #[doc(hidden)]
 pub type CreateImageRecipeInputOperationOutputAlias = crate::operation::CreateImageRecipe;
 #[doc(hidden)]
-pub type CreateImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageRecipe`](crate::operation::CreateImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -2031,7 +2032,7 @@ impl CreateImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2114,7 +2115,7 @@ impl CreateImageRecipeInput {
             "CreateImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2409,7 +2410,8 @@ pub mod create_infrastructure_configuration_input {
 pub type CreateInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::CreateInfrastructureConfiguration;
 #[doc(hidden)]
-pub type CreateInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInfrastructureConfiguration`](crate::operation::CreateInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2420,7 +2422,7 @@ impl CreateInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2505,7 +2507,7 @@ impl CreateInfrastructureConfigurationInput {
             "CreateInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2569,7 +2571,7 @@ pub mod delete_component_input {
 #[doc(hidden)]
 pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
 #[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(clippy::let_and_return)]
@@ -2580,7 +2582,7 @@ impl DeleteComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2668,7 +2670,7 @@ impl DeleteComponentInput {
             "DeleteComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2721,7 +2723,7 @@ pub mod delete_container_recipe_input {
 #[doc(hidden)]
 pub type DeleteContainerRecipeInputOperationOutputAlias = crate::operation::DeleteContainerRecipe;
 #[doc(hidden)]
-pub type DeleteContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerRecipe`](crate::operation::DeleteContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -2732,7 +2734,7 @@ impl DeleteContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2820,7 +2822,7 @@ impl DeleteContainerRecipeInput {
             "DeleteContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2877,7 +2879,8 @@ pub mod delete_distribution_configuration_input {
 pub type DeleteDistributionConfigurationInputOperationOutputAlias =
     crate::operation::DeleteDistributionConfiguration;
 #[doc(hidden)]
-pub type DeleteDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistributionConfiguration`](crate::operation::DeleteDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2888,7 +2891,7 @@ impl DeleteDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2976,7 +2979,7 @@ impl DeleteDistributionConfigurationInput {
             "DeleteDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3029,7 +3032,7 @@ pub mod delete_image_input {
 #[doc(hidden)]
 pub type DeleteImageInputOperationOutputAlias = crate::operation::DeleteImage;
 #[doc(hidden)]
-pub type DeleteImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImage`](crate::operation::DeleteImage)>
     #[allow(clippy::let_and_return)]
@@ -3040,7 +3043,7 @@ impl DeleteImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3128,7 +3131,7 @@ impl DeleteImageInput {
             "DeleteImage",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3181,7 +3184,7 @@ pub mod delete_image_pipeline_input {
 #[doc(hidden)]
 pub type DeleteImagePipelineInputOperationOutputAlias = crate::operation::DeleteImagePipeline;
 #[doc(hidden)]
-pub type DeleteImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImagePipeline`](crate::operation::DeleteImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -3192,7 +3195,7 @@ impl DeleteImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3280,7 +3283,7 @@ impl DeleteImagePipelineInput {
             "DeleteImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3333,7 +3336,7 @@ pub mod delete_image_recipe_input {
 #[doc(hidden)]
 pub type DeleteImageRecipeInputOperationOutputAlias = crate::operation::DeleteImageRecipe;
 #[doc(hidden)]
-pub type DeleteImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImageRecipe`](crate::operation::DeleteImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -3344,7 +3347,7 @@ impl DeleteImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3432,7 +3435,7 @@ impl DeleteImageRecipeInput {
             "DeleteImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3489,7 +3492,8 @@ pub mod delete_infrastructure_configuration_input {
 pub type DeleteInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::DeleteInfrastructureConfiguration;
 #[doc(hidden)]
-pub type DeleteInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInfrastructureConfiguration`](crate::operation::DeleteInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3500,7 +3504,7 @@ impl DeleteInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3589,7 +3593,7 @@ impl DeleteInfrastructureConfigurationInput {
             "DeleteInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3647,7 +3651,7 @@ pub mod get_component_input {
 #[doc(hidden)]
 pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
 #[doc(hidden)]
-pub type GetComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(clippy::let_and_return)]
@@ -3658,7 +3662,7 @@ impl GetComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3746,7 +3750,7 @@ impl GetComponentInput {
             "GetComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3799,7 +3803,7 @@ pub mod get_component_policy_input {
 #[doc(hidden)]
 pub type GetComponentPolicyInputOperationOutputAlias = crate::operation::GetComponentPolicy;
 #[doc(hidden)]
-pub type GetComponentPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentPolicy`](crate::operation::GetComponentPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3810,7 +3814,7 @@ impl GetComponentPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponentPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3898,7 +3902,7 @@ impl GetComponentPolicyInput {
             "GetComponentPolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3951,7 +3955,7 @@ pub mod get_container_recipe_input {
 #[doc(hidden)]
 pub type GetContainerRecipeInputOperationOutputAlias = crate::operation::GetContainerRecipe;
 #[doc(hidden)]
-pub type GetContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipe`](crate::operation::GetContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -3962,7 +3966,7 @@ impl GetContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4050,7 +4054,7 @@ impl GetContainerRecipeInput {
             "GetContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4104,7 +4108,7 @@ pub mod get_container_recipe_policy_input {
 pub type GetContainerRecipePolicyInputOperationOutputAlias =
     crate::operation::GetContainerRecipePolicy;
 #[doc(hidden)]
-pub type GetContainerRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipePolicy`](crate::operation::GetContainerRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4115,7 +4119,7 @@ impl GetContainerRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4203,7 +4207,7 @@ impl GetContainerRecipePolicyInput {
             "GetContainerRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4262,7 +4266,8 @@ pub mod get_distribution_configuration_input {
 pub type GetDistributionConfigurationInputOperationOutputAlias =
     crate::operation::GetDistributionConfiguration;
 #[doc(hidden)]
-pub type GetDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfiguration`](crate::operation::GetDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4273,7 +4278,7 @@ impl GetDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4361,7 +4366,7 @@ impl GetDistributionConfigurationInput {
             "GetDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4412,7 +4417,7 @@ pub mod get_image_input {
 #[doc(hidden)]
 pub type GetImageInputOperationOutputAlias = crate::operation::GetImage;
 #[doc(hidden)]
-pub type GetImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetImage`](crate::operation::GetImage)>
     #[allow(clippy::let_and_return)]
@@ -4423,7 +4428,7 @@ impl GetImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4509,7 +4514,7 @@ impl GetImageInput {
                     "GetImage",
                     "imagebuilder",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4562,7 +4567,7 @@ pub mod get_image_pipeline_input {
 #[doc(hidden)]
 pub type GetImagePipelineInputOperationOutputAlias = crate::operation::GetImagePipeline;
 #[doc(hidden)]
-pub type GetImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePipeline`](crate::operation::GetImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -4573,7 +4578,7 @@ impl GetImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4661,7 +4666,7 @@ impl GetImagePipelineInput {
             "GetImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4711,7 +4716,7 @@ pub mod get_image_policy_input {
 #[doc(hidden)]
 pub type GetImagePolicyInputOperationOutputAlias = crate::operation::GetImagePolicy;
 #[doc(hidden)]
-pub type GetImagePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePolicy`](crate::operation::GetImagePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4722,7 +4727,7 @@ impl GetImagePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImagePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4807,7 +4812,7 @@ impl GetImagePolicyInput {
             "GetImagePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4860,7 +4865,7 @@ pub mod get_image_recipe_input {
 #[doc(hidden)]
 pub type GetImageRecipeInputOperationOutputAlias = crate::operation::GetImageRecipe;
 #[doc(hidden)]
-pub type GetImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipe`](crate::operation::GetImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -4871,7 +4876,7 @@ impl GetImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4959,7 +4964,7 @@ impl GetImageRecipeInput {
             "GetImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5012,7 +5017,7 @@ pub mod get_image_recipe_policy_input {
 #[doc(hidden)]
 pub type GetImageRecipePolicyInputOperationOutputAlias = crate::operation::GetImageRecipePolicy;
 #[doc(hidden)]
-pub type GetImageRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipePolicy`](crate::operation::GetImageRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -5023,7 +5028,7 @@ impl GetImageRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImageRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5111,7 +5116,7 @@ impl GetImageRecipePolicyInput {
             "GetImageRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5170,7 +5175,8 @@ pub mod get_infrastructure_configuration_input {
 pub type GetInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::GetInfrastructureConfiguration;
 #[doc(hidden)]
-pub type GetInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetInfrastructureConfiguration`](crate::operation::GetInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5181,7 +5187,7 @@ impl GetInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5269,7 +5275,7 @@ impl GetInfrastructureConfigurationInput {
             "GetInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5507,7 +5513,7 @@ pub mod import_component_input {
 #[doc(hidden)]
 pub type ImportComponentInputOperationOutputAlias = crate::operation::ImportComponent;
 #[doc(hidden)]
-pub type ImportComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportComponentInput {
     /// Consumes the builder and constructs an Operation<[`ImportComponent`](crate::operation::ImportComponent)>
     #[allow(clippy::let_and_return)]
@@ -5518,7 +5524,7 @@ impl ImportComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5601,7 +5607,7 @@ impl ImportComponentInput {
             "ImportComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5689,7 +5695,7 @@ pub mod list_component_build_versions_input {
 pub type ListComponentBuildVersionsInputOperationOutputAlias =
     crate::operation::ListComponentBuildVersions;
 #[doc(hidden)]
-pub type ListComponentBuildVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentBuildVersions`](crate::operation::ListComponentBuildVersions)>
     #[allow(clippy::let_and_return)]
@@ -5700,7 +5706,7 @@ impl ListComponentBuildVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponentBuildVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5781,7 +5787,7 @@ impl ListComponentBuildVersionsInput {
             "ListComponentBuildVersions",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5968,7 +5974,7 @@ pub mod list_components_input {
 #[doc(hidden)]
 pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
 #[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(clippy::let_and_return)]
@@ -5979,7 +5985,7 @@ impl ListComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6059,7 +6065,7 @@ impl ListComponentsInput {
             "ListComponents",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6206,7 +6212,7 @@ pub mod list_container_recipes_input {
 #[doc(hidden)]
 pub type ListContainerRecipesInputOperationOutputAlias = crate::operation::ListContainerRecipes;
 #[doc(hidden)]
-pub type ListContainerRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContainerRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainerRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListContainerRecipes`](crate::operation::ListContainerRecipes)>
     #[allow(clippy::let_and_return)]
@@ -6217,7 +6223,7 @@ impl ListContainerRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContainerRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6299,7 +6305,7 @@ impl ListContainerRecipesInput {
             "ListContainerRecipes",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6393,7 +6399,8 @@ pub mod list_distribution_configurations_input {
 pub type ListDistributionConfigurationsInputOperationOutputAlias =
     crate::operation::ListDistributionConfigurations;
 #[doc(hidden)]
-pub type ListDistributionConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionConfigurations`](crate::operation::ListDistributionConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -6404,7 +6411,7 @@ impl ListDistributionConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6485,7 +6492,7 @@ impl ListDistributionConfigurationsInput {
             "ListDistributionConfigurations",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6647,7 +6654,7 @@ pub mod list_image_build_versions_input {
 #[doc(hidden)]
 pub type ListImageBuildVersionsInputOperationOutputAlias = crate::operation::ListImageBuildVersions;
 #[doc(hidden)]
-pub type ListImageBuildVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImageBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListImageBuildVersions`](crate::operation::ListImageBuildVersions)>
     #[allow(clippy::let_and_return)]
@@ -6658,7 +6665,7 @@ impl ListImageBuildVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImageBuildVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6740,7 +6747,7 @@ impl ListImageBuildVersionsInput {
             "ListImageBuildVersions",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6825,7 +6832,7 @@ pub mod list_image_packages_input {
 #[doc(hidden)]
 pub type ListImagePackagesInputOperationOutputAlias = crate::operation::ListImagePackages;
 #[doc(hidden)]
-pub type ListImagePackagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePackages`](crate::operation::ListImagePackages)>
     #[allow(clippy::let_and_return)]
@@ -6836,7 +6843,7 @@ impl ListImagePackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePackages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6916,7 +6923,7 @@ impl ListImagePackagesInput {
             "ListImagePackages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7049,7 +7056,7 @@ pub mod list_image_pipeline_images_input {
 pub type ListImagePipelineImagesInputOperationOutputAlias =
     crate::operation::ListImagePipelineImages;
 #[doc(hidden)]
-pub type ListImagePipelineImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePipelineImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelineImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelineImages`](crate::operation::ListImagePipelineImages)>
     #[allow(clippy::let_and_return)]
@@ -7060,7 +7067,7 @@ impl ListImagePipelineImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePipelineImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7142,7 +7149,7 @@ impl ListImagePipelineImagesInput {
             "ListImagePipelineImages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7299,7 +7306,7 @@ pub mod list_image_pipelines_input {
 #[doc(hidden)]
 pub type ListImagePipelinesInputOperationOutputAlias = crate::operation::ListImagePipelines;
 #[doc(hidden)]
-pub type ListImagePipelinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelines`](crate::operation::ListImagePipelines)>
     #[allow(clippy::let_and_return)]
@@ -7310,7 +7317,7 @@ impl ListImagePipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePipelines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7390,7 +7397,7 @@ impl ListImagePipelinesInput {
             "ListImagePipelines",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7535,7 +7542,7 @@ pub mod list_image_recipes_input {
 #[doc(hidden)]
 pub type ListImageRecipesInputOperationOutputAlias = crate::operation::ListImageRecipes;
 #[doc(hidden)]
-pub type ListImageRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImageRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListImageRecipes`](crate::operation::ListImageRecipes)>
     #[allow(clippy::let_and_return)]
@@ -7546,7 +7553,7 @@ impl ListImageRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImageRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7626,7 +7633,7 @@ impl ListImageRecipesInput {
             "ListImageRecipes",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7815,7 +7822,7 @@ pub mod list_images_input {
 #[doc(hidden)]
 pub type ListImagesInputOperationOutputAlias = crate::operation::ListImages;
 #[doc(hidden)]
-pub type ListImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImages`](crate::operation::ListImages)>
     #[allow(clippy::let_and_return)]
@@ -7826,7 +7833,7 @@ impl ListImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7905,7 +7912,7 @@ impl ListImagesInput {
             "ListImages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7999,7 +8006,8 @@ pub mod list_infrastructure_configurations_input {
 pub type ListInfrastructureConfigurationsInputOperationOutputAlias =
     crate::operation::ListInfrastructureConfigurations;
 #[doc(hidden)]
-pub type ListInfrastructureConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInfrastructureConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListInfrastructureConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInfrastructureConfigurations`](crate::operation::ListInfrastructureConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -8010,7 +8018,7 @@ impl ListInfrastructureConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInfrastructureConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8091,7 +8099,7 @@ impl ListInfrastructureConfigurationsInput {
             "ListInfrastructureConfigurations",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8149,7 +8157,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8160,7 +8168,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8250,7 +8258,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8315,7 +8323,7 @@ pub mod put_component_policy_input {
 #[doc(hidden)]
 pub type PutComponentPolicyInputOperationOutputAlias = crate::operation::PutComponentPolicy;
 #[doc(hidden)]
-pub type PutComponentPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutComponentPolicy`](crate::operation::PutComponentPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8326,7 +8334,7 @@ impl PutComponentPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutComponentPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8406,7 +8414,7 @@ impl PutComponentPolicyInput {
             "PutComponentPolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8480,7 +8488,7 @@ pub mod put_container_recipe_policy_input {
 pub type PutContainerRecipePolicyInputOperationOutputAlias =
     crate::operation::PutContainerRecipePolicy;
 #[doc(hidden)]
-pub type PutContainerRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerRecipePolicy`](crate::operation::PutContainerRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8491,7 +8499,7 @@ impl PutContainerRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutContainerRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8573,7 +8581,7 @@ impl PutContainerRecipePolicyInput {
             "PutContainerRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8643,7 +8651,7 @@ pub mod put_image_policy_input {
 #[doc(hidden)]
 pub type PutImagePolicyInputOperationOutputAlias = crate::operation::PutImagePolicy;
 #[doc(hidden)]
-pub type PutImagePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImagePolicy`](crate::operation::PutImagePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8654,7 +8662,7 @@ impl PutImagePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutImagePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8734,7 +8742,7 @@ impl PutImagePolicyInput {
             "PutImagePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8807,7 +8815,7 @@ pub mod put_image_recipe_policy_input {
 #[doc(hidden)]
 pub type PutImageRecipePolicyInputOperationOutputAlias = crate::operation::PutImageRecipePolicy;
 #[doc(hidden)]
-pub type PutImageRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImageRecipePolicy`](crate::operation::PutImageRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8818,7 +8826,7 @@ impl PutImageRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutImageRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8900,7 +8908,7 @@ impl PutImageRecipePolicyInput {
             "PutImageRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8974,7 +8982,7 @@ pub mod start_image_pipeline_execution_input {
 pub type StartImagePipelineExecutionInputOperationOutputAlias =
     crate::operation::StartImagePipelineExecution;
 #[doc(hidden)]
-pub type StartImagePipelineExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImagePipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImagePipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartImagePipelineExecution`](crate::operation::StartImagePipelineExecution)>
     #[allow(clippy::let_and_return)]
@@ -8985,7 +8993,7 @@ impl StartImagePipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImagePipelineExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9069,7 +9077,7 @@ impl StartImagePipelineExecutionInput {
             "StartImagePipelineExecution",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9156,7 +9164,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9167,7 +9175,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9262,7 +9270,7 @@ impl TagResourceInput {
             "TagResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9341,7 +9349,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9352,7 +9360,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9455,7 +9463,7 @@ impl UntagResourceInput {
             "UntagResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9557,7 +9565,8 @@ pub mod update_distribution_configuration_input {
 pub type UpdateDistributionConfigurationInputOperationOutputAlias =
     crate::operation::UpdateDistributionConfiguration;
 #[doc(hidden)]
-pub type UpdateDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistributionConfiguration`](crate::operation::UpdateDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9568,7 +9577,7 @@ impl UpdateDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9652,7 +9661,7 @@ impl UpdateDistributionConfigurationInput {
             "UpdateDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9874,7 +9883,7 @@ pub mod update_image_pipeline_input {
 #[doc(hidden)]
 pub type UpdateImagePipelineInputOperationOutputAlias = crate::operation::UpdateImagePipeline;
 #[doc(hidden)]
-pub type UpdateImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImagePipeline`](crate::operation::UpdateImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -9885,7 +9894,7 @@ impl UpdateImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9968,7 +9977,7 @@ impl UpdateImagePipelineInput {
             "UpdateImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10280,7 +10289,8 @@ pub mod update_infrastructure_configuration_input {
 pub type UpdateInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::UpdateInfrastructureConfiguration;
 #[doc(hidden)]
-pub type UpdateInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInfrastructureConfiguration`](crate::operation::UpdateInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10291,7 +10301,7 @@ impl UpdateInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10376,7 +10386,7 @@ impl UpdateInfrastructureConfigurationInput {
             "UpdateInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

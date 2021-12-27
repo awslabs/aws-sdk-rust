@@ -96,7 +96,7 @@ pub mod create_signaling_channel_input {
 #[doc(hidden)]
 pub type CreateSignalingChannelInputOperationOutputAlias = crate::operation::CreateSignalingChannel;
 #[doc(hidden)]
-pub type CreateSignalingChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateSignalingChannel`](crate::operation::CreateSignalingChannel)>
     #[allow(clippy::let_and_return)]
@@ -107,7 +107,7 @@ impl CreateSignalingChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSignalingChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -189,7 +189,7 @@ impl CreateSignalingChannelInput {
             "CreateSignalingChannel",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -372,7 +372,7 @@ pub mod create_stream_input {
 #[doc(hidden)]
 pub type CreateStreamInputOperationOutputAlias = crate::operation::CreateStream;
 #[doc(hidden)]
-pub type CreateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStream`](crate::operation::CreateStream)>
     #[allow(clippy::let_and_return)]
@@ -383,7 +383,7 @@ impl CreateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -462,7 +462,7 @@ impl CreateStreamInput {
             "CreateStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -541,7 +541,7 @@ pub mod delete_signaling_channel_input {
 #[doc(hidden)]
 pub type DeleteSignalingChannelInputOperationOutputAlias = crate::operation::DeleteSignalingChannel;
 #[doc(hidden)]
-pub type DeleteSignalingChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSignalingChannel`](crate::operation::DeleteSignalingChannel)>
     #[allow(clippy::let_and_return)]
@@ -552,7 +552,7 @@ impl DeleteSignalingChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSignalingChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -634,7 +634,7 @@ impl DeleteSignalingChannelInput {
             "DeleteSignalingChannel",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -715,7 +715,7 @@ pub mod delete_stream_input {
 #[doc(hidden)]
 pub type DeleteStreamInputOperationOutputAlias = crate::operation::DeleteStream;
 #[doc(hidden)]
-pub type DeleteStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStream`](crate::operation::DeleteStream)>
     #[allow(clippy::let_and_return)]
@@ -726,7 +726,7 @@ impl DeleteStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -805,7 +805,7 @@ impl DeleteStreamInput {
             "DeleteStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -876,7 +876,7 @@ pub mod describe_signaling_channel_input {
 pub type DescribeSignalingChannelInputOperationOutputAlias =
     crate::operation::DescribeSignalingChannel;
 #[doc(hidden)]
-pub type DescribeSignalingChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSignalingChannel`](crate::operation::DescribeSignalingChannel)>
     #[allow(clippy::let_and_return)]
@@ -887,7 +887,7 @@ impl DescribeSignalingChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSignalingChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -969,7 +969,7 @@ impl DescribeSignalingChannelInput {
             "DescribeSignalingChannel",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1039,7 +1039,7 @@ pub mod describe_stream_input {
 #[doc(hidden)]
 pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
 #[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(clippy::let_and_return)]
@@ -1050,7 +1050,7 @@ impl DescribeStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1130,7 +1130,7 @@ impl DescribeStreamInput {
             "DescribeStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1218,7 +1218,7 @@ pub mod get_data_endpoint_input {
 #[doc(hidden)]
 pub type GetDataEndpointInputOperationOutputAlias = crate::operation::GetDataEndpoint;
 #[doc(hidden)]
-pub type GetDataEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetDataEndpoint`](crate::operation::GetDataEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1229,7 +1229,7 @@ impl GetDataEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1309,7 +1309,7 @@ impl GetDataEndpointInput {
             "GetDataEndpoint",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1392,7 +1392,7 @@ pub mod get_signaling_channel_endpoint_input {
 pub type GetSignalingChannelEndpointInputOperationOutputAlias =
     crate::operation::GetSignalingChannelEndpoint;
 #[doc(hidden)]
-pub type GetSignalingChannelEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSignalingChannelEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSignalingChannelEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetSignalingChannelEndpoint`](crate::operation::GetSignalingChannelEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1403,7 +1403,7 @@ impl GetSignalingChannelEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSignalingChannelEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1484,7 +1484,7 @@ impl GetSignalingChannelEndpointInput {
             "GetSignalingChannelEndpoint",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1573,7 +1573,7 @@ pub mod list_signaling_channels_input {
 #[doc(hidden)]
 pub type ListSignalingChannelsInputOperationOutputAlias = crate::operation::ListSignalingChannels;
 #[doc(hidden)]
-pub type ListSignalingChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSignalingChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSignalingChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListSignalingChannels`](crate::operation::ListSignalingChannels)>
     #[allow(clippy::let_and_return)]
@@ -1584,7 +1584,7 @@ impl ListSignalingChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSignalingChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1666,7 +1666,7 @@ impl ListSignalingChannelsInput {
             "ListSignalingChannels",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1759,7 +1759,7 @@ pub mod list_streams_input {
 #[doc(hidden)]
 pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
 #[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -1770,7 +1770,7 @@ impl ListStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1849,7 +1849,7 @@ impl ListStreamsInput {
             "ListStreams",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1925,7 +1925,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1936,7 +1936,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2018,7 +2018,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2106,7 +2106,7 @@ pub mod list_tags_for_stream_input {
 #[doc(hidden)]
 pub type ListTagsForStreamInputOperationOutputAlias = crate::operation::ListTagsForStream;
 #[doc(hidden)]
-pub type ListTagsForStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForStream`](crate::operation::ListTagsForStream)>
     #[allow(clippy::let_and_return)]
@@ -2117,7 +2117,7 @@ impl ListTagsForStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2197,7 +2197,7 @@ impl ListTagsForStreamInput {
             "ListTagsForStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2280,7 +2280,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2291,7 +2291,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2370,7 +2370,7 @@ impl TagResourceInput {
             "TagResource",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2471,7 +2471,7 @@ pub mod tag_stream_input {
 #[doc(hidden)]
 pub type TagStreamInputOperationOutputAlias = crate::operation::TagStream;
 #[doc(hidden)]
-pub type TagStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagStreamInput {
     /// Consumes the builder and constructs an Operation<[`TagStream`](crate::operation::TagStream)>
     #[allow(clippy::let_and_return)]
@@ -2482,7 +2482,7 @@ impl TagStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2559,7 +2559,7 @@ impl TagStreamInput {
                     "TagStream",
                     "kinesisvideo",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2640,7 +2640,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2651,7 +2651,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2730,7 +2730,7 @@ impl UntagResourceInput {
             "UntagResource",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2823,7 +2823,7 @@ pub mod untag_stream_input {
 #[doc(hidden)]
 pub type UntagStreamInputOperationOutputAlias = crate::operation::UntagStream;
 #[doc(hidden)]
-pub type UntagStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagStreamInput {
     /// Consumes the builder and constructs an Operation<[`UntagStream`](crate::operation::UntagStream)>
     #[allow(clippy::let_and_return)]
@@ -2834,7 +2834,7 @@ impl UntagStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2913,7 +2913,7 @@ impl UntagStreamInput {
             "UntagStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3036,7 +3036,7 @@ pub mod update_data_retention_input {
 #[doc(hidden)]
 pub type UpdateDataRetentionInputOperationOutputAlias = crate::operation::UpdateDataRetention;
 #[doc(hidden)]
-pub type UpdateDataRetentionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDataRetentionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataRetentionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataRetention`](crate::operation::UpdateDataRetention)>
     #[allow(clippy::let_and_return)]
@@ -3047,7 +3047,7 @@ impl UpdateDataRetentionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataRetention,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3127,7 +3127,7 @@ impl UpdateDataRetentionInput {
             "UpdateDataRetention",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3223,7 +3223,7 @@ pub mod update_signaling_channel_input {
 #[doc(hidden)]
 pub type UpdateSignalingChannelInputOperationOutputAlias = crate::operation::UpdateSignalingChannel;
 #[doc(hidden)]
-pub type UpdateSignalingChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSignalingChannel`](crate::operation::UpdateSignalingChannel)>
     #[allow(clippy::let_and_return)]
@@ -3234,7 +3234,7 @@ impl UpdateSignalingChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSignalingChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3316,7 +3316,7 @@ impl UpdateSignalingChannelInput {
             "UpdateSignalingChannel",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3451,7 +3451,7 @@ pub mod update_stream_input {
 #[doc(hidden)]
 pub type UpdateStreamInputOperationOutputAlias = crate::operation::UpdateStream;
 #[doc(hidden)]
-pub type UpdateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStream`](crate::operation::UpdateStream)>
     #[allow(clippy::let_and_return)]
@@ -3462,7 +3462,7 @@ impl UpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3541,7 +3541,7 @@ impl UpdateStreamInput {
             "UpdateStream",
             "kinesisvideo",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

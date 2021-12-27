@@ -73,7 +73,7 @@ pub mod delete_session_input {
 #[doc(hidden)]
 pub type DeleteSessionInputOperationOutputAlias = crate::operation::DeleteSession;
 #[doc(hidden)]
-pub type DeleteSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSession`](crate::operation::DeleteSession)>
     #[allow(clippy::let_and_return)]
@@ -84,7 +84,7 @@ impl DeleteSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -226,7 +226,7 @@ impl DeleteSessionInput {
             "DeleteSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -314,7 +314,7 @@ pub mod get_session_input {
 #[doc(hidden)]
 pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
 #[doc(hidden)]
-pub type GetSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
     #[allow(clippy::let_and_return)]
@@ -325,7 +325,7 @@ impl GetSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -467,7 +467,7 @@ impl GetSessionInput {
             "GetSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -665,7 +665,7 @@ pub mod put_session_input {
 #[doc(hidden)]
 pub type PutSessionInputOperationOutputAlias = crate::operation::PutSession;
 #[doc(hidden)]
-pub type PutSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSessionInput {
     /// Consumes the builder and constructs an Operation<[`PutSession`](crate::operation::PutSession)>
     #[allow(clippy::let_and_return)]
@@ -676,7 +676,7 @@ impl PutSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -847,7 +847,7 @@ impl PutSessionInput {
             "PutSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1009,7 +1009,7 @@ pub mod recognize_text_input {
 #[doc(hidden)]
 pub type RecognizeTextInputOperationOutputAlias = crate::operation::RecognizeText;
 #[doc(hidden)]
-pub type RecognizeTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RecognizeTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeTextInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeText`](crate::operation::RecognizeText)>
     #[allow(clippy::let_and_return)]
@@ -1020,7 +1020,7 @@ impl RecognizeTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecognizeText,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1159,7 +1159,7 @@ impl RecognizeTextInput {
             "RecognizeText",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1504,7 +1504,7 @@ pub mod recognize_utterance_input {
 #[doc(hidden)]
 pub type RecognizeUtteranceInputOperationOutputAlias = crate::operation::RecognizeUtterance;
 #[doc(hidden)]
-pub type RecognizeUtteranceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RecognizeUtteranceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeUtteranceInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeUtterance`](crate::operation::RecognizeUtterance)>
     #[allow(clippy::let_and_return)]
@@ -1515,7 +1515,7 @@ impl RecognizeUtteranceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecognizeUtterance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1730,7 +1730,7 @@ impl RecognizeUtteranceInput {
             "RecognizeUtterance",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

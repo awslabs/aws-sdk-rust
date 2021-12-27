@@ -63,7 +63,7 @@ pub type AcceptDomainTransferFromAnotherAwsAccountInputOperationOutputAlias =
     crate::operation::AcceptDomainTransferFromAnotherAwsAccount;
 #[doc(hidden)]
 pub type AcceptDomainTransferFromAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`AcceptDomainTransferFromAnotherAwsAccount`](crate::operation::AcceptDomainTransferFromAnotherAwsAccount)>
     #[allow(clippy::let_and_return)]
@@ -74,7 +74,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptDomainTransferFromAnotherAwsAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -160,7 +160,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
             "AcceptDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -221,7 +221,7 @@ pub type CancelDomainTransferToAnotherAwsAccountInputOperationOutputAlias =
     crate::operation::CancelDomainTransferToAnotherAwsAccount;
 #[doc(hidden)]
 pub type CancelDomainTransferToAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDomainTransferToAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`CancelDomainTransferToAnotherAwsAccount`](crate::operation::CancelDomainTransferToAnotherAwsAccount)>
     #[allow(clippy::let_and_return)]
@@ -232,7 +232,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDomainTransferToAnotherAwsAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -318,7 +318,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
             "CancelDomainTransferToAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -440,7 +440,7 @@ pub mod check_domain_availability_input {
 pub type CheckDomainAvailabilityInputOperationOutputAlias =
     crate::operation::CheckDomainAvailability;
 #[doc(hidden)]
-pub type CheckDomainAvailabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckDomainAvailabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckDomainAvailabilityInput {
     /// Consumes the builder and constructs an Operation<[`CheckDomainAvailability`](crate::operation::CheckDomainAvailability)>
     #[allow(clippy::let_and_return)]
@@ -451,7 +451,7 @@ impl CheckDomainAvailabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainAvailability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -538,7 +538,7 @@ impl CheckDomainAvailabilityInput {
             "CheckDomainAvailability",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -647,7 +647,7 @@ pub mod check_domain_transferability_input {
 pub type CheckDomainTransferabilityInputOperationOutputAlias =
     crate::operation::CheckDomainTransferability;
 #[doc(hidden)]
-pub type CheckDomainTransferabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckDomainTransferabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckDomainTransferabilityInput {
     /// Consumes the builder and constructs an Operation<[`CheckDomainTransferability`](crate::operation::CheckDomainTransferability)>
     #[allow(clippy::let_and_return)]
@@ -658,7 +658,7 @@ impl CheckDomainTransferabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainTransferability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -745,7 +745,7 @@ impl CheckDomainTransferabilityInput {
             "CheckDomainTransferability",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -824,7 +824,7 @@ pub mod delete_tags_for_domain_input {
 #[doc(hidden)]
 pub type DeleteTagsForDomainInputOperationOutputAlias = crate::operation::DeleteTagsForDomain;
 #[doc(hidden)]
-pub type DeleteTagsForDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTagsForDomain`](crate::operation::DeleteTagsForDomain)>
     #[allow(clippy::let_and_return)]
@@ -835,7 +835,7 @@ impl DeleteTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTagsForDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -922,7 +922,7 @@ impl DeleteTagsForDomainInput {
             "DeleteTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -980,7 +980,7 @@ pub mod disable_domain_auto_renew_input {
 #[doc(hidden)]
 pub type DisableDomainAutoRenewInputOperationOutputAlias = crate::operation::DisableDomainAutoRenew;
 #[doc(hidden)]
-pub type DisableDomainAutoRenewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableDomainAutoRenewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDomainAutoRenewInput {
     /// Consumes the builder and constructs an Operation<[`DisableDomainAutoRenew`](crate::operation::DisableDomainAutoRenew)>
     #[allow(clippy::let_and_return)]
@@ -991,7 +991,7 @@ impl DisableDomainAutoRenewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainAutoRenew,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1078,7 +1078,7 @@ impl DisableDomainAutoRenewInput {
             "DisableDomainAutoRenew",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1137,7 +1137,7 @@ pub mod disable_domain_transfer_lock_input {
 pub type DisableDomainTransferLockInputOperationOutputAlias =
     crate::operation::DisableDomainTransferLock;
 #[doc(hidden)]
-pub type DisableDomainTransferLockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableDomainTransferLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDomainTransferLockInput {
     /// Consumes the builder and constructs an Operation<[`DisableDomainTransferLock`](crate::operation::DisableDomainTransferLock)>
     #[allow(clippy::let_and_return)]
@@ -1148,7 +1148,7 @@ impl DisableDomainTransferLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainTransferLock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1235,7 +1235,7 @@ impl DisableDomainTransferLockInput {
             "DisableDomainTransferLock",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1293,7 +1293,7 @@ pub mod enable_domain_auto_renew_input {
 #[doc(hidden)]
 pub type EnableDomainAutoRenewInputOperationOutputAlias = crate::operation::EnableDomainAutoRenew;
 #[doc(hidden)]
-pub type EnableDomainAutoRenewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableDomainAutoRenewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDomainAutoRenewInput {
     /// Consumes the builder and constructs an Operation<[`EnableDomainAutoRenew`](crate::operation::EnableDomainAutoRenew)>
     #[allow(clippy::let_and_return)]
@@ -1304,7 +1304,7 @@ impl EnableDomainAutoRenewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainAutoRenew,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1391,7 +1391,7 @@ impl EnableDomainAutoRenewInput {
             "EnableDomainAutoRenew",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1450,7 +1450,7 @@ pub mod enable_domain_transfer_lock_input {
 pub type EnableDomainTransferLockInputOperationOutputAlias =
     crate::operation::EnableDomainTransferLock;
 #[doc(hidden)]
-pub type EnableDomainTransferLockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableDomainTransferLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDomainTransferLockInput {
     /// Consumes the builder and constructs an Operation<[`EnableDomainTransferLock`](crate::operation::EnableDomainTransferLock)>
     #[allow(clippy::let_and_return)]
@@ -1461,7 +1461,7 @@ impl EnableDomainTransferLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainTransferLock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1548,7 +1548,7 @@ impl EnableDomainTransferLockInput {
             "EnableDomainTransferLock",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1607,7 +1607,8 @@ pub mod get_contact_reachability_status_input {
 pub type GetContactReachabilityStatusInputOperationOutputAlias =
     crate::operation::GetContactReachabilityStatus;
 #[doc(hidden)]
-pub type GetContactReachabilityStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContactReachabilityStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactReachabilityStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetContactReachabilityStatus`](crate::operation::GetContactReachabilityStatus)>
     #[allow(clippy::let_and_return)]
@@ -1618,7 +1619,7 @@ impl GetContactReachabilityStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContactReachabilityStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1704,7 +1705,7 @@ impl GetContactReachabilityStatusInput {
             "GetContactReachabilityStatus",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1762,7 +1763,7 @@ pub mod get_domain_detail_input {
 #[doc(hidden)]
 pub type GetDomainDetailInputOperationOutputAlias = crate::operation::GetDomainDetail;
 #[doc(hidden)]
-pub type GetDomainDetailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainDetailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainDetailInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainDetail`](crate::operation::GetDomainDetail)>
     #[allow(clippy::let_and_return)]
@@ -1773,7 +1774,7 @@ impl GetDomainDetailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainDetail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1858,7 +1859,7 @@ impl GetDomainDetailInput {
             "GetDomainDetail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1990,7 +1991,7 @@ pub mod get_domain_suggestions_input {
 #[doc(hidden)]
 pub type GetDomainSuggestionsInputOperationOutputAlias = crate::operation::GetDomainSuggestions;
 #[doc(hidden)]
-pub type GetDomainSuggestionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainSuggestionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainSuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainSuggestions`](crate::operation::GetDomainSuggestions)>
     #[allow(clippy::let_and_return)]
@@ -2001,7 +2002,7 @@ impl GetDomainSuggestionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainSuggestions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2088,7 +2089,7 @@ impl GetDomainSuggestionsInput {
             "GetDomainSuggestions",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2148,7 +2149,7 @@ pub mod get_operation_detail_input {
 #[doc(hidden)]
 pub type GetOperationDetailInputOperationOutputAlias = crate::operation::GetOperationDetail;
 #[doc(hidden)]
-pub type GetOperationDetailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOperationDetailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOperationDetailInput {
     /// Consumes the builder and constructs an Operation<[`GetOperationDetail`](crate::operation::GetOperationDetail)>
     #[allow(clippy::let_and_return)]
@@ -2159,7 +2160,7 @@ impl GetOperationDetailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOperationDetail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2244,7 +2245,7 @@ impl GetOperationDetailInput {
             "GetOperationDetail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2326,7 +2327,7 @@ pub mod list_domains_input {
 #[doc(hidden)]
 pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
 #[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(clippy::let_and_return)]
@@ -2337,7 +2338,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2421,7 +2422,7 @@ impl ListDomainsInput {
             "ListDomains",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2516,7 +2517,7 @@ pub mod list_operations_input {
 #[doc(hidden)]
 pub type ListOperationsInputOperationOutputAlias = crate::operation::ListOperations;
 #[doc(hidden)]
-pub type ListOperationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOperationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListOperations`](crate::operation::ListOperations)>
     #[allow(clippy::let_and_return)]
@@ -2527,7 +2528,7 @@ impl ListOperationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOperations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2612,7 +2613,7 @@ impl ListOperationsInput {
             "ListOperations",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2670,7 +2671,7 @@ pub mod list_tags_for_domain_input {
 #[doc(hidden)]
 pub type ListTagsForDomainInputOperationOutputAlias = crate::operation::ListTagsForDomain;
 #[doc(hidden)]
-pub type ListTagsForDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForDomain`](crate::operation::ListTagsForDomain)>
     #[allow(clippy::let_and_return)]
@@ -2681,7 +2682,7 @@ impl ListTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2766,7 +2767,7 @@ impl ListTagsForDomainInput {
             "ListTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3051,7 +3052,7 @@ pub mod register_domain_input {
 #[doc(hidden)]
 pub type RegisterDomainInputOperationOutputAlias = crate::operation::RegisterDomain;
 #[doc(hidden)]
-pub type RegisterDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(clippy::let_and_return)]
@@ -3062,7 +3063,7 @@ impl RegisterDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3147,7 +3148,7 @@ impl RegisterDomainInput {
             "RegisterDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3215,7 +3216,7 @@ pub type RejectDomainTransferFromAnotherAwsAccountInputOperationOutputAlias =
     crate::operation::RejectDomainTransferFromAnotherAwsAccount;
 #[doc(hidden)]
 pub type RejectDomainTransferFromAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`RejectDomainTransferFromAnotherAwsAccount`](crate::operation::RejectDomainTransferFromAnotherAwsAccount)>
     #[allow(clippy::let_and_return)]
@@ -3226,7 +3227,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectDomainTransferFromAnotherAwsAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3312,7 +3313,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
             "RejectDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3403,7 +3404,7 @@ pub mod renew_domain_input {
 #[doc(hidden)]
 pub type RenewDomainInputOperationOutputAlias = crate::operation::RenewDomain;
 #[doc(hidden)]
-pub type RenewDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RenewDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RenewDomainInput {
     /// Consumes the builder and constructs an Operation<[`RenewDomain`](crate::operation::RenewDomain)>
     #[allow(clippy::let_and_return)]
@@ -3414,7 +3415,7 @@ impl RenewDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RenewDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3498,7 +3499,7 @@ impl RenewDomainInput {
             "RenewDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3557,7 +3558,8 @@ pub mod resend_contact_reachability_email_input {
 pub type ResendContactReachabilityEmailInputOperationOutputAlias =
     crate::operation::ResendContactReachabilityEmail;
 #[doc(hidden)]
-pub type ResendContactReachabilityEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResendContactReachabilityEmailInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ResendContactReachabilityEmailInput {
     /// Consumes the builder and constructs an Operation<[`ResendContactReachabilityEmail`](crate::operation::ResendContactReachabilityEmail)>
     #[allow(clippy::let_and_return)]
@@ -3568,7 +3570,7 @@ impl ResendContactReachabilityEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResendContactReachabilityEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3654,7 +3656,7 @@ impl ResendContactReachabilityEmailInput {
             "ResendContactReachabilityEmail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3712,7 +3714,7 @@ pub mod retrieve_domain_auth_code_input {
 #[doc(hidden)]
 pub type RetrieveDomainAuthCodeInputOperationOutputAlias = crate::operation::RetrieveDomainAuthCode;
 #[doc(hidden)]
-pub type RetrieveDomainAuthCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RetrieveDomainAuthCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetrieveDomainAuthCodeInput {
     /// Consumes the builder and constructs an Operation<[`RetrieveDomainAuthCode`](crate::operation::RetrieveDomainAuthCode)>
     #[allow(clippy::let_and_return)]
@@ -3723,7 +3725,7 @@ impl RetrieveDomainAuthCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetrieveDomainAuthCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3810,7 +3812,7 @@ impl RetrieveDomainAuthCodeInput {
             "RetrieveDomainAuthCode",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4104,7 +4106,7 @@ pub mod transfer_domain_input {
 #[doc(hidden)]
 pub type TransferDomainInputOperationOutputAlias = crate::operation::TransferDomain;
 #[doc(hidden)]
-pub type TransferDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransferDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransferDomainInput {
     /// Consumes the builder and constructs an Operation<[`TransferDomain`](crate::operation::TransferDomain)>
     #[allow(clippy::let_and_return)]
@@ -4115,7 +4117,7 @@ impl TransferDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4200,7 +4202,7 @@ impl TransferDomainInput {
             "TransferDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4271,7 +4273,8 @@ pub mod transfer_domain_to_another_aws_account_input {
 pub type TransferDomainToAnotherAwsAccountInputOperationOutputAlias =
     crate::operation::TransferDomainToAnotherAwsAccount;
 #[doc(hidden)]
-pub type TransferDomainToAnotherAwsAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransferDomainToAnotherAwsAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl TransferDomainToAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`TransferDomainToAnotherAwsAccount`](crate::operation::TransferDomainToAnotherAwsAccount)>
     #[allow(clippy::let_and_return)]
@@ -4282,7 +4285,7 @@ impl TransferDomainToAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferDomainToAnotherAwsAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4368,7 +4371,7 @@ impl TransferDomainToAnotherAwsAccountInput {
             "TransferDomainToAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4471,7 +4474,7 @@ pub mod update_domain_contact_input {
 #[doc(hidden)]
 pub type UpdateDomainContactInputOperationOutputAlias = crate::operation::UpdateDomainContact;
 #[doc(hidden)]
-pub type UpdateDomainContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainContactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainContact`](crate::operation::UpdateDomainContact)>
     #[allow(clippy::let_and_return)]
@@ -4482,7 +4485,7 @@ impl UpdateDomainContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4567,7 +4570,7 @@ impl UpdateDomainContactInput {
             "UpdateDomainContact",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4680,7 +4683,7 @@ pub mod update_domain_contact_privacy_input {
 pub type UpdateDomainContactPrivacyInputOperationOutputAlias =
     crate::operation::UpdateDomainContactPrivacy;
 #[doc(hidden)]
-pub type UpdateDomainContactPrivacyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainContactPrivacyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainContactPrivacyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainContactPrivacy`](crate::operation::UpdateDomainContactPrivacy)>
     #[allow(clippy::let_and_return)]
@@ -4691,7 +4694,7 @@ impl UpdateDomainContactPrivacyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContactPrivacy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4777,7 +4780,7 @@ impl UpdateDomainContactPrivacyInput {
             "UpdateDomainContactPrivacy",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4869,7 +4872,7 @@ pub mod update_domain_nameservers_input {
 pub type UpdateDomainNameserversInputOperationOutputAlias =
     crate::operation::UpdateDomainNameservers;
 #[doc(hidden)]
-pub type UpdateDomainNameserversInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainNameserversInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainNameserversInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainNameservers`](crate::operation::UpdateDomainNameservers)>
     #[allow(clippy::let_and_return)]
@@ -4880,7 +4883,7 @@ impl UpdateDomainNameserversInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainNameservers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4967,7 +4970,7 @@ impl UpdateDomainNameserversInput {
             "UpdateDomainNameservers",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5048,7 +5051,7 @@ pub mod update_tags_for_domain_input {
 #[doc(hidden)]
 pub type UpdateTagsForDomainInputOperationOutputAlias = crate::operation::UpdateTagsForDomain;
 #[doc(hidden)]
-pub type UpdateTagsForDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTagsForDomain`](crate::operation::UpdateTagsForDomain)>
     #[allow(clippy::let_and_return)]
@@ -5059,7 +5062,7 @@ impl UpdateTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagsForDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5146,7 +5149,7 @@ impl UpdateTagsForDomainInput {
             "UpdateTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5258,7 +5261,7 @@ pub mod view_billing_input {
 #[doc(hidden)]
 pub type ViewBillingInputOperationOutputAlias = crate::operation::ViewBilling;
 #[doc(hidden)]
-pub type ViewBillingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ViewBillingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ViewBillingInput {
     /// Consumes the builder and constructs an Operation<[`ViewBilling`](crate::operation::ViewBilling)>
     #[allow(clippy::let_and_return)]
@@ -5269,7 +5272,7 @@ impl ViewBillingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ViewBilling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5353,7 +5356,7 @@ impl ViewBillingInput {
             "ViewBilling",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -64,7 +64,7 @@ pub mod create_home_region_control_input {
 pub type CreateHomeRegionControlInputOperationOutputAlias =
     crate::operation::CreateHomeRegionControl;
 #[doc(hidden)]
-pub type CreateHomeRegionControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHomeRegionControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHomeRegionControlInput {
     /// Consumes the builder and constructs an Operation<[`CreateHomeRegionControl`](crate::operation::CreateHomeRegionControl)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl CreateHomeRegionControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHomeRegionControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -162,7 +162,7 @@ impl CreateHomeRegionControlInput {
             "CreateHomeRegionControl",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -279,7 +279,7 @@ pub mod describe_home_region_controls_input {
 pub type DescribeHomeRegionControlsInputOperationOutputAlias =
     crate::operation::DescribeHomeRegionControls;
 #[doc(hidden)]
-pub type DescribeHomeRegionControlsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHomeRegionControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHomeRegionControlsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHomeRegionControls`](crate::operation::DescribeHomeRegionControls)>
     #[allow(clippy::let_and_return)]
@@ -290,7 +290,7 @@ impl DescribeHomeRegionControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHomeRegionControls,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -376,7 +376,7 @@ impl DescribeHomeRegionControlsInput {
             "DescribeHomeRegionControls",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -420,7 +420,7 @@ pub mod get_home_region_input {
 #[doc(hidden)]
 pub type GetHomeRegionInputOperationOutputAlias = crate::operation::GetHomeRegion;
 #[doc(hidden)]
-pub type GetHomeRegionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHomeRegionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHomeRegionInput {
     /// Consumes the builder and constructs an Operation<[`GetHomeRegion`](crate::operation::GetHomeRegion)>
     #[allow(clippy::let_and_return)]
@@ -431,7 +431,7 @@ impl GetHomeRegionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHomeRegion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -516,7 +516,7 @@ impl GetHomeRegionInput {
             "GetHomeRegion",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

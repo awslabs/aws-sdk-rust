@@ -113,7 +113,7 @@ pub mod create_app_input {
 #[doc(hidden)]
 pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
 #[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(clippy::let_and_return)]
@@ -124,7 +124,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +206,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -419,7 +419,7 @@ pub mod create_replication_job_input {
 #[doc(hidden)]
 pub type CreateReplicationJobInputOperationOutputAlias = crate::operation::CreateReplicationJob;
 #[doc(hidden)]
-pub type CreateReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationJob`](crate::operation::CreateReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -430,7 +430,7 @@ impl CreateReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -517,7 +517,7 @@ impl CreateReplicationJobInput {
             "CreateReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -601,7 +601,7 @@ pub mod delete_app_input {
 #[doc(hidden)]
 pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
 #[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(clippy::let_and_return)]
@@ -612,7 +612,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -694,7 +694,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -753,7 +753,8 @@ pub mod delete_app_launch_configuration_input {
 pub type DeleteAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppLaunchConfiguration;
 #[doc(hidden)]
-pub type DeleteAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppLaunchConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppLaunchConfiguration`](crate::operation::DeleteAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -764,7 +765,7 @@ impl DeleteAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -850,7 +851,7 @@ impl DeleteAppLaunchConfigurationInput {
             "DeleteAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -909,7 +910,8 @@ pub mod delete_app_replication_configuration_input {
 pub type DeleteAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppReplicationConfiguration;
 #[doc(hidden)]
-pub type DeleteAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppReplicationConfiguration`](crate::operation::DeleteAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -920,7 +922,7 @@ impl DeleteAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1006,7 +1008,7 @@ impl DeleteAppReplicationConfigurationInput {
             "DeleteAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1065,7 +1067,8 @@ pub mod delete_app_validation_configuration_input {
 pub type DeleteAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppValidationConfiguration;
 #[doc(hidden)]
-pub type DeleteAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppValidationConfiguration`](crate::operation::DeleteAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1076,7 +1079,7 @@ impl DeleteAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1162,7 +1165,7 @@ impl DeleteAppValidationConfigurationInput {
             "DeleteAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1223,7 +1226,7 @@ pub mod delete_replication_job_input {
 #[doc(hidden)]
 pub type DeleteReplicationJobInputOperationOutputAlias = crate::operation::DeleteReplicationJob;
 #[doc(hidden)]
-pub type DeleteReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationJob`](crate::operation::DeleteReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -1234,7 +1237,7 @@ impl DeleteReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1321,7 +1324,7 @@ impl DeleteReplicationJobInput {
             "DeleteReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1365,7 +1368,7 @@ pub mod delete_server_catalog_input {
 #[doc(hidden)]
 pub type DeleteServerCatalogInputOperationOutputAlias = crate::operation::DeleteServerCatalog;
 #[doc(hidden)]
-pub type DeleteServerCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServerCatalog`](crate::operation::DeleteServerCatalog)>
     #[allow(clippy::let_and_return)]
@@ -1376,7 +1379,7 @@ impl DeleteServerCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServerCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1461,7 +1464,7 @@ impl DeleteServerCatalogInput {
             "DeleteServerCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1511,7 +1514,7 @@ pub mod disassociate_connector_input {
 #[doc(hidden)]
 pub type DisassociateConnectorInputOperationOutputAlias = crate::operation::DisassociateConnector;
 #[doc(hidden)]
-pub type DisassociateConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnector`](crate::operation::DisassociateConnector)>
     #[allow(clippy::let_and_return)]
@@ -1522,7 +1525,7 @@ impl DisassociateConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1609,7 +1612,7 @@ impl DisassociateConnectorInput {
             "DisassociateConnector",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1682,7 +1685,7 @@ pub mod generate_change_set_input {
 #[doc(hidden)]
 pub type GenerateChangeSetInputOperationOutputAlias = crate::operation::GenerateChangeSet;
 #[doc(hidden)]
-pub type GenerateChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateChangeSet`](crate::operation::GenerateChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -1693,7 +1696,7 @@ impl GenerateChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1778,7 +1781,7 @@ impl GenerateChangeSetInput {
             "GenerateChangeSet",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1851,7 +1854,7 @@ pub mod generate_template_input {
 #[doc(hidden)]
 pub type GenerateTemplateInputOperationOutputAlias = crate::operation::GenerateTemplate;
 #[doc(hidden)]
-pub type GenerateTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GenerateTemplate`](crate::operation::GenerateTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1862,7 +1865,7 @@ impl GenerateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1947,7 +1950,7 @@ impl GenerateTemplateInput {
             "GenerateTemplate",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2003,7 +2006,7 @@ pub mod get_app_input {
 #[doc(hidden)]
 pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
 #[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(clippy::let_and_return)]
@@ -2014,7 +2017,7 @@ impl GetAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2093,7 +2096,7 @@ impl GetAppInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetApp::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetApp", "sms"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2152,7 +2155,7 @@ pub mod get_app_launch_configuration_input {
 pub type GetAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::GetAppLaunchConfiguration;
 #[doc(hidden)]
-pub type GetAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppLaunchConfiguration`](crate::operation::GetAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2163,7 +2166,7 @@ impl GetAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2250,7 +2253,7 @@ impl GetAppLaunchConfigurationInput {
             "GetAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2309,7 +2312,8 @@ pub mod get_app_replication_configuration_input {
 pub type GetAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::GetAppReplicationConfiguration;
 #[doc(hidden)]
-pub type GetAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppReplicationConfiguration`](crate::operation::GetAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2320,7 +2324,7 @@ impl GetAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2406,7 +2410,7 @@ impl GetAppReplicationConfigurationInput {
             "GetAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2465,7 +2469,8 @@ pub mod get_app_validation_configuration_input {
 pub type GetAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::GetAppValidationConfiguration;
 #[doc(hidden)]
-pub type GetAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationConfiguration`](crate::operation::GetAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2476,7 +2481,7 @@ impl GetAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2562,7 +2567,7 @@ impl GetAppValidationConfigurationInput {
             "GetAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2620,7 +2625,7 @@ pub mod get_app_validation_output_input {
 #[doc(hidden)]
 pub type GetAppValidationOutputInputOperationOutputAlias = crate::operation::GetAppValidationOutput;
 #[doc(hidden)]
-pub type GetAppValidationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationOutput`](crate::operation::GetAppValidationOutput)>
     #[allow(clippy::let_and_return)]
@@ -2631,7 +2636,7 @@ impl GetAppValidationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppValidationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2718,7 +2723,7 @@ impl GetAppValidationOutputInput {
             "GetAppValidationOutput",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2792,7 +2797,7 @@ pub mod get_connectors_input {
 #[doc(hidden)]
 pub type GetConnectorsInputOperationOutputAlias = crate::operation::GetConnectors;
 #[doc(hidden)]
-pub type GetConnectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectors`](crate::operation::GetConnectors)>
     #[allow(clippy::let_and_return)]
@@ -2803,7 +2808,7 @@ impl GetConnectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2887,7 +2892,7 @@ impl GetConnectorsInput {
             "GetConnectors",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2976,7 +2981,7 @@ pub mod get_replication_jobs_input {
 #[doc(hidden)]
 pub type GetReplicationJobsInputOperationOutputAlias = crate::operation::GetReplicationJobs;
 #[doc(hidden)]
-pub type GetReplicationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReplicationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationJobs`](crate::operation::GetReplicationJobs)>
     #[allow(clippy::let_and_return)]
@@ -2987,7 +2992,7 @@ impl GetReplicationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReplicationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3072,7 +3077,7 @@ impl GetReplicationJobsInput {
             "GetReplicationJobs",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3161,7 +3166,7 @@ pub mod get_replication_runs_input {
 #[doc(hidden)]
 pub type GetReplicationRunsInputOperationOutputAlias = crate::operation::GetReplicationRuns;
 #[doc(hidden)]
-pub type GetReplicationRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReplicationRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationRuns`](crate::operation::GetReplicationRuns)>
     #[allow(clippy::let_and_return)]
@@ -3172,7 +3177,7 @@ impl GetReplicationRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReplicationRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3257,7 +3262,7 @@ impl GetReplicationRunsInput {
             "GetReplicationRuns",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3356,7 +3361,7 @@ pub mod get_servers_input {
 #[doc(hidden)]
 pub type GetServersInputOperationOutputAlias = crate::operation::GetServers;
 #[doc(hidden)]
-pub type GetServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServersInput {
     /// Consumes the builder and constructs an Operation<[`GetServers`](crate::operation::GetServers)>
     #[allow(clippy::let_and_return)]
@@ -3367,7 +3372,7 @@ impl GetServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3456,7 @@ impl GetServersInput {
             "GetServers",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3513,7 +3518,7 @@ pub mod import_app_catalog_input {
 #[doc(hidden)]
 pub type ImportAppCatalogInputOperationOutputAlias = crate::operation::ImportAppCatalog;
 #[doc(hidden)]
-pub type ImportAppCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportAppCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportAppCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportAppCatalog`](crate::operation::ImportAppCatalog)>
     #[allow(clippy::let_and_return)]
@@ -3524,7 +3529,7 @@ impl ImportAppCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportAppCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3609,7 +3614,7 @@ impl ImportAppCatalogInput {
             "ImportAppCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3653,7 +3658,7 @@ pub mod import_server_catalog_input {
 #[doc(hidden)]
 pub type ImportServerCatalogInputOperationOutputAlias = crate::operation::ImportServerCatalog;
 #[doc(hidden)]
-pub type ImportServerCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportServerCatalog`](crate::operation::ImportServerCatalog)>
     #[allow(clippy::let_and_return)]
@@ -3664,7 +3669,7 @@ impl ImportServerCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportServerCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3749,7 +3754,7 @@ impl ImportServerCatalogInput {
             "ImportServerCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3797,7 +3802,7 @@ pub mod launch_app_input {
 #[doc(hidden)]
 pub type LaunchAppInputOperationOutputAlias = crate::operation::LaunchApp;
 #[doc(hidden)]
-pub type LaunchAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LaunchAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LaunchAppInput {
     /// Consumes the builder and constructs an Operation<[`LaunchApp`](crate::operation::LaunchApp)>
     #[allow(clippy::let_and_return)]
@@ -3808,7 +3813,7 @@ impl LaunchAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LaunchApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3890,7 +3895,7 @@ impl LaunchAppInput {
                     "LaunchApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3983,7 +3988,7 @@ pub mod list_apps_input {
 #[doc(hidden)]
 pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
 #[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(clippy::let_and_return)]
@@ -3994,7 +3999,7 @@ impl ListAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4073,7 +4078,7 @@ impl ListAppsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::ListApps::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("ListApps", "sms"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4147,7 +4152,7 @@ pub mod notify_app_validation_output_input {
 pub type NotifyAppValidationOutputInputOperationOutputAlias =
     crate::operation::NotifyAppValidationOutput;
 #[doc(hidden)]
-pub type NotifyAppValidationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`NotifyAppValidationOutput`](crate::operation::NotifyAppValidationOutput)>
     #[allow(clippy::let_and_return)]
@@ -4158,7 +4163,7 @@ impl NotifyAppValidationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyAppValidationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4245,7 +4250,7 @@ impl NotifyAppValidationOutputInput {
             "NotifyAppValidationOutput",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4355,7 +4360,7 @@ pub mod put_app_launch_configuration_input {
 pub type PutAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::PutAppLaunchConfiguration;
 #[doc(hidden)]
-pub type PutAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppLaunchConfiguration`](crate::operation::PutAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4366,7 +4371,7 @@ impl PutAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4453,7 +4458,7 @@ impl PutAppLaunchConfigurationInput {
             "PutAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4542,7 +4547,8 @@ pub mod put_app_replication_configuration_input {
 pub type PutAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::PutAppReplicationConfiguration;
 #[doc(hidden)]
-pub type PutAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppReplicationConfiguration`](crate::operation::PutAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4553,7 +4559,7 @@ impl PutAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4639,7 +4645,7 @@ impl PutAppReplicationConfigurationInput {
             "PutAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4752,7 +4758,8 @@ pub mod put_app_validation_configuration_input {
 pub type PutAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::PutAppValidationConfiguration;
 #[doc(hidden)]
-pub type PutAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppValidationConfiguration`](crate::operation::PutAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4763,7 +4770,7 @@ impl PutAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4849,7 +4856,7 @@ impl PutAppValidationConfigurationInput {
             "PutAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4907,7 +4914,7 @@ pub mod start_app_replication_input {
 #[doc(hidden)]
 pub type StartAppReplicationInputOperationOutputAlias = crate::operation::StartAppReplication;
 #[doc(hidden)]
-pub type StartAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartAppReplication`](crate::operation::StartAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -4918,7 +4925,7 @@ impl StartAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5003,7 +5010,7 @@ impl StartAppReplicationInput {
             "StartAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5074,7 +5081,7 @@ pub mod start_on_demand_app_replication_input {
 pub type StartOnDemandAppReplicationInputOperationOutputAlias =
     crate::operation::StartOnDemandAppReplication;
 #[doc(hidden)]
-pub type StartOnDemandAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartOnDemandAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandAppReplication`](crate::operation::StartOnDemandAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -5085,7 +5092,7 @@ impl StartOnDemandAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOnDemandAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5171,7 +5178,7 @@ impl StartOnDemandAppReplicationInput {
             "StartOnDemandAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5245,7 +5252,7 @@ pub mod start_on_demand_replication_run_input {
 pub type StartOnDemandReplicationRunInputOperationOutputAlias =
     crate::operation::StartOnDemandReplicationRun;
 #[doc(hidden)]
-pub type StartOnDemandReplicationRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartOnDemandReplicationRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandReplicationRunInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandReplicationRun`](crate::operation::StartOnDemandReplicationRun)>
     #[allow(clippy::let_and_return)]
@@ -5256,7 +5263,7 @@ impl StartOnDemandReplicationRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOnDemandReplicationRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5342,7 +5349,7 @@ impl StartOnDemandReplicationRunInput {
             "StartOnDemandReplicationRun",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5400,7 +5407,7 @@ pub mod stop_app_replication_input {
 #[doc(hidden)]
 pub type StopAppReplicationInputOperationOutputAlias = crate::operation::StopAppReplication;
 #[doc(hidden)]
-pub type StopAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StopAppReplication`](crate::operation::StopAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -5411,7 +5418,7 @@ impl StopAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5496,7 +5503,7 @@ impl StopAppReplicationInput {
             "StopAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5554,7 +5561,7 @@ pub mod terminate_app_input {
 #[doc(hidden)]
 pub type TerminateAppInputOperationOutputAlias = crate::operation::TerminateApp;
 #[doc(hidden)]
-pub type TerminateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateAppInput {
     /// Consumes the builder and constructs an Operation<[`TerminateApp`](crate::operation::TerminateApp)>
     #[allow(clippy::let_and_return)]
@@ -5565,7 +5572,7 @@ impl TerminateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5649,7 +5656,7 @@ impl TerminateAppInput {
             "TerminateApp",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5783,7 +5790,7 @@ pub mod update_app_input {
 #[doc(hidden)]
 pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
 #[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(clippy::let_and_return)]
@@ -5794,7 +5801,7 @@ impl UpdateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5876,7 +5883,7 @@ impl UpdateAppInput {
                     "UpdateApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6085,7 +6092,7 @@ pub mod update_replication_job_input {
 #[doc(hidden)]
 pub type UpdateReplicationJobInputOperationOutputAlias = crate::operation::UpdateReplicationJob;
 #[doc(hidden)]
-pub type UpdateReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationJob`](crate::operation::UpdateReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -6096,7 +6103,7 @@ impl UpdateReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6190,7 @@ impl UpdateReplicationJobInput {
             "UpdateReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

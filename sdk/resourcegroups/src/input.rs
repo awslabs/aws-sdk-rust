@@ -154,7 +154,7 @@ pub mod create_group_input {
 #[doc(hidden)]
 pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
 #[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(clippy::let_and_return)]
@@ -165,7 +165,7 @@ impl CreateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -244,7 +244,7 @@ impl CreateGroupInput {
             "CreateGroup",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -314,7 +314,7 @@ pub mod delete_group_input {
 #[doc(hidden)]
 pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
 #[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(clippy::let_and_return)]
@@ -325,7 +325,7 @@ impl DeleteGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -404,7 +404,7 @@ impl DeleteGroupInput {
             "DeleteGroup",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -472,7 +472,7 @@ pub mod get_group_input {
 #[doc(hidden)]
 pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
 #[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(clippy::let_and_return)]
@@ -483,7 +483,7 @@ impl GetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -560,7 +560,7 @@ impl GetGroupInput {
                     "GetGroup",
                     "resourcegroups",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -616,7 +616,7 @@ pub mod get_group_configuration_input {
 #[doc(hidden)]
 pub type GetGroupConfigurationInputOperationOutputAlias = crate::operation::GetGroupConfiguration;
 #[doc(hidden)]
-pub type GetGroupConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupConfiguration`](crate::operation::GetGroupConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -627,7 +627,7 @@ impl GetGroupConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroupConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -709,7 +709,7 @@ impl GetGroupConfigurationInput {
             "GetGroupConfiguration",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -779,7 +779,7 @@ pub mod get_group_query_input {
 #[doc(hidden)]
 pub type GetGroupQueryInputOperationOutputAlias = crate::operation::GetGroupQuery;
 #[doc(hidden)]
-pub type GetGroupQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupQuery`](crate::operation::GetGroupQuery)>
     #[allow(clippy::let_and_return)]
@@ -790,7 +790,7 @@ impl GetGroupQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroupQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -870,7 +870,7 @@ impl GetGroupQueryInput {
             "GetGroupQuery",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -924,7 +924,7 @@ pub mod get_tags_input {
 #[doc(hidden)]
 pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
 #[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(clippy::let_and_return)]
@@ -935,7 +935,7 @@ impl GetTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1022,7 +1022,7 @@ impl GetTagsInput {
                     "GetTags",
                     "resourcegroups",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1093,7 +1093,7 @@ pub mod group_resources_input {
 #[doc(hidden)]
 pub type GroupResourcesInputOperationOutputAlias = crate::operation::GroupResources;
 #[doc(hidden)]
-pub type GroupResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GroupResources`](crate::operation::GroupResources)>
     #[allow(clippy::let_and_return)]
@@ -1104,7 +1104,7 @@ impl GroupResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GroupResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1184,7 +1184,7 @@ impl GroupResourcesInput {
             "GroupResources",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1389,7 +1389,7 @@ pub mod list_group_resources_input {
 #[doc(hidden)]
 pub type ListGroupResourcesInputOperationOutputAlias = crate::operation::ListGroupResources;
 #[doc(hidden)]
-pub type ListGroupResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupResources`](crate::operation::ListGroupResources)>
     #[allow(clippy::let_and_return)]
@@ -1400,7 +1400,7 @@ impl ListGroupResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroupResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1480,7 +1480,7 @@ impl ListGroupResourcesInput {
             "ListGroupResources",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1651,7 +1651,7 @@ pub mod list_groups_input {
 #[doc(hidden)]
 pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
 #[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(clippy::let_and_return)]
@@ -1662,7 +1662,7 @@ impl ListGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1758,7 +1758,7 @@ impl ListGroupsInput {
             "ListGroups",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1859,7 +1859,7 @@ pub mod put_group_configuration_input {
 #[doc(hidden)]
 pub type PutGroupConfigurationInputOperationOutputAlias = crate::operation::PutGroupConfiguration;
 #[doc(hidden)]
-pub type PutGroupConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutGroupConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutGroupConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutGroupConfiguration`](crate::operation::PutGroupConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1870,7 +1870,7 @@ impl PutGroupConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutGroupConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1952,7 +1952,7 @@ impl PutGroupConfigurationInput {
             "PutGroupConfiguration",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2059,7 +2059,7 @@ pub mod search_resources_input {
 #[doc(hidden)]
 pub type SearchResourcesInputOperationOutputAlias = crate::operation::SearchResources;
 #[doc(hidden)]
-pub type SearchResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchResourcesInput {
     /// Consumes the builder and constructs an Operation<[`SearchResources`](crate::operation::SearchResources)>
     #[allow(clippy::let_and_return)]
@@ -2070,7 +2070,7 @@ impl SearchResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2150,7 +2150,7 @@ impl SearchResourcesInput {
             "SearchResources",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2237,7 +2237,7 @@ pub mod tag_input {
 #[doc(hidden)]
 pub type TagInputOperationOutputAlias = crate::operation::Tag;
 #[doc(hidden)]
-pub type TagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagInput {
     /// Consumes the builder and constructs an Operation<[`Tag`](crate::operation::Tag)>
     #[allow(clippy::let_and_return)]
@@ -2246,7 +2246,10 @@ impl TagInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<crate::operation::Tag, aws_http::AwsErrorRetryPolicy>,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Tag,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
         aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
@@ -2336,7 +2339,7 @@ impl TagInput {
                 "Tag",
                 "resourcegroups",
             ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2415,7 +2418,7 @@ pub mod ungroup_resources_input {
 #[doc(hidden)]
 pub type UngroupResourcesInputOperationOutputAlias = crate::operation::UngroupResources;
 #[doc(hidden)]
-pub type UngroupResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UngroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UngroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UngroupResources`](crate::operation::UngroupResources)>
     #[allow(clippy::let_and_return)]
@@ -2426,7 +2429,7 @@ impl UngroupResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UngroupResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2506,7 +2509,7 @@ impl UngroupResourcesInput {
             "UngroupResources",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2585,7 +2588,7 @@ pub mod untag_input {
 #[doc(hidden)]
 pub type UntagInputOperationOutputAlias = crate::operation::Untag;
 #[doc(hidden)]
-pub type UntagInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagInput {
     /// Consumes the builder and constructs an Operation<[`Untag`](crate::operation::Untag)>
     #[allow(clippy::let_and_return)]
@@ -2596,7 +2599,7 @@ impl UntagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Untag,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2688,7 +2691,7 @@ impl UntagInput {
                     "Untag",
                     "resourcegroups",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2772,7 +2775,7 @@ pub mod update_group_input {
 #[doc(hidden)]
 pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
 #[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(clippy::let_and_return)]
@@ -2783,7 +2786,7 @@ impl UpdateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2862,7 +2865,7 @@ impl UpdateGroupInput {
             "UpdateGroup",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2957,7 +2960,7 @@ pub mod update_group_query_input {
 #[doc(hidden)]
 pub type UpdateGroupQueryInputOperationOutputAlias = crate::operation::UpdateGroupQuery;
 #[doc(hidden)]
-pub type UpdateGroupQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGroupQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupQueryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroupQuery`](crate::operation::UpdateGroupQuery)>
     #[allow(clippy::let_and_return)]
@@ -2968,7 +2971,7 @@ impl UpdateGroupQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroupQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3048,7 +3051,7 @@ impl UpdateGroupQueryInput {
             "UpdateGroupQuery",
             "resourcegroups",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
