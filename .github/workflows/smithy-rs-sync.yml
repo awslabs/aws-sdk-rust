@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: next
     - uses: actions/checkout@v2
       with:
         repository: 'aws-labs/smithy-rs'
@@ -25,13 +27,11 @@ jobs:
         components: ${{ env.rust_toolchain_components }}
         default: true
     - name: build sync tool
-      run: cargo build --release
       working-directory: smithy-rs/tools/smithy-rs-sync
-    - name: run sync tool
       run: |
-        smithy-rs/target/release/smithy-rs-sync \
-          --smithy-rs smithy-rs \
-          --aws-sdk aws-sdk-rust
+          cargo run -- \
+          --smithy-rs ../../ \
+          --aws-sdk ../../../aws-sdk-rust
     - name: push commits
       run: git push
       working-directory: aws-sdk-rust
