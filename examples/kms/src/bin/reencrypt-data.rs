@@ -103,6 +103,7 @@ async fn main() -> Result<(), Error> {
 
     let mut ofile = File::create(o).expect("unable to create file");
     ofile.write_all(s.as_bytes()).expect("unable to write");
+    ofile.flush().expect("failed to flush");
 
     if verbose {
         println!("Wrote the following to {}:", output_file);
