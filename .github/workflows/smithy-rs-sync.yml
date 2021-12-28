@@ -4,7 +4,7 @@ on:
     # Run at the top of the hour, every hour
     - cron:  '0 * * * *'
 
-name: Pull in the latest changes from smithy-rs
+name: Sync with smithy-rs commits
 
 env:
   rust_version: 1.54.0
@@ -21,7 +21,7 @@ jobs:
         ref: next
     - uses: actions/checkout@v2
       with:
-        repository: 'aws-labs/smithy-rs'
+        repository: 'awslabs/smithy-rs'
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
