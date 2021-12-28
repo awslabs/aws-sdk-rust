@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   schedule:
     # Run at the top of the hour, every hour
     - cron:  '0 * * * *'
