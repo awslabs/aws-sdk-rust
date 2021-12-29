@@ -40,8 +40,8 @@ jobs:
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
           cargo run -- \
-          --smithy-rs ../ \
-          --aws-sdk ../../aws-sdk-rust
+          --smithy-rs ../../ \
+          --aws-sdk ../../../aws-sdk-rust
     - name: push commits
       run: git push
       working-directory: aws-sdk-rust
