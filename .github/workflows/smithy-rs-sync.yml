@@ -28,7 +28,10 @@ jobs:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
-    - run: ls -la
+    - run: |
+          pwd
+          cd ..
+          ls -la
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
