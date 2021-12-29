@@ -22,20 +22,19 @@ jobs:
       with:
         ref: next
         path: aws-sdk-rust
+        fetch-depth: 0
     - name: Checkout smithy-rs
       uses: actions/checkout@v2
       with:
         repository: awslabs/smithy-rs
         ref: main
         path: smithy-rs
+        fetch-depth: 0
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
-    - name: 'smithy-rs: run git fetch --all'
-      working-directory: smithy-rs
-      run: git fetch --all
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
